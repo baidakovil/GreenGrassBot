@@ -1,0 +1,168 @@
+	city	city_ascii
+0	Santiago	Santiago
+1	Concepción	Concepcion
+2	Puente Alto	Puente Alto
+3	Maipú	Maipu
+4	La Florida	La Florida
+5	Antofagasta	Antofagasta
+6	Viña del Mar	Vina del Mar
+7	San Bernardo	San Bernardo
+8	Valparaíso	Valparaiso
+9	Temuco	Temuco
+10	Las Condes	Las Condes
+11	Rancagua	Rancagua
+12	Talca	Talca
+13	Coquimbo	Coquimbo
+14	Arica	Arica
+15	La Serena	La Serena
+16	Iquique	Iquique
+17	Puerto Montt	Puerto Montt
+18	Chillán	Chillan
+19	Calama	Calama
+20	Osorno	Osorno
+21	Talcahuano	Talcahuano
+22	Copiapó	Copiapo
+23	Valdivia	Valdivia
+24	Quilpué	Quilpue
+25	Colina	Colina
+26	Los Ángeles	Los Angeles
+27	Villa Alemana	Villa Alemana
+28	La Granja	La Granja
+29	Punta Arenas	Punta Arenas
+30	Coronel	Coronel
+31	Curicó	Curico
+32	Espejo	Espejo
+33	Alto Hospicio	Alto Hospicio
+34	Lo Barnechea	Lo Barnechea
+35	San Joaquín	San Joaquin
+36	La Reina	La Reina
+37	Coyhaique	Coyhaique
+38	Placilla de Peñuelas	Placilla de Penuelas
+39	Buin	Buin
+40	Peñaflor	Penaflor
+41	Chiguayante	Chiguayante
+42	San Antonio	San Antonio
+43	Ovalle	Ovalle
+44	Linares	Linares
+45	Quillota	Quillota
+46	San Felipe	San Felipe
+47	Los Andes	Los Andes
+48	San Fernando	San Fernando
+49	Talagante	Talagante
+50	Villarrica	Villarrica
+51	La Calera	La Calera
+52	Angol	Angol
+53	Penco	Penco
+54	Vallenar	Vallenar
+55	Lota	Lota
+56	Alerce	Alerce
+57	Tomé	Tome
+58	Parral	Parral
+59	Ancud	Ancud
+60	Constitución	Constitucion
+61	Lampa	Lampa
+62	Isla de Maipo	Isla de Maipo
+63	Victoria	Victoria
+64	Cañete	Canete
+65	Castro	Castro
+66	Concón	Concon
+67	Curanilahue	Curanilahue
+68	Quintero	Quintero
+69	Nueva Imperial	Nueva Imperial
+70	Cauquenes	Cauquenes
+71	San Javier	San Javier
+72	Pucón	Pucon
+73	Chillán Viejo	Chillan Viejo
+74	La Unión	La Union
+75	Puerto Varas	Puerto Varas
+76	Carahue	Carahue
+77	Salamanca	Salamanca
+78	Las Cabras	Las Cabras
+79	Tocopilla	Tocopilla
+80	Cartagena	Cartagena
+81	Lebu	Lebu
+82	La Cruz	La Cruz
+83	Casablanca	Casablanca
+84	Los Vilos	Los Vilos
+85	Hualqui	Hualqui
+86	Purranque	Purranque
+87	Illapel	Illapel
+88	Pichidegua	Pichidegua
+89	Cabildo	Cabildo
+90	La Ligua	La Ligua
+91	Puerto Natales	Puerto Natales
+92	Hijuelas	Hijuelas
+93	Arauco	Arauco
+94	Puerto Aysén	Puerto Aysen
+95	Batuco	Batuco
+96	Río Bueno	Rio Bueno
+97	Curacautín	Curacautin
+98	Collipulli	Collipulli
+99	Calbuco	Calbuco
+100	Loncoche	Loncoche
+101	Chépica	Chepica
+102	Peumo	Peumo
+103	Diego de Almagro	Diego de Almagro
+104	Chañaral	Chanaral
+105	Vicuña	Vicuna
+106	El Tabo	El Tabo
+107	San José de Maipo	San Jose de Maipo
+108	Frutillar	Frutillar
+109	Purén	Puren
+110	Tierra Amarilla	Tierra Amarilla
+111	Los Lagos	Los Lagos
+112	Pichilemu	Pichilemu
+113	San Francisco de Mostazal	San Francisco de Mostazal
+114	Galvarino	Galvarino
+115	Chuquicamata	Chuquicamata
+116	Palmilla	Palmilla
+117	Chicureo Abajo	Chicureo Abajo
+118	Panguipulli	Panguipulli
+119	Andacollo	Andacollo
+120	Punitaqui	Punitaqui
+121	Yungay	Yungay
+122	Pinto	Pinto
+123	María Pinto	Maria Pinto
+124	Caldera	Caldera
+125	Lonquimay	Lonquimay
+126	Taltal	Taltal
+127	Lago Ranco	Lago Ranco
+128	San Pedro	San Pedro
+129	Pozo Almonte	Pozo Almonte
+130	Lo Miranda	Lo Miranda
+131	Puerto Octay	Puerto Octay
+132	Lanco	Lanco
+133	Ventanas	Ventanas
+134	Quinchao	Quinchao
+135	Curarrehue	Curarrehue
+136	Fresia	Fresia
+137	Pelluhue	Pelluhue
+138	Hanga Roa	Hanga Roa
+139	Dalcahue	Dalcahue
+140	Monte Águila	Monte Aguila
+141	Quirihue	Quirihue
+142	Oficina María Elena	Oficina Maria Elena
+143	Papudo	Papudo
+144	Porvenir	Porvenir
+145	Chonchi	Chonchi
+146	Contulmo	Contulmo
+147	San Pedro de Atacama	San Pedro de Atacama
+148	Puchuncaví	Puchuncavi
+149	Alto del Carmen	Alto del Carmen
+150	Combarbalá	Combarbala
+151	Laraquete	Laraquete
+152	Chaitén	Chaiten
+153	Santa Bárbara	Santa Barbara
+154	Cochrane	Cochrane
+155	Huasco	Huasco
+156	Mejillones	Mejillones
+157	Puerto Williams	Puerto Williams
+158	La Punta	La Punta
+159	Quellón	Quellon
+160	El Palqui	El Palqui
+161	Toltén	Tolten
+162	Toconao	Toconao
+163	Balsadero Río Verde	Balsadero Rio Verde
+164	Villa O’Higgins	Villa O'Higgins
+165	Cuya	Cuya
+166	Lagunas	Lagunas

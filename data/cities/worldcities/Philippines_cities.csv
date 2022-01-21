@@ -1,0 +1,1534 @@
+	city	city_ascii
+0	Manila	Manila
+1	Quezon City	Quezon City
+2	Davao	Davao
+3	Caloocan City	Caloocan City
+4	Cebu City	Cebu City
+5	Zamboanga City	Zamboanga City
+6	Taguig City	Taguig City
+7	Pasig City	Pasig City
+8	Antipolo	Antipolo
+9	City of Parañaque	City of Paranaque
+10	Cagayan de Oro	Cagayan de Oro
+11	Dasmariñas	Dasmarinas
+12	Valenzuela	Valenzuela
+13	Bacoor	Bacoor
+14	Las Piñas City	Las Pinas City
+15	General Santos	General Santos
+16	Makati City	Makati City
+17	San Jose del Monte	San Jose del Monte
+18	Bacolod	Bacolod
+19	Muntinlupa City	Muntinlupa City
+20	Marikina City	Marikina City
+21	City of Calamba	City of Calamba
+22	Iloilo	Iloilo
+23	Pasay City	Pasay City
+24	Mandaluyong City	Mandaluyong City
+25	Angeles City	Angeles City
+26	Lapu-Lapu City	Lapu-Lapu City
+27	Imus	Imus
+28	Malabon	Malabon
+29	Mandaue City	Mandaue City
+30	Rodriguez	Rodriguez
+31	Santa Rosa	Santa Rosa
+32	San Pedro	San Pedro
+33	Baguio City	Baguio City
+34	Tarlac City	Tarlac City
+35	Iligan	Iligan
+36	Biñan	Binan
+37	Butuan	Butuan
+38	Lipa City	Lipa City
+39	Batangas	Batangas
+40	Cainta	Cainta
+41	Taytay	Taytay
+42	General Trias	General Trias
+43	Cabuyao	Cabuyao
+44	San Fernando	San Fernando
+45	Cabanatuan City	Cabanatuan City
+46	Cotabato	Cotabato
+47	Navotas	Navotas
+48	Binangonan	Binangonan
+49	Lucena	Lucena
+50	San Pablo	San Pablo
+51	Tagum	Tagum
+52	Santa Maria	Santa Maria
+53	San Mateo	San Mateo
+54	Malolos	Malolos
+55	Puerto Princesa	Puerto Princesa
+56	Mabalacat	Mabalacat
+57	Silang	Silang
+58	Tacloban	Tacloban
+59	Olongapo	Olongapo
+60	Talisay	Talisay
+61	Tanza	Tanza
+62	Marilao	Marilao
+63	Meycauayan	Meycauayan
+64	Ormoc	Ormoc
+65	Marawi City	Marawi City
+66	Pagadian	Pagadian
+67	Naga City	Naga City
+68	Legazpi City	Legazpi City
+69	Valencia	Valencia
+70	San Carlos City	San Carlos City
+71	Panabo	Panabo
+72	Calbayog City	Calbayog City
+73	Kabankalan	Kabankalan
+74	Santo Tomas	Santo Tomas
+75	Dagupan City	Dagupan City
+76	Koronadal	Koronadal
+77	Tanauan	Tanauan
+78	Malaybalay	Malaybalay
+79	General Mariano Alvarez	General Mariano Alvarez
+80	Bago	Bago
+81	Toledo	Toledo
+82	Digos	Digos
+83	Roxas City	Roxas City
+84	Sorsogon	Sorsogon
+85	Lubao	Lubao
+86	Trece Martires City	Trece Martires City
+87	Mexico	Mexico
+88	Cadiz	Cadiz
+89	Concepcion	Concepcion
+90	Surigao	Surigao
+91	Pikit	Pikit
+92	Tuguegarao	Tuguegarao
+93	San Miguel	San Miguel
+94	Baliuag	Baliuag
+95	Polomolok	Polomolok
+96	Midsayap	Midsayap
+97	Sariaya	Sariaya
+98	Sagay	Sagay
+99	San Juan	San Juan
+100	Ilagan	Ilagan
+101	San Jose	San Jose
+102	Ozamiz City	Ozamiz City
+103	Mati	Mati
+104	Kidapawan	Kidapawan
+105	Capas	Capas
+106	San Jose	San Jose
+107	Danao	Danao
+108	Santiago	Santiago
+109	Dumaguete City	Dumaguete City
+110	Consolacion	Consolacion
+111	Tabaco	Tabaco
+112	Nasugbu	Nasugbu
+113	Arayat	Arayat
+114	Calapan	Calapan
+115	Urdaneta	Urdaneta
+116	Minglanilla	Minglanilla
+117	San Carlos	San Carlos
+118	Dipolog	Dipolog
+119	Malasiqui	Malasiqui
+120	Hagonoy	Hagonoy
+121	La Trinidad	La Trinidad
+122	Calabayan	Calabayan
+123	Mariveles	Mariveles
+124	Daraga	Daraga
+125	Silay	Silay
+126	Jolo	Jolo
+127	Floridablanca	Floridablanca
+128	Talavera	Talavera
+129	Gingoog	Gingoog
+130	Porac	Porac
+131	Bocaue	Bocaue
+132	San Fernando	San Fernando
+133	Poblacion	Poblacion
+134	Carcar	Carcar
+135	Santa Cruz	Santa Cruz
+136	Guagua	Guagua
+137	Santo Tomas	Santo Tomas
+138	Guimba	Guimba
+139	Glan	Glan
+140	Tanay	Tanay
+141	Candelaria	Candelaria
+142	Bayawan	Bayawan
+143	Malita	Malita
+144	Angono	Angono
+145	Rosario	Rosario
+146	Naga	Naga
+147	Magalang	Magalang
+148	Los Baños	Los Banos
+149	Rosario	Rosario
+150	City of Isabela	City of Isabela
+151	Naic	Naic
+152	Iriga City	Iriga City
+153	Cavite City	Cavite City
+154	Candaba	Candaba
+155	Laoag	Laoag
+156	Ligao	Ligao
+157	Norzagaray	Norzagaray
+158	Gapan	Gapan
+159	Plaridel	Plaridel
+160	Tabuk	Tabuk
+161	Calumpit	Calumpit
+162	Apalit	Apalit
+163	Baybay	Baybay
+164	Libmanan	Libmanan
+165	San Juan	San Juan
+166	Mangaldan	Mangaldan
+167	Tagbilaran City	Tagbilaran City
+168	Dinalupihan	Dinalupihan
+169	Himamaylan	Himamaylan
+170	Daet	Daet
+171	Subic	Subic
+172	Lingayen	Lingayen
+173	San Ildefonso	San Ildefonso
+174	Samal	Samal
+175	Quezon	Quezon
+176	Catbalogan	Catbalogan
+177	Pateros	Pateros
+178	Maluñgun	Malungun
+179	Guiguinto	Guiguinto
+180	Bayugan	Bayugan
+181	Naujan	Naujan
+182	Talisay	Talisay
+183	Cawayan	Cawayan
+184	Maramag	Maramag
+185	Bongao	Bongao
+186	Carmona	Carmona
+187	Bulan	Bulan
+188	Manolo Fortich	Manolo Fortich
+189	Pulilan	Pulilan
+190	Balanga	Balanga
+191	Masbate	Masbate
+192	Catarman	Catarman
+193	Pandi	Pandi
+194	Isulan	Isulan
+195	Kawit	Kawit
+196	Maasin	Maasin
+197	Prosperidad	Prosperidad
+198	Nabunturan	Nabunturan
+199	Kalibo	Kalibo
+200	Alabel	Alabel
+201	Balagtas	Balagtas
+202	Ipil	Ipil
+203	Virac	Virac
+204	Cabadbaran	Cabadbaran
+205	Borongan	Borongan
+206	San Jose	San Jose
+207	Poblacion	Poblacion
+208	Bayombong	Bayombong
+209	Teresa	Teresa
+210	Caridad	Caridad
+211	Pavia	Pavia
+212	Tandag	Tandag
+213	Vigan	Vigan
+214	Naval	Naval
+215	Boac	Boac
+216	Iba	Iba
+217	Noveleta	Noveleta
+218	Bangued	Bangued
+219	Tubod	Tubod
+220	Mamburao	Mamburao
+221	Palayan City	Palayan City
+222	San Roque	San Roque
+223	Baler	Baler
+224	Romblon	Romblon
+225	Mambajao	Mambajao
+226	Jordan	Jordan
+227	Shariff Aguak	Shariff Aguak
+228	Cabarroguis	Cabarroguis
+229	Camaligan	Camaligan
+230	Siquijor	Siquijor
+231	Bontoc	Bontoc
+232	General Emilio Aguinaldo	General Emilio Aguinaldo
+233	Lagawe	Lagawe
+234	Magugpo Poblacion	Magugpo Poblacion
+235	Oroquieta	Oroquieta
+236	Basco	Basco
+237	Kabugao	Kabugao
+238	Santa Cruz	Santa Cruz
+239	Koronadal	Koronadal
+240	San Jose	San Jose
+241	Tabuk	Tabuk
+242	Pili	Pili
+243	Tiaong	Tiaong
+244	Tayabas	Tayabas
+245	Sindangan	Sindangan
+246	Tacurong	Tacurong
+247	Calasiao	Calasiao
+248	Guihulñgan	Guihulngan
+249	Carmen	Carmen
+250	Lopez	Lopez
+251	M’lang	M'lang
+252	Sultan Kudarat	Sultan Kudarat
+253	San Rafael	San Rafael
+254	Monkayo	Monkayo
+255	Bislig	Bislig
+256	Escalante	Escalante
+257	Lemery	Lemery
+258	Paniqui	Paniqui
+259	Bauan	Bauan
+260	Balayan	Balayan
+261	Santa Cruz	Santa Cruz
+262	Palimbang	Palimbang
+263	Pili	Pili
+264	Alaminos	Alaminos
+265	Oton	Oton
+266	Kabacan	Kabacan
+267	Parang	Parang
+268	Salaman	Salaman
+269	Polangui	Polangui
+270	Victorias	Victorias
+271	Gerona	Gerona
+272	Compostela	Compostela
+273	Balamban	Balamban
+274	Pinamalayan	Pinamalayan
+275	Aroroy	Aroroy
+276	Hinigaran	Hinigaran
+277	Pongotan	Pongotan
+278	Daanbantayan	Daanbantayan
+279	Nabua	Nabua
+280	Surallah	Surallah
+281	Banga	Banga
+282	Makilala	Makilala
+283	San Fabian	San Fabian
+284	Camiling	Camiling
+285	Binmaley	Binmaley
+286	Calabanga	Calabanga
+287	Santa Barbara	Santa Barbara
+288	Sablayan	Sablayan
+289	Baggao	Baggao
+290	Solana	Solana
+291	Guinobatan	Guinobatan
+292	Dapitan	Dapitan
+293	Calaca	Calaca
+294	Bolinao	Bolinao
+295	Science City of Muñoz	Science City of Munoz
+296	Calauan	Calauan
+297	Murcia	Murcia
+298	Maco	Maco
+299	Indanan	Indanan
+300	Passi	Passi
+301	Tanjay	Tanjay
+302	Calatrava	Calatrava
+303	Talipao	Talipao
+304	Bantayan	Bantayan
+305	Cabiao	Cabiao
+306	Matalam	Matalam
+307	Echague	Echague
+308	Mabinay	Mabinay
+309	Bogo	Bogo
+310	San Jose	San Jose
+311	San Antonio	San Antonio
+312	Siaton	Siaton
+313	Bulacan	Bulacan
+314	Buhi	Buhi
+315	Poblacion	Poblacion
+316	Malapatan	Malapatan
+317	Macabebe	Macabebe
+318	Bais	Bais
+319	Jose Abad Santos	Jose Abad Santos
+320	Kapalong	Kapalong
+321	Bauang	Bauang
+322	Santa Catalina	Santa Catalina
+323	Pototan	Pototan
+324	Batarasa	Batarasa
+325	Libon	Libon
+326	Pagbilao	Pagbilao
+327	Robles	Robles
+328	Taytay	Taytay
+329	Carmen	Carmen
+330	Lamitan	Lamitan
+331	Pilar	Pilar
+332	San Francisco	San Francisco
+333	Barili	Barili
+334	Gumaca	Gumaca
+335	Jaen	Jaen
+336	Ubay	Ubay
+337	Lambunao	Lambunao
+338	Tagoloan	Tagoloan
+339	Umingan	Umingan
+340	Mangatarem	Mangatarem
+341	Calauag	Calauag
+342	Narra	Narra
+343	Argao	Argao
+344	Tagaytay	Tagaytay
+345	Bongabong	Bongabong
+346	Alicia	Alicia
+347	Talakag	Talakag
+348	Catanauan	Catanauan
+349	Manaoag	Manaoag
+350	Tupi	Tupi
+351	Sipalay	Sipalay
+352	Baras	Baras
+353	Pozorrubio	Pozorrubio
+354	Santa Rosa	Santa Rosa
+355	Bula	Bula
+356	Bamban	Bamban
+357	Dumangas	Dumangas
+358	Bacacay	Bacacay
+359	Infanta	Infanta
+360	Carles	Carles
+361	Limay	Limay
+362	Oas	Oas
+363	Lala	Lala
+364	Siasi	Siasi
+365	Miagao	Miagao
+366	Orani	Orani
+367	Dalaguete	Dalaguete
+368	Tumauini	Tumauini
+369	Tinambac	Tinambac
+370	Bugallon	Bugallon
+371	Binalbagan	Binalbagan
+372	Balingasag	Balingasag
+373	Talibon	Talibon
+374	Camalig	Camalig
+375	Cawayan	Cawayan
+376	Don Carlos	Don Carlos
+377	San Fernando	San Fernando
+378	Bagumbayan	Bagumbayan
+379	Pigcawayan	Pigcawayan
+380	San Pascual	San Pascual
+381	Pinamungahan	Pinamungahan
+382	Indang	Indang
+383	Brookes Point	Brookes Point
+384	Esperanza	Esperanza
+385	Hermosa	Hermosa
+386	Aparri	Aparri
+387	Lupon	Lupon
+388	Pililla	Pililla
+389	San Leonardo	San Leonardo
+390	Castillejos	Castillejos
+391	Roxas	Roxas
+392	Cuyapo	Cuyapo
+393	Sipocot	Sipocot
+394	San Mateo	San Mateo
+395	La Carlota	La Carlota
+396	Agoo	Agoo
+397	Alamada	Alamada
+398	Rizal	Rizal
+399	La Paz	La Paz
+400	Bongabon	Bongabon
+401	Victoria	Victoria
+402	Janiuay	Janiuay
+403	Aliaga	Aliaga
+404	Tuburan	Tuburan
+405	Rosales	Rosales
+406	Mauban	Mauban
+407	Nagcarlan	Nagcarlan
+408	Hilongos	Hilongos
+409	Atimonan	Atimonan
+410	Goa	Goa
+411	Bay	Bay
+412	Saravia	Saravia
+413	Tigbauan	Tigbauan
+414	Tangub	Tangub
+415	Lutayan	Lutayan
+416	Villasis	Villasis
+417	Kapatagan	Kapatagan
+418	Isabela	Isabela
+419	Patikul	Patikul
+420	Parang	Parang
+421	Roxas	Roxas
+422	Lantapan	Lantapan
+423	Opol	Opol
+424	Tuao	Tuao
+425	Buenavista	Buenavista
+426	Aurora	Aurora
+427	Laoang	Laoang
+428	Kiamba	Kiamba
+429	Candon	Candon
+430	Quezon	Quezon
+431	Bansalan	Bansalan
+432	Santa Barbara	Santa Barbara
+433	Calinog	Calinog
+434	Sibalom	Sibalom
+435	Obando	Obando
+436	Angat	Angat
+437	Gubat	Gubat
+438	Itogon	Itogon
+439	Solano	Solano
+440	Jose Pañganiban	Jose Panganiban
+441	Sibulan	Sibulan
+442	Morong	Morong
+443	Abuyog	Abuyog
+444	Maasin	Maasin
+445	Cambanugoy	Cambanugoy
+446	Paracale	Paracale
+447	Baao	Baao
+448	Mamungan	Mamungan
+449	Cabatuan	Cabatuan
+450	Santo Domingo	Santo Domingo
+451	Palompon	Palompon
+452	Moncada	Moncada
+453	Ragay	Ragay
+454	Santa Cruz	Santa Cruz
+455	Masantol	Masantol
+456	Taal	Taal
+457	Asingan	Asingan
+458	San Remigio	San Remigio
+459	Castilla	Castilla
+460	Malvar	Malvar
+461	Botolan	Botolan
+462	Ilog	Ilog
+463	Milagros	Milagros
+464	Irosin	Irosin
+465	Matanao	Matanao
+466	Kananya	Kananya
+467	Jinoba-an	Jinoba-an
+468	Calatagan	Calatagan
+469	Orion	Orion
+470	Gattaran	Gattaran
+471	Tulunan	Tulunan
+472	Santa Cruz	Santa Cruz
+473	Santa Ana	Santa Ana
+474	Uson	Uson
+475	Baganga	Baganga
+476	San Fernando	San Fernando
+477	Rosario	Rosario
+478	Placer	Placer
+479	Medellin	Medellin
+480	Tigaon	Tigaon
+481	Tanauan	Tanauan
+482	Binalonan	Binalonan
+483	San Francisco	San Francisco
+484	Lagonoy	Lagonoy
+485	Alangalang	Alangalang
+486	Basey	Basey
+487	Batac	Batac
+488	San Mariano	San Mariano
+489	Manapla	Manapla
+490	Sigaboy	Sigaboy
+491	Jasaan	Jasaan
+492	San Luis	San Luis
+493	New Corella	New Corella
+494	Esperanza	Esperanza
+495	Canlaon	Canlaon
+496	Naguilian	Naguilian
+497	Barotac Nuevo	Barotac Nuevo
+498	Mansalay	Mansalay
+499	Paombong	Paombong
+500	San Simon	San Simon
+501	Magsaysay	Magsaysay
+502	Santa Maria	Santa Maria
+503	Roxas	Roxas
+504	Hagonoy	Hagonoy
+505	Malay	Malay
+506	Ibaan	Ibaan
+507	Upi	Upi
+508	Tiwi	Tiwi
+509	Bambang	Bambang
+510	San Manuel	San Manuel
+511	Lian	Lian
+512	Guiuan	Guiuan
+513	Mulanay	Mulanay
+514	Pangantocan	Pangantocan
+515	Ramon	Ramon
+516	Burauen	Burauen
+517	Minalabac	Minalabac
+518	Diffun	Diffun
+519	Bato	Bato
+520	Alfonso	Alfonso
+521	Ajuy	Ajuy
+522	San Isidro	San Isidro
+523	Pontevedra	Pontevedra
+524	Molave	Molave
+525	San Joaquin	San Joaquin
+526	Cogan	Cogan
+527	Tagkawayan	Tagkawayan
+528	Pila	Pila
+529	Coron	Coron
+530	Lucban	Lucban
+531	Dumanjog	Dumanjog
+532	Carigara	Carigara
+533	Trento	Trento
+534	Tapas	Tapas
+535	Mercedes	Mercedes
+536	Aurora	Aurora
+537	Buenavista	Buenavista
+538	Urbiztondo	Urbiztondo
+539	Cardona	Cardona
+540	El Salvador	El Salvador
+541	Cataingan	Cataingan
+542	Bani	Bani
+543	Kitaotao	Kitaotao
+544	Cabagan	Cabagan
+545	Leon	Leon
+546	Estancia	Estancia
+547	Buluan	Buluan
+548	Zaragoza	Zaragoza
+549	Donsol	Donsol
+550	Barobo	Barobo
+551	Ibajay	Ibajay
+552	Titay	Titay
+553	Padre Garcia	Padre Garcia
+554	Pasacao	Pasacao
+555	Magpet	Magpet
+556	Kalamansig	Kalamansig
+557	Libungan	Libungan
+558	Kiblawan	Kiblawan
+559	Hamtic	Hamtic
+560	Claveria	Claveria
+561	Poblacion	Poblacion
+562	Minalin	Minalin
+563	Alaminos	Alaminos
+564	San Narciso	San Narciso
+565	Peñablanca	Penablanca
+566	Sibonga	Sibonga
+567	Asturias	Asturias
+568	Sison	Sison
+569	General Tinio	General Tinio
+570	Amulung	Amulung
+571	Aringay	Aringay
+572	Impasugong	Impasugong
+573	Santa Ignacia	Santa Ignacia
+574	Masinloc	Masinloc
+575	Bantacan	Bantacan
+576	Tuba	Tuba
+577	Caramoan	Caramoan
+578	Dulag	Dulag
+579	President Roxas	President Roxas
+580	Isabel	Isabel
+581	Dumingag	Dumingag
+582	Mabini	Mabini
+583	Pio Duran	Pio Duran
+584	Norala	Norala
+585	Siocon	Siocon
+586	Talisay	Talisay
+587	San Pascual	San Pascual
+588	Rosario	Rosario
+589	Pontevedra	Pontevedra
+590	Mahayag	Mahayag
+591	Dauis	Dauis
+592	Panay	Panay
+593	Carmen	Carmen
+594	Albuera	Albuera
+595	Ayungon	Ayungon
+596	Tibigan	Tibigan
+597	Dumarao	Dumarao
+598	Ocampo	Ocampo
+599	Inabanga	Inabanga
+600	Barotac Viejo	Barotac Viejo
+601	Wao	Wao
+602	Pilar	Pilar
+603	Dingle	Dingle
+604	Katipunan	Katipunan
+605	Jones	Jones
+606	Malinao	Malinao
+607	New Washington	New Washington
+608	Odiongan	Odiongan
+609	Guinayangan	Guinayangan
+610	Gloria	Gloria
+611	Bunawan	Bunawan
+612	Sogod	Sogod
+613	Maitum	Maitum
+614	Talagutong	Talagutong
+615	Lal-lo	Lal-lo
+616	Kabasalan	Kabasalan
+617	Narvacan	Narvacan
+618	Alcala	Alcala
+619	Balimbing	Balimbing
+620	Tuy	Tuy
+621	Malabang	Malabang
+622	Lupao	Lupao
+623	Libona	Libona
+624	Tayug	Tayug
+625	Claveria	Claveria
+626	Montevista	Montevista
+627	Buguias	Buguias
+628	Veruela	Veruela
+629	Vinzons	Vinzons
+630	Roseller Lim	Roseller Lim
+631	Pagsanjan	Pagsanjan
+632	Banisilan	Banisilan
+633	Concepcion	Concepcion
+634	Jaro	Jaro
+635	Tantangan	Tantangan
+636	Angadanan	Angadanan
+637	Cordon	Cordon
+638	Daram	Daram
+639	Dolores	Dolores
+640	Pilar	Pilar
+641	Manay	Manay
+642	Bacnotan	Bacnotan
+643	Loreto	Loreto
+644	Manjuyod	Manjuyod
+645	Toboso	Toboso
+646	Santa Rita	Santa Rita
+647	Villaba	Villaba
+648	Lower Tungawan	Lower Tungawan
+649	Labangan	Labangan
+650	Nasipit	Nasipit
+651	Sumisip	Sumisip
+652	San Jacinto	San Jacinto
+653	Kalilangan	Kalilangan
+654	Lobo	Lobo
+655	General Mamerto Natividad	General Mamerto Natividad
+656	Siay	Siay
+657	Santa Rita	Santa Rita
+658	Aguilar	Aguilar
+659	Moises Padilla	Moises Padilla
+660	El Nido	El Nido
+661	President Quirino	President Quirino
+662	Labason	Labason
+663	San Jose	San Jose
+664	Santo Niño	Santo Nino
+665	Mandaon	Mandaon
+666	Culasi	Culasi
+667	Pananaw	Pananaw
+668	Matnog	Matnog
+669	Banaybanay	Banaybanay
+670	Guambog	Guambog
+671	Carranglan	Carranglan
+672	Quezon	Quezon
+673	Basud	Basud
+674	Proper Bansud	Proper Bansud
+675	Victoria	Victoria
+676	Santa Elena	Santa Elena
+677	Maluso	Maluso
+678	Leyte	Leyte
+679	Maria Aurora	Maria Aurora
+680	Cateel	Cateel
+681	Panitan	Panitan
+682	Santo Tomas	Santo Tomas
+683	Caraga	Caraga
+684	South Upi	South Upi
+685	Abucay	Abucay
+686	Santa Cruz	Santa Cruz
+687	Balabac	Balabac
+688	Villanueva	Villanueva
+689	Liloy	Liloy
+690	Nueva Valencia	Nueva Valencia
+691	Tucuran	Tucuran
+692	Payabon	Payabon
+693	Llanera	Llanera
+694	Anda	Anda
+695	Bacolor	Bacolor
+696	Laurel	Laurel
+697	Hinatuan	Hinatuan
+698	Bañga	Banga
+699	Cabatuan	Cabatuan
+700	Mambusao	Mambusao
+701	Balaoan	Balaoan
+702	Kibawe	Kibawe
+703	Santo Tomas	Santo Tomas
+704	Pagalungan	Pagalungan
+705	Tampakan	Tampakan
+706	Polanco	Polanco
+707	Tagudin	Tagudin
+708	President Manuel Acuña Roxas	President Manuel Acuna Roxas
+709	Tabogon	Tabogon
+710	Plaridel	Plaridel
+711	San Miguel	San Miguel
+712	Socorro	Socorro
+713	Lasam	Lasam
+714	Bulalacao	Bulalacao
+715	Alcala	Alcala
+716	Mobo	Mobo
+717	San Dionisio	San Dionisio
+718	Dingras	Dingras
+719	Gonzaga	Gonzaga
+720	Tagbina	Tagbina
+721	Malalag	Malalag
+722	La Libertad	La Libertad
+723	Mondragon	Mondragon
+724	Agoncillo	Agoncillo
+725	Naga	Naga
+726	Maayon	Maayon
+727	Alimodian	Alimodian
+728	Amadeo	Amadeo
+729	Siniloan	Siniloan
+730	Malilipot	Malilipot
+731	Vallehermoso	Vallehermoso
+732	Valladolid	Valladolid
+733	Maddela	Maddela
+734	Talacogon	Talacogon
+735	Rizal	Rizal
+736	Taysan	Taysan
+737	Maimbung	Maimbung
+738	Mapandan	Mapandan
+739	Balud	Balud
+740	Badian	Badian
+741	Margosatubig	Margosatubig
+742	Las Navas	Las Navas
+743	Clarin	Clarin
+744	Madridejos	Madridejos
+745	Maragondon	Maragondon
+746	Cabugao	Cabugao
+747	San Juan	San Juan
+748	Kasibu	Kasibu
+749	Pamplona	Pamplona
+750	San Nicolas	San Nicolas
+751	Santa Cruz	Santa Cruz
+752	Lilio	Lilio
+753	Bacong	Bacong
+754	Patnongon	Patnongon
+755	Baco	Baco
+756	Aritao	Aritao
+757	Poblacion	Poblacion
+758	Mabuhay	Mabuhay
+759	Maasin	Maasin
+760	Rapu-Rapu	Rapu-Rapu
+761	San Andres	San Andres
+762	Bangar	Bangar
+763	Buug	Buug
+764	Basilisa	Basilisa
+765	Pamplona	Pamplona
+766	Nabas	Nabas
+767	Jamindan	Jamindan
+768	Puerto Galera	Puerto Galera
+769	Oras	Oras
+770	Manucan	Manucan
+771	Luna	Luna
+772	Tambulig	Tambulig
+773	San Andres	San Andres
+774	Mankayan	Mankayan
+775	Alicia	Alicia
+776	Lumba-a-Bayabao	Lumba-a-Bayabao
+777	Bantay	Bantay
+778	Batobato	Batobato
+779	Magsaysay	Magsaysay
+780	Real	Real
+781	Enrile	Enrile
+782	Samal	Samal
+783	Borbon	Borbon
+784	Dinas	Dinas
+785	Laur	Laur
+786	Caluya	Caluya
+787	San Fernando	San Fernando
+788	San Nicolas	San Nicolas
+789	Tayasan	Tayasan
+790	Bagabag	Bagabag
+791	Santo Domingo	Santo Domingo
+792	Tago	Tago
+793	Sogod	Sogod
+794	Buldon	Buldon
+795	Dagami	Dagami
+796	Aurora	Aurora
+797	Gasan	Gasan
+798	Aborlan	Aborlan
+799	Valencia	Valencia
+800	Palauig	Palauig
+801	Siayan	Siayan
+802	Canaman	Canaman
+803	Pola	Pola
+804	Magsaysay	Magsaysay
+805	San Antonio	San Antonio
+806	Sagnay	Sagnay
+807	Gutalac	Gutalac
+808	Sibuco	Sibuco
+809	Pandan	Pandan
+810	Dueñas	Duenas
+811	Ballesteros	Ballesteros
+812	Guimbal	Guimbal
+813	Tabango	Tabango
+814	Gandara	Gandara
+815	Palapag	Palapag
+816	Imbatug	Imbatug
+817	Sual	Sual
+818	Mogpog	Mogpog
+819	Basista	Basista
+820	San Enrique	San Enrique
+821	Panglao	Panglao
+822	Cabanglasan	Cabanglasan
+823	Jagna	Jagna
+824	Kadingilan	Kadingilan
+825	Olutanga	Olutanga
+826	San Luis	San Luis
+827	Sulop	Sulop
+828	Bugasong	Bugasong
+829	Capoocan	Capoocan
+830	San Marcelino	San Marcelino
+831	Balasan	Balasan
+832	Bayog	Bayog
+833	Allacapan	Allacapan
+834	San Antonio	San Antonio
+835	Languyan	Languyan
+836	Malangas	Malangas
+837	Santa Maria	Santa Maria
+838	Leganes	Leganes
+839	Sitangkai	Sitangkai
+840	Matalom	Matalom
+841	Cuenca	Cuenca
+842	Tobias Fornier	Tobias Fornier
+843	Columbio	Columbio
+844	Pambujan	Pambujan
+845	San Quintin	San Quintin
+846	Casiguran	Casiguran
+847	Catubig	Catubig
+848	Munai	Munai
+849	Barugo	Barugo
+850	Medina	Medina
+851	Numancia	Numancia
+852	Marantao	Marantao
+853	Bautista	Bautista
+854	Jalajala	Jalajala
+855	Santa Ana	Santa Ana
+856	Claveria	Claveria
+857	Dao	Dao
+858	Banate	Banate
+859	Bacarra	Bacarra
+860	Abulug	Abulug
+861	Initao	Initao
+862	Aloguinsan	Aloguinsan
+863	Guindulman	Guindulman
+864	Juban	Juban
+865	Diplahan	Diplahan
+866	Bonifacio	Bonifacio
+867	Batan	Batan
+868	Salug	Salug
+869	Mayantoc	Mayantoc
+870	Lupi Viejo	Lupi Viejo
+871	Capalonga	Capalonga
+872	Dumalinao	Dumalinao
+873	Laoac East	Laoac East
+874	Vintar	Vintar
+875	Luuk	Luuk
+876	Mendez-Nuñez	Mendez-Nunez
+877	Igbaras	Igbaras
+878	San Manuel	San Manuel
+879	San Luis	San Luis
+880	Balimbing	Balimbing
+881	Trinidad	Trinidad
+882	Midsalip	Midsalip
+883	Naguilian	Naguilian
+884	Milaor	Milaor
+885	Pinukpuk	Pinukpuk
+886	Badoc	Badoc
+887	San Remigio	San Remigio
+888	San Isidro	San Isidro
+889	Payao	Payao
+890	Kalingalan Caluang	Kalingalan Caluang
+891	Cantilan	Cantilan
+892	Lingig	Lingig
+893	Calubian	Calubian
+894	Balungao	Balungao
+895	Simunul	Simunul
+896	Lumbang	Lumbang
+897	Moalboal	Moalboal
+898	Abra de Ilog	Abra de Ilog
+899	Calape	Calape
+900	Bauko	Bauko
+901	Balatan	Balatan
+902	San Vicente	San Vicente
+903	Getafe	Getafe
+904	Jimalalud	Jimalalud
+905	Magsingal	Magsingal
+906	Santa Maria	Santa Maria
+907	Lemery	Lemery
+908	Sapa Sapa	Sapa Sapa
+909	Santa Maria	Santa Maria
+910	San Roque	San Roque
+911	Catmon	Catmon
+912	Simbahan	Simbahan
+913	Polillo	Polillo
+914	Torrijos	Torrijos
+915	Mallig	Mallig
+916	San Jacinto	San Jacinto
+917	Mataas Na Kahoy	Mataas Na Kahoy
+918	Sibagat	Sibagat
+919	Sibutu	Sibutu
+920	Talusan	Talusan
+921	Sigma	Sigma
+922	Damulog	Damulog
+923	Buguey	Buguey
+924	Dimataling	Dimataling
+925	Sergio Osmeña Sr	Sergio Osmena Sr
+926	Talayan	Talayan
+927	Buenavista	Buenavista
+928	Peñaranda	Penaranda
+929	Merida	Merida
+930	Caramoran	Caramoran
+931	Hinunangan	Hinunangan
+932	Gamu	Gamu
+933	Barira	Barira
+934	Claveria	Claveria
+935	Alubijid	Alubijid
+936	President Roxas	President Roxas
+937	Morong	Morong
+938	Pantabangan	Pantabangan
+939	Calintaan	Calintaan
+940	Matanog	Matanog
+941	Dipaculao	Dipaculao
+942	Benito Soliven	Benito Soliven
+943	Candijay	Candijay
+944	Dumalag	Dumalag
+945	General Nakar	General Nakar
+946	Lianga	Lianga
+947	Santa Fe	Santa Fe
+948	Ivisan	Ivisan
+949	Tandubas	Tandubas
+950	Dolores	Dolores
+951	Masiu	Masiu
+952	Tubao	Tubao
+953	Dasol	Dasol
+954	Balindong	Balindong
+955	Tudela	Tudela
+956	Bontoc	Bontoc
+957	Balete	Balete
+958	Pasuquin	Pasuquin
+959	New Panamao	New Panamao
+960	Salay	Salay
+961	Lavezares	Lavezares
+962	Anilao	Anilao
+963	Pulupandan	Pulupandan
+964	Siraway	Siraway
+965	San Narciso	San Narciso
+966	Saint Bernard	Saint Bernard
+967	Licab	Licab
+968	Kumalarang	Kumalarang
+969	Manticao	Manticao
+970	Datu Paglas	Datu Paglas
+971	San Miguel	San Miguel
+972	Villareal	Villareal
+973	Santo Domingo	Santo Domingo
+974	San Jose	San Jose
+975	Las Nieves	Las Nieves
+976	Macalelon	Macalelon
+977	Libacao	Libacao
+978	Sexmoan	Sexmoan
+979	La Paz	La Paz
+980	Agno	Agno
+981	Majayjay	Majayjay
+982	Paracelis	Paracelis
+983	Iguig	Iguig
+984	Bien Unido	Bien Unido
+985	Oslob	Oslob
+986	Pantao-Ragat	Pantao-Ragat
+987	Babatngon	Babatngon
+988	Dauin	Dauin
+989	Jimenez	Jimenez
+990	Aglipay	Aglipay
+991	Zamboanguita	Zamboanguita
+992	Aloran	Aloran
+993	Mahaplag	Mahaplag
+994	Sumilao	Sumilao
+995	Makato	Makato
+996	Cuartero	Cuartero
+997	Dupax Del Norte	Dupax Del Norte
+998	Ponot	Ponot
+999	Buenavista	Buenavista
+1000	Placer	Placer
+1001	Pilar	Pilar
+1002	Reina Mercedes Viejo	Reina Mercedes Viejo
+1003	Mabini	Mabini
+1004	San Luis	San Luis
+1005	Valencia	Valencia
+1006	Badiangan	Badiangan
+1007	Lapuyan	Lapuyan
+1008	Pitogo	Pitogo
+1009	Santo Niño	Santo Nino
+1010	Candelaria	Candelaria
+1011	Kolambugan	Kolambugan
+1012	Poona-Piagapo	Poona-Piagapo
+1013	Garchitorena	Garchitorena
+1014	Unisan	Unisan
+1015	Bagac	Bagac
+1016	Mainit	Mainit
+1017	Balabagan	Balabagan
+1018	Padada	Padada
+1019	Tibiao	Tibiao
+1020	Burdeos	Burdeos
+1021	Ramon Magsaysay	Ramon Magsaysay
+1022	San Juan	San Juan
+1023	Monreal	Monreal
+1024	Santa Josefa	Santa Josefa
+1025	General Luna	General Luna
+1026	Ragan Sur	Ragan Sur
+1027	San Isidro	San Isidro
+1028	Basay	Basay
+1029	Kauswagan	Kauswagan
+1030	Talisay	Talisay
+1031	Santa Margarita	Santa Margarita
+1032	Macrohon	Macrohon
+1033	Palanas	Palanas
+1034	Dimasalang	Dimasalang
+1035	Lauaan	Lauaan
+1036	Leon Postigo	Leon Postigo
+1037	Alitagtag	Alitagtag
+1038	Tarragona	Tarragona
+1039	San Pablo	San Pablo
+1040	Magarao	Magarao
+1041	Baleno	Baleno
+1042	San Manuel	San Manuel
+1043	Conner	Conner
+1044	Zarraga	Zarraga
+1045	Sapian	Sapian
+1046	Pandami	Pandami
+1047	Sinait	Sinait
+1048	South Ubian	South Ubian
+1049	Tamparan	Tamparan
+1050	Allen	Allen
+1051	Quezon	Quezon
+1052	Magdalena	Magdalena
+1053	Santa Lucia	Santa Lucia
+1054	Tabuelan	Tabuelan
+1055	Datu Piang	Datu Piang
+1056	Sarrat	Sarrat
+1057	Poro	Poro
+1058	Dingalan	Dingalan
+1059	Santa Maria	Santa Maria
+1060	Paete	Paete
+1061	Bugho	Bugho
+1062	Del Gallego	Del Gallego
+1063	Piagapo	Piagapo
+1064	Lamut	Lamut
+1065	San Pablo	San Pablo
+1066	Pandag	Pandag
+1067	Tabina	Tabina
+1068	Lopez Jaena	Lopez Jaena
+1069	Cabangan	Cabangan
+1070	Camalaniugan	Camalaniugan
+1071	San Isidro	San Isidro
+1072	Paoay	Paoay
+1073	Tarangnan	Tarangnan
+1074	Tubay	Tubay
+1075	Saguiaran	Saguiaran
+1076	Lagindingan	Lagindingan
+1077	Manito	Manito
+1078	Ampatuan	Ampatuan
+1079	Sierra Bullones	Sierra Bullones
+1080	Mabini	Mabini
+1081	Altavas	Altavas
+1082	Pangil	Pangil
+1083	San Enrique	San Enrique
+1084	Quirino	Quirino
+1085	Talisayan	Talisayan
+1086	Sanchez-Mira	Sanchez-Mira
+1087	Tairan Camp	Tairan Camp
+1088	Infanta	Infanta
+1089	Maguing	Maguing
+1090	Malitbog	Malitbog
+1091	Tamilisan	Tamilisan
+1092	Natividad	Natividad
+1093	Pura	Pura
+1094	Poblacion	Poblacion
+1095	Garcia Hernandez	Garcia Hernandez
+1096	Casiguran	Casiguran
+1097	San Miguel	San Miguel
+1098	Santiago	Santiago
+1099	Sarangani	Sarangani
+1100	Buenavista	Buenavista
+1101	Solsona	Solsona
+1102	San Nicolas	San Nicolas
+1103	Burgos	Burgos
+1104	Mina	Mina
+1105	Talugtug	Talugtug
+1106	Bayang	Bayang
+1107	Dapa	Dapa
+1108	Pagudpud	Pagudpud
+1109	Bobon	Bobon
+1110	Ayuquitan	Ayuquitan
+1111	Tugaya	Tugaya
+1112	Dumaran	Dumaran
+1113	Pitogo	Pitogo
+1114	Dancagan	Dancagan
+1115	Kalayaan	Kalayaan
+1116	Lucena	Lucena
+1117	Piat	Piat
+1118	Kayapa	Kayapa
+1119	Kalawit	Kalawit
+1120	Pamplona	Pamplona
+1121	Alicia	Alicia
+1122	Gamay	Gamay
+1123	Taraka	Taraka
+1124	Balete	Balete
+1125	Alegria	Alegria
+1126	Ternate	Ternate
+1127	Nagtipunan	Nagtipunan
+1128	Limbuhan	Limbuhan
+1129	Labrador	Labrador
+1130	San Felipe	San Felipe
+1131	San Fernando	San Fernando
+1132	Santo Tomas	Santo Tomas
+1133	San Fernando	San Fernando
+1134	Pitogo	Pitogo
+1135	Malinao	Malinao
+1136	Jabonga	Jabonga
+1137	Bacolod	Bacolod
+1138	Maibog	Maibog
+1139	Madalum	Madalum
+1140	Bulusan	Bulusan
+1141	Ganassi	Ganassi
+1142	Calbiga	Calbiga
+1143	San Agustin	San Agustin
+1144	Baroy	Baroy
+1145	Prieto Diaz	Prieto Diaz
+1146	Catigbian	Catigbian
+1147	Oteiza	Oteiza
+1148	Barbasa	Barbasa
+1149	Caibiran	Caibiran
+1150	Padre Burgos	Padre Burgos
+1151	San Agustin	San Agustin
+1152	Salcedo	Salcedo
+1153	Tubungan	Tubungan
+1154	Doña Remedios Trinidad	Dona Remedios Trinidad
+1155	Sagbayan	Sagbayan
+1156	Baliguian	Baliguian
+1157	Cuyo	Cuyo
+1158	Carrascal	Carrascal
+1159	Caba	Caba
+1160	Socorro	Socorro
+1161	Looc	Looc
+1162	Santa Teresita	Santa Teresita
+1163	Bubong	Bubong
+1164	Patian	Patian
+1165	Ramain	Ramain
+1166	Gata	Gata
+1167	Ramos	Ramos
+1168	Tangalan	Tangalan
+1169	Binidayan	Binidayan
+1170	Busuanga	Busuanga
+1171	Pantar	Pantar
+1172	Lugus	Lugus
+1173	Cajidiocan	Cajidiocan
+1174	Banaue	Banaue
+1175	Lagonglong	Lagonglong
+1176	Tolosa	Tolosa
+1177	Candoni	Candoni
+1178	Calamba	Calamba
+1179	Maigo	Maigo
+1180	Cavinti	Cavinti
+1181	Burgos	Burgos
+1182	Viga	Viga
+1183	Bato	Bato
+1184	Batad	Batad
+1185	Piddig	Piddig
+1186	MacArthur	MacArthur
+1187	Anini-y	Anini-y
+1188	Magallanes	Magallanes
+1189	Naawan	Naawan
+1190	Marogong	Marogong
+1191	Samboan	Samboan
+1192	Hindang	Hindang
+1193	Barcelona	Barcelona
+1194	Baclayon	Baclayon
+1195	Cabucgayan	Cabucgayan
+1196	Quezon	Quezon
+1197	Tigbao	Tigbao
+1198	Parabcan	Parabcan
+1199	Pakil	Pakil
+1200	Can-Avid	Can-Avid
+1201	Gigaquit	Gigaquit
+1202	Caoayan	Caoayan
+1203	Maribojoc	Maribojoc
+1204	Guipos	Guipos
+1205	Carmen	Carmen
+1206	Santa Fe	Santa Fe
+1207	San Jose	San Jose
+1208	Mabitac	Mabitac
+1209	Lazi	Lazi
+1210	Inopacan	Inopacan
+1211	Ronda	Ronda
+1212	Clarin	Clarin
+1213	Pandan	Pandan
+1214	Kawayan	Kawayan
+1215	Linamon	Linamon
+1216	Cagwait	Cagwait
+1217	Lugait	Lugait
+1218	Rancheria Payau	Rancheria Payau
+1219	Piñan	Pinan
+1220	La Paz	La Paz
+1221	San Guillermo	San Guillermo
+1222	Tuburan	Tuburan
+1223	Sapang Dalaga	Sapang Dalaga
+1224	Llorente	Llorente
+1225	Culion	Culion
+1226	Pugo	Pugo
+1227	Luisiana	Luisiana
+1228	Atok	Atok
+1229	Luna	Luna
+1230	Malabuyoc	Malabuyoc
+1231	Espiritu	Espiritu
+1232	San Miguel	San Miguel
+1233	Tipo-Tipo	Tipo-Tipo
+1234	Tadian	Tadian
+1235	Kapangan	Kapangan
+1236	Aguinaldo	Aguinaldo
+1237	Dagohoy	Dagohoy
+1238	Butig	Butig
+1239	San Miguel	San Miguel
+1240	Buruanga	Buruanga
+1241	Valderrama	Valderrama
+1242	Santiago	Santiago
+1243	Dupax del Sur	Dupax del Sur
+1244	Santa Teresita	Santa Teresita
+1245	Magsaysay	Magsaysay
+1246	Lumbatan	Lumbatan
+1247	Luna	Luna
+1248	Taft	Taft
+1249	Lubang	Lubang
+1250	Kapay	Kapay
+1251	Esperanza	Esperanza
+1252	Cabusao	Cabusao
+1253	Kitcharao	Kitcharao
+1254	Villa Verde	Villa Verde
+1255	Jiabong	Jiabong
+1256	Marihatag	Marihatag
+1257	Sinacaban	Sinacaban
+1258	Matagob	Matagob
+1259	Del Carmen	Del Carmen
+1260	Tingloy	Tingloy
+1261	Madalag	Madalag
+1262	Nunuñgan	Nunungan
+1263	Banting	Banting
+1264	Santander	Santander
+1265	Pinabacdao	Pinabacdao
+1266	San Gabriel	San Gabriel
+1267	Malimono	Malimono
+1268	Diadi	Diadi
+1269	Pastrana	Pastrana
+1270	San Jose	San Jose
+1271	Rizal	Rizal
+1272	Sebaste	Sebaste
+1273	Tublay	Tublay
+1274	Duero	Duero
+1275	Balilihan	Balilihan
+1276	Marcos	Marcos
+1277	Danao	Danao
+1278	San Teodoro	San Teodoro
+1279	Sibutao	Sibutao
+1280	Siruma	Siruma
+1281	Rizal	Rizal
+1282	Libjo	Libjo
+1283	Madamba	Madamba
+1284	Bilar	Bilar
+1285	Cortes	Cortes
+1286	Mayorga	Mayorga
+1287	Pinili	Pinili
+1288	Jovellar	Jovellar
+1289	Flora	Flora
+1290	Mayoyao	Mayoyao
+1291	Tumbao	Tumbao
+1292	Baliangao	Baliangao
+1293	Cervantes	Cervantes
+1294	Bucay	Bucay
+1295	Palanan	Palanan
+1296	San Jorge	San Jorge
+1297	Alcoy	Alcoy
+1298	Almeria	Almeria
+1299	Santa Magdalena	Santa Magdalena
+1300	Sudipen	Sudipen
+1301	General Luna	General Luna
+1302	Kiangan	Kiangan
+1303	Biliran	Biliran
+1304	Rizal	Rizal
+1305	Catarman	Catarman
+1306	Bombon	Bombon
+1307	Marabut	Marabut
+1308	Loay	Loay
+1309	Tomas Oppus	Tomas Oppus
+1310	Famy	Famy
+1311	Cagdianao	Cagdianao
+1312	Calayan	Calayan
+1313	San Rafael	San Rafael
+1314	Gitagum	Gitagum
+1315	Anda	Anda
+1316	Zumarraga	Zumarraga
+1317	Tagana-an	Tagana-an
+1318	Tinoc	Tinoc
+1319	Alcantara	Alcantara
+1320	Libertad	Libertad
+1321	Boljoon	Boljoon
+1322	Lumbayanague	Lumbayanague
+1323	Saguday	Saguday
+1324	Santa Fe	Santa Fe
+1325	Loboc	Loboc
+1326	Alegria	Alegria
+1327	Santa Fe	Santa Fe
+1328	Buadiposo-Buntong	Buadiposo-Buntong
+1329	San Tomas	San Tomas
+1330	Ginatilan	Ginatilan
+1331	Arteche	Arteche
+1332	Mulundo	Mulundo
+1333	Paluan	Paluan
+1334	Cortes	Cortes
+1335	Paglat	Paglat
+1336	Alabat	Alabat
+1337	Dilasag	Dilasag
+1338	Leso	Leso
+1339	San Miguel	San Miguel
+1340	La Paz	La Paz
+1341	Despujols	Despujols
+1342	Alcantara	Alcantara
+1343	Santa	Santa
+1344	Sulat	Sulat
+1345	Quezon	Quezon
+1346	Bakun	Bakun
+1347	Julita	Julita
+1348	Santa Catalina	Santa Catalina
+1349	Bingawan	Bingawan
+1350	Silvino Lobos	Silvino Lobos
+1351	Batuan	Batuan
+1352	Ambaguio	Ambaguio
+1353	Kabayan	Kabayan
+1354	Libagon	Libagon
+1355	Tankal	Tankal
+1356	Motiong	Motiong
+1357	Nampicuan	Nampicuan
+1358	San Juan	San Juan
+1359	San Miguel	San Miguel
+1360	San Juan	San Juan
+1361	Araceli	Araceli
+1362	Pudtol	Pudtol
+1363	Quinapundan	Quinapundan
+1364	Victoria	Victoria
+1365	San Policarpo	San Policarpo
+1366	Anao-aon	Anao-aon
+1367	Bangui	Bangui
+1368	Tubaran	Tubaran
+1369	Maydolong	Maydolong
+1370	Lope de Vega	Lope de Vega
+1371	Kinogitan	Kinogitan
+1372	Patnanungan	Patnanungan
+1373	Tayum	Tayum
+1374	General MacArthur	General MacArthur
+1375	Bacuag	Bacuag
+1376	San Julian	San Julian
+1377	Antequera	Antequera
+1378	Tubod	Tubod
+1379	Dimiao	Dimiao
+1380	Mahinog	Mahinog
+1381	Lagangilang	Lagangilang
+1382	Magdiwang	Magdiwang
+1383	Matungao	Matungao
+1384	Belison	Belison
+1385	Rizal	Rizal
+1386	Balangiga	Balangiga
+1387	Mapanas	Mapanas
+1388	Larena	Larena
+1389	Maria	Maria
+1390	Sampaloc	Sampaloc
+1391	Calanogas	Calanogas
+1392	Bokod	Bokod
+1393	San Vicente	San Vicente
+1394	Hinabangan	Hinabangan
+1395	Santa Marcela	Santa Marcela
+1396	Panukulan	Panukulan
+1397	Dakit	Dakit
+1398	Bagulin	Bagulin
+1399	Boston	Boston
+1400	Giporlos	Giporlos
+1401	Tagoloan	Tagoloan
+1402	Sison	Sison
+1403	Santo Niño	Santo Nino
+1404	Agdangan	Agdangan
+1405	Lapinig	Lapinig
+1406	Tatarikan	Tatarikan
+1407	Capul	Capul
+1408	Baras	Baras
+1409	Pualas	Pualas
+1410	Batuan	Batuan
+1411	Tinglayan	Tinglayan
+1412	Sagay	Sagay
+1413	San Clemente	San Clemente
+1414	Libertad	Libertad
+1415	Agutaya	Agutaya
+1416	Mutia	Mutia
+1417	Silago	Silago
+1418	Lawaan	Lawaan
+1419	Calanasan	Calanasan
+1420	Santol	Santol
+1421	Lila	Lila
+1422	Currimao	Currimao
+1423	Burgos	Burgos
+1424	Culaba	Culaba
+1425	Hinundayan	Hinundayan
+1426	Magsaysay	Magsaysay
+1427	Pidigan	Pidigan
+1428	Perez	Perez
+1429	Biri	Biri
+1430	Balbalan	Balbalan
+1431	Lanuza	Lanuza
+1432	Gainza	Gainza
+1433	Anao	Anao
+1434	Josefina	Josefina
+1435	Bagamanoc	Bagamanoc
+1436	Tabontabon	Tabontabon
+1437	Pilar	Pilar
+1438	Tudela	Tudela
+1439	Sablan	Sablan
+1440	Dolores	Dolores
+1441	Suyo	Suyo
+1442	Padre Burgos	Padre Burgos
+1443	Salcedo	Salcedo
+1444	Agcogon	Agcogon
+1445	Sagada	Sagada
+1446	Plaridel	Plaridel
+1447	Balingoan	Balingoan
+1448	Tagoloan	Tagoloan
+1449	Galimuyod	Galimuyod
+1450	Concepcion	Concepcion
+1451	Alburquerque	Alburquerque
+1452	Manabo	Manabo
+1453	Rosario	Rosario
+1454	Sevilla	Sevilla
+1455	San Ricardo	San Ricardo
+1456	Dinagat	Dinagat
+1457	Corcuera	Corcuera
+1458	San Vicente	San Vicente
+1459	Panaon	Panaon
+1460	Carmen	Carmen
+1461	Calatrava	Calatrava
+1462	Pilar	Pilar
+1463	Natonin	Natonin
+1464	Looc	Looc
+1465	Balangkayan	Balangkayan
+1466	Pintuyan	Pintuyan
+1467	San Juan	San Juan
+1468	Pilar	Pilar
+1469	Burgos	Burgos
+1470	Pasil	Pasil
+1471	Sugbongkogon	Sugbongkogon
+1472	Tanudan	Tanudan
+1473	Nueva Era	Nueva Era
+1474	Sabangan	Sabangan
+1475	Hunduan	Hunduan
+1476	Panganiban	Panganiban
+1477	San Antonio	San Antonio
+1478	Hingyon	Hingyon
+1479	Loreto	Loreto
+1480	Almagro	Almagro
+1481	Sadanga	Sadanga
+1482	San Isidro	San Isidro
+1483	San Esteban	San Esteban
+1484	Lubuagan	Lubuagan
+1485	Tagapul-an	Tagapul-an
+1486	Hernani	Hernani
+1487	Corella	Corella
+1488	Quirino	Quirino
+1489	Tunga	Tunga
+1490	Libertad	Libertad
+1491	San Ildefonso	San Ildefonso
+1492	Gigmoto	Gigmoto
+1493	Tubajon	Tubajon
+1494	San Vicente	San Vicente
+1495	Anahawan	Anahawan
+1496	Talalora	Talalora
+1497	San Sebastian	San Sebastian
+1498	Bayabas	Bayabas
+1499	Pagsanghan	Pagsanghan
+1500	Burgos	Burgos
+1501	Banayoyo	Banayoyo
+1502	Alfonso Castañeda	Alfonso Castaneda
+1503	Hipadpad	Hipadpad
+1504	San Jose de Buan	San Jose de Buan
+1505	Binuangan	Binuangan
+1506	Rizal	Rizal
+1507	San Isidro	San Isidro
+1508	San Emilio	San Emilio
+1509	Maripipi	Maripipi
+1510	Matuguinao	Matuguinao
+1511	Ferrol	Ferrol
+1512	Besao	Besao
+1513	Limasawa	Limasawa
+1514	Sikatuna	Sikatuna
+1515	Peñarrubia	Penarrubia
+1516	Alilem	Alilem
+1517	Sallapadan	Sallapadan
+1518	Guinisiliban	Guinisiliban
+1519	Cagayancillo	Cagayancillo
+1520	Luba	Luba
+1521	Mercedes	Mercedes
+1522	Enrique Villanueva	Enrique Villanueva
+1523	Tubo	Tubo
+1524	Jones	Jones
+1525	Divilaca	Divilaca
+1526	San Benito	San Benito
+1527	San Quintin	San Quintin
+1528	Villaviciosa	Villaviciosa
+1529	Maslog	Maslog
+1530	Nagbukel	Nagbukel
+1531	Tineg	Tineg
+1532	Dinapigue	Dinapigue

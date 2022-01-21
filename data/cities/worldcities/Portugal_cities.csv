@@ -1,0 +1,234 @@
+	city	city_ascii
+0	Lisbon	Lisbon
+1	Sintra	Sintra
+2	Vila Nova de Gaia	Vila Nova de Gaia
+3	Porto	Porto
+4	Amadora	Amadora
+5	Braga	Braga
+6	Matosinhos	Matosinhos
+7	Almada	Almada
+8	Oeiras	Oeiras
+9	Gondomar	Gondomar
+10	Guimarães	Guimaraes
+11	Odivelas	Odivelas
+12	Coimbra	Coimbra
+13	Vila Franca de Xira	Vila Franca de Xira
+14	Maia	Maia
+15	Setúbal	Setubal
+16	Funchal	Funchal
+17	Viseu	Viseu
+18	Queluz	Queluz
+19	Viana do Castelo	Viana do Castelo
+20	Aveiro	Aveiro
+21	Ponta Delgada	Ponta Delgada
+22	Faro	Faro
+23	Santarém	Santarem
+24	Évora	Evora
+25	Castelo Branco	Castelo Branco
+26	Rio Tinto	Rio Tinto
+27	Vila Real	Vila Real
+28	Corroios	Corroios
+29	Leiria	Leiria
+30	Mafamude	Mafamude
+31	Ermezinde	Ermezinde
+32	Cacém	Cacem
+33	Guarda	Guarda
+34	Agualva	Agualva
+35	Massamá	Massama
+36	Beja	Beja
+37	Bragança	Braganca
+38	Estoril	Estoril
+39	Portalegre	Portalegre
+40	Falagueira	Falagueira
+41	São João da Madeira	Sao Joao da Madeira
+42	Sacavém	Sacavem
+43	Valadares	Valadares
+44	Valongo	Valongo
+45	Paredes	Paredes
+46	Vila do Conde	Vila do Conde
+47	Torres Vedras	Torres Vedras
+48	Mafra	Mafra
+49	Penafiel	Penafiel
+50	Loulé	Loule
+51	Moita	Moita
+52	Póvoa de Varzim	Povoa de Varzim
+53	Palmela	Palmela
+54	Figueira da Foz	Figueira da Foz
+55	Felgueiras	Felgueiras
+56	Paços de Ferreira	Pacos de Ferreira
+57	Portimão	Portimao
+58	Pombal	Pombal
+59	Marco de Canavezes	Marco de Canavezes
+60	Caldas da Rainha	Caldas da Rainha
+61	Covilhã	Covilha
+62	Montijo	Montijo
+63	Fafe	Fafe
+64	Amora	Amora
+65	Sesimbra	Sesimbra
+66	Vila Verde	Vila Verde
+67	Lousada	Lousada
+68	Ourém	Ourem
+69	Olhão	Olhao
+70	Santa Cruz	Santa Cruz
+71	Ponte de Lima	Ponte de Lima
+72	Chaves	Chaves
+73	Ílhavo	Ilhavo
+74	Tomar	Tomar
+75	Trofa	Trofa
+76	Silves	Silves
+77	Torres Novas	Torres Novas
+78	Câmara de Lobos	Camara de Lobos
+79	Angra do Heroísmo	Angra do Heroismo
+80	Esposende	Esposende
+81	Espinho	Espinho
+82	Ribeira Grande	Ribeira Grande
+83	Lagos	Lagos
+84	Anadia	Anadia
+85	Benavente	Benavente
+86	Estarreja	Estarreja
+87	Lamego	Lamego
+88	Montemor-o-Velho	Montemor-o-Velho
+89	Tavira	Tavira
+90	Odemira	Odemira
+91	Albergaria-a-Velha	Albergaria-a-Velha
+92	Vizela	Vizela
+93	Porto de Mós	Porto de Mos
+94	Mirandela	Mirandela
+95	Caniço	Canico
+96	Oliveira do Bairro	Oliveira do Bairro
+97	Vale de Cambra	Vale de Cambra
+98	Arcos de Valdevez	Arcos de Valdevez
+99	Póvoa de Lanhoso	Povoa de Lanhoso
+100	Azambuja	Azambuja
+101	Entroncamento	Entroncamento
+102	Alfena	Alfena
+103	Rio Maior	Rio Maior
+104	Praia da Vitória	Praia da Vitoria
+105	Elvas	Elvas
+106	Baião	Baiao
+107	Cinfães	Cinfaes
+108	Celorico de Basto	Celorico de Basto
+109	Vila Real de Santo António	Vila Real de Santo Antonio
+110	Monção	Moncao
+111	Soure	Soure
+112	Amares	Amares
+113	Lousã	Lousa
+114	Alcochete	Alcochete
+115	Montemor-o-Novo	Montemor-o-Novo
+116	Peso da Régua	Peso da Regua
+117	Condeixa-a-Nova	Condeixa-a-Nova
+118	São Pedro do Sul	Sao Pedro do Sul
+119	Cabeceiras de Basto	Cabeceiras de Basto
+120	Ponte de Sôr	Ponte de Sor
+121	Quarteira	Quarteira
+122	Sertã	Serta
+123	Macedo de Cavaleiros	Macedo de Cavaleiros
+124	Serpa	Serpa
+125	Castro Daire	Castro Daire
+126	Nazaré	Nazare
+127	Penacova	Penacova
+128	Moura	Moura
+129	Horta	Horta
+130	Gafanha da Nazaré	Gafanha da Nazare
+131	Cadaval	Cadaval
+132	Estremoz	Estremoz
+133	Sines	Sines
+134	Valença	Valenca
+135	Nelas	Nelas
+136	Gouveia	Gouveia
+137	Arcozelo	Arcozelo
+138	Arruda dos Vinhos	Arruda dos Vinhos
+139	Ribeira Brava	Ribeira Brava
+140	Vila Pouca de Aguiar	Vila Pouca de Aguiar
+141	Ansião	Ansiao
+142	Miranda do Corvo	Miranda do Corvo
+143	Vieira do Minho	Vieira do Minho
+144	Alcácer do Sal	Alcacer do Sal
+145	Costa de Caparica	Costa de Caparica
+146	Mira	Mira
+147	Sátão	Satao
+148	Sever do Vouga	Sever do Vouga
+149	Tábua	Tabua
+150	Alijó	Alijo
+151	Vendas Novas	Vendas Novas
+152	Óbidos	Obidos
+153	Calheta	Calheta
+154	Resende	Resende
+155	Vila Franca do Campo	Vila Franca do Campo
+156	Reguengos de Monsaraz	Reguengos de Monsaraz
+157	São Brás de Alportel	Sao Bras de Alportel
+158	Murtosa	Murtosa
+159	Aver-o-Mar	Aver-o-Mar
+160	Sobral de Monte Agraço	Sobral de Monte Agraco
+161	Moimenta da Beira	Moimenta da Beira
+162	Carregal do Sal	Carregal do Sal
+163	Trancoso	Trancoso
+164	Idanha-a-Nova	Idanha-a-Nova
+165	Pinhel	Pinhel
+166	Argoncilhe	Argoncilhe
+167	Castelões de Cepeda	Casteloes de Cepeda
+168	Melgaço	Melgaco
+169	Almargem	Almargem
+170	Vinhais	Vinhais
+171	Ponta do Sol	Ponta do Sol
+172	Ferreira do Zêzere	Ferreira do Zezere
+173	Torre de Moncorvo	Torre de Moncorvo
+174	Joane	Joane
+175	Campo Maior	Campo Maior
+176	Vila Viçosa	Vila Vicosa
+177	Proença-a-Nova	Proenca-a-Nova
+178	Tarouca	Tarouca
+179	Penalva do Castelo	Penalva do Castelo
+180	São João da Pesqueira	Sao Joao da Pesqueira
+181	Santana	Santana
+182	Alpiarça	Alpiarca
+183	Celorico da Beira	Celorico da Beira
+184	Mondim de Basto	Mondim de Basto
+185	Miranda do Douro	Miranda do Douro
+186	Nisa	Nisa
+187	Almodôvar	Almodovar
+188	Arraiolos	Arraiolos
+189	Poiares	Poiares
+190	Santa Marta de Penaguião	Santa Marta de Penaguiao
+191	Alvaiázere	Alvaiazere
+192	Vila Nova da Barquinha	Vila Nova da Barquinha
+193	Vila Nova de Foz Côa	Vila Nova de Foz Coa
+194	Castro Verde	Castro Verde
+195	Mértola	Mertola
+196	Terras de Bouro	Terras de Bouro
+197	Almeida	Almeida
+198	Redondo	Redondo
+199	Celeiroz	Celeiroz
+200	Castro Marim	Castro Marim
+201	Ribeira de Pena	Ribeira de Pena
+202	São Martinho	Sao Martinho
+203	Portel	Portel
+204	Sabrosa	Sabrosa
+205	Tabuaço	Tabuaco
+206	Carrazeda de Anciães	Carrazeda de Anciaes
+207	Povoação	Povoacao
+208	Armamar	Armamar
+209	Olival	Olival
+210	Figueira de Castelo Rodrigo	Figueira de Castelo Rodrigo
+211	Madalena	Madalena
+212	Monchique	Monchique
+213	Penela	Penela
+214	Murça	Murca
+215	Vidigueira	Vidigueira
+216	Aljezur	Aljezur
+217	Alandroal	Alandroal
+218	Riachos	Riachos
+219	Viana do Alentejo	Viana do Alentejo
+220	Oleiros	Oleiros
+221	Penamacor	Penamacor
+222	Vila do Porto	Vila do Porto
+223	Golegã	Golega
+224	Aguiar da Beira	Aguiar da Beira
+225	Vila de Porto Santo	Vila de Porto Santo
+226	Velas	Velas
+227	Ourique	Ourique
+228	Terrujem	Terrujem
+229	Vila do Bispo	Vila do Bispo
+230	Vila Nova de Paiva	Vila Nova de Paiva
+231	Alfândega da Fé	Alfandega da Fe
+232	Sousel	Sousel

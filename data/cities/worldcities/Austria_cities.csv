@@ -1,0 +1,238 @@
+	city	city_ascii
+0	Vienna	Vienna
+1	Graz	Graz
+2	Linz	Linz
+3	Salzburg	Salzburg
+4	Innsbruck	Innsbruck
+5	Klagenfurt	Klagenfurt
+6	Bregenz	Bregenz
+7	Mödling	Modling
+8	Hall in Tirol	Hall in Tirol
+9	Eisenstadt	Eisenstadt
+10	Sankt Pölten	Sankt Polten
+11	Wels	Wels
+12	Dornbirn	Dornbirn
+13	Wiener Neustadt	Wiener Neustadt
+14	Steyr	Steyr
+15	Leonding	Leonding
+16	Klosterneuburg	Klosterneuburg
+17	Traun	Traun
+18	Wolfsberg	Wolfsberg
+19	Krems an der Donau	Krems an der Donau
+20	Leoben	Leoben
+21	Amstetten	Amstetten
+22	Lustenau	Lustenau
+23	Kapfenberg	Kapfenberg
+24	Hallein	Hallein
+25	Kufstein	Kufstein
+26	Traiskirchen	Traiskirchen
+27	Schwechat	Schwechat
+28	Stockerau	Stockerau
+29	Braunau am Inn	Braunau am Inn
+30	Hohenems	Hohenems
+31	Saalfelden am Steinernen Meer	Saalfelden am Steinernen Meer
+32	Ansfelden	Ansfelden
+33	Bruck an der Mur	Bruck an der Mur
+34	Perchtoldsdorf	Perchtoldsdorf
+35	Telfs	Telfs
+36	Spittal an der Drau	Spittal an der Drau
+37	Bludenz	Bludenz
+38	Ternitz	Ternitz
+39	Wörgl	Worgl
+40	Feldkirchen	Feldkirchen
+41	Korneuburg	Korneuburg
+42	Hard	Hard
+43	Bad Ischl	Bad Ischl
+44	Marchtrenk	Marchtrenk
+45	Schwaz	Schwaz
+46	Feldbach	Feldbach
+47	Knittelfeld	Knittelfeld
+48	Neunkirchen	Neunkirchen
+49	Brunn am Gebirge	Brunn am Gebirge
+50	Gmunden	Gmunden
+51	Vöcklabruck	Vocklabruck
+52	Sankt Veit an der Glan	Sankt Veit an der Glan
+53	Leibnitz	Leibnitz
+54	Lienz	Lienz
+55	Rankweil	Rankweil
+56	Ried im Innkreis	Ried im Innkreis
+57	Enns	Enns
+58	Götzis	Gotzis
+59	Bad Vöslau	Bad Voslau
+60	Weiz	Weiz
+61	Gänserndorf	Ganserndorf
+62	Hollabrunn	Hollabrunn
+63	Deutschlandsberg	Deutschlandsberg
+64	Mistelbach	Mistelbach
+65	Gerasdorf bei Wien	Gerasdorf bei Wien
+66	Waidhofen an der Ybbs	Waidhofen an der Ybbs
+67	Sankt Johann im Pongau	Sankt Johann im Pongau
+68	Groß-Enzersdorf	Gross-Enzersdorf
+69	Trofaiach	Trofaiach
+70	Ebreichsdorf	Ebreichsdorf
+71	Gleisdorf	Gleisdorf
+72	Völkermarkt	Volkermarkt
+73	Wiener Neudorf	Wiener Neudorf
+74	Zwettl	Zwettl
+75	Strasshof an der Nordbahn	Strasshof an der Nordbahn
+76	Lauterach	Lauterach
+77	Bischofshofen	Bischofshofen
+78	Imst	Imst
+79	Maria Enzersdorf	Maria Enzersdorf
+80	Köflach	Koflach
+81	Rum	Rum
+82	Laakirchen	Laakirchen
+83	Judenburg	Judenburg
+84	Sankt Andrä	Sankt Andra
+85	Purkersdorf	Purkersdorf
+86	Zell am See	Zell am See
+87	Altmünster	Altmunster
+88	Guntramsdorf	Guntramsdorf
+89	Voitsberg	Voitsberg
+90	Attnang-Puchheim	Attnang-Puchheim
+91	Sierning	Sierning
+92	Sankt Johann in Tirol	Sankt Johann in Tirol
+93	Sankt Valentin	Sankt Valentin
+94	Wolfurt	Wolfurt
+95	Velden am Wörthersee	Velden am Worthersee
+96	Engerwitzdorf	Engerwitzdorf
+97	Deutsch-Wagram	Deutsch-Wagram
+98	Langenzersdorf	Langenzersdorf
+99	Mürzzuschlag	Murzzuschlag
+100	Stainz	Stainz
+101	Fürstenfeld	Furstenfeld
+102	Perg	Perg
+103	Wattens	Wattens
+104	Freistadt	Freistadt
+105	Neulengbach	Neulengbach
+106	Kitzbühel	Kitzbuhel
+107	Höchst	Hochst
+108	Neusiedl am See	Neusiedl am See
+109	Zirl	Zirl
+110	Seiersberg	Seiersberg
+111	Liezen	Liezen
+112	Bruck an der Leitha	Bruck an der Leitha
+113	Landeck	Landeck
+114	Pasching	Pasching
+115	Kindberg	Kindberg
+116	Gratkorn	Gratkorn
+117	Sankt Andrä vor dem Hagenthale	Sankt Andra vor dem Hagenthale
+118	Kottingbrunn	Kottingbrunn
+119	Zeltweg	Zeltweg
+120	Herzogenburg	Herzogenburg
+121	Völs	Vols
+122	Altach	Altach
+123	Fohnsdorf	Fohnsdorf
+124	Mattighofen	Mattighofen
+125	Oberwart	Oberwart
+126	Ebensee	Ebensee
+127	Gallneukirchen	Gallneukirchen
+128	Langenlois	Langenlois
+129	Pressbaum	Pressbaum
+130	Vösendorf	Vosendorf
+131	Sieghartskirchen	Sieghartskirchen
+132	Vorchdorf	Vorchdorf
+133	Mattersburg	Mattersburg
+134	Jenbach	Jenbach
+135	Strasswalchen	Strasswalchen
+136	Grödig	Grodig
+137	Fehring	Fehring
+138	Himberg	Himberg
+139	Bad Goisern	Bad Goisern
+140	Kuchl	Kuchl
+141	Kalsdorf bei Graz	Kalsdorf bei Graz
+142	Wolkersdorf im Weinviertel	Wolkersdorf im Weinviertel
+143	Hitzendorf	Hitzendorf
+144	Absam	Absam
+145	Pottendorf	Pottendorf
+146	Ferlach	Ferlach
+147	Arnoldstein	Arnoldstein
+148	Feldkirchen bei Graz	Feldkirchen bei Graz
+149	Eugendorf	Eugendorf
+150	Oberndorf bei Salzburg	Oberndorf bei Salzburg
+151	Hörbranz	Horbranz
+152	Bad Hofgastein	Bad Hofgastein
+153	Hartberg	Hartberg
+154	Garsten	Garsten
+155	Hainburg an der Donau	Hainburg an der Donau
+156	Reutte	Reutte
+157	Eggersdorf bei Graz	Eggersdorf bei Graz
+158	Asten	Asten
+159	Kremsmünster	Kremsmunster
+160	Frohnleiten	Frohnleiten
+161	Wilhelmsburg	Wilhelmsburg
+162	Horn	Horn
+163	Schladming	Schladming
+164	Neuhofen an der Krems	Neuhofen an der Krems
+165	Seeboden	Seeboden
+166	Eibiswald	Eibiswald
+167	Neumarkt am Wallersee	Neumarkt am Wallersee
+168	Traismauer	Traismauer
+169	Laa an der Thaya	Laa an der Thaya
+170	Hörsching	Horsching
+171	Axams	Axams
+172	Markt Sankt Florian	Markt Sankt Florian
+173	Wagna	Wagna
+174	Lochau	Lochau
+175	Nenzing	Nenzing
+176	Unterpremstätten	Unterpremstatten
+177	Kirchbichl	Kirchbichl
+178	Gloggnitz	Gloggnitz
+179	Gunskirchen	Gunskirchen
+180	Pöllau	Pollau
+181	Gnas	Gnas
+182	Wildon	Wildon
+183	Wilhering	Wilhering
+184	Alkoven	Alkoven
+185	Breitenfurth bei Wien	Breitenfurth bei Wien
+186	Thalgau	Thalgau
+187	Timelkam	Timelkam
+188	Pinkafeld	Pinkafeld
+189	Micheldorf in Oberösterreich	Micheldorf in Oberosterreich
+190	Eberndorf	Eberndorf
+191	Radenthein	Radenthein
+192	Ybbs an der Donau	Ybbs an der Donau
+193	Paternion	Paternion
+194	Abtenau	Abtenau
+195	Thalheim bei Wels	Thalheim bei Wels
+196	Leopoldsdorf	Leopoldsdorf
+197	Fischamend	Fischamend
+198	Wernberg	Wernberg
+199	Tamsweg	Tamsweg
+200	Melk	Melk
+201	Bergheim	Bergheim
+202	Ebbs	Ebbs
+203	Hopfgarten im Brixental	Hopfgarten im Brixental
+204	Schwertberg	Schwertberg
+205	Elsbethen	Elsbethen
+206	Haag	Haag
+207	Spielberg bei Knittelfeld	Spielberg bei Knittelfeld
+208	Waidhofen an der Thaya	Waidhofen an der Thaya
+209	Lenzing	Lenzing
+210	Gmünd	Gmund
+211	Poysdorf	Poysdorf
+212	Lieboch	Lieboch
+213	Sollenau	Sollenau
+214	Feldkirchen an der Donau	Feldkirchen an der Donau
+215	Schrems	Schrems
+216	Pregarten	Pregarten
+217	Zistersdorf	Zistersdorf
+218	Bad Gleichenberg	Bad Gleichenberg
+219	Sankt Ruprecht an der Raab	Sankt Ruprecht an der Raab
+220	Grieskirchen	Grieskirchen
+221	Schärding	Scharding
+222	Mittersill	Mittersill
+223	Bad Hall	Bad Hall
+224	Ohlsdorf	Ohlsdorf
+225	Stadl-Paura	Stadl-Paura
+226	Pettenbach	Pettenbach
+227	Krieglach	Krieglach
+228	Andorf	Andorf
+229	Kirchberg in Tirol	Kirchberg in Tirol
+230	Rottenmann	Rottenmann
+231	Gramastetten	Gramastetten
+232	Sankt Peter in der Au Markt	Sankt Peter in der Au Markt
+233	Böheimkirchen	Boheimkirchen
+234	Vomp	Vomp
+235	Admont	Admont
+236	Hafendorf	Hafendorf

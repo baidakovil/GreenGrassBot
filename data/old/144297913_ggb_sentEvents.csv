@@ -1,0 +1,789 @@
+	eventnumber	eventid	eventartist	eventtime	eventvenue	eventcity	eventcountry
+0		aikko_in_2021-11-21_in_АКАКАО	Aikko	2021-11-21	АКАКАО	Санкт-Петербург	Russian Federation
+1		aikko_in_2021-12-12_in_Лофт-парк «Подземка»	Aikko	2021-12-12	Лофт-парк «Подземка»	Новосибирск	Russian Federation
+2		alt-j_in_2022-07-12_in_Adrenaline Stadium	alt-J	2022-07-12	Adrenaline Stadium	Moscow	Russian Federation
+3		alt-j_in_2022-03-30_in_Pacific Coliseum	alt-J	2022-03-30	Pacific Coliseum	Vancouver	Canada
+4		alt-j_in_2022-04-11_in_Madison Square Garden	alt-J	2022-04-11	Madison Square Garden	New York	United States
+5		alt-j_in_2022-04-17_in_Coca-Cola Coliseum	alt-J	2022-04-17	Coca-Cola Coliseum	Toronto	Canada
+6		alt-j_in_2022-06-10_in_Flughafen Tempelhof	alt-J	2022-06-10	Flughafen Tempelhof	Berlin	Germany
+7		alt-j_in_2022-06-28_in_Budapest Park	alt-J	2022-06-28	Budapest Park	Budapest	Hungary
+8		alt-j_in_2022-07-06_in_Passeio Marítimo de Algés	alt-J	2022-07-06	Passeio Marítimo de Algés	Oeiras	Portugal
+9		alt-j_in_2022-07-06_in_Національний виставковий центр (ВДНГ)	alt-J	2022-07-06	Національний виставковий центр (ВДНГ)	Kyiv	Ukraine
+10		alt-j_in_2022-07-06_in_Espacio Mad Cool	alt-J	2022-07-06	Espacio Mad Cool	Madrid	Spain
+11		alt-j_in_2022-07-12_in_Adrenaline Stadium	alt-J	2022-07-12	Adrenaline Stadium	Moscow	Russian Federation
+12		alt-j_in_2022-07-13_in_Клуб-фестиваль «МОРЗЕ»	alt-J	2022-07-13	Клуб-фестиваль «МОРЗЕ»	Санкт-Петербург	Russian Federation
+13		alt-j_in_2022-07-17_in_Centrum Expo XXI	alt-J	2022-07-17	Centrum Expo XXI	Warszawa	Poland
+14		alt-j_in_2022-07-18_in_Vilniaus universiteto botanikos sodas	alt-J	2022-07-18	Vilniaus universiteto botanikos sodas	Vilnius	Lithuania
+15		arca_in_2021-12-03_in_Catch One	Arca	2021-12-03	Catch One	Los Angeles	United States
+16		arca_in_2021-12-09_in_Knockdown Center	Arca	2021-12-09	Knockdown Center	Queens, NY	United States
+17		arca_in_2022-06-16_in_Fira de Barcelona - Gran Via	Arca	2022-06-16	Fira de Barcelona - Gran Via	L'Hospitalet de Llobregat	Spain
+18		ariana grande_in_2022-01-01_in_Onika's Home	Ariana Grande	2022-01-01	Onika's Home	St. James, Port of Spain	Bermuda
+19		ashnikko_in_2021-12-07_in_O2 Forum Kentish Town	Ashnikko	2021-12-07	O2 Forum Kentish Town	London	United Kingdom
+20		ashnikko_in_2021-12-10_in_O2 Ritz	Ashnikko	2021-12-10	O2 Ritz	Manchester	United Kingdom
+21		ashnikko_in_2021-12-11_in_The Academy	Ashnikko	2021-12-11	The Academy	Dublin	Ireland
+22		ashnikko_in_2021-12-12_in_SWG3	Ashnikko	2021-12-12	SWG3	Glasgow	United Kingdom
+23		beabadoobee_in_2021-11-23_in_The Fillmore	beabadoobee	2021-11-23	The Fillmore	San Francisco	United States
+24		beabadoobee_in_2021-11-28_in_Rickshaw Theatre	beabadoobee	2021-11-28	Rickshaw Theatre	Vancouver, BC	Canada
+25		beabadoobee_in_2021-12-01_in_Summit Music Hall	beabadoobee	2021-12-01	Summit Music Hall	Denver	United States
+26		beabadoobee_in_2021-12-09_in_Danforth Music Hall	beabadoobee	2021-12-09	Danforth Music Hall	Toronto	Canada
+27		beabadoobee_in_2021-12-10_in_Newport Music Hall	beabadoobee	2021-12-10	Newport Music Hall	Columbus	United States
+28		beabadoobee_in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	beabadoobee	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+29		beabadoobee_in_2022-07-06_in_Espacio Mad Cool	beabadoobee	2022-07-06	Espacio Mad Cool	Madrid	Spain
+30		beabadoobee_in_2022-08-09_in_Tøyenparken	beabadoobee	2022-08-09	Tøyenparken	Oslo	Norway
+31		beabadoobee_in_2022-08-11_in_Slottsskogen	beabadoobee	2022-08-11	Slottsskogen	Gothenburg	Sweden
+32		beabadoobee_in_2022-08-16_in_Praia Fluvial do Taboão	beabadoobee	2022-08-16	Praia Fluvial do Taboão	Paredes de Coura	Portugal
+33		bring me the horizon_in_2022-04-08_in_Дворец спорта «Мегаспорт»	Bring Me the Horizon	2022-04-08	Дворец спорта «Мегаспорт»	Moscow	Russian Federation
+34		bring me the horizon_in_2022-02-01_in_Lotto Arena	Bring Me the Horizon	2022-02-01	Lotto Arena	Antwerpen	Belgium
+35		bring me the horizon_in_2022-02-03_in_Halle Tony-Garnier	Bring Me the Horizon	2022-02-03	Halle Tony-Garnier	Lyon	France
+36		bring me the horizon_in_2022-02-04_in_Sant Jordi Club	Bring Me the Horizon	2022-02-04	Sant Jordi Club	Barcelona	Spain
+37		bring me the horizon_in_2022-02-05_in_Palacio Vistalegre	Bring Me the Horizon	2022-02-05	Palacio Vistalegre	Madrid	Spain
+38		bring me the horizon_in_2022-02-07_in_Campo Pequeno	Bring Me the Horizon	2022-02-07	Campo Pequeno	Lisboa 	Portugal
+39		bring me the horizon_in_2022-02-09_in_Zénith de Toulouse	Bring Me the Horizon	2022-02-09	Zénith de Toulouse	Toulouse	France
+40		bring me the horizon_in_2022-02-11_in_St. Jakobshalle	Bring Me the Horizon	2022-02-11	St. Jakobshalle	Basel	Switzerland
+41		bring me the horizon_in_2022-02-12_in_Lorenzini District	Bring Me the Horizon	2022-02-12	Lorenzini District	Milano	Italy
+42		bring me the horizon_in_2022-02-14_in_Wiener Stadthalle	Bring Me the Horizon	2022-02-14	Wiener Stadthalle	Vienna	Austria
+43		bring me the horizon_in_2022-02-15_in_Papp László Budapest Sportaréna	Bring Me the Horizon	2022-02-15	Papp László Budapest Sportaréna	Budapest	Hungary
+44		bring me the horizon_in_2022-02-16_in_Malá Sportovní Hala	Bring Me the Horizon	2022-02-16	Malá Sportovní Hala	Praha	Czech Republic
+45		bring me the horizon_in_2022-02-18_in_Arena Gliwice	Bring Me the Horizon	2022-02-18	Arena Gliwice	Gliwice	Poland
+46		bring me the horizon_in_2022-02-20_in_Velodrom	Bring Me the Horizon	2022-02-20	Velodrom	Berlin	Germany
+47		bring me the horizon_in_2022-02-21_in_Barclaycard Arena	Bring Me the Horizon	2022-02-21	Barclaycard Arena	Hamburg	Germany
+48		bring me the horizon_in_2022-02-23_in_Ziggo Dome	Bring Me the Horizon	2022-02-23	Ziggo Dome	Amsterdam	Netherlands
+49		bring me the horizon_in_2022-02-24_in_Mitsubishi Electric Halle	Bring Me the Horizon	2022-02-24	Mitsubishi Electric Halle	Düsseldorf	Germany
+50		bring me the horizon_in_2022-02-25_in_Hanns-Martin-Schleyer-Halle	Bring Me the Horizon	2022-02-25	Hanns-Martin-Schleyer-Halle	Stuttgart	Germany
+51		bring me the horizon_in_2022-02-27_in_Zenith	Bring Me the Horizon	2022-02-27	Zenith	München	Germany
+52		bring me the horizon_in_2022-04-04_in_Дворец спорта	Bring Me the Horizon	2022-04-04	Дворец спорта	Киев	Ukraine
+53		bring me the horizon_in_2022-04-06_in_Дворец спорта	Bring Me the Horizon	2022-04-06	Дворец спорта	Минск	Belarus
+54		bring me the horizon_in_2022-04-08_in_Дворец спорта «Мегаспорт»	Bring Me the Horizon	2022-04-08	Дворец спорта «Мегаспорт»	Moscow	Russian Federation
+55		bring me the horizon_in_2022-04-09_in_СК «Юбилейный»	Bring Me the Horizon	2022-04-09	СК «Юбилейный»	Санкт-Петербург	Russian Federation
+56		bring me the horizon_in_2022-04-12_in_ДС Олимп	Bring Me the Horizon	2022-04-12	ДС Олимп	Краснодар	Russian Federation
+57		bring me the horizon_in_2022-04-18_in_МТЛ-арена	Bring Me the Horizon	2022-04-18	МТЛ-арена	Самара	Russian Federation
+58		bring me the horizon_in_2022-04-20_in_Екатеринбург-Экспо	Bring Me the Horizon	2022-04-20	Екатеринбург-Экспо	Екатеринбург	Russian Federation
+59		bring me the horizon_in_2022-04-22_in_Локомотив Арена	Bring Me the Horizon	2022-04-22	Локомотив Арена	Новосибирск	Russian Federation
+60		bring me the horizon_in_2022-06-09_in_Pannonia Fields II	Bring Me the Horizon	2022-06-09	Pannonia Fields II	Nickelsdorf	Austria
+61		bring me the horizon_in_2022-06-09_in_Greenfield Festival	Bring Me the Horizon	2022-06-09	Greenfield Festival	Interlaken	Switzerland
+62		bring me the horizon_in_2022-06-17_in_Take-Off Park	Bring Me the Horizon	2022-06-17	Take-Off Park	Neuhausen Ob Eck	Germany
+63		cigarettes after sex_in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	Cigarettes After Sex	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+64		cigarettes after sex_in_2022-06-09_in_Parque da Cidade	Cigarettes After Sex	2022-06-09	Parque da Cidade	Porto	Portugal
+65		cigarettes after sex_in_2022-06-29_in_Lotnisko Gdynia-Kosakowo	Cigarettes After Sex	2022-06-29	Lotnisko Gdynia-Kosakowo	Gdynia	Poland
+66		cigarettes after sex_in_2022-07-21_in_Strefa Kultury	Cigarettes After Sex	2022-07-21	Strefa Kultury	Katowice	Poland
+67		daughtry_in_2022-06-03_in_Zeppelinfeld	Daughtry	2022-06-03	Zeppelinfeld	Nuremberg	Germany
+68		daughtry_in_2022-06-10_in_Donington Park	Daughtry	2022-06-10	Donington Park	Castle Donington	United Kingdom
+69		doja cat_in_2021-11-30_in_Dickies Arena	Doja Cat	2021-11-30	Dickies Arena	Fort Worth	United States
+70		doja cat_in_2022-01-01_in_Onika's Home	Doja Cat	2022-01-01	Onika's Home	St. James, Port of Spain	Bermuda
+71		doja cat_in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	Doja Cat	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+72		doja cat_in_2022-07-01_in_Gärdet	Doja Cat	2022-07-01	Gärdet	Stockholm	Sweden
+73		eels_in_2022-03-11_in_The Telegraph Building	Eels	2022-03-11	The Telegraph Building	Belfast	Ireland
+74		eels_in_2022-03-12_in_Olympia Theatre	Eels	2022-03-12	Olympia Theatre	Dublin	Ireland
+75		eels_in_2022-03-14_in_Roundhouse	Eels	2022-03-14	Roundhouse	London	United Kingdom
+76		eels_in_2022-03-15_in_Albert Hall	Eels	2022-03-15	Albert Hall	Manchester	United Kingdom
+77		eels_in_2022-03-16_in_Barrowland Ballroom	Eels	2022-03-16	Barrowland Ballroom	Glasgow	United Kingdom
+78		eels_in_2022-03-17_in_Rock City	Eels	2022-03-17	Rock City	Nottingham	United Kingdom
+79		eels_in_2022-03-21_in_Zenith	Eels	2022-03-21	Zenith	München	Germany
+80		eels_in_2022-03-25_in_Verti Music Hall	Eels	2022-03-25	Verti Music Hall	Berlin	Germany
+81		eels_in_2022-03-28_in_Salle Pleyel	Eels	2022-03-28	Salle Pleyel	Paris	France
+82		eels_in_2022-03-28_in_Salle Pleyel	Eels	2022-03-28	Salle Pleyel	Paris	France
+83		eels_in_2022-03-31_in_Halle 622	Eels	2022-03-31	Halle 622	Zurich	Switzerland
+84		eels_in_2022-04-02_in_Estragon	Eels	2022-04-02	Estragon	Bologna	Italy
+85		eels_in_2022-04-07_in_Vorst Nationaal / Forest National	Eels	2022-04-07	Vorst Nationaal / Forest National	Brussel	Belgium
+86		eels_in_2022-04-08_in_AFAS Live	Eels	2022-04-08	AFAS Live	Amsterdam	Netherlands
+87		eels_in_2022-04-13_in_Sala Riviera	Eels	2022-04-13	Sala Riviera	Madrid	Spain
+88		eels_in_2022-05-09_in_The Fonda Theatre	Eels	2022-05-09	The Fonda Theatre	Los Angeles	United States
+89		eels_in_2022-05-16_in_Boulder Theater	Eels	2022-05-16	Boulder Theater	Boulder	United States
+90		eels_in_2022-05-18_in_Liberty Hall	Eels	2022-05-18	Liberty Hall	Lawrence	United States
+91		ghostemane_in_2021-11-23_in_Progresja	Ghostemane	2021-11-23	Progresja	Warszawa	Poland
+92		ghostemane_in_2021-11-24_in_B90	Ghostemane	2021-11-24	B90	Gdańsk	Poland
+93		ghostemane_in_2021-11-27_in_Forum Karlín	Ghostemane	2021-11-27	Forum Karlín	Praha	Czech Republic
+94		ghostemane_in_2021-11-28_in_Arena Wien	Ghostemane	2021-11-28	Arena Wien	Vienna	Austria
+95		ghostemane_in_2021-12-02_in_Magazzini Generali	Ghostemane	2021-12-02	Magazzini Generali	Milano	Italy
+96		ghostemane_in_2021-12-03_in_Magazzini Generali	Ghostemane	2021-12-03	Magazzini Generali	Milano	Italy
+97		ghostemane_in_2021-12-05_in_TonHalle	Ghostemane	2021-12-05	TonHalle	Munich	Germany
+98		ghostemane_in_2021-12-06_in_X-tra	Ghostemane	2021-12-06	X-tra	Zürich	Switzerland
+99		ghostemane_in_2021-12-08_in_Bataclan	Ghostemane	2021-12-08	Bataclan	Paris	France
+100		ghostemane_in_2021-12-11_in_O2 Ritz	Ghostemane	2021-12-11	O2 Ritz	Manchester	United Kingdom
+101		ghostemane_in_2022-06-17_in_Val de Moine	Ghostemane	2022-06-17	Val de Moine	Clisson	France
+102		jasiah_in_2021-11-21_in_The Rave / Eagles Club	JASIAH	2021-11-21	The Rave / Eagles Club	Milwaukee	United States
+103		katy perry_in_2021-12-29_in_THE THEATRE AT RESORTS WORLD LAS VEGAS	Katy Perry	2021-12-29	THE THEATRE AT RESORTS WORLD LAS VEGAS	Las Vegas, NV	United States
+104		katy perry_in_2021-12-31_in_THE THEATRE AT RESORTS WORLD LAS VEGAS	Katy Perry	2021-12-31	THE THEATRE AT RESORTS WORLD LAS VEGAS	Las Vegas, NV	United States
+105		korn_in_2022-06-26_in_ВТБ Арена	Korn	2022-06-26	ВТБ Арена	Moscow	Russian Federation
+106		korn_in_2022-05-25_in_AFAS Live	Korn	2022-05-25	AFAS Live	Amsterdam	Netherlands
+107		korn_in_2022-05-27_in_Tipsport Arena	Korn	2022-05-27	Tipsport Arena	Praha	Czech Republic
+108		korn_in_2022-05-28_in_AXA aréna NTC	Korn	2022-05-28	AXA aréna NTC	Bratislava	Slovakia
+109		korn_in_2022-05-31_in_COS Torwar	Korn	2022-05-31	COS Torwar	Warszawa	Poland
+110		korn_in_2022-06-01_in_Verti Music Hall	Korn	2022-06-01	Verti Music Hall	Berlin	Germany
+111		korn_in_2022-06-03_in_Nürburgring	Korn	2022-06-03	Nürburgring	Nürburg	Germany
+112		korn_in_2022-06-03_in_Zeppelinfeld	Korn	2022-06-03	Zeppelinfeld	Nuremberg	Germany
+113		korn_in_2022-06-09_in_Pannonia Fields II	Korn	2022-06-09	Pannonia Fields II	Nickelsdorf	Austria
+114		korn_in_2022-06-10_in_Donington Park	Korn	2022-06-10	Donington Park	Castle Donington	United Kingdom
+115		korn_in_2022-06-15_in_Refshaleøen	Korn	2022-06-15	Refshaleøen	København	Denmark
+116		korn_in_2022-06-16_in_Boeretang	Korn	2022-06-16	Boeretang	Dessel	Belgium
+117		korn_in_2022-06-17_in_Val de Moine	Korn	2022-06-17	Val de Moine	Clisson	France
+118		korn_in_2022-06-21_in_Papp László Budapest Sportaréna	Korn	2022-06-21	Papp László Budapest Sportaréna	Budapest	Hungary
+119		korn_in_2022-06-26_in_ВТБ Арена	Korn	2022-06-26	ВТБ Арена	Moscow	Russian Federation
+120		korn_in_2022-06-28_in_СК «Юбилейный»	Korn	2022-06-28	СК «Юбилейный»	Санкт-Петербург	Russian Federation
+121		korn_in_2022-06-29_in_Avenida Ramón Canosa, 3	Korn	2022-06-29	Avenida Ramón Canosa, 3	Viveiro	Spain
+122		korn_in_2022-06-30_in_Törnävänsaari	Korn	2022-06-30	Törnävänsaari	Seinäjoki	Finland
+123		korn_in_2022-07-01_in_Suvilahti	Korn	2022-07-01	Suvilahti	Helsinki	Finland
+124		korn_in_2022-07-15_in_Stora scen	Korn	2022-07-15	Stora scen	Stockholm	Sweden
+125		lil nas x_in_2021-11-30_in_Dickies Arena	Lil Nas X	2021-11-30	Dickies Arena	Fort Worth	United States
+126		lil nas x_in_2022-06-18_in_Lyrical Lemonade x CUH FOREVER: Summer Smash	Lil Nas X	2022-06-18	Lyrical Lemonade x CUH FOREVER: Summer Smash	Chicago	United States
+127		machine gun kelly_in_2022-08-19_in_Evenemententerrein Walibi World	Machine Gun Kelly	2022-08-19	Evenemententerrein Walibi World	Biddinghuizen	Netherlands
+128		madeleine peyroux_in_2021-11-23_in_Het Depot	Madeleine Peyroux	2021-11-23	Het Depot	Leuven	Belgium
+129		marina_in_2022-02-02_in_The Masonic	Marina	2022-02-02	The Masonic	San Francisco, CA	United States
+130		marina_in_2022-02-15_in_The Chicago Theatre	Marina	2022-02-15	The Chicago Theatre	Chicago	United States
+131		marina_in_2022-02-17_in_The Fillmore Detroit	Marina	2022-02-17	The Fillmore Detroit	Detroit, MI	United States
+132		marina_in_2022-02-19_in_Stage AE	Marina	2022-02-19	Stage AE	Pittsburgh, PA	United States
+133		marina_in_2022-02-24_in_The Anthem	Marina	2022-02-24	The Anthem	Washington	United States
+134		marina_in_2022-02-25_in_Terminal 5	Marina	2022-02-25	Terminal 5	New York, NY	United States
+135		marina_in_2022-03-01_in_Ryman Auditorium	Marina	2022-03-01	Ryman Auditorium	Nashville, TN	United States
+136		marina_in_2022-03-03_in_Bayou Music Center	Marina	2022-03-03	Bayou Music Center	Houston	United States
+137		marina_in_2022-03-09_in_Performance Venue at Hollywood Park	Marina	2022-03-09	Performance Venue at Hollywood Park	Inglewood  CA	United States
+138		marina_in_2022-04-28_in_«СВОБОДА» концерт холл	Marina	2022-04-28	«СВОБОДА» концерт холл	Екатеринбург	Russian Federation
+139		marina_in_2022-05-09_in_Store Vega	Marina	2022-05-09	Store Vega	København V	Denmark
+140		marina_in_2022-05-12_in_AMARE	Marina	2022-05-12	AMARE	Den Haag	Netherlands
+141		marina_in_2022-05-14_in_Salle de La Madeleine	Marina	2022-05-14	Salle de La Madeleine	Brussels	Belgium
+142		marina_in_2022-05-15_in_Le Bataclan	Marina	2022-05-15	Le Bataclan	Paris	France
+143		marina_in_2022-05-17_in_Edinburgh Corn Exchange	Marina	2022-05-17	Edinburgh Corn Exchange	Edinburgh	United Kingdom
+144		marina_in_2022-05-20_in_O2 Apollo Manchester	Marina	2022-05-20	O2 Apollo Manchester	Manchester	United Kingdom
+145		marina_in_2022-05-21_in_The Refectory	Marina	2022-05-21	The Refectory	Lifton Place, Leeds	United Kingdom
+146		marina_in_2022-05-22_in_O2 Academy Brixton	Marina	2022-05-22	O2 Academy Brixton	London	United Kingdom
+147		marina_in_2022-05-25_in_Olympia Theatre	Marina	2022-05-25	Olympia Theatre	Dublin	Ireland
+148		megan thee stallion_in_2022-01-01_in_Onika's Home	Megan Thee Stallion	2022-01-01	Onika's Home	St. James, Port of Spain	Bermuda
+149		megan thee stallion_in_2022-02-18_in_TD Garden	Megan Thee Stallion	2022-02-18	TD Garden	Boston	United States
+150		megan thee stallion_in_2022-03-20_in_Footprint Center	Megan Thee Stallion	2022-03-20	Footprint Center	Phoenix, Arizona	United States
+151		megan thee stallion_in_2022-07-07_in_Les Ardentes	Megan Thee Stallion	2022-07-07	Les Ardentes	Liège	Belgium
+152		måneskin_in_2022-03-09_in_Adrenaline Stadium	Måneskin	2022-03-09	Adrenaline Stadium	Moscow	Russian Federation
+153		måneskin_in_2021-12-15_in_Palazzo dello Sport	Måneskin	2021-12-15	Palazzo dello Sport	Roma	Italy
+154		måneskin_in_2021-12-18_in_Mediolanum Forum	Måneskin	2021-12-18	Mediolanum Forum	Assago, Milano	Italy
+155		måneskin_in_2022-02-06_in_O2 Academy Brixton	Måneskin	2022-02-06	O2 Academy Brixton	London	United Kingdom
+156		måneskin_in_2022-02-10_in_Vorst Nationaal / Forest National	Måneskin	2022-02-10	Vorst Nationaal / Forest National	Brussel	Belgium
+157		måneskin_in_2022-02-15_in_COS Torwar	Måneskin	2022-02-15	COS Torwar	Warszawa	Poland
+158		måneskin_in_2022-02-26_in_Verti Music Hall	Måneskin	2022-02-26	Verti Music Hall	Berlin	Germany
+159		måneskin_in_2022-02-28_in_Malá Sportovní Hala	Måneskin	2022-02-28	Malá Sportovní Hala	Praha	Czech Republic
+160		måneskin_in_2022-03-03_in_AFAS Live	Måneskin	2022-03-03	AFAS Live	Amsterdam	Netherlands
+161		måneskin_in_2022-03-09_in_Adrenaline Stadium	Måneskin	2022-03-09	Adrenaline Stadium	Moscow	Russian Federation
+162		måneskin_in_2022-03-11_in_Тинькофф Арена	Måneskin	2022-03-11	Тинькофф Арена	Санкт-Петербург	Russian Federation
+163		måneskin_in_2022-03-13_in_Saku Suurhall	Måneskin	2022-03-13	Saku Suurhall	Tallinn	Estonia
+164		måneskin_in_2022-03-14_in_Arēna Rīga	Måneskin	2022-03-14	Arēna Rīga	Rīga	Latvia
+165		måneskin_in_2022-03-20_in_Unipol Arena	Måneskin	2022-03-20	Unipol Arena	Casalecchio di Reno (BO)	Italy
+166		måneskin_in_2022-03-22_in_Mediolanum Forum	Måneskin	2022-03-22	Mediolanum Forum	Assago, Milano	Italy
+167		måneskin_in_2022-04-03_in_Pala Alpitour (ex Palaolimpico)	Måneskin	2022-04-03	Pala Alpitour (ex Palaolimpico)	Torino	Italy
+168		måneskin_in_2022-06-03_in_Zeppelinfeld	Måneskin	2022-06-03	Zeppelinfeld	Nuremberg	Germany
+169		måneskin_in_2022-06-23_in_Ekeberg	Måneskin	2022-06-23	Ekeberg	Oslo	Norway
+170		måneskin_in_2022-07-09_in_Circo Massimo	Måneskin	2022-07-09	Circo Massimo	Roma	Italy
+171		neffex_in_2022-06-03_in_Nürburgring	NEFFEX	2022-06-03	Nürburgring	Nürburg	Germany
+172		nine inch nails_in_2022-06-23_in_Val de Moine	Nine Inch Nails	2022-06-23	Val de Moine	Clisson	France
+173		paris hilton_in_2022-08-26_in_Tomorrowland	Paris Hilton	2022-08-26	Tomorrowland	Boom	Belgium
+174		penelope scott_in_2022-01-03_in_Songbyrd Music House	Penelope Scott	2022-01-03	Songbyrd Music House	Washington, DC	United States
+175		placebo_in_2022-06-16_in_Парк Лужники	Placebo	2022-06-16	Парк Лужники	Moscow	Russian Federation
+176		placebo_in_2022-06-16_in_Парк Лужники	Placebo	2022-06-16	Парк Лужники	Moscow	Russian Federation
+177		placebo_in_2022-06-22_in_Siguldas Pilsdrupu estrāde	Placebo	2022-06-22	Siguldas Pilsdrupu estrāde	Sigulda	Latvia
+178		placebo_in_2022-06-25_in_Werchter	Placebo	2022-06-25	Werchter	Werchter	Belgium
+179		placebo_in_2022-06-27_in_Šalata	Placebo	2022-06-27	Šalata	Zagreb	Croatia
+180		placebo_in_2022-07-06_in_Espacio Mad Cool	Placebo	2022-07-06	Espacio Mad Cool	Madrid	Spain
+181		placebo_in_2022-07-06_in_Національний виставковий центр (ВДНГ)	Placebo	2022-07-06	Національний виставковий центр (ВДНГ)	Kyiv	Ukraine
+182		placebo_in_2022-08-25_in_Vilar de Mouros	Placebo	2022-08-25	Vilar de Mouros	Vilar de Mouros	Portugal
+183		rammstein_in_2022-05-15_in_Letnany Airport	Rammstein	2022-05-15	Letnany Airport	Praha 18	Czech Republic
+184		rammstein_in_2022-05-16_in_Letnany Airport	Rammstein	2022-05-16	Letnany Airport	Praha 18	Czech Republic
+185		rammstein_in_2022-05-20_in_Red Bull Arena	Rammstein	2022-05-20	Red Bull Arena	Leipzig	Germany
+186		rammstein_in_2022-05-21_in_Red Bull Arena	Rammstein	2022-05-21	Red Bull Arena	Leipzig	Germany
+187		rammstein_in_2022-05-25_in_Wörthersee Stadion	Rammstein	2022-05-25	Wörthersee Stadion	Klagenfurt am Wörthersee	Austria
+188		rammstein_in_2022-05-26_in_Wörthersee Stadion	Rammstein	2022-05-26	Wörthersee Stadion	Klagenfurt am Wörthersee	Austria
+189		rammstein_in_2022-05-30_in_Stadion Letzigrund	Rammstein	2022-05-30	Stadion Letzigrund	Zurich	Switzerland
+190		rammstein_in_2022-05-31_in_Stadion Letzigrund	Rammstein	2022-05-31	Stadion Letzigrund	Zurich	Switzerland
+191		rammstein_in_2022-06-04_in_Olympiastadion	Rammstein	2022-06-04	Olympiastadion	Berlin	Germany
+192		rammstein_in_2022-06-05_in_Olympiastadion	Rammstein	2022-06-05	Olympiastadion	Berlin	Germany
+193		rammstein_in_2022-06-10_in_Cannstatter Wasen	Rammstein	2022-06-10	Cannstatter Wasen	Stuttgart	Germany
+194		rammstein_in_2022-06-11_in_Cannstatter Wasen	Rammstein	2022-06-11	Cannstatter Wasen	Stuttgart	Germany
+195		rammstein_in_2022-06-14_in_Volksparkstadion	Rammstein	2022-06-14	Volksparkstadion	Hamburg	Germany
+196		rammstein_in_2022-06-15_in_Volksparkstadion	Rammstein	2022-06-15	Volksparkstadion	Hamburg	Germany
+197		rammstein_in_2022-06-18_in_Merkur Spiel-Arena	Rammstein	2022-06-18	Merkur Spiel-Arena	Düsseldorf	Germany
+198		rammstein_in_2022-06-19_in_Merkur Spiel-Arena	Rammstein	2022-06-19	Merkur Spiel-Arena	Düsseldorf	Germany
+199		rammstein_in_2022-06-22_in_Ceres Park	Rammstein	2022-06-22	Ceres Park	Aarhus	Denmark
+200		rammstein_in_2022-06-26_in_Ricoh Arena	Rammstein	2022-06-26	Ricoh Arena	Coventry	United Kingdom
+201		rammstein_in_2022-06-30_in_Principality Stadium	Rammstein	2022-06-30	Principality Stadium	Cardiff	United Kingdom
+202		rammstein_in_2022-07-04_in_Goffertpark	Rammstein	2022-07-04	Goffertpark	Nijmegen	Netherlands
+203		rammstein_in_2022-07-05_in_Goffertpark	Rammstein	2022-07-05	Goffertpark	Nijmegen	Netherlands
+204		rammstein_in_2022-07-05_in_Goffertpark	Rammstein	2022-07-05	Goffertpark	Nijmegen, Nederland	Netherlands
+205		rammstein_in_2022-07-08_in_Groupama Stadium	Rammstein	2022-07-08	Groupama Stadium	Décines-Charpieu	France
+206		rammstein_in_2022-07-08_in_Groupama Stadium	Rammstein	2022-07-08	Groupama Stadium	Décines-Charpieu	France
+207		rammstein_in_2022-07-09_in_Groupama Stadium	Rammstein	2022-07-09	Groupama Stadium	Décines-Charpieu	France
+208		rammstein_in_2022-07-09_in_Groupama Stadium	Rammstein	2022-07-09	Groupama Stadium	Décines-Charpieu	France
+209		rammstein_in_2022-07-12_in_Stadio Olimpico	Rammstein	2022-07-12	Stadio Olimpico	Torino	Italy
+210		rammstein_in_2022-07-16_in_Stadion Narodowy	Rammstein	2022-07-16	Stadion Narodowy	Warszawa	Poland
+211		rammstein_in_2022-07-20_in_Tallinna Lauluväljak	Rammstein	2022-07-20	Tallinna Lauluväljak	Tallinn	Estonia
+212		rammstein_in_2022-07-24_in_Bjerke Travbane	Rammstein	2022-07-24	Bjerke Travbane	Oslo	Norway
+213		shortparis_in_2021-12-04_in_Main Stage	Shortparis	2021-12-04	Main Stage	Moscow	Russian Federation
+214		shortparis_in_2021-12-04_in_Main Stage	Shortparis	2021-12-04	Main Stage	Moscow	Russian Federation
+215		shortparis_in_2021-12-11_in_Сибур Арена	Shortparis	2021-12-11	Сибур Арена	Saint Petersburg	Russian Federation
+216		shortparis_in_2022-06-04_in_Лужники	Shortparis	2022-06-04	Лужники	Москва	Russian Federation
+217		shortparis_in_2022-09-13_in_Proxima	Shortparis	2022-09-13	Proxima	Warszawa	Poland
+218		shortparis_in_2022-09-24_in_Botanique	Shortparis	2022-09-24	Botanique	Brussels	Belgium
+219		skillet_in_2022-06-03_in_Nürburgring	Skillet	2022-06-03	Nürburgring	Nürburg	Germany
+220		skillet_in_2022-06-09_in_Greenfield Festival	Skillet	2022-06-09	Greenfield Festival	Interlaken	Switzerland
+221		skillet_in_2022-06-09_in_Pannonia Fields II	Skillet	2022-06-09	Pannonia Fields II	Nickelsdorf	Austria
+222		skillet_in_2022-06-10_in_Donington Park	Skillet	2022-06-10	Donington Park	Castle Donington	United Kingdom
+223		skillet_in_2022-06-15_in_Festivalpark, Letiště 38	Skillet	2022-06-15	Festivalpark, Letiště 38	Hradec Králové	Czech Republic
+224		skillet_in_2022-06-16_in_Boeretang	Skillet	2022-06-16	Boeretang	Dessel	Belgium
+225		slayyyter_in_2022-02-18_in_The Academy	Slayyyter	2022-02-18	The Academy	Dublin	Ireland
+226		slayyyter_in_2022-02-19_in_Club GRETCHEN	Slayyyter	2022-02-19	Club GRETCHEN	Berlin	Germany
+227		slayyyter_in_2022-02-20_in_Club Bahnhof Ehrenfeld	Slayyyter	2022-02-20	Club Bahnhof Ehrenfeld	Cologne	Germany
+228		slayyyter_in_2022-02-23_in_Gorilla	Slayyyter	2022-02-23	Gorilla	Manchester	United Kingdom
+229		slayyyter_in_2022-02-24_in_Heaven	Slayyyter	2022-02-24	Heaven	London	United Kingdom
+230		slayyyter_in_2022-03-02_in_Santeria Toscana 31	Slayyyter	2022-03-02	Santeria Toscana 31	Milano	Italy
+231		slayyyter_in_2022-03-03_in_Praga Centrum	Slayyyter	2022-03-03	Praga Centrum	Warszawa	Poland
+232		slayyyter_in_2022-03-05_in_FVTVR	Slayyyter	2022-03-05	FVTVR	PARIS	France
+233		slayyyter_in_2022-05-04_in_El Rey Theatre	Slayyyter	2022-05-04	El Rey Theatre	Los Angeles	United States
+234		slayyyter_in_2022-05-05_in_El Rey Theatre	Slayyyter	2022-05-05	El Rey Theatre	Los Angeles	United States
+235		slayyyter_in_2022-05-10_in_The Fox Cabaret	Slayyyter	2022-05-10	The Fox Cabaret	Vancouver	Canada
+236		slayyyter_in_2022-05-20_in_The Axis Club	Slayyyter	2022-05-20	The Axis Club	Toronto	Canada
+237		smash into pieces_in_2022-04-24_in_ГЛАВCLUB	Smash Into Pieces	2022-04-24	ГЛАВCLUB	Moscow	Russian Federation
+238		smash into pieces_in_2022-03-16_in_Arena Leipzig	Smash Into Pieces	2022-03-16	Arena Leipzig	Leipzig	Germany
+239		smash into pieces_in_2022-03-17_in_Velodrom	Smash Into Pieces	2022-03-17	Velodrom	Berlin	Germany
+240		smash into pieces_in_2022-03-18_in_Arena Gliwice	Smash Into Pieces	2022-03-18	Arena Gliwice	Gliwice	Poland
+241		smash into pieces_in_2022-03-20_in_Palais 12 / Paleis 12	Smash Into Pieces	2022-03-20	Palais 12 / Paleis 12	Bruxelles	Belgium
+242		smash into pieces_in_2022-03-21_in_Palais 12 / Paleis 12	Smash Into Pieces	2022-03-21	Palais 12 / Paleis 12	Brussels	Belgium
+243		smash into pieces_in_2022-03-23_in_Mitsubishi Electric Halle	Smash Into Pieces	2022-03-23	Mitsubishi Electric Halle	Düsseldorf	Germany
+244		smash into pieces_in_2022-03-24_in_Rockhal	Smash Into Pieces	2022-03-24	Rockhal	Esch-sur-Alzette	Luxembourg
+245		smash into pieces_in_2022-03-26_in_Olympiahalle	Smash Into Pieces	2022-03-26	Olympiahalle	Munich	Germany
+246		smash into pieces_in_2022-03-28_in_Mediolanum Forum	Smash Into Pieces	2022-03-28	Mediolanum Forum	Assago, Milano	Italy
+247		smash into pieces_in_2022-03-30_in_AccorHotels Arena	Smash Into Pieces	2022-03-30	AccorHotels Arena	Paris	France
+248		smash into pieces_in_2022-03-31_in_The Underworld	Smash Into Pieces	2022-03-31	The Underworld	London	United Kingdom
+249		smash into pieces_in_2022-04-24_in_ГЛАВCLUB	Smash Into Pieces	2022-04-24	ГЛАВCLUB	Moscow	Russian Federation
+250		smash into pieces_in_2022-04-28_in_«СВОБОДА» концерт холл	Smash Into Pieces	2022-04-28	«СВОБОДА» концерт холл	Екатеринбург	Russian Federation
+251		sunrise avenue_in_2022-06-30_in_Törnävänsaari	Sunrise Avenue	2022-06-30	Törnävänsaari	Seinäjoki	Finland
+252		sunrise avenue_in_2022-07-09_in_Olympiastadion	Sunrise Avenue	2022-07-09	Olympiastadion	Helsinki	Finland
+253		syml_in_2022-02-27_in_Plaza	SYML	2022-02-27	Plaza	Zürich	Switzerland
+254		the drums_in_2021-12-09_in_Izvestia Hall	The Drums	2021-12-09	Izvestia Hall	Moscow	Russian Federation
+255		the drums_in_2021-12-01_in_Le Trabendo	The Drums	2021-12-01	Le Trabendo	Paris	France
+256		the drums_in_2021-12-04_in_Hole 44	The Drums	2021-12-04	Hole 44	Berlin	Germany
+257		the drums_in_2021-12-06_in_Vanha Ylioppilastalo	The Drums	2021-12-06	Vanha Ylioppilastalo	Helsinki	Finland
+258		the drums_in_2021-12-09_in_Izvestia Hall	The Drums	2021-12-09	Izvestia Hall	Moscow	Russian Federation
+259		the drums_in_2021-12-10_in_Atlas	The Drums	2021-12-10	Atlas	Kyiv	Ukraine
+260		the drums_in_2021-12-16_in_O2 Ritz Manchester	The Drums	2021-12-16	O2 Ritz Manchester	Manchester	United Kingdom
+261		the drums_in_2021-12-20_in_O2 Forum Kentish Town	The Drums	2021-12-20	O2 Forum Kentish Town	London	United Kingdom
+262		the neighbourhood_in_2022-09-23_in_Adrenaline Stadium	The Neighbourhood	2022-09-23	Adrenaline Stadium	Moscow	Russian Federation
+263		the neighbourhood_in_2021-11-27_in_AXA Aréna NTC	The Neighbourhood	2021-11-27	AXA Aréna NTC	Bratislava	Slovakia
+264		the neighbourhood_in_2021-12-07_in_O2 Academy Brixton	The Neighbourhood	2021-12-07	O2 Academy Brixton	London	United Kingdom
+265		the neighbourhood_in_2021-12-08_in_O2 Victoria Warehouse	The Neighbourhood	2021-12-08	O2 Victoria Warehouse	Manchester	United Kingdom
+266		the neighbourhood_in_2022-09-23_in_Adrenaline Stadium	The Neighbourhood	2022-09-23	Adrenaline Stadium	Moscow	Russian Federation
+267		the neighbourhood_in_2022-09-24_in_СК «Юбилейный»	The Neighbourhood	2022-09-24	СК «Юбилейный»	Санкт-Петербург	Russian Federation
+268		the neighbourhood_in_2022-09-26_in_Arēna Rīga	The Neighbourhood	2022-09-26	Arēna Rīga	Rīga	Latvia
+269		the neighbourhood_in_2022-09-28_in_COS Torwar	The Neighbourhood	2022-09-28	COS Torwar	Warszawa	Poland
+270		the neighbourhood_in_2022-10-06_in_Planet.tt @ Gasometer	The Neighbourhood	2022-10-06	Planet.tt @ Gasometer	Wien	Austria
+271		the neighbourhood_in_2022-10-09_in_Forum Karlín	The Neighbourhood	2022-10-09	Forum Karlín	Praha	Czech Republic
+272		the neighbourhood_in_2022-10-14_in_Fabrique Milano	The Neighbourhood	2022-10-14	Fabrique Milano	Milan	Italy
+273		the neighbourhood_in_2022-10-20_in_Poppodium 013	The Neighbourhood	2022-10-20	Poppodium 013	Tilburg	Netherlands
+274		the neighbourhood_in_2022-10-21_in_Ancienne Belgique	The Neighbourhood	2022-10-21	Ancienne Belgique	Brussels	Belgium
+275		the neighbourhood_in_2022-10-24_in_O2 Academy Brixton	The Neighbourhood	2022-10-24	O2 Academy Brixton	London	United Kingdom
+276		the score_in_2021-11-26_in_Известия Hall	The Score	2021-11-26	Известия Hall	Москва	Russian Federation
+277		the score_in_2021-11-26_in_Известия Hall	The Score	2021-11-26	Известия Hall	Москва	Russian Federation
+278		the score_in_2022-06-12_in_Roxy	The Score	2022-06-12	Roxy	Praha	Czech Republic
+279		the score_in_2022-06-14_in_Proxima	The Score	2022-06-14	Proxima	Warszawa	Poland
+280		the score_in_2022-06-15_in_Kwadrat	The Score	2022-06-15	Kwadrat	Kraków	Poland
+281		upsahl_in_2021-11-27_in_Commodore Ballroom	Upsahl	2021-11-27	Commodore Ballroom	868 Granville St, Vancouver, BC, V6Z 1K3	Canada
+282		weezer_in_2022-06-01_in_Parkbühne Wuhlheide	Weezer	2022-06-01	Parkbühne Wuhlheide	Berlin	Germany
+283		weezer_in_2022-06-03_in_Nürburgring	Weezer	2022-06-03	Nürburgring	Nürburg	Germany
+284		weezer_in_2022-06-03_in_Zeppelinfeld	Weezer	2022-06-03	Zeppelinfeld	Nuremberg	Germany
+285		weezer_in_2022-06-09_in_Color Line Stadion	Weezer	2022-06-09	Color Line Stadion	Ålesund	Norway
+286		weezer_in_2022-06-11_in_Tele2 Arena	Weezer	2022-06-11	Tele2 Arena	Stockholm	Sweden
+287		weezer_in_2022-06-14_in_St. Jakob Park	Weezer	2022-06-14	St. Jakob Park	Basel	Switzerland
+288		weezer_in_2022-06-15_in_Festivalpark, Letiště 38	Weezer	2022-06-15	Festivalpark, Letiště 38	Hradec Králové	Czech Republic
+289		weezer_in_2022-06-15_in_Ippodromo del Galoppo SNAI di San Siro	Weezer	2022-06-15	Ippodromo del Galoppo SNAI di San Siro	Milano	Italy
+290		weezer_in_2022-06-16_in_Visarno arena	Weezer	2022-06-16	Visarno arena	Florence	Italy
+291		weezer_in_2022-06-19_in_Ernst-Happel-Stadion	Weezer	2022-06-19	Ernst-Happel-Stadion	Vienna	Austria
+292		weezer_in_2022-06-21_in_Sportpaleis	Weezer	2022-06-21	Sportpaleis	Merksem	Belgium
+293		weezer_in_2022-06-22_in_Stadspark	Weezer	2022-06-22	Stadspark	Groningen	Netherlands
+294		weezer_in_2022-06-22_in_Stadspark	Weezer	2022-06-22	Stadspark	Groningen	Netherlands
+295		weezer_in_2022-06-24_in_London Stadium	Weezer	2022-06-24	London Stadium	London	United Kingdom
+296		weezer_in_2022-06-25_in_John Smith’s Stadium	Weezer	2022-06-25	John Smith’s Stadium	Huddersfield	United Kingdom
+297		weezer_in_2022-06-27_in_RDS Arena	Weezer	2022-06-27	RDS Arena	Ballbridge, Baile Átha Cliath, Dublin	Ireland
+298		weezer_in_2022-06-29_in_Bellahouston Park	Weezer	2022-06-29	Bellahouston Park	Glasgow	United Kingdom
+299		weezer_in_2022-07-02_in_Paris La Défense Arena	Weezer	2022-07-02	Paris La Défense Arena	Nanterre	France
+300		аигел_in_2021-12-19_in_1930 Moscow	АИГЕЛ	2021-12-19	1930 Moscow	Москва	Russian Federation
+301		аигел_in_2021-11-28_in_Звезда	АИГЕЛ	2021-11-28	Звезда	Г.Самара	Russian Federation
+302		аигел_in_2021-12-18_in_Морзе	АИГЕЛ	2021-12-18	Морзе	Saint Petersburg	Russian Federation
+303		аигел_in_2021-12-19_in_1930 Moscow	АИГЕЛ	2021-12-19	1930 Moscow	Москва	Russian Federation
+304		валерий меладзе_in_2022-03-09_in_Arēna Rīga	Валерий Меладзе	2022-03-09	Arēna Rīga	Rīga	Latvia
+305		"валерий меладзе_in_2022-04-01_in_Палац ""Україна"""	Валерий Меладзе	2022-04-01	"Палац ""Україна"""	Київ	Ukraine
+306		макс корж_in_2022-05-28_in_Stadions Skonto	Макс Корж	2022-05-28	Stadions Skonto	Rīga	Latvia
+307		макс корж_in_2022-06-26_in_Стадион Спартак	Макс Корж	2022-06-26	Стадион Спартак	Новосибирск	Russian Federation
+308		макс корж_in_2022-09-03_in_Газпром Арена	Макс Корж	2022-09-03	Газпром Арена	Санкт-Петербург	Russian Federation
+309		операция пластилин_in_2022-07-14_in_Улетай поле	Операция Пластилин	2022-07-14	Улетай поле	село Лагуново	Russian Federation
+310		пошлая молли_in_2022-08-28_in_Main Stage	ПОШЛАЯ МОЛЛИ	2022-08-28	Main Stage	Москва	Russian Federation
+311		пошлая молли_in_2022-08-28_in_Main Stage	ПОШЛАЯ МОЛЛИ	2022-08-28	Main Stage	Москва	Russian Federation
+312		три дня дождя_in_2021-12-19_in_AURORA CONCERT HALL	Три Дня Дождя	2021-12-19	AURORA CONCERT HALL	St. Petersburg	Russian Federation
+313		увула_in_2021-12-31_in_Mezzanine	увула	2021-12-31	Mezzanine	Kyiv	Ukraine
+314		ёлка_in_2021-11-22_in_Театр оперы и балета им. М.И. Глинки	Ёлка	2021-11-22	Театр оперы и балета им. М.И. Глинки	Челябинск	Russian Federation
+315		сплин_in_2021-11-27_in_Music Media Dome	Сплин	2021-11-27	Music Media Dome	Moscow	Russian Federation
+316		сплин_in_2021-11-27_in_Music Media Dome	Сплин	2021-11-27	Music Media Dome	Moscow	Russian Federation
+317		сплин_in_2022-07-14_in_Улетай поле	Сплин	2022-07-14	Улетай поле	село Лагуново	Russian Federation
+318		сплин_in_2021-11-27_in_Music Media Dome	Сплин	2021-11-27	Music Media Dome	Moscow	Russian Federation
+319		сплин_in_2021-11-27_in_Music Media Dome	Сплин	2021-11-27	Music Media Dome	Moscow	Russian Federation
+320		сплин_in_2022-07-14_in_Улетай поле	Сплин	2022-07-14	Улетай поле	село Лагуново	Russian Federation
+321		greta van fleet_in_2021-12-14_in_Arena do Grêmio	Greta Van Fleet	2021-12-14	Arena do Grêmio	Porto Alegre	Brazil
+322		rome_in_2021-11-25_in_Nachtleben	Rome	2021-11-25	Nachtleben	Frankfurt am Main	Germany
+323		rome_in_2021-11-30_in_Zaścianek	Rome	2021-11-30	Zaścianek	Kraków	Poland
+324		rome_in_2021-12-08_in_Club Stereo	Rome	2021-12-08	Club Stereo	Nürnberg	Germany
+325		rome_in_2022-04-08_in_Hall le sassin	Rome	2022-04-08	Hall le sassin	Bomal-sur-Ourthe	Belgium
+326		rome_in_2022-04-11_in_Islington Assembly Hall	Rome	2022-04-11	Islington Assembly Hall	London	United Kingdom
+327		rome_in_2022-04-13_in_CCO / Centre Culturel Oecumenique	Rome	2022-04-13	CCO / Centre Culturel Oecumenique	Villeurbanne	France
+328		rome_in_2022-04-14_in_La Machine du Moulin Rouge	Rome	2022-04-14	La Machine du Moulin Rouge	Paris	France
+329		rome_in_2022-04-16_in_MS Connexion	Rome	2022-04-16	MS Connexion	Mannheim	Germany
+330		rome_in_2022-04-18_in_Effenaar	Rome	2022-04-18	Effenaar	Eindhoven	Netherlands
+331		rome_in_2022-04-22_in_Valand	Rome	2022-04-22	Valand	Göteborg	Sweden
+332		rome_in_2022-04-23_in_Slaktkyrkan	Rome	2022-04-23	Slaktkyrkan	Stockholm	Sweden
+333		the hatters_in_2022-07-13_in_Dolní oblast Vítkovice	The Hatters	2022-07-13	Dolní oblast Vítkovice	Ostrava-Vítkovice	Czech Republic
+334		би-2_in_2021-11-21_in_Music Media Dome	Би-2	2021-11-21	Music Media Dome	москва	Russian Federation
+335		би-2_in_2022-06-25_in_БСА Лужники	Би-2	2022-06-25	БСА Лужники	Москва	Russian Federation
+336		би-2_in_2021-11-21_in_Music Media Dome	Би-2	2021-11-21	Music Media Dome	москва	Russian Federation
+337		би-2_in_2022-04-30_in_Auditorio Julio Iglesias	Би-2	2022-04-30	Auditorio Julio Iglesias	Benidorm	Spain
+338		би-2_in_2022-06-25_in_БСА Лужники	Би-2	2022-06-25	БСА Лужники	Москва	Russian Federation
+339		би-2_in_2022-09-23_in_Arēna Rīga	Би-2	2022-09-23	Arēna Rīga	Rīga	Latvia
+340		эпидемия_in_2022-07-14_in_Улетай поле	Эпидемия	2022-07-14	Улетай поле	село Лагуново	Russian Federation
+341		эпидемия_in_2022-07-22_in_Усадьба Отрада	Эпидемия	2022-07-22	Усадьба Отрада	с. Волковское	Russian Federation
+342		atl_in_2022-01-08_in_Music Media Dome	ATL	2022-01-08	Music Media Dome	москва	Russian Federation
+343		atl_in_2022-01-08_in_Music Media Dome	ATL	2022-01-08	Music Media Dome	москва	Russian Federation
+344		atl_in_2022-01-08_in_Music Media Dome	ATL	2022-01-08	Music Media Dome	москва	Russian Federation
+345		atl_in_2022-01-08_in_Music Media Dome	ATL	2022-01-08	Music Media Dome	москва	Russian Federation
+346		iron maiden_in_2022-06-01_in_ВТБ Арена	Iron Maiden	2022-06-01	ВТБ Арена	Moscow	Russian Federation
+347		iron maiden_in_2022-06-01_in_ВТБ Арена	Iron Maiden	2022-06-01	ВТБ Арена	Moscow	Russian Federation
+348		iron maiden_in_2022-06-02_in_Hyvinkään lentokenttä	Iron Maiden	2022-06-02	Hyvinkään lentokenttä	Hyvinkää	Finland
+349		iron maiden_in_2022-06-10_in_Donington Park	Iron Maiden	2022-06-10	Donington Park	Castle Donington	United Kingdom
+350		iron maiden_in_2022-06-10_in_Donington Park	Iron Maiden	2022-06-10	Donington Park	Castle Donington	United Kingdom
+351		iron maiden_in_2022-06-13_in_Ormeau Park	Iron Maiden	2022-06-13	Ormeau Park	Belfast	United Kingdom
+352		iron maiden_in_2022-06-15_in_Refshaleøen	Iron Maiden	2022-06-15	Refshaleøen	København	Denmark
+353		iron maiden_in_2022-06-16_in_Boeretang	Iron Maiden	2022-06-16	Boeretang	Dessel	Belgium
+354		iron maiden_in_2022-06-20_in_Sinobo Stadium	Iron Maiden	2022-06-20	Sinobo Stadium	Praha	Czech Republic
+355		iron maiden_in_2022-06-23_in_Ekeberg	Iron Maiden	2022-06-23	Ekeberg	Oslo	Norway
+356		iron maiden_in_2022-06-23_in_Ekeberg	Iron Maiden	2022-06-23	Ekeberg	Oslo	Norway
+357		iron maiden_in_2022-06-26_in_Paris La Défense Arena	Iron Maiden	2022-06-26	Paris La Défense Arena	Nanterre	France
+358		iron maiden_in_2022-06-27_in_Gelredome	Iron Maiden	2022-06-27	Gelredome	Arnhem	Netherlands
+359		iron maiden_in_2022-06-30_in_Hallenstadion	Iron Maiden	2022-06-30	Hallenstadion	Zürich	Switzerland
+360		iron maiden_in_2022-07-02_in_RheinEnergieStadion	Iron Maiden	2022-07-02	RheinEnergieStadion	Cologne	Germany
+361		iron maiden_in_2022-07-04_in_Waldbühne	Iron Maiden	2022-07-04	Waldbühne	Berlin	Germany
+362		iron maiden_in_2022-07-07_in_Bologna Sonic Park	Iron Maiden	2022-07-07	Bologna Sonic Park	Bologna	Italy
+363		iron maiden_in_2022-07-09_in_Cannstatter Wasen	Iron Maiden	2022-07-09	Cannstatter Wasen	Stuttgart	Germany
+364		iron maiden_in_2022-07-10_in_Stadion	Iron Maiden	2022-07-10	Stadion	Wiener Neustadt	Austria
+365		iron maiden_in_2022-07-20_in_Bürgerweide, Messegelände	Iron Maiden	2022-07-20	Bürgerweide, Messegelände	Bremen	Germany
+366		iron maiden_in_2022-07-22_in_Ullevi	Iron Maiden	2022-07-22	Ullevi	Gothenburg	Sweden
+367		iron maiden_in_2022-07-24_in_Stadion Narodowy	Iron Maiden	2022-07-24	Stadion Narodowy	Warszawa	Poland
+368		iron maiden_in_2022-07-26_in_Deutsche Bank Park	Iron Maiden	2022-07-26	Deutsche Bank Park	Frankfurt am Main	Germany
+369		iron maiden_in_2022-07-29_in_Estadi Olímpic Lluis Companys	Iron Maiden	2022-07-29	Estadi Olímpic Lluis Companys	Barcelona	Spain
+370		iron maiden_in_2022-07-31_in_Estádio Nacional do Jamor	Iron Maiden	2022-07-31	Estádio Nacional do Jamor	Lisboa	Portugal
+371		iron maiden_in_2022-09-02_in_Parque Olímpico	Iron Maiden	2022-09-02	Parque Olímpico	Rio de Janeiro	Brazil
+372		iron maiden_in_2022-09-02_in_Cidade do Rock	Iron Maiden	2022-09-02	Cidade do Rock	Rio de Janeiro	Brazil
+373		alice merton_in_2022-09-03_in_Olympiapark	Alice Merton	2022-09-03	Olympiapark	Munich	Germany
+374		arab strap_in_2022-01-24_in_Assembly Rooms	Arab Strap	2022-01-24	Assembly Rooms	Edinburgh	United Kingdom
+375		arab strap_in_2022-07-14_in_The Belfast Empire Music Hall	Arab Strap	2022-07-14	The Belfast Empire Music Hall	Belfast	United Kingdom
+376		arab strap_in_2022-07-16_in_Dolan's Warehouse	Arab Strap	2022-07-16	Dolan's Warehouse	Limerick	Ireland
+377		arab strap_in_2022-07-17_in_Whelan's	Arab Strap	2022-07-17	Whelan's	Dublin	Ireland
+378		arab strap_in_2022-07-18_in_Whelan's	Arab Strap	2022-07-18	Whelan's	Dublin	Ireland
+379		arab strap_in_2022-08-11_in_Slottsskogen	Arab Strap	2022-08-11	Slottsskogen	Gothenburg	Sweden
+380		babymetal_in_2022-06-03_in_Nürburgring	BABYMETAL	2022-06-03	Nürburgring	Nürburg	Germany
+381		babymetal_in_2022-06-09_in_Greenfield Festival	BABYMETAL	2022-06-09	Greenfield Festival	Interlaken	Switzerland
+382		dubfire_in_2022-06-17_in_Praia da Rocha	Dubfire	2022-06-17	Praia da Rocha	Portimão	Portugal
+383		dubfire_in_2022-07-21_in_Sunrise Festival	Dubfire	2022-07-21	Sunrise Festival	Kolobrzeg	Poland
+384		elton john_in_2021-11-27_in_M&S Bank Arena	Elton John	2021-11-27	M&S Bank Arena	Liverpool	United Kingdom
+385		elton john_in_2022-01-21_in_Toyota Center, Houston, TX	Elton John	2022-01-21	Toyota Center, Houston, TX	None	United States
+386		elton john_in_2022-01-22_in_Toyota Center, Houston, TX	Elton John	2022-01-22	Toyota Center, Houston, TX	None	United States
+387		elton john_in_2022-02-01_in_Sprint Center	Elton John	2022-02-01	Sprint Center	Kansas City MO	United States
+388		elton john_in_2022-02-08_in_Little Caesars Arena	Elton John	2022-02-08	Little Caesars Arena	Detroit	United States
+389		elton john_in_2022-02-15_in_Scotiabank Arena	Elton John	2022-02-15	Scotiabank Arena	Toronto	Canada
+390		elton john_in_2022-02-18_in_Centre Bell	Elton John	2022-02-18	Centre Bell	Montreal	Canada
+391		elton john_in_2022-03-22_in_Xcel Energy Center	Elton John	2022-03-22	Xcel Energy Center	St. Paul	United States
+392		elton john_in_2022-03-23_in_Xcel Energy Center	Elton John	2022-03-23	Xcel Energy Center	St. Paul	United States
+393		elton john_in_2022-04-12_in_Schottenstein Center	Elton John	2022-04-12	Schottenstein Center	Columbus	United States
+394		elton john_in_2022-04-16_in_KFC Yum! Center	Elton John	2022-04-16	KFC Yum! Center	Louisville, KY	United States
+395		elton john_in_2022-05-04_in_Barclaycard Arena	Elton John	2022-05-04	Barclaycard Arena	Hamburg	Germany
+396		elton john_in_2022-05-21_in_Telenor Arena	Elton John	2022-05-21	Telenor Arena	Oslo	Norway
+397		elton john_in_2022-05-22_in_Telenor Arena	Elton John	2022-05-22	Telenor Arena	Oslo	Norway
+398		elton john_in_2022-05-27_in_Deutsche Bank Park	Elton John	2022-05-27	Deutsche Bank Park	Frankfurt am Main	Germany
+399		elton john_in_2022-05-29_in_Red Bull Arena	Elton John	2022-05-29	Red Bull Arena	Leipzig	Germany
+400		elton john_in_2022-06-01_in_Stade de Suisse (Wankdorf)	Elton John	2022-06-01	Stade de Suisse (Wankdorf)	Berne	Switzerland
+401		elton john_in_2022-06-07_in_Casa Arena	Elton John	2022-06-07	Casa Arena	Horsens	Denmark
+402		elton john_in_2022-06-09_in_Gelredome	Elton John	2022-06-09	Gelredome	Arnhem	Netherlands
+403		elton john_in_2022-06-11_in_Paris La Defense Arena	Elton John	2022-06-11	Paris La Defense Arena	Paris	France
+404		elton john_in_2022-06-15_in_Carrow Road Stadium	Elton John	2022-06-15	Carrow Road Stadium	Norwich	United Kingdom
+405		elton john_in_2022-06-24_in_Hyde Park	Elton John	2022-06-24	Hyde Park	London	United Kingdom
+406		elton john_in_2022-07-01_in_Pairc Ui chaoimh	Elton John	2022-07-01	Pairc Ui chaoimh	Cork	Ireland
+407		elton john_in_2022-07-28_in_Gillette Stadium	Elton John	2022-07-28	Gillette Stadium	Foxborough, Massachusetts 	United States
+408		elton john_in_2022-09-07_in_Rogers Centre	Elton John	2022-09-07	Rogers Centre	Toronto	Canada
+409		elton john_in_2022-09-10_in_Carrier Dome	Elton John	2022-09-10	Carrier Dome	Syracuse	United States
+410		elton john_in_2022-10-02_in_Nissan Stadium	Elton John	2022-10-02	Nissan Stadium	Nashville	United States
+411		elton john_in_2022-11-12_in_Chase Field	Elton John	2022-11-12	Chase Field	Phoenix, Arizona	United States
+412		elton john_in_2022-11-20_in_Dodger Stadium	Elton John	2022-11-20	Dodger Stadium	Los Angeles	United States
+413		elton john_in_2023-03-31_in_The SSE Arena, Belfast	Elton John	2023-03-31	The SSE Arena, Belfast	Belfast	United Kingdom
+414		guano apes_in_2022-05-21_in_Skaters Palace	Guano Apes	2022-05-21	Skaters Palace	Münster	Germany
+415		guano apes_in_2022-07-21_in_Seeflughafen	Guano Apes	2022-07-21	Seeflughafen	Nordholz	Germany
+416		guano apes_in_2022-11-19_in_Melkweg	Guano Apes	2022-11-19	Melkweg	Amsterdam	Netherlands
+417		ibrahim maalouf_in_2022-11-22_in_TivoliVredenburg	Ibrahim Maalouf	2022-11-22	TivoliVredenburg	Utrecht	Netherlands
+418		jimmy cliff_in_2022-06-10_in_Royal Festival Hall	Jimmy Cliff	2022-06-10	Royal Festival Hall	London	United Kingdom
+419		kasabian_in_2022-06-03_in_Knebworth Park	Kasabian	2022-06-03	Knebworth Park	Knebworth, Hertfordshire	United Kingdom
+420		kasabian_in_2022-06-04_in_Knebworth Park	Kasabian	2022-06-04	Knebworth Park	Knebworth, Hertfordshire	United Kingdom
+421		kasabian_in_2022-06-16_in_Seaclose Park	Kasabian	2022-06-16	Seaclose Park	Newport	United Kingdom
+422		kasabian_in_2022-06-20_in_Isle of Youth, Lake Jarun	Kasabian	2022-06-20	Isle of Youth, Lake Jarun	Zagreb	Croatia
+423		kasabian_in_2022-06-26_in_Hampden Park	Kasabian	2022-06-26	Hampden Park	Glasgow	United Kingdom
+424		kasabian_in_2022-07-14_in_Benicassim	Kasabian	2022-07-14	Benicassim	12560 Castellón de la Plana	Spain
+425		kasabian_in_2022-07-21_in_The Nick Rayns LCR	Kasabian	2022-07-21	The Nick Rayns LCR	Norwich	United Kingdom
+426		kasabian_in_2022-07-22_in_Hillsborough Park	Kasabian	2022-07-22	Hillsborough Park	Sheffield	United Kingdom
+427		mastodon_in_2021-11-21_in_The Anthem	Mastodon	2021-11-21	The Anthem	Washington	United States
+428		mastodon_in_2021-11-23_in_Ryman Auditorium	Mastodon	2021-11-23	Ryman Auditorium	Nashville, TN	United States
+429		mastodon_in_2021-11-26_in_Austin City Limits Live at the Moody Theater	Mastodon	2021-11-26	Austin City Limits Live at the Moody Theater	Austin, TX	United States
+430		mastodon_in_2021-12-01_in_Hollywood Palladium	Mastodon	2021-12-01	Hollywood Palladium	Los Angeles	United States
+431		mastodon_in_2021-12-02_in_The Fox Theater	Mastodon	2021-12-02	The Fox Theater	Oakland, CA	United States
+432		mastodon_in_2022-06-01_in_Parkbühne GeyserHaus	Mastodon	2022-06-01	Parkbühne GeyserHaus	Leipzig	Germany
+433		mastodon_in_2022-06-01_in_Stocznia Gdańska	Mastodon	2022-06-01	Stocznia Gdańska	Gdańsk	Poland
+434		mastodon_in_2022-06-03_in_Zeppelinfeld	Mastodon	2022-06-03	Zeppelinfeld	Nuremberg	Germany
+435		mastodon_in_2022-06-07_in_SALLE PLEYEL	Mastodon	2022-06-07	SALLE PLEYEL	Paris 	France
+436		mastodon_in_2022-06-09_in_013	Mastodon	2022-06-09	013	Tilburg	Netherlands
+437		mastodon_in_2022-06-10_in_Donington Park	Mastodon	2022-06-10	Donington Park	Castle Donington	United Kingdom
+438		mastodon_in_2022-06-10_in_Donington Park	Mastodon	2022-06-10	Donington Park	Castle Donington	United Kingdom
+439		mastodon_in_2022-06-13_in_Freizeitzentrum West (FZW)	Mastodon	2022-06-13	Freizeitzentrum West (FZW)	Dortmund	Germany
+440		mastodon_in_2022-06-16_in_Boeretang	Mastodon	2022-06-16	Boeretang	Dessel	Belgium
+441		mastodon_in_2022-06-20_in_Pustervik	Mastodon	2022-06-20	Pustervik	Gothenburg	Sweden
+442		mastodon_in_2022-06-21_in_Kulturbolaget	Mastodon	2022-06-21	Kulturbolaget	Malmö	Sweden
+443		mastodon_in_2022-06-23_in_Castello Scaligero	Mastodon	2022-06-23	Castello Scaligero	Villafranca di Verona (VR)	Italy
+444		mastodon_in_2022-06-23_in_Ekeberg	Mastodon	2022-06-23	Ekeberg	Oslo	Norway
+445		mastodon_in_2022-06-27_in_Arena Wien	Mastodon	2022-06-27	Arena Wien	Wien	Austria
+446		mastodon_in_2022-06-28_in_Tvornica kulture	Mastodon	2022-06-28	Tvornica kulture	Zagreb	Croatia
+447		mastodon_in_2022-06-30_in_Estádio Nacional	Mastodon	2022-06-30	Estádio Nacional	Cruz Quebrada, Oeiras	Portugal
+448		mastodon_in_2022-07-07_in_SALLE PLEYEL	Mastodon	2022-07-07	SALLE PLEYEL	Paris 	France
+449		megadeth_in_2022-06-13_in_Adrenaline Stadium	Megadeth	2022-06-13	Adrenaline Stadium	Moscow	Russian Federation
+450		megadeth_in_2022-06-02_in_Ratinanniemi	Megadeth	2022-06-02	Ratinanniemi	Tampere	Finland
+451		megadeth_in_2022-06-02_in_Hyvinkään lentokenttä	Megadeth	2022-06-02	Hyvinkään lentokenttä	Hyvinkää	Finland
+452		megadeth_in_2022-06-05_in_Sentrum Scene	Megadeth	2022-06-05	Sentrum Scene	Oslo	Norway
+453		megadeth_in_2022-06-07_in_Falkoner Salen	Megadeth	2022-06-07	Falkoner Salen	Frederiksberg	Denmark
+454		megadeth_in_2022-06-13_in_Adrenaline Stadium	Megadeth	2022-06-13	Adrenaline Stadium	Moscow	Russian Federation
+455		megadeth_in_2022-06-16_in_Boeretang	Megadeth	2022-06-16	Boeretang	Dessel	Belgium
+456		megadeth_in_2022-06-23_in_Castello Scaligero	Megadeth	2022-06-23	Castello Scaligero	Villafranca di Verona (VR)	Italy
+457		megadeth_in_2022-06-23_in_Val de Moine	Megadeth	2022-06-23	Val de Moine	Clisson	France
+458		megadeth_in_2022-06-30_in_Estádio Nacional	Megadeth	2022-06-30	Estádio Nacional	Cruz Quebrada, Oeiras	Portugal
+459		megadeth_in_2022-09-02_in_Parque Olímpico	Megadeth	2022-09-02	Parque Olímpico	Rio de Janeiro	Brazil
+460		megadeth_in_2022-09-02_in_Cidade do Rock	Megadeth	2022-09-02	Cidade do Rock	Rio de Janeiro	Brazil
+461		megadeth_in_2022-12-18_in_Arena Anhembi	Megadeth	2022-12-18	Arena Anhembi	São Paulo	Brazil
+462		mylène farmer_in_2023-06-03_in_Stade Pierre-Mauroy	Mylène Farmer	2023-06-03	Stade Pierre-Mauroy	Villeneuve-d'Ascq	France
+463		mylène farmer_in_2023-06-09_in_Stade de la Beaujoire	Mylène Farmer	2023-06-09	Stade de la Beaujoire	Nantes	France
+464		mylène farmer_in_2023-06-10_in_Stade de la Beaujoire	Mylène Farmer	2023-06-10	Stade de la Beaujoire	Nantes	France
+465		mylène farmer_in_2023-06-24_in_Groupama Stadium	Mylène Farmer	2023-06-24	Groupama Stadium	Lyon	France
+466		mylène farmer_in_2023-06-30_in_Stade de France	Mylène Farmer	2023-06-30	Stade de France	Saint-Denis	France
+467		mylène farmer_in_2023-07-08_in_Orange Vélodrome	Mylène Farmer	2023-07-08	Orange Vélodrome	Marseille	France
+468		mylène farmer_in_2023-07-22_in_Stade Roi Baudouin	Mylène Farmer	2023-07-22	Stade Roi Baudouin	Bruxelles	Belgium
+469		mylène farmer_in_2023-07-29_in_Allianz Riviera	Mylène Farmer	2023-07-29	Allianz Riviera	Nice	France
+470		placebo_in_2022-07-02_in_Sofia Airport Park	Placebo	2022-07-02	Sofia Airport Park	Sofia	Bulgaria
+471		placebo_in_2022-09-25_in_перегной	Placebo	2022-09-25	перегной	metarussia	Russian Federation
+472		placebo_in_2022-10-06_in_Mercedes-Benz Arena	Placebo	2022-10-06	Mercedes-Benz Arena	Berlin	Germany
+473		placebo_in_2022-10-08_in_Store Vega	Placebo	2022-10-08	Store Vega	København V	Denmark
+474		placebo_in_2022-10-10_in_Sentrum Scene	Placebo	2022-10-10	Sentrum Scene	Oslo	Norway
+475		placebo_in_2022-10-11_in_Cirkus	Placebo	2022-10-11	Cirkus	Stockholm	Sweden
+476		placebo_in_2022-10-13_in_Helsingin Jäähalli Black Box	Placebo	2022-10-13	Helsingin Jäähalli Black Box	Helsinki	Finland
+477		placebo_in_2022-10-14_in_Saku Suurhall	Placebo	2022-10-14	Saku Suurhall	Tallinn	Estonia
+478		placebo_in_2022-10-17_in_Centrum Expo XXI	Placebo	2022-10-17	Centrum Expo XXI	Warszawa	Poland
+479		placebo_in_2022-10-24_in_Ziggo Dome	Placebo	2022-10-24	Ziggo Dome	Amsterdam	Netherlands
+480		placebo_in_2022-10-26_in_Olympiahalle München	Placebo	2022-10-26	Olympiahalle München	München	Germany
+481		placebo_in_2022-10-31_in_O2 Universum	Placebo	2022-10-31	O2 Universum	Praha	Czech Republic
+482		placebo_in_2022-11-02_in_Stadthalle	Placebo	2022-11-02	Stadthalle	Wien	Austria
+483		placebo_in_2022-11-08_in_Sportpaleis	Placebo	2022-11-08	Sportpaleis	Merksem	Belgium
+484		placebo_in_2022-11-11_in_AccorHotels Arena	Placebo	2022-11-11	AccorHotels Arena	Paris	France
+485		placebo_in_2022-11-13_in_Arkea Arena	Placebo	2022-11-13	Arkea Arena	Floirac	France
+486		placebo_in_2022-11-18_in_Portsmouth Guidhall	Placebo	2022-11-18	Portsmouth Guidhall	Portsmouth	United Kingdom
+487		placebo_in_2022-11-19_in_Brighton Centre	Placebo	2022-11-19	Brighton Centre	Brighton	United Kingdom
+488		placebo_in_2022-11-22_in_O2 Victoria Warehouse	Placebo	2022-11-22	O2 Victoria Warehouse	Manchester	United Kingdom
+489		placebo_in_2022-11-22_in_O2 Victoria Warehouse	Placebo	2022-11-22	O2 Victoria Warehouse	Manchester	United Kingdom
+490		placebo_in_2022-11-24_in_Motorpoint Arena	Placebo	2022-11-24	Motorpoint Arena	Cardiff	United Kingdom
+491		placebo_in_2022-11-26_in_02 Academy Brixton	Placebo	2022-11-26	02 Academy Brixton	London	United Kingdom
+492		placebo_in_2022-11-27_in_02 Academy Brixton	Placebo	2022-11-27	02 Academy Brixton	London	United Kingdom
+493		public image ltd._in_2022-05-14_in_Brookside at the Rose Bowl	Public Image Ltd.	2022-05-14	Brookside at the Rose Bowl	Pasadena	United States
+494		public image ltd._in_2022-06-24_in_Klein Strand Oostende	Public Image Ltd.	2022-06-24	Klein Strand Oostende	Oostende	Belgium
+495		"sandra_in_2021-12-17_in_""Žalgirio"" arena"	Sandra	2021-12-17	"""Žalgirio"" arena"	Kaunas	Lithuania
+496		sandra_in_2021-12-18_in_Švyturio arena	Sandra	2021-12-18	Švyturio arena	Klaipėda	Lithuania
+497		sandra_in_2022-05-21_in_Štvanice	Sandra	2022-05-21	Štvanice	Praha	Czech Republic
+498		w.a.s.p._in_2022-03-18_in_Live Club	W.A.S.P.	2022-03-18	Live Club	Trezzo sull'Adda, Milan	Italy
+499		w.a.s.p._in_2022-03-19_in_Hall	W.A.S.P.	2022-03-19	Hall	Padova	Italy
+500		w.a.s.p._in_2022-03-23_in_Santana 27	W.A.S.P.	2022-03-23	Santana 27	Bilbao	Spain
+501		w.a.s.p._in_2022-03-24_in_Sala Gamma	W.A.S.P.	2022-03-24	Sala Gamma	Murcia	Spain
+502		w.a.s.p._in_2022-03-25_in_Razzmatazz	W.A.S.P.	2022-03-25	Razzmatazz	Barcelona	Spain
+503		w.a.s.p._in_2022-03-26_in_La Riviera	W.A.S.P.	2022-03-26	La Riviera	Madrid	Spain
+504		w.a.s.p._in_2022-03-30_in_Vicar Street	W.A.S.P.	2022-03-30	Vicar Street	Dublin	Ireland
+505		w.a.s.p._in_2022-03-31_in_Ulster Hall	W.A.S.P.	2022-03-31	Ulster Hall	Belfast	United Kingdom
+506		w.a.s.p._in_2022-04-01_in_KK's Steel Mill	W.A.S.P.	2022-04-01	KK's Steel Mill	Wolverhampton	United Kingdom
+507		w.a.s.p._in_2022-04-02_in_Club Academy	W.A.S.P.	2022-04-02	Club Academy	Manchester	United Kingdom
+508		w.a.s.p._in_2022-04-03_in_Rock City	W.A.S.P.	2022-04-03	Rock City	Nottingham	United Kingdom
+509		w.a.s.p._in_2022-04-05_in_O2 Academy Glasgow	W.A.S.P.	2022-04-05	O2 Academy Glasgow	Glasgow	United Kingdom
+510		w.a.s.p._in_2022-04-06_in_O2 City Hall	W.A.S.P.	2022-04-06	O2 City Hall	Newcastle 	United Kingdom
+511		w.a.s.p._in_2022-04-07_in_O2 Academy Bristol	W.A.S.P.	2022-04-07	O2 Academy Bristol	Bristol	United Kingdom
+512		w.a.s.p._in_2022-04-08_in_O2 Forum Kentish Town	W.A.S.P.	2022-04-08	O2 Forum Kentish Town	London	United Kingdom
+513		w.a.s.p._in_2022-04-09_in_Effenaar	W.A.S.P.	2022-04-09	Effenaar	Netherlands	Netherlands
+514		w.a.s.p._in_2022-04-09_in_Effenaar	W.A.S.P.	2022-04-09	Effenaar	Netherlands	Netherlands
+515		w.a.s.p._in_2022-04-10_in_Amager Bio	W.A.S.P.	2022-04-10	Amager Bio	Copenhagen	Denmark
+516		w.a.s.p._in_2022-04-10_in_Amager Bio	W.A.S.P.	2022-04-10	Amager Bio	Copenhagen	Denmark
+517		w.a.s.p._in_2022-04-12_in_Moriska Paviljongen	W.A.S.P.	2022-04-12	Moriska Paviljongen	Malmö	Sweden
+518		w.a.s.p._in_2022-04-13_in_Folkets Park	W.A.S.P.	2022-04-13	Folkets Park	Huskvarna	Sweden
+519		w.a.s.p._in_2022-04-14_in_Sporthallen	W.A.S.P.	2022-04-14	Sporthallen	Sundsvall	Sweden
+520		w.a.s.p._in_2022-04-15_in_Idun, Folkets Hus	W.A.S.P.	2022-04-15	Idun, Folkets Hus	Umeå	Sweden
+521		w.a.s.p._in_2022-04-16_in_Club Teatria	W.A.S.P.	2022-04-16	Club Teatria	Oulu	Finland
+522		w.a.s.p._in_2022-04-17_in_Pakkahuone	W.A.S.P.	2022-04-17	Pakkahuone	Tampere	Finland
+523		w.a.s.p._in_2022-04-18_in_Kulttuuritalo	W.A.S.P.	2022-04-18	Kulttuuritalo	Helsinki	Finland
+524		w.a.s.p._in_2022-04-20_in_Gasklockorna	W.A.S.P.	2022-04-20	Gasklockorna	Gävle	Sweden
+525		w.a.s.p._in_2022-04-21_in_Lokomotivet	W.A.S.P.	2022-04-21	Lokomotivet	Eskilstuna	Sweden
+526		w.a.s.p._in_2022-04-22_in_Conventum Arena	W.A.S.P.	2022-04-22	Conventum Arena	Örebro	Sweden
+527		w.a.s.p._in_2022-04-23_in_Nöjesfabriken	W.A.S.P.	2022-04-23	Nöjesfabriken	Karlstad	Sweden
+528		голос омерики_in_2021-11-25_in_ЦКЗ Аврора	Голос Омерики	2021-11-25	ЦКЗ Аврора	Санкт-Петербург	Russian Federation
+529		stacey kent_in_2022-05-16_in_Auditorium Orchestre National de Lyon	Stacey Kent	2022-05-16	Auditorium Orchestre National de Lyon	Lyon	France
+530		erdling_in_2022-04-15_in_Aladin Music Hall	Erdling	2022-04-15	Aladin Music Hall	Bremen	Germany
+531		imagine dragons_in_2022-06-05_in_СК «Лужники»	Imagine Dragons	2022-06-05	СК «Лужники»	Москва	Russian Federation
+532		"imagine dragons_in_2022-06-05_in_Спортивный комплекс ""Лужники"""	Imagine Dragons	2022-06-05	"Спортивный комплекс ""Лужники"""	Moscow	Russian Federation
+533		imagine dragons_in_2022-05-28_in_Letnany Airport	Imagine Dragons	2022-05-28	Letnany Airport	Praha 18	Czech Republic
+534		imagine dragons_in_2022-05-30_in_Letnany Airport	Imagine Dragons	2022-05-30	Letnany Airport	Praha 18	Czech Republic
+535		imagine dragons_in_2022-06-01_in_Mežaparka Lielā estrāde	Imagine Dragons	2022-06-01	Mežaparka Lielā estrāde	Rīga	Latvia
+536		imagine dragons_in_2022-06-03_in_NSC Olimpiyskiy	Imagine Dragons	2022-06-03	NSC Olimpiyskiy	Kyiv	Ukraine
+537		"imagine dragons_in_2022-06-05_in_Спортивный комплекс ""Лужники"""	Imagine Dragons	2022-06-05	"Спортивный комплекс ""Лужники"""	Moscow	Russian Federation
+538		imagine dragons_in_2022-06-05_in_СК «Лужники»	Imagine Dragons	2022-06-05	СК «Лужники»	Москва	Russian Federation
+539		imagine dragons_in_2022-06-07_in_Газпром Арена	Imagine Dragons	2022-06-07	Газпром Арена	Санкт-Петербург	Russian Federation
+540		imagine dragons_in_2022-06-18_in_Stadium MK	Imagine Dragons	2022-06-18	Stadium MK	Milton Keynes	United Kingdom
+541		imagine dragons_in_2022-06-27_in_Bergenhus Festning - Koengen	Imagine Dragons	2022-06-27	Bergenhus Festning - Koengen	Bergen	Norway
+542		imagine dragons_in_2022-06-29_in_Lotnisko Gdynia-Kosakowo	Imagine Dragons	2022-06-29	Lotnisko Gdynia-Kosakowo	Gdynia	Poland
+543		imagine dragons_in_2022-06-30_in_Werchter	Imagine Dragons	2022-06-30	Werchter	Werchter	Belgium
+544		imagine dragons_in_2022-07-05_in_Waldbühne	Imagine Dragons	2022-07-05	Waldbühne	Berlin	Germany
+545		imagine dragons_in_2022-07-06_in_Espacio Mad Cool	Imagine Dragons	2022-07-06	Espacio Mad Cool	Madrid	Spain
+546		imagine dragons_in_2022-07-06_in_Passeio Marítimo de Algés	Imagine Dragons	2022-07-06	Passeio Marítimo de Algés	Oeiras	Portugal
+547		imagine dragons_in_2022-07-09_in_Rua Pêro da Covilhã	Imagine Dragons	2022-07-09	Rua Pêro da Covilhã	Lisboa	Portugal
+548		korn_in_2022-02-04_in_Banc of California Stadium	Korn	2022-02-04	Banc of California Stadium	Los Angeles	United States
+549		korn_in_2022-02-05_in_Banc of California Stadium	Korn	2022-02-05	Banc of California Stadium	Los Angeles	United States
+550		korn_in_2022-05-19_in_Daytona International Speedway	Korn	2022-05-19	Daytona International Speedway	Daytona Beach, FL	United States
+551		loqiemean_in_2022-01-08_in_Music Media Dome	Loqiemean	2022-01-08	Music Media Dome	москва	Russian Federation
+552		loqiemean_in_2022-01-08_in_Music Media Dome	Loqiemean	2022-01-08	Music Media Dome	москва	Russian Federation
+553		порнофильмы_in_2022-05-29_in_Открытие Арена	Порнофильмы	2022-05-29	Открытие Арена	Moscow	Russian Federation
+554		порнофильмы_in_2022-05-29_in_Открытие Арена	Порнофильмы	2022-05-29	Открытие Арена	Moscow	Russian Federation
+555		порнофильмы_in_2022-08-11_in_Пляж Голубицкое	Порнофильмы	2022-08-11	Пляж Голубицкое	ГОЛУБИЦКАЯ	Russian Federation
+556		сруб_in_2022-07-22_in_Усадьба Отрада	Сруб	2022-07-22	Усадьба Отрада	с. Волковское	Russian Federation
+557		пошлая молли_in_2022-05-24_in_Ангар	ПОШЛАЯ МОЛЛИ	2022-05-24	Ангар	Омск	Russian Federation
+558		элизиум_in_2022-06-17_in_Roof Place	Элизиум	2022-06-17	Roof Place	Санкт-Петербург	Russian Federation
+559		carissa's wierd_in_2022-09-25_in_перегной	Carissa&#39;s Wierd	2022-09-25	перегной	metarussia	Russian Federation
+560		carly rae jepsen_in_2022-07-06_in_Espacio Mad Cool	Carly Rae Jepsen	2022-07-06	Espacio Mad Cool	Madrid	Spain
+561		danny brown_in_2021-12-15_in_Radius Chicago	Danny Brown	2021-12-15	Radius Chicago	Chicago, Illinois	United States
+562		deftones_in_2022-07-09_in_Парк Лужники	Deftones	2022-07-09	Парк Лужники	Moscow	Russian Federation
+563		deftones_in_2022-04-16_in_WaMu Theater	Deftones	2022-04-16	WaMu Theater	Seattle	United States
+564		deftones_in_2022-04-18_in_Bill Graham Civic Auditorium	Deftones	2022-04-18	Bill Graham Civic Auditorium	San Francisco	United States
+565		deftones_in_2022-04-18_in_Greek Theatre	Deftones	2022-04-18	Greek Theatre	Los Angeles	United States
+566		deftones_in_2022-04-23_in_Arizona Federal Theatre	Deftones	2022-04-23	Arizona Federal Theatre	Phoenix	United States
+567		deftones_in_2022-04-25_in_Ball Arena	Deftones	2022-04-25	Ball Arena	Denver	United States
+568		deftones_in_2022-05-02_in_The Pavilion at Irving Music Factory	Deftones	2022-05-02	The Pavilion at Irving Music Factory	Irving	United States
+569		deftones_in_2022-05-03_in_AT&T Center	Deftones	2022-05-03	AT&T Center	San Antonio	United States
+570		deftones_in_2022-05-06_in_Cadence Bank Amphitheatre at Chastain Park	Deftones	2022-05-06	Cadence Bank Amphitheatre at Chastain Park	Atlanta	United States
+571		deftones_in_2022-05-08_in_The Andrew J Brady ICON Music Center	Deftones	2022-05-08	The Andrew J Brady ICON Music Center	Cincinnati	United States
+572		deftones_in_2022-05-11_in_Petersen Events Center	Deftones	2022-05-11	Petersen Events Center	Pittsburgh	United States
+573		deftones_in_2022-05-14_in_The Stone Pony	Deftones	2022-05-14	The Stone Pony	Asbury Park, NJ	United States
+574		deftones_in_2022-05-15_in_The Rooftop at Pier 17	Deftones	2022-05-15	The Rooftop at Pier 17	New York, NY	United States
+575		deftones_in_2022-05-17_in_The Anthem	Deftones	2022-05-17	The Anthem	Washington, DC	United States
+576		deftones_in_2022-05-18_in_The Met Philadelphia	Deftones	2022-05-18	The Met Philadelphia	Philadephia	United States
+577		deftones_in_2022-05-19_in_Mohegan Sun Arena	Deftones	2022-05-19	Mohegan Sun Arena	Uncasville, CT	United States
+578		deftones_in_2022-05-21_in_Place Bell	Deftones	2022-05-21	Place Bell	Laval	Canada
+579		deftones_in_2022-05-22_in_RBC Echo Beach	Deftones	2022-05-22	RBC Echo Beach	Toronto	Canada
+580		deftones_in_2022-05-24_in_Michigan Lottery Amphitheatre at Freedom Hill	Deftones	2022-05-24	Michigan Lottery Amphitheatre at Freedom Hill	Sterling Heights	United States
+581		deftones_in_2022-05-26_in_The Rave / Eagles Club	Deftones	2022-05-26	The Rave / Eagles Club	Milwaukee	United States
+582		deftones_in_2022-05-27_in_Huntington Bank Pavilion at Northerly Island	Deftones	2022-05-27	Huntington Bank Pavilion at Northerly Island	Chicago	United States
+583		deftones_in_2022-05-28_in_The Armory	Deftones	2022-05-28	The Armory	Minneapolis	United States
+584		deftones_in_2022-06-03_in_Nürburgring	Deftones	2022-06-03	Nürburgring	Nürburg	Germany
+585		deftones_in_2022-06-03_in_Zeppelinfeld	Deftones	2022-06-03	Zeppelinfeld	Nuremberg	Germany
+586		deftones_in_2022-06-07_in_X-tra	Deftones	2022-06-07	X-tra	Zürich	Switzerland
+587		deftones_in_2022-06-10_in_Donington Park	Deftones	2022-06-10	Donington Park	Castle Donington	United Kingdom
+588		deftones_in_2022-06-10_in_Donington Park	Deftones	2022-06-10	Donington Park	Castle Donington	United Kingdom
+589		deftones_in_2022-06-16_in_Boeretang	Deftones	2022-06-16	Boeretang	Dessel	Belgium
+590		deftones_in_2022-06-17_in_Megaland	Deftones	2022-06-17	Megaland	Landgraaf	Netherlands
+591		deftones_in_2022-06-17_in_Val de Moine	Deftones	2022-06-17	Val de Moine	Clisson	France
+592		deftones_in_2022-06-19_in_Sky Family Park	Deftones	2022-06-19	Sky Family Park	Kyiv	Ukraine
+593		dua lipa_in_2021-12-10_in_Madison Square Garden	Dua Lipa	2021-12-10	Madison Square Garden	New York	United States
+594		dua lipa_in_2022-02-11_in_Amway Center	Dua Lipa	2022-02-11	Amway Center	Orlando	United States
+595		dua lipa_in_2022-02-12_in_State Farm Arena	Dua Lipa	2022-02-12	State Farm Arena	Atlanta, GA	United States
+596		dua lipa_in_2022-02-16_in_Spectrum Center	Dua Lipa	2022-02-16	Spectrum Center	Charlotte	United States
+597		dua lipa_in_2022-02-18_in_TD Garden	Dua Lipa	2022-02-18	TD Garden	Boston	United States
+598		dua lipa_in_2022-02-19_in_Wells Fargo Center	Dua Lipa	2022-02-19	Wells Fargo Center	Philadelphia, PA	United States
+599		dua lipa_in_2022-02-23_in_Scotiabank Arena	Dua Lipa	2022-02-23	Scotiabank Arena	Toronto	Canada
+600		dua lipa_in_2022-03-02_in_Capital One Arena	Dua Lipa	2022-03-02	Capital One Arena	Washington	United States
+601		dua lipa_in_2022-03-05_in_KeyBank Center	Dua Lipa	2022-03-05	KeyBank Center	Buffalo, NY	United States
+602		dua lipa_in_2022-03-09_in_United Center	Dua Lipa	2022-03-09	United Center	Chicago, IL	United States
+603		dua lipa_in_2022-03-20_in_Footprint Center	Dua Lipa	2022-03-20	Footprint Center	Phoenix, Arizona	United States
+604		dua lipa_in_2022-03-22_in_The Forum	Dua Lipa	2022-03-22	The Forum	Los Angeles	United States
+605		dua lipa_in_2022-03-23_in_The Forum	Dua Lipa	2022-03-23	The Forum	Los Angeles	United States
+606		dua lipa_in_2022-03-31_in_Climate Pledge Arena	Dua Lipa	2022-03-31	Climate Pledge Arena	Seattle	United States
+607		dua lipa_in_2022-04-01_in_Rogers Arena	Dua Lipa	2022-04-01	Rogers Arena	Vancouver	Canada
+608		dua lipa_in_2022-04-15_in_Manchester Arena	Dua Lipa	2022-04-15	Manchester Arena	Manchester	United Kingdom
+609		dua lipa_in_2022-04-18_in_First Direct Arena	Dua Lipa	2022-04-18	First Direct Arena	Leeds	United Kingdom
+610		dua lipa_in_2022-04-20_in_3 Arena	Dua Lipa	2022-04-20	3 Arena	Dublin	Ireland
+611		dua lipa_in_2022-04-21_in_3 Arena	Dua Lipa	2022-04-21	3 Arena	Dublin	Ireland
+612		dua lipa_in_2022-04-23_in_Utilita Arena	Dua Lipa	2022-04-23	Utilita Arena	Newcastle upon Tyne	United Kingdom
+613		dua lipa_in_2022-04-24_in_The SSE Hydro	Dua Lipa	2022-04-24	The SSE Hydro	Glasgow	United Kingdom
+614		dua lipa_in_2022-04-26_in_Motorpoint Arena	Dua Lipa	2022-04-26	Motorpoint Arena	Nottingham	United Kingdom
+615		dua lipa_in_2022-04-27_in_Motorpoint Arena	Dua Lipa	2022-04-27	Motorpoint Arena	Cardiff	United Kingdom
+616		dua lipa_in_2022-05-02_in_O2 Arena	Dua Lipa	2022-05-02	O2 Arena	London	United Kingdom
+617		dua lipa_in_2022-05-03_in_O2 Arena	Dua Lipa	2022-05-03	O2 Arena	London	United Kingdom
+618		dua lipa_in_2022-05-03_in_O2 Arena	Dua Lipa	2022-05-03	O2 Arena	London	United Kingdom
+619		dua lipa_in_2022-05-06_in_Antwerps Sportpaleis	Dua Lipa	2022-05-06	Antwerps Sportpaleis	Antwerp	Belgium
+620		dua lipa_in_2022-05-07_in_Antwerps Sportpaleis	Dua Lipa	2022-05-07	Antwerps Sportpaleis	Antwerp	Belgium
+621		dua lipa_in_2022-05-09_in_Barclays Arena	Dua Lipa	2022-05-09	Barclays Arena	Hamburg	Germany
+622		dua lipa_in_2022-05-10_in_Mercedes-Benz Arena	Dua Lipa	2022-05-10	Mercedes-Benz Arena	Berlin	Germany
+623		kendrick lamar_in_2022-07-01_in_Gärdet	Kendrick Lamar	2022-07-01	Gärdet	Stockholm	Sweden
+624		kendrick lamar_in_2022-07-07_in_Les Ardentes	Kendrick Lamar	2022-07-07	Les Ardentes	Liège	Belgium
+625		kendrick lamar_in_2022-07-08_in_Beekse Bergen	Kendrick Lamar	2022-07-08	Beekse Bergen	Hilvarenbeek	Netherlands
+626		lana del rey_in_2022-03-18_in_Parque O'Higgins	Lana Del Rey	2022-03-18	Parque O'Higgins	Santiago	Chile
+627		m.i.a._in_2022-05-21_in_Brookside at the Rosebowl	M.I.A.	2022-05-21	Brookside at the Rosebowl	Pasadena	United States
+628		m.i.a._in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	M.I.A.	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+629		machine girl_in_2021-12-09_in_Knockdown Center	Machine Girl	2021-12-09	Knockdown Center	Queens, NY	United States
+630		machine girl_in_2022-01-08_in_Cat's Cradle	Machine Girl	2022-01-08	Cat's Cradle	Carrboro	United States
+631		machine girl_in_2022-01-11_in_Gramps	Machine Girl	2022-01-11	Gramps	Miami, Fl	United States
+632		machine girl_in_2022-01-14_in_Wonky Power	Machine Girl	2022-01-14	Wonky Power	Houston	United States
+633		machine girl_in_2022-01-20_in_The Nile Theater	Machine Girl	2022-01-20	The Nile Theater	Mesa, AZ	United States
+634		machine girl_in_2022-01-22_in_The Catalyst Atrium	Machine Girl	2022-01-22	The Catalyst Atrium	Santa Cruz	United States
+635		machine girl_in_2022-01-28_in_The New Parish	Machine Girl	2022-01-28	The New Parish	Oakland, CA	United States
+636		machine girl_in_2022-01-30_in_Echoplex	Machine Girl	2022-01-30	Echoplex	Los Angeles, CA	United States
+637		machine girl_in_2022-02-05_in_Le Petit Bain	Machine Girl	2022-02-05	Le Petit Bain	Paris	France
+638		machine girl_in_2022-02-06_in_L'Aéronef	Machine Girl	2022-02-06	L'Aéronef	Lille	France
+639		machine girl_in_2022-02-08_in_Paradiso Noord, Tolhuistuin	Machine Girl	2022-02-08	Paradiso Noord, Tolhuistuin	Amsterdam	Netherlands
+640		machine girl_in_2022-02-09_in_Scala	Machine Girl	2022-02-09	Scala	London	United Kingdom
+641		machine girl_in_2022-02-10_in_Moby Dick Club	Machine Girl	2022-02-10	Moby Dick Club	Madrid	Spain
+642		machine girl_in_2022-02-19_in_Hi-Dive	Machine Girl	2022-02-19	Hi-Dive	Denver	United States
+643		machine girl_in_2022-02-23_in_Bottom Lounge	Machine Girl	2022-02-23	Bottom Lounge	Chicago, IL	United States
+644		machine girl_in_2022-02-24_in_Mahall's	Machine Girl	2022-02-24	Mahall's	Lakewood, OH	United States
+645		playboi carti_in_2021-11-23_in_The Armory	Playboi Carti	2021-11-23	The Armory	Minneapolis	United States
+646		playboi carti_in_2021-11-26_in_The Rave / Eagles Club	Playboi Carti	2021-11-26	The Rave / Eagles Club	Milwaukee	United States
+647		playboi carti_in_2021-11-28_in_Silverstein Eye Centers Arena	Playboi Carti	2021-11-28	Silverstein Eye Centers Arena	Independence, MO	United States
+648		playboi carti_in_2021-12-05_in_UPMC Events Center	Playboi Carti	2021-12-05	UPMC Events Center	Pittsburgh	United States
+649		playboi carti_in_2021-12-07_in_Tsongas Center at UMass Lowell	Playboi Carti	2021-12-07	Tsongas Center at UMass Lowell	Lowell, MA	United States
+650		playboi carti_in_2021-12-08_in_Main Street Armory	Playboi Carti	2021-12-08	Main Street Armory	Rochester, NY	United States
+651		playboi carti_in_2021-12-09_in_Coca-Cola Coliseum	Playboi Carti	2021-12-09	Coca-Cola Coliseum	Toronto	Canada
+652		playboi carti_in_2021-12-19_in_The Liacouras Center	Playboi Carti	2021-12-19	The Liacouras Center	Philadelphia	United States
+653		playboi carti_in_2021-12-23_in_State Farm Arena	Playboi Carti	2021-12-23	State Farm Arena	Atlanta, GA	United States
+654		playboi carti_in_2022-07-01_in_Gärdet	Playboi Carti	2022-07-01	Gärdet	Stockholm	Sweden
+655		spellling_in_2022-01-29_in_The UC Theater	Spellling	2022-01-29	The UC Theater	Berkely	United States
+656		spellling_in_2022-06-09_in_MVV Reitstadion / Maimarkt	Spellling	2022-06-09	MVV Reitstadion / Maimarkt	Mannheim	Germany
+657		taylor swift_in_2022-01-31_in_Wembley Stadium	Taylor Swift	2022-01-31	Wembley Stadium	London	United Kingdom
+658		vein_in_2021-12-30_in_Starland Ballroom	Vein	2021-12-30	Starland Ballroom	Sayreville, NJ	United States
+659		anderson .paak_in_2022-06-25_in_London Stadium	Anderson .Paak	2022-06-25	London Stadium	London	United Kingdom
+660		anderson .paak_in_2022-06-29_in_Marlay Park	Anderson .Paak	2022-06-29	Marlay Park	Baile Átha Cliath	Ireland
+661		anderson .paak_in_2022-07-01_in_Gärdet	Anderson .Paak	2022-07-01	Gärdet	Stockholm	Sweden
+662		anderson .paak_in_2022-07-01_in_Bellahouston Park	Anderson .Paak	2022-07-01	Bellahouston Park	Glasgow	United Kingdom
+663		fka twigs_in_2022-07-07_in_Kobetamendi	FKA twigs	2022-07-07	Kobetamendi	Bilbao	Spain
+664		genesis owusu_in_2022-01-17_in_Neumos	Genesis Owusu	2022-01-17	Neumos	Seattle	United States
+665		genesis owusu_in_2022-01-19_in_Bluebird Theater	Genesis Owusu	2022-01-19	Bluebird Theater	Denver, CO	United States
+666		genesis owusu_in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	Genesis Owusu	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+667		genesis owusu_in_2022-06-09_in_MVV Reitstadion / Maimarkt	Genesis Owusu	2022-06-09	MVV Reitstadion / Maimarkt	Mannheim	Germany
+668		genesis owusu_in_2022-06-14_in_The Grand Social	Genesis Owusu	2022-06-14	The Grand Social	Dublin	Ireland
+669		genesis owusu_in_2022-10-18_in_Brisbane Entertainment Centre	Genesis Owusu	2022-10-18	Brisbane Entertainment Centre	Brisbane, Queensland	Australia
+670		genesis owusu_in_2022-10-20_in_Qudos Bank Arena	Genesis Owusu	2022-10-20	Qudos Bank Arena	Sydney	Australia
+671		japanese breakfast_in_2021-12-09_in_House of Vans	Japanese Breakfast	2021-12-09	House of Vans	Mexico City	Mexico
+672		japanese breakfast_in_2022-03-14_in_Sala Apolo	Japanese Breakfast	2022-03-14	Sala Apolo	Barcelona	Spain
+673		japanese breakfast_in_2022-03-16_in_La Maroquinerie	Japanese Breakfast	2022-03-16	La Maroquinerie	Paris	France
+674		japanese breakfast_in_2022-03-17_in_Muziekcentrum TRIX	Japanese Breakfast	2022-03-17	Muziekcentrum TRIX	Antwerpen	Belgium
+675		japanese breakfast_in_2022-03-19_in_Paradiso Noord	Japanese Breakfast	2022-03-19	Paradiso Noord	Amsterdam	Netherlands
+676		japanese breakfast_in_2022-03-20_in_Molotow	Japanese Breakfast	2022-03-20	Molotow	Hamburg	Germany
+677		japanese breakfast_in_2022-03-22_in_Frannz Club	Japanese Breakfast	2022-03-22	Frannz Club	Berlin	Germany
+678		japanese breakfast_in_2022-03-23_in_Luxor	Japanese Breakfast	2022-03-23	Luxor	Cologne	Germany
+679		japanese breakfast_in_2022-03-26_in_Manchester Academy 2	Japanese Breakfast	2022-03-26	Manchester Academy 2	Manchester	United Kingdom
+680		japanese breakfast_in_2022-03-27_in_Saint Luke's & The Winged Ox	Japanese Breakfast	2022-03-27	Saint Luke's & The Winged Ox	Glasgow	United Kingdom
+681		japanese breakfast_in_2022-03-28_in_Brudenell Social Club	Japanese Breakfast	2022-03-28	Brudenell Social Club	Leeds	United Kingdom
+682		japanese breakfast_in_2022-03-30_in_O2 Forum Kentish Town	Japanese Breakfast	2022-03-30	O2 Forum Kentish Town	London	United Kingdom
+683		japanese breakfast_in_2022-03-31_in_The Marble Factory	Japanese Breakfast	2022-03-31	The Marble Factory	Bristol	United Kingdom
+684		japanese breakfast_in_2022-04-29_in_Central Park	Japanese Breakfast	2022-04-29	Central Park	Atlanta, Georgia	United States
+685		japanese breakfast_in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	Japanese Breakfast	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+686		japanese breakfast_in_2022-06-08_in_Rosendal, Djurgården	Japanese Breakfast	2022-06-08	Rosendal, Djurgården	Stockholm	Sweden
+687		japanese breakfast_in_2022-06-09_in_Parque da Cidade	Japanese Breakfast	2022-06-09	Parque da Cidade	Porto	Portugal
+688		jessie ware_in_2021-12-01_in_O2 Academy Birmingham	Jessie Ware	2021-12-01	O2 Academy Birmingham	Birmingham	United Kingdom
+689		jessie ware_in_2021-12-02_in_O2 Victoria Warehouse	Jessie Ware	2021-12-02	O2 Victoria Warehouse	Manchester	United Kingdom
+690		jessie ware_in_2021-12-05_in_O2 Academy Newcastle	Jessie Ware	2021-12-05	O2 Academy Newcastle	Newcastle Upon Tyne	United Kingdom
+691		jessie ware_in_2021-12-07_in_O2 Academy Leeds	Jessie Ware	2021-12-07	O2 Academy Leeds	Leeds	United Kingdom
+692		jessie ware_in_2021-12-09_in_O2 Academy Glasgow	Jessie Ware	2021-12-09	O2 Academy Glasgow	Glasgow	United Kingdom
+693		jessie ware_in_2021-12-11_in_The Marble Factory	Jessie Ware	2021-12-11	The Marble Factory	Bristol	United Kingdom
+694		jessie ware_in_2021-12-12_in_O2 Academy Brixton	Jessie Ware	2021-12-12	O2 Academy Brixton	London	United Kingdom
+695		jessie ware_in_2021-12-13_in_02 Academy Brixton	Jessie Ware	2021-12-13	02 Academy Brixton	London	United Kingdom
+696		jessie ware_in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	Jessie Ware	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+697		jessie ware_in_2022-06-29_in_Lotnisko Gdynia-Kosakowo	Jessie Ware	2022-06-29	Lotnisko Gdynia-Kosakowo	Gdynia	Poland
+698		little simz_in_2021-11-27_in_O2 Academy Newcastle	Little Simz	2021-11-27	O2 Academy Newcastle	Newcastle Upon Tyne	United Kingdom
+699		little simz_in_2021-11-30_in_The Academy	Little Simz	2021-11-30	The Academy	Dublin	Ireland
+700		little simz_in_2021-12-02_in_O2 Academy Bristol	Little Simz	2021-12-02	O2 Academy Bristol	Bristol	United Kingdom
+701		little simz_in_2021-12-06_in_Rock City	Little Simz	2021-12-06	Rock City	Nottingham	United Kingdom
+702		little simz_in_2021-12-07_in_Albert Hall	Little Simz	2021-12-07	Albert Hall	Manchester, United Kingdom	United Kingdom
+703		little simz_in_2021-12-08_in_The Nick Rayns LCR	Little Simz	2021-12-08	The Nick Rayns LCR	Norwich	United Kingdom
+704		little simz_in_2021-12-10_in_Brighton Dome	Little Simz	2021-12-10	Brighton Dome	Brighton	United Kingdom
+705		little simz_in_2021-12-12_in_Great Hall Cardiff University Students Union	Little Simz	2021-12-12	Great Hall Cardiff University Students Union	Cardiff	United Kingdom
+706		little simz_in_2021-12-13_in_Corn Exchange	Little Simz	2021-12-13	Corn Exchange	Cambridge	United Kingdom
+707		little simz_in_2021-12-16_in_O2 Brixton Academy	Little Simz	2021-12-16	O2 Brixton Academy	London, United Kingdom	United Kingdom
+708		little simz_in_2021-12-17_in_O2 Brixton Academy	Little Simz	2021-12-17	O2 Brixton Academy	London, United Kingdom	United Kingdom
+709		little simz_in_2022-01-13_in_Rockefeller Music Hall	Little Simz	2022-01-13	Rockefeller Music Hall	Oslo	Norway
+710		little simz_in_2022-01-15_in_Amager Bio	Little Simz	2022-01-15	Amager Bio	Copenhagen	Denmark
+711		little simz_in_2022-01-18_in_Tempodrom	Little Simz	2022-01-18	Tempodrom	Berlin	Germany
+712		little simz_in_2022-01-20_in_Melkweg	Little Simz	2022-01-20	Melkweg	Amsterdam	Netherlands
+713		little simz_in_2022-01-22_in_Muziekcentrum TRIX	Little Simz	2022-01-22	Muziekcentrum TRIX	Antwerpen	Belgium
+714		little simz_in_2022-01-23_in_Zoom	Little Simz	2022-01-23	Zoom	Frankfurt am Main	Germany
+715		little simz_in_2022-01-25_in_Fabrique	Little Simz	2022-01-25	Fabrique	Milano	Italy
+716		little simz_in_2022-01-28_in_Le Bataclan	Little Simz	2022-01-28	Le Bataclan	Paris	France
+717		little simz_in_2022-05-17_in_Phoenix Concert Theatre	Little Simz	2022-05-17	Phoenix Concert Theatre	Toronto	Canada
+718		little simz_in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	Little Simz	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+719		little simz_in_2022-06-09_in_Parque da Cidade	Little Simz	2022-06-09	Parque da Cidade	Porto	Portugal
+720		little simz_in_2022-06-10_in_Ferropolis	Little Simz	2022-06-10	Ferropolis	Gräfenhainichen	Germany
+721		little simz_in_2022-06-24_in_Osseghem park	Little Simz	2022-06-24	Osseghem park	Brussels	Belgium
+722		little simz_in_2022-08-12_in_Suvilahti	Little Simz	2022-08-12	Suvilahti	Helsinki	Finland
+723		lucy dacus_in_2022-02-14_in_Turner Hall Ballroom	Lucy Dacus	2022-02-14	Turner Hall Ballroom	Milwaukee, WI	United States
+724		lucy dacus_in_2022-02-23_in_The Georgia Theatre	Lucy Dacus	2022-02-23	The Georgia Theatre	Athens	United States
+725		lucy dacus_in_2022-03-01_in_Danforth Music Hall	Lucy Dacus	2022-03-01	Danforth Music Hall	Toronto	Canada
+726		lucy dacus_in_2022-03-05_in_Rams Head Live!	Lucy Dacus	2022-03-05	Rams Head Live!	Baltimore, MD	United States
+727		lucy dacus_in_2022-03-19_in_Brudenell Social Club	Lucy Dacus	2022-03-19	Brudenell Social Club	Leeds	United Kingdom
+728		lucy dacus_in_2022-03-21_in_The Academy	Lucy Dacus	2022-03-21	The Academy	Dublin	Ireland
+729		lucy dacus_in_2022-03-23_in_Gorilla	Lucy Dacus	2022-03-23	Gorilla	Manchester	United Kingdom
+730		lucy dacus_in_2022-03-24_in_Trinity Centre	Lucy Dacus	2022-03-24	Trinity Centre	Bristol	United Kingdom
+731		lucy dacus_in_2022-03-25_in_O2 Forum Kentish Town	Lucy Dacus	2022-03-25	O2 Forum Kentish Town	London	United Kingdom
+732		lucy dacus_in_2022-03-29_in_Botanique	Lucy Dacus	2022-03-29	Botanique	Brussels	Belgium
+733		lucy dacus_in_2022-03-30_in_Paradiso Noord	Lucy Dacus	2022-03-30	Paradiso Noord	Amsterdam	Netherlands
+734		lucy dacus_in_2022-03-31_in_Artheater	Lucy Dacus	2022-03-31	Artheater	Cologne	Germany
+735		lucy dacus_in_2022-04-02_in_Molotow	Lucy Dacus	2022-04-02	Molotow	Hamburg	Germany
+736		lucy dacus_in_2022-04-04_in_Voxhall	Lucy Dacus	2022-04-04	Voxhall	Aarhus	Denmark
+737		lucy dacus_in_2022-04-06_in_Parkteatret	Lucy Dacus	2022-04-06	Parkteatret	Oslo	Norway
+738		lucy dacus_in_2022-04-07_in_Nalen Klubb	Lucy Dacus	2022-04-07	Nalen Klubb	Stockholm	Sweden
+739		lucy dacus_in_2022-04-09_in_Lido	Lucy Dacus	2022-04-09	Lido	Berlin	Germany
+740		lucy dacus_in_2022-04-10_in_TRAFO	Lucy Dacus	2022-04-10	TRAFO	Jena	Germany
+741		lucy dacus_in_2022-04-14_in_Bogen F	Lucy Dacus	2022-04-14	Bogen F	Zürich	Switzerland
+742		lucy dacus_in_2022-04-15_in_La Maroquinerie	Lucy Dacus	2022-04-15	La Maroquinerie	Paris	France
+743		magdalena bay_in_2021-12-01_in_The Lexington	Magdalena Bay	2021-12-01	The Lexington	London	United Kingdom
+744		rina sawayama_in_2022-03-19_in_La Gaîté Lyrique	Rina Sawayama	2022-03-19	La Gaîté Lyrique	Paris	France
+745		rina sawayama_in_2022-03-20_in_Botanique	Rina Sawayama	2022-03-20	Botanique	Brussels	Belgium
+746		rina sawayama_in_2022-03-22_in_Melkweg Oude Zaal	Rina Sawayama	2022-03-22	Melkweg Oude Zaal	Amsterdam	Netherlands
+747		rina sawayama_in_2022-03-23_in_Lido	Rina Sawayama	2022-03-23	Lido	Berlin	Germany
+748		rina sawayama_in_2022-04-11_in_Great American Music Hall	Rina Sawayama	2022-04-11	Great American Music Hall	San Francisco, CA	United States
+749		rina sawayama_in_2022-04-19_in_The Crocodile	Rina Sawayama	2022-04-19	The Crocodile	Seattle, WA	United States
+750		rina sawayama_in_2022-04-27_in_Gothic Theatre	Rina Sawayama	2022-04-27	Gothic Theatre	Englewood, CO	United States
+751		rina sawayama_in_2022-04-29_in_First Avenue & 7th St. Entry	Rina Sawayama	2022-04-29	First Avenue & 7th St. Entry	Minneapolis, MN	United States
+752		rina sawayama_in_2022-04-30_in_Metro	Rina Sawayama	2022-04-30	Metro	Chicago	United States
+753		rina sawayama_in_2022-05-02_in_Danforth Music Hall	Rina Sawayama	2022-05-02	Danforth Music Hall	Toronto	Canada
+754		rina sawayama_in_2022-05-06_in_Capital Turnaround	Rina Sawayama	2022-05-06	Capital Turnaround	Washington DC	United States
+755		rina sawayama_in_2022-05-07_in_TLA / Theatre of the Living Arts	Rina Sawayama	2022-05-07	TLA / Theatre of the Living Arts	Philadelphia	United States
+756		rina sawayama_in_2022-05-08_in_Brooklyn Steel	Rina Sawayama	2022-05-08	Brooklyn Steel	Brooklyn	United States
+757		rina sawayama_in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	Rina Sawayama	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+758		rina sawayama_in_2022-06-09_in_Parc Del Forum	Rina Sawayama	2022-06-09	Parc Del Forum	Barcelona	Spain
+759		rina sawayama_in_2022-06-09_in_Parque da Cidade	Rina Sawayama	2022-06-09	Parque da Cidade	Porto	Portugal
+760		rina sawayama_in_2022-06-25_in_Bellahouston Park	Rina Sawayama	2022-06-25	Bellahouston Park	Glasgow	United Kingdom
+761		the strokes_in_2021-12-31_in_Barclays Center	The Strokes	2021-12-31	Barclays Center	Brooklyn, NY	United States
+762		the strokes_in_2022-03-18_in_Parque O'Higgins	The Strokes	2022-03-18	Parque O'Higgins	Santiago	Chile
+763		the strokes_in_2022-03-18_in_Hipódromo de San Isidro	The Strokes	2022-03-18	Hipódromo de San Isidro	San Isidro, Buenos Aires	Argentina
+764		the strokes_in_2022-03-25_in_Autódromo de Interlagos	The Strokes	2022-03-25	Autódromo de Interlagos	São Paulo	Brazil
+765		the strokes_in_2022-03-25_in_Campo de Golf Briceño 18	The Strokes	2022-03-25	Campo de Golf Briceño 18	Bogotá	Colombia
+766		the strokes_in_2022-05-21_in_Arena VFG	The Strokes	2022-05-21	Arena VFG	Tlajomulco de Zuñiga, Jalisco	Mexico
+767		the strokes_in_2022-06-02_in_Platja del Fòrum i Parc de la Pau	The Strokes	2022-06-02	Platja del Fòrum i Parc de la Pau	Barcelona 	Spain
+768		the strokes_in_2022-06-08_in_Rosendal, Djurgården	The Strokes	2022-06-08	Rosendal, Djurgården	Stockholm	Sweden
+769		the strokes_in_2022-06-10_in_Flughafen Tempelhof	The Strokes	2022-06-10	Flughafen Tempelhof	Berlin	Germany
+770		the strokes_in_2022-07-06_in_Passeio Marítimo de Algés	The Strokes	2022-07-06	Passeio Marítimo de Algés	Oeiras	Portugal
+771		the strokes_in_2022-07-08_in_Proms Arena	The Strokes	2022-07-08	Proms Arena	Lancashire	United Kingdom
+772		the strokes_in_2022-07-22_in_North Byron Shire Parklands	The Strokes	2022-07-22	North Byron Shire Parklands	Byron Bay	Australia
+773		the strokes_in_2022-07-26_in_John Cain Arena	The Strokes	2022-07-26	John Cain Arena	Melbourne	Australia
+774		the strokes_in_2022-07-28_in_Hordern Pavilion	The Strokes	2022-07-28	Hordern Pavilion	Sydney	Australia
+775		the strokes_in_2022-07-29_in_Hordern Pavilion	The Strokes	2022-07-29	Hordern Pavilion	Sydney	Australia
+776		the strokes_in_2022-08-03_in_T-Mobile Park	The Strokes	2022-08-03	T-Mobile Park	Seattle	United States
+777		the strokes_in_2022-08-12_in_Nissan Stadium	The Strokes	2022-08-12	Nissan Stadium	Nashville	United States
+778		the strokes_in_2022-08-17_in_MetLife Stadium	The Strokes	2022-08-17	MetLife Stadium	East Rutherford, NJ	United States
+779		the strokes_in_2022-09-01_in_Bank of America Stadium	The Strokes	2022-09-01	Bank of America Stadium	Charlotte, NC	United States
+780		the strokes_in_2022-09-08_in_Nationals Park	The Strokes	2022-09-08	Nationals Park	Washington D.C.	United States
+781		the strokes_in_2022-09-15_in_Camping World Stadium	The Strokes	2022-09-15	Camping World Stadium	Orlando, FL	United States
+782		tv girl_in_2021-12-07_in_Hawthorne Theatre	TV Girl	2021-12-07	Hawthorne Theatre	Portland	United States
+783		tv girl_in_2021-12-08_in_The Crocodile	TV Girl	2021-12-08	The Crocodile	Seattle, WA	United States
+784		tv girl_in_2021-12-09_in_WOW Hall	TV Girl	2021-12-09	WOW Hall	Eugene	United States
+785		tv girl_in_2021-12-13_in_Rickshaw Stop	TV Girl	2021-12-13	Rickshaw Stop	San Francisco	United States
+786		tv girl_in_2022-06-11_in_O2 Academy Islington	TV Girl	2022-06-11	O2 Academy Islington	London	United Kingdom
+787		tv girl_in_2022-06-21_in_The Grand Social	TV Girl	2022-06-21	The Grand Social	Dublin	Ireland

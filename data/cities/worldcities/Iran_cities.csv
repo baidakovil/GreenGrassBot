@@ -1,0 +1,224 @@
+	city	city_ascii
+0	Tehran	Tehran
+1	Mashhad	Mashhad
+2	Eşfahān	Esfahan
+3	Karaj	Karaj
+4	Tabrīz	Tabriz
+5	Shīrāz	Shiraz
+6	Qom	Qom
+7	Ahvāz	Ahvaz
+8	Kermānshāh	Kermanshah
+9	Orūmīyeh	Orumiyeh
+10	Rasht	Rasht
+11	Kermān	Kerman
+12	Zāhedān	Zahedan
+13	Eslāmshahr	Eslamshahr
+14	Hamadān	Hamadan
+15	Yazd	Yazd
+16	Arāk	Arak
+17	Ardabīl	Ardabil
+18	Bandar ‘Abbās	Bandar `Abbas
+19	Zanjān	Zanjan
+20	Kāshān	Kashan
+21	Qazvīn	Qazvin
+22	Sanandaj	Sanandaj
+23	Madan	Madan
+24	Khorramābād	Khorramabad
+25	Shahr-e Qods	Shahr-e Qods
+26	Gorgān	Gorgan
+27	Shahrīār	Shahriar
+28	Malārd	Malard
+29	Sartā	Sarta
+30	Dezfūl	Dezful
+31	Bābol	Babol
+32	Būkān	Bukan
+33	Sabzevār	Sabzevar
+34	Āmol	Amol
+35	Pākdasht	Pakdasht
+36	Najafābād	Najafabad
+37	Borūjerd	Borujerd
+38	Qarchak	Qarchak
+39	Varāmīn	Varamin
+40	Neyshābūr	Neyshabur
+41	Sāveh	Saveh
+42	Khomeynī Shahr	Khomeyni Shahr
+43	Nasīm Shahr	Nasim Shahr
+44	Qā’em Shahr	Qa'em Shahr
+45	Bojnūrd	Bojnurd
+46	Bandar-e Būshehr	Bandar-e Bushehr
+47	Semnān	Semnan
+48	Fardīs	Fardis
+49	Khowy	Khowy
+50	Bīrjand	Birjand
+51	Marāgheh	Maragheh
+52	Sīrjān	Sirjan
+53	Shāhīn Shahr	Shahin Shahr
+54	Malāyer	Malayer
+55	Mahābād	Mahabad
+56	Saqqez	Saqqez
+57	Bandar-e Māhshahr	Bandar-e Mahshahr
+58	Rafsanjān	Rafsanjan
+59	Shahr-e Kord	Shahr-e Kord
+60	Golmeh	Golmeh
+61	Gonbad-e Kāvūs	Gonbad-e Kavus
+62	Shāhrūd	Shahrud
+63	Marvdasht	Marvdasht
+64	Qūchān	Quchan
+65	Kamālshahr	Kamalshahr
+66	Jahrom	Jahrom
+67	Torbat-e Ḩeydarīyeh	Torbat-e Heydariyeh
+68	Pīrānshahr	Piranshahr
+69	Marīvān	Marivan
+70	Andīmeshk	Andimeshk
+71	Shahreẕā	Shahreza
+72	Zābol	Zabol
+73	Khorramshahr	Khorramshahr
+74	Marand	Marand
+75	Jīroft	Jiroft
+76	Salmās	Salmas
+77	Bam	Bam
+78	Behbahān	Behbahan
+79	Dorūd	Dorud
+80	Moḩammad Shahr	Mohammad Shahr
+81	Naz̧arābād	Nazarabad
+82	Bandar-e Anzalī	Bandar-e Anzali
+83	Fasā	Fasa
+84	Borāzjān	Borazjan
+85	Bāneh	Baneh
+86	Yāsūj	Yasuj
+87	Chābahār	Chabahar
+88	Robāţ Karīm	Robat Karim
+89	Khāk-e ‘Alī	Khak-e `Ali
+90	Kāshmar	Kashmar
+91	Shūshtar	Shushtar
+92	Ahar	Ahar
+93	Masjed Soleymān	Masjed Soleyman
+94	Torbat-e Jām	Torbat-e Jam
+95	Būmahen	Bumahen
+96	Sārī	Sari
+97	Īlām	Ilam
+98	Kāzerūn	Kazerun
+99	Khowrāsgān	Khowrasgan
+100	Shīrvān	Shirvan
+101	Meybod	Meybod
+102	Alīgūdarz	Aligudarz
+103	Bonāb	Bonab
+104	Tākestān	Takestan
+105	Oshnavīyeh	Oshnaviyeh
+106	Bandar-e Genāveh	Bandar-e Genaveh
+107	Māhdāsht	Mahdasht
+108	Zarand	Zarand
+109	Mobārakeh	Mobarakeh
+110	Esfarāyen	Esfarayen
+111	Dāmghān	Damghan
+112	Tāybād	Taybad
+113	Zarrīn Shahr	Zarrin Shahr
+114	Ārān Bīdgol	Aran Bidgol
+115	Hashtpar	Hashtpar
+116	Bījār	Bijar
+117	Sardasht	Sardasht
+118	Rāmhormoz	Ramhormoz
+119	Garmsār	Garmsar
+120	Damāvand	Damavand
+121	Golpāyegān	Golpayegan
+122	Aznā	Azna
+123	Darcheh	Darcheh
+124	Naţanz	Natanz
+125	Takāb	Takab
+126	Sarāb	Sarab
+127	Bāft	Baft
+128	Khalkhāl	Khalkhal
+129	Falāvarjān	Falavarjan
+130	Kahrīzak	Kahrizak
+131	Sarpol-e Z̄ahāb	Sarpol-e Zahab
+132	Gerāsh	Gerash
+133	Shāhīn Dezh	Shahin Dezh
+134	Khvāf	Khvaf
+135	Qahderījān	Qahderijan
+136	Evaz	Evaz
+137	Bardaskan	Bardaskan
+138	Hādīshahr	Hadishahr
+139	Fūman	Fuman
+140	Semīrom	Semirom
+141	Mahdīshahr	Mahdishahr
+142	Kelīshād va Sūdarjān	Kelishad va Sudarjan
+143	Sheybān	Sheyban
+144	Goldasht	Goldasht
+145	Khvānsār	Khvansar
+146	Gaz	Gaz
+147	Khowrzūq	Khowrzuq
+148	Abrīsham	Abrisham
+149	Maḩmūdābād Nemūneh	Mahmudabad Nemuneh
+150	Kabūdarāhang	Kabudarahang
+151	Bandar-e Kong	Bandar-e Kong
+152	Ashkezar	Ashkezar
+153	Kherāmeh	Kherameh
+154	Taft	Taft
+155	Lavāsān	Lavasan
+156	Feyẕābād	Feyzabad
+157	Dīzīcheh	Dizicheh
+158	Sedeh Lanjān	Sedeh Lanjan
+159	Dehāqān	Dehaqan
+160	Chamgardān	Chamgardan
+161	Dehaq	Dehaq
+162	Shahr-e Jadīd-e Hashtgerd	Shahr-e Jadid-e Hashtgerd
+163	Tīrān	Tiran
+164	Dastgerd	Dastgerd
+165	Amlash	Amlash
+166	Ardestān	Ardestan
+167	‘Alavīcheh	`Alavicheh
+168	Fāmenīn	Famenin
+169	Khomām	Khomam
+170	Fereydūnshahr	Fereydunshahr
+171	Kūshk	Kushk
+172	Charmahīn	Charmahin
+173	Eyvānekey	Eyvanekey
+174	Reẕvānshahr	Rezvanshahr
+175	Ahram	Ahram
+176	Varzaneh	Varzaneh
+177	Pīr Bakrān	Pir Bakran
+178	Poldasht	Poldasht
+179	Qaşr-e Shīrīn	Qasr-e Shirin
+180	Shahmīrzād	Shahmirzad
+181	Şā’īn Qal‘eh	Sa'in Qal`eh
+182	Rāyen	Rayen
+183	Galleh Dār	Galleh Dar
+184	Mīāndasht	Miandasht
+185	Sorkheh	Sorkheh
+186	Jūraqān	Juraqan
+187	Kaleybar	Kaleybar
+188	Banārūyeh	Banaruyeh
+189	Pā’īn Chāf	Pa'in Chaf
+190	Banak	Banak
+191	Azandarīān	Azandarian
+192	Zāzerān	Zazeran
+193	Kahrīz Sang	Kahriz Sang
+194	Chāboksar	Chaboksar
+195	Tāzeh Shahr	Tazeh Shahr
+196	Bahnemīr	Bahnemir
+197	Fīrūraq	Firuraq
+198	Khondāb	Khondab
+199	Zavāreh	Zavareh
+200	Khoshk Bījār	Khoshk Bijar
+201	Komījān	Komijan
+202	Chādegān	Chadegan
+203	Gūged	Guged
+204	Bāzargān	Bazargan
+205	Beyram	Beyram
+206	Jowzdān	Jowzdan
+207	Bahman	Bahman
+208	Kondor	Kondor
+209	Ārādān	Aradan
+210	Khūr	Khur
+211	Darjazīn	Darjazin
+212	Mojen	Mojen
+213	Akbarābād	Akbarabad
+214	Naşrābād	Nasrabad
+215	Meymeh	Meymeh
+216	Manz̧arīyeh	Manzariyeh
+217	Narjeh	Narjeh
+218	Chūbar	Chubar
+219	Bīdokht	Bidokht
+220	Ḩannā	Hanna
+221	Bandar-e Rīg	Bandar-e Rig
+222	Abūzeydābād	Abuzeydabad

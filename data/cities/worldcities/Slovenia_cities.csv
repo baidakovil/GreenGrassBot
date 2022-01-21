@@ -1,0 +1,213 @@
+	city	city_ascii
+0	Ljubljana	Ljubljana
+1	Maribor	Maribor
+2	Kranj	Kranj
+3	Celje	Celje
+4	Koper	Koper
+5	Velenje	Velenje
+6	Novo Mesto	Novo Mesto
+7	Ptuj	Ptuj
+8	Kamnik	Kamnik
+9	Jesenice	Jesenice
+10	Domžale	Domzale
+11	Nova Gorica	Nova Gorica
+12	Murska Sobota	Murska Sobota
+13	Izola	Izola
+14	Škofja Loka	Skofja Loka
+15	Postojna	Postojna
+16	Vrhnika	Vrhnika
+17	Grosuplje	Grosuplje
+18	Kočevje	Kocevje
+19	Krško	Krsko
+20	Slovenska Bistrica	Slovenska Bistrica
+21	Litija	Litija
+22	Brežice	Brezice
+23	Ravne na Koroškem	Ravne na Koroskem
+24	Slovenj Gradec	Slovenj Gradec
+25	Ajdovščina	Ajdovscina
+26	Sežana	Sezana
+27	Zagorje	Zagorje
+28	Črnomelj	Crnomelj
+29	Idrija	Idrija
+30	Prevalje	Prevalje
+31	Hrastnik	Hrastnik
+32	Slovenske Konjice	Slovenske Konjice
+33	Žalec	Zalec
+34	Bled	Bled
+35	Šentjur	Sentjur
+36	Sevnica	Sevnica
+37	Dravograd	Dravograd
+38	Radlje ob Dravi	Radlje ob Dravi
+39	Šempeter pri Gorici	Sempeter pri Gorici
+40	Ilirska Bistrica	Ilirska Bistrica
+41	Cerknica	Cerknica
+42	Laško	Lasko
+43	Ruše	Ruse
+44	Žiri	Ziri
+45	Gornja Radgona	Gornja Radgona
+46	Trebnje	Trebnje
+47	Piran	Piran
+48	Ankaran	Ankaran
+49	Lenart v Slovenskih Goricah	Lenart v Slovenskih Goricah
+50	Mežica	Mezica
+51	Metlika	Metlika
+52	Borovnica	Borovnica
+53	Lendava	Lendava
+54	Vojnik	Vojnik
+55	Beltinci	Beltinci
+56	Naklo	Naklo
+57	Vipava	Vipava
+58	Radeče	Radece
+59	Ormož	Ormoz
+60	Vuzenica	Vuzenica
+61	Odranci	Odranci
+62	Šentjernej	Sentjernej
+63	Bovec	Bovec
+64	Radovljica	Radovljica
+65	Trbovlje	Trbovlje
+66	Ivančna Gorica	Ivancna Gorica
+67	Rogaška Slatina	Rogaska Slatina
+68	Kobarid	Kobarid
+69	Žirovnica	Zirovnica
+70	Štore	Store
+71	Cerklje na Gorenjskem	Cerklje na Gorenjskem
+72	Šoštanj	Sostanj
+73	Kostanjevica na Krki	Kostanjevica na Krki
+74	Prebold	Prebold
+75	Miklavž na Dravskem Polju	Miklavz na Dravskem Polju
+76	Mozirje	Mozirje
+77	Polzela	Polzela
+78	Spodnje Hoče	Spodnje Hoce
+79	Selnica ob Dravi	Selnica ob Dravi
+80	Šmartno	Smartno
+81	Medvode	Medvode
+82	Moravče	Moravce
+83	Kanal	Kanal
+84	Gornji Petrovci	Gornji Petrovci
+85	Nazarje	Nazarje
+86	Mengeš	Menges
+87	Zreče	Zrece
+88	Preddvor	Preddvor
+89	Poljčane	Poljcane
+90	Šmarje	Smarje
+91	Komenda	Komenda
+92	Škofljica	Skofljica
+93	Brezovica	Brezovica
+94	Muta	Muta
+95	Radenci	Radenci
+96	Log	Log
+97	Tišina	Tisina
+98	Spodnji Duplek	Spodnji Duplek
+99	Ljutomer	Ljutomer
+100	Oplotnica	Oplotnica
+101	Lukovica	Lukovica
+102	Šmartno	Smartno
+103	Šenčur	Sencur
+104	Mirna	Mirna
+105	Rače	Race
+106	Vitanje	Vitanje
+107	Majšperk	Majsperk
+108	Horjul	Horjul
+109	Luče	Luce
+110	Spodnja Hajdina	Spodnja Hajdina
+111	Vodice	Vodice
+112	Pivka	Pivka
+113	Braslovče	Braslovce
+114	Lovrenc na Pohorju	Lovrenc na Pohorju
+115	Črna na Koroškem	Crna na Koroskem
+116	Pesnica	Pesnica
+117	Dobrna	Dobrna
+118	Šentilj	Sentilj
+119	Vransko	Vransko
+120	Šentrupert	Sentrupert
+121	Bistrica ob Sotli	Bistrica ob Sotli
+122	Logatec	Logatec
+123	Tržič	Trzic
+124	Bohinjska Bistrica	Bohinjska Bistrica
+125	Trzin	Trzin
+126	Rečica	Recica
+127	Gorišnica	Gorisnica
+128	Volčja Draga	Volcja Draga
+129	Dornava	Dornava
+130	Železniki	Zelezniki
+131	Dol	Dol
+132	Ig	Ig
+133	Gorenja Vas	Gorenja Vas
+134	Cerkno	Cerkno
+135	Stari Trg	Stari Trg
+136	Sveti Jurij	Sveti Jurij
+137	Videm	Videm
+138	Ljubno	Ljubno
+139	Straža	Straza
+140	Šmarješke Toplice	Smarjeske Toplice
+141	Kidričevo	Kidricevo
+142	Semič	Semic
+143	Starše	Starse
+144	Dobrovo	Dobrovo
+145	Turnišče	Turnisce
+146	Tabor	Tabor
+147	Križevci	Krizevci
+148	Sveta Trojica v Slovenskih Goricah	Sveta Trojica v Slovenskih Goricah
+149	Sveta Ana	Sveta Ana
+150	Tolmin	Tolmin
+151	Benedikt	Benedikt
+152	Dolenjske Toplice	Dolenjske Toplice
+153	Veržej	Verzej
+154	Zgornja Kungota	Zgornja Kungota
+155	Črenšovci	Crensovci
+156	Mirna Peč	Mirna Pec
+157	Markovci	Markovci
+158	Žužemberk	Zuzemberk
+159	Dobrova	Dobrova
+160	Velike Lašče	Velike Lasce
+161	Puconci	Puconci
+162	Škocjan	Skocjan
+163	Mokronog	Mokronog
+164	Kozina	Kozina
+165	Velika Polana	Velika Polana
+166	Cankova	Cankova
+167	Središče ob Dravi	Sredisce ob Dravi
+168	Rogašovci	Rogasovci
+169	Nova Vas	Nova Vas
+170	Apače	Apace
+171	Cerkvenjak	Cerkvenjak
+172	Kuzma	Kuzma
+173	Juršinci	Jursinci
+174	Gornji Grad	Gornji Grad
+175	Videm pri Ptuju	Videm pri Ptuju
+176	Cirkulane	Cirkulane
+177	Ribnica	Ribnica
+178	Miren	Miren
+179	Zavrč	Zavrc
+180	Podlehnik	Podlehnik
+181	Ribnica	Ribnica
+182	Zgornje Gorje	Zgornje Gorje
+183	Tomaž pri Ormožu	Tomaz pri Ormozu
+184	Vitomarci	Vitomarci
+185	Komen	Komen
+186	Divača	Divaca
+187	Destrnik	Destrnik
+188	Kozje	Kozje
+189	Jurovski Dol	Jurovski Dol
+190	Dobje	Dobje
+191	Moravske-Toplice	Moravske-Toplice
+192	Podvelka	Podvelka
+193	Trnovska Vas	Trnovska Vas
+194	Makole	Makole
+195	Grad	Grad
+196	Razkrižje	Razkrizje
+197	Rogatec	Rogatec
+198	Osilnica	Osilnica
+199	Sodražica	Sodrazica
+200	Dobrovnik	Dobrovnik
+201	Mislinja	Mislinja
+202	Podčetrtek	Podcetrtek
+203	Hrib-Loški Potok	Hrib-Loski Potok
+204	Kobilje	Kobilje
+205	Kranjska Gora	Kranjska Gora
+206	Žetale	Zetale
+207	Šalovci	Salovci
+208	Solčava	Solcava
+209	Hodoš	Hodos
+210	Kostel	Kostel
+211	Zgornje Jezersko	Zgornje Jezersko

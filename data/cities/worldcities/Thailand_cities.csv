@@ -1,0 +1,394 @@
+	city	city_ascii
+0	Bangkok	Bangkok
+1	Nonthaburi	Nonthaburi
+2	Pak Kret	Pak Kret
+3	Hat Yai	Hat Yai
+4	Chiang Mai	Chiang Mai
+5	Nakhon Ratchasima	Nakhon Ratchasima
+6	Surat Thani	Surat Thani
+7	Udon Thani	Udon Thani
+8	Ban Bang Pu Mai	Ban Bang Pu Mai
+9	Phatthaya	Phatthaya
+10	Khon Kaen	Khon Kaen
+11	Ban Mangkon	Ban Mangkon
+12	Nakhon Si Thammarat	Nakhon Si Thammarat
+13	Nakhon Sawan	Nakhon Sawan
+14	Phuket	Phuket
+15	Ban Talat Rangsit	Ban Talat Rangsit
+16	Nakhon Pathom	Nakhon Pathom
+17	Ubon Ratchathani	Ubon Ratchathani
+18	Phitsanulok	Phitsanulok
+19	Chiang Rai	Chiang Rai
+20	Songkhla	Songkhla
+21	Saraburi	Saraburi
+22	Rayong	Rayong
+23	Ban Bang Kaeo	Ban Bang Kaeo
+24	Ban Rangsit	Ban Rangsit
+25	Yala	Yala
+26	Samut Sakhon	Samut Sakhon
+27	Trang	Trang
+28	Samut Prakan	Samut Prakan
+29	Phra Nakhon Si Ayutthaya	Phra Nakhon Si Ayutthaya
+30	Lampang	Lampang
+31	Prachuap Khiri Khan	Prachuap Khiri Khan
+32	Muban Saeng Bua Thong	Muban Saeng Bua Thong
+33	Sakon Nakhon	Sakon Nakhon
+34	Maha Sarakham	Maha Sarakham
+35	Bang Bua Thong	Bang Bua Thong
+36	Nong Khai	Nong Khai
+37	Bang Kruai	Bang Kruai
+38	Pattani	Pattani
+39	Si Sa Ket	Si Sa Ket
+40	Narathiwat	Narathiwat
+41	Ban Sai Ma Tai	Ban Sai Ma Tai
+42	Chachoengsao	Chachoengsao
+43	Surin	Surin
+44	Samrong	Samrong
+45	Chaiyaphum	Chaiyaphum
+46	Ratchaburi	Ratchaburi
+47	Roi Et	Roi Et
+48	Phatthalung	Phatthalung
+49	Kalasin	Kalasin
+50	Uttaradit	Uttaradit
+51	Chumphon	Chumphon
+52	Mukdahan	Mukdahan
+53	Ban Bang Krang	Ban Bang Krang
+54	Chon Buri	Chon Buri
+55	Ban Bang Khu Wat	Ban Bang Khu Wat
+56	Krabi	Krabi
+57	Kamphaeng Phet	Kamphaeng Phet
+58	Sai Mai	Sai Mai
+59	Samut Songkhram	Samut Songkhram
+60	Buri Ram	Buri Ram
+61	Ban Bang Phun	Ban Bang Phun
+62	Nakhon Phanom	Nakhon Phanom
+63	Suphan Buri	Suphan Buri
+64	Bang Sao Thong	Bang Sao Thong
+65	Amnat Charoen	Amnat Charoen
+66	Krathum Baen	Krathum Baen
+67	Lop Buri	Lop Buri
+68	Chanthaburi	Chanthaburi
+69	Satun	Satun
+70	Phetchaburi	Phetchaburi
+71	Phichit	Phichit
+72	Loei	Loei
+73	Phetchabun	Phetchabun
+74	Nong Bua Lamphu	Nong Bua Lamphu
+75	Nan	Nan
+76	Yasothon	Yasothon
+77	Phra Pradaeng	Phra Pradaeng
+78	Ban Rawai	Ban Rawai
+79	Sing Buri	Sing Buri
+80	Prachin Buri	Prachin Buri
+81	Sa Kaeo	Sa Kaeo
+82	Tak	Tak
+83	Phayao	Phayao
+84	Phrae	Phrae
+85	Pathum Thani	Pathum Thani
+86	Ranong	Ranong
+87	Nakhon Nayok	Nakhon Nayok
+88	Sukhothai	Sukhothai
+89	Uthai Thani	Uthai Thani
+90	Ang Thong	Ang Thong
+91	Lamphun	Lamphun
+92	Chai Nat	Chai Nat
+93	Trat	Trat
+94	Phangnga	Phangnga
+95	Mae Hong Son	Mae Hong Son
+96	Bueng Kan	Bueng Kan
+97	Kanchanaburi	Kanchanaburi
+98	Ko Samui	Ko Samui
+99	Ban Suan	Ban Suan
+100	Hua Hin	Hua Hin
+101	Khlong Luang	Khlong Luang
+102	Ban Plai Bua Phatthana	Ban Plai Bua Phatthana
+103	Ban Bang Mae Nang	Ban Bang Mae Nang
+104	Singhanakhon	Singhanakhon
+105	Ban Pet	Ban Pet
+106	Ban Na Pa	Ban Na Pa
+107	Su-ngai Kolok	Su-ngai Kolok
+108	Ban Bang Khu Lat	Ban Bang Khu Lat
+109	Ban Mueang Na Tai	Ban Mueang Na Tai
+110	Pak Chong	Pak Chong
+111	Cha-am	Cha-am
+112	Ban Ang Sila	Ban Ang Sila
+113	Phra Phutthabat	Phra Phutthabat
+114	Ban Pak Phun	Ban Pak Phun
+115	Chum Phae	Chum Phae
+116	Mae Sot	Mae Sot
+117	Ban Chang	Ban Chang
+118	Thung Song	Thung Song
+119	Ban Phai	Ban Phai
+120	Tha Yang	Tha Yang
+121	Warin Chamrap	Warin Chamrap
+122	Kathu	Kathu
+123	Ban Phonla Krang	Ban Phonla Krang
+124	Betong	Betong
+125	Takhli	Takhli
+126	Sattahip	Sattahip
+127	Ban Phru	Ban Phru
+128	Si Racha	Si Racha
+129	Ban Bang Rin	Ban Bang Rin
+130	Wichian Buri	Wichian Buri
+131	Ban Piang Luang	Ban Piang Luang
+132	Nang Rong	Nang Rong
+133	Wang Nam Yen	Wang Nam Yen
+134	Sadao	Sadao
+135	Mae Sai	Mae Sai
+136	Na Klang	Na Klang
+137	Ban Tha Pha	Ban Tha Pha
+138	Pak Phanang	Pak Phanang
+139	Ban Tha Kham	Ban Tha Kham
+140	Ban Na San	Ban Na San
+141	Ban Bueng	Ban Bueng
+142	Kantharalak	Kantharalak
+143	Ban Mae Hia Nai	Ban Mae Hia Nai
+144	Tak Bai	Tak Bai
+145	Klaeng	Klaeng
+146	Ban Na Yang	Ban Na Yang
+147	Ban Mai	Ban Mai
+148	Ban Thum	Ban Thum
+149	Tha Bo	Tha Bo
+150	Sam Phran	Sam Phran
+151	Sikhio	Sikhio
+152	San Kamphaeng	San Kamphaeng
+153	Ban Song	Ban Song
+154	Ban Pong	Ban Pong
+155	Ban Phe	Ban Phe
+156	Rattaphum	Rattaphum
+157	Ban Thung Tam Sao	Ban Thung Tam Sao
+158	Sawankhalok	Sawankhalok
+159	Lam Luk Ka	Lam Luk Ka
+160	Ban Cho Ho	Ban Cho Ho
+161	Pran Buri	Pran Buri
+162	Ban Lam Narai	Ban Lam Narai
+163	Bang Phae	Bang Phae
+164	Aranyaprathet	Aranyaprathet
+165	Chai Prakan	Chai Prakan
+166	Ban Dung	Ban Dung
+167	Si Satchanalai	Si Satchanalai
+168	Ban Na Kham	Ban Na Kham
+169	Ban Duea	Ban Duea
+170	Khao Yoi	Khao Yoi
+171	Taphan Hin	Taphan Hin
+172	Thoen	Thoen
+173	Ban Bang Muang	Ban Bang Muang
+174	Phra Samut Chedi	Phra Samut Chedi
+175	Sai Buri	Sai Buri
+176	Bang Racham	Bang Racham
+177	Ban Kaeng	Ban Kaeng
+178	Det Udom	Det Udom
+179	Pak Thong Chai	Pak Thong Chai
+180	Bua Yai	Bua Yai
+181	Ban Mae Kaluang	Ban Mae Kaluang
+182	Ban Bang Non	Ban Bang Non
+183	Ban Bang Sai	Ban Bang Sai
+184	Ban Tha Luang Lang	Ban Tha Luang Lang
+185	Dok Kham Tai	Dok Kham Tai
+186	Ban Chorakhe Samphan	Ban Chorakhe Samphan
+187	Nong Khae	Nong Khae
+188	Ban Tat	Ban Tat
+189	Song Phi Nong	Song Phi Nong
+190	Huai Yot	Huai Yot
+191	Chaiyo	Chaiyo
+192	Ban Laem	Ban Laem
+193	Kaeng Khoi	Kaeng Khoi
+194	Ban Tom Klang	Ban Tom Klang
+195	Ban Muang Ngam	Ban Muang Ngam
+196	Chok Chai	Chok Chai
+197	Kantang	Kantang
+198	Rong Kwang	Rong Kwang
+199	Lom Sak	Lom Sak
+200	Na Wa	Na Wa
+201	Ban Bo Luang	Ban Bo Luang
+202	Ban Bang Yai	Ban Bang Yai
+203	Wang Saphung	Wang Saphung
+204	Don Sak	Don Sak
+205	Nong Bua	Nong Bua
+206	Ban Phan Don	Ban Phan Don
+207	Ban Bang Lamung	Ban Bang Lamung
+208	Ban Bang Toei	Ban Bang Toei
+209	Kuchinarai	Kuchinarai
+210	Ban Wiang Phan	Ban Wiang Phan
+211	Phon	Phon
+212	Salaya	Salaya
+213	Den Chai	Den Chai
+214	Satuek	Satuek
+215	Phanat Nikhom	Phanat Nikhom
+216	Ban Bo Phlap	Ban Bo Phlap
+217	Lang Suan	Lang Suan
+218	Bang Ban	Bang Ban
+219	Kaset Wisai	Kaset Wisai
+220	Tha Chang	Tha Chang
+221	Si Wilai	Si Wilai
+222	Khlung	Khlung
+223	Fao Rai	Fao Rai
+224	Phibun Mangsahan	Phibun Mangsahan
+225	Phrai Bueng	Phrai Bueng
+226	Ban Lueak	Ban Lueak
+227	Pua	Pua
+228	Kranuan	Kranuan
+229	Sam Ko	Sam Ko
+230	Ban Ko	Ban Ko
+231	Mae Ai	Mae Ai
+232	Wang Sombun	Wang Sombun
+233	Ban Bang Phlap	Ban Bang Phlap
+234	Ban Thung Khao Phuang	Ban Thung Khao Phuang
+235	Prakhon Chai	Prakhon Chai
+236	Phai Sali	Phai Sali
+237	Phon Charoen	Phon Charoen
+238	Ban Klang	Ban Klang
+239	Tha Muang	Tha Muang
+240	Kut Chap	Kut Chap
+241	Ban Bong Tai	Ban Bong Tai
+242	Tha Mai	Tha Mai
+243	Nong Ki	Nong Ki
+244	Phak Hai	Phak Hai
+245	Ban Bu Sung	Ban Bu Sung
+246	Sung Noen	Sung Noen
+247	Kamalasai	Kamalasai
+248	Wiang Sa	Wiang Sa
+249	Ban Ratchakrut	Ban Ratchakrut
+250	Non Sung	Non Sung
+251	Nong Wua So	Nong Wua So
+252	Bueng Khong Long	Bueng Khong Long
+253	Photharam	Photharam
+254	Chom Thong	Chom Thong
+255	Ban Krot	Ban Krot
+256	Chiang Klang	Chiang Klang
+257	Thap Khlo	Thap Khlo
+258	Mae Rim	Mae Rim
+259	Kanchanadit	Kanchanadit
+260	Bang Khla	Bang Khla
+261	Ban Tha Phra	Ban Tha Phra
+262	Nakhon Thai	Nakhon Thai
+263	Nong Kung Si	Nong Kung Si
+264	Suwannaphum	Suwannaphum
+265	Pong Nam Ron	Pong Nam Ron
+266	Akat Amnuai	Akat Amnuai
+267	Kaeng Khro	Kaeng Khro
+268	Thung Sai	Thung Sai
+269	Kosum Phisai	Kosum Phisai
+270	Tha Luang	Tha Luang
+271	Thap Than	Thap Than
+272	Kui Buri	Kui Buri
+273	Takua Pa	Takua Pa
+274	Bang Mun Nak	Bang Mun Nak
+275	Pa Sang	Pa Sang
+276	Phimai	Phimai
+277	Kumphawapi	Kumphawapi
+278	Yang Talat	Yang Talat
+279	Ban Na	Ban Na
+280	Nam Som	Nam Som
+281	Ban Buak Khang	Ban Buak Khang
+282	Nakhon Chai Si	Nakhon Chai Si
+283	Bang Len	Bang Len
+284	Sawang Daen Din	Sawang Daen Din
+285	Non Sang	Non Sang
+286	Chumsaeng	Chumsaeng
+287	Tha Maka	Tha Maka
+288	U Thong	U Thong
+289	Phayakkhaphum Phisai	Phayakkhaphum Phisai
+290	Damnoen Saduak	Damnoen Saduak
+291	Khanu Woralaksaburi	Khanu Woralaksaburi
+292	Chonnabot	Chonnabot
+293	Ron Phibun	Ron Phibun
+294	Sawang Wirawong	Sawang Wirawong
+295	Chaiya	Chaiya
+296	Nong Phai	Nong Phai
+297	Thung Saliam	Thung Saliam
+298	Khon Buri	Khon Buri
+299	Soeng Sang	Soeng Sang
+300	Ban Phue	Ban Phue
+301	Bang Pa-in	Bang Pa-in
+302	Ban Duea	Ban Duea
+303	Uthumphon Phisai	Uthumphon Phisai
+304	Hang Dong	Hang Dong
+305	Sa Bot	Sa Bot
+306	Phu Kradueng	Phu Kradueng
+307	Ra-ngae	Ra-ngae
+308	Thung Fon	Thung Fon
+309	Tha Ruea	Tha Ruea
+310	Ban Chan	Ban Chan
+311	Nakhon Luang	Nakhon Luang
+312	Si Chiang Mai	Si Chiang Mai
+313	Bamnet Narong	Bamnet Narong
+314	Bo Phloi	Bo Phloi
+315	Ko Pha-Ngan	Ko Pha-Ngan
+316	Chiang Kham	Chiang Kham
+317	Charoen Sin	Charoen Sin
+318	Ban Haet	Ban Haet
+319	Na Duang	Na Duang
+320	Ban Bang Pakong	Ban Bang Pakong
+321	Yaring	Yaring
+322	Phanom Sarakham	Phanom Sarakham
+323	That Phanom	That Phanom
+324	Phan Thong	Phan Thong
+325	Nong Chik	Nong Chik
+326	Ban Hua Saphan	Ban Hua Saphan
+327	Uthai	Uthai
+328	Lat Yao	Lat Yao
+329	Nikhom Kham Soi	Nikhom Kham Soi
+330	Phu Khiao	Phu Khiao
+331	Bua Chet	Bua Chet
+332	Khok Samrong	Khok Samrong
+333	Pa Daet	Pa Daet
+334	Dan Khun Thot	Dan Khun Thot
+335	Wiset Chaichan	Wiset Chaichan
+336	Si Prachan	Si Prachan
+337	Prathai	Prathai
+338	Phanna Nikhom	Phanna Nikhom
+339	Rong Kham	Rong Kham
+340	Nong Song Hong	Nong Song Hong
+341	Lom Kao	Lom Kao
+342	Wanon Niwat	Wanon Niwat
+343	Pueai Noi	Pueai Noi
+344	Ban Chet Samian	Ban Chet Samian
+345	Pluak Daeng	Pluak Daeng
+346	Kao Liao	Kao Liao
+347	Ao Luek	Ao Luek
+348	Borabue	Borabue
+349	Huai Mek	Huai Mek
+350	Moeiwadi	Moeiwadi
+351	Phachi	Phachi
+352	Non Sila	Non Sila
+353	Phayuha Khiri	Phayuha Khiri
+354	Ban Bang Tabun	Ban Bang Tabun
+355	Pong	Pong
+356	Ban Krang	Ban Krang
+357	Bang Sai	Bang Sai
+358	Amphawa	Amphawa
+359	Kae Dam	Kae Dam
+360	Nong Muang	Nong Muang
+361	Kham Sakae Saeng	Kham Sakae Saeng
+362	Phanom Thuan	Phanom Thuan
+363	Sam Sung	Sam Sung
+364	Tha Wang Pha	Tha Wang Pha
+365	Waeng Yai	Waeng Yai
+366	Ban Bang Pramung	Ban Bang Pramung
+367	Sanom	Sanom
+368	Nong Na Kham	Nong Na Kham
+369	Kut Bak	Kut Bak
+370	In Buri	In Buri
+371	Mae Chai	Mae Chai
+372	Thung Yai	Thung Yai
+373	Phanom	Phanom
+374	Ban Kham Pom	Ban Kham Pom
+375	Ban Tham	Ban Tham
+376	Ban Pa Lu Ru	Ban Pa Lu Ru
+377	Ban Banlang	Ban Banlang
+378	Ban Huai Mai	Ban Huai Mai
+379	Ban Pao	Ban Pao
+380	Ban Bua Ngam	Ban Bua Ngam
+381	Sichon	Sichon
+382	Ban Karaket	Ban Karaket
+383	Ban Kamphuan	Ban Kamphuan
+384	Ban Wang Kalang	Ban Wang Kalang
+385	Ban Phon Yai	Ban Phon Yai
+386	Ban Tai	Ban Tai
+387	Ban Dong Mafai	Ban Dong Mafai
+388	Ban Chiang	Ban Chiang
+389	Ban Talat Ko Ta Ba Ru	Ban Talat Ko Ta Ba Ru
+390	Ban Chiang Klom	Ban Chiang Klom
+391	Ban Nam Phong	Ban Nam Phong
+392	Ban San	Ban San
