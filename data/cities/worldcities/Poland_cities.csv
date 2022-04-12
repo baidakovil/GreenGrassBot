@@ -1,0 +1,270 @@
+	city	city_ascii
+0	Warsaw	Warsaw
+1	Kraków	Krakow
+2	Łódź	Lodz
+3	Wrocław	Wroclaw
+4	Poznań	Poznan
+5	Gdańsk	Gdansk
+6	Szczecin	Szczecin
+7	Bydgoszcz	Bydgoszcz
+8	Lublin	Lublin
+9	Białystok	Bialystok
+10	Katowice	Katowice
+11	Gdynia	Gdynia
+12	Częstochowa	Czestochowa
+13	Radom	Radom
+14	Toruń	Torun
+15	Sosnowiec	Sosnowiec
+16	Kielce	Kielce
+17	Rzeszów	Rzeszow
+18	Gliwice	Gliwice
+19	Zabrze	Zabrze
+20	Olsztyn	Olsztyn
+21	Bielsko-Biała	Bielsko-Biala
+22	Bytom	Bytom
+23	Rybnik	Rybnik
+24	Ruda Śląska	Ruda Slaska
+25	Zielona Góra	Zielona Gora
+26	Tychy	Tychy
+27	Opole	Opole
+28	Gorzów Wielkopolski	Gorzow Wielkopolski
+29	Dąbrowa Górnicza	Dabrowa Gornicza
+30	Płock	Plock
+31	Elbląg	Elblag
+32	Wałbrzych	Walbrzych
+33	Chorzów	Chorzow
+34	Tarnów	Tarnow
+35	Koszalin	Koszalin
+36	Inowrocław	Inowroclaw
+37	Zamość	Zamosc
+38	Ełk	Elk
+39	Pruszków	Pruszkow
+40	Świdnica	Swidnica
+41	Legionowo	Legionowo
+42	Świdnik	Swidnik
+43	Malbork	Malbork
+44	Sopot	Sopot
+45	Brzeg	Brzeg
+46	Czeladź	Czeladz
+47	Giżycko	Gizycko
+48	Kętrzyn	Ketrzyn
+49	Piastów	Piastow
+50	Kościan	Koscian
+51	Szczytno	Szczytno
+52	Sidlice	Sidlice
+53	Chojnów	Chojnow
+54	Kalisz	Kalisz
+55	Legnica	Legnica
+56	Włocławek	Wloclawek
+57	Jaworzno	Jaworzno
+58	Grudziądz	Grudziadz
+59	Jelenia Góra	Jelenia Gora
+60	Siedlce	Siedlce
+61	Mysłowice	Myslowice
+62	Piotrków Trybunalski	Piotrkow Trybunalski
+63	Konin	Konin
+64	Ostrowiec Świętokrzyski	Ostrowiec Swietokrzyski
+65	Suwałki	Suwalki
+66	Gniezno	Gniezno
+67	Głogów	Glogow
+68	Przemyśl	Przemysl
+69	Pabianice	Pabianice
+70	Leszno	Leszno
+71	Chełm	Chelm
+72	Łomża	Lomza
+73	Tarnowskie Góry	Tarnowskie Gory
+74	Mielec	Mielec
+75	Bełchatów	Belchatow
+76	Będzin	Bedzin
+77	Biała Podlaska	Biala Podlaska
+78	Ostrołęka	Ostroleka
+79	Puławy	Pulawy
+80	Starogard Gdański	Starogard Gdanski
+81	Starachowice	Starachowice
+82	Rumia	Rumia
+83	Kołobrzeg	Kolobrzeg
+84	Tarnobrzeg	Tarnobrzeg
+85	Skierniewice	Skierniewice
+86	Kutno	Kutno
+87	Nysa	Nysa
+88	Dębica	Debica
+89	Otwock	Otwock
+90	Ciechanów	Ciechanow
+91	Sieradz	Sieradz
+92	Mikołów	Mikolow
+93	Kwidzyn	Kwidzyn
+94	Chojnice	Chojnice
+95	Świnoujście	Swinoujscie
+96	Nowa Sól	Nowa Sol
+97	Bolesławiec	Boleslawiec
+98	Oświęcim	Oswiecim
+99	Żary	Zary
+100	Jarosław	Jaroslaw
+101	Chrzanów	Chrzanow
+102	Lębork	Lebork
+103	Jasło	Jaslo
+104	Cieszyn	Cieszyn
+105	Kraśnik	Krasnik
+106	Iława	Ilawa
+107	Dzierżoniów	Dzierzoniow
+108	Nowy Targ	Nowy Targ
+109	Police	Police
+110	Zgorzelec	Zgorzelec
+111	Grodzisk Mazowiecki	Grodzisk Mazowiecki
+112	Łowicz	Lowicz
+113	Bielsk Podlaski	Bielsk Podlaski
+114	Łuków	Lukow
+115	Bochnia	Bochnia
+116	Bielawa	Bielawa
+117	Mława	Mlawa
+118	Augustów	Augustow
+119	Brodnica	Brodnica
+120	Luboń	Lubon
+121	Krotoszyn	Krotoszyn
+122	Biłgoraj	Bilgoraj
+123	Gorlice	Gorlice
+124	Kłodzko	Klodzko
+125	Zakopane	Zakopane
+126	Wałcz	Walcz
+127	Brzozów	Brzozow
+128	Jarocin	Jarocin
+129	Kluczbork	Kluczbork
+130	Świecie	Swiecie
+131	Wągrowiec	Wagrowiec
+132	Skawina	Skawina
+133	Kościerzyna	Koscierzyna
+134	Białogard	Bialogard
+135	Sandomierz	Sandomierz
+136	Bieruń Stary	Bierun Stary
+137	Konstancin-Jeziorna	Konstancin-Jeziorna
+138	Jawor	Jawor
+139	Ostrów Mazowiecka	Ostrow Mazowiecka
+140	Lubartów	Lubartow
+141	Koło	Kolo
+142	Grajewo	Grajewo
+143	Działdowo	Dzialdowo
+144	Goleniów	Goleniow
+145	Łęczna	Leczna
+146	Świedbodzin	Swiedbodzin
+147	Łaziska Górne	Laziska Gorne
+148	Opoczno	Opoczno
+149	Wieliczka	Wieliczka
+150	Chełmno	Chelmno
+151	Hajnówka	Hajnowka
+152	Prudnik	Prudnik
+153	Gryfino	Gryfino
+154	Chodzież	Chodziez
+155	Pleszew	Pleszew
+156	Gostyń	Gostyn
+157	Kęty	Kety
+158	Dęblin	Deblin
+159	Nakło nad Notecią	Naklo nad Notecia
+160	Jasien	Jasien
+161	Łańcut	Lancut
+162	Krasnystaw	Krasnystaw
+163	Pułtusk	Pultusk
+164	Gostynin	Gostynin
+165	Rawa Mazowiecka	Rawa Mazowiecka
+166	Międzyrzecz	Miedzyrzecz
+167	Kostrzyn nad Odrą	Kostrzyn nad Odra
+168	Kobyłka	Kobylka
+169	Garwolin	Garwolin
+170	Braniewo	Braniewo
+171	Łask	Lask
+172	Rypin	Rypin
+173	Oborniki	Oborniki
+174	Międzyrzec Podlaski	Miedzyrzec Podlaski
+175	Ustka	Ustka
+176	Złotoryja	Zlotoryja
+177	Milanówek	Milanowek
+178	Łęczyca	Leczyca
+179	Kozienice	Kozienice
+180	Brzesko	Brzesko
+181	Gubin	Gubin
+182	Bytów	Bytow
+183	Osowa	Osowa
+184	Grójec	Grojec
+185	Krapkowice	Krapkowice
+186	Strzegom	Strzegom
+187	Chełmża	Chelmza
+188	Gryfice	Gryfice
+189	Olecko	Olecko
+190	Przeworsk	Przeworsk
+191	Ustroń	Ustron
+192	Jędrzejów	Jedrzejow
+193	Siemiatycze	Siemiatycze
+194	Limanowa	Limanowa
+195	Jelcz-Laskowice	Jelcz-Laskowice
+196	Głuchołazy	Glucholazy
+197	Choszczno	Choszczno
+198	Człuchów	Czluchow
+199	Grodzisk Wielkopolski	Grodzisk Wielkopolski
+200	Wschowa	Wschowa
+201	Darłowo	Darlowo
+202	Lubsko	Lubsko
+203	Golub-Dobrzyń	Golub-Dobrzyn
+204	Aleksandrów Kujawski	Aleksandrow Kujawski
+205	Nidzica	Nidzica
+206	Włodawa	Wlodawa
+207	Gołdap	Goldap
+208	Głubczyce	Glubczyce
+209	Wolsztyn	Wolsztyn
+210	Trzebnica	Trzebnica
+211	Brzeg Dolny	Brzeg Dolny
+212	Brzeziny	Brzeziny
+213	Lubaczów	Lubaczow
+214	Brzeszcze	Brzeszcze
+215	Niepołomice	Niepolomice
+216	Węgorzewo	Wegorzewo
+217	Suchanino	Suchanino
+218	Brwinów	Brwinow
+219	Janów Lubelski	Janow Lubelski
+220	Nowe Miasto Lubawskie	Nowe Miasto Lubawskie
+221	Góra	Gora
+222	Drawsko Pomorskie	Drawsko Pomorskie
+223	Krynica	Krynica
+224	Ciechocinek	Ciechocinek
+225	Krosno Odrzańskie	Krosno Odrzanskie
+226	Miastko	Miastko
+227	Wisła	Wisla
+228	Warka	Warka
+229	Krzeszowice	Krzeszowice
+230	Koronowo	Koronowo
+231	Kolno	Kolno
+232	Biskupiec	Biskupiec
+233	Kokoszki	Kokoszki
+234	Ozimek	Ozimek
+235	Stary Sącz	Stary Sacz
+236	Lwówek Śląski	Lwowek Slaski
+237	Lidzbark	Lidzbark
+238	Ziębice	Ziebice
+239	Kamień Pomorski	Kamien Pomorski
+240	Żychlin	Zychlin
+241	Połaniec	Polaniec
+242	Kolbuszowa	Kolbuszowa
+243	Kościelisko	Koscielisko
+244	Brętowo	Bretowo
+245	Prabuty	Prabuty
+246	Olsztyn	Olsztyn
+247	Trzemeszno	Trzemeszno
+248	Reszel	Reszel
+249	Zbąszyń	Zbaszyn
+250	Głuszyca	Gluszyca
+251	Sędziszów Małopolski	Sedziszow Malopolski
+252	Bełżyce	Belzyce
+253	Sobótka	Sobotka
+254	Gryfów Śląski	Gryfow Slaski
+255	Piława Górna	Pilawa Gorna
+256	Kórnik	Kornik
+257	Gniew	Gniew
+258	Gogolin	Gogolin
+259	Mszczonów	Mszczonow
+260	Grybów	Grybow
+261	Matarnia	Matarnia
+262	Jedlicze	Jedlicze
+263	Dąbrowa Białostocka	Dabrowa Bialostocka
+264	Kazimierza Wielka	Kazimierza Wielka
+265	Śmigiel	Smigiel
+266	Dzierzgoń	Dzierzgon
+267	Żołynia	Zolynia
+268	Bierutów	Bierutow

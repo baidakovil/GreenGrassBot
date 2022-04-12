@@ -1,0 +1,319 @@
+	city	city_ascii
+0	Buenos Aires	Buenos Aires
+1	Córdoba	Cordoba
+2	Rosario	Rosario
+3	Comodoro Rivadavia	Comodoro Rivadavia
+4	San Miguel de Tucumán	San Miguel de Tucuman
+5	Mar del Plata	Mar del Plata
+6	Salta	Salta
+7	San Juan	San Juan
+8	Lanús	Lanus
+9	Florencio Varela	Florencio Varela
+10	Santa Fe	Santa Fe
+11	Corrientes	Corrientes
+12	San Salvador de Jujuy	San Salvador de Jujuy
+13	Bahía Blanca	Bahia Blanca
+14	Resistencia	Resistencia
+15	Posadas	Posadas
+16	Santiago del Estero	Santiago del Estero
+17	Paraná	Parana
+18	Merlo	Merlo
+19	González Catán	Gonzalez Catan
+20	Quilmes	Quilmes
+21	Neuquén	Neuquen
+22	Banfield	Banfield
+23	José C. Paz	Jose C. Paz
+24	Formosa	Formosa
+25	Isidro Casanova	Isidro Casanova
+26	La Plata	La Plata
+27	Godoy Cruz	Godoy Cruz
+28	Berazategui	Berazategui
+29	La Rioja	La Rioja
+30	San Luis	San Luis
+31	San Miguel	San Miguel
+32	José María Ezeiza	Jose Maria Ezeiza
+33	San Nicolás de los Arroyos	San Nicolas de los Arroyos
+34	Catamarca	Catamarca
+35	Rafael Castillo	Rafael Castillo
+36	Río Cuarto	Rio Cuarto
+37	Florencio Varela	Florencio Varela
+38	Concordia	Concordia
+39	San Justo	San Justo
+40	Ituzaingó	Ituzaingo
+41	Temperley	Temperley
+42	Ramos Mejía	Ramos Mejia
+43	Lomas de Zamora	Lomas de Zamora
+44	San Martín	San Martin
+45	Mendoza	Mendoza
+46	Tandil	Tandil
+47	Puerto Madryn	Puerto Madryn
+48	Bernal	Bernal
+49	Castelar	Castelar
+50	San Carlos de Bariloche	San Carlos de Bariloche
+51	Esteban Echeverría	Esteban Echeverria
+52	Villa Mercedes	Villa Mercedes
+53	Gualeguaychú	Gualeguaychu
+54	San Rafael	San Rafael
+55	Morón	Moron
+56	La Banda	La Banda
+57	Villa Luzuriaga	Villa Luzuriaga
+58	Caseros	Caseros
+59	Santa Rosa	Santa Rosa
+60	Libertad	Libertad
+61	Burzaco	Burzaco
+62	Berisso	Berisso
+63	Ciudad General Belgrano	Ciudad General Belgrano
+64	San Francisco Solano	San Francisco Solano
+65	Río Gallegos	Rio Gallegos
+66	Monte Chingolo	Monte Chingolo
+67	Remedios de Escalada	Remedios de Escalada
+68	Ezpeleta	Ezpeleta
+69	Lomas del Mirador	Lomas del Mirador
+70	Bella Vista	Bella Vista
+71	Wilde	Wilde
+72	Villa Domínico	Villa Dominico
+73	Los Polvorines	Los Polvorines
+74	Rafael Calzada	Rafael Calzada
+75	Viedma	Viedma
+76	Ushuaia	Ushuaia
+77	Longchamps	Longchamps
+78	Villa Alsina	Villa Alsina
+79	San Isidro	San Isidro
+80	José Mármol	Jose Marmol
+81	Haedo	Haedo
+82	Munro	Munro
+83	Dock Sur	Dock Sur
+84	Villa Adelina	Villa Adelina
+85	Villa Celina	Villa Celina
+86	Adrogue	Adrogue
+87	Rawson	Rawson
+88	Avellaneda	Avellaneda
+89	Vicente López	Vicente Lopez
+90	Tapiales	Tapiales
+91	Don Bosco	Don Bosco
+92	Villa Sarmiento	Villa Sarmiento
+93	Aldo Bonzi	Aldo Bonzi
+94	Malvinas Argentinas	Malvinas Argentinas
+95	Zárate	Zarate
+96	Trelew	Trelew
+97	Rafaela	Rafaela
+98	Pergamino	Pergamino
+99	Campana	Campana
+100	Olavarría	Olavarria
+101	Junín	Junin
+102	Pilar	Pilar
+103	Presidencia Roque Sáenz Peña	Presidencia Roque Saenz Pena
+104	Luján	Lujan
+105	General Roca	General Roca
+106	Gobernador Gálvez	Gobernador Galvez
+107	Necochea	Necochea
+108	Villa María	Villa Maria
+109	Venado Tuerto	Venado Tuerto
+110	San Ramón de la Nueva Orán	San Ramon de la Nueva Oran
+111	Concepción del Uruguay	Concepcion del Uruguay
+112	Goya	Goya
+113	Reconquista	Reconquista
+114	Las Heras	Las Heras
+115	Oberá	Obera
+116	Santo Tomé	Santo Tome
+117	Villa Carlos Paz	Villa Carlos Paz
+118	San Francisco	San Francisco
+119	Sarandí	Sarandi
+120	Tartagal	Tartagal
+121	Chajarí	Chajari
+122	San Pedro	San Pedro
+123	Punta Alta	Punta Alta
+124	General Pico	General Pico
+125	Azul	Azul
+126	Chivilcoy	Chivilcoy
+127	Mercedes	Mercedes
+128	Cruz del Eje	Cruz del Eje
+129	Caleta Olivia	Caleta Olivia
+130	El Talar de Pacheco	El Talar de Pacheco
+131	Villaguay	Villaguay
+132	Libertador General San Martín	Libertador General San Martin
+133	La Reja	La Reja
+134	Alta Gracia	Alta Gracia
+135	San Lorenzo	San Lorenzo
+136	San Pedro	San Pedro
+137	Villa Constitución	Villa Constitucion
+138	Tres Arroyos	Tres Arroyos
+139	Río Tercero	Rio Tercero
+140	Pinamar	Pinamar
+141	Esperanza	Esperanza
+142	Gualeguay	Gualeguay
+143	Balcarce	Balcarce
+144	Aristóbulo del Valle	Aristobulo del Valle
+145	Granadero Baigorria	Granadero Baigorria
+146	Esquel	Esquel
+147	Nueve de Julio	Nueve de Julio
+148	Cutral-Có	Cutral-Co
+149	Casilda	Casilda
+150	Chacabuco	Chacabuco
+151	Centenario	Centenario
+152	Bell Ville	Bell Ville
+153	Chilecito	Chilecito
+154	Bragado	Bragado
+155	La Calera	La Calera
+156	Plottier	Plottier
+157	Zapala	Zapala
+158	Jesús María	Jesus Maria
+159	Río Grande	Rio Grande
+160	Mercedes	Mercedes
+161	Victoria	Victoria
+162	Villa Ángela	Villa Angela
+163	Villa Regina	Villa Regina
+164	Villa Gesell	Villa Gesell
+165	Capitán Bermúdez	Capitan Bermudez
+166	Cañada de Gómez	Canada de Gomez
+167	Baradero	Baradero
+168	Villa Allende	Villa Allende
+169	San Martín de los Andes	San Martin de los Andes
+170	Marcos Juárez	Marcos Juarez
+171	Dolores	Dolores
+172	Firmat	Firmat
+173	Colón	Colon
+174	Lincoln	Lincoln
+175	Coronel Suárez	Coronel Suarez
+176	Veinticinco de Mayo	Veinticinco de Mayo
+177	Avellaneda	Avellaneda
+178	Allen	Allen
+179	Tunuyán	Tunuyan
+180	Cinco Saltos	Cinco Saltos
+181	San Justo	San Justo
+182	Deán Funes	Dean Funes
+183	El Calafate	El Calafate
+184	Chascomús	Chascomus
+185	Pico Truncado	Pico Truncado
+186	Sunchales	Sunchales
+187	Laboulaye	Laboulaye
+188	Brandsen	Brandsen
+189	General Martín Miguel de Güemes	General Martin Miguel de Guemes
+190	Río Segundo	Rio Segundo
+191	Vera	Vera
+192	Rufino	Rufino
+193	Unquillo	Unquillo
+194	Charata	Charata
+195	Lobos	Lobos
+196	Coronda	Coronda
+197	General Juan Madariaga	General Juan Madariaga
+198	General Deheza	General Deheza
+199	Las Heras	Las Heras
+200	Santa Elena	Santa Elena
+201	Catriel	Catriel
+202	Veinticinco de Mayo	Veinticinco de Mayo
+203	Eldorado	Eldorado
+204	Ayacucho	Ayacucho
+205	Santa María	Santa Maria
+206	Federación	Federacion
+207	La Falda	La Falda
+208	Carcarañá	Carcarana
+209	San Antonio Oeste	San Antonio Oeste
+210	Villa del Rosario	Villa del Rosario
+211	Villa Paranacito	Villa Paranacito
+212	Fray Luis A. Beltrán	Fray Luis A. Beltran
+213	Carmen de Areco	Carmen de Areco
+214	Ceres	Ceres
+215	San Cristóbal	San Cristobal
+216	Puerto Deseado	Puerto Deseado
+217	Añatuya	Anatuya
+218	Mar de Ajó	Mar de Ajo
+219	La Quiaca	La Quiaca
+220	San Javier	San Javier
+221	Frías	Frias
+222	Joaquín V. González	Joaquin V. Gonzalez
+223	Puerto San Martín	Puerto San Martin
+224	Plaza Huincul	Plaza Huincul
+225	Oncativo	Oncativo
+226	Chos Malal	Chos Malal
+227	Rosario del Tala	Rosario del Tala
+228	San Salvador	San Salvador
+229	Junín de los Andes	Junin de los Andes
+230	La Carlota	La Carlota
+231	Laguna Paiva	Laguna Paiva
+232	Las Parejas	Las Parejas
+233	Malargüe	Malargue
+234	Cafayate	Cafayate
+235	Río Colorado	Rio Colorado
+236	Oliva	Oliva
+237	Cerrillos	Cerrillos
+238	Coronel Dorrego	Coronel Dorrego
+239	Monte Quemado	Monte Quemado
+240	Humahuaca	Humahuaca
+241	Belén	Belen
+242	Capilla del Monte	Capilla del Monte
+243	Armstrong	Armstrong
+244	Villa La Angostura	Villa La Angostura
+245	Sarmiento	Sarmiento
+246	Benito Juárez	Benito Juarez
+247	Frontera	Frontera
+248	Corral de Bustos	Corral de Bustos
+249	Leones	Leones
+250	San José de Feliciano	San Jose de Feliciano
+251	Choele Choel	Choele Choel
+252	Santa María	Santa Maria
+253	Castelli	Castelli
+254	Embalse	Embalse
+255	Rada Tilly	Rada Tilly
+256	Chamical	Chamical
+257	Yacimiento Río Turbio	Yacimiento Rio Turbio
+258	Jesús Nazareno	Jesus Nazareno
+259	Mina Clavero	Mina Clavero
+260	Helvecia	Helvecia
+261	San Julián	San Julian
+262	Villa General Belgrano	Villa General Belgrano
+263	Santa Rosa de Río Primero	Santa Rosa de Rio Primero
+264	Lamarque	Lamarque
+265	Las Lomitas	Las Lomitas
+266	Carhué	Carhue
+267	General Fernández Oro	General Fernandez Oro
+268	Rinconada	Rinconada
+269	Ingeniero Guillermo N. Juárez	Ingeniero Guillermo N. Juarez
+270	Comandante Luis Piedra Buena	Comandante Luis Piedra Buena
+271	Villa Cura Brochero	Villa Cura Brochero
+272	Trevelín	Trevelin
+273	Ingeniero Jacobacci	Ingeniero Jacobacci
+274	Ingeniero Luis A. Huergo	Ingeniero Luis A. Huergo
+275	Veintiocho de Noviembre	Veintiocho de Noviembre
+276	Chepes	Chepes
+277	Villa Huidobro	Villa Huidobro
+278	General Conesa	General Conesa
+279	San Antonio de los Cobres	San Antonio de los Cobres
+280	Macachín	Macachin
+281	Los Menucos	Los Menucos
+282	Perito Moreno	Perito Moreno
+283	Gobernador Gregores	Gobernador Gregores
+284	Abra Pampa	Abra Pampa
+285	Victorica	Victorica
+286	La Paz	La Paz
+287	Comandante Fontana	Comandante Fontana
+288	El Maitén	El Maiten
+289	Pampa del Infierno	Pampa del Infierno
+290	Río Mayo	Rio Mayo
+291	Chumbicha	Chumbicha
+292	Trancas	Trancas
+293	Alto Río Senguer	Alto Rio Senguer
+294	Sierra Colorada	Sierra Colorada
+295	Las Lajas	Las Lajas
+296	Susques	Susques
+297	Comallo	Comallo
+298	Rodeo	Rodeo
+299	Gastre	Gastre
+300	Tinogasta	Tinogasta
+301	Telsen	Telsen
+302	Pedro Luro	Pedro Luro
+303	Monte Cristo	Monte Cristo
+304	Justiniano Posse	Justiniano Posse
+305	Senillosa	Senillosa
+306	Laguna Larga	Laguna Larga
+307	Sierra Grande	Sierra Grande
+308	Santa Rosa	Santa Rosa
+309	Río Primero	Rio Primero
+310	General Levalle	General Levalle
+311	Perugorría	Perugorria
+312	Bialet Massé	Bialet Masse
+313	Darregueira	Darregueira
+314	Villalonga	Villalonga
+315	Uspallata	Uspallata
+316	Villa Rumipal	Villa Rumipal
+317	Los Blancos	Los Blancos

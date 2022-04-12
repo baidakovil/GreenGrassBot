@@ -1,0 +1,224 @@
+	country_orig	country0	country1	country2	country3	country4
+0	Afghanistan	afghanistan				
+1	Albania	albania				
+2	Algeria	algeria				
+3	Andorra	andorra				
+4	Angola	angola				
+5	Antigua and Barbuda	antigua and barbuda				
+6	Argentina	argentina				
+7	Armenia	armenia				
+8	Australia	australia				
+9	Austria	austria				
+10	Austrian Empire	austrian empire				
+11	Azerbaijan	azerbaijan				
+12	Baden	baden				
+13	Bahamas	bahamas	bahamas, the			
+14	Bahrain	bahrain				
+15	Bangladesh	bangladesh				
+16	Barbados	barbados				
+17	Bavaria	bavaria				
+18	Belarus	belarus				
+19	Belgium	belgium				
+20	Belize	belize				
+21	Benin (Dahomey)	benin (dahomey)	benin	dahomey		
+22	Bolivia	bolivia				
+23	Bosnia and Herzegovina	bosnia and herzegovina				
+24	Botswana	botswana				
+25	Brazil	brazil				
+26	Brunei	brunei				
+27	Brunswick and Luneburg	brunswick and luneburg				
+28	Bulgaria	bulgaria				
+29	Burkina Faso (Upper Volta)	burkina faso (upper volta)	burkina faso	upper volta		
+30	Burma	burma				
+31	Burundi	burundi				
+32	Cabo Verde	cabo verde				
+33	Cambodia	cambodia				
+34	Cameroon	cameroon				
+35	Canada	canada				
+36	Cayman Islands	cayman islands	cayman islands, the			
+37	Central African Republic	central african republic	car			
+38	Central American Federation	central american federation	cam			
+39	Chad	chad				
+40	Chile	chile				
+41	China	china				
+42	Colombia	colombia				
+43	Comoros	comoros				
+44	Congo Free State	congo free state	congo free state, the	congo		
+45	Costa Rica	costa rica	costa rica			
+46	Cote d’Ivoire (Ivory Coast)	cote d’ivoire (ivory coast)	ivory coast			
+47	Croatia	croatia				
+48	Cuba	cuba				
+49	Cyprus	cyprus				
+50	Czechia	czechia				
+51	Czechoslovakia	czechoslovakia				
+52	Democratic Republic of the Congo	democratic republic of the congo				
+53	Denmark	denmark				
+54	Djibouti	djibouti				
+55	Dominica	dominica				
+56	Dominican Republic	dominican republic				
+57	Duchy of Parma	duchy of parma				
+58	Ecuador	ecuador				
+59	Egypt	egypt				
+60	El Salvador	el salvador				
+61	Equatorial Guinea	equatorial guinea				
+62	Eritrea	eritrea				
+63	Estonia	estonia				
+64	Eswatini	eswatini				
+65	Ethiopia	ethiopia				
+66	Fiji	fiji				
+67	Finland	finland				
+68	France	france				
+69	Gabon	gabon				
+70	Gambia	gambia	gambia, the			
+71	Georgia	georgia				
+72	Germany	germany				
+73	Ghana	ghana				
+74	Grand Duchy of Tuscany	grand duchy of tuscany	grand duchy of tuscany, the			
+75	Greece	greece				
+76	Grenada	grenada				
+77	Guatemala	guatemala				
+78	Guinea	guinea				
+79	Guinea-Bissau	guinea-bissau				
+80	Guyana	guyana				
+81	Haiti	haiti				
+82	Hanover	hanover				
+83	Hanseatic Republics	hanseatic republics				
+84	Hawaii	hawaii				
+85	Hesse	hesse				
+86	Holy See	holy see				
+87	Honduras	honduras				
+88	Hungary	hungary				
+89	Iceland	iceland				
+90	India	india				
+91	Indonesia	indonesia				
+92	Iran	iran				
+93	Iraq	iraq				
+94	Ireland	ireland				
+95	Israel	israel				
+96	Italy	italy				
+97	Jamaica	jamaica				
+98	Japan	japan				
+99	Jordan	jordan				
+100	Kazakhstan	kazakhstan				
+101	Kenya	kenya				
+102	Kingdom of Serbia/Yugoslavia	kingdom of serbia/yugoslavia	kingdom of serbia	yugoslavia	serbia	
+103	Kiribati	kiribati				
+104	Korea	korea				
+105	Kosovo	kosovo				
+106	Kuwait	kuwait				
+107	Kyrgyzstan	kyrgyzstan				
+108	Laos	laos				
+109	Latvia	latvia				
+110	Lebanon	lebanon				
+111	Lesotho	lesotho				
+112	Lew Chew (Loochoo)	lew chew (loochoo)	loochoo	lew chew		
+113	Liberia	liberia				
+114	Libya	libya				
+115	Liechtenstein	liechtenstein				
+116	Lithuania	lithuania				
+117	Luxembourg	luxembourg				
+118	Madagascar	madagascar				
+119	Malawi	malawi				
+120	Malaysia	malaysia				
+121	Maldives	maldives				
+122	Mali	mali				
+123	Malta	malta				
+124	Marshall Islands	marshall islands				
+125	Mauritania	mauritania				
+126	Mauritius	mauritius				
+127	Mecklenburg-Schwerin	mecklenburg-schwerin				
+128	Mecklenburg-Strelitz	mecklenburg-strelitz				
+129	Mexico	mexico				
+130	Micronesia	micronesia				
+131	Moldova	moldova				
+132	Monaco	monaco				
+133	Mongolia	mongolia				
+134	Montenegro	montenegro				
+135	Morocco	morocco				
+136	Mozambique	mozambique				
+137	Namibia	namibia				
+138	Nassau	nassau				
+139	Nauru	nauru				
+140	Nepal	nepal				
+141	Netherlands	netherlands	netherlands, the	holland		
+142	New Zealand	new zealand				
+143	Nicaragua	nicaragua				
+144	Niger	niger				
+145	Nigeria	nigeria				
+146	North German Confederation	north german confederation				
+147	North German Union	north german union				
+148	North Macedonia	north macedonia				
+149	Norway	norway				
+150	Oldenburg	oldenburg				
+151	Oman	oman				
+152	Orange Free State	orange free state				
+153	Pakistan	pakistan				
+154	Palau	palau				
+155	Panama	panama				
+156	Papal States	papal states				
+157	Papua New Guinea	papua new guinea				
+158	Paraguay	paraguay				
+159	Peru	peru				
+160	Philippines	philippines				
+161	Piedmont-Sardinia	piedmont-sardinia				
+162	Poland	poland				
+163	Portugal	portugal				
+164	Qatar	qatar				
+165	Republic of Genoa	republic of genoa				
+166	Republic of Korea (South Korea)	republic of korea (south korea)	republic of korea	south korea		
+167	Republic of the Congo	republic of the congo	congo			
+168	Romania	romania				
+169	Russia	russia	russian federation	россия	российская федерация	рф
+170	Rwanda	rwanda				
+171	Saint Kitts and Nevis	saint kitts and nevis				
+172	Saint Lucia	saint lucia				
+173	Saint Vincent and the Grenadines	saint vincent and the grenadines				
+174	Samoa	samoa				
+175	San Marino	san marino				
+176	Sao Tome and Principe	sao tome and principe				
+177	Saudi Arabia	saudi arabia				
+178	Schaumburg-Lippe	schaumburg-lippe				
+179	Senegal	senegal				
+180	Serbia	serbia				
+181	Seychelles	seychelles				
+182	Sierra Leone	sierra leone				
+183	Singapore	singapore				
+184	Slovakia	slovakia				
+185	Slovenia	slovenia				
+186	Solomon Islands	solomon islands				
+187	Somalia	somalia				
+188	South Africa	south africa				
+189	South Sudan	south sudan				
+190	Spain	spain				
+191	Sri Lanka	sri lanka				
+192	Sudan	sudan				
+193	Suriname	suriname				
+194	Sweden	sweden				
+195	Switzerland	switzerland				
+196	Syria	syria				
+197	Tajikistan	tajikistan				
+198	Tanzania	tanzania				
+199	Texas	texas				
+200	Thailand	thailand				
+201	Timor-Leste	timor-leste				
+202	Togo	togo				
+203	Tonga	tonga				
+204	Trinidad and Tobago	trinidad and tobago				
+205	Tunisia	tunisia				
+206	Turkey	turkey				
+207	Turkmenistan	turkmenistan				
+208	Tuvalu	tuvalu				
+209	Two Sicilies	two sicilies				
+210	Uganda	uganda				
+211	Ukraine	ukraine	украина			
+212	United Arab Emirates	united arab emirates	united arab emirates, the	uae		
+213	United Kingdom	united kingdom	uk	great britain	gb	
+214	United States	united states	usa	united states of america	america	сша
+215	Uruguay	uruguay				
+216	Uzbekistan	uzbekistan				
+217	Vanuatu	vanuatu				
+218	Venezuela	venezuela				
+219	Vietnam	vietnam				
+220	Yemen	yemen				
+221	Zambia	zambia				
+222	Zimbabwe	zimbabwe				

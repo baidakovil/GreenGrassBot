@@ -215,7 +215,7 @@ def getinfo(update, context):
 
 def main():
     persistence = PicklePersistence(filename='connectBot')
-    updater = Updater("1956526158:AAHeeFZFzkmQeMIVcS1kCXzCm0zfKmeK53Q", persistence=persistence)
+    updater = Updater("...", persistence=persistence)
     dispatcher = updater.dispatcher
 
     startHandler = CommandHandler('start', start)

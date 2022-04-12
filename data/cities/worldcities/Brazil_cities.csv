@@ -1,0 +1,3372 @@
+	city	city_ascii
+0	São Paulo	Sao Paulo
+1	Rio de Janeiro	Rio de Janeiro
+2	Belo Horizonte	Belo Horizonte
+3	Brasília	Brasilia
+4	Salvador	Salvador
+5	Fortaleza	Fortaleza
+6	Curitiba	Curitiba
+7	Manaus	Manaus
+8	Recife	Recife
+9	Belém	Belem
+10	Porto Alegre	Porto Alegre
+11	Goiânia	Goiania
+12	Guarulhos	Guarulhos
+13	Vila Velha	Vila Velha
+14	Campinas	Campinas
+15	São Gonçalo	Sao Goncalo
+16	São Luís	Sao Luis
+17	Maceió	Maceio
+18	Natal	Natal
+19	Campo Grande	Campo Grande
+20	Natal	Natal
+21	Teresina	Teresina
+22	São Bernardo do Campo	Sao Bernardo do Campo
+23	Iguaçu	Iguacu
+24	João Pessoa	Joao Pessoa
+25	Abaeté	Abaete
+26	Jaboatão	Jaboatao
+27	Santo André	Santo Andre
+28	Osasco	Osasco
+29	Uberlândia	Uberlandia
+30	Aracaju	Aracaju
+31	São José dos Campos	Sao Jose dos Campos
+32	Ribeirão Prêto	Ribeirao Preto
+33	Contagem	Contagem
+34	Sorocaba	Sorocaba
+35	Cuiabá	Cuiaba
+36	Feira de Santana	Feira de Santana
+37	Joinvile	Joinvile
+38	Londrina	Londrina
+39	Ananindeua	Ananindeua
+40	Caxias do Sul	Caxias do Sul
+41	Niterói	Niteroi
+42	Serra	Serra
+43	Juiz de Fora	Juiz de Fora
+44	Americana	Americana
+45	Florianópolis	Florianopolis
+46	Vila Velha	Vila Velha
+47	Macapá	Macapa
+48	Mauá	Maua
+49	Betim	Betim
+50	São José do Rio Prêto	Sao Jose do Rio Preto
+51	Diadema	Diadema
+52	Santos	Santos
+53	Maringá	Maringa
+54	Porto Velho	Porto Velho
+55	Mogi das Cruzes	Mogi das Cruzes
+56	Montes Claros	Montes Claros
+57	Rio Branco	Rio Branco
+58	Campina Grande	Campina Grande
+59	Carapicuíba	Carapicuiba
+60	Jundiaí	Jundiai
+61	Campos	Campos
+62	Olinda	Olinda
+63	Cariacica	Cariacica
+64	Bauru	Bauru
+65	Anápolis	Anapolis
+66	Vitória	Vitoria
+67	São Vicente	Sao Vicente
+68	Itaquaquecetuba	Itaquaquecetuba
+69	Ponta Grossa	Ponta Grossa
+70	Canoas	Canoas
+71	Piracicaba	Piracicaba
+72	Caruaru	Caruaru
+73	Pelotas	Pelotas
+74	Franca	Franca
+75	Petrolina	Petrolina
+76	Uberaba	Uberaba
+77	Ribeirão das Neves	Ribeirao das Neves
+78	São José dos Pinhais	Sao Jose dos Pinhais
+79	Boa Vista	Boa Vista
+80	Caucaia	Caucaia
+81	Vitória da Conquista	Vitoria da Conquista
+82	Guarujá	Guaruja
+83	Blumenau	Blumenau
+84	Paulista	Paulista
+85	Taubaté	Taubate
+86	Praia Grande	Praia Grande
+87	Mossoró	Mossoro
+88	Petrópolis	Petropolis
+89	Limeira	Limeira
+90	Camaçari	Camacari
+91	Suzano	Suzano
+92	Crato	Crato
+93	Santa Maria	Santa Maria
+94	Taboão da Serra	Taboao da Serra
+95	Marabá	Maraba
+96	Governador Valadares	Governador Valadares
+97	Juazeiro do Norte	Juazeiro do Norte
+98	Crato	Crato
+99	Palmas	Palmas
+100	Parnamirim	Parnamirim
+101	Sumaré	Sumare
+102	Ipatinga	Ipatinga
+103	Volta Redonda	Volta Redonda
+104	Barueri	Barueri
+105	Cascavel	Cascavel
+106	Imperatriz	Imperatriz
+107	Foz do Iguaçu	Foz do Iguacu
+108	Viamão	Viamao
+109	Gravataí	Gravatai
+110	Várzea Grande	Varzea Grande
+111	Novo Hamburgo	Novo Hamburgo
+112	Magé	Mage
+113	Colombo	Colombo
+114	Itaboraí	Itaborai
+115	Sete Lagoas	Sete Lagoas
+116	São Carlos	Sao Carlos
+117	São Leopoldo	Sao Leopoldo
+118	Divinópolis	Divinopolis
+119	Macaé	Macae
+120	Santarém	Santarem
+121	Marília	Marilia
+122	Indaiatuba	Indaiatuba
+123	Maracanaú	Maracanau
+124	Cabo Frio	Cabo Frio
+125	Cotia	Cotia
+126	Rondonópolis	Rondonopolis
+127	Jacareí	Jacarei
+128	Araraquara	Araraquara
+129	Itapevi	Itapevi
+130	Dourados	Dourados
+131	Chapecó	Chapeco
+132	Itajaí	Itajai
+133	Presidente Prudente	Presidente Prudente
+134	Juazeiro	Juazeiro
+135	Itabuna	Itabuna
+136	Hortolândia	Hortolandia
+137	Alvorada	Alvorada
+138	Criciúma	Criciuma
+139	Rio Grande	Rio Grande
+140	Cachoeiro de Itapemirim	Cachoeiro de Itapemirim
+141	Passo Fundo	Passo Fundo
+142	Rio Claro	Rio Claro
+143	Arapiraca	Arapiraca
+144	Araçatuba	Aracatuba
+145	Castanhal	Castanhal
+146	Nova Friburgo	Nova Friburgo
+147	Ferraz de Vasconcelos	Ferraz de Vasconcelos
+148	Santa Bárbara d’Oeste	Santa Barbara d'Oeste
+149	Angra dos Reis	Angra dos Reis
+150	Ibirité	Ibirite
+151	Teresópolis	Teresopolis
+152	Araguaína	Araguaina
+153	Guarapuava	Guarapuava
+154	Jaraguá do Sul	Jaragua do Sul
+155	Ilhéus	Ilheus
+156	Barra Mansa	Barra Mansa
+157	São José de Ribamar	Sao Jose de Ribamar
+158	Nossa Senhora do Socorro	Nossa Senhora do Socorro
+159	Linhares	Linhares
+160	Rio Verde	Rio Verde
+161	Luziânia	Luziania
+162	Carpina	Carpina
+163	Francisco Morato	Francisco Morato
+164	Timon	Timon
+165	Poços de Caldas	Pocos de Caldas
+166	Sobral	Sobral
+167	Itapecerica da Serra	Itapecerica da Serra
+168	São Caetano do Sul	Sao Caetano do Sul
+169	Itu	Itu
+170	Caxias	Caxias
+171	Itapetininga	Itapetininga
+172	Jequié	Jequie
+173	Bragança Paulista	Braganca Paulista
+174	Pindamonhangaba	Pindamonhangaba
+175	Abaetetuba	Abaetetuba
+176	Teixeira de Freitas	Teixeira de Freitas
+177	Camarajibe	Camarajibe
+178	Lajes	Lajes
+179	Paranaguá	Paranagua
+180	Rio das Ostras	Rio das Ostras
+181	Barreiras	Barreiras
+182	Parnaíba	Parnaiba
+183	Patos de Minas	Patos de Minas
+184	Mogi Guaçu	Mogi Guacu
+185	Franco da Rocha	Franco da Rocha
+186	Araucária	Araucaria
+187	Santo Agostinho	Santo Agostinho
+188	Sinop	Sinop
+189	Pôrto Seguro	Porto Seguro
+190	Jaú	Jau
+191	Toledo	Toledo
+192	Teófilo Otoni	Teofilo Otoni
+193	Botucatu	Botucatu
+194	Cametá	Cameta
+195	Barbacena	Barbacena
+196	Palhoça	Palhoca
+197	Sabará	Sabara
+198	Atibaia	Atibaia
+199	Garanhuns	Garanhuns
+200	Apucarana	Apucarana
+201	Santa Rita	Santa Rita
+202	Araruama	Araruama
+203	Campo Largo	Campo Largo
+204	Ji-Paraná	Ji-Parana
+205	Santa Cruz do Sul	Santa Cruz do Sul
+206	Pouso Alegre	Pouso Alegre
+207	Itapipoca	Itapipoca
+208	Maranguape	Maranguape
+209	Vitória de Santo Antão	Vitoria de Santo Antao
+210	Conselheiro Lafaiete	Conselheiro Lafaiete
+211	Araras	Araras
+212	Alagoinhas	Alagoinhas
+213	Cubatão	Cubatao
+214	Santana de Parnaíba	Santana de Parnaiba
+215	Barcarena Nova	Barcarena Nova
+216	Guarapari	Guarapari
+217	Uruguaiana	Uruguaiana
+218	Jandira	Jandira
+219	Balneário de Camboriú	Balneario de Camboriu
+220	Resende	Resende
+221	Arapongas	Arapongas
+222	Formosa	Formosa
+223	Varginha	Varginha
+224	Barretos	Barretos
+225	Bento Gonçalves	Bento Goncalves
+226	Ribeirão Pires	Ribeirao Pires
+227	Valinhos	Valinhos
+228	Itabira	Itabira
+229	Cachoeirinha	Cachoeirinha
+230	Sertãozinho	Sertaozinho
+231	Poá	Poa
+232	Almirante Tamandaré	Almirante Tamandare
+233	Várzea Paulista	Varzea Paulista
+234	Catanduva	Catanduva
+235	Paulo Afonso	Paulo Afonso
+236	Guaratinguetá	Guaratingueta
+237	Igarassu	Igarassu
+238	Birigui	Birigui
+239	Votorantim	Votorantim
+240	Codó	Codo
+241	Araguari	Araguari
+242	Ubá	Uba
+243	Tatuí	Tatui
+244	Bagé	Bage
+245	Altamira	Altamira
+246	Piraquara	Piraquara
+247	Tucuruí	Tucurui
+248	Salto	Salto
+249	Itatiba	Itatiba
+250	Caraguatatuba	Caraguatatuba
+251	Euriápolis	Euriapolis
+252	Açailandia	Acailandia
+253	Umuarama	Umuarama
+254	Santana	Santana
+255	Corumbá	Corumba
+256	Colatina	Colatina
+257	Parintins	Parintins
+258	Catalão	Catalao
+259	Coronel Fabriciano	Coronel Fabriciano
+260	Ourinhos	Ourinhos
+261	Ariquemes	Ariquemes
+262	Muriaé	Muriae
+263	Itaúna	Itauna
+264	Araxá	Araxa
+265	Cambé	Cambe
+266	Erechim	Erechim
+267	Tubarão	Tubarao
+268	Patos	Patos
+269	Passos	Passos
+270	Paço do Lumiar	Paco do Lumiar
+271	Nova Serrana	Nova Serrana
+272	Itumbiara	Itumbiara
+273	Ituiutaba	Ituiutaba
+274	Lavras	Lavras
+275	Trindade	Trindade
+276	Itaperuna	Itaperuna
+277	Breves	Breves
+278	São Lourenço da Mata	Sao Lourenco da Mata
+279	Vilhena	Vilhena
+280	Santo Antônio de Jesus	Santo Antonio de Jesus
+281	Assis	Assis
+282	Itaituba	Itaituba
+283	Mairiporã	Mairipora
+284	Bacabal	Bacabal
+285	Bayeux	Bayeux
+286	Ponta Porã	Ponta Pora
+287	Itanhaém	Itanhaem
+288	Brusque	Brusque
+289	Avaré	Avare
+290	Esteio	Esteio
+291	Campo Formoso	Campo Formoso
+292	São Mateus	Sao Mateus
+293	Goiana	Goiana
+294	Três Lagoas	Tres Lagoas
+295	Iguatu	Iguatu
+296	Mineiros	Mineiros
+297	Irecê	Irece
+298	Balsas	Balsas
+299	Itapeva	Itapeva
+300	Valença	Valenca
+301	Caçador	Cacador
+302	Timbaúba	Timbauba
+303	Curvelo	Curvelo
+304	Manacapuru	Manacapuru
+305	Cabedelo	Cabedelo
+306	Euclides da Cunha	Euclides da Cunha
+307	Pirapora	Pirapora
+308	Bragança	Braganca
+309	São Borja	Sao Borja
+310	Canela	Canela
+311	Santa Rosa	Santa Rosa
+312	Janaúba	Janauba
+313	Serrinha	Serrinha
+314	Formiga	Formiga
+315	Ponte Nova	Ponte Nova
+316	Senhor do Bonfim	Senhor do Bonfim
+317	Barra do Corda	Barra do Corda
+318	Floriano	Floriano
+319	Itamaraju	Itamaraju
+320	Camocim	Camocim
+321	Capanema	Capanema
+322	Goianésia	Goianesia
+323	Brumado	Brumado
+324	Inhumas	Inhumas
+325	Salgueiro	Salgueiro
+326	Nanuque	Nanuque
+327	Barreiros	Barreiros
+328	São Francisco do Sul	Sao Francisco do Sul
+329	Januária	Januaria
+330	Riacho de Santana	Riacho de Santana
+331	Jacarèzinho	Jacarezinho
+332	Capitão Poço	Capitao Poco
+333	Campo Maior	Campo Maior
+334	Paranaíba	Paranaiba
+335	Pompeu	Pompeu
+336	Barra do Bugres	Barra do Bugres
+337	Ipu	Ipu
+338	Nova Cruz	Nova Cruz
+339	Arapoti	Arapoti
+340	Itambé	Itambe
+341	Caiapônia	Caiaponia
+342	Pedreiras	Pedreiras
+343	Cachoeira Alta	Cachoeira Alta
+344	Elesbão Veloso	Elesbao Veloso
+345	Pôrto Esperidião	Porto Esperidiao
+346	Lagamar	Lagamar
+347	Leme	Leme
+348	Paulínia	Paulinia
+349	Itacoatiara	Itacoatiara
+350	Barra do Piraí	Barra do Pirai
+351	Campo Mourão	Campo Mourao
+352	Guaíba	Guaiba
+353	Pará de Minas	Para de Minas
+354	Paracatu	Paracatu
+355	Caldas Novas	Caldas Novas
+356	Sorriso	Sorriso
+357	Caratinga	Caratinga
+358	Mogi Mirim	Mogi Mirim
+359	Votuporanga	Votuporanga
+360	Caçapava	Cacapava
+361	São Félix do Xingu	Sao Felix do Xingu
+362	Cáceres	Caceres
+363	Timóteo	Timoteo
+364	Itajubá	Itajuba
+365	Saquarema	Saquarema
+366	Planaltina	Planaltina
+367	São João del Rei	Sao Joao del Rei
+368	Santa Inês	Santa Ines
+369	São João da Boa Vista	Sao Joao da Boa Vista
+370	Candeias	Candeias
+371	Paranavaí	Paranavai
+372	São Gonçalo do Amarante	Sao Goncalo do Amarante
+373	Jataí	Jatai
+374	Cacoal	Cacoal
+375	Santa Cruz do Capibaribe	Santa Cruz do Capibaribe
+376	Gurupi	Gurupi
+377	Nova Lima	Nova Lima
+378	São Cristóvão	Sao Cristovao
+379	Ubatuba	Ubatuba
+380	Guanambi	Guanambi
+381	Cachoeira do Sul	Cachoeira do Sul
+382	São Bento do Sul	Sao Bento do Sul
+383	Redenção	Redencao
+384	Camboriú	Camboriu
+385	Unaí	Unai
+386	Araripina	Araripina
+387	Gravatá	Gravata
+388	Jacobina	Jacobina
+389	Arujá	Aruja
+390	Serra Talhada	Serra Talhada
+391	Navegantes	Navegantes
+392	Cianorte	Cianorte
+393	Ijuí	Ijui
+394	Pinheiro	Pinheiro
+395	Santana do Livramento	Santana do Livramento
+396	São Sebastião	Sao Sebastiao
+397	Moju	Moju
+398	Seropédica	Seropedica
+399	Coari	Coari
+400	Cruzeiro do Sul	Cruzeiro do Sul
+401	Patrocínio	Patrocinio
+402	Três Rios	Tres Rios
+403	Macaíba	Macaiba
+404	Campo Limpo	Campo Limpo
+405	Quixeramobim	Quixeramobim
+406	Matão	Matao
+407	Quixadá	Quixada
+408	Alfenas	Alfenas
+409	Chapadinha	Chapadinha
+410	Três Corações	Tres Coracoes
+411	Telêmaco Borba	Telemaco Borba
+412	Manhuaçu	Manhuacu
+413	Pato Branco	Pato Branco
+414	Francisco Beltrão	Francisco Beltrao
+415	Picos	Picos
+416	Dias d’Ávila	Dias d'Avila
+417	Aquiraz	Aquiraz
+418	Bebedouro	Bebedouro
+419	Alegrete	Alegrete
+420	Canindé	Caninde
+421	Ibiúna	Ibiuna
+422	Santo Ângelo	Santo Angelo
+423	Itapetinga	Itapetinga
+424	Lins	Lins
+425	Jabuticabal	Jabuticabal
+426	Rio Largo	Rio Largo
+427	Sapiranga	Sapiranga
+428	Concórdia	Concordia
+429	Arcoverde	Arcoverde
+430	Piraçununga	Piracununga
+431	Palmeira dos Índios	Palmeira dos Indios
+432	Ouro Prêto	Ouro Preto
+433	Oriximiná	Oriximina
+434	Ceará-Mirim	Ceara-Mirim
+435	Vinhedo	Vinhedo
+436	Farroupilha	Farroupilha
+437	Itapira	Itapira
+438	Pacatuba	Pacatuba
+439	Crateús	Crateus
+440	Aracati	Aracati
+441	Belo Jardim	Belo Jardim
+442	Rio do Sul	Rio do Sul
+443	Casa Nova	Casa Nova
+444	Santa Isabel do Pará	Santa Isabel do Para
+445	Indaial	Indaial
+446	Gaspar	Gaspar
+447	Campo Bom	Campo Bom
+448	São Sebastião do Paraíso	Sao Sebastiao do Paraiso
+449	Russas	Russas
+450	Estância	Estancia
+451	Paragominas	Paragominas
+452	Bom Jesus da Lapa	Bom Jesus da Lapa
+453	Escada	Escada
+454	Araranguá	Ararangua
+455	Sousa	Sousa
+456	Mococa	Mococa
+457	Fernandópolis	Fernandopolis
+458	Conceição do Coité	Conceicao do Coite
+459	Embu-Guaçu	Embu-Guacu
+460	Caicó	Caico
+461	Cosmópolis	Cosmopolis
+462	Rio Negro	Rio Negro
+463	Itaberaba	Itaberaba
+464	Lençóis Paulista	Lencois Paulista
+465	União dos Palmares	Uniao dos Palmares
+466	Venâncio Aires	Venancio Aires
+467	Montenegro	Montenegro
+468	Tupã	Tupa
+469	Icó	Ico
+470	Cruz das Almas	Cruz das Almas
+471	Ouricuri	Ouricuri
+472	Penedo	Penedo
+473	Benevides	Benevides
+474	Tomé-Açu	Tome-Acu
+475	Palmares	Palmares
+476	Santo Antônio do Descoberto	Santo Antonio do Descoberto
+477	Igarapé-Miri	Igarape-Miri
+478	Portel	Portel
+479	Cruz Alta	Cruz Alta
+480	Camaquã	Camaqua
+481	Tefé	Tefe
+482	São Gabriel	Sao Gabriel
+483	Penápolis	Penapolis
+484	Itapecuru Mirim	Itapecuru Mirim
+485	Ipirá	Ipira
+486	Piripiri	Piripiri
+487	Santo Amaro	Santo Amaro
+488	Viseu	Viseu
+489	Coroatá	Coroata
+490	Guapimirim	Guapimirim
+491	Cajazeiras	Cajazeiras
+492	Caràzinho	Carazinho
+493	Vacaria	Vacaria
+494	Acaraú	Acarau
+495	Barra do Garças	Barra do Garcas
+496	Bezerros	Bezerros
+497	Batatais	Batatais
+498	Cristalina	Cristalina
+499	Frutal	Frutal
+500	Lagoa Santa	Lagoa Santa
+501	Maués	Maues
+502	Limoeiro do Norte	Limoeiro do Norte
+503	Jacundá	Jacunda
+504	São Miguel do Guamá	Sao Miguel do Guama
+505	Lucas do Rio Verde	Lucas do Rio Verde
+506	Cachoeiras de Macacu	Cachoeiras de Macacu
+507	Juruti	Juruti
+508	Buíque	Buique
+509	Guarabira	Guarabira
+510	Açu	Acu
+511	Monte Alegre	Monte Alegre
+512	Mirassol	Mirassol
+513	Campo Alegre	Campo Alegre
+514	Ibitinga	Ibitinga
+515	Nova Odessa	Nova Odessa
+516	Andradina	Andradina
+517	Vargem Grande	Vargem Grande
+518	Pau d’Alho	Pau d'Alho
+519	Alenquer	Alenquer
+520	Três Pontas	Tres Pontas
+521	Moreno	Moreno
+522	Taquaritinga	Taquaritinga
+523	Bertioga	Bertioga
+524	São Francisco	Sao Francisco
+525	Araci	Araci
+526	Registro	Registro
+527	Irati	Irati
+528	Boituva	Boituva
+529	Jaru	Jaru
+530	Tucano	Tucano
+531	Tauá	Taua
+532	Naviraí	Navirai
+533	Acará	Acara
+534	Limoeiro	Limoeiro
+535	Monte Mor	Monte Mor
+536	Jaguaquara	Jaguaquara
+537	Congonhas	Congonhas
+538	Rolim de Moura	Rolim de Moura
+539	Viçosa do Ceará	Vicosa do Ceara
+540	Pôrto Ferreira	Porto Ferreira
+541	Barreirinhas	Barreirinhas
+542	Monte Santo	Monte Santo
+543	Canoinhas	Canoinhas
+544	São José do Rio Pardo	Sao Jose do Rio Pardo
+545	Itupeva	Itupeva
+546	Campo Belo	Campo Belo
+547	Barra	Barra
+548	Vigia	Vigia
+549	Videira	Videira
+550	Olímpia	Olimpia
+551	Itupiranga	Itupiranga
+552	Santo Estêvão	Santo Estevao
+553	Porto Nacional	Porto Nacional
+554	Capivari	Capivari
+555	São Bento do Una	Sao Bento do Una
+556	Canguçu	Cangucu
+557	Leopoldina	Leopoldina
+558	Acopiara	Acopiara
+559	Manicoré	Manicore
+560	Mongaguá	Mongagua
+561	Tutóia	Tutoia
+562	Rondon do Pará	Rondon do Para
+563	União da Vitória	Uniao da Vitoria
+564	Viana	Viana
+565	Granja	Granja
+566	Tobias Barreto	Tobias Barreto
+567	Caetité	Caetite
+568	Itabirito	Itabirito
+569	Prudentópolis	Prudentopolis
+570	Boa Viagem	Boa Viagem
+571	Sapé	Sape
+572	Óbidos	Obidos
+573	Jaguariúna	Jaguariuna
+574	Guaxupé	Guaxupe
+575	Porto Feliz	Porto Feliz
+576	Paraíso do Tocantins	Paraiso do Tocantins
+577	Xanxerê	Xanxere
+578	Laguna	Laguna
+579	Ribeira do Pombal	Ribeira do Pombal
+580	Trairi	Trairi
+581	Jaraguá	Jaragua
+582	Humaitá	Humaita
+583	Campos do Jordão	Campos do Jordao
+584	Artur Nogueira	Artur Nogueira
+585	Nova Venécia	Nova Venecia
+586	Macaúbas	Macaubas
+587	Bocaiúva	Bocaiuva
+588	São Joaquim da Barra	Sao Joaquim da Barra
+589	Alta Floresta	Alta Floresta
+590	Vargem Grande Paulista	Vargem Grande Paulista
+591	Itararé	Itarare
+592	Beberibe	Beberibe
+593	Jales	Jales
+594	São Gonçalo do Amarante	Sao Goncalo do Amarante
+595	Bom Conselho	Bom Conselho
+596	Baião	Baiao
+597	Xique-Xique	Xique-Xique
+598	Rio Grande da Serra	Rio Grande da Serra
+599	Mauriti	Mauriti
+600	Presidente Dutra	Presidente Dutra
+601	Conceição do Araguaia	Conceicao do Araguaia
+602	Monte Carmelo	Monte Carmelo
+603	Diamantina	Diamantina
+604	Santana do Ipanema	Santana do Ipanema
+605	Cornélio Procópio	Cornelio Procopio
+606	Atalaia	Atalaia
+607	Ribeirão	Ribeirao
+608	João Pinheiro	Joao Pinheiro
+609	Ipiaú	Ipiau
+610	Capão Bonito	Capao Bonito
+611	Barras	Barras
+612	Guajará-Mirim	Guajara-Mirim
+613	São Mateus do Sul	Sao Mateus do Sul
+614	Niquelândia	Niquelandia
+615	Medianeira	Medianeira
+616	Cabreúva	Cabreuva
+617	Santa Cruz do Rio Pardo	Santa Cruz do Rio Pardo
+618	Eusébio	Eusebio
+619	Morrinhos	Morrinhos
+620	Augusto Correa	Augusto Correa
+621	Sena Madureira	Sena Madureira
+622	Sirinhaém	Sirinhaem
+623	Santo Antônio da Platina	Santo Antonio da Platina
+624	Mairinque	Mairinque
+625	Maragogipe	Maragogipe
+626	Pontal	Pontal
+627	Livramento de Nossa Senhora	Livramento de Nossa Senhora
+628	Iranduba	Iranduba
+629	Guaramirim	Guaramirim
+630	Mata de São João	Mata de Sao Joao
+631	Dracena	Dracena
+632	Pontes e Lacerda	Pontes e Lacerda
+633	São Bento	Sao Bento
+634	Goianira	Goianira
+635	Cerquilho Velho	Cerquilho Velho
+636	Uruará	Uruara
+637	Brejo Santo	Brejo Santo
+638	Brejo da Madre de Deus	Brejo da Madre de Deus
+639	Seabra	Seabra
+640	Xinguara	Xinguara
+641	Barra de São Francisco	Barra de Sao Francisco
+642	Pederneiras	Pederneiras
+643	Currais Novos	Currais Novos
+644	Lapa	Lapa
+645	Marau	Marau
+646	Paraguaçu Paulista	Paraguacu Paulista
+647	Louveira	Louveira
+648	Garça	Garca
+649	União	Uniao
+650	Paraíba do Sul	Paraiba do Sul
+651	Mamanguape	Mamanguape
+652	São José de Mipibu	Sao Jose de Mipibu
+653	São Benedito	Sao Benedito
+654	Panambi	Panambi
+655	Igarapé	Igarape
+656	Pinhal	Pinhal
+657	Mombaça	Mombaca
+658	Santa Rita do Sapucaí	Santa Rita do Sapucai
+659	Castro	Castro
+660	Salto de Pirapora	Salto de Pirapora
+661	Paraty	Paraty
+662	Itaberaí	Itaberai
+663	Presidente Epitácio	Presidente Epitacio
+664	São Lourenço do Sul	Sao Lourenco do Sul
+665	Catende	Catende
+666	Lábrea	Labrea
+667	Nova Viçosa	Nova Vicosa
+668	Visconde do Rio Branco	Visconde do Rio Branco
+669	São Gabriel da Cachoeira	Sao Gabriel da Cachoeira
+670	Rosário	Rosario
+671	Entre Rios	Entre Rios
+672	Orlândia	Orlandia
+673	Vera Cruz	Vera Cruz
+674	Santa Quitéria	Santa Quiteria
+675	Santo Antônio de Pádua	Santo Antonio de Padua
+676	Rio Negrinho	Rio Negrinho
+677	Santa Helena	Santa Helena
+678	Capão da Canoa	Capao da Canoa
+679	São Lourenço	Sao Lourenco
+680	Itápolis	Itapolis
+681	Remanso	Remanso
+682	Itabaianinha	Itabaianinha
+683	Amontada	Amontada
+684	Santa Maria da Boa Vista	Santa Maria da Boa Vista
+685	Tuntum	Tuntum
+686	Pedra Branca	Pedra Branca
+687	Oliveira	Oliveira
+688	Jardinópolis	Jardinopolis
+689	Santa Maria da Vitória	Santa Maria da Vitoria
+690	Pôrto de Moz	Porto de Moz
+691	Almenara	Almenara
+692	Andradas	Andradas
+693	Charqueadas	Charqueadas
+694	Girau do Ponciano	Girau do Ponciano
+695	Aquidauana	Aquidauana
+696	Colinas	Colinas
+697	Jeremoabo	Jeremoabo
+698	Mucuri	Mucuri
+699	Salinópolis	Salinopolis
+700	Dois Vizinhos	Dois Vizinhos
+701	Osório	Osorio
+702	Inhambupe	Inhambupe
+703	São Miguel d’Oeste	Sao Miguel d'Oeste
+704	Mangaratiba	Mangaratiba
+705	Rio Real	Rio Real
+706	Uruaçu	Uruacu
+707	Brumadinho	Brumadinho
+708	Simão Dias	Simao Dias
+709	Altos	Altos
+710	Curuçá	Curuca
+711	Arcos	Arcos
+712	São Manuel	Sao Manuel
+713	Imbituba	Imbituba
+714	Tietê	Tiete
+715	Águas Belas	Aguas Belas
+716	Boa Esperança	Boa Esperanca
+717	Bom Jardim	Bom Jardim
+718	Tucumã	Tucuma
+719	Santa Cruz	Santa Cruz
+720	Tarauacá	Tarauaca
+721	Ouro Branco	Ouro Branco
+722	Curitibanos	Curitibanos
+723	Esperantina	Esperantina
+724	Ouro Preto d’Oeste	Ouro Preto d'Oeste
+725	Várzea da Palma	Varzea da Palma
+726	Santo Antônio	Santo Antonio
+727	Iturama	Iturama
+728	Rosário do Sul	Rosario do Sul
+729	Socorro	Socorro
+730	Araquari	Araquari
+731	Novo Horizonte	Novo Horizonte
+732	Afuá	Afua
+733	Benjamin Constant	Benjamin Constant
+734	Presidente Venceslau	Presidente Venceslau
+735	Palmas	Palmas
+736	São Francisco do Conde	Sao Francisco do Conde
+737	Borba	Borba
+738	Salinas	Salinas
+739	São Mateus do Maranhão	Sao Mateus do Maranhao
+740	Igarapé-Açu	Igarape-Acu
+741	Dom Pedrito	Dom Pedrito
+742	Promissão	Promissao
+743	Pedro II	Pedro II
+744	São Fidélis	Sao Fidelis
+745	Guariba	Guariba
+746	São Gabriel	Sao Gabriel
+747	Aliança	Alianca
+748	Itiúba	Itiuba
+749	Américo Brasiliense	Americo Brasiliense
+750	Várzea Alegre	Varzea Alegre
+751	Bodocó	Bodoco
+752	Pitangueiras	Pitangueiras
+753	Rio Pardo	Rio Pardo
+754	Bonito	Bonito
+755	Capelinha	Capelinha
+756	Amarante do Maranhão	Amarante do Maranhao
+757	Pentecoste	Pentecoste
+758	Amargosa	Amargosa
+759	Ipueiras	Ipueiras
+760	Guaraciaba do Norte	Guaraciaba do Norte
+761	Pimenta Bueno	Pimenta Bueno
+762	São Gonçalo dos Campos	Sao Goncalo dos Campos
+763	Porteirinha	Porteirinha
+764	Igrejinha	Igrejinha
+765	Pojuca	Pojuca
+766	Guaratuba	Guaratuba
+767	Itarema	Itarema
+768	Afogados da Ingazeira	Afogados da Ingazeira
+769	Nossa Senhora da Glória	Nossa Senhora da Gloria
+770	Araçuaí	Aracuai
+771	Água Preta	Agua Preta
+772	José de Freitas	Jose de Freitas
+773	Santaluz	Santaluz
+774	Lajedo	Lajedo
+775	Esplanada	Esplanada
+776	Morro do Chapéu	Morro do Chapeu
+777	Gramado	Gramado
+778	Brejo	Brejo
+779	Campos Novos	Campos Novos
+780	Barra Bonita	Barra Bonita
+781	Agudos	Agudos
+782	São Paulo de Olivença	Sao Paulo de Olivenca
+783	São João da Barra	Sao Joao da Barra
+784	Camamu	Camamu
+785	Careiro	Careiro
+786	Oeiras	Oeiras
+787	Araguatins	Araguatins
+788	Sertânia	Sertania
+789	Itapicuru	Itapicuru
+790	Fraiburgo	Fraiburgo
+791	Apodi	Apodi
+792	Colinas do Tocantins	Colinas do Tocantins
+793	Além Paraíba	Alem Paraiba
+794	Estreito	Estreito
+795	Marialva	Marialva
+796	Turiaçu	Turiacu
+797	Pôrto União	Porto Uniao
+798	José Bonifácio	Jose Bonifacio
+799	Toritama	Toritama
+800	Matinhos	Matinhos
+801	Santana do Paraíso	Santana do Paraiso
+802	Pilar	Pilar
+803	Riachão do Jacuípe	Riachao do Jacuipe
+804	Pilão Arcado	Pilao Arcado
+805	Paracuru	Paracuru
+806	Cansanção	Cansancao
+807	Massapê	Massape
+808	Curaçá	Curaca
+809	João Câmara	Joao Camara
+810	Nova Olinda do Norte	Nova Olinda do Norte
+811	Adamantina	Adamantina
+812	Ubajara	Ubajara
+813	Jaguariaíva	Jaguariaiva
+814	Curralinho	Curralinho
+815	Armação dos Búzios	Armacao dos Buzios
+816	Piuí	Piui
+817	Itamarandiba	Itamarandiba
+818	Aguaí	Aguai
+819	Barra do Choça	Barra do Choca
+820	São Raimundo Nonato	Sao Raimundo Nonato
+821	Feijó	Feijo
+822	Tôrres	Torres
+823	Tanguá	Tangua
+824	São Luís do Quitunde	Sao Luis do Quitunde
+825	Canguaretama	Canguaretama
+826	Jaguaribe	Jaguaribe
+827	Cachoeira	Cachoeira
+828	Guanhães	Guanhaes
+829	Parnarama	Parnarama
+830	Capela	Capela
+831	São Luís Gonzaga	Sao Luis Gonzaga
+832	Mandaguari	Mandaguari
+833	Cícero Dantas	Cicero Dantas
+834	Cabrobó	Cabrobo
+835	Vassouras	Vassouras
+836	Padre Bernardo	Padre Bernardo
+837	Taiobeiras	Taiobeiras
+838	Missão Velha	Missao Velha
+839	Cravinhos	Cravinhos
+840	Goiatuba	Goiatuba
+841	São Luís de Montes Belos	Sao Luis de Montes Belos
+842	Pomerode	Pomerode
+843	Bariri	Bariri
+844	São José do Egito	Sao Jose do Egito
+845	Almeirim	Almeirim
+846	São José do Belmonte	Sao Jose do Belmonte
+847	Braço do Norte	Braco do Norte
+848	Eirunepé	Eirunepe
+849	Domingos Martins	Domingos Martins
+850	Custódia	Custodia
+851	Miguel Alves	Miguel Alves
+852	Ouro Fino	Ouro Fino
+853	Penha	Penha
+854	Poço Redondo	Poco Redondo
+855	Gurupá	Gurupa
+856	Caçapava do Sul	Cacapava do Sul
+857	Monção	Moncao
+858	Ibaté	Ibate
+859	São Domingos do Maranhão	Sao Domingos do Maranhao
+860	Dois Irmãos	Dois Irmaos
+861	São Bento	Sao Bento
+862	João Alfredo	Joao Alfredo
+863	Iperó	Ipero
+864	Touros	Touros
+865	Bôca do Acre	Boca do Acre
+866	Baturité	Baturite
+867	Conceição de Jacuípe	Conceicao de Jacuipe
+868	Ourilândia do Norte	Ourilandia do Norte
+869	Poconé	Pocone
+870	Canavieiras	Canavieiras
+871	Camacan	Camacan
+872	Jaguarari	Jaguarari
+873	Floresta	Floresta
+874	Correntina	Correntina
+875	Rio das Pedras	Rio das Pedras
+876	Carangola	Carangola
+877	Maragogi	Maragogi
+878	Descalvado	Descalvado
+879	Imbituva	Imbituva
+880	Esperança	Esperanca
+881	Barão de Cocais	Barao de Cocais
+882	Gandu	Gandu
+883	Vicência	Vicencia
+884	Santa Cruz das Palmeiras	Santa Cruz das Palmeiras
+885	Oeiras do Pará	Oeiras do Para
+886	Presidente Figueiredo	Presidente Figueiredo
+887	São Miguel Arcanjo	Sao Miguel Arcanjo
+888	Nazaré da Mata	Nazare da Mata
+889	Pombal	Pombal
+890	Três Marias	Tres Marias
+891	Espigão D’Oeste	Espigao D'Oeste
+892	Cururupu	Cururupu
+893	Pitanga	Pitanga
+894	Paratinga	Paratinga
+895	São Joaquim de Bicas	Sao Joaquim de Bicas
+896	Rio Branco do Sul	Rio Branco do Sul
+897	Osvaldo Cruz	Osvaldo Cruz
+898	Nova Russas	Nova Russas
+899	Brasília de Minas	Brasilia de Minas
+900	Cachoeira Paulista	Cachoeira Paulista
+901	Guararapes	Guararapes
+902	São José da Tapera	Sao Jose da Tapera
+903	Ilhabela	Ilhabela
+904	Jaguaruana	Jaguaruana
+905	Bandeirantes	Bandeirantes
+906	Itatiaia	Itatiaia
+907	Laranjeiras do Sul	Laranjeiras do Sul
+908	Palmeira	Palmeira
+909	Colíder	Colider
+910	Macau	Macau
+911	Ivaiporã	Ivaipora
+912	Grajaú	Grajau
+913	Ruy Barbosa	Ruy Barbosa
+914	Ibaiti	Ibaiti
+915	Jacareacanga	Jacareacanga
+916	Exu	Exu
+917	Santa Bárbara	Santa Barbara
+918	Morro Agudo	Morro Agudo
+919	Espinosa	Espinosa
+920	Frederico Westphalen	Frederico Westphalen
+921	Mocajuba	Mocajuba
+922	Ponta de Pedras	Ponta de Pedras
+923	Iporá	Ipora
+924	Lavras da Mangabeira	Lavras da Mangabeira
+925	Minas Novas	Minas Novas
+926	Santa Fé do Sul	Santa Fe do Sul
+927	Parambu	Parambu
+928	Mateus Leme	Mateus Leme
+929	Araçoiaba da Serra	Aracoiaba da Serra
+930	Barrinha	Barrinha
+931	Posse	Posse
+932	Novo Cruzeiro	Novo Cruzeiro
+933	Bagre	Bagre
+934	Conceição da Barra	Conceicao da Barra
+935	Tracuateua	Tracuateua
+936	Barra dos Coqueiros	Barra dos Coqueiros
+937	Pindaré-Mirim	Pindare-Mirim
+938	Vitória do Mearim	Vitoria do Mearim
+939	Biritiba-Mirim	Biritiba-Mirim
+940	Ipubi	Ipubi
+941	Flores da Cunha	Flores da Cunha
+942	Baixo Guandu	Baixo Guandu
+943	Minaçu	Minacu
+944	Cândido Mota	Candido Mota
+945	Afonso Cláudio	Afonso Claudio
+946	Portão	Portao
+947	Itabela	Itabela
+948	Muritiba	Muritiba
+949	Jacaré	Jacare
+950	Tijucas	Tijucas
+951	Soledade	Soledade
+952	Rio Pardo de Minas	Rio Pardo de Minas
+953	Matões	Matoes
+954	Santa Vitória do Palmar	Santa Vitoria do Palmar
+955	Trindade	Trindade
+956	Sombrio	Sombrio
+957	Bela Cruz	Bela Cruz
+958	Alegre	Alegre
+959	Arraial do Cabo	Arraial do Cabo
+960	Glória do Goitá	Gloria do Goita
+961	Guaíra	Guaira
+962	Pau dos Ferros	Pau dos Ferros
+963	Juquitiba	Juquitiba
+964	Barreirinha	Barreirinha
+965	Rio Preto da Eva	Rio Preto da Eva
+966	Joaçaba	Joacaba
+967	Bela Vista de Goiás	Bela Vista de Goias
+968	Itaporanga d’Ajuda	Itaporanga d'Ajuda
+969	Iguape	Iguape
+970	Carlos Barbosa	Carlos Barbosa
+971	Carmo do Paranaíba	Carmo do Paranaiba
+972	Catolé do Rocha	Catole do Rocha
+973	Paraipaba	Paraipaba
+974	Barra Velha	Barra Velha
+975	Campo Alegre de Lourdes	Campo Alegre de Lourdes
+976	Santana do Acaraú	Santana do Acarau
+977	Carinhanha	Carinhanha
+978	Arari	Arari
+979	Cambuí	Cambui
+980	Casa Branca	Casa Branca
+981	Triunfo	Triunfo
+982	Capim	Capim
+983	Prainha	Prainha
+984	Igarapava	Igarapava
+985	Rancharia	Rancharia
+986	Campo Magro	Campo Magro
+987	Piraju	Piraju
+988	Anajás	Anajas
+989	Maracanã	Maracana
+990	Nazaré	Nazare
+991	Ibimirim	Ibimirim
+992	Capim Grosso	Capim Grosso
+993	Iguaba Grande	Iguaba Grande
+994	Limoeiro do Ajuru	Limoeiro do Ajuru
+995	Redenção	Redencao
+996	Tabuleiro do Norte	Tabuleiro do Norte
+997	Prado	Prado
+998	Santa Quitéria do Maranhão	Santa Quiteria do Maranhao
+999	Timbiras	Timbiras
+1000	Taquaritinga do Norte	Taquaritinga do Norte
+1001	Ituberá	Itubera
+1002	Extremoz	Extremoz
+1003	Mirandópolis	Mirandopolis
+1004	Itaperuçu	Itaperucu
+1005	Goio-Erê	Goio-Ere
+1006	Cajati	Cajati
+1007	Xaxim	Xaxim
+1008	Caetés	Caetes
+1009	Passira	Passira
+1010	Cláudio	Claudio
+1011	Campos Gerais	Campos Gerais
+1012	Santa Rita de Cássia	Santa Rita de Cassia
+1013	Buriti	Buriti
+1014	Pires do Rio	Pires do Rio
+1015	Propriá	Propria
+1016	Alagoa Grande	Alagoa Grande
+1017	Palotina	Palotina
+1018	Novo Oriente	Novo Oriente
+1019	Marapanim	Marapanim
+1020	Bom Jesus	Bom Jesus
+1021	Serra Negra	Serra Negra
+1022	Guararema	Guararema
+1023	Luís Correia	Luis Correia
+1024	Manaquiri	Manaquiri
+1025	Conceição das Alagoas	Conceicao das Alagoas
+1026	Pedras de Fogo	Pedras de Fogo
+1027	Pilar do Sul	Pilar do Sul
+1028	Pitangui	Pitangui
+1029	Santa Cruz Cabrália	Santa Cruz Cabralia
+1030	Miranda	Miranda
+1031	Buritizeiro	Buritizeiro
+1032	Pontal do Paraná	Pontal do Parana
+1033	Prata	Prata
+1034	Gameleira	Gameleira
+1035	Coromandel	Coromandel
+1036	Mirassol d’Oeste	Mirassol d'Oeste
+1037	Jaguarão	Jaguarao
+1038	Valente	Valente
+1039	Melgaço	Melgaco
+1040	Piraí	Pirai
+1041	Carauari	Carauari
+1042	Cocal	Cocal
+1043	Iguaí	Iguai
+1044	Lagoa Vermelha	Lagoa Vermelha
+1045	Nova Prata	Nova Prata
+1046	Boca da Mata	Boca da Mata
+1047	São José do Norte	Sao Jose do Norte
+1048	Bom Jardim	Bom Jardim
+1049	Mantena	Mantena
+1050	Ibotirama	Ibotirama
+1051	Juatuba	Juatuba
+1052	Itacaré	Itacare
+1053	Marco	Marco
+1054	Água Azul do Norte	Agua Azul do Norte
+1055	Jarinu	Jarinu
+1056	Tupanatinga	Tupanatinga
+1057	São Miguel do Iguaçu	Sao Miguel do Iguacu
+1058	Piracuruca	Piracuruca
+1059	Lapão	Lapao
+1060	Miguel Calmon	Miguel Calmon
+1061	Santa Rita do Passa Quatro	Santa Rita do Passa Quatro
+1062	Campos Sales	Campos Sales
+1063	Laranjal Paulista	Laranjal Paulista
+1064	Barcelos	Barcelos
+1065	Forquilhinha	Forquilhinha
+1066	Castro Alves	Castro Alves
+1067	Teutônia	Teutonia
+1068	Conchal	Conchal
+1069	Pombos	Pombos
+1070	Santana	Santana
+1071	Itapissuma	Itapissuma
+1072	Miracema	Miracema
+1073	Jardim	Jardim
+1074	Mundo Novo	Mundo Novo
+1075	Porto da Folha	Porto da Folha
+1076	São Joaquim	Sao Joaquim
+1077	Ubatã	Ubata
+1078	Belo Oriente	Belo Oriente
+1079	Itamaracá	Itamaraca
+1080	Laranjeiras	Laranjeiras
+1081	Boquim	Boquim
+1082	Sanharó	Sanharo
+1083	São Sebastião da Boa Vista	Sao Sebastiao da Boa Vista
+1084	Aripuanã	Aripuana
+1085	Taquari	Taquari
+1086	Batalha	Batalha
+1087	Cândido Sales	Candido Sales
+1088	Olindina	Olindina
+1089	Ipixuna	Ipixuna
+1090	Nossa Senhora das Dores	Nossa Senhora das Dores
+1091	Reserva	Reserva
+1092	Solânea	Solanea
+1093	Nepomuceno	Nepomuceno
+1094	Goianinha	Goianinha
+1095	Santa Helena	Santa Helena
+1096	Codajás	Codajas
+1097	Piracaia	Piracaia
+1098	Corrente	Corrente
+1099	Brasiléia	Brasileia
+1100	Nova Esperança	Nova Esperanca
+1101	Planalto	Planalto
+1102	Goiás	Goias
+1103	Veranópolis	Veranopolis
+1104	Coração de Jesus	Coracao de Jesus
+1105	Pirapòzinho	Pirapozinho
+1106	Dois Córregos	Dois Corregos
+1107	São João Nepomuceno	Sao Joao Nepomuceno
+1108	São Bernardo	Sao Bernardo
+1109	Vila Rica	Vila Rica
+1110	Senador Pompeu	Senador Pompeu
+1111	Tabira	Tabira
+1112	Pati do Alferes	Pati do Alferes
+1113	Caririaçu	Caririacu
+1114	Canarana	Canarana
+1115	Ilha Solteira	Ilha Solteira
+1116	Sacramento	Sacramento
+1117	Itaíba	Itaiba
+1118	Quipapá	Quipapa
+1119	Astorga	Astorga
+1120	Jardim	Jardim
+1121	Conde	Conde
+1122	Independência	Independencia
+1123	São Sebastião do Caí	Sao Sebastiao do Cai
+1124	Cujubim	Cujubim
+1125	Iaçu	Iacu
+1126	Guaraí	Guarai
+1127	Aracoiaba	Aracoiaba
+1128	Itapuranga	Itapuranga
+1129	Tacaratu	Tacaratu
+1130	Queimadas	Queimadas
+1131	Aparecida do Taboado	Aparecida do Taboado
+1132	Itaí	Itai
+1133	Santo Antônio do Monte	Santo Antonio do Monte
+1134	Encruzilhada do Sul	Encruzilhada do Sul
+1135	Lagoa Grande	Lagoa Grande
+1136	Nova Soure	Nova Soure
+1137	Pereira Barreto	Pereira Barreto
+1138	Umbaúba	Umbauba
+1139	Santa Rosa de Viterbo	Santa Rosa de Viterbo
+1140	Aimorés	Aimores
+1141	Carandaí	Carandai
+1142	Panelas	Panelas
+1143	Bom Jesus	Bom Jesus
+1144	Piraí do Sul	Pirai do Sul
+1145	Mata Grande	Mata Grande
+1146	São Geraldo do Araguaia	Sao Geraldo do Araguaia
+1147	Soure	Soure
+1148	Luzilândia	Luzilandia
+1149	Cambará	Cambara
+1150	Alta Floresta D’Oeste	Alta Floresta D'Oeste
+1151	Tanabi	Tanabi
+1152	Jequitinhonha	Jequitinhonha
+1153	Tamboril	Tamboril
+1154	Capão do Leão	Capao do Leao
+1155	Ituporanga	Ituporanga
+1156	Tupaciguara	Tupaciguara
+1157	Bom Jesus	Bom Jesus
+1158	Areia Branca	Areia Branca
+1159	Pinheiral	Pinheiral
+1160	Formosa do Rio Preto	Formosa do Rio Preto
+1161	São João da Ponte	Sao Joao da Ponte
+1162	Ibiá	Ibia
+1163	Elói Mendes	Eloi Mendes
+1164	Cajuru	Cajuru
+1165	Anastácio	Anastacio
+1166	Apiaí	Apiai
+1167	Espera Feliz	Espera Feliz
+1168	Agrestina	Agrestina
+1169	Icatu	Icatu
+1170	Quissamã	Quissama
+1171	Uauá	Uaua
+1172	Matriz de Camarajibe	Matriz de Camarajibe
+1173	Piritiba	Piritiba
+1174	Cruz	Cruz
+1175	Santa Maria do Pará	Santa Maria do Para
+1176	Iraquara	Iraquara
+1177	Valparaíso	Valparaiso
+1178	Santa Gertrudes	Santa Gertrudes
+1179	Ribas do Rio Pardo	Ribas do Rio Pardo
+1180	Piranhas	Piranhas
+1181	São João dos Patos	Sao Joao dos Patos
+1182	Igreja Nova	Igreja Nova
+1183	Pão de Açúcar	Pao de Acucar
+1184	Ipameri	Ipameri
+1185	Bela Vista	Bela Vista
+1186	Canindé de São Francisco	Caninde de Sao Francisco
+1187	Igaraçu do Tietê	Igaracu do Tiete
+1188	Itabaiana	Itabaiana
+1189	Álvares Machado	Alvares Machado
+1190	Aurora	Aurora
+1191	Craíbas	Craibas
+1192	Urbano Santos	Urbano Santos
+1193	Canhotinho	Canhotinho
+1194	Pirajuí	Pirajui
+1195	Cedro	Cedro
+1196	Itaporanga	Itaporanga
+1197	Guabiruba	Guabiruba
+1198	Forquilha	Forquilha
+1199	São Jerônimo	Sao Jeronimo
+1200	Salvaterra	Salvaterra
+1201	Cupira	Cupira
+1202	Joaquim Gomes	Joaquim Gomes
+1203	Santo Antônio	Santo Antonio
+1204	Pedra Azul	Pedra Azul
+1205	Nerópolis	Neropolis
+1206	Inhapim	Inhapim
+1207	Novo Aripuanã	Novo Aripuana
+1208	São Lourenço d’Oeste	Sao Lourenco d'Oeste
+1209	Oiapoque	Oiapoque
+1210	Ibirapitanga	Ibirapitanga
+1211	Angatuba	Angatuba
+1212	Guaiuba	Guaiuba
+1213	São José da Laje	Sao Jose da Laje
+1214	Ibicaraí	Ibicarai
+1215	Monte Sião	Monte Siao
+1216	Tupanciretã	Tupancireta
+1217	Rio Tinto	Rio Tinto
+1218	Cachoeira do Arari	Cachoeira do Arari
+1219	São Miguel do Guaporé	Sao Miguel do Guapore
+1220	Três Passos	Tres Passos
+1221	Quatro Barras	Quatro Barras
+1222	Ocara	Ocara
+1223	Piracanjuba	Piracanjuba
+1224	Piçarras	Picarras
+1225	Três Coroas	Tres Coroas
+1226	Macaparana	Macaparana
+1227	Aldeias Altas	Aldeias Altas
+1228	Anchieta	Anchieta
+1229	São Gonçalo do Sapucaí	Sao Goncalo do Sapucai
+1230	Laje	Laje
+1231	Três de Maio	Tres de Maio
+1232	Corinto	Corinto
+1233	Poço Verde	Poco Verde
+1234	Bambuí	Bambui
+1235	Monte Aprazível	Monte Aprazivel
+1236	Carambeí	Carambei
+1237	Raul Soares	Raul Soares
+1238	Alexânia	Alexania
+1239	Jucás	Jucas
+1240	São Sepé	Sao Sepe
+1241	Caraí	Carai
+1242	São Miguel	Sao Miguel
+1243	Garopaba	Garopaba
+1244	Belmonte	Belmonte
+1245	João Lisboa	Joao Lisboa
+1246	Maracás	Maracas
+1247	Tamandaré	Tamandare
+1248	Rio Formoso	Rio Formoso
+1249	São João do Paraíso	Sao Joao do Paraiso
+1250	Maracaju	Maracaju
+1251	Ladário	Ladario
+1252	Santo Antônio do Içá	Santo Antonio do Ica
+1253	Inajá	Inaja
+1254	Santo Amaro da Imperatriz	Santo Amaro da Imperatriz
+1255	Sobradinho	Sobradinho
+1256	Caculé	Cacule
+1257	Brodósqui	Brodosqui
+1258	Medeiros Neto	Medeiros Neto
+1259	Conceição de Macabu	Conceicao de Macabu
+1260	Brotas	Brotas
+1261	Cordeirópolis	Cordeiropolis
+1262	Peritoró	Peritoro
+1263	Ortigueira	Ortigueira
+1264	Palmeiras de Goiás	Palmeiras de Goias
+1265	Alcobaça	Alcobaca
+1266	São João de Pirabas	Sao Joao de Pirabas
+1267	Itaocara	Itaocara
+1268	Riachão das Neves	Riachao das Neves
+1269	Tambaú	Tambau
+1270	Senador Guiomard	Senador Guiomard
+1271	Loanda	Loanda
+1272	Bom Jesus dos Perdões	Bom Jesus dos Perdoes
+1273	Itambacuri	Itambacuri
+1274	Itaporã	Itapora
+1275	Taquarituba	Taquarituba
+1276	Areia	Areia
+1277	Assaré	Assare
+1278	Mandaguaçu	Mandaguacu
+1279	Capinzal	Capinzal
+1280	Orleães	Orleaes
+1281	Princesa Isabel	Princesa Isabel
+1282	Encantado	Encantado
+1283	Orobó	Orobo
+1284	Quaraí	Quarai
+1285	Pirenópolis	Pirenopolis
+1286	Amaraji	Amaraji
+1287	Conselheiro Pena	Conselheiro Pena
+1288	Manhumirim	Manhumirim
+1289	Mutuípe	Mutuipe
+1290	Buriti Bravo	Buriti Bravo
+1291	Tocantinópolis	Tocantinopolis
+1292	Itaparica	Itaparica
+1293	Conceição da Feira	Conceicao da Feira
+1294	Oliveira dos Brejinhos	Oliveira dos Brejinhos
+1295	Iracemápolis	Iracemapolis
+1296	Carmo do Cajuru	Carmo do Cajuru
+1297	Buritis	Buritis
+1298	Morrinhos	Morrinhos
+1299	Erval d’Oeste	Erval d'Oeste
+1300	Flores	Flores
+1301	Feira Grande	Feira Grande
+1302	Paraopeba	Paraopeba
+1303	Wenceslau Guimarães	Wenceslau Guimaraes
+1304	Caravelas	Caravelas
+1305	Santo Antônio de Posse	Santo Antonio de Posse
+1306	Dianópolis	Dianopolis
+1307	Barra da Estiva	Barra da Estiva
+1308	São Vicente Ferrer	Sao Vicente Ferrer
+1309	Presidente Médici	Presidente Medici
+1310	Colorado	Colorado
+1311	Irauçuba	Iraucuba
+1312	São Miguel do Araguaia	Sao Miguel do Araguaia
+1313	Caracaraí	Caracarai
+1314	Mandirituba	Mandirituba
+1315	Terenos	Terenos
+1316	Diamantino	Diamantino
+1317	Porto Belo	Porto Belo
+1318	Cantanhede	Cantanhede
+1319	Schroeder	Schroeder
+1320	Palmital	Palmital
+1321	Una	Una
+1322	Cunha	Cunha
+1323	Bataguaçu	Bataguacu
+1324	Pio XII	Pio XII
+1325	Carutapera	Carutapera
+1326	Monte Azul	Monte Azul
+1327	Anicuns	Anicuns
+1328	Colônia Leopoldina	Colonia Leopoldina
+1329	Coreaú	Coreau
+1330	Caxambu	Caxambu
+1331	Chã Grande	Cha Grande
+1332	São José da Coroa Grande	Sao Jose da Coroa Grande
+1333	Uruçuca	Urucuca
+1334	Olho d’Água das Flores	Olho d'Agua das Flores
+1335	Alcântara	Alcantara
+1336	Santa Maria das Barreiras	Santa Maria das Barreiras
+1337	Camanducaia	Camanducaia
+1338	Manari	Manari
+1339	Itajuípe	Itajuipe
+1340	São Francisco de Paula	Sao Francisco de Paula
+1341	Silva Jardim	Silva Jardim
+1342	Itaiópolis	Itaiopolis
+1343	Itapecerica	Itapecerica
+1344	Coronel Vivida	Coronel Vivida
+1345	Miguelópolis	Miguelopolis
+1346	São Marcos	Sao Marcos
+1347	Caaporã	Caapora
+1348	São Felipe	Sao Felipe
+1349	Cassilândia	Cassilandia
+1350	Nova Brasilândia d’Oeste	Nova Brasilandia d'Oeste
+1351	Crisópolis	Crisopolis
+1352	Uruçuí	Urucui
+1353	Paraguaçu	Paraguacu
+1354	Parelhas	Parelhas
+1355	Perdões	Perdoes
+1356	Buritirama	Buritirama
+1357	Monte Santo de Minas	Monte Santo de Minas
+1358	Porto Franco	Porto Franco
+1359	Barro	Barro
+1360	Cajueiro	Cajueiro
+1361	Paraibano	Paraibano
+1362	Lagoa do Itaenga	Lagoa do Itaenga
+1363	Urussanga	Urussanga
+1364	Orós	Oros
+1365	Pompéia	Pompeia
+1366	Jandaia do Sul	Jandaia do Sul
+1367	Bananeiras	Bananeiras
+1368	Araripe	Araripe
+1369	Tanhaçu	Tanhacu
+1370	Carmo do Rio Claro	Carmo do Rio Claro
+1371	Paraisópolis	Paraisopolis
+1372	Bonito	Bonito
+1373	Lucélia	Lucelia
+1374	Monte Alegre de Minas	Monte Alegre de Minas
+1375	Itororó	Itororo
+1376	Baixa Grande	Baixa Grande
+1377	Bastos	Bastos
+1378	Barroso	Barroso
+1379	Urucurituba	Urucurituba
+1380	Taperoá	Taperoa
+1381	Pindobaçu	Pindobacu
+1382	Arroio do Meio	Arroio do Meio
+1383	Campestre	Campestre
+1384	Santo Anastácio	Santo Anastacio
+1385	Medina	Medina
+1386	Mirador	Mirador
+1387	Comodoro	Comodoro
+1388	Lambari	Lambari
+1389	Madre de Deus	Madre de Deus
+1390	Butiá	Butia
+1391	Pedra	Pedra
+1392	Guará	Guara
+1393	Sêrro	Serro
+1394	Cruzeiro do Oeste	Cruzeiro do Oeste
+1395	Araçoiaba	Aracoiaba
+1396	Valença do Piauí	Valenca do Piaui
+1397	Bombinhas	Bombinhas
+1398	Catarina	Catarina
+1399	Ubaitaba	Ubaitaba
+1400	Ceres	Ceres
+1401	Pacatu	Pacatu
+1402	Ubaíra	Ubaira
+1403	Nova Granada	Nova Granada
+1404	Fonte Boa	Fonte Boa
+1405	Belém de São Francisco	Belem de Sao Francisco
+1406	Riacho das Almas	Riacho das Almas
+1407	Piratini	Piratini
+1408	Andirá	Andira
+1409	Miracema do Tocantins	Miracema do Tocantins
+1410	São João do Piauí	Sao Joao do Piaui
+1411	Vazante	Vazante
+1412	Itanhém	Itanhem
+1413	Cachoeirinha	Cachoeirinha
+1414	Muzambinho	Muzambinho
+1415	Itapiúna	Itapiuna
+1416	Miracatu	Miracatu
+1417	Altônia	Altonia
+1418	Nova Xavantina	Nova Xavantina
+1419	Água Branca	Agua Branca
+1420	São Joaquim do Monte	Sao Joaquim do Monte
+1421	Ibirubá	Ibiruba
+1422	Jaboticatubas	Jaboticatubas
+1423	Bequimão	Bequimao
+1424	Cuité	Cuite
+1425	Jaguaruna	Jaguaruna
+1426	Sátiro Dias	Satiro Dias
+1427	São José do Rio Preto	Sao Jose do Rio Preto
+1428	Santo Antônio do Sudoeste	Santo Antonio do Sudoeste
+1429	Aragarças	Aragarcas
+1430	Padre Paraíso	Padre Paraiso
+1431	Porto Real do Colégio	Porto Real do Colegio
+1432	Araçariguama	Aracariguama
+1433	Major Isidoro	Major Isidoro
+1434	Ivoti	Ivoti
+1435	São Luís Gonzaga do Maranhão	Sao Luis Gonzaga do Maranhao
+1436	Araruna	Araruna
+1437	Mairi	Mairi
+1438	Aquidabã	Aquidaba
+1439	Icapuí	Icapui
+1440	Anagé	Anage
+1441	Itarantim	Itarantim
+1442	Taquarana	Taquarana
+1443	Guapiaçu	Guapiacu
+1444	Jericoacoara	Jericoacoara
+1445	Hidrolândia	Hidrolandia
+1446	Junqueirópolis	Junqueiropolis
+1447	Ipanema	Ipanema
+1448	Caridade	Caridade
+1449	Carira	Carira
+1450	Canto do Buriti	Canto do Buriti
+1451	Alpinópolis	Alpinopolis
+1452	São José de Piranhas	Sao Jose de Piranhas
+1453	Rubiataba	Rubiataba
+1454	Uruburetama	Uruburetama
+1455	Lajinha	Lajinha
+1456	Umirim	Umirim
+1457	Pradópolis	Pradopolis
+1458	Castilho	Castilho
+1459	Madalena	Madalena
+1460	Santa Vitória	Santa Vitoria
+1461	Riachão do Dantas	Riachao do Dantas
+1462	Paulistana	Paulistana
+1463	Simonésia	Simonesia
+1464	Cajari	Cajari
+1465	Itatinga	Itatinga
+1466	Campina Verde	Campina Verde
+1467	Regente Feijó	Regente Feijo
+1468	Poção de Pedras	Pocao de Pedras
+1469	Chopinzinho	Chopinzinho
+1470	Borda da Mata	Borda da Mata
+1471	Pôrto Grande	Porto Grande
+1472	Barreira	Barreira
+1473	Capoeiras	Capoeiras
+1474	Presidente Olegário	Presidente Olegario
+1475	Utinga	Utinga
+1476	Capela do Alto	Capela do Alto
+1477	Júlio de Castilhos	Julio de Castilhos
+1478	Abaré	Abare
+1479	Morros	Morros
+1480	Mazagão	Mazagao
+1481	Ibicoara	Ibicoara
+1482	São Gabriel	Sao Gabriel
+1483	Rolante	Rolante
+1484	Rio Verde de Mato Grosso	Rio Verde de Mato Grosso
+1485	Reriutaba	Reriutaba
+1486	Papanduva	Papanduva
+1487	Pariquera-Açu	Pariquera-Acu
+1488	Quixeré	Quixere
+1489	Salgado	Salgado
+1490	Venceslau Brás	Venceslau Bras
+1491	Ituaçu	Ituacu
+1492	Três Barras	Tres Barras
+1493	Sengés	Senges
+1494	Cocos	Cocos
+1495	Águas Formosas	Aguas Formosas
+1496	Juquiá	Juquia
+1497	Monte Azul Paulista	Monte Azul Paulista
+1498	Paranapanema	Paranapanema
+1499	Ampère	Ampere
+1500	Buerarema	Buerarema
+1501	Tibagi	Tibagi
+1502	Alhandra	Alhandra
+1503	Varzelândia	Varzelandia
+1504	Horizontina	Horizontina
+1505	Anori	Anori
+1506	Iati	Iati
+1507	São Francisco de Assis	Sao Francisco de Assis
+1508	Aroeiras	Aroeiras
+1509	Antas	Antas
+1510	Capanema	Capanema
+1511	Maracaçumé	Maracacume
+1512	Aporá	Apora
+1513	Ibirama	Ibirama
+1514	Camocim de São Félix	Camocim de Sao Felix
+1515	Jussara	Jussara
+1516	Cerqueira César	Cerqueira Cesar
+1517	Buriti dos Lopes	Buriti dos Lopes
+1518	Silvânia	Silvania
+1519	Dormentes	Dormentes
+1520	Carmo	Carmo
+1521	Guaranésia	Guaranesia
+1522	Matipó	Matipo
+1523	Cabaceiras do Paraguaçu	Cabaceiras do Paraguacu
+1524	Umburanas	Umburanas
+1525	Nova Petrópolis	Nova Petropolis
+1526	Porciúncula	Porciuncula
+1527	Caconde	Caconde
+1528	Ervália	Ervalia
+1529	Antonina	Antonina
+1530	Pindoretama	Pindoretama
+1531	Ipaba	Ipaba
+1532	Barão do Grajaú	Barao do Grajau
+1533	Terra Santa	Terra Santa
+1534	Itatira	Itatira
+1535	Chapada dos Guimarães	Chapada dos Guimaraes
+1536	Contenda	Contenda
+1537	Conceição	Conceicao
+1538	Pôrto Acre	Porto Acre
+1539	Batalha	Batalha
+1540	Malacacheta	Malacacheta
+1541	Palmeiras	Palmeiras
+1542	Costa Marques	Costa Marques
+1543	Engenheiro Coelho	Engenheiro Coelho
+1544	Neópolis	Neopolis
+1545	Quitandinha	Quitandinha
+1546	Ibititá	Ibitita
+1547	Farias Brito	Farias Brito
+1548	Cruz Machado	Cruz Machado
+1549	Pirapemas	Pirapemas
+1550	Cariús	Carius
+1551	Venturosa	Venturosa
+1552	Cafarnaum	Cafarnaum
+1553	Picuí	Picui
+1554	Ibipeba	Ibipeba
+1555	Bacuri	Bacuri
+1556	Jaguaripe	Jaguaripe
+1557	Boa Vista do Tupim	Boa Vista do Tupim
+1558	São João dos Poleiros	Sao Joao dos Poleiros
+1559	Augustinópolis	Augustinopolis
+1560	Porto Real	Porto Real
+1561	Águas de Lindóia	Aguas de Lindoia
+1562	Carnaíba	Carnaiba
+1563	Olho d’Água das Cunhãs	Olho d'Agua das Cunhas
+1564	Varjota	Varjota
+1565	Fátima	Fatima
+1566	Garuva	Garuva
+1567	Siqueira Campos	Siqueira Campos
+1568	Plácido de Castro	Placido de Castro
+1569	Taió	Taio
+1570	Viradouro	Viradouro
+1571	Piatã	Piata
+1572	Tonantins	Tonantins
+1573	Arroio Grande	Arroio Grande
+1574	Itapaci	Itapaci
+1575	Itapororoca	Itapororoca
+1576	Campos Belos	Campos Belos
+1577	Formoso do Araguaia	Formoso do Araguaia
+1578	Belo Campo	Belo Campo
+1579	Serra Dourada	Serra Dourada
+1580	Piúma	Piuma
+1581	Cariré	Carire
+1582	Lagoa da Canoa	Lagoa da Canoa
+1583	Serrita	Serrita
+1584	Jucurutu	Jucurutu
+1585	Vertentes	Vertentes
+1586	Lagoa do Carro	Lagoa do Carro
+1587	Pocinhos	Pocinhos
+1588	Colina	Colina
+1589	Condeúba	Condeuba
+1590	Banabuiú	Banabuiu
+1591	Luz	Luz
+1592	Sapucaia	Sapucaia
+1593	São Vicente Férrer	Sao Vicente Ferrer
+1594	Arinos	Arinos
+1595	Rio Maria	Rio Maria
+1596	Tremedal	Tremedal
+1597	Santo Antônio do Leverger	Santo Antonio do Leverger
+1598	Itacarambi	Itacarambi
+1599	Beruri	Beruri
+1600	Central	Central
+1601	Morro da Fumaça	Morro da Fumaca
+1602	Croatá	Croata
+1603	São Caetano de Odivelas	Sao Caetano de Odivelas
+1604	Tapauá	Tapaua
+1605	Paraibuna	Paraibuna
+1606	Solonópole	Solonopole
+1607	Matelândia	Matelandia
+1608	Atalaia do Norte	Atalaia do Norte
+1609	Lagoa Formosa	Lagoa Formosa
+1610	Piaçabuçu	Piacabucu
+1611	Pastos Bons	Pastos Bons
+1612	Mirangaba	Mirangaba
+1613	Itaberá	Itabera
+1614	Rio Pomba	Rio Pomba
+1615	Canapi	Canapi
+1616	Mirante do Paranapanema	Mirante do Paranapanema
+1617	Regeneração	Regeneracao
+1618	Messias	Messias
+1619	Antenor Navarro	Antenor Navarro
+1620	Ibirataia	Ibirataia
+1621	Juazeirinho	Juazeirinho
+1622	Guapiara	Guapiara
+1623	Conceição do Mato Dentro	Conceicao do Mato Dentro
+1624	Anadia	Anadia
+1625	Serafina Corêa	Serafina Corea
+1626	Jacupiranga	Jacupiranga
+1627	Jaguaretama	Jaguaretama
+1628	Pontalina	Pontalina
+1629	Nazaré Paulista	Nazare Paulista
+1630	Rio Claro	Rio Claro
+1631	Cêrro Azul	Cerro Azul
+1632	Belterra	Belterra
+1633	São Benedito do Rio Preto	Sao Benedito do Rio Preto
+1634	Sapeaçu	Sapeacu
+1635	Pirapora do Bom Jesus	Pirapora do Bom Jesus
+1636	Não-Me-Toque	Nao-Me-Toque
+1637	Presidente Getúlio	Presidente Getulio
+1638	Cairu	Cairu
+1639	Cássia	Cassia
+1640	Pouso Redondo	Pouso Redondo
+1641	Cipó	Cipo
+1642	Tanque Novo	Tanque Novo
+1643	Boqueirão	Boqueirao
+1644	Novo Airão	Novo Airao
+1645	Ribeirão Branco	Ribeirao Branco
+1646	São Paulo do Potengi	Sao Paulo do Potengi
+1647	Água Branca	Agua Branca
+1648	Seara	Seara
+1649	Magalhães de Almeida	Magalhaes de Almeida
+1650	Belém	Belem
+1651	Amarante	Amarante
+1652	Filadélfia	Filadelfia
+1653	Nova Era	Nova Era
+1654	Afrânio	Afranio
+1655	Peçanha	Pecanha
+1656	Terra Roxa d’Oeste	Terra Roxa d'Oeste
+1657	Cafelândia	Cafelandia
+1658	São Raimundo das Mangabeiras	Sao Raimundo das Mangabeiras
+1659	Malhada	Malhada
+1660	Maruim	Maruim
+1661	Pedra Preta	Pedra Preta
+1662	Conchas	Conchas
+1663	Capela	Capela
+1664	Tapiramutá	Tapiramuta
+1665	Hidrolândia	Hidrolandia
+1666	Montalvânia	Montalvania
+1667	Santo Antônio do Amparo	Santo Antonio do Amparo
+1668	São Domingos do Prata	Sao Domingos do Prata
+1669	Souto Soares	Souto Soares
+1670	Tapes	Tapes
+1671	Faxinal	Faxinal
+1672	Urandi	Urandi
+1673	Carmópolis	Carmopolis
+1674	Pôrto Murtinho	Porto Murtinho
+1675	Monsenhor Tabosa	Monsenhor Tabosa
+1676	Bom Sucesso	Bom Sucesso
+1677	Clevelândia	Clevelandia
+1678	Cesário Lange	Cesario Lange
+1679	Cumaru	Cumaru
+1680	Ribeirópolis	Ribeiropolis
+1681	Araçagi	Aracagi
+1682	Santana do Cariri	Santana do Cariri
+1683	Itirapina	Itirapina
+1684	Canudos	Canudos
+1685	Urucuia	Urucuia
+1686	Adustina	Adustina
+1687	Itaquitinga	Itaquitinga
+1688	Elias Fausto	Elias Fausto
+1689	Urucará	Urucara
+1690	Capistrano	Capistrano
+1691	Corbélia	Corbelia
+1692	Abelardo Luz	Abelardo Luz
+1693	Tijucas do Sul	Tijucas do Sul
+1694	Resplendor	Resplendor
+1695	Nova Canaã	Nova Canaa
+1696	Giruá	Girua
+1697	Carmópolis de Minas	Carmopolis de Minas
+1698	Macatuba	Macatuba
+1699	Fundão	Fundao
+1700	Água Fria	Agua Fria
+1701	Itapiranga	Itapiranga
+1702	Mangueirinha	Mangueirinha
+1703	Rosário Oeste	Rosario Oeste
+1704	Crixás	Crixas
+1705	Aiuaba	Aiuaba
+1706	Realeza	Realeza
+1707	Terra Rica	Terra Rica
+1708	América Dourada	America Dourada
+1709	Santa Cecília	Santa Cecilia
+1710	Severínia	Severinia
+1711	Alvorada D’Oeste	Alvorada D'Oeste
+1712	Guareí	Guarei
+1713	Alto Santo	Alto Santo
+1714	Poço Fundo	Poco Fundo
+1715	Bonito	Bonito
+1716	Nova Resende	Nova Resende
+1717	Nova Ipixuna	Nova Ipixuna
+1718	Tejuçuoca	Tejucuoca
+1719	Taguatinga	Taguatinga
+1720	Pindaí	Pindai
+1721	Itariri	Itariri
+1722	Campanha	Campanha
+1723	Tocantins	Tocantins
+1724	Sumé	Sume
+1725	Carnaubal	Carnaubal
+1726	Potirendaba	Potirendaba
+1727	Brasilândia	Brasilandia
+1728	Agudo	Agudo
+1729	Ibicuí	Ibicui
+1730	Ibitiara	Ibitiara
+1731	Salesópolis	Salesopolis
+1732	Raposos	Raposos
+1733	Poté	Pote
+1734	Carapebus	Carapebus
+1735	Buritama	Buritama
+1736	Jutaí	Jutai
+1737	Pedregulho	Pedregulho
+1738	Charqueada	Charqueada
+1739	Tururu	Tururu
+1740	Bady Bassitt	Bady Bassitt
+1741	Morretes	Morretes
+1742	Itaeté	Itaete
+1743	Passa Quatro	Passa Quatro
+1744	Sertanópolis	Sertanopolis
+1745	Pindorama	Pindorama
+1746	Bituruna	Bituruna
+1747	Aveiro	Aveiro
+1748	Acarape	Acarape
+1749	São Pedro do Sul	Sao Pedro do Sul
+1750	Assaí	Assai
+1751	Otacílio Costa	Otacilio Costa
+1752	Tapejara	Tapejara
+1753	Itaú de Minas	Itau de Minas
+1754	Caçu	Cacu
+1755	Vila Bela da Santíssima Trindade	Vila Bela da Santissima Trindade
+1756	Capinópolis	Capinopolis
+1757	Igaporã	Igapora
+1758	Araputanga	Araputanga
+1759	Poxoréo	Poxoreo
+1760	Palmitos	Palmitos
+1761	Altinópolis	Altinopolis
+1762	Getúlio Vargas	Getulio Vargas
+1763	Mujuí dos Campos	Mujui dos Campos
+1764	Barra de Santo Antônio	Barra de Santo Antonio
+1765	Paulino Neves	Paulino Neves
+1766	Iguatemi	Iguatemi
+1767	Quixelô	Quixelo
+1768	Iraci	Iraci
+1769	Corupá	Corupa
+1770	Joaquim Nabuco	Joaquim Nabuco
+1771	Candói	Candoi
+1772	Guamaré	Guamare
+1773	Piancó	Pianco
+1774	Caetano	Caetano
+1775	Fartura	Fartura
+1776	Tabatinga	Tabatinga
+1777	Grão Mogol	Grao Mogol
+1778	Indiaroba	Indiaroba
+1779	Mozarlândia	Mozarlandia
+1780	Restinga Sêca	Restinga Seca
+1781	Jussara	Jussara
+1782	Barrocas	Barrocas
+1783	Ibateguara	Ibateguara
+1784	Jataúba	Jatauba
+1785	Papagaios	Papagaios
+1786	Biritinga	Biritinga
+1787	Lagoa Real	Lagoa Real
+1788	Nova Ponte	Nova Ponte
+1789	São João Evangelista	Sao Joao Evangelista
+1790	Pereiro	Pereiro
+1791	Itajibá	Itajiba
+1792	Água Clara	Agua Clara
+1793	Acajutiba	Acajutiba
+1794	Abadiânia	Abadiania
+1795	Saboeiro	Saboeiro
+1796	Itamonte	Itamonte
+1797	Nova Olinda	Nova Olinda
+1798	Sabinópolis	Sabinopolis
+1799	Sumidouro	Sumidouro
+1800	Lagoa dos Gatos	Lagoa dos Gatos
+1801	Ipanguaçu	Ipanguacu
+1802	Rio do Antônio	Rio do Antonio
+1803	Alvinópolis	Alvinopolis
+1804	Espumoso	Espumoso
+1805	Ipuã	Ipua
+1806	Poço Branco	Poco Branco
+1807	Borborema	Borborema
+1808	Bonito	Bonito
+1809	Dionísio Cerqueira	Dionisio Cerqueira
+1810	Campos Altos	Campos Altos
+1811	Frei Miguelinho	Frei Miguelinho
+1812	Ipecaetá	Ipecaeta
+1813	Alvarães	Alvaraes
+1814	Cambuci	Cambuci
+1815	Nova Timboteua	Nova Timboteua
+1816	Jurema	Jurema
+1817	Itanhandu	Itanhandu
+1818	Cruzília	Cruzilia
+1819	Panorama	Panorama
+1820	Passo de Camarajibe	Passo de Camarajibe
+1821	Dom Feliciano	Dom Feliciano
+1822	Piquet Carneiro	Piquet Carneiro
+1823	Mirandiba	Mirandiba
+1824	Salinas da Margarida	Salinas da Margarida
+1825	Salitre	Salitre
+1826	Coremas	Coremas
+1827	Felixlândia	Felixlandia
+1828	Jacaraci	Jacaraci
+1829	Entre Rios de Minas	Entre Rios de Minas
+1830	Barro Alto	Barro Alto
+1831	Campina da Lagoa	Campina da Lagoa
+1832	Bom Jesus do Galho	Bom Jesus do Galho
+1833	Itapagipe	Itapagipe
+1834	Serra Preta	Serra Preta
+1835	Saloá	Saloa
+1836	Italva	Italva
+1837	Eldorado	Eldorado
+1838	Capitão Enéas	Capitao Eneas
+1839	Triunfo	Triunfo
+1840	Ibipitanga	Ibipitanga
+1841	Santa Luzia	Santa Luzia
+1842	Pendências	Pendencias
+1843	Ribeiro do Amparo	Ribeiro do Amparo
+1844	São João do Triunfo	Sao Joao do Triunfo
+1845	São Lourenço da Serra	Sao Lourenco da Serra
+1846	Guiratinga	Guiratinga
+1847	Brejões	Brejoes
+1848	São Félix	Sao Felix
+1849	Primavera	Primavera
+1850	Areado	Areado
+1851	Teolândia	Teolandia
+1852	Santa Adélia	Santa Adelia
+1853	Curiúva	Curiuva
+1854	Tupi Paulista	Tupi Paulista
+1855	Tartarugalzinho	Tartarugalzinho
+1856	Monte Alegre de Sergipe	Monte Alegre de Sergipe
+1857	Itajobi	Itajobi
+1858	Orocó	Oroco
+1859	Mata Roma	Mata Roma
+1860	Barra de Santa Rosa	Barra de Santa Rosa
+1861	Bela Vista do Paraíso	Bela Vista do Paraiso
+1862	Canutama	Canutama
+1863	Porteiras	Porteiras
+1864	Fortuna	Fortuna
+1865	Santa Brígida	Santa Brigida
+1866	Teixeira	Teixeira
+1867	Graça	Graca
+1868	Jiquiriçá	Jiquirica
+1869	Tamarana	Tamarana
+1870	Auriflama	Auriflama
+1871	Botelhos	Botelhos
+1872	Carmo de Minas	Carmo de Minas
+1873	Jardim de Piranhas	Jardim de Piranhas
+1874	Brasil Novo	Brasil Novo
+1875	Iporã	Ipora
+1876	Coribe	Coribe
+1877	Rebouças	Reboucas
+1878	Nobres	Nobres
+1879	Pedro Velho	Pedro Velho
+1880	Candeias	Candeias
+1881	Mascote	Mascote
+1882	Palmital	Palmital
+1883	Petrolândia	Petrolandia
+1884	Bom Lugar	Bom Lugar
+1885	Fortim	Fortim
+1886	Nova Trento	Nova Trento
+1887	Upanema	Upanema
+1888	Andorinha	Andorinha
+1889	Buritirama	Buritirama
+1890	Presidente Dutra	Presidente Dutra
+1891	Correia Pinto	Correia Pinto
+1892	Cidelândia	Cidelandia
+1893	Xexéu	Xexeu
+1894	Vargem da Roça	Vargem da Roca
+1895	Soledade	Soledade
+1896	Angical	Angical
+1897	Governador Celso Ramos	Governador Celso Ramos
+1898	Massaranduba	Massaranduba
+1899	Candiba	Candiba
+1900	Brazópolis	Brazopolis
+1901	Cafelândia	Cafelandia
+1902	Simões	Simoes
+1903	Alfredo Chaves	Alfredo Chaves
+1904	Bicas	Bicas
+1905	Ipauçu	Ipaucu
+1906	Matias Barbosa	Matias Barbosa
+1907	Santa Maria do Suaçuí	Santa Maria do Suacui
+1908	Boninal	Boninal
+1909	Curuá	Curua
+1910	Boa Nova	Boa Nova
+1911	Guaraniaçu	Guaraniacu
+1912	Apuiarés	Apuiares
+1913	Santa Branca	Santa Branca
+1914	Tibau do Sul	Tibau do Sul
+1915	Santa Filomena	Santa Filomena
+1916	Boa Esperança do Sul	Boa Esperanca do Sul
+1917	Caldas	Caldas
+1918	Barra do Mendes	Barra do Mendes
+1919	Água Boa	Agua Boa
+1920	Alterosa	Alterosa
+1921	Pinhalzinho	Pinhalzinho
+1922	Barroquinha	Barroquinha
+1923	Uibaí	Uibai
+1924	Pé de Serra	Pe de Serra
+1925	Manoel Vitorino	Manoel Vitorino
+1926	Casinhas	Casinhas
+1927	Arroio dos Ratos	Arroio dos Ratos
+1928	Marmeleiro	Marmeleiro
+1929	Igrapiúna	Igrapiuna
+1930	Bom Princípio	Bom Principio
+1931	Itinga	Itinga
+1932	Ilhota	Ilhota
+1933	Paranhos	Paranhos
+1934	Cotegipe	Cotegipe
+1935	Carlópolis	Carlopolis
+1936	Rio Piracicaba	Rio Piracicaba
+1937	Maurilândia	Maurilandia
+1938	Astolfo Dutra	Astolfo Dutra
+1939	Tarumirim	Tarumirim
+1940	Cristópolis	Cristopolis
+1941	Marechal Floriano	Marechal Floriano
+1942	Santo Antônio dos Lopes	Santo Antonio dos Lopes
+1943	Maria da Fé	Maria da Fe
+1944	Santa Juliana	Santa Juliana
+1945	Guapé	Guape
+1946	Tarumã	Taruma
+1947	Nilo Peçanha	Nilo Pecanha
+1948	Mirinzal	Mirinzal
+1949	Rio Casca	Rio Casca
+1950	Piquete	Piquete
+1951	Baianópolis	Baianopolis
+1952	Porecatu	Porecatu
+1953	Mucambo	Mucambo
+1954	Engenheiro Paulo de Frontin	Engenheiro Paulo de Frontin
+1955	Nioaque	Nioaque
+1956	Ipiranga	Ipiranga
+1957	Santa Luzia do Itanhy	Santa Luzia do Itanhy
+1958	Itaguaçu	Itaguacu
+1959	Crissiumal	Crissiumal
+1960	Patrocínio Paulista	Patrocinio Paulista
+1961	Cabo Verde	Cabo Verde
+1962	Aracatu	Aracatu
+1963	Paraíso do Norte	Paraiso do Norte
+1964	São João do Araguaia	Sao Joao do Araguaia
+1965	Peabiru	Peabiru
+1966	Ibiraci	Ibiraci
+1967	Guapó	Guapo
+1968	Santo Augusto	Santo Augusto
+1969	Alto Alegre dos Parecis	Alto Alegre dos Parecis
+1970	Vianópolis	Vianopolis
+1971	Ivaí	Ivai
+1972	Engenheiro Beltrão	Engenheiro Beltrao
+1973	Mamborê	Mambore
+1974	Pacaembu	Pacaembu
+1975	Primeira Cruz	Primeira Cruz
+1976	Anapurus	Anapurus
+1977	Ielmo Marinho	Ielmo Marinho
+1978	Maracaí	Maracai
+1979	Brejo do Cruz	Brejo do Cruz
+1980	Tracunhaém	Tracunhaem
+1981	Itapetim	Itapetim
+1982	Miraíma	Miraima
+1983	Ataléia	Ataleia
+1984	Demerval Lobão	Demerval Lobao
+1985	Uruana	Uruana
+1986	Peri-Mirim	Peri-Mirim
+1987	São José do Cedro	Sao Jose do Cedro
+1988	Joaquim Pires	Joaquim Pires
+1989	Machados	Machados
+1990	Alagoinha	Alagoinha
+1991	Jupi	Jupi
+1992	Santana do Matos	Santana do Matos
+1993	Heliópolis	Heliopolis
+1994	Passa e Fica	Passa e Fica
+1995	Dores do Indaiá	Dores do Indaia
+1996	Feliz	Feliz
+1997	Pedro Afonso	Pedro Afonso
+1998	Mansidão	Mansidao
+1999	São Ludgero	Sao Ludgero
+2000	Tenente Portela	Tenente Portela
+2001	Virgem da Lapa	Virgem da Lapa
+2002	Abre Campo	Abre Campo
+2003	Jaguapitã	Jaguapita
+2004	Puxinanã	Puxinana
+2005	Andaraí	Andarai
+2006	Conceição do Rio Verde	Conceicao do Rio Verde
+2007	Massaranduba	Massaranduba
+2008	Camapuã	Camapua
+2009	Quatipuru	Quatipuru
+2010	Meruoca	Meruoca
+2011	Quatá	Quata
+2012	General Carneiro	General Carneiro
+2013	Satuba	Satuba
+2014	Cacequi	Cacequi
+2015	Lagoa da Confusão	Lagoa da Confusao
+2016	Caldeirão Grande	Caldeirao Grande
+2017	Alto Paraná	Alto Parana
+2018	São Pedro do Piauí	Sao Pedro do Piaui
+2019	Rio Vermelho	Rio Vermelho
+2020	Santa Luzia	Santa Luzia
+2021	Mirabela	Mirabela
+2022	Rio de Contas	Rio de Contas
+2023	Terra Boa	Terra Boa
+2024	Águas Vermelhas	Aguas Vermelhas
+2025	Maribondo	Maribondo
+2026	Quatis	Quatis
+2027	Alexandria	Alexandria
+2028	Serra Branca	Serra Branca
+2029	Tomar do Geru	Tomar do Geru
+2030	Barra do Ribeiro	Barra do Ribeiro
+2031	Presidente Bernardes	Presidente Bernardes
+2032	Chã da Alegria	Cha da Alegria
+2033	Mario Campos	Mario Campos
+2034	Urupês	Urupes
+2035	Manuel Ribas	Manuel Ribas
+2036	Ribeirão do Pinhal	Ribeirao do Pinhal
+2037	Miranorte	Miranorte
+2038	Várzea Nova	Varzea Nova
+2039	Paripueira	Paripueira
+2040	Itaguara	Itaguara
+2041	Martinho Campos	Martinho Campos
+2042	Arroio do Tigre	Arroio do Tigre
+2043	Itapuí	Itapui
+2044	Serrolândia	Serrolandia
+2045	Luís Antônio	Luis Antonio
+2046	Arara	Arara
+2047	Mogeiro	Mogeiro
+2048	Itagi	Itagi
+2049	Nordestina	Nordestina
+2050	Itiruçu	Itirucu
+2051	Jitaúna	Jitauna
+2052	Sítio do Mato	Sitio do Mato
+2053	Retirolândia	Retirolandia
+2054	Buenos Aires	Buenos Aires
+2055	Imbaú	Imbau
+2056	Serra Azul	Serra Azul
+2057	Uropá	Uropa
+2058	Nova Londrina	Nova Londrina
+2059	Juruá	Jurua
+2060	Presidente Jânio Quadros	Presidente Janio Quadros
+2061	Monte Belo	Monte Belo
+2062	Luís Alves	Luis Alves
+2063	Sete Barras	Sete Barras
+2064	Balneário do Rincão	Balneario do Rincao
+2065	Missões	Missoes
+2066	Tapiratiba	Tapiratiba
+2067	Piratininga	Piratininga
+2068	Balsa Nova	Balsa Nova
+2069	Milhã	Milha
+2070	Nossa Senhora do Livramento	Nossa Senhora do Livramento
+2071	Goiatins	Goiatins
+2072	Lagoa Dourada	Lagoa Dourada
+2073	Governador Dix-Sept Rosado	Governador Dix-Sept Rosado
+2074	Antônio Prado	Antonio Prado
+2075	Frecheirinha	Frecheirinha
+2076	Senador José Porfírio	Senador Jose Porfirio
+2077	Turvo	Turvo
+2078	Carnaubeira da Penha	Carnaubeira da Penha
+2079	Tabocas do Brejo Velho	Tabocas do Brejo Velho
+2080	Morungaba	Morungaba
+2081	Wanderley	Wanderley
+2082	Flexeiras	Flexeiras
+2083	Licínio de Almeida	Licinio de Almeida
+2084	Cristais	Cristais
+2085	Lucena	Lucena
+2086	Nova Crixás	Nova Crixas
+2087	Ibaretama	Ibaretama
+2088	Ribeirão Bonito	Ribeirao Bonito
+2089	Mar de Espanha	Mar de Espanha
+2090	Piên	Pien
+2091	São José do Campestre	Sao Jose do Campestre
+2092	Governador Lindenberg	Governador Lindenberg
+2093	Uruoca	Uruoca
+2094	Jequeri	Jequeri
+2095	Choró	Choro
+2096	Cambuquira	Cambuquira
+2097	Itaipé	Itaipe
+2098	Mostardas	Mostardas
+2099	Cidade Gaúcha	Cidade Gaucha
+2100	Pinheiro Machado	Pinheiro Machado
+2101	Areal	Areal
+2102	São Sebastião do Uatumã	Sao Sebastiao do Uatuma
+2103	Saúde	Saude
+2104	Santa Cruz da Baixa Verde	Santa Cruz da Baixa Verde
+2105	Mineiros do Tietê	Mineiros do Tiete
+2106	Joanópolis	Joanopolis
+2107	Avanhandava	Avanhandava
+2108	Simplício Mendes	Simplicio Mendes
+2109	Tacaimbó	Tacaimbo
+2110	Mato Verde	Mato Verde
+2111	Chaval	Chaval
+2112	Barbosa Ferraz	Barbosa Ferraz
+2113	Ibicuitinga	Ibicuitinga
+2114	Porto	Porto
+2115	Jataìzinho	Jataizinho
+2116	São Gonçalo do Pará	Sao Goncalo do Para
+2117	Maxaranguape	Maxaranguape
+2118	São Geraldo	Sao Geraldo
+2119	Jaciara	Jaciara
+2120	Cardoso Moreira	Cardoso Moreira
+2121	Itiquira	Itiquira
+2122	Seringueiras	Seringueiras
+2123	Duartina	Duartina
+2124	Cananéia	Cananeia
+2125	Moreira Sales	Moreira Sales
+2126	Taguaí	Taguai
+2127	Teixeira Soares	Teixeira Soares
+2128	Ubaporanga	Ubaporanga
+2129	Xavantes	Xavantes
+2130	São Romão	Sao Romao
+2131	Andrelândia	Andrelandia
+2132	Dom Basílio	Dom Basilio
+2133	Valentim Gentil	Valentim Gentil
+2134	Mortugaba	Mortugaba
+2135	Nina Rodrigues	Nina Rodrigues
+2136	Ilicínia	Ilicinia
+2137	Araçás	Aracas
+2138	Edéia	Edeia
+2139	Cortês	Cortes
+2140	Brejetuba	Brejetuba
+2141	Cêrro Grande	Cerro Grande
+2142	Santa Mariana	Santa Mariana
+2143	Iaciara	Iaciara
+2144	São Luís do Curu	Sao Luis do Curu
+2145	Jardim do Seridó	Jardim do Serido
+2146	Caapiranga	Caapiranga
+2147	Bom Retiro do Sul	Bom Retiro do Sul
+2148	São Sebastião da Grama	Sao Sebastiao da Grama
+2149	Setubinha	Setubinha
+2150	Lontras	Lontras
+2151	Alto do Rodrigues	Alto do Rodrigues
+2152	Jardim Alegre	Jardim Alegre
+2153	Rio Paranaíba	Rio Paranaiba
+2154	Palmares Paulista	Palmares Paulista
+2155	Jacinto	Jacinto
+2156	Matina	Matina
+2157	Anamã	Anama
+2158	Berilo	Berilo
+2159	Mirante da Serra	Mirante da Serra
+2160	Maraial	Maraial
+2161	Itanhomi	Itanhomi
+2162	Antônio Cardoso	Antonio Cardoso
+2163	Piripá	Piripa
+2164	Iguaraci	Iguaraci
+2165	Palestina	Palestina
+2166	Axixá	Axixa
+2167	Saubara	Saubara
+2168	Paulista	Paulista
+2169	Querência do Norte	Querencia do Norte
+2170	Antônio Gonçalves	Antonio Goncalves
+2171	Mulungu do Morro	Mulungu do Morro
+2172	Pedras de Maria da Cruz	Pedras de Maria da Cruz
+2173	Loreto	Loreto
+2174	Canápolis	Canapolis
+2175	Carmo da Cachoeira	Carmo da Cachoeira
+2176	Lagoa do Ouro	Lagoa do Ouro
+2177	Santa Fé	Santa Fe
+2178	Belém de Maria	Belem de Maria
+2179	Colares	Colares
+2180	São Francisco do Maranhão	Sao Francisco do Maranhao
+2181	Congonhal	Congonhal
+2182	Tabapuã	Tabapua
+2183	Capela do Alto Alegre	Capela do Alto Alegre
+2184	Capela de Santana	Capela de Santana
+2185	Lebon Régis	Lebon Regis
+2186	Palmácia	Palmacia
+2187	Ventania	Ventania
+2188	Guimarães	Guimaraes
+2189	Nonoai	Nonoai
+2190	Rio do Pires	Rio do Pires
+2191	Flores de Goiás	Flores de Goias
+2192	São Miguel das Matas	Sao Miguel das Matas
+2193	Ipaumirim	Ipaumirim
+2194	Dário Meira	Dario Meira
+2195	Joaquim Távora	Joaquim Tavora
+2196	São Pedro da Água Branca	Sao Pedro da Agua Branca
+2197	Aperibé	Aperibe
+2198	Betânia	Betania
+2199	Campo Alegre	Campo Alegre
+2200	Poranga	Poranga
+2201	Patu	Patu
+2202	Cedro	Cedro
+2203	Mondaí	Mondai
+2204	São Sebastião de Lagoa de Roça	Sao Sebastiao de Lagoa de Roca
+2205	Ibirá	Ibira
+2206	Terra Alta	Terra Alta
+2207	Inhangapi	Inhangapi
+2208	Peixe	Peixe
+2209	Macajuba	Macajuba
+2210	São Félix do Araguaia	Sao Felix do Araguaia
+2211	Bocaina	Bocaina
+2212	Gouvêa	Gouvea
+2213	Rio dos Cedros	Rio dos Cedros
+2214	Céu Azul	Ceu Azul
+2215	Caetanópolis	Caetanopolis
+2216	Alto Rio Doce	Alto Rio Doce
+2217	Conceição dos Ouros	Conceicao dos Ouros
+2218	Benedito Novo	Benedito Novo
+2219	Santo Antônio do Jacinto	Santo Antonio do Jacinto
+2220	Irupi	Irupi
+2221	Sítio do Quinto	Sitio do Quinto
+2222	Riolândia	Riolandia
+2223	Jaqueira	Jaqueira
+2224	Arataca	Arataca
+2225	São João do Manhuaçu	Sao Joao do Manhuacu
+2226	Wanderlândia	Wanderlandia
+2227	Teixeiras	Teixeiras
+2228	Pimenteiras	Pimenteiras
+2229	Bonito de Santa Fé	Bonito de Santa Fe
+2230	Angicos	Angicos
+2231	Pacoti	Pacoti
+2232	Nossa Senhora dos Milagres	Nossa Senhora dos Milagres
+2233	Ubaí	Ubai
+2234	Campo do Meio	Campo do Meio
+2235	Ouro Branco	Ouro Branco
+2236	Rodeio	Rodeio
+2237	Serra do Salitre	Serra do Salitre
+2238	Guaiçara	Guaicara
+2239	Redentora	Redentora
+2240	Imaruí	Imarui
+2241	Fortaleza dos Nogueiras	Fortaleza dos Nogueiras
+2242	Gravatal	Gravatal
+2243	Itabirinha de Mantena	Itabirinha de Mantena
+2244	Cachoeira de Minas	Cachoeira de Minas
+2245	Paranatama	Paranatama
+2246	Firminópolis	Firminopolis
+2247	Antônio Carlos	Antonio Carlos
+2248	Paranacity	Paranacity
+2249	Jucati	Jucati
+2250	Mulungu	Mulungu
+2251	Duas Barras	Duas Barras
+2252	Resende Costa	Resende Costa
+2253	Ferreiros	Ferreiros
+2254	Montanhas	Montanhas
+2255	Carmo da Mata	Carmo da Mata
+2256	Roncador	Roncador
+2257	Alto Garças	Alto Garcas
+2258	Sebastião Laranjeiras	Sebastiao Laranjeiras
+2259	Normandia	Normandia
+2260	Chorrochó	Chorrocho
+2261	Roca Sales	Roca Sales
+2262	Bom Jesus	Bom Jesus
+2263	Xambioá	Xambioa
+2264	Nova Laranjeiras	Nova Laranjeiras
+2265	Santa Maria	Santa Maria
+2266	Divinolândia	Divinolandia
+2267	Buriti do Tocantins	Buriti do Tocantins
+2268	Muquém de São Francisco	Muquem de Sao Francisco
+2269	Jaguari	Jaguari
+2270	Uraí	Urai
+2271	Alto Paraguai	Alto Paraguai
+2272	Sales Oliveira	Sales Oliveira
+2273	Moita Bonita	Moita Bonita
+2274	Capitão de Campos	Capitao de Campos
+2275	Lençóis	Lencois
+2276	Fagundes	Fagundes
+2277	Aratuba	Aratuba
+2278	Duque Bacelar	Duque Bacelar
+2279	Estiva	Estiva
+2280	Curimatá	Curimata
+2281	Gentio do Ouro	Gentio do Ouro
+2282	Abaiara	Abaiara
+2283	Alcântaras	Alcantaras
+2284	Terra de Areia	Terra de Areia
+2285	Pôrto Firme	Porto Firme
+2286	Anguera	Anguera
+2287	Eugenópolis	Eugenopolis
+2288	Poção	Pocao
+2289	Ipaporanga	Ipaporanga
+2290	São Jerônimo da Serra	Sao Jeronimo da Serra
+2291	Aramari	Aramari
+2292	Floresta Azul	Floresta Azul
+2293	Campo Redondo	Campo Redondo
+2294	Palmares do Sul	Palmares do Sul
+2295	Iuiú	Iuiu
+2296	Avelino Lopes	Avelino Lopes
+2297	Paramoti	Paramoti
+2298	Angelim	Angelim
+2299	São Domingos	Sao Domingos
+2300	Nhandeara	Nhandeara
+2301	Irineópolis	Irineopolis
+2302	Getulina	Getulina
+2303	Sairé	Saire
+2304	Presidente Vargas	Presidente Vargas
+2305	Urubici	Urubici
+2306	Pirangi	Pirangi
+2307	Piranhas	Piranhas
+2308	Matias Cardoso	Matias Cardoso
+2309	Engenheiro Caldas	Engenheiro Caldas
+2310	Florestópolis	Florestopolis
+2311	Divisópolis	Divisopolis
+2312	Calçado	Calcado
+2313	Alto Parnaíba	Alto Parnaiba
+2314	Santa Inês	Santa Ines
+2315	Barros Cassal	Barros Cassal
+2316	Centenário do Sul	Centenario do Sul
+2317	Areiópolis	Areiopolis
+2318	Cunha Porã	Cunha Pora
+2319	Varre-Sai	Varre-Sai
+2320	Três Cachoeiras	Tres Cachoeiras
+2321	Acari	Acari
+2322	Potengi	Potengi
+2323	Primeiro de Maio	Primeiro de Maio
+2324	Barra do Sul	Barra do Sul
+2325	Inácio Martins	Inacio Martins
+2326	Fronteiras	Fronteiras
+2327	Campinorte	Campinorte
+2328	Parapuã	Parapua
+2329	São José do Jacuípe	Sao Jose do Jacuipe
+2330	Iacanga	Iacanga
+2331	Fervedouro	Fervedouro
+2332	Jandaíra	Jandaira
+2333	São Pedro do Ivaí	Sao Pedro do Ivai
+2334	Altamira do Maranhão	Altamira do Maranhao
+2335	Iapu	Iapu
+2336	Nova Ubiratã	Nova Ubirata
+2337	Brotas de Macaúbas	Brotas de Macaubas
+2338	Santana do Mundaú	Santana do Mundau
+2339	Igaratinga	Igaratinga
+2340	Ponte Serrada	Ponte Serrada
+2341	São Gonçalo do Rio Abaixo	Sao Goncalo do Rio Abaixo
+2342	Afonso Bezerra	Afonso Bezerra
+2343	Igarapé Grande	Igarape Grande
+2344	Vera Cruz	Vera Cruz
+2345	Botuporã	Botupora
+2346	Bueno Brandão	Bueno Brandao
+2347	Estiva Gerbi	Estiva Gerbi
+2348	Bocaiúva do Sul	Bocaiuva do Sul
+2349	Caracol	Caracol
+2350	Pedro de Toledo	Pedro de Toledo
+2351	General Salgado	General Salgado
+2352	São Tiago	Sao Tiago
+2353	Rio do Fogo	Rio do Fogo
+2354	Arceburgo	Arceburgo
+2355	Lagoa do Mato	Lagoa do Mato
+2356	Seridó	Serido
+2357	Piraúba	Pirauba
+2358	Cacimbinhas	Cacimbinhas
+2359	Seberi	Seberi
+2360	Pau Brasil	Pau Brasil
+2361	Prudente de Morais	Prudente de Morais
+2362	Itarana	Itarana
+2363	São Bento do Sapucaí	Sao Bento do Sapucai
+2364	Tenente Ananias	Tenente Ananias
+2365	Bofete	Bofete
+2366	Itapebi	Itapebi
+2367	Carnaubais	Carnaubais
+2368	Santa Maria de Itabira	Santa Maria de Itabira
+2369	Apiúna	Apiuna
+2370	Primavera	Primavera
+2371	Tacima	Tacima
+2372	Jordânia	Jordania
+2373	Amaturá	Amatura
+2374	Ferros	Ferros
+2375	Rincão	Rincao
+2376	Pirapetinga	Pirapetinga
+2377	Itapitanga	Itapitanga
+2378	Parnaguá	Parnagua
+2379	Ararendá	Ararenda
+2380	Juripiranga	Juripiranga
+2381	Guaraci	Guaraci
+2382	Bananal	Bananal
+2383	Mercês	Merces
+2384	Pintadas	Pintadas
+2385	Goianápolis	Goianapolis
+2386	São Luís do Paraitinga	Sao Luis do Paraitinga
+2387	Fontoura Xavier	Fontoura Xavier
+2388	Cedral	Cedral
+2389	Juruaia	Juruaia
+2390	Umarizal	Umarizal
+2391	Brejolândia	Brejolandia
+2392	Gilbués	Gilbues
+2393	Ribeirão Claro	Ribeirao Claro
+2394	Paricônia	Pariconia
+2395	Nova Olinda	Nova Olinda
+2396	Itaueira	Itaueira
+2397	Branquinha	Branquinha
+2398	Canelinha	Canelinha
+2399	Baraçlândia	Baraclandia
+2400	Faxinal dos Guedes	Faxinal dos Guedes
+2401	São Sebastião do Maranhão	Sao Sebastiao do Maranhao
+2402	Trajano de Morais	Trajano de Morais
+2403	Mara Rosa	Mara Rosa
+2404	Gudofredo Viana	Gudofredo Viana
+2405	Arraias	Arraias
+2406	Sucupira do Norte	Sucupira do Norte
+2407	Iretama	Iretama
+2408	Jacinto Machado	Jacinto Machado
+2409	São João	Sao Joao
+2410	Monte Alegre do Piauí	Monte Alegre do Piaui
+2411	Cajapió	Cajapio
+2412	Santa Teresinha	Santa Teresinha
+2413	Virginópolis	Virginopolis
+2414	Pôrto Xavier	Porto Xavier
+2415	Lavínia	Lavinia
+2416	Pirpirituba	Pirpirituba
+2417	Serra Caiada	Serra Caiada
+2418	Bom Repouso	Bom Repouso
+2419	Bom Jesus da Serra	Bom Jesus da Serra
+2420	Montividiu	Montividiu
+2421	Grossos	Grossos
+2422	Aragoiânia	Aragoiania
+2423	Ibiassucê	Ibiassuce
+2424	Sangão	Sangao
+2425	Senhora dos Remédios	Senhora dos Remedios
+2426	Guadalupe	Guadalupe
+2427	Natuba	Natuba
+2428	Nova Europa	Nova Europa
+2429	Iramaia	Iramaia
+2430	Beneditinos	Beneditinos
+2431	Rio Acima	Rio Acima
+2432	Àrvorezinha	Arvorezinha
+2433	Bujari	Bujari
+2434	Cristino Castro	Cristino Castro
+2435	Paranã	Parana
+2436	Roseira	Roseira
+2437	Planura	Planura
+2438	Riachuelo	Riachuelo
+2439	Piraí do Norte	Pirai do Norte
+2440	Jaguaribara	Jaguaribara
+2441	Cajobi	Cajobi
+2442	Itamogi	Itamogi
+2443	Catunda	Catunda
+2444	Corumbá de Goiás	Corumba de Goias
+2445	Urucânia	Urucania
+2446	Buenópolis	Buenopolis
+2447	Bela Vista de Minas	Bela Vista de Minas
+2448	Conceição da Aparecida	Conceicao da Aparecida
+2449	Mariluz	Mariluz
+2450	Ninheira	Ninheira
+2451	Santa Teresa	Santa Teresa
+2452	Santa Maria Madalena	Santa Maria Madalena
+2453	Januário Cicco	Januario Cicco
+2454	Francisco Badaró	Francisco Badaro
+2455	Santa Cruz do Arari	Santa Cruz do Arari
+2456	Campos Lindos	Campos Lindos
+2457	Santa Terezinha de Goiás	Santa Terezinha de Goias
+2458	Dores de Campos	Dores de Campos
+2459	Petrolina de Goiás	Petrolina de Goias
+2460	Groaíras	Groairas
+2461	Alvorada do Sul	Alvorada do Sul
+2462	Coroaci	Coroaci
+2463	Miradouro	Miradouro
+2464	São Francisco	Sao Francisco
+2465	Rubim	Rubim
+2466	São João d’Aliança	Sao Joao d'Alianca
+2467	Coronel Freitas	Coronel Freitas
+2468	Itapé	Itape
+2469	Martinópole	Martinopole
+2470	Mucugê	Mucuge
+2471	Ronda Alta	Ronda Alta
+2472	Pescaria Brava	Pescaria Brava
+2473	Terra Nova	Terra Nova
+2474	Pires Ferreira	Pires Ferreira
+2475	Catanduvas	Catanduvas
+2476	Governador Archer	Governador Archer
+2477	Luís Gomes	Luis Gomes
+2478	Alto Piquiri	Alto Piquiri
+2479	Sinimbu	Sinimbu
+2480	Caatiba	Caatiba
+2481	Novo Horizonte	Novo Horizonte
+2482	Cachoeira dos Índios	Cachoeira dos Indios
+2483	Canápolis	Canapolis
+2484	Calçoene	Calcoene
+2485	Caém	Caem
+2486	Jucuruçu	Jucurucu
+2487	Ipuiúna	Ipuiuna
+2488	Paranaiguana	Paranaiguana
+2489	Rinópolis	Rinopolis
+2490	Água Branca	Agua Branca
+2491	Ipupiara	Ipupiara
+2492	Aruanã	Aruana
+2493	Maiquinique	Maiquinique
+2494	Alfredo Wagner	Alfredo Wagner
+2495	Nova Veneza	Nova Veneza
+2496	Açucena	Acucena
+2497	Carneirinho	Carneirinho
+2498	Caraíbas	Caraibas
+2499	Uchoa	Uchoa
+2500	Bonfinópolis	Bonfinopolis
+2501	Anísio de Abreu	Anisio de Abreu
+2502	Itatiaiuçu	Itatiaiucu
+2503	Constantina	Constantina
+2504	Umburetama	Umburetama
+2505	Itapeva	Itapeva
+2506	Capim Branco	Capim Branco
+2507	Vargem	Vargem
+2508	Mirante	Mirante
+2509	Pântano Grande	Pantano Grande
+2510	Torrinha	Torrinha
+2511	Ananás	Ananas
+2512	Sarapuí	Sarapui
+2513	Florânia	Florania
+2514	Axixá do Tocantins	Axixa do Tocantins
+2515	Caturama	Caturama
+2516	Wagner	Wagner
+2517	Cardeal da Silva	Cardeal da Silva
+2518	Formoso	Formoso
+2519	Frei Inocêncio	Frei Inocencio
+2520	Antônio Dias	Antonio Dias
+2521	Candiota	Candiota
+2522	Águia Branca	Aguia Branca
+2523	Manduri	Manduri
+2524	Rondon	Rondon
+2525	Paula Cândido	Paula Candido
+2526	Palmeira d’Oeste	Palmeira d'Oeste
+2527	Manuel Urbano	Manuel Urbano
+2528	Tombos	Tombos
+2529	Ouroeste	Ouroeste
+2530	Japurá	Japura
+2531	Agudos do Sul	Agudos do Sul
+2532	São Domingos	Sao Domingos
+2533	Buriti Alegre	Buriti Alegre
+2534	Lamarão	Lamarao
+2535	Riacho dos Machados	Riacho dos Machados
+2536	Planaltino	Planaltino
+2537	Santanópolis	Santanopolis
+2538	Olho d’Água do Casado	Olho d'Agua do Casado
+2539	Várzea do Poço	Varzea do Poco
+2540	André Fernandes	Andre Fernandes
+2541	Maravilha	Maravilha
+2542	Araújos	Araujos
+2543	Carbonita	Carbonita
+2544	Varzedo	Varzedo
+2545	São Sebastião do Alto	Sao Sebastiao do Alto
+2546	Pirambu	Pirambu
+2547	Cavalcante	Cavalcante
+2548	Campo Erê	Campo Ere
+2549	Igaratá	Igarata
+2550	Rio das Flores	Rio das Flores
+2551	Baía Formosa	Baia Formosa
+2552	Caputira	Caputira
+2553	Ariranha	Ariranha
+2554	Ipiranga do Piauí	Ipiranga do Piaui
+2555	Catuípe	Catuipe
+2556	Porangaba	Porangaba
+2557	Coqueiral	Coqueiral
+2558	São José do Cerrito	Sao Jose do Cerrito
+2559	Herculândia	Herculandia
+2560	Salto Grande	Salto Grande
+2561	Dumont	Dumont
+2562	Natividade	Natividade
+2563	Abaíra	Abaira
+2564	Carneiros	Carneiros
+2565	Rosário do Catete	Rosario do Catete
+2566	Coronel Murta	Coronel Murta
+2567	Aratuípe	Aratuipe
+2568	Sítio Novo de Goiás	Sitio Novo de Goias
+2569	Verdejante	Verdejante
+2570	Palmeiras	Palmeiras
+2571	Terra Roxa	Terra Roxa
+2572	Urânia	Urania
+2573	São Jorge d’Oeste	Sao Jorge d'Oeste
+2574	Casca	Casca
+2575	Silves	Silves
+2576	Rafard	Rafard
+2577	Neves Paulista	Neves Paulista
+2578	Santa Rita de Caldas	Santa Rita de Caldas
+2579	Candeal	Candeal
+2580	Queimada Nova	Queimada Nova
+2581	Jauru	Jauru
+2582	Vera Cruz do Oeste	Vera Cruz do Oeste
+2583	Pocrane	Pocrane
+2584	Potiraguá	Potiragua
+2585	Morpará	Morpara
+2586	Itapiranga	Itapiranga
+2587	Entre Ijuís	Entre Ijuis
+2588	Paulo de Faria	Paulo de Faria
+2589	Pedrinhas	Pedrinhas
+2590	Morada Nova de Minas	Morada Nova de Minas
+2591	Tarrafas	Tarrafas
+2592	Malhada de Pedras	Malhada de Pedras
+2593	Baía da Traição	Baia da Traicao
+2594	Cordisburgo	Cordisburgo
+2595	Brejão	Brejao
+2596	São Sebastião da Amoreira	Sao Sebastiao da Amoreira
+2597	Ouriçangas	Ouricangas
+2598	Rodelas	Rodelas
+2599	Marilândia do Sul	Marilandia do Sul
+2600	Palhano	Palhano
+2601	Anaurilândia	Anaurilandia
+2602	Nova Bassano	Nova Bassano
+2603	Bom Jardim de Goiás	Bom Jardim de Goias
+2604	Congonhinhas	Congonhinhas
+2605	Lajedo do Tabocal	Lajedo do Tabocal
+2606	São José da Bela Vista	Sao Jose da Bela Vista
+2607	Icaraíma	Icaraima
+2608	Cordeiros	Cordeiros
+2609	Pratápolis	Pratapolis
+2610	Guamiranga	Guamiranga
+2611	Santa Barbara do Sul	Santa Barbara do Sul
+2612	Bálsamo	Balsamo
+2613	Guajeru	Guajeru
+2614	Cedral	Cedral
+2615	Armazém	Armazem
+2616	Tomazina	Tomazina
+2617	Redenção do Gurguéia	Redencao do Gurgueia
+2618	Araguaçu	Araguacu
+2619	Monsenhor Paulo	Monsenhor Paulo
+2620	Santa Isabel do Ivaí	Santa Isabel do Ivai
+2621	Dionísio	Dionisio
+2622	Serra dos Aimorés	Serra dos Aimores
+2623	Nossa Senhora dos Remédios	Nossa Senhora dos Remedios
+2624	Ibirapuã	Ibirapua
+2625	Santa Lúcia	Santa Lucia
+2626	São Vicente do Sul	Sao Vicente do Sul
+2627	Guiricema	Guiricema
+2628	Alvorada do Norte	Alvorada do Norte
+2629	Piranguinho	Piranguinho
+2630	Tuneiras do Oeste	Tuneiras do Oeste
+2631	Tangará	Tangara
+2632	São Miguel	Sao Miguel
+2633	Santana do Manhuaçu	Santana do Manhuacu
+2634	Virgínia	Virginia
+2635	Monte Alegre de Goiás	Monte Alegre de Goias
+2636	Nazareno	Nazareno
+2637	Mata Verde	Mata Verde
+2638	Capitólio	Capitolio
+2639	Reginópolis	Reginopolis
+2640	Comendador Levy Gasparian	Comendador Levy Gasparian
+2641	Antônio Carlos	Antonio Carlos
+2642	Dobrada	Dobrada
+2643	Nazária	Nazaria
+2644	Amapá	Amapa
+2645	Colméia	Colmeia
+2646	Camutanga	Camutanga
+2647	Francisco Santos	Francisco Santos
+2648	Martins Soares	Martins Soares
+2649	Itauçu	Itaucu
+2650	Riacho dos Cavalos	Riacho dos Cavalos
+2651	Tanquinho	Tanquinho
+2652	Tuparendi	Tuparendi
+2653	Tasso Fragoso	Tasso Fragoso
+2654	Isaías Coelho	Isaias Coelho
+2655	Itamari	Itamari
+2656	Jóia	Joia
+2657	Paverama	Paverama
+2658	Marcolândia	Marcolandia
+2659	Japaratinga	Japaratinga
+2660	Araponga	Araponga
+2661	Itaquara	Itaquara
+2662	Guaraçaí	Guaracai
+2663	Nova Glória	Nova Gloria
+2664	Ilha das Flores	Ilha das Flores
+2665	Barra de São Miguel	Barra de Sao Miguel
+2666	Elísio Medrado	Elisio Medrado
+2667	Estrêla d’Oeste	Estrela d'Oeste
+2668	General Câmara	General Camara
+2669	Ibiaí	Ibiai
+2670	Santa Rosa	Santa Rosa
+2671	Lontra	Lontra
+2672	Marcação	Marcacao
+2673	Brejo Grande	Brejo Grande
+2674	Alvorada	Alvorada
+2675	São Pedro dos Ferros	Sao Pedro dos Ferros
+2676	Santa Luzia D’Oeste	Santa Luzia D'Oeste
+2677	Macururé	Macurure
+2678	Arealva	Arealva
+2679	Ouro Verde	Ouro Verde
+2680	Marcelino Vieira	Marcelino Vieira
+2681	Figueira	Figueira
+2682	Brasileira	Brasileira
+2683	Rodeiro	Rodeiro
+2684	Nova Itarana	Nova Itarana
+2685	Cristalândia do Piauí	Cristalandia do Piaui
+2686	Montezuma	Montezuma
+2687	Comercinho	Comercinho
+2688	Aparecida	Aparecida
+2689	Guapuã	Guapua
+2690	Campo Florido	Campo Florido
+2691	Carnaúba dos Dantas	Carnauba dos Dantas
+2692	Cachoeira Dourada	Cachoeira Dourada
+2693	Buriti dos Montes	Buriti dos Montes
+2694	Ribeirão do Largo	Ribeirao do Largo
+2695	Mataraca	Mataraca
+2696	Santa Bárbara	Santa Barbara
+2697	Pereiras	Pereiras
+2698	Santana da Boa Vista	Santana da Boa Vista
+2699	Pena Forte	Pena Forte
+2700	Palmeirina	Palmeirina
+2701	Irapuru	Irapuru
+2702	Passa Tempo	Passa Tempo
+2703	Corumbaíba	Corumbaiba
+2704	Porto de Pedras	Porto de Pedras
+2705	Itamarati	Itamarati
+2706	Nova Fátima	Nova Fatima
+2707	Major Vieira	Major Vieira
+2708	Vale do Paraíso	Vale do Paraiso
+2709	Guarani das Missões	Guarani das Missoes
+2710	Guimarânia	Guimarania
+2711	Gongogi	Gongogi
+2712	Iraí	Irai
+2713	Leão	Leao
+2714	Ponte Alta do Tocantins	Ponte Alta do Tocantins
+2715	Serra Negra do Norte	Serra Negra do Norte
+2716	Peixe-Boi	Peixe-Boi
+2717	Santa Cruz do Monte Castelo	Santa Cruz do Monte Castelo
+2718	Orizânia	Orizania
+2719	Moraújo	Moraujo
+2720	Vista Alegre do Alto	Vista Alegre do Alto
+2721	Califórnia	California
+2722	Águas da Prata	Aguas da Prata
+2723	Maravilhas	Maravilhas
+2724	Campo do Tenente	Campo do Tenente
+2725	Monte do Carmo	Monte do Carmo
+2726	Tapiraí	Tapirai
+2727	Alpestre	Alpestre
+2728	Itanagra	Itanagra
+2729	Iepê	Iepe
+2730	Ascurra	Ascurra
+2731	Macaubal	Macaubal
+2732	Iguatama	Iguatama
+2733	Treze Tílias	Treze Tilias
+2734	Lagoa Alegre	Lagoa Alegre
+2735	Icém	Icem
+2736	Estrêla do Sul	Estrela do Sul
+2737	Santana de Pirapama	Santana de Pirapama
+2738	Jequitaí	Jequitai
+2739	Cruzeta	Cruzeta
+2740	Pedra Lavrada	Pedra Lavrada
+2741	Clementina	Clementina
+2742	Vertentes do Lério	Vertentes do Lerio
+2743	Iaras	Iaras
+2744	Tuparetama	Tuparetama
+2745	Cambira	Cambira
+2746	Muniz Ferreira	Muniz Ferreira
+2747	Timbó Grande	Timbo Grande
+2748	São João do Oriente	Sao Joao do Oriente
+2749	São João do Jaguaribe	Sao Joao do Jaguaribe
+2750	Baldim	Baldim
+2751	Durandé	Durande
+2752	Senador Firmino	Senador Firmino
+2753	Itaiçaba	Itaicaba
+2754	Verê	Vere
+2755	Borrazópolis	Borrazopolis
+2756	Nazário	Nazario
+2757	Erval Sêco	Erval Seco
+2758	Leopoldo de Bulhões	Leopoldo de Bulhoes
+2759	Saltinho	Saltinho
+2760	Itobi	Itobi
+2761	São Miguel dos Milagres	Sao Miguel dos Milagres
+2762	Guaraqueçaba	Guaraquecaba
+2763	Juarez Távora	Juarez Tavora
+2764	Madeira	Madeira
+2765	Itapirapuã	Itapirapua
+2766	Barra do Turvo	Barra do Turvo
+2767	São Vicente de Minas	Sao Vicente de Minas
+2768	Apuarema	Apuarema
+2769	Curral de Dentro	Curral de Dentro
+2770	Ibirajuba	Ibirajuba
+2771	Monte Alegre do Sul	Monte Alegre do Sul
+2772	Irapuã	Irapua
+2773	Abatiá	Abatia
+2774	Paraí	Parai
+2775	Araguapaz	Araguapaz
+2776	Claro dos Poções	Claro dos Pocoes
+2777	Rubelita	Rubelita
+2778	Arneiroz	Arneiroz
+2779	Coronel Bicaco	Coronel Bicaco
+2780	Jericó	Jerico
+2781	Paulo Jacinto	Paulo Jacinto
+2782	Pium	Pium
+2783	Belo Vale	Belo Vale
+2784	Pedro Gomes	Pedro Gomes
+2785	Boqueirão do Leão	Boqueirao do Leao
+2786	Bilac	Bilac
+2787	Jacuí	Jacui
+2788	Senador Sá	Senador Sa
+2789	Serrania	Serrania
+2790	São José da Lagoa Tapada	Sao Jose da Lagoa Tapada
+2791	Alto Paraíso de Goiás	Alto Paraiso de Goias
+2792	Cônego Marinho	Conego Marinho
+2793	São Miguel das Missões	Sao Miguel das Missoes
+2794	Jati	Jati
+2795	Xavantina	Xavantina
+2796	Lavras do Sul	Lavras do Sul
+2797	Palmeirópolis	Palmeiropolis
+2798	Coimbra	Coimbra
+2799	Juranda	Juranda
+2800	Lagoa Salgada	Lagoa Salgada
+2801	Catiguá	Catigua
+2802	Ipumirim	Ipumirim
+2803	São José dos Brasílios	Sao Jose dos Brasilios
+2804	Inocência	Inocencia
+2805	Lindóia	Lindoia
+2806	Tocantínia	Tocantinia
+2807	Pedrão	Pedrao
+2808	Lajeado Novo	Lajeado Novo
+2809	Lagoa de Pedra	Lagoa de Pedra
+2810	Almas	Almas
+2811	Paulo Lopes	Paulo Lopes
+2812	Ipuaçu	Ipuacu
+2813	São Pedro do Turvo	Sao Pedro do Turvo
+2814	Inimutaba	Inimutaba
+2815	Umari	Umari
+2816	Florestal	Florestal
+2817	Brejinho	Brejinho
+2818	Moema	Moema
+2819	Granito	Granito
+2820	Rio d’Oeste	Rio d'Oeste
+2821	Quatiguá	Quatigua
+2822	Assis Brasil	Assis Brasil
+2823	Barão do Triunfo	Barao do Triunfo
+2824	Laje de Muriaé	Laje de Muriae
+2825	Felizburgo	Felizburgo
+2826	Goioxim	Goioxim
+2827	São João Batista do Glória	Sao Joao Batista do Gloria
+2828	Trombudo Central	Trombudo Central
+2829	Alpercata	Alpercata
+2830	Maracajá	Maracaja
+2831	Irajuba	Irajuba
+2832	Campo Belo do Sul	Campo Belo do Sul
+2833	Serranópolis	Serranopolis
+2834	São José da Barra	Sao Jose da Barra
+2835	Guatapará	Guatapara
+2836	Chã Preta	Cha Preta
+2837	Itacajá	Itacaja
+2838	Altaneira	Altaneira
+2839	Muribeca	Muribeca
+2840	Laguna Carapã	Laguna Carapa
+2841	Joviânia	Joviania
+2842	Ouro	Ouro
+2843	Inconfidentes	Inconfidentes
+2844	Paulo Frontin	Paulo Frontin
+2845	Salete	Salete
+2846	Santa Terezinha	Santa Terezinha
+2847	Monsenhor Hipólito	Monsenhor Hipolito
+2848	Livramento	Livramento
+2849	Ibirarema	Ibirarema
+2850	Sericita	Sericita
+2851	Antônio Olinto	Antonio Olinto
+2852	Cabeceiras	Cabeceiras
+2853	Nazarèzinho	Nazarezinho
+2854	Itagimirim	Itagimirim
+2855	Itaju do Colônia	Itaju do Colonia
+2856	Paraíso do Sul	Paraiso do Sul
+2857	Passo do Sertão	Passo do Sertao
+2858	Caiçara	Caicara
+2859	Indaiabira	Indaiabira
+2860	Monteirópolis	Monteiropolis
+2861	Portalegre	Portalegre
+2862	Caraá	Caraa
+2863	Belém do Brejo do Cruz	Belem do Brejo do Cruz
+2864	Nazaré do Piauí	Nazare do Piaui
+2865	Campo Largo	Campo Largo
+2866	Santa Luzia do Norte	Santa Luzia do Norte
+2867	Luisiana	Luisiana
+2868	Manuel Viana	Manuel Viana
+2869	Santo Antônio do Retiro	Santo Antonio do Retiro
+2870	Cristalândia	Cristalandia
+2871	Ajuricaba	Ajuricaba
+2872	Nuporanga	Nuporanga
+2873	Destêrro de Entre Rios	Desterro de Entre Rios
+2874	Santana da Vargem	Santana da Vargem
+2875	Jaraguari	Jaraguari
+2876	Antonina do Norte	Antonina do Norte
+2877	Engenheiro Navarro	Engenheiro Navarro
+2878	Guidoval	Guidoval
+2879	Reduto	Reduto
+2880	Cubati	Cubati
+2881	Jussiape	Jussiape
+2882	São José de Ubá	Sao Jose de Uba
+2883	Tarabaí	Tarabai
+2884	Ibiraiaras	Ibiraiaras
+2885	Abel Figueiredo	Abel Figueiredo
+2886	Antônio Martins	Antonio Martins
+2887	Pedro Avelino	Pedro Avelino
+2888	Faro	Faro
+2889	Jacuípe	Jacuipe
+2890	Dois Irmãos do Tocantins	Dois Irmaos do Tocantins
+2891	Araguacema	Araguacema
+2892	São Miguel de Taipu	Sao Miguel de Taipu
+2893	Laurentino	Laurentino
+2894	São Tomé das Letras	Sao Tome das Letras
+2895	Treze de Maio	Treze de Maio
+2896	Delfinópolis	Delfinopolis
+2897	Santana dos Garrotes	Santana dos Garrotes
+2898	Machacalis	Machacalis
+2899	São Tomás de Aquino	Sao Tomas de Aquino
+2900	Capetinga	Capetinga
+2901	Naque	Naque
+2902	Palmitinho	Palmitinho
+2903	Novo Areal	Novo Areal
+2904	Amaral Ferrador	Amaral Ferrador
+2905	Junco do Seridó	Junco do Serido
+2906	Lavrinhas	Lavrinhas
+2907	Serra Redonda	Serra Redonda
+2908	Bom Sucesso	Bom Sucesso
+2909	Central de Minas	Central de Minas
+2910	Guia Lopes	Guia Lopes
+2911	Santa Filomena do Maranhão	Santa Filomena do Maranhao
+2912	Nova Ibiá	Nova Ibia
+2913	Alecrim	Alecrim
+2914	Periquito	Periquito
+2915	São Brás	Sao Bras
+2916	Iraí de Minas	Irai de Minas
+2917	Jussara	Jussara
+2918	Meleiro	Meleiro
+2919	Campestre	Campestre
+2920	Formigueiro	Formigueiro
+2921	Salto da Divisa	Salto da Divisa
+2922	Sapucaí-Mirim	Sapucai-Mirim
+2923	Ponto Belo	Ponto Belo
+2924	Cabeceira Grande	Cabeceira Grande
+2925	São Miguel do Anta	Sao Miguel do Anta
+2926	Faina	Faina
+2927	Paulicéia	Pauliceia
+2928	Conquista	Conquista
+2929	Abadia dos Dourados	Abadia dos Dourados
+2930	Água Doce	Agua Doce
+2931	Confins	Confins
+2932	Galiléia	Galileia
+2933	Indianópolis	Indianopolis
+2934	Araporã	Arapora
+2935	Ipeúna	Ipeuna
+2936	Palmópolis	Palmopolis
+2937	Divinópolis do Tocantins	Divinopolis do Tocantins
+2938	São José do Ouro	Sao Jose do Ouro
+2939	Sabáudia	Sabaudia
+2940	Divisa Alegre	Divisa Alegre
+2941	São Carlos do Ivaí	Sao Carlos do Ivai
+2942	Aguiarnópolis	Aguiarnopolis
+2943	Maquiné	Maquine
+2944	Gália	Galia
+2945	Glorinha	Glorinha
+2946	Tiros	Tiros
+2947	Ferreira Gomes	Ferreira Gomes
+2948	Boa Vista	Boa Vista
+2949	Limeira d’Oeste	Limeira d'Oeste
+2950	Bossoroca	Bossoroca
+2951	Marilena	Marilena
+2952	Bonfim	Bonfim
+2953	Vitorino	Vitorino
+2954	São Sebastião do Curral	Sao Sebastiao do Curral
+2955	Mambaí	Mambai
+2956	Cuitegi	Cuitegi
+2957	Ererê	Erere
+2958	Floresta	Floresta
+2959	Ribeiro Gonçalves	Ribeiro Goncalves
+2960	Hulha Negra	Hulha Negra
+2961	Careaçu	Careacu
+2962	Cacimbas	Cacimbas
+2963	Renascença	Renascenca
+2964	Lagoa de São Francisco	Lagoa de Sao Francisco
+2965	Herval	Herval
+2966	Santo Antônio do Pinhal	Santo Antonio do Pinhal
+2967	Belo Monte	Belo Monte
+2968	Roteiro	Roteiro
+2969	Angical do Piauí	Angical do Piaui
+2970	Chuí	Chui
+2971	Ouvidor	Ouvidor
+2972	Natividade da Serra	Natividade da Serra
+2973	Pérola do Oeste	Perola do Oeste
+2974	Itambaracá	Itambaraca
+2975	Terezinha	Terezinha
+2976	Tumiritinga	Tumiritinga
+2977	Santa Cruz da Vitória	Santa Cruz da Vitoria
+2978	Boa Vista do Burica	Boa Vista do Burica
+2979	Quixaba	Quixaba
+2980	Crisólita	Crisolita
+2981	Santo Antônio da Alegria	Santo Antonio da Alegria
+2982	Santa Clara do Sul	Santa Clara do Sul
+2983	Açuã	Acua
+2984	Arapoema	Arapoema
+2985	Sapopema	Sapopema
+2986	Luislândia	Luislandia
+2987	Catugi	Catugi
+2988	Pedra Bonita	Pedra Bonita
+2989	Faxinal do Soturno	Faxinal do Soturno
+2990	Padre Marcos	Padre Marcos
+2991	Ijaci	Ijaci
+2992	Pinhão	Pinhao
+2993	Guarantã	Guaranta
+2994	Barro Duro	Barro Duro
+2995	Grandes Rios	Grandes Rios
+2996	Barão de Cotegipe	Barao de Cotegipe
+2997	Mariópolis	Mariopolis
+2998	Independência	Independencia
+2999	Palma	Palma
+3000	Dona Eusébia	Dona Eusebia
+3001	Anta	Anta
+3002	Diamante	Diamante
+3003	Grão Pará	Grao Para
+3004	São José do Piauí	Sao Jose do Piaui
+3005	Santa Cruz	Santa Cruz
+3006	Guairaçá	Guairaca
+3007	Santa Fé do Araguaia	Santa Fe do Araguaia
+3008	Passo do Sobrado	Passo do Sobrado
+3009	Afonso Cunha	Afonso Cunha
+3010	Cipotânea	Cipotanea
+3011	Morro Reuter	Morro Reuter
+3012	Nova Aliança	Nova Alianca
+3013	Tuiuti	Tuiuti
+3014	Aratiba	Aratiba
+3015	Águas Mornas	Aguas Mornas
+3016	Mamonas	Mamonas
+3017	Guarda Mor	Guarda Mor
+3018	São José do Jacuri	Sao Jose do Jacuri
+3019	Condor	Condor
+3020	Sertão de Santana	Sertao de Santana
+3021	Águas de Chapecó	Aguas de Chapeco
+3022	Cândido Godói	Candido Godoi
+3023	Porto do Mangue	Porto do Mangue
+3024	São Francisco de Oliveira	Sao Francisco de Oliveira
+3025	Nova Palma	Nova Palma
+3026	Marisópolis	Marisopolis
+3027	São José da Boa Vista	Sao Jose da Boa Vista
+3028	Orindiúva	Orindiuva
+3029	Morro do Chapéu	Morro do Chapeu
+3030	Maturé	Mature
+3031	Bom Jardim de Minas	Bom Jardim de Minas
+3032	Vargem Alegre	Vargem Alegre
+3033	Novo Oriente	Novo Oriente
+3034	Luís Domingues	Luis Domingues
+3035	Lassance	Lassance
+3036	Botumirim	Botumirim
+3037	Doutor Severiano	Doutor Severiano
+3038	Nossa Senhora de Lourdes	Nossa Senhora de Lourdes
+3039	Rio Sono	Rio Sono
+3040	Tiradentes	Tiradentes
+3041	Iacri	Iacri
+3042	Brejo dos Santos	Brejo dos Santos
+3043	Juti	Juti
+3044	Lagoão	Lagoao
+3045	Laranjal	Laranjal
+3046	Selvíria	Selviria
+3047	Mendes Pimentel	Mendes Pimentel
+3048	Barra do Rocha	Barra do Rocha
+3049	Santo Antônio de Lisboa	Santo Antonio de Lisboa
+3050	Macambira	Macambira
+3051	Córrego Fundo	Corrego Fundo
+3052	Quintana	Quintana
+3053	Mundo Novo	Mundo Novo
+3054	Padre Carvalho	Padre Carvalho
+3055	São Francisco do Piauí	Sao Francisco do Piaui
+3056	Francisco Alves	Francisco Alves
+3057	Cacaulândia	Cacaulandia
+3058	Anchieta	Anchieta
+3059	Capim	Capim
+3060	Sardoá	Sardoa
+3061	Jussari	Jussari
+3062	São Julião	Sao Juliao
+3063	Adrianópolis	Adrianopolis
+3064	Bela Vista do Tôldo	Bela Vista do Toldo
+3065	Santa Maria do Erval	Santa Maria do Erval
+3066	Arandu	Arandu
+3067	Pirajuba	Pirajuba
+3068	Ichu	Ichu
+3069	Itirapuã	Itirapua
+3070	Tanque d’Arca	Tanque d'Arca
+3071	Pinhalão	Pinhalao
+3072	Vidal Ramos	Vidal Ramos
+3073	Baixio	Baixio
+3074	Toledo	Toledo
+3075	Inhaúma	Inhauma
+3076	Amaporã	Amapora
+3077	Paraíso	Paraiso
+3078	Echaporã	Echapora
+3079	Fazenda Nova	Fazenda Nova
+3080	Vila Boa	Vila Boa
+3081	Anhembi	Anhembi
+3082	Sertão	Sertao
+3083	Itarumã	Itaruma
+3084	Luisburgo	Luisburgo
+3085	Munhoz	Munhoz
+3086	Rio Grande do Piauí	Rio Grande do Piaui
+3087	São Francisco de Goiás	Sao Francisco de Goias
+3088	Campo Limpo	Campo Limpo
+3089	São Francisco de Sales	Sao Francisco de Sales
+3090	Silvianópolis	Silvianopolis
+3091	São Gonçalo do Abaeté	Sao Goncalo do Abaete
+3092	São Jose de Gaiana	Sao Jose de Gaiana
+3093	Progresso	Progresso
+3094	Taiaçu	Taiacu
+3095	Pontal do Araguaia	Pontal do Araguaia
+3096	Santa Cruz do Piauí	Santa Cruz do Piaui
+3097	Santa Filomena	Santa Filomena
+3098	General Sampaio	General Sampaio
+3099	Inaciolândia	Inaciolandia
+3100	Pouso Alto	Pouso Alto
+3101	Serraria	Serraria
+3102	São João do Sabugi	Sao Joao do Sabugi
+3103	Soledade de Minas	Soledade de Minas
+3104	Colômbia	Colombia
+3105	São João da Ponta	Sao Joao da Ponta
+3106	Barão	Barao
+3107	Americano Brasil	Americano Brasil
+3108	Rio das Antas	Rio das Antas
+3109	Parecis	Parecis
+3110	Caracol	Caracol
+3111	Darcinópolis	Darcinopolis
+3112	Olhos d’Água	Olhos d'Agua
+3113	Silveiras	Silveiras
+3114	Ibiracatu	Ibiracatu
+3115	Jandaia	Jandaia
+3116	Almadina	Almadina
+3117	Cocal dos Alves	Cocal dos Alves
+3118	Itumirim	Itumirim
+3119	Senador Elói de Souza	Senador Eloi de Souza
+3120	São João da Serra	Sao Joao da Serra
+3121	Barra Longa	Barra Longa
+3122	Pardinho	Pardinho
+3123	Graça Aranha	Graca Aranha
+3124	Potiretama	Potiretama
+3125	Gurinhatã	Gurinhata
+3126	Jambeiro	Jambeiro
+3127	Taciba	Taciba
+3128	Santo Antônio do Jardim	Santo Antonio do Jardim
+3129	Pai Pedro	Pai Pedro
+3130	Anta Gorda	Anta Gorda
+3131	Rio Espera	Rio Espera
+3132	Mesquita	Mesquita
+3133	Pedra Bela	Pedra Bela
+3134	Nova Olinda	Nova Olinda
+3135	Itueta	Itueta
+3136	Pacujá	Pacuja
+3137	Campo Alegre de Goiás	Campo Alegre de Goias
+3138	São Vicente	Sao Vicente
+3139	Divisa Nova	Divisa Nova
+3140	Ouro Verde de Minas	Ouro Verde de Minas
+3141	Colônia do Gurguéia	Colonia do Gurgueia
+3142	Itaguatins	Itaguatins
+3143	Pau D’Arco	Pau D'Arco
+3144	Chapéu	Chapeu
+3145	Xambrê	Xambre
+3146	Sales	Sales
+3147	Betânia do Piauí	Betania do Piaui
+3148	Felipe Guerra	Felipe Guerra
+3149	Aiuruoca	Aiuruoca
+3150	Ibiara	Ibiara
+3151	José da Penha	Jose da Penha
+3152	Santa Albertina	Santa Albertina
+3153	Cristália	Cristalia
+3154	Camalaú	Camalau
+3155	São Pedro de Alcântara	Sao Pedro de Alcantara
+3156	Américo de Campos	Americo de Campos
+3157	São João de Manteninha	Sao Joao de Manteninha
+3158	Maria Helena	Maria Helena
+3159	Santa Bárbara do Rio Pardo	Santa Barbara do Rio Pardo
+3160	Fruta de Leite	Fruta de Leite
+3161	Fernandes Pinheiro	Fernandes Pinheiro
+3162	Itaú	Itau
+3163	Rodeio Bonito	Rodeio Bonito
+3164	Ubarana	Ubarana
+3165	Ararica	Ararica
+3166	Campina do Monte Alegre	Campina do Monte Alegre
+3167	Tucunduva	Tucunduva
+3168	Santa Maria da Serra	Santa Maria da Serra
+3169	Santa Helena	Santa Helena
+3170	Paula Freitas	Paula Freitas
+3171	Coqueiro Sêco	Coqueiro Seco
+3172	Barra de São Miguel	Barra de Sao Miguel
+3173	São João do Caiuá	Sao Joao do Caiua
+3174	Rio Manso	Rio Manso
+3175	Bandeira do Sul	Bandeira do Sul
+3176	Gaurama	Gaurama
+3177	Frei Gaspar	Frei Gaspar
+3178	Aragominas	Aragominas
+3179	Santa Luz	Santa Luz
+3180	Poloni	Poloni
+3181	Sobrália	Sobralia
+3182	Gracho Cardoso	Gracho Cardoso
+3183	Aroazes	Aroazes
+3184	Firmino Alves	Firmino Alves
+3185	Senhora de Oliveira	Senhora de Oliveira
+3186	Sertaneja	Sertaneja
+3187	Itaverava	Itaverava
+3188	Serra de São Bento	Serra de Sao Bento
+3189	Liberato Salzano	Liberato Salzano
+3190	Britânia	Britania
+3191	Fernando Prestes	Fernando Prestes
+3192	Santa Bárbara	Santa Barbara
+3193	Severiano Melo	Severiano Melo
+3194	Solidão	Solidao
+3195	Calumbi	Calumbi
+3196	Jaramatáia	Jaramataia
+3197	Patrocínio do Muriaé	Patrocinio do Muriae
+3198	Piacatu	Piacatu
+3199	Coroados	Coroados
+3200	Três Fronteiras	Tres Fronteiras
+3201	São Domingos das Dores	Sao Domingos das Dores
+3202	São Nicolau	Sao Nicolau
+3203	Veredinha	Veredinha
+3204	Luzerna	Luzerna
+3205	Pato Bragado	Pato Bragado
+3206	Chalé	Chale
+3207	Santa Ernestina	Santa Ernestina
+3208	Guaimbê	Guaimbe
+3209	Santa Rita do Itueto	Santa Rita do Itueto
+3210	Malta	Malta
+3211	Cedro de São João	Cedro de Sao Joao
+3212	Caldeirão Grande	Caldeirao Grande
+3213	Cocalinho	Cocalinho
+3214	Bacurituba	Bacurituba
+3215	Virgolândia	Virgolandia
+3216	Aliança do Tocantins	Alianca do Tocantins
+3217	Perobal	Perobal
+3218	São José do Goiabal	Sao Jose do Goiabal
+3219	Barrolândia	Barrolandia
+3220	Pranchita	Pranchita
+3221	Taiuva	Taiuva
+3222	Couto de Magalhães	Couto de Magalhaes
+3223	Goiandira	Goiandira
+3224	Taquarivaí	Taquarivai
+3225	Campinas do Piauí	Campinas do Piaui
+3226	Corguinho	Corguinho
+3227	Cana Verde	Cana Verde
+3228	São Cristovão do Sul	Sao Cristovao do Sul
+3229	Barra do Chapéu	Barra do Chapeu
+3230	Alambari	Alambari
+3231	Cravolândia	Cravolandia
+3232	General Carneiro	General Carneiro
+3233	Caiana	Caiana
+3234	São Pedro do Suaçuí	Sao Pedro do Suacui
+3235	Aguiar	Aguiar
+3236	Romelândia	Romelandia
+3237	Caiuá	Caiua
+3238	Presidente Bernardes	Presidente Bernardes
+3239	Conceição do Pará	Conceicao do Para
+3240	Japi	Japi
+3241	São Jorge do Ivaí	Sao Jorge do Ivai
+3242	Itaara	Itaara
+3243	Bento Fernandes	Bento Fernandes
+3244	Rondinha	Rondinha
+3245	Coronel Ezequiel	Coronel Ezequiel
+3246	Guaraci	Guaraci
+3247	Campinas do Sul	Campinas do Sul
+3248	Machadinho	Machadinho
+3249	Brejinho de Nazaré	Brejinho de Nazare
+3250	Sabino	Sabino
+3251	Bom Jesus do Amparo	Bom Jesus do Amparo
+3252	Pequizeiro	Pequizeiro
+3253	Luisiânia	Luisiania
+3254	Piranguçu	Pirangucu
+3255	Boa Ventura	Boa Ventura
+3256	Aramina	Aramina
+3257	Bertolínia	Bertolinia
+3258	Caparaó	Caparao
+3259	Sambaíba	Sambaiba
+3260	Benedito Leite	Benedito Leite
+3261	Alcantil	Alcantil
+3262	Campo Novo	Campo Novo
+3263	Cabaceiras	Cabaceiras
+3264	Caxingá	Caxinga
+3265	Itaguaru	Itaguaru
+3266	Braúna	Brauna
+3267	Joanésia	Joanesia
+3268	Caseara	Caseara
+3269	Catas Altas	Catas Altas
+3270	Entre-Folhas	Entre-Folhas
+3271	Jampruca	Jampruca
+3272	Datas	Datas
+3273	Marabá Paulista	Maraba Paulista
+3274	Pôrto Lucena	Porto Lucena
+3275	Silvanópolis	Silvanopolis
+3276	Itacambira	Itacambira
+3277	Santo Inácio	Santo Inacio
+3278	Jeceaba	Jeceaba
+3279	Nova Esperança	Nova Esperanca
+3280	Senador Amaral	Senador Amaral
+3281	Jacaré dos Homens	Jacare dos Homens
+3282	São Tomé	Sao Tome
+3283	Turvelândia	Turvelandia
+3284	Porto dos Gaúchos	Porto dos Gauchos
+3285	Janduís	Janduis
+3286	Liberdade	Liberdade
+3287	Feira Nova	Feira Nova
+3288	Figueirópolis	Figueiropolis
+3289	Jaboti	Jaboti
+3290	Botuverá	Botuvera
+3291	Doutor Maurício Cardoso	Doutor Mauricio Cardoso
+3292	Viadutos	Viadutos
+3293	Bom Princípio	Bom Principio
+3294	Vicente Dutra	Vicente Dutra
+3295	Rochedo	Rochedo
+3296	Dom Cavati	Dom Cavati
+3297	Santa Maria do Salto	Santa Maria do Salto
+3298	Parazinho	Parazinho
+3299	Landri Sales	Landri Sales
+3300	Volta Grande	Volta Grande
+3301	Avaí	Avai
+3302	Baliza	Baliza
+3303	Acorizal	Acorizal
+3304	Divina Pastora	Divina Pastora
+3305	Santana do Itararé	Santana do Itarare
+3306	Angelina	Angelina
+3307	Dom Silvério	Dom Silverio
+3308	Marianópolis do Tocantins	Marianopolis do Tocantins
+3309	Francinópolis	Francinopolis
+3310	Francisco Dumont	Francisco Dumont
+3311	Dores de Guanhães	Dores de Guanhaes
+3312	Santana de Mangueira	Santana de Mangueira
+3313	Rio do Prado	Rio do Prado
+3314	Victor Meireles	Victor Meireles
+3315	Guaramiranga	Guaramiranga
+3316	Jequitibá	Jequitiba
+3317	Manoel Emídio	Manoel Emidio
+3318	São Francisco do Glória	Sao Francisco do Gloria
+3319	Lagoa do Sítio	Lagoa do Sitio
+3320	Salto do Itararé	Salto do Itarare
+3321	Cristiano Otoni	Cristiano Otoni
+3322	Maetinga	Maetinga
+3323	Salmourão	Salmourao
+3324	Erval Grande	Erval Grande
+3325	Agricolândia	Agricolandia
+3326	Ibiquera	Ibiquera
+3327	Tamboara	Tamboara
+3328	Marcelino Ramos	Marcelino Ramos
+3329	Felício dos Santos	Felicio dos Santos
+3330	Brochier	Brochier
+3331	Vila Propício	Vila Propicio
+3332	Gameleiras	Gameleiras
+3333	Rafael Fernandes	Rafael Fernandes
+3334	Goianorte	Goianorte
+3335	Caturaí	Caturai
+3336	Japurá	Japura
+3337	Catuti	Catuti
+3338	Madre de Deus de Minas	Madre de Deus de Minas
+3339	Guzolândia	Guzolandia
+3340	Serra do Navio	Serra do Navio
+3341	São José da Varginha	Sao Jose da Varginha
+3342	Bocaina de Minas	Bocaina de Minas
+3343	Cacique Doble	Cacique Doble
+3344	Caiçara	Caicara
+3345	Turvolândia	Turvolandia
+3346	Quinta do Sol	Quinta do Sol
+3347	Crucilândia	Crucilandia
+3348	José Raydam	Jose Raydam
+3349	Palestina	Palestina
+3350	Itajá	Itaja
+3351	São Gonçalo do Piauí	Sao Goncalo do Piaui
+3352	Álvaro de Carvalho	Alvaro de Carvalho
+3353	São Pedro da União	Sao Pedro da Uniao
+3354	Ipiguá	Ipigua
+3355	Congonhas do Norte	Congonhas do Norte
+3356	Floraí	Florai
+3357	Descoberto	Descoberto
+3358	Pratânia	Pratania
+3359	Braúnas	Braunas
+3360	Ibertioga	Ibertioga
+3361	Palmeira	Palmeira
+3362	Vargem Grande do Rio Pardo	Vargem Grande do Rio Pardo
+3363	Bom Sucesso	Bom Sucesso
+3364	Piedade dos Gerais	Piedade dos Gerais
+3365	Cuparaque	Cuparaque
+3366	José Boiteux	Jose Boiteux
+3367	Mossâmedes	Mossamedes
+3368	Bom Jesus do Tocantins	Bom Jesus do Tocantins
+3369	Príncipe da Beira	Principe da Beira
+3370	Abunã	Abuna

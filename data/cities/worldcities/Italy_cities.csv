@@ -1,0 +1,2125 @@
+	city	city_ascii
+0	Rome	Rome
+1	Milan	Milan
+2	Naples	Naples
+3	Turin	Turin
+4	Palermo	Palermo
+5	Genoa	Genoa
+6	Bologna	Bologna
+7	Florence	Florence
+8	Bari	Bari
+9	Catania	Catania
+10	Venice	Venice
+11	Verona	Verona
+12	Messina	Messina
+13	Padova	Padova
+14	Trieste	Trieste
+15	Taranto	Taranto
+16	Brescia	Brescia
+17	Parma	Parma
+18	Prato	Prato
+19	Modena	Modena
+20	Reggio di Calabria	Reggio di Calabria
+21	Reggio Emilia	Reggio Emilia
+22	Perugia	Perugia
+23	Livorno	Livorno
+24	Ravenna	Ravenna
+25	Cagliari	Cagliari
+26	Foggia	Foggia
+27	Rimini	Rimini
+28	Salerno	Salerno
+29	Ferrara	Ferrara
+30	Monza	Monza
+31	Latina	Latina
+32	Giugliano in Campania	Giugliano in Campania
+33	Bergamo	Bergamo
+34	Pescara	Pescara
+35	Siracusa	Siracusa
+36	Trento	Trento
+37	Forlì	Forli
+38	Sassari	Sassari
+39	Vicenza	Vicenza
+40	Terni	Terni
+41	Bolzano	Bolzano
+42	Novara	Novara
+43	Piacenza	Piacenza
+44	Ancona	Ancona
+45	Catanzaro	Catanzaro
+46	Sesto San Giovanni	Sesto San Giovanni
+47	Torre del Greco	Torre del Greco
+48	Busto Arsizio	Busto Arsizio
+49	Como	Como
+50	Casoria	Casoria
+51	Cinisello Balsamo	Cinisello Balsamo
+52	Castellammare di Stabia	Castellammare di Stabia
+53	L’Aquila	L'Aquila
+54	Afragola	Afragola
+55	Potenza	Potenza
+56	Portici	Portici
+57	Marano di Napoli	Marano di Napoli
+58	Legnano	Legnano
+59	Aversa	Aversa
+60	Montesilvano	Montesilvano
+61	San Giorgio a Cremano	San Giorgio a Cremano
+62	Gallarate	Gallarate
+63	Casalnuovo di Napoli	Casalnuovo di Napoli
+64	Ercolano	Ercolano
+65	Cologno Monzese	Cologno Monzese
+66	Scafati	Scafati
+67	Rho	Rho
+68	Collegno	Collegno
+69	Lissone	Lissone
+70	Campobasso	Campobasso
+71	Nichelino	Nichelino
+72	Paderno Dugnano	Paderno Dugnano
+73	Seregno	Seregno
+74	Torre Annunziata	Torre Annunziata
+75	Nocera Inferiore	Nocera Inferiore
+76	Melito di Napoli	Melito di Napoli
+77	Rozzano	Rozzano
+78	Desio	Desio
+79	Pomigliano d’Arco	Pomigliano d'Arco
+80	Saronno	Saronno
+81	Cesano Maderno	Cesano Maderno
+82	Mugnano di Napoli	Mugnano di Napoli
+83	Ciampino	Ciampino
+84	Arzano	Arzano
+85	Corsico	Corsico
+86	Grugliasco	Grugliasco
+87	Pioltello	Pioltello
+88	Sant’Antimo	Sant'Antimo
+89	Bollate	Bollate
+90	Casalecchio di Reno	Casalecchio di Reno
+91	Brugherio	Brugherio
+92	Limbiate	Limbiate
+93	Frattamaggiore	Frattamaggiore
+94	Segrate	Segrate
+95	Riccione Marina	Riccione Marina
+96	Cernusco sul Naviglio	Cernusco sul Naviglio
+97	Angri	Angri
+98	Villaricca	Villaricca
+99	Aosta	Aosta
+100	San Donato Milanese	San Donato Milanese
+101	Santa Maria Capua Vetere	Santa Maria Capua Vetere
+102	Bresso	Bresso
+103	San Giuseppe Vesuviano	San Giuseppe Vesuviano
+104	Aci Catena	Aci Catena
+105	Boscoreale	Boscoreale
+106	Garbagnate Milanese	Garbagnate Milanese
+107	Chiavari	Chiavari
+108	Cardito	Cardito
+109	Qualiano	Qualiano
+110	Giussano	Giussano
+111	Muggiò	Muggio
+112	Seriate	Seriate
+113	Nova Milanese	Nova Milanese
+114	Pompei	Pompei
+115	Seveso	Seveso
+116	Meda	Meda
+117	San Giovanni la Punta	San Giovanni la Punta
+118	Villabate	Villabate
+119	Cusano Milanino	Cusano Milanino
+120	Cormano	Cormano
+121	Frattaminore	Frattaminore
+122	Grumo Nevano	Grumo Nevano
+123	Senago	Senago
+124	Novate Milanese	Novate Milanese
+125	Monserrato	Monserrato
+126	Trentola	Trentola
+127	Ischia	Ischia
+128	Arese	Arese
+129	Cercola	Cercola
+130	Sant’Antonio Abate	Sant'Antonio Abate
+131	Bovisio Masciago	Bovisio Masciago
+132	Aci Castello	Aci Castello
+133	Vimodrone	Vimodrone
+134	Beinasco	Beinasco
+135	Cattolica	Cattolica
+136	Brusciano	Brusciano
+137	Sant’Arpino	Sant'Arpino
+138	Casandrino	Casandrino
+139	Carugate	Carugate
+140	Villasanta	Villasanta
+141	Castellanza	Castellanza
+142	Baranzate	Baranzate
+143	Solaro	Solaro
+144	Varedo	Varedo
+145	Monte di Procida	Monte di Procida
+146	Calvizzano	Calvizzano
+147	Canegrate	Canegrate
+148	Biassono	Biassono
+149	Ponte San Pietro	Ponte San Pietro
+150	San Gregorio di Catania	San Gregorio di Catania
+151	Capodrise	Capodrise
+152	Procida	Procida
+153	San Marzano sul Sarno	San Marzano sul Sarno
+154	San Sebastiano al Vesuvio	San Sebastiano al Vesuvio
+155	Cesa	Cesa
+156	Portico di Caserta	Portico di Caserta
+157	Casapulla	Casapulla
+158	Sant’Agnello	Sant'Agnello
+159	Torre Boldone	Torre Boldone
+160	Mariglianella	Mariglianella
+161	Recale	Recale
+162	Rovellasca	Rovellasca
+163	Cimitile	Cimitile
+164	Barlassina	Barlassina
+165	Carnate	Carnate
+166	Isola delle Femmine	Isola delle Femmine
+167	Gorle	Gorle
+168	Albiate	Albiate
+169	Almè	Alme
+170	Udine	Udine
+171	Andria	Andria
+172	Arezzo	Arezzo
+173	Cesena	Cesena
+174	Lecce	Lecce
+175	Pesaro	Pesaro
+176	La Spezia	La Spezia
+177	Barletta	Barletta
+178	Alessandria	Alessandria
+179	Mestre	Mestre
+180	Pisa	Pisa
+181	Pistoia	Pistoia
+182	Lucca	Lucca
+183	Brindisi	Brindisi
+184	Treviso	Treviso
+185	Marsala	Marsala
+186	Pozzuoli	Pozzuoli
+187	Grosseto	Grosseto
+188	Varese	Varese
+189	Fiumicino	Fiumicino
+190	Caserta	Caserta
+191	Asti	Asti
+192	Gela	Gela
+193	Pavia	Pavia
+194	Ragusa	Ragusa
+195	Cremona	Cremona
+196	Carpi	Carpi
+197	Quartu Sant’Elena	Quartu Sant'Elena
+198	Altamura	Altamura
+199	Imola	Imola
+200	Massa	Massa
+201	Cosenza	Cosenza
+202	Viterbo	Viterbo
+203	Trapani	Trapani
+204	Vittoria	Vittoria
+205	Pomezia	Pomezia
+206	Crotone	Crotone
+207	Vigevano	Vigevano
+208	Carrara	Carrara
+209	Caltanissetta	Caltanissetta
+210	Benevento	Benevento
+211	Viareggio	Viareggio
+212	Fano	Fano
+213	Acerra	Acerra
+214	Savona	Savona
+215	Matera	Matera
+216	Molfetta	Molfetta
+217	Olbia	Olbia
+218	Agrigento	Agrigento
+219	Faenza	Faenza
+220	Cerignola	Cerignola
+221	Moncalieri	Moncalieri
+222	Tivoli	Tivoli
+223	Foligno	Foligno
+224	Manfredonia	Manfredonia
+225	Bagheria	Bagheria
+226	Cuneo	Cuneo
+227	Trani	Trani
+228	Bisceglie	Bisceglie
+229	Avellino	Avellino
+230	San Remo	San Remo
+231	Bitonto	Bitonto
+232	Modica	Modica
+233	Teramo	Teramo
+234	Cava de’ Tirreni	Cava de' Tirreni
+235	Siena	Siena
+236	Velletri	Velletri
+237	Anzio	Anzio
+238	Acireale	Acireale
+239	San Severo	San Severo
+240	Pordenone	Pordenone
+241	Civitavecchia	Civitavecchia
+242	Battipaglia	Battipaglia
+243	Mazara del Vallo	Mazara del Vallo
+244	Chieti	Chieti
+245	Rovigo	Rovigo
+246	Scandicci	Scandicci
+247	Misterbianco	Misterbianco
+248	Ardea	Ardea
+249	Rivoli	Rivoli
+250	Mantova	Mantova
+251	Sesto Fiorentino	Sesto Fiorentino
+252	Nettuno	Nettuno
+253	Chioggia	Chioggia
+254	Empoli	Empoli
+255	Monopoli	Monopoli
+256	Lecco	Lecco
+257	San Benedetto del Tronto	San Benedetto del Tronto
+258	Ascoli Piceno	Ascoli Piceno
+259	Martina Franca	Martina Franca
+260	Settimo Torinese	Settimo Torinese
+261	Corato	Corato
+262	Campi Bisenzio	Campi Bisenzio
+263	Paterno	Paterno
+264	Rieti	Rieti
+265	Frosinone	Frosinone
+266	Vercelli	Vercelli
+267	Terracina	Terracina
+268	Capannori	Capannori
+269	Lodi	Lodi
+270	Marino	Marino
+271	Cascina	Cascina
+272	Alcamo	Alcamo
+273	Biella	Biella
+274	Senigallia	Senigallia
+275	Bassano del Grappa	Bassano del Grappa
+276	Alghero	Alghero
+277	Gravina in Puglia	Gravina in Puglia
+278	Civitanova Marche	Civitanova Marche
+279	Albano Laziale	Albano Laziale
+280	Avezzano	Avezzano
+281	San Donà di Piave	San Dona di Piave
+282	Imperia	Imperia
+283	Macerata	Macerata
+284	Monterotondo	Monterotondo
+285	Barcellona-Pozzo di Gotto	Barcellona-Pozzo di Gotto
+286	Merano	Merano
+287	Sassuolo	Sassuolo
+288	Cantù	Cantu
+289	Ladispoli	Ladispoli
+290	Marcianise	Marcianise
+291	Sciacca	Sciacca
+292	Corigliano Calabro	Corigliano Calabro
+293	Rovereto	Rovereto
+294	Iesi	Iesi
+295	Eboli	Eboli
+296	Maddaloni	Maddaloni
+297	Fondi	Fondi
+298	Fasano	Fasano
+299	Voghera	Voghera
+300	Città di Castello	Citta di Castello
+301	Schio	Schio
+302	Modugno	Modugno
+303	San Giuliano Milanese	San Giuliano Milanese
+304	Carini	Carini
+305	Monreale	Monreale
+306	Caivano	Caivano
+307	Mira	Mira
+308	Caltagirone	Caltagirone
+309	Cerveteri	Cerveteri
+310	Spoleto	Spoleto
+311	Formia	Formia
+312	Chieri	Chieri
+313	Fermo	Fermo
+314	Cisterna di Latina	Cisterna di Latina
+315	Licata	Licata
+316	Cassino	Cassino
+317	Rossano	Rossano
+318	Nuoro	Nuoro
+319	Pinerolo	Pinerolo
+320	Francavilla Fontana	Francavilla Fontana
+321	Rende	Rende
+322	Augusta	Augusta
+323	Somma Vesuviana	Somma Vesuviana
+324	Canicattì	Canicatti
+325	Cento	Cento
+326	Adrano	Adrano
+327	Conegliano	Conegliano
+328	Belluno	Belluno
+329	Lanciano	Lanciano
+330	Osimo	Osimo
+331	Crema	Crema
+332	Gorizia	Gorizia
+333	Venaria Reale	Venaria Reale
+334	Formigine	Formigine
+335	Casale Monferrato	Casale Monferrato
+336	Vibo Valentia	Vibo Valentia
+337	Termoli	Termoli
+338	Mascalucia	Mascalucia
+339	Piombino	Piombino
+340	Castelfranco Veneto	Castelfranco Veneto
+341	Villafranca di Verona	Villafranca di Verona
+342	Abbiategrasso	Abbiategrasso
+343	Castelfranco Emilia	Castelfranco Emilia
+344	San Lazzaro di Savena	San Lazzaro di Savena
+345	Lucera	Lucera
+346	Massafra	Massafra
+347	Camaiore	Camaiore
+348	Favara	Favara
+349	Milazzo	Milazzo
+350	Sarno	Sarno
+351	Grottaglie	Grottaglie
+352	Alba	Alba
+353	Partinico	Partinico
+354	Oristano	Oristano
+355	Montebelluna	Montebelluna
+356	Avola	Avola
+357	Gubbio	Gubbio
+358	San Giuliano Terme	San Giuliano Terme
+359	Castelvetrano	Castelvetrano
+360	Nardò	Nardo
+361	Verbania	Verbania
+362	Ostuni	Ostuni
+363	Manduria	Manduria
+364	Rosignano Marittimo	Rosignano Marittimo
+365	Marigliano	Marigliano
+366	Fabriano	Fabriano
+367	Gragnano	Gragnano
+368	Treviglio	Treviglio
+369	Rapallo	Rapallo
+370	Comiso	Comiso
+371	Bra	Bra
+372	Selargius	Selargius
+373	Canosa di Puglia	Canosa di Puglia
+374	Pontedera	Pontedera
+375	Misilmeri	Misilmeri
+376	Parabiago	Parabiago
+377	Spinea	Spinea
+378	Desenzano del Garda	Desenzano del Garda
+379	Poggibonsi	Poggibonsi
+380	Mondragone	Mondragone
+381	Carmagnola	Carmagnola
+382	Sant’Anastasia	Sant'Anastasia
+383	Alatri	Alatri
+384	Cervia	Cervia
+385	Cecina	Cecina
+386	Vittorio Veneto	Vittorio Veneto
+387	Novi Ligure	Novi Ligure
+388	Giarre	Giarre
+389	Triggiano	Triggiano
+390	Assisi	Assisi
+391	Carbonia	Carbonia
+392	Mogliano Veneto	Mogliano Veneto
+393	San Giovanni in Persiceto	San Giovanni in Persiceto
+394	Bacoli	Bacoli
+395	Belpasso	Belpasso
+396	Erice	Erice
+397	San Miniato	San Miniato
+398	Porto Sant’Elpidio	Porto Sant'Elpidio
+399	Gioia del Colle	Gioia del Colle
+400	Mirano	Mirano
+401	Lainate	Lainate
+402	Tortona	Tortona
+403	Terlizzi	Terlizzi
+404	Vimercate	Vimercate
+405	Enna	Enna
+406	Albignasego	Albignasego
+407	San Giovanni Rotondo	San Giovanni Rotondo
+408	Chivasso	Chivasso
+409	Scicli	Scicli
+410	Niscemi	Niscemi
+411	Galatina	Galatina
+412	Fidenza	Fidenza
+413	Assèmini	Assemini
+414	Falconara Marittima	Falconara Marittima
+415	Mesagne	Mesagne
+416	Quarrata	Quarrata
+417	Noicattaro	Noicattaro
+418	Pontecagnano	Pontecagnano
+419	Putignano	Putignano
+420	Iglesias	Iglesias
+421	Santeramo in Colle	Santeramo in Colle
+422	Francavilla al Mare	Francavilla al Mare
+423	Mariano Comense	Mariano Comense
+424	San Giovanni Lupatoto	San Giovanni Lupatoto
+425	Cesenatico	Cesenatico
+426	Valdagno	Valdagno
+427	Iesolo	Iesolo
+428	Vignola	Vignola
+429	Conversano	Conversano
+430	Termini Imerese	Termini Imerese
+431	Arzignano	Arzignano
+432	Sora	Sora
+433	Scandiano	Scandiano
+434	Castel Volturno	Castel Volturno
+435	Roseto degli Abruzzi	Roseto degli Abruzzi
+436	Nocera Superiore	Nocera Superiore
+437	Montichiari	Montichiari
+438	Correggio	Correggio
+439	Mola di Bari	Mola di Bari
+440	Bagno a Ripoli	Bagno a Ripoli
+441	Legnago	Legnago
+442	Thiene	Thiene
+443	Dalmine	Dalmine
+444	Ruvo di Puglia	Ruvo di Puglia
+445	Genzano di Roma	Genzano di Roma
+446	Portogruaro	Portogruaro
+447	Sezze	Sezze
+448	Magenta	Magenta
+449	Ottaviano	Ottaviano
+450	Montevarchi	Montevarchi
+451	Giulianova	Giulianova
+452	Albenga	Albenga
+453	Sulmona	Sulmona
+454	Fossano	Fossano
+455	Copertino	Copertino
+456	Orbassano	Orbassano
+457	Biancavilla	Biancavilla
+458	Pietrasanta	Pietrasanta
+459	Ivrea	Ivrea
+460	Castiglione delle Stiviere	Castiglione delle Stiviere
+461	Montecchio Maggiore	Montecchio Maggiore
+462	Mentana	Mentana
+463	Selvazzano Dentro	Selvazzano Dentro
+464	Noto	Noto
+465	Ventimiglia	Ventimiglia
+466	Capoterra	Capoterra
+467	Mirandola	Mirandola
+468	Ceccano	Ceccano
+469	Poggiomarino	Poggiomarino
+470	Vigonza	Vigonza
+471	Lentini	Lentini
+472	Fucecchio	Fucecchio
+473	Floridia	Floridia
+474	Frascati	Frascati
+475	Ortona	Ortona
+476	Mercato San Severino	Mercato San Severino
+477	Palma di Montechiaro	Palma di Montechiaro
+478	Trezzano sul Naviglio	Trezzano sul Naviglio
+479	San Cataldo	San Cataldo
+480	Sarzana	Sarzana
+481	Massarosa	Massarosa
+482	Mondovì	Mondovi
+483	Sondrio	Sondrio
+484	Pachino	Pachino
+485	Sant’Arcangelo di Romagna	Sant'Arcangelo di Romagna
+486	Porto Torres	Porto Torres
+487	Paese	Paese
+488	Ariano Irpino	Ariano Irpino
+489	Martellago	Martellago
+490	Ginosa	Ginosa
+491	Agropoli	Agropoli
+492	Gorgonzola	Gorgonzola
+493	Casal di Principe	Casal di Principe
+494	Borgomanero	Borgomanero
+495	Cornaredo	Cornaredo
+496	Palestrina	Palestrina
+497	Bressanone	Bressanone
+498	Comacchio	Comacchio
+499	Castrovillari	Castrovillari
+500	Colleferro	Colleferro
+501	Cortona	Cortona
+502	San Bonifacio	San Bonifacio
+503	Isernia	Isernia
+504	Colle di Val d’Elsa	Colle di Val d'Elsa
+505	Piazza Armerina	Piazza Armerina
+506	Monsummano	Monsummano
+507	Pergine Valsugana	Pergine Valsugana
+508	Corciano	Corciano
+509	Palo del Colle	Palo del Colle
+510	Savigliano	Savigliano
+511	Montecatini Terme	Montecatini Terme
+512	Follonica	Follonica
+513	Anagni	Anagni
+514	Argenta	Argenta
+515	Grottaferrata	Grottaferrata
+516	Romano di Lombardia	Romano di Lombardia
+517	Suzzara	Suzzara
+518	Rosolini	Rosolini
+519	Sestu	Sestu
+520	Recanati	Recanati
+521	Sessa Aurunca	Sessa Aurunca
+522	Ferentino	Ferentino
+523	San Salvo	San Salvo
+524	Trecate	Trecate
+525	Gallipoli	Gallipoli
+526	Abano Terme	Abano Terme
+527	Castel San Pietro Terme	Castel San Pietro Terme
+528	Rivalta di Torino	Rivalta di Torino
+529	Bussolengo	Bussolengo
+530	Oderzo	Oderzo
+531	Vico Equense	Vico Equense
+532	Pallazzolo sull’Oglio	Pallazzolo sull'Oglio
+533	Feltre	Feltre
+534	Giovinazzo	Giovinazzo
+535	Pontassieve	Pontassieve
+536	Lastra a Signa	Lastra a Signa
+537	Pozzallo	Pozzallo
+538	Acquaviva delle Fonti	Acquaviva delle Fonti
+539	Cittadella	Cittadella
+540	Sabaudia	Sabaudia
+541	Casarano	Casarano
+542	Veroli	Veroli
+543	Gioia Tauro	Gioia Tauro
+544	San Mauro Torinese	San Mauro Torinese
+545	Gaeta	Gaeta
+546	Acri	Acri
+547	Sacile	Sacile
+548	Montalto Uffugo	Montalto Uffugo
+549	Piove di Sacco	Piove di Sacco
+550	Melzo	Melzo
+551	Orvieto	Orvieto
+552	Minturno	Minturno
+553	Acqui Terme	Acqui Terme
+554	Viadana	Viadana
+555	Cassano d’Adda	Cassano d'Adda
+556	Casamassima	Casamassima
+557	Ceglie Messapico	Ceglie Messapico
+558	Rovato	Rovato
+559	Salsomaggiore Terme	Salsomaggiore Terme
+560	Signa	Signa
+561	Spoltore	Spoltore
+562	Castellana Grotte	Castellana Grotte
+563	Ariccia	Ariccia
+564	Arcore	Arcore
+565	Pescia	Pescia
+566	Carate Brianza	Carate Brianza
+567	Casalgrande	Casalgrande
+568	Tradate	Tradate
+569	Ciriè	Cirie
+570	Anguillara Sabazia	Anguillara Sabazia
+571	Tolentino	Tolentino
+572	Adria	Adria
+573	Zola Predosa	Zola Predosa
+574	Chiari	Chiari
+575	Scorzè	Scorze
+576	Montemurlo	Montemurlo
+577	San Vito dei Normanni	San Vito dei Normanni
+578	Terzigno	Terzigno
+579	Bracciano	Bracciano
+580	Narni	Narni
+581	Aci Sant’Antonio	Aci Sant'Antonio
+582	Agliana	Agliana
+583	Santa Marinella	Santa Marinella
+584	Corbetta	Corbetta
+585	Noci	Noci
+586	Valenza	Valenza
+587	Palmi	Palmi
+588	Castelfidardo	Castelfidardo
+589	Palma Campania	Palma Campania
+590	Valenzano	Valenzano
+591	Bronte	Bronte
+592	Ghedi	Ghedi
+593	Ribera	Ribera
+594	Castel Maggiore	Castel Maggiore
+595	Rutigliano	Rutigliano
+596	Sestri Levante	Sestri Levante
+597	Bareggio	Bareggio
+598	Marsciano	Marsciano
+599	Siderno Marina	Siderno Marina
+600	Piossasco	Piossasco
+601	Domodossola	Domodossola
+602	Laives	Laives
+603	Capua	Capua
+604	Malnate	Malnate
+605	Melegnano	Melegnano
+606	Budrio	Budrio
+607	Zagarolo	Zagarolo
+608	Borgo San Lorenzo	Borgo San Lorenzo
+609	Cordenons	Cordenons
+610	Somma Lombardo	Somma Lombardo
+611	Savignano sul Rubicone	Savignano sul Rubicone
+612	Nerviano	Nerviano
+613	Albino	Albino
+614	Villorba	Villorba
+615	Valguarnera Caropepe	Valguarnera Caropepe
+616	Santa Maria di Sala	Santa Maria di Sala
+617	Cassano al Ionio	Cassano al Ionio
+618	Polignano a Mare	Polignano a Mare
+619	Alpignano	Alpignano
+620	Calenzano	Calenzano
+621	Marcon	Marcon
+622	Maranello	Maranello
+623	Sona	Sona
+624	Pescantina	Pescantina
+625	Sorrento	Sorrento
+626	Baronissi	Baronissi
+627	Arco	Arco
+628	Isola Capo Rizzuto	Isola Capo Rizzuto
+629	Melfi	Melfi
+630	Policoro	Policoro
+631	Tricase	Tricase
+632	Monselice	Monselice
+633	Porto San Giorgio	Porto San Giorgio
+634	Carlentini	Carlentini
+635	Orta Nova	Orta Nova
+636	Forio	Forio
+637	Fiorano Modenese	Fiorano Modenese
+638	Preganziol	Preganziol
+639	Pisticci	Pisticci
+640	Pianoro	Pianoro
+641	Sìnnai	Sinnai
+642	Rocca di Papa	Rocca di Papa
+643	Scordia	Scordia
+644	San Giovanni Valdarno	San Giovanni Valdarno
+645	Rubano	Rubano
+646	Castelfiorentino	Castelfiorentino
+647	Adelfia	Adelfia
+648	Negrar	Negrar
+649	Sant’Elpidio a Mare	Sant'Elpidio a Mare
+650	Concorezzo	Concorezzo
+651	Pavullo nel Frignano	Pavullo nel Frignano
+652	Cadoneghe	Cadoneghe
+653	Porto Empedocle	Porto Empedocle
+654	Saviano	Saviano
+655	Gussago	Gussago
+656	San Casciano in Val di Pesa	San Casciano in Val di Pesa
+657	Campagna	Campagna
+658	Carovigno	Carovigno
+659	Saluzzo	Saluzzo
+660	Torre Maggiore	Torre Maggiore
+661	Castellaneta	Castellaneta
+662	San Giovanni in Fiore	San Giovanni in Fiore
+663	Martinsicuro	Martinsicuro
+664	Grottammare	Grottammare
+665	Vedelago	Vedelago
+666	Samarate	Samarate
+667	Lentate sul Seveso	Lentate sul Seveso
+668	Bagnacavallo	Bagnacavallo
+669	Giaveno	Giaveno
+670	Brunico	Brunico
+671	Palagonia	Palagonia
+672	Agrate Brianza	Agrate Brianza
+673	Leinì	Leini
+674	Medicina	Medicina
+675	Este	Este
+676	Colle Salvetti	Colle Salvetti
+677	Lonigo	Lonigo
+678	Cerea	Cerea
+679	Caravaggio	Caravaggio
+680	Capurso	Capurso
+681	Cerro Maggiore	Cerro Maggiore
+682	Monesiglio	Monesiglio
+683	Todi	Todi
+684	Reggello	Reggello
+685	Noale	Noale
+686	Codogno	Codogno
+687	Umbertide	Umbertide
+688	Besana in Brianza	Besana in Brianza
+689	Silvi Paese	Silvi Paese
+690	Bovolone	Bovolone
+691	Valmontone	Valmontone
+692	Civita Castellana	Civita Castellana
+693	Ispica	Ispica
+694	Sava	Sava
+695	Copparo	Copparo
+696	Codroipo	Codroipo
+697	Palagiano	Palagiano
+698	Tarquinia	Tarquinia
+699	Ponsacco	Ponsacco
+700	Ospitaletto	Ospitaletto
+701	Nonantola	Nonantola
+702	Merate	Merate
+703	Pianezza	Pianezza
+704	Galliate	Galliate
+705	San Cesareo	San Cesareo
+706	Potenza Picena	Potenza Picena
+707	Altopascio	Altopascio
+708	Certaldo	Certaldo
+709	Fiano Romano	Fiano Romano
+710	Azzano Decimo	Azzano Decimo
+711	Sansepolcro	Sansepolcro
+712	Rescaldina	Rescaldina
+713	Volpiano	Volpiano
+714	San Martino Buon Albergo	San Martino Buon Albergo
+715	Mottola	Mottola
+716	Casalpusterlengo	Casalpusterlengo
+717	Galatone	Galatone
+718	Surbo	Surbo
+719	Taurianova	Taurianova
+720	Castenaso	Castenaso
+721	Omegna	Omegna
+722	Cassina de’ Pecchi	Cassina de' Pecchi
+723	Molinella	Molinella
+724	San Giorgio Ionico	San Giorgio Ionico
+725	Finale Emilia	Finale Emilia
+726	Riposto	Riposto
+727	Paola	Paola
+728	Castelnuovo Rangone	Castelnuovo Rangone
+729	Opera	Opera
+730	Valeggio sul Mincio	Valeggio sul Mincio
+731	Casalmaggiore	Casalmaggiore
+732	Mortara	Mortara
+733	Dolo	Dolo
+734	Corridonia	Corridonia
+735	Soliera	Soliera
+736	Castellarano	Castellarano
+737	Chiaravalle	Chiaravalle
+738	Castiglione del Lago	Castiglione del Lago
+739	Fiorenzuola d’Arda	Fiorenzuola d'Arda
+740	Rubiera	Rubiera
+741	Calolziocorte	Calolziocorte
+742	Pedara	Pedara
+743	Castellammare del Golfo	Castellammare del Golfo
+744	Zevio	Zevio
+745	Guastalla	Guastalla
+746	Sannicandro Garganico	Sannicandro Garganico
+747	San Vito al Tagliamento	San Vito al Tagliamento
+748	Pineto	Pineto
+749	Santa Maria a Vico	Santa Maria a Vico
+750	Città Sant’Angelo	Citta Sant'Angelo
+751	Laterza	Laterza
+752	Campodarsego	Campodarsego
+753	Sommacampagna	Sommacampagna
+754	Cossato	Cossato
+755	Rosarno	Rosarno
+756	Cirò Marina	Ciro Marina
+757	Luino	Luino
+758	Gualdo Tadino	Gualdo Tadino
+759	Trepuzzi	Trepuzzi
+760	Rosà	Rosa
+761	Sasso Marconi	Sasso Marconi
+762	Pontinia	Pontinia
+763	Sorso	Sorso
+764	Carmignano	Carmignano
+765	Massalubrense	Massalubrense
+766	Malo	Malo
+767	Magione	Magione
+768	Cassano delle Murge	Cassano delle Murge
+769	Vinci	Vinci
+770	Impruneta	Impruneta
+771	Busto Garolfo	Busto Garolfo
+772	Santa Croce sull’ Arno	Santa Croce sull' Arno
+773	Mondolfo	Mondolfo
+774	Arona	Arona
+775	Collecchio	Collecchio
+776	Montelupo Fiorentino	Montelupo Fiorentino
+777	Maglie	Maglie
+778	Orbetello	Orbetello
+779	Castel San Giorgio	Castel San Giorgio
+780	Roncade	Roncade
+781	Villa San Giovanni	Villa San Giovanni
+782	Piano di Sorrento	Piano di Sorrento
+783	Monteroni di Lecce	Monteroni di Lecce
+784	Trinitapoli	Trinitapoli
+785	Travagliato	Travagliato
+786	Mascali	Mascali
+787	Latiano	Latiano
+788	Cicciano	Cicciano
+789	Alzano Lombardo	Alzano Lombardo
+790	Urbino	Urbino
+791	Priverno	Priverno
+792	Leno	Leno
+793	Cefalù	Cefalu
+794	Stezzano	Stezzano
+795	Oleggio	Oleggio
+796	Squinzano	Squinzano
+797	Dueville	Dueville
+798	Fiesole	Fiesole
+799	Locorotondo	Locorotondo
+800	Taggia	Taggia
+801	Amantea	Amantea
+802	Caselle Torinese	Caselle Torinese
+803	Leverano	Leverano
+804	Marostica	Marostica
+805	Fisciano	Fisciano
+806	Taglio	Taglio
+807	Artena	Artena
+808	Cervignano del Friuli	Cervignano del Friuli
+809	Rezzato	Rezzato
+810	Bondeno	Bondeno
+811	Veglie	Veglie
+812	Olgiate Olona	Olgiate Olona
+813	San Ferdinando di Puglia	San Ferdinando di Puglia
+814	Fara in Sabina	Fara in Sabina
+815	Vetralla	Vetralla
+816	Tempio Pausania	Tempio Pausania
+817	Villacidro	Villacidro
+818	Sarezzo	Sarezzo
+819	Casatenovo	Casatenovo
+820	Montepulciano	Montepulciano
+821	Castel San Giovanni	Castel San Giovanni
+822	Múggia	Muggia
+823	Lariano	Lariano
+824	Vieste	Vieste
+825	Montesarchio	Montesarchio
+826	Statte	Statte
+827	Misano Adriatico	Misano Adriatico
+828	Novellara	Novellara
+829	Fagnano Olona	Fagnano Olona
+830	San Prisco	San Prisco
+831	Lanuvio	Lanuvio
+832	Cavarzere	Cavarzere
+833	Sant’Angelo Lodigiano	Sant'Angelo Lodigiano
+834	San Pietro Vernotico	San Pietro Vernotico
+835	Forlimpopoli	Forlimpopoli
+836	Latisana	Latisana
+837	Sedriano	Sedriano
+838	Arzachena	Arzachena
+839	Crispiano	Crispiano
+840	Camponogara	Camponogara
+841	Quartucciu	Quartucciu
+842	Grammichele	Grammichele
+843	Castelfranco di Sotto	Castelfranco di Sotto
+844	Vigodarzere	Vigodarzere
+845	Salzano	Salzano
+846	Nicosia	Nicosia
+847	San Martino di Lupari	San Martino di Lupari
+848	San Marco in Lamis	San Marco in Lamis
+849	Crevalcore	Crevalcore
+850	Montefiascone	Montefiascone
+851	Melilli	Melilli
+852	San Gennaro Vesuviano	San Gennaro Vesuviano
+853	Montespertoli	Montespertoli
+854	Manerbio	Manerbio
+855	Calderara di Reno	Calderara di Reno
+856	Tezze sul Brenta	Tezze sul Brenta
+857	Patti	Patti
+858	Gricignano d’Aversa	Gricignano d'Aversa
+859	Castelnuovo di Verona	Castelnuovo di Verona
+860	Loreto	Loreto
+861	Casale sul Sile	Casale sul Sile
+862	Lavello	Lavello
+863	Ficarazzi	Ficarazzi
+864	Quattro Castella	Quattro Castella
+865	Formello	Formello
+866	Rionero in Vulture	Rionero in Vulture
+867	Chiampo	Chiampo
+868	Capaci	Capaci
+869	Calcinaia	Calcinaia
+870	Santa Maria a Monte	Santa Maria a Monte
+871	Carpenedolo	Carpenedolo
+872	Varazze	Varazze
+873	Palombara Sabina	Palombara Sabina
+874	Cavallino	Cavallino
+875	Castiglion Fiorentino	Castiglion Fiorentino
+876	Porto Recanati	Porto Recanati
+877	Trebaseleghe	Trebaseleghe
+878	Capo d’Orlando	Capo d'Orlando
+879	Seravezza	Seravezza
+880	Montegranaro	Montegranaro
+881	Calcinato	Calcinato
+882	Cairo Montenotte	Cairo Montenotte
+883	Pontecorvo	Pontecorvo
+884	San Biagio di Callalta	San Biagio di Callalta
+885	Leonforte	Leonforte
+886	Apricena	Apricena
+887	Morbegno	Morbegno
+888	Raffadali	Raffadali
+889	Barrafranca	Barrafranca
+890	Spilamberto	Spilamberto
+891	Campiglia Marittima	Campiglia Marittima
+892	Terrasini Favarotta	Terrasini Favarotta
+893	Monteprandone	Monteprandone
+894	Avigliana	Avigliana
+895	Noceto	Noceto
+896	Bagnolo Mella	Bagnolo Mella
+897	Borgo San Dalmazzo	Borgo San Dalmazzo
+898	Santo Stino di Livenza	Santo Stino di Livenza
+899	Solofra	Solofra
+900	Trezzo sull’Adda	Trezzo sull'Adda
+901	Borgaro Torinese	Borgaro Torinese
+902	Mercogliano	Mercogliano
+903	Borgosesia	Borgosesia
+904	Montecorvino Rovella	Montecorvino Rovella
+905	Pianiga	Pianiga
+906	Arluno	Arluno
+907	Monte San Giovanni Campano	Monte San Giovanni Campano
+908	Lipari	Lipari
+909	Castel Goffredo	Castel Goffredo
+910	Rivarolo Canavese	Rivarolo Canavese
+911	Grumo Appula	Grumo Appula
+912	Sala Consilina	Sala Consilina
+913	Locri	Locri
+914	Francofonte	Francofonte
+915	Figline Valdarno	Figline Valdarno
+916	Fontanafredda	Fontanafredda
+917	Lauria Inferiore	Lauria Inferiore
+918	Sant’Agata di Militello	Sant'Agata di Militello
+919	Sinalunga	Sinalunga
+920	Altavilla Vicentina	Altavilla Vicentina
+921	Paullo	Paullo
+922	Olgiate Comasco	Olgiate Comasco
+923	Pieve di Soligo	Pieve di Soligo
+924	Orzinuovi	Orzinuovi
+925	Ronchi dei Legionari	Ronchi dei Legionari
+926	Anzola dell’Emilia	Anzola dell'Emilia
+927	Monte Compatri	Monte Compatri
+928	Lana	Lana
+929	Cinisi	Cinisi
+930	San Mauro Pascoli	San Mauro Pascoli
+931	Lavagna	Lavagna
+932	Camposampiero	Camposampiero
+933	Spresiano	Spresiano
+934	San Pietro in Casale	San Pietro in Casale
+935	Gavardo	Gavardo
+936	Menfi	Menfi
+937	Russi	Russi
+938	Rottofreno	Rottofreno
+939	Carmiano	Carmiano
+940	Bernalda	Bernalda
+941	Ugento	Ugento
+942	Motta Sant’Anastasia	Motta Sant'Anastasia
+943	Valmadrera	Valmadrera
+944	San Severino Marche	San Severino Marche
+945	Taviano	Taviano
+946	Cornedo Vicentino	Cornedo Vicentino
+947	Rocca Priora	Rocca Priora
+948	Teano	Teano
+949	Terranuova Bracciolini	Terranuova Bracciolini
+950	Eraclea	Eraclea
+951	Lizzanello	Lizzanello
+952	Monte Sant’Angelo	Monte Sant'Angelo
+953	Granarolo del l’Emilia	Granarolo del l'Emilia
+954	Villa Literno	Villa Literno
+955	Monteforte Irpino	Monteforte Irpino
+956	Occhiobello	Occhiobello
+957	Bitetto	Bitetto
+958	Sant’Ambrogio di Valpolicella	Sant'Ambrogio di Valpolicella
+959	Spilimbergo	Spilimbergo
+960	Bibbiena	Bibbiena
+961	Torri di Quartesolo	Torri di Quartesolo
+962	Nembro	Nembro
+963	Stradella	Stradella
+964	Tortoreto	Tortoreto
+965	Taurisano	Taurisano
+966	Casièr	Casier
+967	Vecchiano	Vecchiano
+968	Atripalda	Atripalda
+969	Portoferraio	Portoferraio
+970	Isola del Liri	Isola del Liri
+971	Montegrotto Terme	Montegrotto Terme
+972	Lonate Pozzolo	Lonate Pozzolo
+973	Pulsano	Pulsano
+974	San Valentino Torio	San Valentino Torio
+975	Margherita di Savoia	Margherita di Savoia
+976	Mestrino	Mestrino
+977	Susegana	Susegana
+978	Priolo Gargallo	Priolo Gargallo
+979	Gambettola	Gambettola
+980	Alfonsine	Alfonsine
+981	Fiume Veneto	Fiume Veneto
+982	Loano	Loano
+983	Giffoni Valle Piana	Giffoni Valle Piana
+984	Cave	Cave
+985	Casteldaccia	Casteldaccia
+986	Caldogno	Caldogno
+987	Santa Flavia	Santa Flavia
+988	Gardone Val Trompia	Gardone Val Trompia
+989	Serravalle Pistoiese	Serravalle Pistoiese
+990	Arenzano	Arenzano
+991	Campobello di Mazara	Campobello di Mazara
+992	Finale Ligure	Finale Ligure
+993	San Michele al Tagliamento	San Michele al Tagliamento
+994	Castenedolo	Castenedolo
+995	Amelia	Amelia
+996	Maniago	Maniago
+997	Lendinara	Lendinara
+998	Bitritto	Bitritto
+999	Pellezzano	Pellezzano
+1000	Macerata Campania	Macerata Campania
+1001	Mazzarino	Mazzarino
+1002	Matino	Matino
+1003	Inzago	Inzago
+1004	Castano Primo	Castano Primo
+1005	Codigoro	Codigoro
+1006	Campagnano di Roma	Campagnano di Roma
+1007	Venosa	Venosa
+1008	Guspini	Guspini
+1009	Trofarello	Trofarello
+1010	Cologno al Serio	Cologno al Serio
+1011	Cisternino	Cisternino
+1012	Zero Branco	Zero Branco
+1013	Carbonera	Carbonera
+1014	Poggio a Caiano	Poggio a Caiano
+1015	Portomaggiore	Portomaggiore
+1016	Musile di Piave	Musile di Piave
+1017	Isola della Scala	Isola della Scala
+1018	Ravanusa	Ravanusa
+1019	Taormina	Taormina
+1020	Ovada	Ovada
+1021	Caorle	Caorle
+1022	Trecastagni	Trecastagni
+1023	Bonate di Sopra	Bonate di Sopra
+1024	Belmonte Mezzagno	Belmonte Mezzagno
+1025	Camisano Vicentino	Camisano Vicentino
+1026	Boscotrecase	Boscotrecase
+1027	Siniscola	Siniscola
+1028	Sesto Calende	Sesto Calende
+1029	Riesi	Riesi
+1030	Melito di Porto Salvo	Melito di Porto Salvo
+1031	Castelvetro di Modena	Castelvetro di Modena
+1032	Creazzo	Creazzo
+1033	Montopoli in Val d’Arno	Montopoli in Val d'Arno
+1034	Scalea	Scalea
+1035	Lurate Caccivio	Lurate Caccivio
+1036	Paceco	Paceco
+1037	Cerese	Cerese
+1038	Cornate d’Adda	Cornate d'Adda
+1039	Castelli Calepio	Castelli Calepio
+1040	Avigliano	Avigliano
+1041	Castel Mella	Castel Mella
+1042	Racale	Racale
+1043	Piazzola sul Brenta	Piazzola sul Brenta
+1044	Venafro	Venafro
+1045	La Maddalena	La Maddalena
+1046	Botticino Sera	Botticino Sera
+1047	Acate	Acate
+1048	Cazzago San Martino	Cazzago San Martino
+1049	Alassio	Alassio
+1050	Sant’Ilario d’Enza	Sant'Ilario d'Enza
+1051	Cividale del Friuli	Cividale del Friuli
+1052	Cepagatti	Cepagatti
+1053	Tortolì	Tortoli
+1054	San Giustino	San Giustino
+1055	Usmate Velate	Usmate Velate
+1056	Cislago	Cislago
+1057	Sant’Agata de’ Goti	Sant'Agata de' Goti
+1058	Sant’Antìoco	Sant'Antioco
+1059	Aulla	Aulla
+1060	Polistena	Polistena
+1061	Cerreto Guidi	Cerreto Guidi
+1062	Fino Mornasco	Fino Mornasco
+1063	Santa Croce Camerina	Santa Croce Camerina
+1064	Montechiarugolo	Montechiarugolo
+1065	Cameri	Cameri
+1066	Corleone	Corleone
+1067	Trevignano	Trevignano
+1068	Capena	Capena
+1069	Peschiera del Garda	Peschiera del Garda
+1070	Bertinoro	Bertinoro
+1071	Campolongo Maggiore	Campolongo Maggiore
+1072	Montale	Montale
+1073	Monte San Pietro	Monte San Pietro
+1074	Giardini	Giardini
+1075	Induno Olona	Induno Olona
+1076	Motta di Livenza	Motta di Livenza
+1077	Gemona del Friuli	Gemona del Friuli
+1078	Martinengo	Martinengo
+1079	Siano	Siano
+1080	Locate di Triulzi	Locate di Triulzi
+1081	Grezzana	Grezzana
+1082	Cori	Cori
+1083	Celano	Celano
+1084	Montecchio Emilia	Montecchio Emilia
+1085	San Felice sul Panaro	San Felice sul Panaro
+1086	Barberino di Mugello	Barberino di Mugello
+1087	Alberobello	Alberobello
+1088	Lomazzo	Lomazzo
+1089	Medesano	Medesano
+1090	Salò	Salo
+1091	Canelli	Canelli
+1092	Trabia	Trabia
+1093	Cadelbosco di Sopra	Cadelbosco di Sopra
+1094	Massa Lombarda	Massa Lombarda
+1095	Casaluce	Casaluce
+1096	Montignoso	Montignoso
+1097	Barano d’Ischia	Barano d'Ischia
+1098	San Maurizio Canavese	San Maurizio Canavese
+1099	Ramacca	Ramacca
+1100	Itri	Itri
+1101	Fiuggi	Fiuggi
+1102	Randazzo	Randazzo
+1103	Vigonovo	Vigonovo
+1104	Lerici	Lerici
+1105	Nizza Monferrato	Nizza Monferrato
+1106	Vanzago	Vanzago
+1107	Coriano	Coriano
+1108	Poirino	Poirino
+1109	Salemi	Salemi
+1110	Silea	Silea
+1111	Torre Santa Susanna	Torre Santa Susanna
+1112	Atessa	Atessa
+1113	Recco	Recco
+1114	Roccapiemonte	Roccapiemonte
+1115	Castrolibero	Castrolibero
+1116	Castelletto sopra Ticino	Castelletto sopra Ticino
+1117	Vittuone	Vittuone
+1118	Conselve	Conselve
+1119	Isola Vicentina	Isola Vicentina
+1120	Mussomeli	Mussomeli
+1121	Ozieri	Ozieri
+1122	Bibbiano	Bibbiano
+1123	Rignano Flaminio	Rignano Flaminio
+1124	Castelnovo ne’ Monti	Castelnovo ne' Monti
+1125	Badia Polesine	Badia Polesine
+1126	Urgnano	Urgnano
+1127	Santa Teresa di Riva	Santa Teresa di Riva
+1128	Partanna	Partanna
+1129	Campi Salentina	Campi Salentina
+1130	Trescore Balneario	Trescore Balneario
+1131	Cutro	Cutro
+1132	Concordia Sagittaria	Concordia Sagittaria
+1133	Bagnara Calabra	Bagnara Calabra
+1134	San Giorgio del Sannio	San Giorgio del Sannio
+1135	Valdobbiadene	Valdobbiadene
+1136	Altofonte	Altofonte
+1137	Cavriago	Cavriago
+1138	San Vendemiano	San Vendemiano
+1139	Langhirano	Langhirano
+1140	Aradeo	Aradeo
+1141	Vigasio	Vigasio
+1142	Cittanova	Cittanova
+1143	Quinto di Treviso	Quinto di Treviso
+1144	Bomporto	Bomporto
+1145	Volpago del Montello	Volpago del Montello
+1146	Bordighera	Bordighera
+1147	Terralba	Terralba
+1148	Vaprio d’Adda	Vaprio d'Adda
+1149	Verucchio	Verucchio
+1150	Borgosatollo	Borgosatollo
+1151	Vaiano	Vaiano
+1152	San Felice Circeo	San Felice Circeo
+1153	Capriolo	Capriolo
+1154	Vignate	Vignate
+1155	Goito	Goito
+1156	Volterra	Volterra
+1157	Crosia	Crosia
+1158	Montemarciano	Montemarciano
+1159	Mandello del Lario	Mandello del Lario
+1160	Cermenate	Cermenate
+1161	Santo Stefano di Magra	Santo Stefano di Magra
+1162	Novi di Modena	Novi di Modena
+1163	Sermoneta	Sermoneta
+1164	Morrovalle	Morrovalle
+1165	Fiumefreddo di Sicilia	Fiumefreddo di Sicilia
+1166	Sant’Egidio alla Vibrata	Sant'Egidio alla Vibrata
+1167	Marano Vicentino	Marano Vicentino
+1168	Busca	Busca
+1169	Soverato Marina	Soverato Marina
+1170	Elmas	Elmas
+1171	Bisignano	Bisignano
+1172	Cuorgnè	Cuorgne
+1173	Oppeano	Oppeano
+1174	Sedico	Sedico
+1175	Brandizzo	Brandizzo
+1176	Oggiono	Oggiono
+1177	Tolmezzo	Tolmezzo
+1178	Asola	Asola
+1179	Castellamonte	Castellamonte
+1180	Lizzano	Lizzano
+1181	Cetraro	Cetraro
+1182	Cingoli	Cingoli
+1183	Racconigi	Racconigi
+1184	Pogliano Milanese	Pogliano Milanese
+1185	Bucine	Bucine
+1186	Gavirate	Gavirate
+1187	Argelato	Argelato
+1188	Bruino	Bruino
+1189	Sovicille	Sovicille
+1190	Gambolò	Gambolo
+1191	Melendugno	Melendugno
+1192	Meldola	Meldola
+1193	Macomer	Macomer
+1194	Brembate	Brembate
+1195	Mori	Mori
+1196	Sannicandro di Bari	Sannicandro di Bari
+1197	Inverigo	Inverigo
+1198	San Pancrazio Salentino	San Pancrazio Salentino
+1199	Garlasco	Garlasco
+1200	Barga	Barga
+1201	Monteriggioni	Monteriggioni
+1202	Santa Margherita Ligure	Santa Margherita Ligure
+1203	Gassino Torinese	Gassino Torinese
+1204	Ruffano	Ruffano
+1205	Magnago	Magnago
+1206	Campobello di Licata	Campobello di Licata
+1207	Boves	Boves
+1208	Pasian di Prato	Pasian di Prato
+1209	Mareno di Piave	Mareno di Piave
+1210	Gessate	Gessate
+1211	Conselice	Conselice
+1212	Montescaglioso	Montescaglioso
+1213	Deruta	Deruta
+1214	Castel Bolognese	Castel Bolognese
+1215	Poggio Renatico	Poggio Renatico
+1216	Monticello Conte Otto	Monticello Conte Otto
+1217	San Giovanni in Marignano	San Giovanni in Marignano
+1218	Bellinzago Novarese	Bellinzago Novarese
+1219	Resana	Resana
+1220	Broni	Broni
+1221	Piombino Dese	Piombino Dese
+1222	Triuggio	Triuggio
+1223	Dolianova	Dolianova
+1224	Mozzate	Mozzate
+1225	Sorbolo	Sorbolo
+1226	Folignano	Folignano
+1227	Albano Sant’Alessandro	Albano Sant'Alessandro
+1228	Matelica	Matelica
+1229	Flero	Flero
+1230	Sorisole	Sorisole
+1231	Mendicino	Mendicino
+1232	Loria	Loria
+1233	Pizzo	Pizzo
+1234	Zafferana Etnea	Zafferana Etnea
+1235	San Marzano di San Giuseppe	San Marzano di San Giuseppe
+1236	Lavis	Lavis
+1237	Foiano della Chiana	Foiano della Chiana
+1238	Porto Tolle	Porto Tolle
+1239	Cavriglia	Cavriglia
+1240	Maserada sul Piave	Maserada sul Piave
+1241	Castelleone	Castelleone
+1242	Monte Porzio Catone	Monte Porzio Catone
+1243	Nepi	Nepi
+1244	Fiesso d’Artico	Fiesso d'Artico
+1245	Besozzo	Besozzo
+1246	Traversetolo	Traversetolo
+1247	Maserà di Padova	Masera di Padova
+1248	Costa Volpino	Costa Volpino
+1249	Striano	Striano
+1250	Gatteo	Gatteo
+1251	Santa Lucia di Piave	Santa Lucia di Piave
+1252	Brugnera	Brugnera
+1253	Capriate San Gervasio	Capriate San Gervasio
+1254	Casorate Primo	Casorate Primo
+1255	Castel Gandolfo	Castel Gandolfo
+1256	Legnaro	Legnaro
+1257	Istrana	Istrana
+1258	Fossombrone	Fossombrone
+1259	Viagrande	Viagrande
+1260	Aragona	Aragona
+1261	Villa Castelli	Villa Castelli
+1262	Marnate	Marnate
+1263	La Loggia	La Loggia
+1264	Mosciano Sant’Angelo	Mosciano Sant'Angelo
+1265	Savignano sul Panaro	Savignano sul Panaro
+1266	Martano	Martano
+1267	Gaggiano	Gaggiano
+1268	Iseo	Iseo
+1269	Belvedere Marittimo	Belvedere Marittimo
+1270	Castellabate	Castellabate
+1271	Parabita	Parabita
+1272	Filottrano	Filottrano
+1273	Carignano	Carignano
+1274	Missaglia	Missaglia
+1275	Asolo	Asolo
+1276	Pandino	Pandino
+1277	Trebisacce	Trebisacce
+1278	Noventa Vicentina	Noventa Vicentina
+1279	Treia	Treia
+1280	Porcari	Porcari
+1281	Bovalino Marina	Bovalino Marina
+1282	Calusco d’Adda	Calusco d'Adda
+1283	Coccaglio	Coccaglio
+1284	Castegnato	Castegnato
+1285	Monteforte d’Alpone	Monteforte d'Alpone
+1286	Podenzano	Podenzano
+1287	Segni	Segni
+1288	Pietra Ligure	Pietra Ligure
+1289	Cherasco	Cherasco
+1290	Lacchiarella	Lacchiarella
+1291	Tirano	Tirano
+1292	Zanica	Zanica
+1293	Luzzi	Luzzi
+1294	Reggiolo	Reggiolo
+1295	Inveruno	Inveruno
+1296	Teolo	Teolo
+1297	Gonzaga	Gonzaga
+1298	Troina	Troina
+1299	Malalbergo	Malalbergo
+1300	Colorno	Colorno
+1301	Soresina	Soresina
+1302	Montagnana	Montagnana
+1303	Ponte Buggianese	Ponte Buggianese
+1304	Serramanna	Serramanna
+1305	Tarcento	Tarcento
+1306	Borgoricco	Borgoricco
+1307	Luzzara	Luzzara
+1308	Curno	Curno
+1309	Verdello	Verdello
+1310	Zogno	Zogno
+1311	San Cesario di Lecce	San Cesario di Lecce
+1312	Petilia Policastro	Petilia Policastro
+1313	Aviano	Aviano
+1314	Monteroni d’Arbia	Monteroni d'Arbia
+1315	Castagneto Carducci	Castagneto Carducci
+1316	Tombolo	Tombolo
+1317	Castelnuovo Berardenga	Castelnuovo Berardenga
+1318	Binasco	Binasco
+1319	Civitella in Val di Chiana	Civitella in Val di Chiana
+1320	Guardiagrele	Guardiagrele
+1321	Cogoleto	Cogoleto
+1322	Cutrofiano	Cutrofiano
+1323	Vergiate	Vergiate
+1324	Farra di Soligo	Farra di Soligo
+1325	Roccastrada	Roccastrada
+1326	Trissino	Trissino
+1327	Felino	Felino
+1328	Galbiate	Galbiate
+1329	Villafranca Tirrena	Villafranca Tirrena
+1330	Villa Guardia	Villa Guardia
+1331	Subiaco	Subiaco
+1332	Ceprano	Ceprano
+1333	Campogalliano	Campogalliano
+1334	Laveno-Mombello	Laveno-Mombello
+1335	Volvera	Volvera
+1336	Morlupo	Morlupo
+1337	San Giorgio di Piano	San Giorgio di Piano
+1338	Albinea	Albinea
+1339	Montalto di Castro	Montalto di Castro
+1340	Cavenago di Brianza	Cavenago di Brianza
+1341	Santa Venerina	Santa Venerina
+1342	Piovene Rocchette	Piovene Rocchette
+1343	Breganze	Breganze
+1344	Vicopisano	Vicopisano
+1345	Minerbio	Minerbio
+1346	Ala	Ala
+1347	Airola	Airola
+1348	Clusone	Clusone
+1349	Lequile	Lequile
+1350	San Giuseppe Iato	San Giuseppe Iato
+1351	Capri	Capri
+1352	Orte	Orte
+1353	Castelnuovo di Magra	Castelnuovo di Magra
+1354	Minervino Murge	Minervino Murge
+1355	Rossano Veneto	Rossano Veneto
+1356	Rignano sull’Arno	Rignano sull'Arno
+1357	Vallecrosia	Vallecrosia
+1358	Erchie	Erchie
+1359	Vestignè	Vestigne
+1360	Cuggiono	Cuggiono
+1361	Castelnuovo di Porto	Castelnuovo di Porto
+1362	Pianella	Pianella
+1363	Castelbuono	Castelbuono
+1364	Boville Ernica	Boville Ernica
+1365	Origgio	Origgio
+1366	Casarsa della Delizia	Casarsa della Delizia
+1367	Prata di Pordenone	Prata di Pordenone
+1368	Castiglione Olona	Castiglione Olona
+1369	Monte San Savino	Monte San Savino
+1370	Fara Gera d’Adda	Fara Gera d'Adda
+1371	Sandrigo	Sandrigo
+1372	Solarino	Solarino
+1373	Pino Troinese	Pino Troinese
+1374	Roverbella	Roverbella
+1375	Motta Visconti	Motta Visconti
+1376	Palazzolo Acreide	Palazzolo Acreide
+1377	Calvisano	Calvisano
+1378	Vado Ligure	Vado Ligure
+1379	Monte Urano	Monte Urano
+1380	Chiusi	Chiusi
+1381	Spello	Spello
+1382	Castelnovo di Sotto	Castelnovo di Sotto
+1383	Ronciglione	Ronciglione
+1384	San Gavino Monreale	San Gavino Monreale
+1385	Altavilla Milicia	Altavilla Milicia
+1386	Vallo della Lucania	Vallo della Lucania
+1387	Fermignano	Fermignano
+1388	Nogara	Nogara
+1389	Zoppola	Zoppola
+1390	Cologna Veneta	Cologna Veneta
+1391	Caerano di San Marco	Caerano di San Marco
+1392	Bientina	Bientina
+1393	Vigliano Biellese	Vigliano Biellese
+1394	Santhià	Santhia
+1395	Sortino	Sortino
+1396	Concordia sulla Secchia	Concordia sulla Secchia
+1397	San Sperate	San Sperate
+1398	Dorgali	Dorgali
+1399	Ferrandina	Ferrandina
+1400	Gavorrano	Gavorrano
+1401	Ittiri	Ittiri
+1402	Leporano	Leporano
+1403	Ponte di Piave	Ponte di Piave
+1404	Bovezzo	Bovezzo
+1405	Cagli	Cagli
+1406	Caprino Veronese	Caprino Veronese
+1407	Sanluri	Sanluri
+1408	Sala Bolognese	Sala Bolognese
+1409	Vietri sul Mare	Vietri sul Mare
+1410	Decimomannu	Decimomannu
+1411	San Damiano d’Asti	San Damiano d'Asti
+1412	Stra	Stra
+1413	Fusignano	Fusignano
+1414	Fabrica di Roma	Fabrica di Roma
+1415	Verolanuova	Verolanuova
+1416	Trevi	Trevi
+1417	Vedano Olona	Vedano Olona
+1418	Novoli	Novoli
+1419	Toritto	Toritto
+1420	Fontaniva	Fontaniva
+1421	Limena	Limena
+1422	Gravellona Toce	Gravellona Toce
+1423	Cariati	Cariati
+1424	Tuscania	Tuscania
+1425	Rivolta d’Adda	Rivolta d'Adda
+1426	Cairate	Cairate
+1427	Soriano nel Cimino	Soriano nel Cimino
+1428	Serramazzoni	Serramazzoni
+1429	Ponte nell’Alpi	Ponte nell'Alpi
+1430	Salice Salentino	Salice Salentino
+1431	Monte San Giusto	Monte San Giusto
+1432	Quarto d’Altino	Quarto d'Altino
+1433	Venegono Superiore	Venegono Superiore
+1434	Taglio di Po	Taglio di Po
+1435	Bolano	Bolano
+1436	Petrosino	Petrosino
+1437	Appiano Gentile	Appiano Gentile
+1438	None	None
+1439	Boiano	Boiano
+1440	Massa Marittima	Massa Marittima
+1441	Cervaro	Cervaro
+1442	Grottaminarda	Grottaminarda
+1443	Paliano	Paliano
+1444	Racalmuto	Racalmuto
+1445	Agira	Agira
+1446	Vobarno	Vobarno
+1447	Campoformido	Campoformido
+1448	Villa di Serio	Villa di Serio
+1449	San Giovanni Gemini	San Giovanni Gemini
+1450	Sirmione	Sirmione
+1451	Vicchio	Vicchio
+1452	Fuscaldo	Fuscaldo
+1453	Costabissara	Costabissara
+1454	Gattinara	Gattinara
+1455	San Daniele del Friuli	San Daniele del Friuli
+1456	Chiaramonte Gulfi	Chiaramonte Gulfi
+1457	Caccamo	Caccamo
+1458	Campomarino	Campomarino
+1459	Grumello del Monte	Grumello del Monte
+1460	Montorio al Vomano	Montorio al Vomano
+1461	Cellole	Cellole
+1462	Tavullia	Tavullia
+1463	Pisogne	Pisogne
+1464	Breda di Piave	Breda di Piave
+1465	Levico Terme	Levico Terme
+1466	Serra Riccò	Serra Ricco
+1467	Tricesimo	Tricesimo
+1468	Loreggia	Loreggia
+1469	Borgonovo Val Tidone	Borgonovo Val Tidone
+1470	Turbigo	Turbigo
+1471	Carmignano di Brenta	Carmignano di Brenta
+1472	Agerola	Agerola
+1473	Cologne	Cologne
+1474	Avella	Avella
+1475	Colico	Colico
+1476	Sacrofano	Sacrofano
+1477	Manziana	Manziana
+1478	Maracalagonis	Maracalagonis
+1479	Casteltermini	Casteltermini
+1480	Candelo	Candelo
+1481	Arcugnano	Arcugnano
+1482	Anacapri	Anacapri
+1483	Lodi Vecchio	Lodi Vecchio
+1484	Tropea	Tropea
+1485	Palagianello	Palagianello
+1486	Cumiana	Cumiana
+1487	Cartoceto	Cartoceto
+1488	Chiavenna	Chiavenna
+1489	Bosa	Bosa
+1490	Santa Maria di Licodia	Santa Maria di Licodia
+1491	Torrile	Torrile
+1492	Rizziconi	Rizziconi
+1493	Marmirolo	Marmirolo
+1494	Toscolano	Toscolano
+1495	Mozzecane	Mozzecane
+1496	Meta	Meta
+1497	Galliera Veneta	Galliera Veneta
+1498	Cambiago	Cambiago
+1499	Teggiano	Teggiano
+1500	Villa Cortese	Villa Cortese
+1501	Pasiano	Pasiano
+1502	Olginate	Olginate
+1503	Pelago	Pelago
+1504	Tavernelle in Val di Pesa	Tavernelle in Val di Pesa
+1505	Crescentino	Crescentino
+1506	Carpaneto Piacentino	Carpaneto Piacentino
+1507	Pantelleria	Pantelleria
+1508	San Colombano al Lambro	San Colombano al Lambro
+1509	San Gimignano	San Gimignano
+1510	Lamporecchio	Lamporecchio
+1511	Soncino	Soncino
+1512	Curtarolo	Curtarolo
+1513	San Zenone	San Zenone
+1514	Carnago	Carnago
+1515	Marcellina	Marcellina
+1516	Castellalto	Castellalto
+1517	Mirabella Eclano	Mirabella Eclano
+1518	Vergato	Vergato
+1519	Barge	Barge
+1520	Pratola Peligna	Pratola Peligna
+1521	Vigarano Mainarda	Vigarano Mainarda
+1522	Fivizzano	Fivizzano
+1523	Zelo Buon Persico	Zelo Buon Persico
+1524	San Giórgio di Nogaro	San Giorgio di Nogaro
+1525	Vitulazio	Vitulazio
+1526	Città della Pieve	Citta della Pieve
+1527	Vico del Gargano	Vico del Gargano
+1528	Fossò	Fosso
+1529	San Marco Evangelista	San Marco Evangelista
+1530	Vezzano Ligure	Vezzano Ligure
+1531	Solesino	Solesino
+1532	Corte Franca	Corte Franca
+1533	Nicolosi	Nicolosi
+1534	San Filippo della Mela	San Filippo della Mela
+1535	Villa d’Almè	Villa d'Alme
+1536	Spinetoli	Spinetoli
+1537	Melissano	Melissano
+1538	Sarnico	Sarnico
+1539	Cotignola	Cotignola
+1540	Caluso	Caluso
+1541	Robbiate	Robbiate
+1542	Sant’Angelo di Piove di Sacco	Sant'Angelo di Piove di Sacco
+1543	Sonnino	Sonnino
+1544	Santa Giustina in Colle	Santa Giustina in Colle
+1545	Mezzolombardo	Mezzolombardo
+1546	Carosino	Carosino
+1547	Adro	Adro
+1548	Staranzano	Staranzano
+1549	Saltara	Saltara
+1550	Borgetto	Borgetto
+1551	Roccasecca	Roccasecca
+1552	Ferno	Ferno
+1553	Calimera	Calimera
+1554	Mapello	Mapello
+1555	Povegliano Veronese	Povegliano Veronese
+1556	Pederobba	Pederobba
+1557	Brisighella	Brisighella
+1558	Naro	Naro
+1559	Cavaria	Cavaria
+1560	Castello di Godego	Castello di Godego
+1561	Castel Madama	Castel Madama
+1562	Passirano	Passirano
+1563	Camerano	Camerano
+1564	Campofelice di Roccella	Campofelice di Roccella
+1565	Dairago	Dairago
+1566	Cormòns	Cormons
+1567	Sant’Agata Bolognese	Sant'Agata Bolognese
+1568	Montecosaro	Montecosaro
+1569	Zanè	Zane
+1570	Pieve di Cento	Pieve di Cento
+1571	Nole	Nole
+1572	Canicattini Bagni	Canicattini Bagni
+1573	Sparanise	Sparanise
+1574	Longiano	Longiano
+1575	Loreto Aprutino	Loreto Aprutino
+1576	Volta Mantovana	Volta Mantovana
+1577	Torregrotta	Torregrotta
+1578	Brugine	Brugine
+1579	San Marco Argentano	San Marco Argentano
+1580	Buttapietra	Buttapietra
+1581	Tito	Tito
+1582	Poviglio	Poviglio
+1583	Balestrate	Balestrate
+1584	Ceriano Laghetto	Ceriano Laghetto
+1585	Arconate	Arconate
+1586	Rufina	Rufina
+1587	Soave	Soave
+1588	Sennori	Sennori
+1589	Torrita di Siena	Torrita di Siena
+1590	Lignano Sabbiadoro	Lignano Sabbiadoro
+1591	Militello in Val di Catania	Militello in Val di Catania
+1592	Canova	Canova
+1593	Luserna San Giovanni	Luserna San Giovanni
+1594	Carinola	Carinola
+1595	Roggiano Gravina	Roggiano Gravina
+1596	Pontevico	Pontevico
+1597	Noventa di Piave	Noventa di Piave
+1598	San Fior di Sopra	San Fior di Sopra
+1599	Forte dei Marmi	Forte dei Marmi
+1600	Morciano di Romagna	Morciano di Romagna
+1601	Manciano	Manciano
+1602	Castiglione della Pescaia	Castiglione della Pescaia
+1603	Campagna Lupia	Campagna Lupia
+1604	Cavezzo	Cavezzo
+1605	Montecassiano	Montecassiano
+1606	Cordignano	Cordignano
+1607	Novafeltria	Novafeltria
+1608	Quiliano	Quiliano
+1609	Arpino	Arpino
+1610	Bardolino	Bardolino
+1611	Montelabbate	Montelabbate
+1612	Cernobbio	Cernobbio
+1613	Montalbano Ionico	Montalbano Ionico
+1614	Gioiosa Ionica	Gioiosa Ionica
+1615	Chianciano Terme	Chianciano Terme
+1616	Vazzola	Vazzola
+1617	Cagnano Varano	Cagnano Varano
+1618	Pontremoli	Pontremoli
+1619	Regalbuto	Regalbuto
+1620	Rovello Porro	Rovello Porro
+1621	Rivergaro	Rivergaro
+1622	Varallo	Varallo
+1623	Roccadaspide	Roccadaspide
+1624	Altavilla Silentina	Altavilla Silentina
+1625	Spino d’Adda	Spino d'Adda
+1626	Camerota	Camerota
+1627	Campli	Campli
+1628	Gioiosa Marea	Gioiosa Marea
+1629	Pegognaga	Pegognaga
+1630	Cassolnovo	Cassolnovo
+1631	Spezzano Albanese	Spezzano Albanese
+1632	Santi Cosma e Damiano	Santi Cosma e Damiano
+1633	Cisano Bergamasco	Cisano Bergamasco
+1634	Grazzanise	Grazzanise
+1635	Sapri	Sapri
+1636	Cles	Cles
+1637	Trino	Trino
+1638	Roccarainola	Roccarainola
+1639	Baricella	Baricella
+1640	Caulonia	Caulonia
+1641	Dronero	Dronero
+1642	Vernole	Vernole
+1643	Scorrano	Scorrano
+1644	Urbania	Urbania
+1645	Vipiteno	Vipiteno
+1646	Centallo	Centallo
+1647	Venegono Inferiore	Venegono Inferiore
+1648	Fontanellato	Fontanellato
+1649	Cava Manara	Cava Manara
+1650	Sassoferrato	Sassoferrato
+1651	Zibido San Giacomo	Zibido San Giacomo
+1652	San Benedetto Po	San Benedetto Po
+1653	Bellante	Bellante
+1654	Buttigliera Alta	Buttigliera Alta
+1655	Pozzuolo del Friuli	Pozzuolo del Friuli
+1656	Orosei	Orosei
+1657	Pantigliate	Pantigliate
+1658	Campomorone	Campomorone
+1659	Asciano	Asciano
+1660	Serino	Serino
+1661	Monte San Vito	Monte San Vito
+1662	Manoppello	Manoppello
+1663	Roncoferraro	Roncoferraro
+1664	Casteggio	Casteggio
+1665	Borgo a Mozzano	Borgo a Mozzano
+1666	Borgo	Borgo
+1667	Sommatino	Sommatino
+1668	Lazise	Lazise
+1669	Martignacco	Martignacco
+1670	Senise	Senise
+1671	Robecco sul Naviglio	Robecco sul Naviglio
+1672	Oliena	Oliena
+1673	Settimo San Pietro	Settimo San Pietro
+1674	Albisola Marina	Albisola Marina
+1675	Sant’Agostino	Sant'Agostino
+1676	Pignola	Pignola
+1677	Busseto	Busseto
+1678	Gradisca d’Isonzo	Gradisca d'Isonzo
+1679	Cerano	Cerano
+1680	Labico	Labico
+1681	Villasor	Villasor
+1682	Marina di Gioiosa Ionica	Marina di Gioiosa Ionica
+1683	Marcallo con Casone	Marcallo con Casone
+1684	Camerino	Camerino
+1685	Praia a Mare	Praia a Mare
+1686	Olevano sul Tusciano	Olevano sul Tusciano
+1687	Alliste	Alliste
+1688	Villadossola	Villadossola
+1689	Santa Giustina	Santa Giustina
+1690	Arosio	Arosio
+1691	Carapelle	Carapelle
+1692	Borgo Val di Taro	Borgo Val di Taro
+1693	San Cipriano Picentino	San Cipriano Picentino
+1694	Marzabotto	Marzabotto
+1695	Caraglio	Caraglio
+1696	Lercara Friddi	Lercara Friddi
+1697	Nova Siri	Nova Siri
+1698	Mileto	Mileto
+1699	Salgareda	Salgareda
+1700	Olevano Romano	Olevano Romano
+1701	Camposano	Camposano
+1702	Susa	Susa
+1703	Ostiglia	Ostiglia
+1704	Mercato Saraceno	Mercato Saraceno
+1705	Fabbrico	Fabbrico
+1706	Brendola	Brendola
+1707	Notaresco	Notaresco
+1708	Almenno San Salvatore	Almenno San Salvatore
+1709	Pietraperzia	Pietraperzia
+1710	Nervesa della Battaglia	Nervesa della Battaglia
+1711	Montegiorgio	Montegiorgio
+1712	Dozza	Dozza
+1713	Mesola	Mesola
+1714	Curinga	Curinga
+1715	Montebello Vicentino	Montebello Vicentino
+1716	Piedimonte San Germano	Piedimonte San Germano
+1717	Torgiano	Torgiano
+1718	Almenno San Bartolomeo	Almenno San Bartolomeo
+1719	Tagliacozzo	Tagliacozzo
+1720	San Vincenzo	San Vincenzo
+1721	Vidigulfo	Vidigulfo
+1722	Cittaducale	Cittaducale
+1723	Castello d’Argile	Castello d'Argile
+1724	Bolzano Vicentino	Bolzano Vicentino
+1725	Landriano	Landriano
+1726	Almese	Almese
+1727	Castel di Sangro	Castel di Sangro
+1728	Poggio Rusco	Poggio Rusco
+1729	Mede	Mede
+1730	Cellamare	Cellamare
+1731	Ciserano	Ciserano
+1732	Cornuda	Cornuda
+1733	Serra San Bruno	Serra San Bruno
+1734	Montelepre	Montelepre
+1735	San Donaci	San Donaci
+1736	Larino	Larino
+1737	Ghisalba	Ghisalba
+1738	Sutri	Sutri
+1739	Diano Marina	Diano Marina
+1740	Buia	Buia
+1741	Marineo	Marineo
+1742	Verzuolo	Verzuolo
+1743	San Martino Siccomario	San Martino Siccomario
+1744	Pollenza	Pollenza
+1745	Cellino San Marco	Cellino San Marco
+1746	San Cesario sul Panaro	San Cesario sul Panaro
+1747	Cinquefrondi	Cinquefrondi
+1748	Avetrana	Avetrana
+1749	Pontenure	Pontenure
+1750	Trezzano Rosa	Trezzano Rosa
+1751	Montenero di Bisaccia	Montenero di Bisaccia
+1752	Calci	Calci
+1753	Sumirago	Sumirago
+1754	Misinto	Misinto
+1755	Pizzighettone	Pizzighettone
+1756	Vairano Patenora	Vairano Patenora
+1757	Albizzate	Albizzate
+1758	Marcaria	Marcaria
+1759	Gualtieri	Gualtieri
+1760	Castronno	Castronno
+1761	Sammichele di Bari	Sammichele di Bari
+1762	Capannoli	Capannoli
+1763	Poggio Mirteto	Poggio Mirteto
+1764	Bellona	Bellona
+1765	Roccella Ionica	Roccella Ionica
+1766	Arquata Scrivia	Arquata Scrivia
+1767	Montesano sulla Marcellana	Montesano sulla Marcellana
+1768	Strongoli	Strongoli
+1769	Alessano	Alessano
+1770	Gallicano nel Lazio	Gallicano nel Lazio
+1771	Siziano	Siziano
+1772	Capranica	Capranica
+1773	Meolo	Meolo
+1774	Gonnosfanàdiga	Gonnosfanadiga
+1775	Calatafimi	Calatafimi
+1776	Livigno	Livigno
+1777	Arcole	Arcole
+1778	Solbiate Olona	Solbiate Olona
+1779	San Giorgio in Bosco	San Giorgio in Bosco
+1780	Fossacesia	Fossacesia
+1781	Quinzano d’Oglio	Quinzano d'Oglio
+1782	Codevigo	Codevigo
+1783	Albanella	Albanella
+1784	Spinazzola	Spinazzola
+1785	Castelgomberto	Castelgomberto
+1786	Rosolina	Rosolina
+1787	Lurago d’Erba	Lurago d'Erba
+1788	Villaverla	Villaverla
+1789	Sesto al Reghena	Sesto al Reghena
+1790	Sant’Arcangelo	Sant'Arcangelo
+1791	Brolo	Brolo
+1792	Offanengo	Offanengo
+1793	Barzanò	Barzano
+1794	Casorate Sempione	Casorate Sempione
+1795	Brignano Gera d’Adda	Brignano Gera d'Adda
+1796	Sommariva del Bosco	Sommariva del Bosco
+1797	San Michele Salentino	San Michele Salentino
+1798	Caneva	Caneva
+1799	Medolla	Medolla
+1800	Sernaglia della Battaglia	Sernaglia della Battaglia
+1801	Pimonte	Pimonte
+1802	Asiago	Asiago
+1803	Maiolati Spontini	Maiolati Spontini
+1804	Monzuno	Monzuno
+1805	Villanuova sul clisi	Villanuova sul clisi
+1806	Fagagna	Fagagna
+1807	Uzzano	Uzzano
+1808	Subbiano	Subbiano
+1809	Belgioioso	Belgioioso
+1810	Porto Cesareo	Porto Cesareo
+1811	Collepasso	Collepasso
+1812	Strambino	Strambino
+1813	San Marcello Pistoiese	San Marcello Pistoiese
+1814	Torreglia	Torreglia
+1815	Cambiano	Cambiano
+1816	Abbadia San Salvatore	Abbadia San Salvatore
+1817	Santa Margherita di Belice	Santa Margherita di Belice
+1818	Mesoraca	Mesoraca
+1819	Recoaro Terme	Recoaro Terme
+1820	San Canzian d’lsonzo	San Canzian d'lsonzo
+1821	Rio Saliceto	Rio Saliceto
+1822	Monte San Biagio	Monte San Biagio
+1823	Ceggia	Ceggia
+1824	San Giovanni al Natisone	San Giovanni al Natisone
+1825	Fossalta di Portogruaro	Fossalta di Portogruaro
+1826	Lesina	Lesina
+1827	Cavaion Veronese	Cavaion Veronese
+1828	Calcinate	Calcinate
+1829	Nicotera	Nicotera
+1830	Rudiano	Rudiano
+1831	Serravalle Scrivia	Serravalle Scrivia
+1832	Cogorno	Cogorno
+1833	Vanzaghello	Vanzaghello
+1834	Tortorici	Tortorici
+1835	Ravarino	Ravarino
+1836	San Polo d’Enza in Caviano	San Polo d'Enza in Caviano
+1837	Palosco	Palosco
+1838	Mattinata	Mattinata
+1839	Crocetta del Montello	Crocetta del Montello
+1840	Spirano	Spirano
+1841	Trasacco	Trasacco
+1842	San Benigno Canavese	San Benigno Canavese
+1843	Roveredo in Piano	Roveredo in Piano
+1844	Besnate	Besnate
+1845	Remanzacco	Remanzacco
+1846	Carloforte	Carloforte
+1847	Poggiardo	Poggiardo
+1848	Montebello Ionico	Montebello Ionico
+1849	Lioni	Lioni
+1850	Godega di Sant’Urbano	Godega di Sant'Urbano
+1851	Guidizzolo	Guidizzolo
+1852	Gaiarine	Gaiarine
+1853	Casorezzo	Casorezzo
+1854	Tortora	Tortora
+1855	Piana degli Albanesi	Piana degli Albanesi
+1856	Collecorvino	Collecorvino
+1857	Cadeo	Cadeo
+1858	Silandro	Silandro
+1859	Cammarata	Cammarata
+1860	Casalbordino	Casalbordino
+1861	Domusnovas	Domusnovas
+1862	Motta San Giovanni	Motta San Giovanni
+1863	Poppi	Poppi
+1864	Sermide	Sermide
+1865	Luco dei Marsi	Luco dei Marsi
+1866	Sant’Elia Fiumerapido	Sant'Elia Fiumerapido
+1867	Campo San Martino	Campo San Martino
+1868	Ascoli Satriano	Ascoli Satriano
+1869	Truccazzano	Truccazzano
+1870	Monterenzio	Monterenzio
+1871	Monteiasi	Monteiasi
+1872	Quinto Vicentino	Quinto Vicentino
+1873	Pignataro Maggiore	Pignataro Maggiore
+1874	Vernio	Vernio
+1875	Santorso	Santorso
+1876	Maiano	Maiano
+1877	Ronco all’Adige	Ronco all'Adige
+1878	Borso del Grappa	Borso del Grappa
+1879	Genazzano	Genazzano
+1880	Torrebelvicino	Torrebelvicino
+1881	Castelsardo	Castelsardo
+1882	Candiolo	Candiolo
+1883	Vizzini	Vizzini
+1884	Fornovo di Taro	Fornovo di Taro
+1885	Nereto	Nereto
+1886	San Giovanni Suèrgiu	San Giovanni Suergiu
+1887	Serradifalco	Serradifalco
+1888	Acque Dolci	Acque Dolci
+1889	Rosate	Rosate
+1890	Sannicola	Sannicola
+1891	Alezio	Alezio
+1892	Ceriale	Ceriale
+1893	Gozzano	Gozzano
+1894	Carcare	Carcare
+1895	Ostellato	Ostellato
+1896	Bagnolo Piemonte	Bagnolo Piemonte
+1897	San Lucido	San Lucido
+1898	Bagnolo San Vito	Bagnolo San Vito
+1899	Lonate Ceppino	Lonate Ceppino
+1900	Mel	Mel
+1901	Bagni di Lucca	Bagni di Lucca
+1902	Corsano	Corsano
+1903	Bottanuco	Bottanuco
+1904	Gualdo Cattaneo	Gualdo Cattaneo
+1905	Ascea	Ascea
+1906	Villanova Mondovì	Villanova Mondovi
+1907	Amalfi	Amalfi
+1908	Castelnuovo di Garfagnana	Castelnuovo di Garfagnana
+1909	San Dorligo della Valle	San Dorligo della Valle
+1910	Villa Bartolomea	Villa Bartolomea
+1911	Bussoleno	Bussoleno
+1912	Costigliole d’Asti	Costigliole d'Asti
+1913	Romentino	Romentino
+1914	Stornara	Stornara
+1915	Robbio	Robbio
+1916	Corigliano d’Otranto	Corigliano d'Otranto
+1917	Girifalco	Girifalco
+1918	Picerno	Picerno
+1919	Canale	Canale
+1920	Ornago	Ornago
+1921	Montalcino	Montalcino
+1922	Certosa di Pavia	Certosa di Pavia
+1923	Longare	Longare
+1924	Loro Ciuffenna	Loro Ciuffenna
+1925	San Donato di Lecce	San Donato di Lecce
+1926	Ospedaletto Euganeo	Ospedaletto Euganeo
+1927	Ceva	Ceva
+1928	Bracigliano	Bracigliano
+1929	Fontanelle	Fontanelle
+1930	Maiori	Maiori
+1931	Bagno di Romagna	Bagno di Romagna
+1932	Rogliano	Rogliano
+1933	Sambuca di Sicilia	Sambuca di Sicilia
+1934	Viggiù	Viggiu
+1935	Naturno	Naturno
+1936	Buti	Buti
+1937	Lovere	Lovere
+1938	Gattatico	Gattatico
+1939	Otranto	Otranto
+1940	Campagnola Emilia	Campagnola Emilia
+1941	Busalla	Busalla
+1942	Castelverde	Castelverde
+1943	Camporosso	Camporosso
+1944	Cortina d’Ampezzo	Cortina d'Ampezzo
+1945	Angera	Angera
+1946	Cilavegna	Cilavegna
+1947	Dello	Dello
+1948	Villa del Conte	Villa del Conte
+1949	San Secondo Parmense	San Secondo Parmense
+1950	Brescello	Brescello
+1951	Gossolengo	Gossolengo
+1952	Grotte	Grotte
+1953	Melicucco	Melicucco
+1954	Fontevivo	Fontevivo
+1955	Cancello	Cancello
+1956	Guagnano	Guagnano
+1957	Palmanova	Palmanova
+1958	Tuglie	Tuglie
+1959	Villanova d’Asti	Villanova d'Asti
+1960	Arce	Arce
+1961	Riolo Terme	Riolo Terme
+1962	Rocca di Neto	Rocca di Neto
+1963	Sala Baganza	Sala Baganza
+1964	San Paolo di Civitate	San Paolo di Civitate
+1965	Casaleone	Casaleone
+1966	San Giorgio Piacentino	San Giorgio Piacentino
+1967	Trivero	Trivero
+1968	Chiaravalle Centrale	Chiaravalle Centrale
+1969	Arienzo	Arienzo
+1970	Davoli	Davoli
+1971	Nocera Umbra	Nocera Umbra
+1972	Pavia di Udine	Pavia di Udine
+1973	Pomarance	Pomarance
+1974	Diamante	Diamante
+1975	Cividate al Piano	Cividate al Piano
+1976	Genzano di Lucania	Genzano di Lucania
+1977	Gabicce	Gabicce
+1978	Passignano sul Trasimeno	Passignano sul Trasimeno
+1979	Trevignano Romano	Trevignano Romano
+1980	Montepaone	Montepaone
+1981	Casalserugo	Casalserugo
+1982	Mugnano del Cardinale	Mugnano del Cardinale
+1983	Mezzocorona	Mezzocorona
+1984	Apice	Apice
+1985	San Tammaro	San Tammaro
+1986	Panicale	Panicale
+1987	Marsico Vetere	Marsico Vetere
+1988	Quistello	Quistello
+1989	Casoli	Casoli
+1990	Cupra Marittima	Cupra Marittima
+1991	Moglia	Moglia
+1992	Montefalco	Montefalco
+1993	Sarcedo	Sarcedo
+1994	Sannazzaro de’ Burgondi	Sannazzaro de' Burgondi
+1995	Custonaci	Custonaci
+1996	Povegliano	Povegliano
+1997	Telgate	Telgate
+1998	Peveragno	Peveragno
+1999	Poncarale	Poncarale
+2000	Boretto	Boretto
+2001	Borgo San Giacomo	Borgo San Giacomo
+2002	Caiazzo	Caiazzo
+2003	Bentivoglio	Bentivoglio
+2004	Forino	Forino
+2005	Botricello	Botricello
+2006	Sovere	Sovere
+2007	Ispra	Ispra
+2008	Dicomano	Dicomano
+2009	Cavour	Cavour
+2010	San Cipirello	San Cipirello
+2011	Soleto	Soleto
+2012	Castiglione dei Pepoli	Castiglione dei Pepoli
+2013	Galliera	Galliera
+2014	Aquino	Aquino
+2015	Torchiarolo	Torchiarolo
+2016	Codognè	Codogne
+2017	San Vito Chietino	San Vito Chietino
+2018	Anghiari	Anghiari
+2019	Gandino	Gandino
+2020	Povoletto	Povoletto
+2021	Cavallermaggiore	Cavallermaggiore
+2022	Neviano	Neviano
+2023	Canzo	Canzo
+2024	Favria	Favria
+2025	Cotronei	Cotronei
+2026	Montemiletto	Montemiletto
+2027	Montanaro	Montanaro
+2028	Rivanazzano	Rivanazzano
+2029	San Pietro di Feletto	San Pietro di Feletto
+2030	Stornarella	Stornarella
+2031	Villapiana	Villapiana
+2032	Presicce	Presicce
+2033	Lanzo Torinese	Lanzo Torinese
+2034	Lagonegro	Lagonegro
+2035	Casal Velino	Casal Velino
+2036	Caprarola	Caprarola
+2037	Lanusei	Lanusei
+2038	Castelvetro Piacentino	Castelvetro Piacentino
+2039	Acquapendente	Acquapendente
+2040	Calatabiano	Calatabiano
+2041	Sant’Omero	Sant'Omero
+2042	Limana	Limana
+2043	Borgo Ticino	Borgo Ticino
+2044	Basiliano	Basiliano
+2045	Colle Umberto	Colle Umberto
+2046	Fragagnano	Fragagnano
+2047	Giavera del Montello	Giavera del Montello
+2048	Padula	Padula
+2049	Illasi	Illasi
+2050	Monte Libretti	Monte Libretti
+2051	Castrignano del Capo	Castrignano del Capo
+2052	Santa Teresa Gallura	Santa Teresa Gallura
+2053	Gazzo Veronese	Gazzo Veronese
+2054	Gizzeria	Gizzeria
+2055	Linguaglossa	Linguaglossa
+2056	Esine	Esine
+2057	Ripi	Ripi
+2058	Gazzaniga	Gazzaniga
+2059	Vitorchiano	Vitorchiano
+2060	Gagliano del Capo	Gagliano del Capo
+2061	Centuripe	Centuripe
+2062	Monticelli d’Ongina	Monticelli d'Ongina
+2063	Rodigo	Rodigo
+2064	Pagnacco	Pagnacco
+2065	Giussago	Giussago
+2066	Muro Lucano	Muro Lucano
+2067	Polla	Polla
+2068	Oppido Mamertina	Oppido Mamertina
+2069	Albaredo d’Adige	Albaredo d'Adige
+2070	Carsoli	Carsoli
+2071	Rapolano Terme	Rapolano Terme
+2072	Veronella	Veronella
+2073	Gottolengo	Gottolengo
+2074	Sarroch	Sarroch
+2075	Castellucchio	Castellucchio
+2076	Maruggio	Maruggio
+2077	Campegine	Campegine
+2078	Chiusa	Chiusa
+2079	Chions	Chions
+2080	Muravera	Muravera
+2081	Canino	Canino
+2082	Santa Caterina Villarmosa	Santa Caterina Villarmosa
+2083	Coreglia Antelminelli	Coreglia Antelminelli
+2084	Correzzola	Correzzola
+2085	Castelnuovo Scrivia	Castelnuovo Scrivia
+2086	Camogli	Camogli
+2087	Guglionesi	Guglionesi
+2088	Longarone	Longarone
+2089	Cerda	Cerda
+2090	Maser	Maser
+2091	Cannobio	Cannobio
+2092	Vigone	Vigone
+2093	Malles Venosta	Malles Venosta
+2094	San Giovanni Ilarione	San Giovanni Ilarione
+2095	Corropoli	Corropoli
+2096	Laces	Laces
+2097	Marano sul Panaro	Marano sul Panaro
+2098	Ardore	Ardore
+2099	Centola	Centola
+2100	Bucchianico	Bucchianico
+2101	Lagundo	Lagundo
+2102	Mansuè	Mansue
+2103	Castelbellino	Castelbellino
+2104	Capistrello	Capistrello
+2105	Portoscuso	Portoscuso
+2106	Samassi	Samassi
+2107	Tricarico	Tricarico
+2108	Vaglia	Vaglia
+2109	Laureana di Borrello	Laureana di Borrello
+2110	Grassano	Grassano
+2111	Baselga di Pinè	Baselga di Pine
+2112	Celle Ligure	Celle Ligure
+2113	Villadose	Villadose
+2114	Maratea	Maratea
+2115	Condofuri	Condofuri
+2116	Assoro	Assoro
+2117	Montecastrilli	Montecastrilli
+2118	Lesignano de’ Bagni	Lesignano de' Bagni
+2119	Mineo	Mineo
+2120	Bevagna	Bevagna
+2121	Bella	Bella
+2122	Agnone	Agnone
+2123	Tolfa	Tolfa
