@@ -1,6 +1,8 @@
-.ipynb_checkpoints
 __pycache__
+.vscode
 cache
-Untitled
-workInProgress
-.idea
+token
+apikey
+data
+examples*
+logger
