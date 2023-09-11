@@ -19,3 +19,5 @@ logger.log
 ggbWork.ipynb
 #  Bot persistence file for continuation after restart
 connectBot
+#  File-notebook with plans and actions
+WORKFLOW.md
