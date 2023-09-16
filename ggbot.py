@@ -6,11 +6,11 @@ from logging.handlers import RotatingFileHandler
 import os
 from pathlib import Path
 import urllib.parse
-from datetime import date, datetime
+from datetime import date, datetime, time
 from typing import Dict
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.helpers import escape_markdown
-import GreatGigBotLibPd as ggbl
+import gglib
 from pathlib import Path
 import pandas as pd
 from telegram.ext import (
@@ -104,7 +104,7 @@ async def connectLastm(update, context):
     user = update.message.from_user
     userId = str(user.id)
     context.user_data['userId'] = userId
-    ggbl.writeSett(userId, 'userId', userId)
+    gglib.writeSett(userId, 'userId', userId)
     logger.info(f'User {user.first_name} {user.last_name} id: {userId}')
     await update.message.reply_text('Enter lastfm\'s profile name:')
     return USERNAME
@@ -115,10 +115,12 @@ async def username(update, context):
     user = update.message.from_user
     userId = str(user.id)
     lastfmUser = update.message.text.lower()
-    ggbl.writeSett(userId, 'lastfmUser', lastfmUser)
+    gglib.writeSett(userId, 'lastfmUser', lastfmUser)
     logger.info(f'User {user.first_name} {user.last_name} username: {lastfmUser}')
-    await update.message.reply_text('Which artist are you interested?',
-                              reply_markup=ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True, one_time_keyboard=True))
+    await update.message.reply_text(
+        'Would you like to get announced about each listened artist, or only about listened at least twice for a day?',
+        reply_markup=ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True, one_time_keyboard=True)
+        )
     return MINLISTENS
 
 
@@ -132,11 +134,15 @@ async def minlistens(update, context):
         minListens = 2
     elif minlistensAnswer == 'All listened artists':
         minListens = 1
-    ggbl.writeSett(userId, 'minListens', minListens)
-    reply_keyboard = [['Yes (I know it takes time)', 'No']]
-    await update.message.reply_text('Now, run the search?',
-                              reply_markup=ReplyKeyboardMarkup(
-                                  reply_keyboard, one_time_keyboard=True, input_field_placeholder='Yes or No?'))
+    gglib.writeSett(userId, 'minListens', minListens)
+    reply_keyboard = [['Yes', 'No']]
+    await update.message.reply_text(
+                                gglib.alChar('Ok! Press *Yes* if you want to run daily news about new concerts'),
+                                reply_markup=ReplyKeyboardMarkup(
+                                                reply_keyboard,
+                                                one_time_keyboard=True,
+                                                input_field_placeholder='Yes or No?'),
+                                parse_mode='MarkdownV2')
     # reply_keyboard = [['Yes'], ['No, search worldwide']]
     # update.message.reply_text("""Would you like to specify countries or cities for event
     # searching? Only this locations will shown""", reply_markup=ReplyKeyboardMarkup(reply_keyboard,
@@ -167,7 +173,7 @@ async def minlistens(update, context):
 #     countryAnswer = update.message.text
 #     logger.info(f'User {user.first_name} {user.last_name} countryAnswer: {countryAnswer}')
 #     if countryAnswer = 'Skip':
-#         if 'Russia' in ggbl.readSett(['places'],userId)[0].keys():
+#         if 'Russia' in gglib.readSett(['places'],userId)[0].keys():
 #             answer = 'Would you like to specify cities for Russia?'
 #             reply_keyboard = [['Yes'], ['No, search for whole Russia']]
 #             update.message.reply_text(text=answer, reply_markup=ReplyKeyboardMarkup(reply_keyboard,
@@ -177,7 +183,7 @@ async def minlistens(update, context):
 #             return SCHEDULE
 #     else:
 #         reply_keyboard = [[Skip]]
-#         if ggbl.addCountry(countryAnswer, userId):
+#         if gglib.addCountry(countryAnswer, userId):
 #             answer = 'Country added to filter.\n If want to add another one, send now. If done, press Skip»'
 #         else:
 #             answer = "Can\'t find this country. Try use common country name or press «Skip» to go next step"
@@ -201,6 +207,15 @@ async def runsearch(update, context):
                                 name=str(userId),
                                 job_kwargs={'misfire_grace_time':3600}
                                 )
+    context.job_queue.run_daily(
+                                callback=getEventsJob,
+                                time=time.fromisoformat('09:00:00'),
+                                chat_id=chat_id,
+                                user_id=userId,
+                                job_kwargs={'misfire_grace_time':3600*12,
+                                            'coalesce':True}
+                                )
+
     return ConversationHandler.END
 
 
@@ -224,7 +239,7 @@ async def cancel(update, context):
 
 async def getEvents(update, context):
     userId = str(update.message.from_user.id)
-    infoText = ggbl.getInfoText(userId)
+    infoText = gglib.getInfoText(userId)
     await update.message.reply_text(infoText, reply_markup=ReplyKeyboardRemove(),parse_mode='MarkdownV2')
     logger.info('infoText was sent')
 
@@ -238,7 +253,7 @@ async def getEventsJob(context):
     job = context.job
 
     userId = str(job.user_id)
-    infoText = ggbl.getInfoText(userId)
+    infoText = gglib.getInfoText(userId)
 
     await context.bot.send_message(
                             chat_id=job.chat_id,
@@ -256,7 +271,7 @@ async def showNews(update, context):
     """
     userId = str(update.message.from_user.id)
     command = update.message.text
-    newsText = ggbl.getNewsText(userId, command)
+    newsText = gglib.getNewsText(userId, command)
     await update.message.reply_text(text=newsText, parse_mode='MarkdownV2', disable_web_page_preview=True)
     logger.info('newsText sent to ')
 
