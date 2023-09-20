@@ -1,0 +1,59 @@
+---
+title: Telegram Bot
+---
+%%{
+    init: {
+        'theme': 'forest',
+        'flowchart': {
+                    'diagramPadding':30,
+                    'titleTopMargin':25,
+                    'nodeSpacing':30,
+                    'rankSpacing':30,
+                    'curve':'basis',
+                    'padding':15,
+                    'defaultRenderer':'dagre-wrapper',
+                    'wrappingWidth':100
+                    },
+        'themeVariables': {
+                            }
+            }
+    }%%
+
+flowchart TB
+    A((....../start......)) --> B{"`Does user have account?`"}
+    B -->|Yes-></br></br>Message| C1["`You have *n* accounts saved:[...]. If you want add or delete accounts from bot, please use ...`"]
+    B -->|No| C2["`Hi! For using this bot please add at least one Last.fm account with command /addlastfm`"]
+    D -->|Message| E["`Enter last.fm account`"]
+    E -->|"(Entered text)"| F{Is account valid?}
+    F -->|Yes -> Save to DB -></br></br>Message| G["`Account been added. Settings Used:... To change, use /settings`"]
+    F -->|No-></br></br>Message| H["`Account ... *related msg*. Please enter again`"]
+    H -->|"(Entered text)"|F
+    I((../addlastfm..))-->J{"`Can user add more accounts?`"}
+    J -->|Yes|D((ADDLASTFM))
+    J -->|No-></br></br>Message|K["`Sorry,now you can add only *n* accounts (you got *n*)`"]
+    L((".../settings...")) --> M{"`Does user have account?`"}
+    M -->|No-></br></br>Message| N["`Before change settings, please add accounts with /addlastfm`"]
+    M -->|Yes| O((SET_MINLIS))
+    O -->|Message|P["`How much artist's tracks should be listened in a day to look for events?`"]
+    P -->|"(Choosing of 1,2,3,5,10)-></br>Save to DB"| P1((SET_FREQ))
+    P1-->|"</br></br>Message"| Q["`How often bot should send you new events?`"]
+    Q-->|"(Choosing of </br>''Each week',</br>'Each day'</br>'Only by request) -></br>Save to DB"|R{What choosed?}
+    R-->|'Each day'|R2
+    S1["`Ok, what time is better? Please enter UTC time`"]-->|"(time entered)-> </br>Save to DB -> </br>Message"|T["`Saved. Note: in case of no new concerts there, you won't be notified. You can change ... . *Info*`"]
+    R-->|'Each week'|R1((SET_DAY))-->|Message|S2["`Ok, what day it should be?`"]
+    S2-->|"(day of week entered) -> </br>Save to DB"|R2((SET_TIME))-->|Message|S1
+    R------>|'Only by request'|U["`Saved. Note: you can use /events command to check if there new concerts`"]
+
+    Z1((ANYSTATE))-->Z2((.../cancel....))-->Z3[End of operation]
+
+
+    classDef default stroke-width:3px
+    classDef userInput fill:#2596be,stroke:#063970
+    classDef state fill:#B1ADAD,stroke:#000000
+    classDef entryPoint fill:#009c11
+    classDef termination fill:#E60109,stroke:#ab341a
+    class A,I,L entryPoint
+    class B,F,M,P,R decision
+    class C1,C2,G,K,N,T,U,Z3 termination
+    class D,O,P1,R1,R2,Z1,Z2 state
+    class E,H,P,Q,S1,S2 userInput
