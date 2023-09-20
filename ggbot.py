@@ -25,7 +25,7 @@ from telegram.ext import (
 )
 
 
-BOTFOLDER = '/home/eva/git/GreatGigBot/'
+BOTFOLDER = os.path.dirname(os.path.realpath(__file__))
 Path('connectBot').unlink(missing_ok=True)
 
 def startLogger():
@@ -39,10 +39,10 @@ def startLogger():
                 return 1
     ch = logging.StreamHandler()
     fh = logging.FileHandler(
-        filename='/home/eva/git/GreatGigBot/logger.log',
+        filename=os.path.join(BOTFOLDER,'logger.log'),
         mode='w')
     rh = RotatingFileHandler(
-        filename='/home/eva/git/GreatGigBot/data/log/logger_rotating.log',
+        filename=os.path.join(BOTFOLDER, 'data/log/logger_rotating.log'),
         mode='a',
         maxBytes=1024*1024*20,
         backupCount=5)
@@ -209,7 +209,7 @@ async def runsearch(update, context):
                                 )
     context.job_queue.run_daily(
                                 callback=getEventsJob,
-                                time=time.fromisoformat('09:00:00'),
+                                time=time.fromisoformat('17:45:00'),
                                 chat_id=chat_id,
                                 user_id=userId,
                                 job_kwargs={'misfire_grace_time':3600*12,

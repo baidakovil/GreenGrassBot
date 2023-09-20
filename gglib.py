@@ -14,7 +14,7 @@ import pandas as pd
 import numpy as np
 import logging
 
-BOTFOLDER = '/home/eva/git/GreatGigBot/'
+BOTFOLDER = os.path.dirname(os.path.realpath(__file__))
 
 logger = logging.getLogger('A.B')
 logger.setLevel(logging.DEBUG)
@@ -171,7 +171,7 @@ def parserLibrary(lastfmUser: str, timeDelay: timedelta) -> Dict[str, int]:
         return root, status, totalPages
 
     artistList = dict()
-    with open('/home/eva/git/GreatGigBot/apikey') as file:
+    with open(os.path.join(BOTFOLDER, 'apikey')) as file:
         apiKey = file.read()
 
     #  First page
