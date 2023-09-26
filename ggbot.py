@@ -1,83 +1,36 @@
-#!/usr/bin/env python
-# coding: utf-8
-# -*- coding: utf-8 -*-
 import logging
-from logging.handlers import RotatingFileHandler
 import os
 from pathlib import Path
 import urllib.parse
 from datetime import date, datetime, time
 from typing import Dict
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
-from telegram.helpers import escape_markdown
 import gglib
-from pathlib import Path
 import pandas as pd
 from telegram.ext import (
-    Application,
     CallbackContext,
     CommandHandler,
     ContextTypes,
     ConversationHandler,
     filters,
     MessageHandler,
-    PicklePersistence,
 )
 
+logger = logging.getLogger('A.C')
+logger.setLevel(logging.DEBUG)
 
-BOTFOLDER = os.path.dirname(os.path.realpath(__file__))
-Path('connectBot').unlink(missing_ok=True)
-
-def startLogger():
-    logger = logging.getLogger('A')
-    logger.setLevel(logging.DEBUG)
-    class ContextFilter(logging.Filter):
-        def filter(self, record):
-            if (record.name=='A') and (record.levelname=='DEBUG'):
-                return 0
-            else:
-                return 1
-    ch = logging.StreamHandler()
-    fh = logging.FileHandler(
-        filename=os.path.join(BOTFOLDER,'logger.log'),
-        mode='w')
-    rh = RotatingFileHandler(
-        filename=os.path.join(BOTFOLDER, 'data/log/logger_rotating.log'),
-        mode='a',
-        maxBytes=1024*1024*20,
-        backupCount=5)
-    ch_formatter = logging.Formatter(
-        '[%(asctime)s.%(msecs)03d - %(name)3s - %(levelname)8s - %(funcName)18s()] %(message)s',
-        '%H:%M:%S')
-    fh_formatter = logging.Formatter(
-        '[%(asctime)s.%(msecs)03d - %(name)20s - %(filename)20s:%(lineno)4s - %(funcName)20s() - %(levelname)8s - %(threadName)10s] %(message)s',
-        '%Y-%m-%d %H:%M:%S')
-    ch.setLevel(logging.DEBUG)
-    fh.setLevel(logging.DEBUG)
-    rh.setLevel(logging.DEBUG)
-    ch.setFormatter(ch_formatter)
-    fh.setFormatter(fh_formatter)
-    rh.setFormatter(fh_formatter)
-    logger.addHandler(ch)
-    logger.addHandler(fh)
-    logger.addHandler(rh)
-    ch_filter = ContextFilter()
-    ch.addFilter(ch_filter)
-    return logger
-
-logger = startLogger()
-
-logger.info(f'App started, __name__ is {__name__}')
 
 async def start(update, context):
+
+    # TODO  if account_quantity:
+            #     send_message...
+            # else:
+            #     send message ...
+
     userId = context.user_data[id]
     context.bot.send_message(chat_id=userId,
                              text='<a href="https://www.last.fm/user/trygreatgigbot">Link</a>',
                              parse_mode='HTML')
-
-async def echo(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text=update.message.text)
-
 
 async def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
@@ -86,7 +39,6 @@ async def caps(update, context):
     text_caps = ' '.join(context.args).upper()
     context.bot.send_message(chat_id=update.effective_chat.id, text=text_caps)
 
-# START CONVERSATION
 USERNAME, MINLISTENS, RUNSEARCH = range(3)
 
 def remove_job_if_exists(name: str, context) -> bool:
@@ -99,8 +51,19 @@ def remove_job_if_exists(name: str, context) -> bool:
     return True
 
 
-async def connectLastm(update, context):
-    """Starts the conversation and asks the user about lastfmUser."""
+async def connect(update, context):
+    """
+    Starts the conversation and asks the lastfm username.
+    """
+
+    # if len(account_quantity) == 0:
+    #     add user_id to db 
+    # elif len(account_quantity) == len(max_acc_quantity):
+    #     send_message(sorry)
+    #     return end
+    # send_message(enter account)
+    # return USERNAME
+
     user = update.message.from_user
     userId = str(user.id)
     context.user_data['userId'] = userId
@@ -111,6 +74,14 @@ async def connectLastm(update, context):
 
 async def username(update, context):
     """Waits for lastfmUser"""
+
+    # if account valid:
+    #     save to db
+    #     send_message(account saved, settings used...)
+    #     return end
+    # send_message(account not valid)
+    # return MINLISTENS
+
     reply_keyboard = [['Listened at least twice a day'],['All listened artists']]
     user = update.message.from_user
     userId = str(user.id)
@@ -127,7 +98,6 @@ async def username(update, context):
 async def minlistens(update, context):
     """Waits for answer which artists are in interest"""
     user = update.message.from_user
-    # logger.info(f'User {user.first_name} {user.last_name} minListens: {minListens}')
     userId = str(user.id)
     minlistensAnswer = update.message.text
     if minlistensAnswer == 'Listened at least twice a day':
@@ -143,53 +113,9 @@ async def minlistens(update, context):
                                                 one_time_keyboard=True,
                                                 input_field_placeholder='Yes or No?'),
                                 parse_mode='MarkdownV2')
-    # reply_keyboard = [['Yes'], ['No, search worldwide']]
-    # update.message.reply_text("""Would you like to specify countries or cities for event
-    # searching? Only this locations will shown""", reply_markup=ReplyKeyboardMarkup(reply_keyboard,
-    #                                                 resize_keyboard=True, one_time_keyboard=True))
+
     return RUNSEARCH
 
-# def places(update, context: CallbackContext):
-#     """Waits for answer whether specify countries"""
-#     user = update.message.from_user
-#     placesAnswer = update.message.text
-#     logger.info(f'User {user.first_name} {user.last_name} placesAnswer: {placesAnswer}')
-#     if placesAnswer == 'Yes':
-#         logger.info(f'User {user.first_name} {user.last_name} choose to specify country')
-#         answer = 'Please type country you want:'
-#         update.message.reply_text(text=answer, reply_markup=ReplyKeyboardRemove())
-#         return COUNTRIES
-#     elif (placesAnswer == 'No, search worldwide') or (placesAnswer == 'Done'):
-#         answer = 'Ok.\nHow often should bot notice you about new concerts?'
-#         update.message.reply_text(text=answer, reply_markup=ReplyKeyboardRemove())
-#         return SCHEDULE
-#
-#     update.message.reply_text(text= reply_markup=ReplyKeyboardRemove())
-
-# def countries(update, context: CallbackContext):
-#     """Waits for country specified"""
-#     user = update.message.from_user
-#     userId = str(user.id)
-#     countryAnswer = update.message.text
-#     logger.info(f'User {user.first_name} {user.last_name} countryAnswer: {countryAnswer}')
-#     if countryAnswer = 'Skip':
-#         if 'Russia' in gglib.readSett(['places'],userId)[0].keys():
-#             answer = 'Would you like to specify cities for Russia?'
-#             reply_keyboard = [['Yes'], ['No, search for whole Russia']]
-#             update.message.reply_text(text=answer, reply_markup=ReplyKeyboardMarkup(reply_keyboard,
-#                                                             resize_keyboard=True, one_time_keyboard=True))
-#             return CITIES
-#         else:
-#             return SCHEDULE
-#     else:
-#         reply_keyboard = [[Skip]]
-#         if gglib.addCountry(countryAnswer, userId):
-#             answer = 'Country added to filter.\n If want to add another one, send now. If done, press Skip»'
-#         else:
-#             answer = "Can\'t find this country. Try use common country name or press «Skip» to go next step"
-#         update.message.reply_text(text=answer, reply_markup=ReplyKeyboardMarkup(reply_keyboard,
-#                                                         resize_keyboard=True, one_time_keyboard=True))
-#         return COUNTRIES
 
 async def runsearch(update, context):
     user = update.message.from_user
@@ -280,98 +206,36 @@ async def getinfo(update, context):
     getinfostring = str(context.user_data)
     await update.message.reply_text('I know: \n' + getinfostring)
 
-
-def main():
-
-    with open(os.path.join(BOTFOLDER, 'token')) as file:
-        token = file.read()
-
-    persistence = PicklePersistence(filepath='connectBot')
-    application = Application.builder().token(token).persistence(persistence).build()
-
+def loadInteractions(application):
+    """
+    Loads all command handlers on start.
+    Args:
+        application: application for adding handlers to
+    """
     startHandler = CommandHandler('start', start)
-    # echoHandler = MessageHandler(filters.TEXT & ~filters.COMMAND, echo)
     capsHandler = CommandHandler('caps', caps)
     getEventsHandler = CommandHandler('getevents', getEvents)
     showNewsHandler = MessageHandler(filters.Regex('/([0-9]{2,3})$'), showNews)
     getinfoHandler = CommandHandler('getinfo', getinfo)
 
+    conv_handler = ConversationHandler(
+        entry_points=[CommandHandler('connect', connect)],
+        states={
+            USERNAME: [MessageHandler(filters.TEXT, username)],
+            MINLISTENS: [MessageHandler(filters.Text('Listened at least twice a day') | filters.Text('All listened artists'), minlistens)],
+            RUNSEARCH: [MessageHandler(filters.Text('Yes (I know it takes time)'), runsearch),
+                        MessageHandler(filters.Text('No'), skiprunsearch)],
+                },
+        fallbacks=[CommandHandler('cancel', cancel)],
+        allow_reentry=True,
+        name="ggb_picklefile",
+        persistent=True,
+                                    )
+
     application.add_handler(startHandler)
-    # application.add_handler(echoHandler)
     application.add_handler(capsHandler)
     application.add_handler(getEventsHandler)
     application.add_handler(showNewsHandler)
     application.add_handler(getinfoHandler)
-
-    # Add conversation handler 
-    conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('connect', connectLastm)],
-        states={
-            USERNAME: [MessageHandler(filters.TEXT, username)],
-            MINLISTENS: [MessageHandler(filters.Text('Listened at least twice a day') | filters.Text('All listened artists'), minlistens)],
-            # PLACES: [MessageHandler(filters.TEXT('Yes'), places),
-            #             MessageHandler(filters.TEXT('No, search worldwide'), places)],
-            RUNSEARCH: [MessageHandler(filters.Text('Yes (I know it takes time)'), runsearch),
-                        MessageHandler(filters.Text('No'), skiprunsearch)],
-        },
-        fallbacks=[CommandHandler('cancel', cancel)],
-        allow_reentry=True,
-        name="ggb_picklefile",
-        persistent=True,
-    )
     application.add_handler(conv_handler)
-
-    # log all errors
     application.add_error_handler(error)
-    # Start the Bot
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
-
-""" def main():
-    persistence_path='./connectBot'
-    # updater = Updater("...", persistence=persistence)
-    dispatcher = updater.dispatcher
-
-    startHandler = CommandHandler('start', start)
-    #    echoHandler = MessageHandler(Filters.text & (~Filters.command), echo)
-    capsHandler = CommandHandler('caps', caps)
-    getEventsHandler = CommandHandler('getevents', getEvents)
-    showNewsHandler = MessageHandler(Filters.regex('/([0-9]{2,3})$'), showNews)
-    getinfoHandler = CommandHandler('getinfo', getinfo)
-
-    dispatcher.add_handler(startHandler)
-    #    dispatcher.add_handler(echoHandler)
-    dispatcher.add_handler(capsHandler)
-    dispatcher.add_handler(getEventsHandler)
-    dispatcher.add_handler(showNewsHandler)
-    dispatcher.add_handler(getinfoHandler)
-
-    # Add conversation handler 
-    conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('connect', connectLastm)],
-        states={
-            USERNAME: [MessageHandler(Filters.text, username)],
-            MINLISTENS: [MessageHandler(Filters.text('Listened at least twice a day') | Filters.text('All listened artists'), minlistens)],
-            # PLACES: [MessageHandler(Filters.text('Yes'), places),
-            #             MessageHandler(Filters.text('No, search worldwide'), places)],
-            RUNSEARCH: [MessageHandler(Filters.text('Yes (I know it takes time)'), runsearch),
-                        MessageHandler(Filters.text('No'), skiprunsearch)],
-        },
-        fallbacks=[CommandHandler('cancel', cancel)],
-        allow_reentry=True,
-        name="ggb_picklefile",
-        persistent=True,
-    )
-
-    dispatcher.add_handler(conv_handler)
-
-    # log all errors
-    dispatcher.add_error_handler(error)
-    # Start the Bot
-    updater.start_polling()
-
-    updater.idle()
-    """
-
-
-if __name__ == '__main__':
-    main()

@@ -13,8 +13,13 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 import numpy as np
 import logging
+from dotenv import load_dotenv
 
-BOTFOLDER = os.path.dirname(os.path.realpath(__file__))
+BOT_FOLDER = os.path.dirname(os.path.realpath(__file__))
+
+dotenv_path = os.path.join(BOT_FOLDER, '.env')
+load_dotenv(dotenv_path)
+apiKey = os.getenv("API_KEY")
 
 logger = logging.getLogger('A.B')
 logger.setLevel(logging.DEBUG)
@@ -62,7 +67,7 @@ def pageCacher(pageType: str,
         safeArtistName = "".join(
             [c for c in pageId if c.isalnum() or c in safeCharacters])
         cacheFileName = os.path.join(
-            BOTFOLDER, 'cache/concerts/', safeArtistName+'_lastfm.html')
+            BOT_FOLDER, 'cache/concerts/', safeArtistName+'_lastfm.html')
         try:
             cacheHandle = open(cacheFileName, 'r', encoding="utf-8")
             htmlText = cacheHandle.read()
@@ -73,14 +78,14 @@ def pageCacher(pageType: str,
     elif pageType == 'libraryPage':
         userName = pageId.split('_')[0]
         cacheFileName = os.path.join(
-            BOTFOLDER, 'cache/library/', f'{userName}/{pageId}.xml')
+            BOT_FOLDER, 'cache/library/', f'{userName}/{pageId}.xml')
         try:
             cacheHandle = open(cacheFileName, 'r', encoding="utf-8")
             htmlText = cacheHandle.read()
             logger.debug(f'Library {pageId} found in cache')
             cacheHandle.close()
         except FileNotFoundError:
-            Path(os.path.join(BOTFOLDER, 'cache/library/', userName)).mkdir(exist_ok=True)
+            Path(os.path.join(BOT_FOLDER, 'cache/library/', userName)).mkdir(exist_ok=True)
             logger.info(f'Downloading {pageId} library page...')
     if htmlText == '':
 
@@ -119,7 +124,7 @@ def pageCacher(pageType: str,
 
         try:
             if pageType == 'libraryPage':
-                Path(os.path.join(BOTFOLDER, 'cache/library/', userName)).mkdir(parents=True, exist_ok=True)
+                Path(os.path.join(BOT_FOLDER, 'cache/library/', userName)).mkdir(parents=True, exist_ok=True)
             cacheHandle = open(cacheFileName, 'w', encoding="utf-8")
             cacheHandle.write(htmlText)
             logger.info(f'Cache file been wrote: {cacheFileName}')
@@ -171,8 +176,6 @@ def parserLibrary(lastfmUser: str, timeDelay: timedelta) -> Dict[str, int]:
         return root, status, totalPages
 
     artistList = dict()
-    with open(os.path.join(BOTFOLDER, 'apikey')) as file:
-        apiKey = file.read()
 
     #  First page
     root, status, totalPages = loadXML(pageNum=1)
@@ -446,19 +449,19 @@ def writeData(mode: str, id: str, data: Union[str, pd.DataFrame]) -> None:
             [prevSentEvents, data], ignore_index=True)
         sentEvents.reset_index(drop=True, inplace=True)
         dataFilename = os.path.join(
-            BOTFOLDER, 'data/', id + '_ggb_sentEvents.csv')
+            BOT_FOLDER, 'data/', id + '_ggb_sentEvents.csv')
         fileHandle = open(dataFilename, 'w', encoding="utf-8")
         sentEvents.to_csv(path_or_buf=fileHandle,
                           sep='\t', lineterminator='\n')
         
     elif mode == 'lastEvents':
         dataFilename = os.path.join(
-            BOTFOLDER, 'data/', id + '_ggb_lastEvents.csv')
+            BOT_FOLDER, 'data/', id + '_ggb_lastEvents.csv')
         fileHandle = open(dataFilename, 'w', encoding="utf-8")
         data.to_csv(path_or_buf=fileHandle, sep='\t', lineterminator='\n')
     elif mode == 'settings':
         dataFilename = os.path.join(
-            BOTFOLDER, 'data/', id + '_ggb_settings.csv')
+            BOT_FOLDER, 'data/', id + '_ggb_settings.csv')
         fileHandle = open(dataFilename, 'w', encoding="utf-8")
         fileHandle.write(data)
     else:
@@ -486,10 +489,10 @@ def readData(mode: str, id: int) -> Union[pd.DataFrame, Dict[str, str]]:
         try:
             if mode == 'lastEvents':
                 dataFilename = os.path.join(
-                    BOTFOLDER, 'data/', id + '_ggb_lastEvents.csv')
+                    BOT_FOLDER, 'data/', id + '_ggb_lastEvents.csv')
             elif mode == 'sentEvents':
                 dataFilename = os.path.join(
-                    BOTFOLDER, 'data/', id + '_ggb_sentEvents.csv')
+                    BOT_FOLDER, 'data/', id + '_ggb_sentEvents.csv')
             fileHandle = open(dataFilename, 'r', encoding="utf-8")
             data = pd.read_csv(filepath_or_buffer=fileHandle,
                                sep='\t', lineterminator='\n', index_col=0)
@@ -502,7 +505,7 @@ def readData(mode: str, id: int) -> Union[pd.DataFrame, Dict[str, str]]:
     elif mode == 'settings':
         try:
             dataFilename = os.path.join(
-                BOTFOLDER, 'data/', id + '_ggb_settings.csv')
+                BOT_FOLDER, 'data/', id + '_ggb_settings.csv')
             fileHandle = open(dataFilename, 'r', encoding="utf-8")
             settings = fileHandle.read()
             fileHandle.close()
