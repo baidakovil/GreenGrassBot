@@ -19,3 +19,6 @@ ggbWork.ipynb
 connectBot
 #  File-notebook with plans and actions
 WORKFLOW.md
+#  Workbench backup files
+*.bak
+*.db-journal
