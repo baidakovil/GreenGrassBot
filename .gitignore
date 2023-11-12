@@ -22,3 +22,5 @@ WORKFLOW.md
 #  Workbench backup files
 *.bak
 *.db-journal
+#  Test db for debugging
+ggb_sqlite_test.db

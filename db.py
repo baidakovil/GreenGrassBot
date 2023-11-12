@@ -9,6 +9,50 @@ from dataclasses import asdict
 import sqlite3
 from sqlite3 import IntegrityError, OperationalError
 
+from config import Cfg
+
+logger = logging.getLogger('A.E')
+logger.setLevel(logging.DEBUG)
+
+CFG = Cfg()
+
+
+def timestamp_to_text(timestamp):
+    f = '%Y-%m-%d %H:%M:%S'
+    return timestamp.strftime(f)
+
+
+def date_to_text(date):
+    f = '%Y-%m-%d'
+    return date.strftime(f)
+
+
+@dataclass
+class ArtScrobble:
+    """
+    Class for keeping user scrobble for 1 artist
+    """
+    user_id: int
+    art_name: str
+    scrobble_date: str
+    lfm: str
+    scrobble_count: int
+
+
+@dataclass
+class Event:
+    """
+    Class for keeping one event and lineup
+    """
+    event_date: str
+    place: str
+    locality: str
+    country: str
+    event_source: str
+    link: str
+    lineup: List[int]
+
+
 @dataclass
 class User:
     """
@@ -19,8 +63,9 @@ class User:
     first_name: str
     last_name: str
     language_code: str
-    accs: List[str]
-    reg_datetime: str
+    accs: List[str] = None
+    reg_datetime: str = None
+
 
 @dataclass
 class UserSettings:
@@ -28,111 +73,116 @@ class UserSettings:
     Class for keeping user settings
     """
     user_id: int
-    min_listens: int = 1
-    notice_day: int = -1
-    notice_time: str = '12:00:00'
+    min_listens: int = CFG.DEFAULT_MIN_LISTENS
+    notice_day: int = CFG.DEFAULT_NOTICE_DAY
+    notice_time: str = CFG.DEFAULT_NOTICE_TIME
 
-@dataclass
-class ArtScrobble:
-    """
-    Class for keeping user scrobble for 1 artist
-    """
-    user_id: int
-    art_id: int
-    scrobble_date: str
-    count: int
-
-@dataclass
-class Event:
-    """
-    Class for keeping one event and lineup
-    """
-    is_festival: int
-    place: str
-    locality: str
-    country: str
-    event_date: str
-    event_source: str
-    link: str
-    lineup: List[int]
 
 BOT_FOLDER = os.path.dirname(os.path.realpath(__file__))
 
-logger = logging.getLogger('A.Db')
-logger.setLevel(logging.DEBUG)
-
-def timestamp_to_text(timestamp):
-    f = '%Y-%m-%d %H:%M:%S'
-    return timestamp.strftime(f)
-
-def date_to_text(date):
-    f = '%Y-%m-%d'
-    return date.strftime(f)
 
 class Db:
     """Db works here"""
-    def __init__(self, dbpath, dbname, script_pathname):
+
+    def __init__(self, dbpath, dbname, script_pathname, hard_rewrite=False):
         self.dbpath = dbpath
         self.dbname = dbname
+        self.hard_rewrite = hard_rewrite
         self.script_pathname = script_pathname
         self._conn = self.connection()
-        logging.info(f'Database connection initiated to: {self.dbname}')
+        logger.info(
+            f'DB connected to: {os.path.join(BOT_FOLDER, self.dbpath, self.dbname)}')
 
     def create_db(self):
-        Path(os.path.join(BOT_FOLDER, self.dbpath)).mkdir(parents=True, exist_ok=True)
-        connection = sqlite3.connect(os.path.join(BOT_FOLDER, self.dbpath, self.dbname))
+        Path(os.path.join(BOT_FOLDER, self.dbpath)).mkdir(
+            parents=True, exist_ok=True)
+        connection = sqlite3.connect(os.path.join(
+            BOT_FOLDER, self.dbpath, self.dbname))
         connection.execute("PRAGMA foreign_keys = 1")
-        logging.info(f'Database created in file: {os.path.join(BOT_FOLDER, self.dbpath, self.dbname)}')
         cursor = connection.cursor()
         with open(os.path.join(BOT_FOLDER, self.script_pathname), 'r') as f:
             script = f.read()
-        cursor.executescript(script)
+            cursor.executescript(script)
         connection.commit()
+        logger.info(f'Forward script executed')
+        cursor.execute("""
+            SELECT COUNT(*) FROM sqlite_master WHERE type="table" AND tbl_name != "sqlite_sequence"
+            """)
+        tbl_num = cursor.fetchone()
+        logger.info(f'{tbl_num[0]} tables created')
+        cursor.close()
         connection.close()
-        logging.info(f'Database tables created from script: {os.path.join(BOT_FOLDER, self.script_pathname)}')
 
     def connection(self):
-        db_path = os.path.join(BOT_FOLDER, f'{self.dbname}.db')
-        if not os.path.isfile(os.path.join(BOT_FOLDER, self.dbpath, self.dbname)):
+        db_path = os.path.join(BOT_FOLDER, self.dbpath, self.dbname)
+        if not os.path.isfile(db_path):
+            logger.info(f'DB not found in file: {db_path}')
             self.create_db()
-        connection = sqlite3.connect(os.path.join(BOT_FOLDER, self.dbpath, self.dbname))
+        elif self.hard_rewrite:
+            os.remove(db_path)
+            logger.info(f'Db DELETED FROM: {db_path}')
+            self.create_db()
+        connection = sqlite3.connect(db_path)
         connection.execute("PRAGMA foreign_keys = 1")
         return connection
 
-    
-    def _execute_query(self, query, params=None, select=False):
+    def _execute_query(self, query, params=None, select=False, selectone=True):
         cursor = self._conn.cursor()
         cursor.execute(query, params)
-        if select:
+        if select and selectone:
             records = cursor.fetchone()
+            cursor.close()
+            return records
+        elif select:
+            records = cursor.fetchall()
             cursor.close()
             return records
         else:
             self._conn.commit()
         cursor.close()
 
-    # WRITES/WRITE-READS
+    #################################
+    ###### WRITES/WRITE-READS #######
+    #################################
 
     def error_handler(f):
         async def wrapper(*args, **kwargs):
             try:
                 return await f(*args, **kwargs)
             except IntegrityError as E:
-                if 'UNIQUE constraint failed' in E.args[0]:
-                    logging.warning(f'EXCEPTION CASE№2.1: {E}, args: {args}, kwargs: {kwargs}')
-                    # CASE№2.1 try to insert non-unique
+                if 'UNIQUE constraint failed: useraccs.user_id, useraccs.lfm' in E.args[0]:
+                    logger.warning(
+                        f'{f.__name__}| EXCEPTION CASE№2.1.1: {E}, args: {args}, kwargs: {kwargs}')
+                    return 'Sorry, you already have this account'
+                    # CASE№2.1.1 try to insert non-unique
+                elif 'UNIQUE constraint failed' in E.args[0]:
+                    logger.warning(
+                        f'{f.__name__}|EXCEPTION CASE№2.1.2: {E}, args: {args}, kwargs: {kwargs}')
+                    return 'NOTUNIQUE'
+                    # CASE№2.1.2 try to insert non-unique
+                elif 'NOT NULL constraint failed: useraccs.user_id' in E.args[0]:
+                    logger.warning(
+                        f'{f.__name__}|EXCEPTION CASE№2.1.3: {E}, args: {args}, kwargs: {kwargs}')
+                    return f'Sorry, max {CFG.MAX_LFM_ACCOUNT_QTY} accounts possible'
+                    # CASE№2.1.3 no slots for lfm accs
+                else:
+                    logger.warning(
+                        f'{f.__name__}|Unknown error: {E}, args: {args}, kwargs: {kwargs}')
             except OperationalError as E:
                 if 'database is locked' in E.args[0]:
-                    logging.warning(f'EXCEPTION CASE№2.2: {E}, args: {args}, kwargs: {kwargs}')
+                    logger.warning(
+                        f'{f.__name__}|EXCEPTION CASE№2.2: {E}, args: {args}, kwargs: {kwargs}')
                     # CASE№2.2 another program use database
                 elif 'row value misused' in E.args[0]:
-                    logging.warning(f'EXCEPTION CASE№2.3: {E}, args: {args}, kwargs: {kwargs}')
+                    logger.warning(
+                        f'{f.__name__}|EXCEPTION CASE№2.3: {E}, args: {args}, kwargs: {kwargs}')
                     # CASE№2.3 stumbled when parentnesses were but they dont needed
                 else:
-                    logging.warning(f'EXCEPTION CASE№2.10: {E}, args: {args}, kwargs: {kwargs}')
+                    logger.warning(
+                        f'{f.__name__}|EXCEPTION CASE№2.10: {E}, args: {args}, kwargs: {kwargs}')
                     # CASE№2.10
             except Exception as E:
-                logging.warning(f'EXCEPTION CASE№2.99: {E}')
+                logger.warning(f'{f.__name__}|EXCEPTION CASE№2.99: {E}')
                 # CASE№2.99 unknown exception for me
         return wrapper
 
@@ -143,45 +193,64 @@ class Db:
         """
         query = """
         INSERT INTO users (user_id, username, first_name, last_name, language_code)
-        VALUES (?, ?, ?, ?, ?);
+        VALUES (:user_id, :username, :first_name, :last_name, :language_code);
         """
         self._execute_query(
-                        query=query,
-                        params=(user.user_id, user.username, user.first_name, user.last_name, user.language_code),
-                        )
-        logging.info(f"User with username: {user.username} and user_id: {user.user_id} added")
+            query=query,
+            params=asdict(user),
+        )
+        logger.info(
+            f"User with username: {user.username} and user_id: {user.user_id} added")
 
     @error_handler
-    async def wsql_useraccs(self, user: User) -> None:
+    async def wsql_useraccs(self, user_id, lfm) -> None:
         """
-        Write all fields to table 'useraccs'
+        Add account to 'useraccs' if there is free slots and if it's unique
         """
-        for acc in user.accs:
-            query = """
-            INSERT OR IGNORE INTO useraccs (user_id, lfm)
-            VALUES (?,?);
-            """
-            self._execute_query(
-                            query=query,
-                            params=(user.user_id, acc),
-                            )
+        params = {'user_id': user_id, 'lfm': lfm,
+                  'max_qty': CFG.MAX_LFM_ACCOUNT_QTY}
+        query = """
+        INSERT INTO useraccs (user_id, lfm)
+        VALUES (
+            (SELECT :user_id WHERE 
+                (SELECT COUNT(*) FROM useraccs 
+                WHERE user_id = :user_id) <= :max_qty-1),
+            :lfm
+            );
+        """
+        self._execute_query(
+            query=query,
+            params=params,
+        )
 
-        logging.info(f"User with username: {user.username} and user_id: {user.user_id} add lfm account")
+        logger.info(f"User with user_id: {user_id} added lfm account: {lfm}")
+        return f'Account {lfm} added'
 
     @error_handler
-    async def wsql_settings(self, us: UserSettings) -> None:
+    async def wsql_settings(self,
+                            user_id,
+                            min_listens: int = CFG.DEFAULT_MIN_LISTENS,
+                            notice_day: int = CFG.DEFAULT_NOTICE_DAY,
+                            notice_time: str = CFG.DEFAULT_NOTICE_TIME,
+                            ) -> None:
         """
         write all fields to _usersettings row where UserSettings.user_id = user_id
         """
+        uset = UserSettings(
+            user_id,
+            min_listens,
+            notice_day,
+            notice_time,
+        )
         query = """
-        INSERT INTO usersettings (user_id, min_listens, notice_day, notice_time)
-        VALUES (?, ?, ?, ?);
+        INSERT OR REPLACE INTO usersettings (user_id, min_listens, notice_day, notice_time)
+        VALUES (:user_id, :min_listens, :notice_day, :notice_time);
         """
         self._execute_query(
-                        query=query,
-                        params=(us.user_id, us.min_listens, us.notice_day, us.notice_time),
-                        )
-        logging.info(f"User with user_id: {us.user_id} updated settings")
+            query=query,
+            params=asdict(uset),
+        )
+        logger.info(f"User with user_id: {user_id} updated settings")
 
     @error_handler
     async def wsql_scrobbles(self, ars: ArtScrobble) -> None:
@@ -189,223 +258,276 @@ class Db:
         write all fields to _scrobbles row
         """
         query = """
-        INSERT INTO scrobbles (user_id, art_id, scrobble_date, count)
-        VALUES (?, ?, ?, ?);
+        INSERT OR REPLACE INTO scrobbles (user_id, lfm, art_name, scrobble_date, lfm, scrobble_count)
+        VALUES (:user_id, :lfm, :art_name, :scrobble_date, :lfm, :scrobble_count);
         """
         self._execute_query(
-                        query=query,
-                        params=(ars.user_id, ars.art_id, ars.scrobble_date, ars.count),
-                        )
-        logging.info(f"Added scrobble for user_id: {ars.user_id} ")
+            query=query,
+            params=asdict(ars),
+        )
+        # logger.info(f"Added scrobble for user_id: {ars.user_id}, art_name: {ars.art_name}")
 
     @error_handler
-    async def wsql_events_lups(self, ev: Event) -> None:
+    async def wsql_events_lups(self, eventList: List[Event]) -> None:
         """
         write one row to _events. 
         If OK, 
-        write n rows to _lineups (n=count(art_id)) 
+        write n rows to _lineups (n=count(art_names)) 
         """
         query_ev = """
-        INSERT INTO events (event_date, place, locality, country, is_festival, event_source, link)
-        SELECT :event_date, :place, :locality, :country, :is_festival, :event_source, :link
+        INSERT INTO events (event_date, place, locality, country, event_source, link)
+        SELECT :event_date, :place, :locality, :country, :event_source, :link
         WHERE NOT EXISTS(
             SELECT 1 from events WHERE event_date=:event_date AND place=:place AND locality=:locality
             );
         """
         query_lup = """
-            INSERT INTO lineups (event_id, art_id)
+            INSERT OR IGNORE INTO lineups (event_id, art_name)
             VALUES ((SELECT event_id FROM events WHERE event_date=? AND place=? AND locality=?), ?)
             """
-        self._execute_query(
-                        query=query_ev,
-                        params=asdict(ev),
-                        )
-        for art_id in ev.lineup:
+
+        for ev in eventList:
             self._execute_query(
-                            query=query_lup,
-                            params=(ev.event_date, ev.place, ev.locality, art_id),
-                            )
-        logging.info(f"Added event with event_date:{ev.event_date}, event_place:{ev.place}")
+                query=query_ev,
+                params=asdict(ev),
+            )
+            for art_name in ev.lineup:
+                self._execute_query(
+                    query=query_lup,
+                    params=(ev.event_date, ev.place, ev.locality, art_name),
+                )
+            logger.debug(
+                f"Added event with event_date:{ev.event_date}, event_place:{ev.place}")
+        logger.info(f'All events for added')
 
     @error_handler
-    async def wsql_artcheck(self, art_ids: List[str]) -> None:
+    async def wsql_artcheck(self, art_name: str) -> None:
         """
-        write row to _artchecks with wsql_artcheck
+        write that art_name was checked
         """
         query = """
-            INSERT OR IGNORE INTO artchecks(art_id, check_datetime)
-            VALUES (?, ?);
+            INSERT OR REPLACE INTO artnames(art_name, check_datetime)
+            VALUES (?, datetime("now"));
             """
-        check_datetime = timestamp_to_text(datetime.now())
-        for art_id in art_ids:
-            self._execute_query(
-                            query=query,
-                            params=(art_id, check_datetime),
-                            )
-        logging.info(f"Added or ignored art_checks")
+        self._execute_query(
+            query=query,
+            params=(art_name,),
+        )
+        logger.info(f"Added or updated artcheck: {art_name}")
 
     @error_handler
-    async def wsql_sentarts(self, user_id, event_id, art_id) -> None:
+    async def wsql_artcheck_test(self, art_name: str) -> None:
+        """
+        write that art_name was checked
+        """
+        query = """
+            INSERT OR REPLACE INTO artnames(art_name, check_datetime)
+            VALUES (?, "2023-11-09 13:00:00");
+            """
+        self._execute_query(
+            query=query,
+            params=(art_name,),
+        )
+        logger.info(f"Added or updated artcheck_test: {art_name}")
+
+    @error_handler
+    async def wsql_sentarts(self, user_id, art_name) -> None:
         """
         write all fields to _sentarts
         """
-        sent_datetime = timestamp_to_text(datetime.now())
+        params = {
+            'user_id': user_id,
+            'art_name': art_name,
+            'delay': CFG.DAYS_MIN_DELAY_ARTCHECK,
+            'period': CFG.DAYS_PERIOD_MINLISTENS,
+        }
         query = """
-        INSERT INTO sentarts (user_id, event_id, art_id, sent_datetime)
-        VALUES (?,?,?,?);
-        """
-        self._execute_query(
-                query=query,
-                params=(user_id, event_id, art_id, sent_datetime)
-                )
-        logging.info(f"Added sentarts for user_id: {user_id}")
-
-    @error_handler
-    async def wsql_lastarts(self, user_id, art_id, shorthand, shorthand_date) -> None:
-        """
-        write all fields to _lastarts
-        """
-        shorthand_date = date_to_text(datetime.now())
-        query = """
-        INSERT INTO lastarts (user_id, art_id, shorthand, shorthand_date)
-        VALUES (?,?,?,?);
-        """
-        self._execute_query(
-                query=query,
-                params=(user_id, art_id, shorthand, shorthand_date)
-                )
-        logging.info(f"Added lastarts for user_id: {user_id}")
-
-    @error_handler
-    async def wrsql_getartid(self, art_name: str) -> List[int]:
-        """
-        write row to artnames if there is no art_name with it, then
-        read all art_id for correspond art_name
-        """
-        query = """
-        INSERT INTO artnames (art_name, default_name)
-        SELECT ?, 1
-        WHERE NOT EXISTS(
-            SELECT 1 from artnames WHERE art_name=?
-        );
+        INSERT INTO sentarts (user_id, sent_datetime, art_name, event_id)
+        SELECT :user_id AS user_id,
+                DATETIME("now") AS sent_datetime,
+                art_name, 
+                events.event_id
+                FROM lineups JOIN events
+                ON lineups.event_id = events.event_id 
+                WHERE
+                    lineups.art_name = :art_name
+                    AND
+                    events.event_date >= DATE("now")
+                    AND
+                    events.event_id NOT IN 
+                        (SELECT event_id FROM sentarts WHERE user_id= :user_id AND art_name= :art_name)
+                    AND
+                    :art_name IN
+                        (SELECT art_name FROM scrobbles
+                        WHERE JULIANDAY("now")-JULIANDAY(scrobble_date) <= :period
+                        GROUP BY user_id, art_name
+                        HAVING 
+                        SUM(scrobble_count) >= (SELECT min_listens FROM usersettings WHERE user_id= :user_id)
+                        AND
+                        user_id= :user_id);
         """
         self._execute_query(
             query=query,
-            params=(art_name, art_name)
-            )
-        logging.info(f"Added art_name: {art_name}")
+            params=params,
+        )
+        logger.info(f"Added sentarts for user_id: {user_id}")
 
-    # READS
+    @error_handler
+    async def wsql_lastarts(self, user_id, shorthand, art_name) -> None:
+        """
+        write all fields to _lastarts
+        """
+        query = """
+        INSERT INTO lastarts (user_id, shorthand, art_name, shorthand_date)
+        VALUES (?,?,?,date("now"));
+        """
+        self._execute_query(
+            query=query,
+            params=(user_id, shorthand, art_name)
+        )
+        logger.info(f"Added lastarts for user_id: {user_id}")
 
-    async def rsql_userid(self, user_id: int) -> int:
+    #################################
+    ########### READS ###############
+    #################################
+
+    async def rsql_numtables(self) -> int:
         """
-        check if exist user_id in _users
+        Returns quantity of tables in DB.
         """
-        query = f"""
-        SELECT COUNT(*) from users 
-        WHERE user_id = (?)
+        query = """
+        SELECT COUNT(*) FROM sqlite_master WHERE type="table" AND tbl_name != "sqlite_sequence"
+        """
+        tbl_num = self._execute_query(
+            query,
+            select=True,
+        )
+        return tbl_num[0]
+
+    @error_handler
+    async def rsql_maxshorthand(self, user_id) -> int:
+        """
+        Returns maximum number of shorthand-quick link for user,
+        or zero if there is no shorthands.
+        """
+        query = """
+        SELECT IFNULL((SELECT MAX(shorthand) FROM lastarts WHERE user_id = ?), 0)
         """
         record = self._execute_query(query, params=(user_id,), select=True)
         return record[0]
 
-    async def rsql_userid(user_id) -> bool:
+    @error_handler
+    async def rsql_lfmuser(self, user_id: int) -> List[str]:
         """
-        check if exist user_id in _users
+        return list of lastfm users for user
         """
-        ...
+        query = f"""
+        SELECT lfm FROM useraccs
+        WHERE user_id = ?
+        """
+        record = self._execute_query(query, params=(
+            user_id,), select=True, selectone=False)
+        result = [record[i][0] for i in range(len(record))]
+        logger.debug(f'Return lastfm users for user_id {user_id}: {result}')
+        return result
 
-    async def rsql_lfm_quantity(user_id) -> int:
+    @error_handler
+    async def rsql_artcheck(self,
+                            user_id,
+                            art_name) -> datetime:
         """
-        read count(lfm) for user_id
+        Answers should this artist be checked for events. Returns 0 if not, 1 if should.
+        Conditions for answer "1":
+        a) no checked for concerts yet OR checked far ago
+        b) user had listen this artist much enough
         """
-        ...
+        params = {
+            'user_id': user_id,
+            'art_name': art_name,
+            'delay': CFG.DAYS_MIN_DELAY_ARTCHECK,
+            'period': CFG.DAYS_PERIOD_MINLISTENS,
+        }
+        query = f"""
+        SELECT 
+            CASE 
+                WHEN
+                    ((SELECT check_datetime FROM artnames WHERE art_name = :art_name) IS NULL
+                        OR
+                    (SELECT JULIANDAY(DATETIME("NOW")) - JULIANDAY(check_datetime) FROM artnames
+                    WHERE art_name = :art_name) > :delay)
+                AND (:art_name IN (SELECT art_name FROM scrobbles
+                    WHERE JULIANDAY("now")-JULIANDAY(scrobble_date) <= :period
+                    GROUP BY user_id, art_name
+                    HAVING
+                        SUM(scrobble_count) >= (SELECT min_listens FROM usersettings WHERE user_id= :user_id)
+                            AND
+                        user_id= :user_id))
+                THEN 1
+                ELSE 0
+        END;
+        """
+        record = self._execute_query(query, params=params, select=True)
+        return record[0]
 
-    async def rsql_artcheck(art_id) -> datetime:
+    @error_handler
+    async def rsql_getallevents(self, user_id: int, shorthand: int) -> List[Tuple]:
         """
-        read DateTime for art_id in _artchecks
+        Return all events as answer on user's shortcut pressing.
+        Conditions to select events:
+        a) art_name same as in Tg message near shortcut
+        b) event_date after the date when Tg message was sent.
         """
-        ...
+        params = {'user_id': user_id, 'shorthand': shorthand}
+        query = f"""
+        SELECT
+        (SELECT art_name FROM lastarts WHERE shorthand= :shorthand) as artist, 
+        event_date, place, locality, country, link FROM events WHERE
+        event_id IN 
+            (SELECT event_id FROM lineups 
+            WHERE art_name= (SELECT art_name FROM lastarts WHERE shorthand= :shorthand))
+        AND event_date >= (SELECT shorthand_date FROM lastarts WHERE shorthand= :shorthand)
+        ORDER BY event_date
+        """
+        ev = self._execute_query(query, params=params,
+                                 select=True, selectone=False)
+        logger.info(f'User {user_id} requests shorthand {shorthand}')
+        return ev
 
-    async def rsql_getartnames(art_id) -> List[str]:
-        """
-        read all art_name for correspond art_id in _artnames
-        Return: list of art_name's
-        """
-
-    async def rsql_geteventids(art_id, min_date) -> List[str]:
-        """
-        read all event_id for correspond art_id in _lineups, if event_date for this event_id > min_date
-        Return: list of event_id's
-        """
-        ...
-
-    async def rsql_getevents(event_id) -> Event:
-        """
-        read event info for event_id
-        Return: class Event instance
-        """
-        ...
-
-    async def rsql_lastevents(user_id, shorthand) -> Tuple[str, date]:
-        """
-        read event_id to know what event user is interested
-        Return: tuple(art_id, shorthand_date)
-        """
-        ...
-
-    async def rsql_checkevents(event_date, art_id) -> bool:
-        """
-        check if there event for this date (_events) for this art_id (_lineups)
-        """
-        ...
-
-    def rsql_finalquestion(user_id, date, art_name) -> bool:
+    @error_handler
+    async def rsql_finalquestion(self, user_id, art_name) -> bool:
         """
         Answers should this art_name be sent to user at this day (date=today always?)
         """
-        ...
-
-
-
-"""
-PIPE FOR DB USE EACH TIME WHEN EVENTS FETCHED:
-
-Textual:
-|-> 
-Wait until scheduled time to sent news to user ->
-Get Scrobbles with API -> 
-Write scrobbles -> 
-Check events for artists in scrobbles -> 
-Write events ->
-Write artchecks ->
-Sent events -> 
-Write sentevents ->
-Write lastevents ->
-Update scheduled job ->
-->|
-
-1. Write scrobbles:
-Get art_id's with wrsql_getartid(art_name) ->
-Add scrobbles with wsql_scrobbles(ArtScrobble) ->
-
-2. Check events for artists in scrobbles:
-Check should this art_id be checked with rsql_artcheck(art_id) ->
-For those art_ids who not fresh, get art_names_to_load with def rsql_getartnames(art_id) -> 
-Check events with LastFM for these art_names ->  
-
-3. Write events:
-Add artists if they was not already added, with wsql_artname(art_name) -> 
-Write new events and lineups with wsql_events_lups(Event) ->
-
-4. Write artchecks:
-Add row to _artchecks with wsql_artcheck
-
-5. Sent artists:
-Use rsql_finalquestion(user_id, date, art_name) for every art_name from (1)
-
-6. Write sentarts:
-Write as many rows as many arts was sent, wsql_sentarts()
-
-7. Write lastarts:
-Write as many rows as many arts was sent, wsql_lastarts()
-"""
+        params = {'user_id': user_id,
+                  'art_name': art_name,
+                  'delay': CFG.DAYS_MIN_DELAY_ARTCHECK,
+                  'period': CFG.DAYS_PERIOD_MINLISTENS, }
+        query = f"""
+        SELECT 
+            CASE
+                WHEN
+                    (SELECT COUNT(*) FROM lineups
+                    JOIN events
+                    ON lineups.event_id = events.event_id 
+                    WHERE
+                        lineups.art_name = :art_name
+                        AND
+                        events.event_date >= DATE("now")
+                        AND
+                        events.event_id NOT IN 
+                            (SELECT event_id FROM sentarts WHERE user_id= :user_id AND art_name= :art_name)
+                        AND
+                        :art_name IN
+                            (SELECT art_name FROM scrobbles
+                            WHERE JULIANDAY("now")-JULIANDAY(scrobble_date) <= :period
+                            GROUP BY user_id, art_name
+                            HAVING 
+                            SUM(scrobble_count) >= (SELECT min_listens FROM usersettings WHERE user_id= :user_id)
+                            AND
+                            user_id= :user_id))
+                THEN 1
+		        ELSE 0
+	        END
+        """
+        record = self._execute_query(query, params=params, select=True)
+        return bool(record[0])

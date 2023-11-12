@@ -15,6 +15,7 @@ def startLogger():
     """
     logger = logging.getLogger('A')
     logger.setLevel(logging.DEBUG)
+    logger.propagate = False
 
     class ContextFilter(logging.Filter):
         """
@@ -54,14 +55,13 @@ def startLogger():
     logger.addHandler(ch)
     logger.addHandler(fh)
     logger.addHandler(rh)
-    ch_filter = ContextFilter()
-    ch.addFilter(ch_filter)
+    # ch_filter = ContextFilter()
+    # ch.addFilter(ch_filter)
     return logger
 
 
 logger = startLogger()
-logger.info(f'App started, __name__ is {__name__}')
-
+logger.info(f'Main logger started, __name__ is {__name__}')
 dotenv_path = os.path.join(BOT_FOLDER, '.env')
 load_dotenv(dotenv_path)
 
@@ -80,4 +80,5 @@ def main():
 
 
 if __name__ == '__main__':
+    logger.info(f'App started, __name__ is {__name__}')
     main()
