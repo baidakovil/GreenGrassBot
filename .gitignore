@@ -12,6 +12,7 @@ data
 #  Folder for PTB's examples
 examples
 #  Current run log
+log
 logger.log
 #  File for working experiments
 ggbWork.ipynb
