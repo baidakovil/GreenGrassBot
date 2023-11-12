@@ -14,11 +14,9 @@ from db import ArtScrobble, Event, User, UserSettings
 from db import date_to_text
 import time
 
-BOT_FOLDER = os.path.dirname(os.path.realpath(__file__))
 CFG = Cfg()
 
-dotenv_path = os.path.join(BOT_FOLDER, '.env')
-load_dotenv(dotenv_path)
+load_dotenv('.env')
 apiKey = os.getenv("API_KEY")
 
 logger = logging.getLogger('A.B')
@@ -39,6 +37,17 @@ def alChar(text):
 
 
 def parserLibrary(lastfmUser: str) -> Dict:
+    """
+    Function to obtain scrobbles for last days=timeDelay from cache or from Last.fm.
+    Uses pageCacher() to save/load cache and URLs.    
+
+    Args:
+    lastfmUser    - Last.fm username
+    timeDelay     - Interval in days from now to fetch 
+
+    Return 
+    Dictionary with structure {artistName__date:quantity}
+    """
     timeDelay = CFG.DAYS_INITIAL_TIMEDELAY
     fromUnix = int((datetime.utcnow() - timedelta(days=int(timeDelay))).replace(tzinfo=timezone.utc, hour=0, minute=0,
                                                                                 second=0, microsecond=0).timestamp())
@@ -149,7 +158,24 @@ def parserLastfmEvent(eventArtist: str) -> List[Event]:
 
 
 def getInfoText(user_id: int, db) -> str:
+    """
+    At this stage, should be run by coroutine function 'getEventsJob' on dialog's question 'Now, run the search?'
+    Used getLastfmEvents() to get dataframe with events.
+    Read settings with readSett().
+    Saves obtained events with writeData().
+    Returns short info about which artists have new concerts. 
+    Or error text.
 
+    Arguments:
+    userId      - telegram userId from job
+    
+    Return:
+    Markdown-formatted string with artists
+    OR
+    String 'No new concerts'
+    OR
+    String with error info for user.
+    """
     shorthandCount = int(asyncio.run(db.rsql_maxshorthand(user_id)))
     print(f'get shorthandCount: {shorthandCount}')
     fillNumbers = 2 if CFG.INTEGER_MAX_SHORTHAND < 100 else 3

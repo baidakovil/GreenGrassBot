@@ -77,30 +77,23 @@ class UserSettings:
     notice_day: int = CFG.DEFAULT_NOTICE_DAY
     notice_time: str = CFG.DEFAULT_NOTICE_TIME
 
-
-BOT_FOLDER = os.path.dirname(os.path.realpath(__file__))
-
-
 class Db:
-    """Db works here"""
+    """
+    Db works here
+    """
 
-    def __init__(self, dbpath, dbname, script_pathname, hard_rewrite=False):
-        self.dbpath = dbpath
-        self.dbname = dbname
+    def __init__(self, hard_rewrite=False):
         self.hard_rewrite = hard_rewrite
-        self.script_pathname = script_pathname
         self._conn = self.connection()
         logger.info(
-            f'DB connected to: {os.path.join(BOT_FOLDER, self.dbpath, self.dbname)}')
+            f'DB connected to: {os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB)}')
 
     def create_db(self):
-        Path(os.path.join(BOT_FOLDER, self.dbpath)).mkdir(
-            parents=True, exist_ok=True)
-        connection = sqlite3.connect(os.path.join(
-            BOT_FOLDER, self.dbpath, self.dbname))
+        os.makedirs(CFG.PATH_DBFILES, exist_ok=True)
+        connection = sqlite3.connect(os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB))
         connection.execute("PRAGMA foreign_keys = 1")
         cursor = connection.cursor()
-        with open(os.path.join(BOT_FOLDER, self.script_pathname), 'r') as f:
+        with open(os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB_SCRIPT), 'r') as f:
             script = f.read()
             cursor.executescript(script)
         connection.commit()
@@ -114,7 +107,7 @@ class Db:
         connection.close()
 
     def connection(self):
-        db_path = os.path.join(BOT_FOLDER, self.dbpath, self.dbname)
+        db_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB)
         if not os.path.isfile(db_path):
             logger.info(f'DB not found in file: {db_path}')
             self.create_db()

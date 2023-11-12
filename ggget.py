@@ -1,4 +1,4 @@
-import main
+import logger
 import logging
 import asyncio
 from datetime import datetime
@@ -7,7 +7,7 @@ from config import Cfg
 from db import ArtScrobble, Event, User, UserSettings
 from db import Db
 from db import timestamp_to_text, date_to_text
-from gglib2 import getInfoText, getNewsText
+from lastfm import getInfoText, getNewsText
 
 
 logger = logging.getLogger('A.D')
@@ -32,12 +32,7 @@ u2 = User(
     language_code = 'ru',
     )
 
-db = Db(
-    dbpath='db',
-    dbname='ggb_sqlite.db',
-    script_pathname='db/create_tables_script.sql',
-    hard_rewrite=True,
-)
+db = Db(hard_rewrite=True)
 
 # Users press '/connect' or '/start'
 asyncio.run(db.wsql_users(u1))

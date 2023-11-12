@@ -15,6 +15,7 @@ examples
 logger.log
 #  File for working experiments
 ggbWork.ipynb
+ggget.py
 #  Bot persistence file for continuation after restart
 connectBot
 #  File-notebook with plans and actions
