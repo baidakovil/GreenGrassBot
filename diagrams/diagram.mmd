@@ -21,7 +21,7 @@ title: Telegram Bot
 
 flowchart TB
     A(("⠀⠀/start⠀⠀")) --> A1(("⠀START⠀"))-->B{"`Does user have account?`"}
-    B -->|Yes-></br></br>Message| C1["`You have *n* accounts saved:[...]. If you want add or delete accounts from bot, please use ...`"]
+    B -->|Yes-></br></br>Message| C1["`You have *n* accounts saved:[...]. If you want add or delete accounts from bot, please use /connect`"]
     B -->|No| C2["`Hi! For using this bot please add at least one Last.fm account with command /connect`"]
     J -->|Yes-></br>Message|E["`Enter last.fm account`"]
     J -->|Yes</br>user have no acc -> -></br>Message|E["`Enter last.fm account`"]

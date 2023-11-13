@@ -1,12 +1,11 @@
-import logging
 import os
+import logging
 from pathlib import Path
+import asyncio
 import urllib.parse
 from datetime import date, datetime, time
 from typing import Dict
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
-import gglib
-import pandas as pd
 from telegram.ext import (
     CallbackContext,
     CommandHandler,
@@ -16,30 +15,123 @@ from telegram.ext import (
     MessageHandler,
 )
 
+import lastfm
+from lastfm import alChar, addAcc
+from db import Db
+from db import ArtScrobble, Event, User, UserSettings
+from config import Cfg
+
+
 logger = logging.getLogger('A.C')
 logger.setLevel(logging.DEBUG)
 
+db = Db(hard_rewrite=True)
+CFG = Cfg()
+
+
+def loadInteractions(application):
+    """
+    Loads all command handlers on start.
+    Args:
+        application: application for adding handlers to
+    """
+    startHandler = CommandHandler('start', start)
+    nolastfmHandler = CommandHandler('nolastfm', nolastfm)
+    getEventsHandler = CommandHandler('getevents', getEvents)
+    showNewsHandler = MessageHandler(filters.Regex('/([0-9]{2,3})$'), showNews)
+    getinfoHandler = CommandHandler('getinfo', getinfo)
+
+    conv_handler = ConversationHandler(
+        entry_points=[CommandHandler('connect', connect)],
+        states={
+            USERNAME: [MessageHandler(filters.TEXT, username)],
+            RUNSEARCH: [MessageHandler(filters.TEXT, runsearch)],
+                },
+        fallbacks=[CommandHandler('cancel', cancel)],
+        allow_reentry=True,
+        name="ggb_picklefile",
+        persistent=True,
+                                    )
+
+    discon_handler = ConversationHandler(
+        entry_points=[CommandHandler('disconnect', disconnect)],
+        states={
+            DISC_ACC: [MessageHandler(filters.TEXT, disc_acc)]},
+        fallbacks=[CommandHandler('cancel', cancel)],
+        allow_reentry=True,
+        name="ggb_picklefile",
+        persistent=False,
+                                    )
+
+    application.add_handler(startHandler)
+    application.add_handler(discon_handler)
+    application.add_handler(nolastfmHandler)
+    application.add_handler(getEventsHandler)
+    application.add_handler(showNewsHandler)
+    application.add_handler(getinfoHandler)
+    application.add_handler(conv_handler)
+    application.add_error_handler(error)
+
+async def save_user(update) -> None:
+    ggbUser = User(
+            user_id = update.message.from_user.id,
+            username = update.message.from_user.username,
+            first_name = update.message.from_user.first_name,
+            last_name = update.message.from_user.last_name,
+            language_code = update.message.from_user.language_code,
+                )
+    await db.wsql_users(ggbUser)
+    return None
 
 async def start(update, context):
+    await save_user(update)
+    userId = update.message.from_user.id
+    username = update.message.from_user.first_name
+    lfmAccs = await db.rsql_lfmuser(userId)
+    if not lfmAccs:
+        startText = alChar(f"""
+        Hello, {username}.\n\n\
+\U00002753 To use the bot, make sure you have lastfm account and press /connect\n\n\
+\U00002757 If you have no one, press /nolastfm for useful info\n\n\
+\U00002764 Detailed info at /help
+        """)
+    else:
+        lfmAccs = ['_' + acc + '_' for acc in lfmAccs]
+        startText = alChar(f"""
+        {username},\n
+you have {len(lfmAccs)} accounts saved: {', '.join(lfmAccs)}.\n\
+To add and delete accounts, use /connect and /disconnect.
+        """)
+    await context.bot.send_message(
+        chat_id=userId,
+        text=startText,
+        parse_mode='MarkdownV2')
 
-    # TODO  if account_quantity:
-            #     send_message...
-            # else:
-            #     send message ...
-
-    userId = context.user_data[id]
-    context.bot.send_message(chat_id=userId,
-                             text='<a href="https://www.last.fm/user/trygreatgigbot">Link</a>',
-                             parse_mode='HTML')
+async def nolastfm(update, context):
+    await save_user(update)
+    await context.bot.send_message(
+        chat_id=update.message.from_user.id,
+        text=alChar(f"""
+If you don't have *lastfm account*, just [register](https://www.last.fm/join/) one.\n\
+It is free and great service since 2002.\n\
+\U00002b07\n\
+Add your *music service* like iTunes, Spotify, Yandex.Music, etc. to your new account \
+in [settings](https://www.last.fm/settings/applications) of lastfm website.\n\
+\U00002b07\n\
+Press /connect. Enter account name and forget about the bot.\n\
+\U00002705\n\
+Bot will send you notification, when it find new concerts.\n
+Notes:
+• Bot work only with *public accounts* at this moment.\n\
+• You can add accounts of your frinds or family members — and, may be, go to event together?
+        """),
+        parse_mode='MarkdownV2')
 
 async def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
-async def caps(update, context):
-    text_caps = ' '.join(context.args).upper()
-    context.bot.send_message(chat_id=update.effective_chat.id, text=text_caps)
-
-USERNAME, MINLISTENS, RUNSEARCH = range(3)
+USERNAME, RUNSEARCH = range(2)
+DISC_ACC = 0
 
 def remove_job_if_exists(name: str, context) -> bool:
     """Remove job with given name. Returns whether job was removed."""
@@ -55,103 +147,83 @@ async def connect(update, context):
     """
     Starts the conversation and asks the lastfm username.
     """
-
-    # if len(account_quantity) == 0:
-    #     add user_id to db 
-    # elif len(account_quantity) == len(max_acc_quantity):
-    #     send_message(sorry)
-    #     return end
-    # send_message(enter account)
-    # return USERNAME
-
-    user = update.message.from_user
-    userId = str(user.id)
-    context.user_data['userId'] = userId
-    gglib.writeSett(userId, 'userId', userId)
-    logger.info(f'User {user.first_name} {user.last_name} id: {userId}')
+    await save_user(update)
     await update.message.reply_text('Enter lastfm\'s profile name:')
     return USERNAME
 
 async def username(update, context):
     """Waits for lastfmUser"""
-
-    # if account valid:
-    #     save to db
-    #     send_message(account saved, settings used...)
-    #     return end
-    # send_message(account not valid)
-    # return MINLISTENS
-
-    reply_keyboard = [['Listened at least twice a day'],['All listened artists']]
-    user = update.message.from_user
-    userId = str(user.id)
+    userId = update.message.from_user.id
     lastfmUser = update.message.text.lower()
-    gglib.writeSett(userId, 'lastfmUser', lastfmUser)
-    logger.info(f'User {user.first_name} {user.last_name} username: {lastfmUser}')
+    text = await addAcc(userId, lastfmUser, db)
     await update.message.reply_text(
-        'Would you like to get announced about each listened artist, or only about listened at least twice for a day?',
-        reply_markup=ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True, one_time_keyboard=True)
-        )
-    return MINLISTENS
-
-
-async def minlistens(update, context):
-    """Waits for answer which artists are in interest"""
-    user = update.message.from_user
-    userId = str(user.id)
-    minlistensAnswer = update.message.text
-    if minlistensAnswer == 'Listened at least twice a day':
-        minListens = 2
-    elif minlistensAnswer == 'All listened artists':
-        minListens = 1
-    gglib.writeSett(userId, 'minListens', minListens)
-    reply_keyboard = [['Yes', 'No']]
-    await update.message.reply_text(
-                                gglib.alChar('Ok! Press *Yes* if you want to run daily news about new concerts'),
-                                reply_markup=ReplyKeyboardMarkup(
-                                                reply_keyboard,
-                                                one_time_keyboard=True,
-                                                input_field_placeholder='Yes or No?'),
-                                parse_mode='MarkdownV2')
-
-    return RUNSEARCH
-
+        text=alChar(text),
+        parse_mode='MarkdownV2'
+    )
+    if await db.rsql_lfmuser(userId):
+        return RUNSEARCH
+    else:
+        return ConversationHandler.END
 
 async def runsearch(update, context):
-    user = update.message.from_user
-    userId = str(user.id)
+    userId = update.message.from_user.id
     chat_id = update.message.chat_id
-    timeToGetEvents = 3
     remove_job_if_exists(userId, context)
-    logger.info(f'Job removed if any. {timeToGetEvents} sec to run job')
-    context.job_queue.run_once(
-                                callback=getEventsJob,
-                                when=timeToGetEvents,
-                                chat_id=chat_id,
-                                user_id=userId,
-                                data=context,
-                                name=str(userId),
-                                job_kwargs={'misfire_grace_time':3600}
-                                )
+    logger.info(f'Job removed if any.')
     context.job_queue.run_daily(
                                 callback=getEventsJob,
-                                time=time.fromisoformat('17:45:00'),
+                                time=time.fromisoformat(CFG.DEFAULT_NOTICE_TIME),
                                 chat_id=chat_id,
                                 user_id=userId,
                                 job_kwargs={'misfire_grace_time':3600*12,
                                             'coalesce':True}
                                 )
-
     return ConversationHandler.END
 
 
-async def skiprunsearch(update, context):
-    user = update.message.from_user
-    logger.info('User %s skips search', user.first_name)
-    await update.message.reply_text('Bye', reply_markup=ReplyKeyboardRemove())
+async def disconnect(update, context):
+    """
+    Offer saved accounts to disconnect 
+    """
+    userId = update.message.from_user.id
+    lfmAccs = await db.rsql_lfmuser(userId)
+    if lfmAccs:
+        lfmAccs.append('Close')
+        reply_keyboard = [lfmAccs]
+        await update.message.reply_text(
+            text='Choose lastfm\'s profile name to disconnect:',
+            reply_markup=ReplyKeyboardMarkup(
+                reply_keyboard,
+                one_time_keyboard=True
+            ))
+        return DISC_ACC
+    else:
+        await update.message.reply_text('No lastm account saved \U0001F937')
+        return ConversationHandler.END
 
+
+async def disc_acc(update, context):
+    """
+    Waits for answer which account to delete
+    """
+    userId = update.message.from_user.id
+    accToDisc = update.message.text
+    if (accToDisc == '/cancel') or (accToDisc == 'Close'):
+        mustDelete = await update.message.reply_text("Ok",reply_markup=ReplyKeyboardRemove())
+        context.bot.deleteMessage(message_id = mustDelete.message_id,
+                                chat_id = update.message.chat_id)
+        return ConversationHandler.END
+    rows_affected = await db.dsql_useraccs(userId, accToDisc)
+    if rows_affected:
+        text = f'Ok! Account _{accToDisc}_ deleted'
+    else:
+        text = f"Bot had waited for account name to disconnect, but _{accToDisc}_ \
+not found. Try /disconnect again"
+    await update.message.reply_text(
+        text=alChar(text),
+        reply_markup=ReplyKeyboardRemove(),
+        parse_mode='MarkdownV2')
     return ConversationHandler.END
-
 
 async def cancel(update, context):
     """Cancels and ends the conversation."""
@@ -162,10 +234,9 @@ async def cancel(update, context):
 
     return ConversationHandler.END
 
-
 async def getEvents(update, context):
-    userId = str(update.message.from_user.id)
-    infoText = gglib.getInfoText(userId)
+    userId = update.message.from_user.id
+    infoText = await lastfm.getInfoText(userId, db)
     await update.message.reply_text(infoText, reply_markup=ReplyKeyboardRemove(),parse_mode='MarkdownV2')
     logger.info('infoText was sent')
 
@@ -179,7 +250,7 @@ async def getEventsJob(context):
     job = context.job
 
     userId = str(job.user_id)
-    infoText = gglib.getInfoText(userId)
+    infoText = await lastfm.getInfoText(userId, db)
 
     await context.bot.send_message(
                             chat_id=job.chat_id,
@@ -197,45 +268,16 @@ async def showNews(update, context):
     """
     userId = str(update.message.from_user.id)
     command = update.message.text
-    newsText = gglib.getNewsText(userId, command)
-    await update.message.reply_text(text=newsText, parse_mode='MarkdownV2', disable_web_page_preview=True)
-    logger.info('newsText sent to ')
+    try:
+        shorthand = int(command[1:])
+        newsText = await lastfm.getNewsText(userId, shorthand, db)
+        await update.message.reply_text(text=newsText, parse_mode='MarkdownV2', disable_web_page_preview=True)
+        logger.info('newsText sent to ')
+    except:
+        await update.message.reply_text("Can't understand command")
 
 
 async def getinfo(update, context):
     getinfostring = str(context.user_data)
     await update.message.reply_text('I know: \n' + getinfostring)
 
-def loadInteractions(application):
-    """
-    Loads all command handlers on start.
-    Args:
-        application: application for adding handlers to
-    """
-    startHandler = CommandHandler('start', start)
-    capsHandler = CommandHandler('caps', caps)
-    getEventsHandler = CommandHandler('getevents', getEvents)
-    showNewsHandler = MessageHandler(filters.Regex('/([0-9]{2,3})$'), showNews)
-    getinfoHandler = CommandHandler('getinfo', getinfo)
-
-    conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('connect', connect)],
-        states={
-            USERNAME: [MessageHandler(filters.TEXT, username)],
-            MINLISTENS: [MessageHandler(filters.Text('Listened at least twice a day') | filters.Text('All listened artists'), minlistens)],
-            RUNSEARCH: [MessageHandler(filters.Text('Yes (I know it takes time)'), runsearch),
-                        MessageHandler(filters.Text('No'), skiprunsearch)],
-                },
-        fallbacks=[CommandHandler('cancel', cancel)],
-        allow_reentry=True,
-        name="ggb_picklefile",
-        persistent=True,
-                                    )
-
-    application.add_handler(startHandler)
-    application.add_handler(capsHandler)
-    application.add_handler(getEventsHandler)
-    application.add_handler(showNewsHandler)
-    application.add_handler(getinfoHandler)
-    application.add_handler(conv_handler)
-    application.add_error_handler(error)

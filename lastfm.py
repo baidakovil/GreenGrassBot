@@ -30,10 +30,26 @@ def text_to_userdate(text):
 
 
 def alChar(text):
-    alarmCharacters = ('-', '(', ')', '.', '+', '!', '?', '"', '#')
+    alarmCharacters = ('-', '.', '+', '!', '?', '"', '#')
     safetext = "".join(
         [c if c not in alarmCharacters else f'\\{c}' for c in text])
     return safetext
+
+async def addAcc(userId, lastfmUser, db):
+    """
+    Check if lastfm account is valid and notprivate
+    """
+    lastfmApiUrl = f'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&limit=200&user={lastfmUser}&page=1&api_key={apiKey}'
+    htmlText = pageLoader(url=lastfmApiUrl)
+    if isinstance(htmlText, int):
+        if htmlText == 403:
+            return f'Oops! We get error *403*: it seems _{lastfmUser}_\'s tracks are private.\nChange your Last.fm user settings to use this bot. No authentification needed fot this bot'
+        elif htmlText == 404:
+            return f'Ops! We get error *404*: it seems _{lastfmUser}_ is not a correct Last.fm username.'
+        else:
+            return f'We get error *{htmlText}* when load tracks from Last.fm for {lastfmUser}. We\'ll check that soon'
+    else:
+        return await db.wsql_useraccs(userId, lastfmUser)
 
 
 def parserLibrary(lastfmUser: str) -> Dict:
@@ -157,7 +173,7 @@ def parserLastfmEvent(eventArtist: str) -> List[Event]:
     return eventList
 
 
-def getInfoText(user_id: int, db) -> str:
+async def getInfoText(user_id: int, db) -> str:
     """
     At this stage, should be run by coroutine function 'getEventsJob' on dialog's question 'Now, run the search?'
     Used getLastfmEvents() to get dataframe with events.
@@ -176,10 +192,10 @@ def getInfoText(user_id: int, db) -> str:
     OR
     String with error info for user.
     """
-    shorthandCount = int(asyncio.run(db.rsql_maxshorthand(user_id)))
+    shorthandCount = int(await db.rsql_maxshorthand(user_id))
     print(f'get shorthandCount: {shorthandCount}')
     fillNumbers = 2 if CFG.INTEGER_MAX_SHORTHAND < 100 else 3
-    lastfmUsers = asyncio.run(db.rsql_lfmuser(user_id))
+    lastfmUsers = await db.rsql_lfmuser(user_id)
     infoText = ''
 
     for lastfmUser in lastfmUsers:
@@ -194,7 +210,7 @@ def getInfoText(user_id: int, db) -> str:
                 infoText += alChar(
                     f'Ops! We get error *404*: it seems _{lastfmUser}_ is not a correct Last.fm username.')
             else:
-                infoText += f'We get error *{eventsDf}* when load tracks from Last.fm for {lastfmUser}. We\'ll check that soon'
+                infoText += f'We get error *{artistDict}* when load tracks from Last.fm for {lastfmUser}. We\'ll check that soon'
             continue
         elif isinstance(artistDict, dict):
             if len(artistDict.keys()):
@@ -209,25 +225,25 @@ def getInfoText(user_id: int, db) -> str:
                             lfm=lastfmUser,
                             scrobble_count=qty,
                         )
-                        asyncio.run(db.wsql_scrobbles(ars=ars))
+                        await db.wsql_scrobbles(ars=ars)
         # logger.debug(f'Scrobbles for lfm {lastfmUser}: {artistDict}')
 
         #  Get and save events
         for art_name in artistDict.keys():
-            if asyncio.run(db.rsql_artcheck(user_id,
+            if await db.rsql_artcheck(user_id,
                                             art_name,
-                                            )):
+                                            ):
                 # logger.debug(f'Will check: {art_name}')
                 eventList = parserLastfmEvent(art_name)
                 if isinstance(eventList, str):
                     logger.warning(
                         f'OOOP! Error {eventList} when load events for {art_name}')
                     continue
-                asyncio.run(db.wsql_events_lups(eventList))
-                asyncio.run(db.wsql_artcheck(art_name))
+                await db.wsql_events_lups(eventList)
+                await db.wsql_artcheck(art_name)
             # else:
                 # logger.debug(f"Won't check: {art_name}")
-            if asyncio.run(db.rsql_finalquestion(user_id, art_name)):
+            if await db.rsql_finalquestion(user_id, art_name):
                 userArts.append(art_name)
         logger.debug(f'Final arts for user {lastfmUser}: {userArts}')
 
@@ -242,17 +258,17 @@ def getInfoText(user_id: int, db) -> str:
                     shorthandCount+1) if shorthandCount < CFG.INTEGER_MAX_SHORTHAND else 1
                 shorthand = f'/{str(shorthandCount).zfill(fillNumbers)}'
                 infoList.append(f'{shorthand} {alChar(art_name)}')
-                asyncio.run(db.wsql_sentarts(user_id, art_name))
-                asyncio.run(db.wsql_lastarts(
-                    user_id, shorthandCount, art_name))
-            infoText += f'\n*New Events for {lastfmUser}* \n\n' + \
+                await db.wsql_sentarts(user_id, art_name)
+                await db.wsql_lastarts(
+                    user_id, shorthandCount, art_name)
+            infoText += f'\n*New Events*\nfor {lastfmUser}\n\n' + \
                 ' \n'.join(infoList) + '\n'
     return infoText
 
 
-def getNewsText(userId: int, shorthand: str, db) -> str:
+async def getNewsText(userId: int, shorthand: str, db) -> str:
     shorthand = int(shorthand)
-    eventsList = asyncio.run(db.rsql_getallevents(userId, shorthand))
+    eventsList = await db.rsql_getallevents(userId, shorthand)
     if eventsList:
         prevCountry = None
         newsText = list()
@@ -267,7 +283,7 @@ def getNewsText(userId: int, shorthand: str, db) -> str:
             prevCountry = eventCountry
             newsText.append(f'*{eventDate}* in {eventCity}, {eventVenue}\n')
         newsText = [alChar(string) for string in newsText]
-        lastfmEventUrl = f"https://www.last.fm/music/{urllib.parse.quote(eventArtist, safe='')}'/+events"
+        lastfmEventUrl = f"https://www.last.fm/music/{urllib.parse.quote(eventArtist, safe='')}/+events"
         newsText.insert(
             0, f'[_{alChar(eventArtist)}_]({alChar(lastfmEventUrl)}) events\n')
         newsText = ''.join(newsText)

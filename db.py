@@ -119,17 +119,24 @@ class Db:
         connection.execute("PRAGMA foreign_keys = 1")
         return connection
 
-    def _execute_query(self, query, params=None, select=False, selectone=True):
+    def _execute_query(self, query, params=None, select=False, selectone=True, getaffected=None):
         cursor = self._conn.cursor()
         cursor.execute(query, params)
         if select and selectone:
             records = cursor.fetchone()
+            self._conn.commit()
             cursor.close()
             return records
         elif select:
             records = cursor.fetchall()
+            self._conn.commit()
             cursor.close()
             return records
+        elif getaffected:
+            affected = cursor.rowcount
+            self._conn.commit()
+            cursor.close()
+            return affected
         else:
             self._conn.commit()
         cursor.close()
@@ -156,7 +163,7 @@ class Db:
                 elif 'NOT NULL constraint failed: useraccs.user_id' in E.args[0]:
                     logger.warning(
                         f'{f.__name__}|EXCEPTION CASE№2.1.3: {E}, args: {args}, kwargs: {kwargs}')
-                    return f'Sorry, max {CFG.MAX_LFM_ACCOUNT_QTY} accounts possible'
+                    return f'Sorry, maximum {CFG.MAX_LFM_ACCOUNT_QTY} accounts possible at the moment. Use /disconnect to remove accounts.'
                     # CASE№2.1.3 no slots for lfm accs
                 else:
                     logger.warning(
@@ -217,7 +224,11 @@ class Db:
         )
 
         logger.info(f"User with user_id: {user_id} added lfm account: {lfm}")
-        return f'Account {lfm} added'
+        reply_text = f'Account _{lfm}_ added.'
+        if len(await self.rsql_lfmuser(user_id)) == 1:
+            reply_text +=  f'\n\nBot will notify you each day at {CFG.DEFAULT_NOTICE_TIME[:5]} UTC \
+if there is new events.\nPress /getevents to check events anytime you want'
+        return reply_text
 
     @error_handler
     async def wsql_settings(self,
@@ -495,7 +506,7 @@ class Db:
                   'art_name': art_name,
                   'delay': CFG.DAYS_MIN_DELAY_ARTCHECK,
                   'period': CFG.DAYS_PERIOD_MINLISTENS, }
-        query = f"""
+        query = """
         SELECT 
             CASE
                 WHEN
@@ -524,3 +535,19 @@ class Db:
         """
         record = self._execute_query(query, params=params, select=True)
         return bool(record[0])
+
+    #################################
+    ############ DELETES ############
+    #################################
+
+    @error_handler
+    async def dsql_useraccs(self, user_id, lfm) -> None:
+        """
+        Delete lfm account.
+        """
+        query = """
+        DELETE FROM useraccs
+        WHERE user_id = ? AND lfm = ?
+        """
+        affected = self._execute_query(query, params=(user_id, lfm), getaffected=True)
+        return affected
