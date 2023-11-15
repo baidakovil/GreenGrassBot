@@ -4,7 +4,7 @@ import services.logger
 
 from telegram.ext import ConversationHandler
 
-from commands.getevents import getEventsJob
+from commands.getgigs import get_gigs_job
 from config import Cfg
 
 logger = logging.getLogger('A.sch')
@@ -22,7 +22,7 @@ async def runsearch(update, context):
     remove_job_if_exists(userId, context)
     logger.info(f'Job removed if any.')
     context.job_queue.run_daily(
-                                callback=getEventsJob,
+                                callback=get_gigs_job,
                                 time=time.fromisoformat(CFG.DEFAULT_NOTICE_TIME),
                                 chat_id=chat_id,
                                 user_id=userId,

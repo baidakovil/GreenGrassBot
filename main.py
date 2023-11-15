@@ -9,10 +9,8 @@ from interactions.loader import load_interactions
 
 load_dotenv('.env')
 i18n.load_path.append('./assets/lang')
-i18n.set('file_format', 'json')
 i18n.set('filename_format', '{locale}.{format}')
 i18n.set('locale', os.getenv("LANGUAGE"))
-i18n.set('fallback', 'en-US')
 
 logger = logging.getLogger('A.A')
 logger.setLevel(logging.DEBUG)

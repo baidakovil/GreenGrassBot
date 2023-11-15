@@ -1,85 +1,63 @@
 import logging
 from datetime import datetime
 import urllib.parse
+import i18n
 
+from interactions.utils import text_to_userdate
 from services.parse_services import parserLastfmEvent
 from services.parse_services import parserLibrary
 from services.message_service import alChar
-from config import Cfg
-
 from services.custom_classes import ArtScrobble
+from config import Cfg
 
 logger = logging.getLogger('A.new')
 logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 
-def text_to_userdate(text):
-    f_text = '%Y-%m-%d'
-    f_user = '%d %b %Y'
-    return datetime.strptime(text, f_text).strftime(f_user)
 
-
-async def getInfoText(user_id: int, db) -> str:
+async def prepare_gigs_text(user_id: int, db) -> str:
     """
-    At this stage, should be run by coroutine function 'getEventsJob' on dialog's question 'Now, run the search?'
-    Used getLastfmEvents() to get dataframe with events.
-    Read settings with readSett().
-    Saves obtained events with writeData().
-    Returns short info about which artists have new concerts. 
-    Or error text.
-
-    Arguments:
-    userId      - telegram userId from job
-    
-    Return:
-    Markdown-formatted string with artists
-    OR
-    String 'No new concerts'
-    OR
+    Prepare main bot message — news about events. Return:
+    Markdown-formatted string with artists OR
+    String "No new concerts" OR
     String with error info for user.
     """
-    shorthandCount = int(await db.rsql_maxshorthand(user_id))
-    print(f'get shorthandCount: {shorthandCount}')
-    fillNumbers = 2 if CFG.INTEGER_MAX_SHORTHAND < 100 else 3
-    lastfmUsers = await db.rsql_lfmuser(user_id)
+    shorthand_count = int(await db.rsql_maxshorthand(user_id))
+    fill_numbers = 2 if CFG.INTEGER_MAX_SHORTHAND < 100 else 3
+    lfm_accs = await db.rsql_lfmuser(user_id)
     infoText = ''
-
-    for lastfmUser in lastfmUsers:
-        userArts = []
+    for acc in lfm_accs:
+        artists = []
         #  Get and save scrobbles
-        artistDict = parserLibrary(lastfmUser)
-        if isinstance(artistDict, int):
-            if artistDict == 403:
-                infoText += alChar(
-                    f'Oops! We get error *403*: it seems _{lastfmUser}_\'s tracks are private.\nChange your Last.fm user settings to use this bot. No authentification needed fot this bot')
-            elif artistDict == 404:
-                infoText += alChar(
-                    f'Ops! We get error *404*: it seems _{lastfmUser}_ is not a correct Last.fm username.')
+        artist_dict = parserLibrary(acc)
+        if isinstance(artist_dict, int):
+            if artist_dict == 403:
+                infoText += i18n.t('news_builders.403', acc=acc)
+            elif artist_dict == 404:
+                infoText += i18n.t('news_builders.404', acc=acc)
             else:
-                infoText += f'We get error *{artistDict}* when load tracks from Last.fm for {lastfmUser}. We\'ll check that soon'
+                infoText += i18n.t('news_builders.some_error',
+                                   err=artist_dict, acc=acc)
             continue
-        elif isinstance(artistDict, dict):
-            if len(artistDict.keys()):
-                for art_name in artistDict.keys():
-                    for date, qty in artistDict[art_name].items():
+        elif isinstance(artist_dict, dict):
+            if len(artist_dict.keys()):
+                for art_name in artist_dict.keys():
+                    for date, qty in artist_dict[art_name].items():
                         date = datetime.strptime(
                             date, '%d %b %Y').strftime('%Y-%m-%d')
                         ars = ArtScrobble(
                             user_id=user_id,
                             art_name=art_name,
                             scrobble_date=date,
-                            lfm=lastfmUser,
+                            lfm=acc,
                             scrobble_count=qty,
                         )
                         await db.wsql_scrobbles(ars=ars)
-        # logger.debug(f'Scrobbles for lfm {lastfmUser}: {artistDict}')
 
         #  Get and save events
-        for art_name in artistDict.keys():
-            if await db.rsql_artcheck(user_id,
-                                            art_name,
-                                            ):
+        for art_name in artist_dict.keys():
+            if await db.rsql_artcheck(user_id, art_name):
                 # logger.debug(f'Will check: {art_name}')
                 eventList = parserLastfmEvent(art_name)
                 if isinstance(eventList, str):
@@ -91,28 +69,27 @@ async def getInfoText(user_id: int, db) -> str:
             # else:
                 # logger.debug(f"Won't check: {art_name}")
             if await db.rsql_finalquestion(user_id, art_name):
-                userArts.append(art_name)
-        logger.debug(f'Final arts for user {lastfmUser}: {userArts}')
+                artists.append(art_name)
+        logger.debug(f'Final arts for user {acc}: {artists}')
 
         #  Create text for user
-        if userArts:
+        if artists:
             infoList = list()
-            userArts = sorted(userArts)
-            for art_name in userArts:
-                shorthandCount = (
-                    shorthandCount+1) if shorthandCount < CFG.INTEGER_MAX_SHORTHAND else 1
-                shorthand = f'/{str(shorthandCount).zfill(fillNumbers)}'
-                infoList.append(f'{shorthand} {alChar(art_name)}')
+            artists = sorted(artists)
+            for art_name in artists:
+                shorthand_count = (
+                    shorthand_count+1) if shorthand_count < CFG.INTEGER_MAX_SHORTHAND else 1
+                shorthand = f'/{str(shorthand_count).zfill(fill_numbers)}'
+                infoList.append(f'{shorthand} {art_name}')
                 await db.wsql_sentarts(user_id, art_name)
-                await db.wsql_lastarts(
-                    user_id, shorthandCount, art_name)
-            infoText += f'\n*New Events*\nfor _{lastfmUser}_\n\n' + \
-                ' \n'.join(infoList) + '\n'
+                await db.wsql_lastarts(user_id, shorthand_count, art_name)
+                news_header = i18n.t('news_builders.news_header', acc=acc)
+            infoText += news_header + ' \n'.join(infoList) + '\n'
         else:
             usersettings = await db.rsql_settings(user_id)
             if not usersettings.nonewevents:
-                infoText += alChar(f'\nNo new events for _{lastfmUser}_\n')
-
+                no_news_text = i18n.t('news_builders.no_news', acc=acc)
+                infoText += no_news_text
     return infoText
 
 
@@ -139,4 +116,4 @@ async def getNewsText(userId: int, shorthand: str, db) -> str:
         newsText = ''.join(newsText)
         return newsText
     else:
-        return 'No events under this shortcut'
+        return i18n.t('news_builders.no_events_shortcut')

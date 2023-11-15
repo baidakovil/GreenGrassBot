@@ -6,10 +6,10 @@ from telegram.ext import ConversationHandler
 from telegram.ext import filters
 from telegram.ext import MessageHandler
 
-from commands.getevents import getEvents
+from commands.getgigs import get_gigs
 from commands.nolastfm import nolastfm
 from commands.nonewevents import nonewevents
-from commands.details import showNews
+from commands.details import details
 from commands.start import start
 
 from interactions.conn_lfm_conversation import conn_lfm_conversation
@@ -43,7 +43,7 @@ def load_commands(application):
     Loads all command handlers on start.
     Args: application: application for adding handlers to
     """
-    application.add_handler(CommandHandler('getevents', getEvents))
+    application.add_handler(CommandHandler('getgigs', get_gigs))
     application.add_handler(CommandHandler('nolastfm', nolastfm))
     application.add_handler(CommandHandler('nonewevents', nonewevents))
     application.add_handler(CommandHandler('start', start))
@@ -55,7 +55,7 @@ def load_messages(application):
     Args: application: application for adding handlers to
     """
     application.add_handler(MessageHandler(
-        filters.Regex('/([0-9]{2,3})$'), showNews))
+        filters.Regex('/([0-9]{2,3})$'), details))
 
 
 def load_error(application):

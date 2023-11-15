@@ -8,6 +8,7 @@ logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 
+
 def parse_placeholders(string, keys, values):
     """
     Parses placeholders within a string.
@@ -19,7 +20,8 @@ def parse_placeholders(string, keys, values):
         string = string.replace(keys[i], values[i])
     return string
 
-async def reply(update, text, markup=None, parse_mode='MarkdownV2'):
+
+async def reply(update, text, parse_mode='MarkdownV2', reply_markup=None, disable_web_page_preview=False):
     """
     Replies a user with the given message.
     Args:
@@ -28,8 +30,9 @@ async def reply(update, text, markup=None, parse_mode='MarkdownV2'):
         markup: markup for showing buttons, defaults to none
         parse_mode: mode to parse the string, defaults to HTML
     """
-    return await update.message.reply_text(text, reply_markup=markup, disable_web_page_preview=True,
-                                           parse_mode=parse_mode)
+    text = alChar(text)
+    return await update.message.reply_text(text, reply_markup=reply_markup,
+                                           parse_mode=parse_mode, disable_web_page_preview=disable_web_page_preview)
 
 
 async def send_message(context, user_id, text, markup=None, parse_mode='MarkdownV2'):
@@ -44,6 +47,7 @@ async def send_message(context, user_id, text, markup=None, parse_mode='Markdown
     """
     return await context.bot.send_message(user_id, text, reply_markup=markup, disable_web_page_preview=True,
                                           parse_mode=parse_mode)
+
 
 def alChar(text):
     alarmCharacters = ('-', '.', '+', '!', '?', '"', '#')

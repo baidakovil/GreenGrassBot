@@ -1,28 +1,27 @@
+import i18n
+
 from db.db import Db
-from services.message_service import alChar # убрать
+from services.message_service import reply
 
 db = Db()
 
-async def start(update, context):
+
+async def start(update, context) -> None:
+    """
+    Sends start message. If user have accounts, list it.
+    """
     await db.save_user(update)
-    userId = update.message.from_user.id
+    user_id = update.message.from_user.id
     username = update.message.from_user.first_name
-    lfmAccs = await db.rsql_lfmuser(userId)
-    if not lfmAccs:
-        startText = alChar(f"""
-        Hello, {username}.\n\n\
-\U00002753 To use the bot, make sure you have lastfm account and press /connect\n\n\
-\U00002757 If you have no one, press /nolastfm for useful info\n\n\
-\U00002764 Detailed info at /help
-        """)
+    lfm_accs = await db.rsql_lfmuser(user_id)
+    if not lfm_accs:
+        text = i18n.t('start.user', username=username)
     else:
-        lfmAccs = ['_' + acc + '_' for acc in lfmAccs]
-        startText = alChar(f"""
-        {username},\n
-you have {len(lfmAccs)} accounts saved: {', '.join(lfmAccs)}.\n\
-To add and delete accounts, use /connect and /disconnect.
-        """)
-    await context.bot.send_message(
-        chat_id=userId,
-        text=startText,
-        parse_mode='MarkdownV2')
+        lfm_accs = ['_' + acc + '_' for acc in lfm_accs]
+        text = i18n.t('start.hacker',
+                      username=username,
+                      qty=len(lfm_accs),
+                      accs=', '.join(lfm_accs),
+                      )
+    await reply(update, text)
+    return None

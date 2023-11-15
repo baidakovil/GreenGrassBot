@@ -1,5 +1,6 @@
 import logging
 
+import i18n
 from telegram import ReplyKeyboardRemove
 from telegram import ReplyKeyboardMarkup
 from telegram.ext import CommandHandler
@@ -9,8 +10,7 @@ from telegram.ext import MessageHandler
 
 from db.db import Db
 from interactions.utils import cancel_handle
-from services.message_service import alChar
-import services.logger
+from services.message_service import reply
 
 logger = logging.getLogger('A.dis')
 logger.setLevel(logging.DEBUG)
@@ -19,68 +19,66 @@ db = Db()
 
 DISC_ACC = 0
 
-async def disconnect(update, context):
+
+async def disconnect(update, context) -> int:
     """
-    Entry point. Offers saved accounts to delete from database.
-    #TODO Probably should be rewritten to single command handler.
+    Entry point. Offers to user saved accounts from database to delete,
+    or replies about there is no accounts.
     """
     userId = update.message.from_user.id
     lfmAccs = await db.rsql_lfmuser(userId)
     if lfmAccs:
+        text = i18n.t("disconn_lfm_conversation.choose_acc")
         lfmAccs.append('Close')
-        reply_keyboard = [lfmAccs]
-        await update.message.reply_text(
-            text='Choose lastfm\'s profile name to disconnect:',
+        await reply(
+            update,
+            text,
             reply_markup=ReplyKeyboardMarkup(
-                reply_keyboard,
-                one_time_keyboard=True
+                [lfmAccs],
+                one_time_keyboard=True,
+                resize_keyboard=True,
             ))
         return DISC_ACC
     else:
-        await update.message.reply_text('No lastm account saved \U0001F937')
+        await reply(update, i18n.t("disconn_lfm_conversation.no_accs"))
         return ConversationHandler.END
 
 
-async def disc_acc(update, context):
+async def disconn_lfm(update, context) -> int:
     """
-    Second step. Waits for answer which account to delete.
-    #TODO Probably should filter answers
-    #TODO Command /cancel should work but it is not.
+    Second step. Waits for answer which account to delete, delete it it is, replies.
     """
-    userId = update.message.from_user.id
-    accToDisc = update.message.text
-    if (accToDisc == '/cancel') or (accToDisc == 'Close'):
-        mustDelete = await update.message.reply_text("Ok",reply_markup=ReplyKeyboardRemove())
-        context.bot.deleteMessage(message_id = mustDelete.message_id,
-                                chat_id = update.message.chat_id)
+    user_id = update.message.from_user.id
+    acc = update.message.text.lower()
+    if acc in ('/cancel', 'close'):
+        #  Code of the condition only for removing keyboard
+        del_msg = await update.message.reply_text('ok',
+                                                  reply_markup=ReplyKeyboardRemove())
+        await context.bot.deleteMessage(message_id=del_msg.message_id,
+                                        chat_id=update.message.chat_id)
+        await context.bot.deleteMessage(message_id=update.message.message_id,
+                                        chat_id=update.message.chat_id)
         return ConversationHandler.END
-    rows_affected = await db.dsql_useraccs(userId, accToDisc)
+    rows_affected = await db.dsql_useraccs(user_id, acc)
     if rows_affected:
-        text = f'Account _{accToDisc}_ deleted \U0000274E'
+        text = i18n.t("disconn_lfm_conversation.acc_deleted", acc=acc)
     else:
-        text = f"Bot had waited for account name to disconnect, but _{accToDisc}_ \
-not found. Try /disconnect again"
-    await update.message.reply_text(
-        text=alChar(text),
-        reply_markup=ReplyKeyboardRemove(),
-        parse_mode='MarkdownV2')
+        text = i18n.t("disconn_lfm_conversation.acc_not_found", acc=acc)
+    await reply(update, text, reply_markup=ReplyKeyboardRemove())
     return ConversationHandler.END
 
-def disconn_lfm_conversation():
+
+def disconn_lfm_conversation() -> ConversationHandler:
     """
     Return conversation handler to add lastfm user.
     Probably could be rewritten to command handler.
     """
     states = {
-        DISC_ACC: [MessageHandler(filters.TEXT, disc_acc)]
+        DISC_ACC: [MessageHandler(filters.TEXT, disconn_lfm)]
     }
-    
     disconn_lfm_handler = ConversationHandler(
         entry_points=[CommandHandler('disconnect', disconnect)],
         states=states,
         fallbacks=[CommandHandler('cancel', cancel_handle)],
-        allow_reentry=True,
-        name="ggb_picklefile",
-        persistent=False,
     )
     return disconn_lfm_handler

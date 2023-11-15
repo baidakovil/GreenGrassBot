@@ -70,7 +70,7 @@ async def username(update, context):
             parse_mode='MarkdownV2')
     if len(await db.rsql_lfmuser(userId)) == 1:
         text += f'\n\nBot will notify you each day at {CFG.DEFAULT_NOTICE_TIME[:5]} UTC \
-if there is new events.\nPress /getevents to check events anytime you want'
+if there is new events.\nPress /getgigs to check events anytime you want'
     await update.message.reply_text(
         text=alChar(text),
         parse_mode='MarkdownV2')

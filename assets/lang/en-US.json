@@ -1,10 +1,19 @@
 {
     "en-US": {
-        "start.message": "Hello there! Drop your media here to start conversion! (supports video, image and sticker conversions).",
-
-        "help.header": "Here are the currently available conversion types:",
-        "help.footer": "Drop a video, image or sticker to start your file conversion today! Have ideas and suggestions for this mini project? Head over to the Project Repository (https://github.com/tjtanjin/simple-media-converter)!",
-
-        "conversion.in_progress": "Converting %input_type% file to %output_type%",
+        "start.user": "Hello, %{username}.\n\n\u2753 To use the bot, make sure you have lastfm account and press /connect\n\n\u2757 If you don't have one, press /nolastfm for useful info\n\n\u2764 Find detailed info at /help",
+        "start.hacker": "%{username},\nyou have %{qty} accounts saved: %{accs}.\nTo add and delete accounts, use /connect and /disconnect",
+        "disconn_lfm_conversation.choose_acc": "Choose lastfm's profile name to disconnect:",
+        "disconn_lfm_conversation.acc_deleted": "Account _%{acc}_ deleted \u274E",
+        "disconn_lfm_conversation.no_accs": "No lastm account saved \u1F937",
+        "disconn_lfm_conversation.acc_not_found": "Bot had waited for account name to disconnect, but _%{acc}_ was not found. Try /disconnect again",
+        "nonewevents.nots_disabled": "\u1F60F Notifications like *No new events* disabled",
+        "nonewevents.nots_enabled": "Notifications like *No new events* enabled \u0001F60C",
+        "nonewevents.error": "Settings was not updated",
+        "news_builders.403": "Oops! We get error *403*: it seems _%{acc}_'s tracks are private.\nChange your Last.fm user settings to use this bot",
+        "news_builders.404": "Ops! We get error *404*: it seems _%{acc}_ is not a correct Last.fm username",
+        "news_builders.some_error": "We get error *%{err}* when load tracks from Last.fm for %{acc}. We'll check that soon",
+        "news_builders.news_header": "\n*New Events*\nfor _%{acc}_\n\n",
+        "news_builders.no_news": "\nNo new events for _%{acc}_\n",
+        "news_builders.no_events_shortcut": "No events under this shortcut"
     }
 }

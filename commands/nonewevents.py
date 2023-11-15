@@ -1,16 +1,24 @@
+import i18n
+
 from db.db import Db
+from services.message_service import reply
 
 db = Db()
 
-async def nonewevents(update, context):
+async def nonewevents(update, context) -> None:
+    """
+    Toggle 'nonewevents' settings on-off.
+    This settings controls whether user should be notified when no events there. 
+    """
     userId = update.message.from_user.id
     usersettings = await db.rsql_settings(userId)
     new_value = int(not bool(usersettings.nonewevents))
     affected = await db.wsql_settings(userId, nonewevents=new_value)
     if affected and new_value:
-        text = f'\U0001F60F Notifications like *No new events* disabled'
+        text = i18n.t('nonewevents.nots_disabled')
     elif affected:
-        text = f'Notifications like *No new events* enabled \U0001F60C'
+        text = i18n.t('nonewevents.nots_enabled')
     else:
-        text = f'Settings was not updated'
-    await update.message.reply_text(text, parse_mode='MarkdownV2')
+        text = i18n.t('nonewevents.error')
+    await reply(update, text)
+    return None
