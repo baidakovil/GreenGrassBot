@@ -2,10 +2,12 @@ import i18n
 
 from db.db import Db
 from services.message_service import reply
+from telegram import Update
+from telegram.ext import CallbackContext
 
 db = Db()
 
-async def nonewevents(update, context) -> None:
+async def nonewevents(update: Update, context: CallbackContext) -> None:
     """
     Toggle 'nonewevents' settings on-off.
     This settings controls whether user should be notified when no events there. 

@@ -1,11 +1,13 @@
 import os
 import logging
-from typing import List, Tuple
+from typing import List, Tuple, Dict, Union
 from datetime import datetime
 from dataclasses import asdict
+from contextlib import contextmanager
+
+from telegram import Update
 import sqlite3
 from sqlite3 import IntegrityError, OperationalError
-from contextlib import contextmanager
 
 from config import Cfg
 from interactions.utils import timestamp_to_text
@@ -18,7 +20,14 @@ CFG = Cfg()
 
 
 @contextmanager
-def get_connection(db_path, params=None, case=None):
+def get_connection(db_path: str, params: Dict = None, case: str = None) -> None:
+    """
+    Context manager for proper executing sqlite connections.
+    Args: 
+        db_path: path to database
+        params: optional, parameters to execute query with, for error output (at debugging)
+        case: optional, parameter to split error cases
+    """
     try:
         conn = sqlite3.connect(db_path)
         conn.execute("PRAGMA foreign_keys = 1")
@@ -26,34 +35,44 @@ def get_connection(db_path, params=None, case=None):
         conn.commit()
     except IntegrityError as E:
         logger.info(f'CATCHED IntegrityError: {E}, params: {params}')
-        return None
     except OperationalError as E:
         logger.info(f'CATCHED OperationalError: {E}, params: {params}')
-        return None
     except Exception as E:
         logger.warning(f'CATCHED SomeError: {E}')
-        return None
     finally:
         conn.close()
+        return None
 
 
 class Db:
     """
-    Db works here
+    Class for working with sqlite3 database.
     """
 
-    def __init__(self, initial=False):
+    def __init__(self, initial: bool = False) -> None:
+        """
+        Provide db file creating if it was not found or db recreating if needed.
+        Args: 
+            initial: should be supplied only once in main().
+                If True, then basing on value of DELETE_DB_ATSTART parameter
+                database will be rewritten from scratch or not.
+        """
         self.db_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB)
         self.script_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB_SCRIPT)
         if initial and CFG.DELETE_DB_ATSTART:
             os.remove(self.db_path)
             logger.info(f'DB DELETED from: {self.db_path}')
             self.create_db()
+            return None
         elif not os.path.isfile(self.db_path):
             logger.info(f'DB not found in file: {self.db_path}')
             self.create_db()
+            return None
 
-    def create_db(self):
+    def create_db(self) -> None:
+        """
+        Creates db and logging number of created tables in it.
+        """
         os.makedirs(CFG.PATH_DBFILES, exist_ok=True)
         with get_connection(self.db_path) as con:
             cursor = con.cursor()
@@ -66,12 +85,27 @@ class Db:
                 """)
             tbl_num = cursor.fetchone()
             logger.info(f'{tbl_num[0]} tables created')
+            return None
 
-    def _execute_query(self, query, case=None, params=None, select=False, selectone=True, getaffected=None):
+    def _execute_query(
+            self, query: str, case: str = None, params: Dict = None,
+            select: bool = False, selectone: bool = True,
+            getaffected: bool = False) -> Union[None, str, int]:
+        """
+        Execute queries to db.
+        Args:
+            query: single query to execute
+            case: optional, parameter for context manager to split error cases
+            params: parameters to execute query with
+            select: True if query should return a value OR values
+            selectone: True if query should return only one row
+            getaffected: True if query should return quantity of affected rows.
+        Note, getaffected should not combined with selects.
+        """
+        answer = None
         with get_connection(self.db_path, params, case) as con:
             cursor = con.cursor()
             cursor.execute(query, params)
-            answer = None
             if select and selectone:
                 answer = cursor.fetchone()
             elif select:
@@ -85,20 +119,21 @@ class Db:
     ###### WRITES/WRITE-READS #######
     #################################
 
-    async def save_user(self, update) -> None:
+    async def save_user(self, update: Update) -> None:
         """
         Saves to DB:
-            Tg user info WITH replacement (as in wsql_users() query);
-            GGB user settings W/O replacement (initial=True).
+            Tg user info, without replacement (according wsql_users() query);
+            Default user settings without replacement (initial=True).
+        Args: update: standart PTB argument for bot update.
         """
-        ggbUser = User(
+        user = User(
             user_id=update.message.from_user.id,
             username=update.message.from_user.username,
             first_name=update.message.from_user.first_name,
             last_name=update.message.from_user.last_name,
             language_code=update.message.from_user.language_code,
         )
-        await self.wsql_users(ggbUser)
+        await self.wsql_users(user)
         await self.wsql_settings(update.message.from_user.id, initial=True)
         return None
 

@@ -3,6 +3,8 @@ import logging
 import services.logger
 
 from telegram.ext import ConversationHandler
+from telegram import Update
+from telegram.ext import CallbackContext
 
 from commands.getgigs import get_gigs_job
 from config import Cfg
@@ -12,7 +14,7 @@ logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 
-async def runsearch(update, context):
+async def runsearch(update: Update, context: CallbackContext):
     """
     Result of the conversation: resheduling jobs.
     """

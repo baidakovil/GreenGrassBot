@@ -1,6 +1,7 @@
 import os
 import logging
 from dotenv import load_dotenv
+
 import i18n
 from telegram.ext import Application, PicklePersistence
 
@@ -15,7 +16,7 @@ i18n.set('locale', os.getenv("LANGUAGE"))
 logger = logging.getLogger('A.A')
 logger.setLevel(logging.DEBUG)
 
-def main():
+def main() -> None:
     """
     Produce program launch. Shu!
     """
@@ -27,6 +28,7 @@ def main():
     load_interactions(application)
     logger.info(f'App started')
     application.run_polling()
+    return None
 
 if __name__ == '__main__':
     main()

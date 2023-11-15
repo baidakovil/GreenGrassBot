@@ -1,6 +1,8 @@
 import logging
 
 from telegram import ReplyKeyboardRemove
+from telegram import Update
+from telegram.ext import CallbackContext
 
 from ui.news_builders import prepare_gigs_text
 from services.message_service import reply
@@ -11,7 +13,7 @@ db = Db()
 logger = logging.getLogger('A.get')
 logger.setLevel(logging.DEBUG)
 
-async def get_gigs(update, context) -> None:
+async def get_gigs(update: Update, context: CallbackContext) -> None:
     user_id = update.message.from_user.id
     text = await prepare_gigs_text(user_id, db)
     if text:

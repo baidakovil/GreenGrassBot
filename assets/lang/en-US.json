@@ -6,14 +6,22 @@
         "disconn_lfm_conversation.acc_deleted": "Account _%{acc}_ deleted \u274E",
         "disconn_lfm_conversation.no_accs": "No lastm account saved \u1F937",
         "disconn_lfm_conversation.acc_not_found": "Bot had waited for account name to disconnect, but _%{acc}_ was not found. Try /disconnect again",
-        "nonewevents.nots_disabled": "\u1F60F Notifications like *No new events* disabled",
-        "nonewevents.nots_enabled": "Notifications like *No new events* enabled \u0001F60C",
+        "conn_lfm_conversation.max_acc_reached": "Sorry, maximum %{qty} accounts possible at the moment. Use /disconnect to remove accounts",
+        "conn_lfm_conversation.enter_lfm": "Enter lastfm's profile name:",
+        "conn_lfm_conversation.already_have": "Sorry, you already have _%{acc}_ account",
+        "conn_lfm_conversation.some_error": "Sorry, somehow bot can't add your account",
+        "conn_lfm_conversation.done": "Account _%{acc}_ added \u2705",
+        "conn_lfm_conversation.alarm_info": "\n\nBot will notify you each day at %{time} UTC if there will be new events.\nPress /getgigs to check events anytime you want",
+        "nonewevents.nots_disabled": "\u2744 Notifications like *No new events* disabled",
+        "nonewevents.nots_enabled": "Notifications like *No new events* enabled \u270F",
         "nonewevents.error": "Settings was not updated",
         "news_builders.403": "Oops! We get error *403*: it seems _%{acc}_'s tracks are private.\nChange your Last.fm user settings to use this bot",
         "news_builders.404": "Ops! We get error *404*: it seems _%{acc}_ is not a correct Last.fm username",
         "news_builders.some_error": "We get error *%{err}* when load tracks from Last.fm for %{acc}. We'll check that soon",
         "news_builders.news_header": "\n*New Events*\nfor _%{acc}_\n\n",
         "news_builders.no_news": "\nNo new events for _%{acc}_\n",
-        "news_builders.no_events_shortcut": "No events under this shortcut"
+        "news_builders.no_events_shortcut": "No events under this shortcut",
+        "nolastfm.message": "If you don't have *lastfm account*, just [register](https://www.last.fm/join/) one.\nIt is free and great service since 2002\n\u2b07\nAdd your *music service* like iTunes, Spotify, Yandex.Music, etc. to your new account in [settings](https://www.last.fm/settings/applications) of lastfm website\n\u2b07\nPress /connect. Enter *lastfm account* name and forget about the bot\n\u2705\nBot will send you notification, when it find new concerts.\nNotes:\n• Bot works only with *public accounts* at this moment\n• You can add accounts of your frinds or family members — and, may be, go to event together?",
+        "utils.cancel_message": "Canceled"
     }
 }

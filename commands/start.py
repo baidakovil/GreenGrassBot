@@ -2,11 +2,13 @@ import i18n
 
 from db.db import Db
 from services.message_service import reply
+from telegram import Update
+from telegram.ext import CallbackContext
 
 db = Db()
 
 
-async def start(update, context) -> None:
+async def start(update: Update, context: CallbackContext) -> None:
     """
     Sends start message. If user have accounts, list it.
     """

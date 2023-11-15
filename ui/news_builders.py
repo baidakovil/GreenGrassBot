@@ -4,6 +4,7 @@ import urllib.parse
 import i18n
 
 from interactions.utils import text_to_userdate
+from interactions.utils import lfmdate_to_text
 from services.parse_services import parserLastfmEvent
 from services.parse_services import parserLibrary
 from services.message_service import alChar
@@ -44,8 +45,7 @@ async def prepare_gigs_text(user_id: int, db) -> str:
             if len(artist_dict.keys()):
                 for art_name in artist_dict.keys():
                     for date, qty in artist_dict[art_name].items():
-                        date = datetime.strptime(
-                            date, '%d %b %Y').strftime('%Y-%m-%d')
+                        date = lfmdate_to_text(date)
                         ars = ArtScrobble(
                             user_id=user_id,
                             art_name=art_name,

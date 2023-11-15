@@ -7,6 +7,8 @@ from telegram.ext import CommandHandler
 from telegram.ext import ConversationHandler
 from telegram.ext import filters
 from telegram.ext import MessageHandler
+from telegram import Update
+from telegram.ext import CallbackContext
 
 from db.db import Db
 from interactions.utils import cancel_handle
@@ -20,7 +22,7 @@ db = Db()
 DISC_ACC = 0
 
 
-async def disconnect(update, context) -> int:
+async def disconnect(update: Update, context: CallbackContext) -> int:
     """
     Entry point. Offers to user saved accounts from database to delete,
     or replies about there is no accounts.
@@ -44,7 +46,7 @@ async def disconnect(update, context) -> int:
         return ConversationHandler.END
 
 
-async def disconn_lfm(update, context) -> int:
+async def disconn_lfm(update: Update, context: CallbackContext) -> int:
     """
     Second step. Waits for answer which account to delete, delete it it is, replies.
     """
