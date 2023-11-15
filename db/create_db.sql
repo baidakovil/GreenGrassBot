@@ -144,23 +144,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `reg_datetime` DATETIME NULL,
   PRIMARY KEY (`user_id`));
 
-CREATE TRIGGER insert_initial_settings
-BEFORE INSERT ON users
-WHEN NEW.user_id NOT IN (SELECT user_id FROM usersettings)
-BEGIN
-INSERT INTO usersettings (user_id) VALUES (NEW.user_id);
-END;
-
-
 -- -----------------------------------------------------
 -- Table `usersettings`
 -- -----------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `usersettings` (
   `user_id` BIGINT UNSIGNED NOT NULL,
-  `min_listens` TINYINT UNSIGNED DEFAULT 5 NOT NULL,
-  `notice_day` SMALLINT DEFAULT -1 NULL,
-  `notice_time` TIME DEFAULT "12:00:00" NULL,
+  `min_listens` TINYINT UNSIGNED NULL,
+  `notice_day` SMALLINT NULL,
+  `notice_time` TIME NULL,
+  `nonewevents` TINYINT NULL,
   PRIMARY KEY (`user_id`),
   CONSTRAINT `fk_usersettings_users`
     FOREIGN KEY (`user_id`)

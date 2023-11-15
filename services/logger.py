@@ -15,17 +15,6 @@ def startLogger():
     logger.setLevel(logging.DEBUG)
     logger.propagate = False
 
-    class ContextFilter(logging.Filter):
-        """
-        Necessary to escape message dublications in console in
-        case when logger.setLevel of A logger lower then A.B (debugging case)
-        """
-
-        def filter(self, record):
-            if (record.name == 'A') and (record.levelname == 'DEBUG'):
-                return 0
-            else:
-                return 1
     #  Logging to console.
     ch = logging.StreamHandler()
     #  Logging to file since last run (debugging case).
@@ -40,7 +29,7 @@ def startLogger():
         maxBytes=CFG.BYTES_MAX_ROTATING_LOGGER,
         backupCount=CFG.QTY_BACKUPS_ROTATING_LOGGER)
     ch_formatter = logging.Formatter(
-        '[%(asctime)s.%(msecs)03d - %(name)3s - %(levelname)8s - %(funcName)18s()] %(message)s',
+        '[%(asctime)s.%(msecs)03d - %(name)5s - %(levelname)8s - %(lineno)3d - %(funcName)18s()] %(message)s',
         '%H:%M:%S')
     fh_formatter = logging.Formatter(
         '[%(asctime)s.%(msecs)03d - %(name)20s - %(filename)20s:%(lineno)4s - %(funcName)20s() - %(levelname)8s - %(threadName)10s] %(message)s',
@@ -54,8 +43,6 @@ def startLogger():
     logger.addHandler(ch)
     logger.addHandler(fh)
     logger.addHandler(rh)
-    # ch_filter = ContextFilter()
-    # ch.addFilter(ch_filter)
     return logger
 
 logger = startLogger()

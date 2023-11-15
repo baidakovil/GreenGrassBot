@@ -1,192 +1,107 @@
 import os
 import logging
-from pathlib import Path
-from typing import List, Union, Tuple
-from datetime import datetime, date
-from collections import namedtuple
-from dataclasses import dataclass
+from typing import List, Tuple
+from datetime import datetime
 from dataclasses import asdict
 import sqlite3
 from sqlite3 import IntegrityError, OperationalError
+from contextlib import contextmanager
 
 from config import Cfg
+from interactions.utils import timestamp_to_text
+from services.custom_classes import ArtScrobble, Event, User, UserSettings
 
-logger = logging.getLogger('A.E')
+logger = logging.getLogger('A.db')
 logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 
 
-def timestamp_to_text(timestamp):
-    f = '%Y-%m-%d %H:%M:%S'
-    return timestamp.strftime(f)
+@contextmanager
+def get_connection(db_path, params=None, case=None):
+    try:
+        conn = sqlite3.connect(db_path)
+        conn.execute("PRAGMA foreign_keys = 1")
+        yield conn
+        conn.commit()
+    except IntegrityError as E:
+        logger.info(f'CATCHED IntegrityError: {E}, params: {params}')
+        return None
+    except OperationalError as E:
+        logger.info(f'CATCHED OperationalError: {E}, params: {params}')
+        return None
+    except Exception as E:
+        logger.warning(f'CATCHED SomeError: {E}')
+        return None
+    finally:
+        conn.close()
 
-
-def date_to_text(date):
-    f = '%Y-%m-%d'
-    return date.strftime(f)
-
-
-@dataclass
-class ArtScrobble:
-    """
-    Class for keeping user scrobble for 1 artist
-    """
-    user_id: int
-    art_name: str
-    scrobble_date: str
-    lfm: str
-    scrobble_count: int
-
-
-@dataclass
-class Event:
-    """
-    Class for keeping one event and lineup
-    """
-    event_date: str
-    place: str
-    locality: str
-    country: str
-    event_source: str
-    link: str
-    lineup: List[int]
-
-
-@dataclass
-class User:
-    """
-    Class for keeping user info
-    """
-    user_id: int
-    username: str
-    first_name: str
-    last_name: str
-    language_code: str
-    accs: List[str] = None
-    reg_datetime: str = None
-
-
-@dataclass
-class UserSettings:
-    """
-    Class for keeping user settings
-    """
-    user_id: int
-    min_listens: int = CFG.DEFAULT_MIN_LISTENS
-    notice_day: int = CFG.DEFAULT_NOTICE_DAY
-    notice_time: str = CFG.DEFAULT_NOTICE_TIME
 
 class Db:
     """
     Db works here
     """
 
-    def __init__(self, hard_rewrite=False):
-        self.hard_rewrite = hard_rewrite
-        self._conn = self.connection()
-        logger.info(
-            f'DB connected to: {os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB)}')
+    def __init__(self, initial=False):
+        self.db_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB)
+        self.script_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB_SCRIPT)
+        if initial and CFG.DELETE_DB_ATSTART:
+            os.remove(self.db_path)
+            logger.info(f'DB DELETED from: {self.db_path}')
+            self.create_db()
+        elif not os.path.isfile(self.db_path):
+            logger.info(f'DB not found in file: {self.db_path}')
+            self.create_db()
 
     def create_db(self):
         os.makedirs(CFG.PATH_DBFILES, exist_ok=True)
-        connection = sqlite3.connect(os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB))
-        connection.execute("PRAGMA foreign_keys = 1")
-        cursor = connection.cursor()
-        with open(os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB_SCRIPT), 'r') as f:
-            script = f.read()
+        with get_connection(self.db_path) as con:
+            cursor = con.cursor()
+            with open(self.script_path, 'r') as f:
+                script = f.read()
             cursor.executescript(script)
-        connection.commit()
-        logger.info(f'Forward script executed')
-        cursor.execute("""
-            SELECT COUNT(*) FROM sqlite_master WHERE type="table" AND tbl_name != "sqlite_sequence"
-            """)
-        tbl_num = cursor.fetchone()
-        logger.info(f'{tbl_num[0]} tables created')
-        cursor.close()
-        connection.close()
+            logger.info(f'Forward script executed')
+            cursor.execute("""
+                SELECT COUNT(*) FROM sqlite_master WHERE type="table" AND tbl_name != "sqlite_sequence"
+                """)
+            tbl_num = cursor.fetchone()
+            logger.info(f'{tbl_num[0]} tables created')
 
-    def connection(self):
-        db_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB)
-        if not os.path.isfile(db_path):
-            logger.info(f'DB not found in file: {db_path}')
-            self.create_db()
-        elif self.hard_rewrite:
-            os.remove(db_path)
-            logger.info(f'Db DELETED FROM: {db_path}')
-            self.create_db()
-        connection = sqlite3.connect(db_path)
-        connection.execute("PRAGMA foreign_keys = 1")
-        return connection
-
-    def _execute_query(self, query, params=None, select=False, selectone=True, getaffected=None):
-        cursor = self._conn.cursor()
-        cursor.execute(query, params)
-        if select and selectone:
-            records = cursor.fetchone()
-            self._conn.commit()
+    def _execute_query(self, query, case=None, params=None, select=False, selectone=True, getaffected=None):
+        with get_connection(self.db_path, params, case) as con:
+            cursor = con.cursor()
+            cursor.execute(query, params)
+            answer = None
+            if select and selectone:
+                answer = cursor.fetchone()
+            elif select:
+                answer = cursor.fetchall()
+            elif getaffected:
+                answer = cursor.rowcount
             cursor.close()
-            return records
-        elif select:
-            records = cursor.fetchall()
-            self._conn.commit()
-            cursor.close()
-            return records
-        elif getaffected:
-            affected = cursor.rowcount
-            self._conn.commit()
-            cursor.close()
-            return affected
-        else:
-            self._conn.commit()
-        cursor.close()
+            return answer
 
     #################################
     ###### WRITES/WRITE-READS #######
     #################################
 
-    def error_handler(f):
-        async def wrapper(*args, **kwargs):
-            try:
-                return await f(*args, **kwargs)
-            except IntegrityError as E:
-                if 'UNIQUE constraint failed: useraccs.user_id, useraccs.lfm' in E.args[0]:
-                    logger.warning(
-                        f'{f.__name__}| EXCEPTION CASE№2.1.1: {E}, args: {args}, kwargs: {kwargs}')
-                    return 'Sorry, you already have this account'
-                    # CASE№2.1.1 try to insert non-unique
-                elif 'UNIQUE constraint failed' in E.args[0]:
-                    logger.warning(
-                        f'{f.__name__}|EXCEPTION CASE№2.1.2: {E}, args: {args}, kwargs: {kwargs}')
-                    return 'NOTUNIQUE'
-                    # CASE№2.1.2 try to insert non-unique
-                elif 'NOT NULL constraint failed: useraccs.user_id' in E.args[0]:
-                    logger.warning(
-                        f'{f.__name__}|EXCEPTION CASE№2.1.3: {E}, args: {args}, kwargs: {kwargs}')
-                    return f'Sorry, maximum {CFG.MAX_LFM_ACCOUNT_QTY} accounts possible at the moment. Use /disconnect to remove accounts.'
-                    # CASE№2.1.3 no slots for lfm accs
-                else:
-                    logger.warning(
-                        f'{f.__name__}|Unknown error: {E}, args: {args}, kwargs: {kwargs}')
-            except OperationalError as E:
-                if 'database is locked' in E.args[0]:
-                    logger.warning(
-                        f'{f.__name__}|EXCEPTION CASE№2.2: {E}, args: {args}, kwargs: {kwargs}')
-                    # CASE№2.2 another program use database
-                elif 'row value misused' in E.args[0]:
-                    logger.warning(
-                        f'{f.__name__}|EXCEPTION CASE№2.3: {E}, args: {args}, kwargs: {kwargs}')
-                    # CASE№2.3 stumbled when parentnesses were but they dont needed
-                else:
-                    logger.warning(
-                        f'{f.__name__}|EXCEPTION CASE№2.10: {E}, args: {args}, kwargs: {kwargs}')
-                    # CASE№2.10
-            except Exception as E:
-                logger.warning(f'{f.__name__}|EXCEPTION CASE№2.99: {E}')
-                # CASE№2.99 unknown exception for me
-        return wrapper
+    async def save_user(self, update) -> None:
+        """
+        Saves to DB:
+            Tg user info WITH replacement (as in wsql_users() query);
+            GGB user settings W/O replacement (initial=True).
+        """
+        ggbUser = User(
+            user_id=update.message.from_user.id,
+            username=update.message.from_user.username,
+            first_name=update.message.from_user.first_name,
+            last_name=update.message.from_user.last_name,
+            language_code=update.message.from_user.language_code,
+        )
+        await self.wsql_users(ggbUser)
+        await self.wsql_settings(update.message.from_user.id, initial=True)
+        return None
 
-    @error_handler
     async def wsql_users(self, user: User) -> None:
         """
         Write all fields to table 'users'
@@ -195,14 +110,17 @@ class Db:
         INSERT INTO users (user_id, username, first_name, last_name, language_code)
         VALUES (:user_id, :username, :first_name, :last_name, :language_code);
         """
+        params = asdict(user)['reg_datetime'] = timestamp_to_text(
+            datetime.now())
+        params = asdict(user)
         self._execute_query(
             query=query,
-            params=asdict(user),
+            params=params,
+            case='wsql_users'
         )
         logger.info(
             f"User with username: {user.username} and user_id: {user.user_id} added")
 
-    @error_handler
     async def wsql_useraccs(self, user_id, lfm) -> None:
         """
         Add account to 'useraccs' if there is free slots and if it's unique
@@ -218,24 +136,20 @@ class Db:
             :lfm
             );
         """
-        self._execute_query(
+        affected = self._execute_query(
             query=query,
             params=params,
+            getaffected=True
         )
+        return affected
 
-        logger.info(f"User with user_id: {user_id} added lfm account: {lfm}")
-        reply_text = f'Account _{lfm}_ added.'
-        if len(await self.rsql_lfmuser(user_id)) == 1:
-            reply_text +=  f'\n\nBot will notify you each day at {CFG.DEFAULT_NOTICE_TIME[:5]} UTC \
-if there is new events.\nPress /getevents to check events anytime you want'
-        return reply_text
-
-    @error_handler
     async def wsql_settings(self,
                             user_id,
                             min_listens: int = CFG.DEFAULT_MIN_LISTENS,
                             notice_day: int = CFG.DEFAULT_NOTICE_DAY,
                             notice_time: str = CFG.DEFAULT_NOTICE_TIME,
+                            nonewevents: int = 1,
+                            initial=False,
                             ) -> None:
         """
         write all fields to _usersettings row where UserSettings.user_id = user_id
@@ -245,18 +159,31 @@ if there is new events.\nPress /getevents to check events anytime you want'
             min_listens,
             notice_day,
             notice_time,
+            nonewevents,
         )
-        query = """
-        INSERT OR REPLACE INTO usersettings (user_id, min_listens, notice_day, notice_time)
-        VALUES (:user_id, :min_listens, :notice_day, :notice_time);
-        """
-        self._execute_query(
+        if initial:
+            query = """
+            INSERT INTO usersettings (user_id, min_listens, notice_day, notice_time, nonewevents)
+            VALUES (:user_id, :min_listens, :notice_day, :notice_time, :nonewevents);
+            """
+        else:
+            query = """
+            INSERT OR REPLACE INTO usersettings (user_id, min_listens, notice_day, notice_time, nonewevents)
+            VALUES (:user_id, :min_listens, :notice_day, :notice_time, :nonewevents);
+            """
+        affected = self._execute_query(
             query=query,
             params=asdict(uset),
+            getaffected=True
         )
-        logger.info(f"User with user_id: {user_id} updated settings")
+        if initial:
+            logger.info(
+                f"User with user_id: {user_id} insert initial settings: {affected} rows affected")
+        else:
+            logger.info(
+                f"User with user_id: {user_id} updated settings: {affected} rows affected")
+        return affected
 
-    @error_handler
     async def wsql_scrobbles(self, ars: ArtScrobble) -> None:
         """
         write all fields to _scrobbles row
@@ -271,7 +198,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
         )
         # logger.info(f"Added scrobble for user_id: {ars.user_id}, art_name: {ars.art_name}")
 
-    @error_handler
     async def wsql_events_lups(self, eventList: List[Event]) -> None:
         """
         write one row to _events. 
@@ -304,7 +230,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
                 f"Added event with event_date:{ev.event_date}, event_place:{ev.place}")
         logger.info(f'All events for added')
 
-    @error_handler
     async def wsql_artcheck(self, art_name: str) -> None:
         """
         write that art_name was checked
@@ -319,7 +244,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
         )
         logger.info(f"Added or updated artcheck: {art_name}")
 
-    @error_handler
     async def wsql_artcheck_test(self, art_name: str) -> None:
         """
         write that art_name was checked
@@ -334,7 +258,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
         )
         logger.info(f"Added or updated artcheck_test: {art_name}")
 
-    @error_handler
     async def wsql_sentarts(self, user_id, art_name) -> None:
         """
         write all fields to _sentarts
@@ -376,7 +299,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
         )
         logger.info(f"Added sentarts for user_id: {user_id}")
 
-    @error_handler
     async def wsql_lastarts(self, user_id, shorthand, art_name) -> None:
         """
         write all fields to _lastarts
@@ -408,7 +330,28 @@ if there is new events.\nPress /getevents to check events anytime you want'
         )
         return tbl_num[0]
 
-    @error_handler
+    async def rsql_settings(self, user_id: int) -> UserSettings:
+        """
+        Return current usersettings.
+        """
+        query = """
+        SELECT * FROM usersettings
+        WHERE user_id = ?
+        """
+        record = self._execute_query(query, params=(
+            user_id,), select=True, selectone=False)[0]
+        print(record)
+        result = [record[i] for i in range(len(record))]
+        print(result)
+        usersettings = UserSettings(
+            user_id=result[0],
+            min_listens=result[1],
+            notice_day=result[2],
+            notice_time=result[3],
+            nonewevents=result[4],
+        )
+        return usersettings
+
     async def rsql_maxshorthand(self, user_id) -> int:
         """
         Returns maximum number of shorthand-quick link for user,
@@ -420,7 +363,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
         record = self._execute_query(query, params=(user_id,), select=True)
         return record[0]
 
-    @error_handler
     async def rsql_lfmuser(self, user_id: int) -> List[str]:
         """
         return list of lastfm users for user
@@ -435,7 +377,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
         logger.debug(f'Return lastfm users for user_id {user_id}: {result}')
         return result
 
-    @error_handler
     async def rsql_artcheck(self,
                             user_id,
                             art_name) -> datetime:
@@ -473,7 +414,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
         record = self._execute_query(query, params=params, select=True)
         return record[0]
 
-    @error_handler
     async def rsql_getallevents(self, user_id: int, shorthand: int) -> List[Tuple]:
         """
         Return all events as answer on user's shortcut pressing.
@@ -497,7 +437,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
         logger.info(f'User {user_id} requests shorthand {shorthand}')
         return ev
 
-    @error_handler
     async def rsql_finalquestion(self, user_id, art_name) -> bool:
         """
         Answers should this art_name be sent to user at this day (date=today always?)
@@ -540,7 +479,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
     ############ DELETES ############
     #################################
 
-    @error_handler
     async def dsql_useraccs(self, user_id, lfm) -> None:
         """
         Delete lfm account.
@@ -549,5 +487,6 @@ if there is new events.\nPress /getevents to check events anytime you want'
         DELETE FROM useraccs
         WHERE user_id = ? AND lfm = ?
         """
-        affected = self._execute_query(query, params=(user_id, lfm), getaffected=True)
+        affected = self._execute_query(
+            query, params=(user_id, lfm), getaffected=True)
         return affected
