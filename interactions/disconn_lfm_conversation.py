@@ -24,22 +24,22 @@ DISC_ACC = 0
 
 async def disconnect(update: Update, context: CallbackContext) -> int:
     """
-    Entry point. Offers to user saved accounts from database to delete,
-    or replies about there is no accounts.
+    Entry point. Offers to user saved accounts from database to delete, or replies about
+    there is no accounts.
     """
-    userId = update.message.from_user.id
-    lfmAccs = await db.rsql_lfmuser(userId)
-    if lfmAccs:
+    lfm_accs = await db.rsql_lfmuser(update.message.from_user.id)
+    if lfm_accs:
         text = i18n.t("disconn_lfm_conversation.choose_acc")
-        lfmAccs.append('Close')
+        lfm_accs.append('Close')
         await reply(
             update,
             text,
             reply_markup=ReplyKeyboardMarkup(
-                [lfmAccs],
+                [lfm_accs],
                 one_time_keyboard=True,
                 resize_keyboard=True,
-            ))
+            ),
+        )
         return DISC_ACC
     else:
         await reply(update, i18n.t("disconn_lfm_conversation.no_accs"))
@@ -54,12 +54,15 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
     acc = update.message.text.lower()
     if acc in ('/cancel', 'close'):
         #  Code of the condition only for removing keyboard
-        del_msg = await update.message.reply_text('ok',
-                                                  reply_markup=ReplyKeyboardRemove())
-        await context.bot.deleteMessage(message_id=del_msg.message_id,
-                                        chat_id=update.message.chat_id)
-        await context.bot.deleteMessage(message_id=update.message.message_id,
-                                        chat_id=update.message.chat_id)
+        del_msg = await update.message.reply_text(
+            'ok', reply_markup=ReplyKeyboardRemove()
+        )
+        await context.bot.deleteMessage(
+            message_id=del_msg.message_id, chat_id=update.message.chat_id
+        )
+        await context.bot.deleteMessage(
+            message_id=update.message.message_id, chat_id=update.message.chat_id
+        )
         return ConversationHandler.END
     rows_affected = await db.dsql_useraccs(user_id, acc)
     if rows_affected:
@@ -73,11 +76,8 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
 def disconn_lfm_conversation() -> ConversationHandler:
     """
     Return conversation handler to add lastfm user.
-    Probably could be rewritten to command handler.
     """
-    states = {
-        DISC_ACC: [MessageHandler(filters.TEXT, disconn_lfm)]
-    }
+    states = {DISC_ACC: [MessageHandler(filters.TEXT, disconn_lfm)]}
     disconn_lfm_handler = ConversationHandler(
         entry_points=[CommandHandler('disconnect', disconnect)],
         states=states,
