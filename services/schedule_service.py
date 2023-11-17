@@ -1,12 +1,10 @@
-from datetime import time
 import logging
-import services.logger
+from datetime import time
 
-from telegram.ext import ConversationHandler
 from telegram import Update
-from telegram.ext import CallbackContext
+from telegram.ext import CallbackContext, ConversationHandler
 
-from commands.getgigs import get_gigs_job
+from commands.getgigs import getgigs_job
 from config import Cfg
 
 logger = logging.getLogger('A.sch')
@@ -14,33 +12,34 @@ logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 
-async def runsearch(update: Update, context: CallbackContext):
+
+async def run_daily(update: Update, context: CallbackContext) -> int:
     """
-    Result of the conversation: resheduling jobs.
+    Result of the "connect" conversation: job resheduling.
+    Args:
+        update, context: standart PTB callback signature
+    Returns:
+        signal for stop of conversation
     """
-    logger.debug('Entered to runsearch()')
-    userId = update.message.from_user.id
+    logger.debug('Entered to run_daily()')
+    user_id = update.message.from_user.id
     chat_id = update.message.chat_id
-    remove_job_if_exists(userId, context)
-    logger.info(f'Job removed if any.')
+
+    current_jobs = context.job_queue.get_jobs_by_name(str(user_id))
+    if current_jobs:
+        count_jobs = 0
+        for job in current_jobs:
+            job.schedule_removal()
+            count_jobs += 1
+        logger.debug('Schedules removed: {count_jobs}')
+
     context.job_queue.run_daily(
-                                callback=get_gigs_job,
-                                time=time.fromisoformat(CFG.DEFAULT_NOTICE_TIME),
-                                chat_id=chat_id,
-                                user_id=userId,
-                                job_kwargs={'misfire_grace_time':3600*12,
-                                            'coalesce':True}
-                                )
+        callback=getgigs_job,
+        time=time.fromisoformat(CFG.DEFAULT_NOTICE_TIME),
+        chat_id=chat_id,
+        user_id=user_id,
+        name=str(user_id),
+        job_kwargs={'misfire_grace_time': 3600 * 12, 'coalesce': True},
+    )
+    logger.info('Added daily job for: {user_id}')
     return ConversationHandler.END
-
-
-def remove_job_if_exists(name: str, context) -> bool:
-    """Remove job with given name. Returns whether job was removed."""
-    current_jobs = context.job_queue.get_jobs_by_name(name)
-    if not current_jobs:
-        return False
-    for job in current_jobs:
-        job.schedule_removal()
-    return True
-
-
