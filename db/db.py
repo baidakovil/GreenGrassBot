@@ -20,9 +20,7 @@ CFG = Cfg()
 
 
 @contextmanager
-def get_connection(
-    db_path: str, params: Dict = None, case: str = None
-) -> None:
+def get_connection(db_path: str, params: Dict = None, case: str = None) -> None:
     """
     Context manager for proper executing sqlite queries.
     Args:
@@ -49,16 +47,18 @@ def get_connection(
 
 class Db:
     """
-    Class for working with sqlite3 database.
+    Class for working with sqlite3 database. Convention for function names is to use
+    proper first name symbol(s): r - read, w - write, wr/rw - write and read, d - delete
+    data. After that symbol(s) "sql_" and then function name
     """
 
     def __init__(self, initial: bool = False) -> None:
         """
         Provide db file creating if it was not found or db recreating if needed.
         Args:
-            initial: should be supplied only once in main(). If True, then
-            basing on value of DELETE_DB_ATSTART parameter database will be
-            rewritten from scratch or not.
+            initial: should be supplied only once in main(). If True, then basing on
+            value of DELETE_DB_ATSTART parameter database will be rewritten from scratch
+            or not.
         """
         self.db_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB)
         self.script_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB_SCRIPT)
@@ -131,9 +131,9 @@ class Db:
 
     async def save_user(self, update: Update) -> None:
         """
-        Saves to DB: a) Tg user info, without replacement (according
-        wsql_users() query); b) Default user settings without replacement
-        (initial=True), except nonewevents.
+        Saves to DB: a) Tg user info, without replacement (according wsql_users()
+        query); b) Default user settings without replacement (initial=True), except
+        nonewevents.
         Args:
             update: object representing incoming update (message)
         """
@@ -155,12 +155,10 @@ class Db:
             user: user to save.
         """
         query = """
-        INSERT INTO users (user_id, username, first_name, last_name, language_code)
+        INSERT OR IGNORE INTO users (user_id, username, first_name, last_name, language_code)
         VALUES (:user_id, :username, :first_name, :last_name, :language_code);
         """
-        params = asdict(user)['reg_datetime'] = timestamp_to_text(
-            datetime.now()
-        )
+        params = asdict(user)['reg_datetime'] = timestamp_to_text(datetime.now())
         params = asdict(user)
         self._execute_query(query=query, params=params)
         logger.info(
@@ -170,9 +168,8 @@ class Db:
 
     async def wsql_useraccs(self, user_id: int, lfm: str) -> int:
         """
-        Add account to 'useraccs' if there is free slots and if it's unique.
-        Slots and uniqueness checked for second time there (first time in
-        callback function).
+        Add account to 'useraccs' if there is free slots and if it's unique. Slots and
+        uniqueness checked for second time there (first time in callback function).
         Args:
             user_id: Tg user_id field lfm: last.fm account name to save
         Returns:
@@ -191,9 +188,7 @@ class Db:
                 WHERE user_id = :user_id) <= :max_qty-1),
             :lfm);
         """
-        affected = self._execute_query(
-            query=query, params=params, getaffected=True
-        )
+        affected = self._execute_query(query=query, params=params, getaffected=True)
         return affected
 
     async def wsql_settings(
@@ -207,23 +202,15 @@ class Db:
     ) -> int:
         """
         Saves default user settings. Args:
-            user_id: Tg user_id field
-            min_listens: minimum scrobbles quantity in last
-            CFG.DAYS_PERIOD_MINLISTENS days to count on this artist
-            notice_day: day to notice in 0-6 format, start with monday, -1 for
-            everyday notice_time: UTC 24h time in format '12:00:00'
-            nonewevents: whether to show "No new events" message (1 mean: not to
-            show)
-            initial: controls replace row or not
+            user_id, min_listens, notice_day, nonewevents: see desription in
+            custom_classes.py initial: controls replace row or not
         Returns:
             affected rows quantity
         """
-        uset = UserSettings(
-            user_id, min_listens, notice_day, notice_time, nonewevents
-        )
+        uset = UserSettings(user_id, min_listens, notice_day, notice_time, nonewevents)
         if initial:
             query = """
-            INSERT INTO usersettings (user_id, min_listens, notice_day, notice_time, nonewevents)
+            INSERT OR IGNORE INTO usersettings (user_id, min_listens, notice_day, notice_time, nonewevents)
             VALUES (:user_id, :min_listens, :notice_day, :notice_time, :nonewevents);
             """
         else:
@@ -246,8 +233,8 @@ class Db:
 
     async def wsql_scrobbles(self, ars: ArtScrobble) -> None:
         """
-        Write single artist scrobble info. This used to determine whether user
-        should be notified about thist artist.
+        Write single artist scrobble info. This used to determine whether user should be
+        notified about thist artist.
         Args:
             ars: GGB scrobble object
         """
@@ -263,8 +250,8 @@ class Db:
 
     async def wsql_events_lups(self, event_list: List[Event]) -> None:
         """
-        Write list of event-rows to event table AND list of lists of art-rows to
-        lineup table.
+        Write list of event-rows to event table AND list of lists of art-rows to lineup
+        table.
         """
         query_ev = """
         INSERT INTO events (event_date, place, locality, country, event_source, link)
@@ -294,8 +281,8 @@ class Db:
 
     async def wsql_artcheck(self, art_name: str) -> None:
         """
-        Write or replaced info about art_name was checked for events, for
-        escaping multiple checking in short time. Time delay controlled by
+        Write or replaced info about art_name was checked for events, for escaping
+        multiple checking in short time. Time delay controlled by
         CFG.DAYS_MIN_DELAY_ARTCHECK.
         Args:
             art_name: artist name that was checked
@@ -363,12 +350,10 @@ class Db:
         logger.info(f"Added sentarts for user_id: {user_id}")
         return None
 
-    async def wsql_lastarts(
-        self, user_id: int, shorthand: int, art_name: str
-    ) -> None:
+    async def wsql_lastarts(self, user_id: int, shorthand: int, art_name: str) -> None:
         """
-        Write all fields to lastarts table. It used to access detailed event
-        info with 'shortcuts' like: /01 Beatles /02 Sebastian Bach.
+        Write all fields to lastarts table. It used to access detailed event info with
+        'shortcuts' like: /01 Beatles /02 Sebastian Bach.
         Args:
             user_id: Tg user_id field
             shorthand: integer shorthand number, max to
@@ -431,8 +416,8 @@ class Db:
 
     async def rsql_maxshorthand(self, user_id: int) -> int:
         """
-        Returns maximum number of shorthand-quick link for user, or zero if
-        there is no shorthands.
+        Returns maximum number of shorthand-quick link for user, or zero if there is no
+        shorthands.
         Args:
             user_id: Tg user_id field
         Returns:
@@ -466,9 +451,10 @@ class Db:
 
     async def rsql_artcheck(self, user_id: int, art_name: str) -> int:
         """
-        Answers should this artist be checked for events. Returns 0 or 1.
-        Conditions for "1": a) no checked for concerts yet OR checked far
-        before DAYS_MIN_DELAY_ARTCHECK b) user had listen this artist much enough.
+        Answers should this artist be checked for events. Returns 0 or 1. Conditions for
+        "1": a) no checked for concerts yet OR checked far before
+        DAYS_MIN_DELAY_ARTCHECK b) user had listen this artist much enough, i.e. not
+        less than min_listens times in last DAYS_PERIOD_MINLISTENS days.
         Args:
             user_id: Tg user_id field
             art_name: artist_name
@@ -503,13 +489,11 @@ class Db:
         record = self._execute_query(query, params=params, select=True)
         return record[0]
 
-    async def rsql_getallevents(
-        self, user_id: int, shorthand: int
-    ) -> List[Tuple]:
+    async def rsql_getallevents(self, user_id: int, shorthand: int) -> List[Tuple]:
         """
-        Return all events as answer on user's quick-link shortcut pressing.
-        Conditions to select events: a) art_name same as in Tg message near
-        shortcut b) event_date after the date when Tg message was sent.
+        Return all events as answer on user's quick-link shortcut pressing. Conditions
+        to select events: a) art_name same as in Tg message near shortcut b) event_date
+        after the date when Tg message was sent.
         Args:
             user_id: Tg user_id field
             shorthand: integer shortcut
@@ -529,18 +513,16 @@ class Db:
         AND event_date >= (SELECT shorthand_date FROM lastarts WHERE shorthand= :shorthand)
         ORDER BY event_date
         """
-        ev = self._execute_query(
-            query, params=params, select=True, selectone=False
-        )
+        ev = self._execute_query(query, params=params, select=True, selectone=False)
         logger.info(f'User {user_id} requests shorthand {shorthand}')
         return ev
 
     async def rsql_finalquestion(self, user_id, art_name) -> int:
         """
-        Answers, should this art_name be sent to user. Conditions to answer "1":
-        a) event was not sent before, b) in last DAYS_PERIOD_MINLISTENS user
-        have no less X listens, where X is min_listens user setting, c) event
-        date is in future, d) artist name in lineups table as in the request.
+        Answers, should this art_name be sent to user. Conditions to answer "1": a)
+        event was not sent before, b) in last DAYS_PERIOD_MINLISTENS user have no less X
+        listens, where X is min_listens user setting, c) event date is in future, d)
+        artist name present in lineups table.
         Args:
             user_id: Tg user_id field
             art_name: artist name to answer.
@@ -600,7 +582,5 @@ class Db:
         DELETE FROM useraccs
         WHERE user_id = ? AND lfm = ?
         """
-        affected = self._execute_query(
-            query, params=(user_id, lfm), getaffected=True
-        )
+        affected = self._execute_query(query, params=(user_id, lfm), getaffected=True)
         return affected
