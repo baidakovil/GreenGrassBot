@@ -26,3 +26,4 @@ WORKFLOW.md
 *.db-journal
 #  Test db for debugging
 ggb_sqlite_test.db
+ggb_sqlite.db
