@@ -2,118 +2,180 @@ import logging
 from datetime import datetime
 import urllib.parse
 import i18n
+from typing import List, KeysView, Dict
 
+from db.db import Db
 from interactions.utils import text_to_userdate
 from interactions.utils import lfmdate_to_text
-from services.parse_services import parserLastfmEvent
-from services.parse_services import parserLibrary
-from services.message_service import alChar
+from services.parse_services import parser_event
+from services.parse_services import parser_scrobbles
+from services.parse_services import artist_at_url
 from services.custom_classes import ArtScrobble
+from ui.error_builder import error_text
 from config import Cfg
 
-logger = logging.getLogger('A.new')
+logger = logging.getLogger("A.new")
 logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 
+db = Db()
 
-async def prepare_gigs_text(user_id: int, db) -> str:
+
+async def filter_artists(user_id: int, art_names: KeysView) -> List[str]:
     """
-    Prepare main bot message — news about events. Return:
-    Markdown-formatted string with artists OR
-    String "No new concerts" OR
-    String with error info for user.
+    Takes list of scrobbled artists and filters it to those who match conditions to be
+    sent to user: rsql_finalquestion() = 1. But before this, load events from lastfm.
+    Args:
+        user_id: Tg user_id field
+        artists: list of scrobbled artists
+    Returns:
+        list of artists to sent to user
     """
+    filtered = []
+    for art_name in art_names:
+        #  First, check if we need to load events for the artists
+        if await db.rsql_artcheck(user_id, art_name):
+            #  Second, load new events
+            logger.debug(f'Will check: {art_name}')
+            events = parser_event(art_name)
+            #  At error, go to next artist
+            if isinstance(events, int):
+                logger.warning(f"OOOP! Error {events} when load events for {art_name}")
+                continue
+            #  Write timestamp to db, that artist was checked
+            if events:
+                await db.wsql_events_lups(events)
+            await db.wsql_artcheck(art_name)
+        else:
+            logger.debug(f"Won't check: {art_name}")
+        #  For each of artist in origin list, check if it should be sent to user
+        if await db.rsql_finalquestion(user_id, art_name):
+            filtered.append(art_name)
+    logger.debug(f"Final art_names for user {user_id}: {filtered}")
+    return sorted(filtered)
+
+
+async def save_scrobbles(user_id: int, acc: str, scrobbles_dict: Dict) -> None:
+    """
+    Saves result of parser_scrobbles() to database.
+    Args:
+        dict with structure {artist_name: {date:count} }
+    """
+    if isinstance(scrobbles_dict, dict) and len(scrobbles_dict.keys()):
+        for art_name in scrobbles_dict.keys():
+            for date, qty in scrobbles_dict[art_name].items():
+                date = lfmdate_to_text(date)
+                ars = ArtScrobble(
+                    user_id=user_id,
+                    art_name=art_name,
+                    scrobble_date=date,
+                    lfm=acc,
+                    scrobble_count=qty,
+                )
+                await db.wsql_scrobbles(ars=ars)
+    return None
+
+
+async def prepare_gigs_text(user_id: int, request: bool) -> str:
+    """
+    Prepare main bot message — news about events.
+    Return:
+        Markdown-formatted string with artists OR String "No new concerts" OR String
+    with error info for user, for each of it lfm accountss
+    """
+    usersettings = await db.rsql_settings(user_id)
+
     shorthand_count = int(await db.rsql_maxshorthand(user_id))
-    fill_numbers = 2 if CFG.INTEGER_MAX_SHORTHAND < 100 else 3
+    max_shorthand = CFG.INTEGER_MAX_SHORTHAND
+    fill_numbers = 2 if max_shorthand < 100 else 3
     lfm_accs = await db.rsql_lfmuser(user_id)
-    infoText = ''
+    gigs_text = ''
     for acc in lfm_accs:
-        artists = []
-        #  Get and save scrobbles
-        artist_dict = parserLibrary(acc)
-        if isinstance(artist_dict, int):
-            if artist_dict == 403:
-                infoText += i18n.t('news_builders.403', acc=acc)
-            elif artist_dict == 404:
-                infoText += i18n.t('news_builders.404', acc=acc)
-            else:
-                infoText += i18n.t('news_builders.some_error',
-                                   err=artist_dict, acc=acc)
+        #  Get scrobbles
+        scrobbles_dict = parser_scrobbles(acc)
+        #  Save scrobbles or add error
+        if isinstance(scrobbles_dict, dict) and len(scrobbles_dict.keys()):
+            await save_scrobbles(user_id, acc, scrobbles_dict)
+        elif isinstance(scrobbles_dict, dict):
+            if usersettings.nonewevents or request:
+                gigs_text += i18n.t("news_builders.no_scrobbles", acc=acc)
+                continue
+        elif isinstance(scrobbles_dict, int):
+            gigs_text += error_text(scrobbles_dict, acc)
             continue
-        elif isinstance(artist_dict, dict):
-            if len(artist_dict.keys()):
-                for art_name in artist_dict.keys():
-                    for date, qty in artist_dict[art_name].items():
-                        date = lfmdate_to_text(date)
-                        ars = ArtScrobble(
-                            user_id=user_id,
-                            art_name=art_name,
-                            scrobble_date=date,
-                            lfm=acc,
-                            scrobble_count=qty,
-                        )
-                        await db.wsql_scrobbles(ars=ars)
-
+        else:
+            logger.warning('OOOOF! Strange error when loading scrobbles')
+            continue
         #  Get and save events
-        for art_name in artist_dict.keys():
-            if await db.rsql_artcheck(user_id, art_name):
-                # logger.debug(f'Will check: {art_name}')
-                eventList = parserLastfmEvent(art_name)
-                if isinstance(eventList, str):
-                    logger.warning(
-                        f'OOOP! Error {eventList} when load events for {art_name}')
-                    continue
-                await db.wsql_events_lups(eventList)
-                await db.wsql_artcheck(art_name)
-            # else:
-                # logger.debug(f"Won't check: {art_name}")
-            if await db.rsql_finalquestion(user_id, art_name):
-                artists.append(art_name)
-        logger.debug(f'Final arts for user {acc}: {artists}')
-
+        filtered = await filter_artists(user_id, scrobbles_dict.keys())
         #  Create text for user
-        if artists:
-            infoList = list()
-            artists = sorted(artists)
-            for art_name in artists:
+        if filtered:
+            gig_list = list()
+            for art_name in filtered:
                 shorthand_count = (
-                    shorthand_count+1) if shorthand_count < CFG.INTEGER_MAX_SHORTHAND else 1
-                shorthand = f'/{str(shorthand_count).zfill(fill_numbers)}'
-                infoList.append(f'{shorthand} {art_name}')
+                    shorthand_count + 1 if shorthand_count < max_shorthand else 1
+                )
+                shorthand = f"/{str(shorthand_count).zfill(fill_numbers)}"
+                gig_list.append(f"{shorthand} {art_name}")
+                #  Save shorthands and info about sent artist
                 await db.wsql_sentarts(user_id, art_name)
                 await db.wsql_lastarts(user_id, shorthand_count, art_name)
-                news_header = i18n.t('news_builders.news_header', acc=acc)
-            infoText += news_header + ' \n'.join(infoList) + '\n'
+                news_header = i18n.t("news_builders.news_header", acc=acc)
+            #  For each acc add new events =)
+            gigs_text += news_header + " \n".join(gig_list) + "\n"
         else:
-            usersettings = await db.rsql_settings(user_id)
-            if not usersettings.nonewevents:
-                no_news_text = i18n.t('news_builders.no_news', acc=acc)
-                infoText += no_news_text
-    return infoText
+            #  Add "no_news" message if appropriated
+            if usersettings.nonewevents or request:
+                gigs_text += i18n.t("news_builders.no_news", acc=acc)
+    return gigs_text
 
 
-async def getNewsText(userId: int, shorthand: str, db) -> str:
-    shorthand = int(shorthand)
-    eventsList = await db.rsql_getallevents(userId, shorthand)
-    if eventsList:
-        prevCountry = None
-        newsText = list()
-        for event in eventsList:
-            eventArtist = event[0]
-            eventDate = text_to_userdate(event[1])
-            eventVenue = event[2]
-            eventCity = event[3]
-            eventCountry = event[4]
-            if (prevCountry is None) or (prevCountry != eventCountry):
-                newsText.append(f'\nIn {eventCountry}\n')
-            prevCountry = eventCountry
-            newsText.append(f'*{eventDate}* in {eventCity}, {eventVenue}\n')
-        newsText = [alChar(string) for string in newsText]
-        lastfmEventUrl = f"https://www.last.fm/music/{urllib.parse.quote(eventArtist, safe='')}/+events"
-        newsText.insert(
-            0, f'[_{alChar(eventArtist)}_]({alChar(lastfmEventUrl)}) events\n')
-        newsText = ''.join(newsText)
-        return newsText
+async def prepare_details_text(user_id: int, shorthand: str) -> str:
+    """
+    Prepare secondary bot message — detailed info about artist's events.
+    Args:
+        user_id: Tg user_id field
+        shorthand: quick link pressed by user
+    """
+    events = await db.rsql_getallevents(user_id, shorthand)
+    if events:
+        prev_country = None
+        news_text = list()
+        for event in events:
+            events_artist = event[0]
+            event_date = text_to_userdate(event[1])
+            event_venue = event[2]
+            event_city = event[3]
+            event_country = event[4]
+            if (prev_country is None) or (prev_country != event_country):
+                #  In Russia
+                news_text.append(
+                    i18n.t("news_builders.in_country", event_country=event_country)
+                )
+            prev_country = event_country
+            #  *David Bowie* in Moscow, Cherkizovsky Stadium
+            news_text.append(
+                i18n.t(
+                    "news_builders.date_city_venue",
+                    event_date=event_date,
+                    event_city=event_city,
+                    event_venue=event_venue,
+                )
+            )
+        events_url = i18n.t(
+            "parse_services.lastfmeventurl", artist=artist_at_url(events_artist)
+        )
+        #  David Bowie events
+        news_text.insert(
+            0,
+            i18n.t(
+                "news_builders.details_header",
+                events_artist=events_artist,
+                events_url=events_url,
+            ),
+        )
+        news_text = "".join(news_text)
+        return news_text
     else:
-        return i18n.t('news_builders.no_events_shortcut')
+        return i18n.t("news_builders.no_events_shortcut")
