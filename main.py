@@ -1,12 +1,13 @@
-import os
 import logging
-from dotenv import load_dotenv
+import os
 
 import i18n
+from dotenv import load_dotenv
 from telegram.ext import Application, PicklePersistence
 
 from db.db import Db
 from interactions.loader import load_interactions
+from services.logger import logger
 
 load_dotenv('.env')
 i18n.load_path.append('./assets/lang')
@@ -16,19 +17,20 @@ i18n.set('locale', os.getenv("LANGUAGE"))
 logger = logging.getLogger('A.A')
 logger.setLevel(logging.DEBUG)
 
+
 def main() -> None:
     """
     Produce program launch. Shu!
     """
-    token = os.getenv("BOT_TOKEN")  
+    token = os.getenv("BOT_TOKEN")
     persistence = PicklePersistence(filepath='connectBot')
     Db(initial=True)
-    application = Application.builder().token(
-        token).persistence(persistence).build()
+    application = Application.builder().token(token).persistence(persistence).build()
     load_interactions(application)
     logger.info(f'App started')
     application.run_polling()
     return None
+
 
 if __name__ == '__main__':
     main()
