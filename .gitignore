@@ -1,29 +1,35 @@
 #  Python interpreter bytecode
 __pycache__
+
 #  Last.fm API Key and Telegram bot token
 .env
+
 #  VSCode debugging configuration, workspace config
 .vscode
 *.code-workspace
-#  Main program cache folder for xml (library/) and html files (concerts/)
-cache
+
 #  Main program folder for other data: log files, user settings files, user current situation, geodata
 data
-#  Folder for PTB's examples
-examples
+
 #  Current run log
-log
 logger.log
+
 #  File for working experiments
 ggbWork.ipynb
 ggget.py
+db/backup
+
 #  Bot persistence file for continuation after restart
 connectBot
+
 #  File-notebook with plans and actions
 WORKFLOW.md
+
 #  Workbench backup files
 *.bak
 *.db-journal
+
 #  Test db for debugging
 ggb_sqlite_test.db
 db/ggb_sqlite.db
+db/backup
