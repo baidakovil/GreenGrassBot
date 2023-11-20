@@ -1,10 +1,10 @@
-import i18n
 from telegram import Update
 from telegram.ext import CallbackContext
 
 from db.db import Db
-from services.message_service import reply
+from services.message_service import i34g
 from services.message_service import alarm_char
+from services.message_service import reply
 
 db = Db()
 
@@ -20,15 +20,15 @@ async def start(update: Update, context: CallbackContext) -> None:
     username = update.message.from_user.first_name
     lfm_accs = await db.rsql_lfmuser(user_id)
     if not lfm_accs:
-        text = i18n.t('start.user', username=username)
+        text = await i34g('start.user', username=username, user_id=user_id)
     else:
-        undscr = alarm_char('_', replace=True)
-        lfm_accs = [undscr + acc + undscr for acc in lfm_accs]
-        text = i18n.t(
+        lfm_accs = ['_' + alarm_char(acc) + '_' for acc in lfm_accs]
+        text = await i34g(
             'start.hacker',
             username=username,
             qty=len(lfm_accs),
-            accs=', '.join(lfm_accs),
+            accs_noalarm=', '.join(lfm_accs),
+            user_id=user_id,
         )
     await reply(update, text)
     return None
