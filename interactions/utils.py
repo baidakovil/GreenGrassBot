@@ -1,12 +1,6 @@
-import i18n
 import logging
 from datetime import datetime
 
-from telegram import Update
-from telegram.ext import CallbackContext
-from telegram.ext import ConversationHandler
-
-from services.message_service import reply
 from config import Cfg
 
 logger = logging.getLogger('A.uti')
@@ -54,18 +48,3 @@ def lfmdate_to_text(lfmdate: str) -> str:
     f_lfm = '%d %b %Y'
     f_sql = '%Y-%m-%d'
     return datetime.strptime(lfmdate, f_lfm).strftime(f_sql)
-
-
-async def cancel_handle(update: Update, context: CallbackContext) -> int:
-    """
-    Determine what to do when catched /cancel command: log, send message, return 0.
-    Choose of return value is doubting =|.
-    Args:
-        update, context: standart PTB callback signature
-    Returns:
-        int = 0
-    """
-    user = update.message.from_user
-    logger.info(f'User {user.first_name} canceled the conversation')
-    await reply(update, i18n.t('utils.cancel_message'))
-    return ConversationHandler.END
