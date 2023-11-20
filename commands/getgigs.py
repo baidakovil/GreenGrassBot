@@ -5,6 +5,7 @@ from telegram.ext import CallbackContext
 
 from db.db import Db
 from services.message_service import reply
+from services.message_service import send_message
 from ui.news_builders import prepare_gigs_text
 
 db = Db()
@@ -18,6 +19,7 @@ async def getgigs(update: Update, context: CallbackContext) -> None:
     Callback function. Send list of artists with new concerts to user.
     Args:
         update, context: standart PTB callback signature
+    TODO fail when no user
     """
     user_id = update.message.from_user.id
     text = await prepare_gigs_text(user_id, request=True)
@@ -41,9 +43,7 @@ async def getgigs_job(context: CallbackContext) -> None:
     user_id = context.job.user_id
     text = await prepare_gigs_text(user_id, request=False)
     if text:
-        await context.bot.send_message(
-            chat_id=context.job.chat_id, text=text, parse_mode='MarkdownV2'
-        )
+        await send_message(context, user_id, text)
         logger.info(f'Job done, gigs sent to user {user_id}')
         return None
     else:
