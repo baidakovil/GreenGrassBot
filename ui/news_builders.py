@@ -1,18 +1,13 @@
 import logging
-from datetime import datetime
-import urllib.parse
-import i18n
-from typing import List, KeysView, Dict
+from typing import Dict, KeysView, List
 
-from db.db import Db
-from interactions.utils import text_to_userdate
-from interactions.utils import lfmdate_to_text
-from services.parse_services import parser_event
-from services.parse_services import parser_scrobbles
-from services.parse_services import artist_at_url
-from services.custom_classes import ArtScrobble
-from ui.error_builder import error_text
 from config import Cfg
+from db.db import Db
+from interactions.utils import lfmdate_to_text, text_to_userdate
+from services.custom_classes import ArtScrobble
+from services.message_service import i34g
+from services.parse_services import artist_at_url, parser_event, parser_scrobbles
+from ui.error_builder import error_text
 
 logger = logging.getLogger("A.new")
 logger.setLevel(logging.DEBUG)
@@ -38,10 +33,11 @@ async def filter_artists(user_id: int, art_names: KeysView) -> List[str]:
         if await db.rsql_artcheck(user_id, art_name):
             #  Second, load new events
             logger.debug(f'Will check: {art_name}')
-            events = parser_event(art_name)
+            events = await parser_event(art_name)
             #  At error, go to next artist
             if isinstance(events, int):
                 logger.warning(f"OOOP! Error {events} when load events for {art_name}")
+                await db.wsql_artcheck(art_name)
                 continue
             #  Write timestamp to db, that artist was checked
             if events:
@@ -93,16 +89,18 @@ async def prepare_gigs_text(user_id: int, request: bool) -> str:
     gigs_text = ''
     for acc in lfm_accs:
         #  Get scrobbles
-        scrobbles_dict = parser_scrobbles(acc)
+        scrobbles_dict = await parser_scrobbles(acc)
         #  Save scrobbles or add error
         if isinstance(scrobbles_dict, dict) and len(scrobbles_dict.keys()):
             await save_scrobbles(user_id, acc, scrobbles_dict)
         elif isinstance(scrobbles_dict, dict):
             if usersettings.nonewevents or request:
-                gigs_text += i18n.t("news_builders.no_scrobbles", acc=acc)
+                gigs_text += await i34g(
+                    "news_builders.no_scrobbles", acc=acc, user_id=user_id
+                )
                 continue
         elif isinstance(scrobbles_dict, int):
-            gigs_text += error_text(scrobbles_dict, acc)
+            gigs_text += await error_text(scrobbles_dict, acc, user_id)
             continue
         else:
             logger.warning('OOOOF! Strange error when loading scrobbles')
@@ -121,13 +119,17 @@ async def prepare_gigs_text(user_id: int, request: bool) -> str:
                 #  Save shorthands and info about sent artist
                 await db.wsql_sentarts(user_id, art_name)
                 await db.wsql_lastarts(user_id, shorthand_count, art_name)
-                news_header = i18n.t("news_builders.news_header", acc=acc)
+                news_header = await i34g(
+                    "news_builders.news_header", acc=acc, user_id=user_id
+                )
             #  For each acc add new events =)
             gigs_text += news_header + " \n".join(gig_list) + "\n"
         else:
             #  Add "no_news" message if appropriated
             if usersettings.nonewevents or request:
-                gigs_text += i18n.t("news_builders.no_news", acc=acc)
+                gigs_text += await i34g(
+                    "news_builders.no_news", acc=acc, user_id=user_id
+                )
     return gigs_text
 
 
@@ -151,31 +153,39 @@ async def prepare_details_text(user_id: int, shorthand: str) -> str:
             if (prev_country is None) or (prev_country != event_country):
                 #  In Russia
                 news_text.append(
-                    i18n.t("news_builders.in_country", event_country=event_country)
+                    await i34g(
+                        "news_builders.in_country",
+                        event_country=event_country,
+                        user_id=user_id,
+                    )
                 )
             prev_country = event_country
             #  *David Bowie* in Moscow, Cherkizovsky Stadium
             news_text.append(
-                i18n.t(
+                await i34g(
                     "news_builders.date_city_venue",
                     event_date=event_date,
                     event_city=event_city,
                     event_venue=event_venue,
+                    user_id=user_id,
                 )
             )
-        events_url = i18n.t(
-            "parse_services.lastfmeventurl", artist=artist_at_url(events_artist)
+        events_url = await i34g(
+            "parse_services.lastfmeventurl",
+            artist=artist_at_url(events_artist),
+            user_id=user_id,
         )
         #  David Bowie events
         news_text.insert(
             0,
-            i18n.t(
+            await i34g(
                 "news_builders.details_header",
                 events_artist=events_artist,
                 events_url=events_url,
+                user_id=user_id,
             ),
         )
         news_text = "".join(news_text)
         return news_text
     else:
-        return i18n.t("news_builders.no_events_shortcut")
+        return await i34g("news_builders.no_events_shortcut", user_id=user_id)
