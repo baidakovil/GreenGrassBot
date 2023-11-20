@@ -22,13 +22,19 @@ class Cfg:
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
         # How many time user should listen in last week to be notified
-        self.DEFAULT_MIN_LISTENS = 5
+        self.DEFAULT_MIN_LISTENS = 2
 
         # Day to send news about events. -1 is every day (?)
         self.DEFAULT_NOTICE_DAY = -1
 
         # Default UTC time to send news
-        self.DEFAULT_NOTICE_TIME = '12:00:00'
+        self.DEFAULT_NOTICE_TIME = '12:30:00'
+
+        # Default UTC time to send news
+        self.DEFAULT_NONEWEVENTS = 0
+
+        # Default UTC time to send news
+        self.DEFAULT_LOCALE = 'en'
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
         # # # # # # # # #   BOT   # #   LOGIC   # # # # # # # #
@@ -38,14 +44,14 @@ class Cfg:
         self.MAX_LFM_ACCOUNT_QTY = 3
 
         # days quantity to load scrobbles for new user
-        self.DAYS_INITIAL_TIMEDELAY = 2
+        self.DAYS_INITIAL_TIMEDELAY = 4
 
         # minimum delay to update info about artist's events
         self.DAYS_MIN_DELAY_ARTCHECK = 1
 
         # how many days consider for minListens users's config, i.e. it is
         # y in [x scrobbles in y days] condition, where x is DEFAULT_MIN_LISTENS
-        self.DAYS_PERIOD_MINLISTENS = 7
+        self.DAYS_PERIOD_MINLISTENS = 4
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
         # # # # # # # # # # #   LOGGER  # # # # # # # # # # # #
@@ -77,7 +83,7 @@ class Cfg:
         self.FILE_DB = 'ggb_sqlite.db'
 
         # Filename of db-creating script
-        self.FILE_DB_SCRIPT = 'create_db.sql'
+        self.FILE_DB_SCRIPT = 'ggb_sqlite.sql'
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
         # # # # # # # # # # #   PARSER  # # # # # # # # # # # #
