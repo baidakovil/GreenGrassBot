@@ -101,15 +101,15 @@ def alarm_char(text: Union[str, int]) -> str:
 
 async def i34g(*args: str, **kwargs: str) -> str:
     """
-    Internatiolization and escaping. Define curren user language. Prepare text to send
-    to user. See alarm_char() definition for clearings. Alarm characters in translations
-    should be pre-escaped manually. Import of db included to avoid circular import.
+    Internatiolization and escaping. Determines current locale. Prepares proper
+    localized text. Please see alarm_char() definition for clearings. Note, that alarm
+    characters in translations should be pre-escaped manually.
     Args:
         args: single positional argument like "utils.cancel_message", is code of i18n
         kwargs: keyword arguments, including
-            placeholders: i18n-placeholders with names and quantities according
-            JSON-translation. Ended with "_noalarm" passed to Tg without escaping
-            user_id: user_id to read locale setting
+            placeholders: i18n-placeholders with names according JSON-translation. Those
+            ended with "_noalarm" will be passed to Tg without escaping
+            user_id: user_id for locale setting reading
             locale: locale, when appropriated (for url)
     Returns:
         text prepared to send
