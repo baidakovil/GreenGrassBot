@@ -76,10 +76,12 @@ class UserSettings:
         notice_day: day to notice in 0-6 format, start with monday, -1 for everyday
         notice_time: UTC 24h time in format '12:00:00'
         nonewevents: whether to show "No new events" message (1 mean: not to show)
+        locale: locale code
     """
 
     user_id: int
     min_listens: int = CFG.DEFAULT_MIN_LISTENS
     notice_day: int = CFG.DEFAULT_NOTICE_DAY
     notice_time: str = CFG.DEFAULT_NOTICE_TIME
-    nonewevents: int = 1
+    nonewevents: int = CFG.DEFAULT_NONEWEVENTS
+    locale: str = CFG.DEFAULT_LOCALE
