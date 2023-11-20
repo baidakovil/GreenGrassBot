@@ -5,7 +5,7 @@ from contextlib import contextmanager
 from dataclasses import asdict
 from datetime import datetime
 from sqlite3 import IntegrityError, OperationalError
-from typing import Dict, List, Tuple, Union
+from typing import Any, Dict, List, Tuple, Union
 
 from telegram import Update
 
@@ -20,7 +20,7 @@ CFG = Cfg()
 
 
 @contextmanager
-def get_connection(db_path: str, params: Tuple = None, case: str = None) -> None:
+def get_connection(db_path: str, params: Any = None, case: str = None) -> None:
     """
     Context manager for proper executing sqlite queries.
     Args:
@@ -382,6 +382,21 @@ class Db:
         )
         return tbl_num[0]
 
+    async def rsql_users(self, user_id: int) -> int:
+        """
+        Returns 0 or 1 as quantity of user_id in users table.
+        """
+        query = """
+        SELECT COUNT(*) FROM users WHERE user_id=?
+        """
+        record = self._execute_query(
+            query,
+            params=(user_id,),
+            select=True,
+        )
+        record = record[0]
+        return record
+
     async def rsql_locale(self, user_id: int) -> Union[bool, str]:
         """
         Returns user locale setting.
@@ -630,3 +645,37 @@ class Db:
             query_del_ua, params=(user_id, lfm), getaffected=True
         )
         return (affected_scr, affected_ua)
+
+    async def dsql_user(self, user_id) -> bool:
+        """
+        Delete all the user info.
+        Args:
+            user_id: Tg user_id field
+        Returns:
+            True if user deleted normally, False if some useraccs or user_ids was not
+            deleted
+        """
+        logger.info(f'User {user_id} request account deleting')
+        problem = None
+        useraccs = await self.rsql_lfmuser(user_id)
+
+        for lfm in useraccs:
+            _, affected_ua = await self.dsql_useraccs(user_id=user_id, lfm=lfm)
+            if not affected_ua:
+                problem = True
+                logger.info(f'Problem when deleting lfm for {user_id}')
+
+        query_del_user = """
+        DELETE FROM users WHERE user_id = ?
+        """
+
+        affected_users = self._execute_query(
+            query_del_user, params=(user_id,), getaffected=True
+        )
+
+        if not affected_users:
+            problem = True
+            logger.info(f'Problem when deleting user_id for {user_id}')
+        else:
+            logger.info(f'User {user_id} deleted all the info')
+        return True if problem is None else False
