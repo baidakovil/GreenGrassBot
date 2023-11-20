@@ -6,12 +6,11 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Tuple, Union
-from urllib.error import HTTPError
 from urllib.request import urlopen
 
-import i18n
 
 from config import Cfg
+from services.message_service import i34g
 from services.custom_classes import Event
 from ui.error_builder import error_text
 
@@ -22,25 +21,27 @@ CFG = Cfg()
 api_key = os.getenv("API_KEY")
 
 
-def check_valid_lfm(lfm: str) -> Tuple[bool, str]:
+async def check_valid_lfm(lfm: str, user_id: int) -> Tuple[bool, str]:
     """
     Check if lastfm account is valid and notprivate
     Args:
         lfm: last.fm account to check
     Returns:
         tuple with bool and string: (valid or not, error text)
+    # TODO UnicodeEncodeError when non-unicode characters in nickname
     """
-    lfm_api_url = i18n.t(
+    lfm_api_url = await i34g(
         'parse_services.getrecenttracks',
         limit=10,
-        lfm=lfm,
+        lfm=artist_at_url(name_to_url=lfm),
         page=1,
         from_unix=0,
         api_key=api_key,
+        locale='en',
     )
     loaded_page = page_loader(lfm_api_url)
     return (
-        (False, error_text(loaded_page, lfm))
+        (False, await error_text(loaded_page, lfm, user_id=user_id))
         if isinstance(loaded_page, int)
         else (True, '')
     )
@@ -63,7 +64,7 @@ def from_unix() -> int:
     return int(unix_timestamp)
 
 
-def parser_scrobbles(lfm: str) -> Union[int, Dict]:
+async def parser_scrobbles(lfm: str) -> Union[int, Dict]:
     """
     Obtain scrobbles for last CFG.DAYS_INITIAL_TIMEDELAY days.
     #TODO: add storing of time of last scrobble loading: there is no need to load what
@@ -79,13 +80,14 @@ def parser_scrobbles(lfm: str) -> Union[int, Dict]:
     sleep_time = CFG.SECONDS_SLEEP_XMLLOAD
 
     while current_page <= total_pages:
-        lfm_url = i18n.t(
+        lfm_url = await i34g(
             'parse_services.getrecenttracks',
             limit=CFG.QTY_SCROBBLES_XML,
-            lfm=lfm,
+            lfm=artist_at_url(name_to_url=lfm),
             page=current_page,
             from_unix=from_unix(),
             api_key=api_key,
+            locale='en',
         )
         xml = page_loader(url=lfm_url)
         time.sleep(sleep_time)
@@ -129,14 +131,19 @@ def page_loader(url: str) -> Union[int, str]:
     return page_text
 
 
-def artist_at_url(art_name: str) -> str:
+def artist_at_url(name_to_url: str) -> str:
     """
-    Convert usual artist name into name used in URL
+    Convert artist name or lfm account name into name used in URL.
+    Args:
+        name_to_url: string to replace special characters in string using the %xx
+        escape.
+    Returns:
+        string with replaced special characters if any.
     """
-    return urllib.parse.quote(art_name, safe='')
+    return urllib.parse.quote(name_to_url, safe='')
 
 
-def parser_event(art_name: str) -> Union[int, List[Event]]:
+async def parser_event(art_name: str) -> Union[int, List[Event]]:
     """
     Load event pages and parse html file. Return list of Event objects or int if
 
@@ -145,7 +152,9 @@ def parser_event(art_name: str) -> Union[int, List[Event]]:
     Returns:
         list of Events objects of integer with error
     """
-    url = i18n.t('parse_services.lastfmeventurl', artist=artist_at_url(art_name))
+    url = await i34g(
+        'parse_services.lastfmeventurl', artist=artist_at_url(art_name), locale='en'
+    )
     page = page_loader(url)
     time.sleep(CFG.SECONDS_SLEEP_HTMLLOAD)
     if isinstance(page, int):
