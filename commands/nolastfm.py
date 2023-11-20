@@ -1,8 +1,8 @@
-import i18n
 from telegram import Update
 from telegram.ext import CallbackContext
 
 from db.db import Db
+from services.message_service import i34g
 from services.message_service import reply
 
 db = Db()
@@ -16,5 +16,6 @@ async def nolastfm(update: Update, context: CallbackContext) -> None:
         update, context: standart PTB callback signature
     """
     await db.save_user(update)
-    await reply(update, i18n.t('nolastfm.message'))
+    user_id = update.message.from_user.id
+    await reply(update, await i34g('nolastfm.message', user_id=user_id))
     return None
