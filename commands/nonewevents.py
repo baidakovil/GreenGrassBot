@@ -1,8 +1,8 @@
-import i18n
 from telegram import Update
 from telegram.ext import CallbackContext
 
 from db.db import Db
+from services.message_service import i34g
 from services.message_service import reply
 
 db = Db()
@@ -15,15 +15,20 @@ async def nonewevents(update: Update, context: CallbackContext) -> None:
     Args:
         update, context: standart PTB callback signature
     """
-    userId = update.message.from_user.id
-    usersettings = await db.rsql_settings(userId)
+    user_id = update.message.from_user.id
+    usersettings = await db.rsql_settings(user_id)
+    if not usersettings:
+        text = await i34g('nonewevents.error', user_id=user_id)
+        await reply(update, text)
+        return None
+
     new_value = int(not bool(usersettings.nonewevents))
-    affected = await db.wsql_settings(userId, nonewevents=new_value)
+    affected = await db.wsql_settings(user_id=user_id, nonewevents=new_value)
     if affected and new_value:
-        text = i18n.t('nonewevents.nots_disabled')
+        text = await i34g('nonewevents.nots_disabled', user_id=user_id)
     elif affected:
-        text = i18n.t('nonewevents.nots_enabled')
+        text = await i34g('nonewevents.nots_enabled', user_id=user_id)
     else:
-        text = i18n.t('nonewevents.error')
+        text = await i34g('nonewevents.error', user_id=user_id)
     await reply(update, text)
     return None
