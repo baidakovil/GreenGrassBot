@@ -1,6 +1,6 @@
 {
     "ru": {
-        "start.user": "Привет, %{username}\\.\n\n\u2753 Если у вас есть lastfm\\-профиль, жмите /connect, чтобы начать\n\n\u2757 Если профиля нет, жмите /nolastfm, чтобы узнать, как действовать\n\u2764 Все подробности о боте: /help",
+        "start.user": "Привет, %{username}\\.\n\n\u2753 Если у вас есть lastfm\\-профиль, жмите /connect, чтобы начать\n\n\u2757 Если профиля нет, жмите /nolastfm, чтобы узнать, как действовать\n\n\u2764 Все подробности о боте: /help",
         "start.hacker": "%{username},\n у вас подключено %{qty} lastfm\\-профилей: %{accs_noalarm}\\.\nКоманды для добавления и отключения профилей: /connect and /disconnect\\.\n\nПодробности о боте: /help",
         "disconn_lfm_conversation.choose_acc": "Выберите lastfm\\-профиль для отключения:",
         "disconn_lfm_conversation.acc_deleted": "Lastfm\\-профиль _%{acc}_ отключен \u274E",
@@ -14,6 +14,14 @@
         "conn_lfm_conversation.some_error": "\u2757 У бота не получается добавить lastfm\\-профиль",
         "conn_lfm_conversation.done": "Lastfm\\-профиль _%{acc}_ добавлен \u2705",
         "conn_lfm_conversation.alarm_info": "\n\nБот будет присылать уведомления каждый день в %{time} UTC, когда найдутся новые концерты\\.\nПо команде /getgigs бот проверит и пришлёт новые концерты немедленно",
+        "delete_user_conversation.choose": "\u2702 Если вы хотите удалить все данные о своём аккаунте пользователя в боте, включая информацию о прослушанных треках, отправленных концертах и настройки, нажмите *Да*",
+        "delete_user_conversation.no_users": "Нечего \u2615 удалять",
+        "delete_user_conversation.yes": "Да",
+        "delete_user_conversation.no": "Нет",
+        "delete_user_conversation.deleted" : "Все данные удалены \u2764",
+        "delete_user_conversation.canceled" : "Отменено \u26A1",
+        "delete_user_conversation.error" : "\u2755 При удалении данных произошла ошибка\\. Вероятно, операция не завершена\\. Мы проверим, что случилось",
+        "delete_user_conversation.answer_not_found" : "\u2755 Что это значит? В любом случае, операция отменена",
         "nonewevents.nots_disabled": "\u2744 Оповещения *Новых концертов нет* отключены",
         "nonewevents.nots_enabled": "Оповещения *Новых концертов нет* включены \u270F",
         "nonewevents.error": "Ошибка при изменении настроек",

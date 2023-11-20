@@ -9,6 +9,7 @@ from commands.nonewevents import nonewevents
 from commands.start import start
 from interactions.common_handlers import error_handle
 from interactions.conn_lfm_conversation import conn_lfm_conversation
+from interactions.delete_user_conversation import delete_user_conversation
 from interactions.disconn_lfm_conversation import disconn_lfm_conversation
 from interactions.locale_conversation import locale_conversation
 
@@ -34,9 +35,10 @@ def load_conversations(application: Application) -> None:
     Loads all conversation handlers on start.
     Args: application: application for adding handlers to.
     """
-    application.add_handler(locale_conversation())
     application.add_handler(conn_lfm_conversation())
+    application.add_handler(delete_user_conversation())
     application.add_handler(disconn_lfm_conversation())
+    application.add_handler(locale_conversation())
     return None
 
 
