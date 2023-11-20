@@ -20,7 +20,7 @@ CFG = Cfg()
 
 
 @contextmanager
-def get_connection(db_path: str, params: Dict = None, case: str = None) -> None:
+def get_connection(db_path: str, params: Tuple = None, case: str = None) -> None:
     """
     Context manager for proper executing sqlite queries.
     Args:
@@ -132,8 +132,7 @@ class Db:
     async def save_user(self, update: Update) -> None:
         """
         Saves to DB: a) Tg user info, without replacement (according wsql_users()
-        query); b) Default user settings without replacement (initial=True), except
-        nonewevents.
+        query); b) Default user settings, if there is no default settings saved.
         Args:
             update: object representing incoming update (message)
         """
@@ -145,7 +144,7 @@ class Db:
             language_code=update.message.from_user.language_code,
         )
         await self.wsql_users(user)
-        await self.wsql_settings(update.message.from_user.id, initial=True)
+        await self.wsql_settings(user_id=update.message.from_user.id)
         return None
 
     async def wsql_users(self, user: User) -> None:
@@ -158,8 +157,8 @@ class Db:
         INSERT OR IGNORE INTO users (user_id, username, first_name, last_name, language_code)
         VALUES (:user_id, :username, :first_name, :last_name, :language_code);
         """
-        params = asdict(user)['reg_datetime'] = timestamp_to_text(datetime.now())
         params = asdict(user)
+        params['reg_datetime'] = timestamp_to_text(datetime.now())
         self._execute_query(query=query, params=params)
         logger.info(
             f"User with username: {user.username} and user_id: {user.user_id} added"
@@ -191,44 +190,42 @@ class Db:
         affected = self._execute_query(query=query, params=params, getaffected=True)
         return affected
 
-    async def wsql_settings(
-        self,
-        user_id: int,
-        min_listens: int = CFG.DEFAULT_MIN_LISTENS,
-        notice_day: int = CFG.DEFAULT_NOTICE_DAY,
-        notice_time: str = CFG.DEFAULT_NOTICE_TIME,
-        nonewevents: int = 1,
-        initial=False,
-    ) -> int:
+    async def wsql_settings(self, **kw) -> int:
         """
         Saves default user settings. Args:
-            user_id, min_listens, notice_day, nonewevents: see desription in
-            custom_classes.py initial: controls replace row or not
+            user_id, min_listens, notice_day, nonewevents, locale: see desription in
+            custom_classes.py
         Returns:
             affected rows quantity
         """
-        uset = UserSettings(user_id, min_listens, notice_day, notice_time, nonewevents)
-        if initial:
-            query = """
-            INSERT OR IGNORE INTO usersettings (user_id, min_listens, notice_day, notice_time, nonewevents)
-            VALUES (:user_id, :min_listens, :notice_day, :notice_time, :nonewevents);
-            """
+        # TODO checking for keywords are possible keywords
+
+        user_id = kw['user_id']
+        def_sett = asdict(UserSettings(user_id=user_id))
+
+        cur_sett = await self.rsql_settings(user_id=user_id)
+        cur_sett = asdict(cur_sett) if cur_sett else def_sett
+
+        use_vals = {
+            key: kw[key] if key in kw.keys() else cur_sett[key]
+            for key in cur_sett.keys()
+        }
+
+        query = """
+        INSERT OR REPLACE INTO usersettings (user_id, min_listens, notice_day, notice_time, nonewevents, locale)
+        VALUES (:user_id, :min_listens, :notice_day, :notice_time, :nonewevents, :locale);
+        """
+
+        affected = self._execute_query(query=query, params=use_vals, getaffected=True)
+
+        if affected:
+            logger.debug(
+                # f"Settings changed to: {use_vals}, from: {cur_sett}; {affected} rows affected"
+                f"Settings changed"
+            )
         else:
-            query = """
-            INSERT OR REPLACE INTO usersettings (user_id, min_listens, notice_day, notice_time, nonewevents)
-            VALUES (:user_id, :min_listens, :notice_day, :notice_time, :nonewevents);
-            """
-        affected = self._execute_query(
-            query=query, params=asdict(uset), getaffected=True
-        )
-        if affected and initial:
-            logger.info(
-                f"Settings replaced for user_id: {user_id}, {affected} rows affected"
-            )
-        elif affected:
-            logger.info(
-                f"Settings inserted for user_id: {user_id}, {affected} rows affected"
-            )
+            logger.warning(f"Settings was not changed to")
+
         return affected
 
     async def wsql_scrobbles(self, ars: ArtScrobble) -> None:
@@ -288,8 +285,8 @@ class Db:
             art_name: artist name that was checked
         """
         query = """
-            INSERT OR REPLACE INTO artnames(art_name, check_datetime)
-            VALUES (?, datetime("now"));
+            UPDATE artnames SET check_datetime = datetime("now") 
+            WHERE art_name = ?
             """
         self._execute_query(query=query, params=(art_name,))
         logger.info(f"Added or updated artcheck: {art_name}")
@@ -300,8 +297,8 @@ class Db:
         Same as wsql_artcheck, but writes arbitrary date for debugging purposes
         """
         query = """
-            INSERT OR REPLACE INTO artnames(art_name, check_datetime)
-            VALUES (?, "2023-11-09 13:00:00");
+            UPDATE artnames SET check_datetime = "2023-11-09 13:00:00"
+            WHERE art_name = ?
             """
         self._execute_query(query=query, params=(art_name,))
         logger.info(f"Added or updated artcheck_test: {art_name}")
@@ -385,14 +382,33 @@ class Db:
         )
         return tbl_num[0]
 
-    async def rsql_settings(self, user_id: int) -> UserSettings:
+    async def rsql_locale(self, user_id: int) -> Union[bool, str]:
+        """
+        Returns user locale setting.
+        Args:
+            user_id: Tg user_id field
+        Returns:
+            string with written setting or False if settings was not found.
+        """
+        query = """
+        SELECT locale FROM usersettings
+        WHERE user_id = ?
+        """
+        record = self._execute_query(query, params=(user_id,), select=True)
+        if not record:
+            logger.debug(f'Return empty locale settings for user_id {user_id}')
+            return False
+        record = record[0]
+        return record
+
+    async def rsql_settings(self, user_id: int) -> Union[bool, UserSettings]:
         """
         Returns user settings.
         #TODO rewrite ro row_factory with dict access to fields.
         Args:
             user_id: Tg user_id field
         Returns:
-            UserSetting dataclass object.
+            UserSetting dataclass object or False if settings was not found.
         """
         query = """
         SELECT * FROM usersettings
@@ -400,16 +416,22 @@ class Db:
         """
         record = self._execute_query(
             query, params=(user_id,), select=True, selectone=False
-        )[0]
-        print(record)
+        )
+
+        if not record:
+            logger.debug(f'Return empty settings for user_id {user_id}')
+            return False
+
+        record = record[0]
         result = [record[i] for i in range(len(record))]
-        print(result)
+
         usersettings = UserSettings(
             user_id=result[0],
             min_listens=result[1],
             notice_day=result[2],
             notice_time=result[3],
             nonewevents=result[4],
+            locale=result[5],
         )
         logger.debug(f'Return settings for user_id {user_id}: {usersettings}')
         return usersettings
@@ -569,18 +591,42 @@ class Db:
     ############ DELETES ############
     #################################
 
-    async def dsql_useraccs(self, user_id, lfm) -> int:
+    async def dsql_useraccs(self, user_id, lfm) -> Tuple[int, int]:
         """
-        Delete lfm account.
+        Delete lfm account and relational to lfm account data.
         Args:
             user_id: Tg user_id field
             lfm: last.fm account name to delete
         Returns:
-            quantity of affecte rows (could be 0 or 1 by db structure)
+            tuple with quantities of affected rows in scrobbles/useraccs tables
         """
-        query = """
+        query_del_sa = """
+        DELETE FROM sentarts
+        WHERE user_id = ? AND (art_name IN (SELECT art_name FROM scrobbles
+        WHERE user_id = ? AND lfm = ?));
+        """
+        query_del_la = """
+        DELETE FROM lastarts
+        WHERE user_id = ? AND (art_name IN (SELECT art_name FROM scrobbles
+        WHERE user_id = ? AND lfm = ?));
+        """
+        query_del_scr = """
+        DELETE FROM scrobbles
+        WHERE user_id = ? AND lfm = ?
+        """
+        query_del_ua = """
         DELETE FROM useraccs
         WHERE user_id = ? AND lfm = ?
         """
-        affected = self._execute_query(query, params=(user_id, lfm), getaffected=True)
-        return affected
+        self._execute_query(query_del_sa, params=(user_id, user_id, lfm))
+
+        self._execute_query(query_del_la, params=(user_id, user_id, lfm))
+
+        affected_scr = self._execute_query(
+            query_del_scr, params=(user_id, lfm), getaffected=True
+        )
+
+        affected_ua = self._execute_query(
+            query_del_ua, params=(user_id, lfm), getaffected=True
+        )
+        return (affected_scr, affected_ua)
