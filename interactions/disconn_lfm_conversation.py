@@ -25,6 +25,10 @@ async def disconnect(update: Update, context: CallbackContext) -> int:
     """
     Entry point. Offers to user saved accounts from database to delete, or replies about
     there is no accounts.
+    Args:
+        update, context: standart PTB callback signature
+    Returns:
+        signals for stop or next step of conversation
     """
     user_id = update.message.from_user.id
     lfm_accs = await db.rsql_lfmuser(update.message.from_user.id)
@@ -50,9 +54,9 @@ async def disconnect(update: Update, context: CallbackContext) -> int:
 
 async def disconn_lfm(update: Update, context: CallbackContext) -> int:
     """
-    Second step. Waits for answer which account to delete, delete it it is, replies.
+    Second step. Waits for answer which account to delete, delete it, replies.
     Args:
-    update, context: standart PTB callback signature
+        update, context: standart PTB callback signature
     Returns:
         signals for stop or next step of conversation
     """
@@ -95,7 +99,7 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
 
 def disconn_lfm_conversation() -> ConversationHandler:
     """
-    Return conversation handler to add lastfm user.
+    Returns conversation handler to add lastfm user.
     """
     states = {DISC_ACC: [MessageHandler(filters.TEXT, disconn_lfm)]}
     disconn_lfm_handler = ConversationHandler(
