@@ -1,16 +1,19 @@
 import logging
-from typing import Awaitable
-import i18n
+from typing import Awaitable, Union
 
+import i18n
 from telegram import InlineKeyboardMarkup, Update
 from telegram.ext import CallbackContext
 
 from config import Cfg
+from db.db import Db
 
 logger = logging.getLogger('A.mes')
 logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
+
+db = Db()
 
 
 async def reply(
@@ -29,7 +32,6 @@ async def reply(
         reply_markup: inline keyboard attached to the message
         disable_web_page_preview: show preview or not, OVERRIDING default true
     """
-    text = alarm_char(text)
     return await update.message.reply_text(
         text,
         reply_markup=reply_markup,
@@ -55,7 +57,6 @@ async def send_message(
         reply_markup: inline keyboard attached to the message
         parse_mode: mode to parse the string, defaults to HTML
     """
-    text = alarm_char(text)
     return await context.bot.send_message(
         user_id,
         text,
@@ -65,35 +66,15 @@ async def send_message(
     )
 
 
-def alarm_char(text: str, replace: bool = False) -> str:
+def alarm_char(text: Union[str, int]) -> str:
     """
     Provides pre-escaping alarm characters in output messages with '/', accordin:
-    core.telegram.org/bots/api#html-style. To distinguish markdown * and _ symbols, in
-    i18n translates "technical replacing" is used, defined in this function in safety
-    dict. With using replace=True, possible to do "technical replace" when needed in
-    code.
-    #########
-    It is not beautiful and not sustainable decision, but it is simple decision. For
-    replacing: changing of i18n.t class needed and/or change parse_mode to HTML.
-    #########
+    core.telegram.org/bots/api#html-style.
     Args:
-        text: text to replace alarm characters in OR character for techical replace
-        replace: True if need to replace
-    Returns:
-        text to sent to user OR technical replace for symbol
+        *args: single argument, i18n translation link e.g. "utils.cancel_message"
+        **kwargs: dict with i18n values for placeholders
     """
-    safety = {
-        '\u0277\u0277': '*',  #  \u0277 == ɷ
-        '\u0278\u0278': '_',  #  \u0278 == ɸ
-        '\u0283\u0283': '[',  #  \u0283 == ʃ
-        '\u0285\u0285': ']',  #  \u0285 == ʅ
-        '\u0272\u0272': '(',  #  \u0272 == ɲ
-        '\u0273\u0273': ')',  #  \u0277 == ɳ
-    }
-    if replace:
-        for safe, symb in safety.items():
-            if symb == text:
-                return safe
+    text = str(text)
     alarm_characters = (
         '_',
         '*',
@@ -114,8 +95,31 @@ def alarm_char(text: str, replace: bool = False) -> str:
         '.',
         '!',
     )
-
     text = "".join([c if c not in alarm_characters else f'\\{c}' for c in text])
-    for safe in safety:
-        text = text.replace(safe, safety[safe])
+    return text
+
+
+async def i34g(*args: str, **kwargs: str) -> str:
+    """
+    Internatiolization and escaping. Define curren user language. Prepare text to send
+    to user. See alarm_char() definition for clearings. Alarm characters in translations
+    should be pre-escaped manually. Import of db included to avoid circular import.
+    Args:
+        args: single positional argument like "utils.cancel_message", is code of i18n
+        kwargs: keyword arguments, including
+            placeholders: i18n-placeholders with names and quantities according
+            JSON-translation. Ended with "_noalarm" passed to Tg without escaping
+            user_id: user_id to read locale setting
+            locale: locale, when appropriated (for url)
+    Returns:
+        text prepared to send
+    """
+    if 'locale' not in kwargs.keys():
+        kwargs['locale'] = await db.rsql_locale(user_id=kwargs.pop('user_id'))
+
+    kwargs = {
+        arg: kwargs[arg] if arg.endswith('_noalarm') else alarm_char(kwargs[arg])
+        for arg in kwargs.keys()
+    }
+    text = i18n.t(*args, **kwargs)
     return text
