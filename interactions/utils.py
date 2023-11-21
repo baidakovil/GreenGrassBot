@@ -8,6 +8,15 @@ logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 
+# Format for human-readability of event dates in daily news
+f_hum = '%d %b %Y'
+# Format of date in Last.fm API
+f_lfm = '%d %b %Y'
+# Format to store dates in SQL
+f_sql_date = '%Y-%m-%d'
+# Format to store timestamps in SQL
+f_sql_timestamp = '%Y-%m-%d %H:%M:%S'
+
 
 def timestamp_to_text(timestamp: datetime) -> str:
     """
@@ -18,8 +27,7 @@ def timestamp_to_text(timestamp: datetime) -> str:
     Returns:
         string with specific timestamp format
     """
-    f_sql = '%Y-%m-%d %H:%M:%S'
-    return timestamp.strftime(f_sql)
+    return timestamp.strftime(f_sql_timestamp)
 
 
 def text_to_userdate(text: str) -> str:
@@ -31,9 +39,7 @@ def text_to_userdate(text: str) -> str:
     Returns:
         string with specific date format
     """
-    f_sql = '%Y-%m-%d'
-    f_hum = '%d %b %Y'
-    return datetime.strptime(text, f_sql).strftime(f_hum)
+    return datetime.strptime(text, f_sql_date).strftime(f_hum)
 
 
 def lfmdate_to_text(lfmdate: str) -> str:
@@ -45,6 +51,22 @@ def lfmdate_to_text(lfmdate: str) -> str:
     Returns:
         string with specific date format
     """
-    f_lfm = '%d %b %Y'
-    f_sql = '%Y-%m-%d'
-    return datetime.strptime(lfmdate, f_lfm).strftime(f_sql)
+    return datetime.strptime(lfmdate, f_lfm).strftime(f_sql_date)
+
+
+def text_to_date(text: str) -> datetime:
+    """
+    Convertor for saved date in SQL to timestamp
+    """
+    return datetime.strptime(text, f_sql_date)
+
+
+def unix_to_text(unix: int) -> str:
+    """
+    Convertor for unix timestamp to human readable timestamp. For debugging purposes.
+    Args:
+        unix timestamp
+    Returns:
+        string with timestamp in readable format
+    """
+    return datetime.utcfromtimestamp(unix).strftime(f_sql_timestamp)
