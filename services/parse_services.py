@@ -52,7 +52,7 @@ async def check_valid_lfm(lfm: str, user_id: int) -> Tuple[bool, str]:
     )
 
 
-def max_timedelay_moment() -> int:
+def timedelay_moment() -> int:
     """
     Calculate unix timestamp correspond to "00:00:00 UTC of the day that was
     DAYS_INITIAL_TIMEDELAY days ago". There is no explicit need of reset to 00:00:00,
@@ -67,8 +67,7 @@ def max_timedelay_moment() -> int:
     moment_period_ago_00_00_00 = moment_period_ago.replace(
         tzinfo=timezone.utc, hour=0, minute=0, second=0, microsecond=0
     )
-    unix_timestamp = moment_period_ago_00_00_00.timestamp()
-    return int(unix_timestamp)
+    return moment_period_ago_00_00_00
 
 
 async def last_scrobble_moment(user_id: int, lfm: str) -> int:
@@ -84,8 +83,7 @@ async def last_scrobble_moment(user_id: int, lfm: str) -> int:
     last_scrobble_day_00_00_00 = last_scrobble_day.replace(
         tzinfo=timezone.utc, hour=0, minute=0, second=0, microsecond=0
     )
-    unix_timestamp = last_scrobble_day_00_00_00.timestamp()
-    return int(unix_timestamp)
+    return last_scrobble_day_00_00_00
 
 
 async def load_scrobble_moment(user_id: int, lfm: str) -> int:
@@ -97,21 +95,20 @@ async def load_scrobble_moment(user_id: int, lfm: str) -> int:
     Returns:
         unix timestamp
     """
-    timedelay_load_unix = max_timedelay_moment()
-    timedelay_load_hum = unix_to_text(timedelay_load_unix)
-    logger.debug(f'Max timedelay: {timedelay_load_hum}')
 
-    last_scrobble_unix = await last_scrobble_moment(user_id, lfm)
-    if last_scrobble_unix is None:
+    timedelay_load = timedelay_moment()
+    logger.debug(f'Max timedelay: {timedelay_load}')
+    last_scrobble = await last_scrobble_moment(user_id, lfm)
+    if last_scrobble is None:
         logger.debug(f'No scrobbles found for {lfm}')
-        return timedelay_load_unix
+        load_scrobble_moment = timedelay_load
     else:
-        last_scrobble_hum = unix_to_text(last_scrobble_unix)
-        logger.debug(f'Last scrobble: {last_scrobble_hum}')
-        from_unix = max(timedelay_load_unix, last_scrobble_unix)
-        from_unix_hum = unix_to_text(from_unix)
-        logger.debug(f'Will load from: {from_unix_hum}')
-        return from_unix
+        logger.debug(f'Last scrobble: {last_scrobble}')
+        load_scrobble_moment = max(timedelay_load, last_scrobble)
+    from_unix = int(load_scrobble_moment.timestamp())
+    from_unix_hum = unix_to_text(from_unix)
+    logger.debug(f'Will load from: {from_unix_hum}')
+    return int(timedelay_load.timestamp())
 
 
 async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
