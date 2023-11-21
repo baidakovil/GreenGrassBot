@@ -9,9 +9,12 @@ from typing import Dict, List, Tuple, Union
 from urllib.request import urlopen
 
 
+from db.db import Db
 from config import Cfg
 from services.message_service import i34g
 from services.custom_classes import Event
+from interactions.utils import text_to_date
+from interactions.utils import unix_to_text
 from ui.error_builder import error_text
 
 logger = logging.getLogger("A.par")
@@ -19,6 +22,8 @@ logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 api_key = os.getenv("API_KEY")
+
+db = Db()
 
 
 async def check_valid_lfm(lfm: str, user_id: int) -> Tuple[bool, str]:
@@ -47,11 +52,13 @@ async def check_valid_lfm(lfm: str, user_id: int) -> Tuple[bool, str]:
     )
 
 
-def from_unix() -> int:
+def max_timedelay_moment() -> int:
     """
-    Calculate unix timestamp correspond to "00:00:00 UTC of day that was
+    Calculate unix timestamp correspond to "00:00:00 UTC of the day that was
     DAYS_INITIAL_TIMEDELAY days ago". There is no explicit need of reset to 00:00:00,
     that doing for consistency, easy debugging, round numbers.
+    Args:
+        no, it reads from configs
     Returns:
         unix timestamp
     """
@@ -64,13 +71,56 @@ def from_unix() -> int:
     return int(unix_timestamp)
 
 
-async def parser_scrobbles(lfm: str) -> Union[int, Dict]:
+async def last_scrobble_moment(user_id: int, lfm: str) -> int:
+    """
+    Calculate unix timestamp correspond to "00:00:00 UTC of the day of last saved
+    scrobble" to avoid excess scrobble loads
+    """
+    last_scrobble_day = await db.rsql_lastdayscrobble(user_id=user_id, lfm=lfm)
+    if last_scrobble_day is None:
+        return None
+
+    last_scrobble_day = text_to_date(last_scrobble_day)
+    last_scrobble_day_00_00_00 = last_scrobble_day.replace(
+        tzinfo=timezone.utc, hour=0, minute=0, second=0, microsecond=0
+    )
+    unix_timestamp = last_scrobble_day_00_00_00.timestamp()
+    return int(unix_timestamp)
+
+
+async def load_scrobble_moment(user_id: int, lfm: str) -> int:
+    """
+    Calculate appropriate moment "from_unix" to load scrobbles from.
+    Args:
+        user_id: Tg user_id field
+        lfm: Last.fm profile
+    Returns:
+        unix timestamp
+    """
+    timedelay_load_unix = max_timedelay_moment()
+    timedelay_load_hum = unix_to_text(timedelay_load_unix)
+    logger.debug(f'Max timedelay: {timedelay_load_hum}')
+
+    last_scrobble_unix = await last_scrobble_moment(user_id, lfm)
+    if last_scrobble_unix is None:
+        logger.debug(f'No scrobbles found for {lfm}')
+        return timedelay_load_unix
+    else:
+        last_scrobble_hum = unix_to_text(last_scrobble_unix)
+        logger.debug(f'Last scrobble: {last_scrobble_hum}')
+        from_unix = max(timedelay_load_unix, last_scrobble_unix)
+        from_unix_hum = unix_to_text(from_unix)
+        logger.debug(f'Will load from: {from_unix_hum}')
+        return from_unix
+
+
+async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
     """
     Obtain scrobbles for last CFG.DAYS_INITIAL_TIMEDELAY days.
     #TODO: add storing of time of last scrobble loading: there is no need to load what
     was loaded.
     Args:
-        lastfmUser: lastfm username
+        lfm: lastfm username
     Returns:
         Dict with structure {artist_name: {date:count} } if there is events, or empty
         dict, or int with error code.
@@ -78,6 +128,7 @@ async def parser_scrobbles(lfm: str) -> Union[int, Dict]:
     current_page, total_pages = 1, 1
     artist_dict = dict()
     sleep_time = CFG.SECONDS_SLEEP_XMLLOAD
+    from_unix = await load_scrobble_moment(user_id, lfm)
 
     while current_page <= total_pages:
         lfm_url = await i34g(
@@ -85,7 +136,7 @@ async def parser_scrobbles(lfm: str) -> Union[int, Dict]:
             limit=CFG.QTY_SCROBBLES_XML,
             lfm=artist_at_url(name_to_url=lfm),
             page=current_page,
-            from_unix=from_unix(),
+            from_unix=from_unix,
             api_key=api_key,
             locale='en',
         )
