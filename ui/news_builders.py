@@ -89,7 +89,7 @@ async def prepare_gigs_text(user_id: int, request: bool) -> str:
     gigs_text = ''
     for acc in lfm_accs:
         #  Get scrobbles
-        scrobbles_dict = await parser_scrobbles(acc)
+        scrobbles_dict = await parser_scrobbles(user_id, acc)
         #  Save scrobbles or add error
         if isinstance(scrobbles_dict, dict) and len(scrobbles_dict.keys()):
             await save_scrobbles(user_id, acc, scrobbles_dict)
