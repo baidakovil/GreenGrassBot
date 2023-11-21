@@ -42,7 +42,7 @@ async def reply(
 
 async def send_message(
     context: CallbackContext,
-    user_id: int,
+    chat_id: int,
     text: str,
     parse_mode: str = 'MarkdownV2',
     reply_markup: InlineKeyboardMarkup = None,
@@ -58,7 +58,7 @@ async def send_message(
         parse_mode: mode to parse the string, defaults to HTML
     """
     return await context.bot.send_message(
-        user_id,
+        chat_id,
         text,
         reply_markup=reply_markup,
         parse_mode=parse_mode,

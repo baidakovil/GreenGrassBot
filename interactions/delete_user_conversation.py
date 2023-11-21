@@ -13,6 +13,7 @@ from telegram.ext import (
 from db.db import Db
 from interactions.common_handlers import cancel_handle
 from services.message_service import i34g, reply
+from services.schedule_service import remove_jobs
 
 logger = logging.getLogger('A.del')
 logger.setLevel(logging.DEBUG)
@@ -74,6 +75,7 @@ async def delete_user(update: Update, context: CallbackContext) -> int:
     """
 
     user_id = update.message.from_user.id
+    chat_id = update.message.chat_id
     answers = await delete_answers(update)
     answer = update.message.text
     if answer == '/cancel':
@@ -94,6 +96,7 @@ async def delete_user(update: Update, context: CallbackContext) -> int:
 
     elif answers[answer] == 'del':
         locale = await db.rsql_locale(user_id)
+        remove_jobs(user_id, chat_id, context)
         ####################################
         # Line below deletes all user data #
         ####################################

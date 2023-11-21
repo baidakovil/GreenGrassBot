@@ -14,7 +14,7 @@ from db.db import Db
 from interactions.common_handlers import cancel_handle
 from services.message_service import i34g, reply
 from services.parse_services import check_valid_lfm
-from services.schedule_service import run_daily
+from services.schedule_service import add_daily
 
 logger = logging.getLogger('A.con')
 logger.setLevel(logging.DEBUG)
@@ -64,9 +64,13 @@ async def username(update: Update, context: CallbackContext) -> int:
         update, context: standart PTB callback signature
     Returns:
         signals for stop or next step of conversation
+
+    #TODO Error when command after /connect Oups! We get error 500 when load tracks from
+    Last.fm for /delete.
     """
     logger.debug('Entered to username()')
     user_id = update.message.from_user.id
+    chat_id = update.message.chat_id
     acc = update.message.text
     useraccs = await db.rsql_lfmuser(user_id)
     if acc in useraccs:
@@ -93,7 +97,7 @@ async def username(update: Update, context: CallbackContext) -> int:
                 time=CFG.DEFAULT_NOTICE_TIME[:5],
                 user_id=user_id,
             )
-        await run_daily(update, context)
+        await add_daily(update, context)
         await reply(update, text)
         logger.info(f'User: {user_id} have added lfm account:  {acc}')
     else:

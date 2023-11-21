@@ -12,6 +12,7 @@ from telegram.ext import (
 from db.db import Db
 from interactions.common_handlers import cancel_handle
 from services.message_service import i34g, reply
+from services.schedule_service import remove_jobs
 
 logger = logging.getLogger('A.dis')
 logger.setLevel(logging.DEBUG)
@@ -61,6 +62,7 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
         signals for stop or next step of conversation
     """
     user_id = update.message.from_user.id
+    chat_id = update.message.chat_id
     useraccs = await db.rsql_lfmuser(user_id)
     acc = update.message.text.lower()
     if acc == '/cancel':
@@ -78,6 +80,9 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
         )
     else:
         affected_scr, affected_ua = await db.dsql_useraccs(user_id, acc)
+        useraccs = await db.rsql_lfmuser(user_id)
+        if not useraccs:
+            remove_jobs(user_id, chat_id, context)
         if affected_scr and affected_ua:
             text = await i34g(
                 "disconn_lfm_conversation.acc_scr_deleted", acc=acc, user_id=user_id
