@@ -554,7 +554,25 @@ class Db:
         logger.info(f'User {user_id} requests shorthand {shorthand}')
         return ev
 
-    async def rsql_finalquestion(self, user_id, art_name) -> int:
+    async def rsql_lastdayscrobble(self, user_id: int, lfm: str) -> str:
+        """
+        Returns last scrobble_date value for user_id-lfm pair. Used to decide how old
+        scrobble to load and avoid excess API using.
+        Args:
+            user_Id: Tg user_id field
+            lfm: last.fm user name
+        Returns: string in f_sql_date format (utils.py)
+        """
+        query = """
+        SELECT MAX(scrobble_date) FROM scrobbles
+        WHERE user_id = ? AND lfm = ?
+        """
+        record = self._execute_query(query, params=(user_id, lfm), select=True)
+        record = record[0]
+        logger.debug(f'User {user_id} requests last scrobble date')
+        return record
+
+    async def rsql_finalquestion(self, user_id: int, art_name: str) -> int:
         """
         Answers, should this art_name be sent to user. Conditions to answer "1": a)
         event was not sent before, b) in last DAYS_PERIOD_MINLISTENS user have no less X
