@@ -14,7 +14,7 @@ class Cfg:
         # # # # # # #   USER  # # INTER # FACE  # # # # # # # #
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-        # maximum number for quick link to event
+        # maximum number for quick link to event. after this it will reset zero
         self.INTEGER_MAX_SHORTHAND = 99
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -53,6 +53,9 @@ class Cfg:
         # how many days consider for min_listens users's config, i.e. it is y in [x
         # scrobbles in y days] condition, where x is DEFAULT_MIN_LISTENS
         self.DAYS_PERIOD_MINLISTENS = 4
+
+        # settings for APScheduler when set daily jobs
+        self.CRON_JOB_KWARGS = {'misfire_grace_time': 3600 * 12, 'coalesce': True}
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
         # # # # # # # # # # #   LOGGER  # # # # # # # # # # # #
