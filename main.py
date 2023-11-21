@@ -3,11 +3,12 @@ import os
 
 import i18n
 from dotenv import load_dotenv
-from telegram.ext import Application, PicklePersistence
+from telegram.ext import Application
 
 from db.db import Db
 from interactions.loader import load_interactions
 from services.logger import logger
+from services.schedule_service import reschedule_jobs
 
 load_dotenv('.env')
 i18n.load_path.append('./assets/lang')
@@ -23,10 +24,11 @@ def main() -> None:
     Produce program launch. Shu!
     """
     token = os.getenv("BOT_TOKEN")
-    persistence = PicklePersistence(filepath='connectBot')
-    Db(initial=True)
-    application = Application.builder().token(token).persistence(persistence).build()
+
+    db = Db(initial=True)
+    application = Application.builder().token(token).build()
     load_interactions(application)
+    reschedule_jobs(application, db)
     logger.info(f'App started')
     application.run_polling()
     return None

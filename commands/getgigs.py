@@ -41,9 +41,10 @@ async def getgigs_job(context: CallbackContext) -> None:
     """
     logger.info('Start getEventsJob')
     user_id = context.job.user_id
+    chat_id = context.job.user_id
     text = await prepare_gigs_text(user_id, request=False)
     if text:
-        await send_message(context, user_id, text)
+        await send_message(context, chat_id, text)
         logger.info(f'Job done, gigs sent to user {user_id}')
         return None
     else:

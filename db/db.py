@@ -276,11 +276,30 @@ class Db:
         logger.info(f'All passed events added')
         return None
 
+    async def wsql_jobs(self, user_id: int, chat_id: int) -> None:
+        """
+        Writes info for new daily job, i.e. which chat to send daily news to.
+        Args:
+            user_id: Tg user_id field
+            chat_id: Tg chat_id field
+        """
+        query = """
+            INSERT OR IGNORE INTO jobs (user_id, chat_id) 
+            VALUES (?, ?)
+            """
+        affected = self._execute_query(
+            query=query, params=(chat_id, user_id), getaffected=True
+        )
+        if affected:
+            logger.info(f"Added job in DB: user_id {user_id}, chat_id {chat_id}")
+        else:
+            logger.info(f"Not added job in DB: user_id {user_id}, chat_id {chat_id}")
+        return None
+
     async def wsql_artcheck(self, art_name: str) -> None:
         """
-        Write or replaced info about art_name was checked for events, for escaping
-        multiple checking in short time. Time delay controlled by
-        CFG.DAYS_MIN_DELAY_ARTCHECK.
+        Writes or updates info about art_name checking time, for escaping multiple
+        checking. Time delay controlled by CFG.DAYS_MIN_DELAY_ARTCHECK.
         Args:
             art_name: artist name that was checked
         """
@@ -396,6 +415,26 @@ class Db:
         )
         record = record[0]
         return record
+
+    def rsql_jobs(self) -> List[Tuple]:
+        """
+        NOT_ASYNC!
+        Returns chat_id assigned to daily job for given user_id.
+        Args:
+            user_id: Tg user_id field
+        Returns:
+            string with chat_id or False if chat_id was not found.
+        """
+        query = """
+        SELECT user_id, chat_id FROM jobs
+        """
+        records = self._execute_query(query, params=(), select=True, selectone=False)
+        if not records:
+            logger.debug(f'No jobs in db')
+            return records
+        else:
+            logger.debug(f'Returned jobs: {len(records)} jobs')
+            return records
 
     async def rsql_locale(self, user_id: int) -> Union[bool, str]:
         """
