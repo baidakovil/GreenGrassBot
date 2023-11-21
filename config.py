@@ -43,14 +43,15 @@ class Cfg:
         # possible quantity of accounts at last.fm to keep
         self.MAX_LFM_ACCOUNT_QTY = 3
 
-        # days quantity to load scrobbles for new user
+        # days quantity to load scrobbles for new user. Whithout SQL OVER(), like now,
+        # only DAYS_INITIAL_TIMEDELAY <= DAYS_PERIOD_MINLISTENS make sense
         self.DAYS_INITIAL_TIMEDELAY = 4
 
         # minimum delay to update info about artist's events
-        self.DAYS_MIN_DELAY_ARTCHECK = 1
+        self.DAYS_MIN_DELAY_ARTCHECK = 2
 
-        # how many days consider for minListens users's config, i.e. it is
-        # y in [x scrobbles in y days] condition, where x is DEFAULT_MIN_LISTENS
+        # how many days consider for min_listens users's config, i.e. it is y in [x
+        # scrobbles in y days] condition, where x is DEFAULT_MIN_LISTENS
         self.DAYS_PERIOD_MINLISTENS = 4
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
