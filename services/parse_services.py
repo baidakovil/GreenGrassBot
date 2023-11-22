@@ -5,23 +5,23 @@ import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
-from typing import Dict, List, Tuple, Union
+from typing import Dict, List, Optional, Tuple, Union, cast
+from urllib.error import HTTPError
 from urllib.request import urlopen
+from xml.etree.ElementTree import Element
 
-
-from db.db import Db
 from config import Cfg
-from services.message_service import i34g
+from db.db import Db
+from interactions.utils import text_to_date, unix_to_text
 from services.custom_classes import Event
-from interactions.utils import text_to_date
-from interactions.utils import unix_to_text
+from services.message_service import i34g
 from ui.error_builder import error_text
 
 logger = logging.getLogger("A.par")
 logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
-api_key = os.getenv("API_KEY")
+api_key = os.environ["API_KEY"]
 
 db = Db()
 
@@ -52,7 +52,7 @@ async def check_valid_lfm(lfm: str, user_id: int) -> Tuple[bool, str]:
     )
 
 
-def timedelay_moment() -> int:
+def timedelay_moment() -> datetime:
     """
     Calculate unix timestamp correspond to "00:00:00 UTC of the day that was
     DAYS_INITIAL_TIMEDELAY days ago". There is no explicit need of reset to 00:00:00,
@@ -70,7 +70,7 @@ def timedelay_moment() -> int:
     return moment_period_ago_00_00_00
 
 
-async def last_scrobble_moment(user_id: int, lfm: str) -> int:
+async def last_scrobble_moment(user_id: int, lfm: str) -> Optional[datetime]:
     """
     Calculate unix timestamp correspond to "00:00:00 UTC of the day of last saved
     scrobble" to avoid excess scrobble loads
@@ -144,7 +144,8 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
 
         root = ET.fromstring(xml)
         if current_page == 1:
-            total_pages = min(100, int(root[0].get("totalPages")))
+            total_pages_xml = root[0].get("totalPages")
+            total_pages = min(100, int(cast(int, total_pages_xml)))
             logger.info(f"Going to load {total_pages} XML pages")
         tracks = root[0].findall("track")
         if not tracks:
@@ -152,8 +153,14 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
 
         for track in root[0].findall("track"):
             if not track.attrib.get("nowplaying") == "true":
-                artist = html.unescape(track.find("artist").text)
-                date = track.find("date").text.split(",")[0]
+                track_element = track.find("artist")
+                assert isinstance(track_element, Element)
+                assert isinstance(track_element.text, str)
+                artist = html.unescape(track_element.text)
+                date_element = track.find("date")
+                assert isinstance(date_element, Element)
+                assert isinstance(date_element.text, str)
+                date = date_element.text.split(",")[0]
                 if not isinstance(artist_dict.get(artist), dict):
                     artist_dict[artist] = dict()
                 artist_dict[artist][date] = artist_dict[artist].get(date, 0) + 1
@@ -172,8 +179,10 @@ def page_loader(url: str) -> Union[int, str]:
     """
     try:
         page_bytes = urlopen(url)
-    except Exception as e:
+    except HTTPError as e:
         return e.code if isinstance(e.code, int) else int(90)
+    except Exception as e:
+        return int(91)
     page_text = page_bytes.read().decode()
     logger.debug(f"URL loaded: ...{url[-95:]}")
     return page_text
