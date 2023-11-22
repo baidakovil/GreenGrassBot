@@ -12,7 +12,7 @@ from telegram.ext import (
 
 from db.db import Db
 from interactions.common_handlers import cancel_handle
-from services.message_service import i34g, reply
+from services.message_service import i34g, reply, up, up_full
 from services.schedule_service import remove_jobs
 
 logger = logging.getLogger('A.del')
@@ -31,7 +31,7 @@ async def delete_answers(update: Update) -> Dict:
     Returns:
         dict{localized answer:what to do}
     """
-    user_id = update.message.from_user.id
+    user_id = up(update)
     answers = {
         await i34g("delete_user_conversation.yes", user_id=user_id): 'del',
         await i34g("delete_user_conversation.no", user_id=user_id): 'not_del',
@@ -48,7 +48,7 @@ async def delete(update: Update, context: CallbackContext) -> int:
     Returns:
         signals for stop or next step of the conversation
     """
-    user_id = update.message.from_user.id
+    user_id = up(update)
     if not await db.rsql_users(user_id=user_id):
         text = await i34g("delete_user_conversation.no_users", user_id=user_id)
         await reply(update, text, reply_markup=ReplyKeyboardRemove())
@@ -73,16 +73,13 @@ async def delete_user(update: Update, context: CallbackContext) -> int:
     Returns:
         signals for stop or next step of conversation
     """
-
-    user_id = update.message.from_user.id
-    chat_id = update.message.chat_id
+    user_id, chat_id, answer, _ = up_full(update)
     answers = await delete_answers(update)
-    answer = update.message.text
+    text = ''
     if answer == '/cancel':
         #  Code of the condition only for removing keyboard
-        del_msg = await update.message.reply_text(
-            'ok', reply_markup=ReplyKeyboardRemove()
-        )
+        del_msg = await reply(update, 'ok', reply_markup=ReplyKeyboardRemove())
+        assert update.message
         await context.bot.deleteMessage(
             message_id=del_msg.message_id, chat_id=update.message.chat_id
         )
@@ -96,6 +93,7 @@ async def delete_user(update: Update, context: CallbackContext) -> int:
 
     elif answers[answer] == 'del':
         locale = await db.rsql_locale(user_id)
+        locale = 'en' if locale is None else locale
         remove_jobs(user_id, chat_id, context)
         ####################################
         # Line below deletes all user data #
@@ -105,7 +103,6 @@ async def delete_user(update: Update, context: CallbackContext) -> int:
             text = await i34g("delete_user_conversation.deleted", locale=locale)
         else:
             text = await i34g("delete_user_conversation.error", user_id=user_id)
-
     await reply(update, text, reply_markup=ReplyKeyboardRemove())
     return ConversationHandler.END
 
@@ -114,10 +111,9 @@ def delete_user_conversation() -> ConversationHandler:
     """
     Return conversation handler to delete user.
     """
-    states = {DELETE_USER: [MessageHandler(filters.TEXT, delete_user)]}
     delete_user_handler = ConversationHandler(
         entry_points=[CommandHandler('delete', delete)],
-        states=states,
+        states={DELETE_USER: [MessageHandler(filters.TEXT, delete_user)]},
         fallbacks=[CommandHandler('cancel', cancel_handle)],
     )
     return delete_user_handler

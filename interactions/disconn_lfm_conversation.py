@@ -11,7 +11,7 @@ from telegram.ext import (
 
 from db.db import Db
 from interactions.common_handlers import cancel_handle
-from services.message_service import i34g, reply
+from services.message_service import i34g, reply, up, up_full
 from services.schedule_service import remove_jobs
 
 logger = logging.getLogger('A.dis')
@@ -31,8 +31,8 @@ async def disconnect(update: Update, context: CallbackContext) -> int:
     Returns:
         signals for stop or next step of conversation
     """
-    user_id = update.message.from_user.id
-    lfm_accs = await db.rsql_lfmuser(update.message.from_user.id)
+    user_id = up(update)
+    lfm_accs = await db.rsql_lfmuser(user_id)
     if lfm_accs:
         text = await i34g("disconn_lfm_conversation.choose_acc", user_id=user_id)
         lfm_accs.append('/cancel')
@@ -61,18 +61,14 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
     Returns:
         signals for stop or next step of conversation
     """
-    user_id = update.message.from_user.id
-    chat_id = update.message.chat_id
+
+    user_id, chat_id, acc, _ = up_full(update)
+    acc = acc.lower()
     useraccs = await db.rsql_lfmuser(user_id)
-    acc = update.message.text.lower()
     if acc == '/cancel':
         #  Code of the condition only for removing keyboard
-        del_msg = await update.message.reply_text(
-            'ok', reply_markup=ReplyKeyboardRemove()
-        )
-        await context.bot.deleteMessage(
-            message_id=del_msg.message_id, chat_id=update.message.chat_id
-        )
+        del_msg = await reply(update, 'ok', reply_markup=ReplyKeyboardRemove())
+        await context.bot.deleteMessage(message_id=del_msg.message_id, chat_id=chat_id)
         return ConversationHandler.END
     elif acc not in useraccs:
         text = await i34g(
@@ -87,12 +83,14 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
             text = await i34g(
                 "disconn_lfm_conversation.acc_scr_deleted", acc=acc, user_id=user_id
             )
-            logger.info(f"User {user_id} deleted account {acc},scrobbles deleted")
+            logger.info(f"BotUser {user_id} deleted account {acc},scrobbles deleted")
         elif affected_ua:
             text = await i34g(
                 "disconn_lfm_conversation.acc_deleted", acc=acc, user_id=user_id
             )
-            logger.info(f"User {user_id} deleted account {acc}, no scrobbles deleted")
+            logger.info(
+                f"BotUser {user_id} deleted account {acc}, no scrobbles deleted"
+            )
         else:
             text = await i34g(
                 "disconn_lfm_conversation.error_when_del", acc=acc, user_id=user_id
@@ -106,10 +104,9 @@ def disconn_lfm_conversation() -> ConversationHandler:
     """
     Returns conversation handler to add lastfm user.
     """
-    states = {DISC_ACC: [MessageHandler(filters.TEXT, disconn_lfm)]}
     disconn_lfm_handler = ConversationHandler(
         entry_points=[CommandHandler('disconnect', disconnect)],
-        states=states,
+        states={DISC_ACC: [MessageHandler(filters.TEXT, disconn_lfm)]},
         fallbacks=[CommandHandler('cancel', cancel_handle)],
     )
     return disconn_lfm_handler
