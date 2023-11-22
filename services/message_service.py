@@ -1,8 +1,9 @@
 import logging
-from typing import Awaitable, Union
+from typing import Awaitable, Tuple, Union
 
 import i18n
-from telegram import InlineKeyboardMarkup, Update
+from telegram import Message, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update, User
+from telegram.constants import ParseMode
 from telegram.ext import CallbackContext
 
 from config import Cfg
@@ -16,13 +17,63 @@ CFG = Cfg()
 db = Db()
 
 
+def up_full(update: Update) -> Tuple[int, int, str, str]:
+    """
+    Function to handle updates. Aims:
+    a) simple type hints
+    b) debugging through logging of possible bot fails through unappropriate updates.
+    Now it is assumed that every update contains message, text and is from user.
+    Args:
+        update: update object
+    Returns:
+        user_id, chat_id, message.text fields.
+
+    # TODO should I use effective chat?
+    # TODO should I rewrite user_id to chat_id everywhere?
+    """
+
+    user_id = 0
+    chat_id = 0
+    text = ''
+    first_name = ''
+
+    if isinstance(update.message, Message):
+        chat_id = update.message.chat_id
+        text = update.message.text
+        if isinstance(update.message.from_user, User):
+            user_id = update.message.from_user.id
+            first_name = update.message.from_user.first_name
+        else:
+            logger.warning(f'UPDATE IS NOT FROM USER. Probably bot will fail')
+    else:
+        logger.warning(f'UPDATE IS NOT A MESSAGE. Probably bot will fail')
+    if not isinstance(text, str):
+        logger.warning(f'UPDATE DOES NOT CONTAIN TEXT. Probably bot will fail')
+        text = ''
+
+    return user_id, chat_id, text, first_name
+
+
+def up(update: Update) -> int:
+    """
+    Same as up_full, but for only single variable user_id.
+    """
+    user_id = 0
+    if isinstance(update.message, Message):
+        if isinstance(update.message.from_user, User):
+            user_id = update.message.from_user.id
+        else:
+            logger.warning(f'UPDATE IS NOT FROM USER. Probably bot will fail')
+    return user_id
+
+
 async def reply(
     update: Update,
     text: str,
-    parse_mode: str = 'MarkdownV2',
-    reply_markup: InlineKeyboardMarkup = None,
+    parse_mode: str = ParseMode.MARKDOWN_V2,
+    reply_markup: Union[ReplyKeyboardMarkup, ReplyKeyboardRemove, None] = None,
     disable_web_page_preview: bool = False,
-) -> Awaitable:
+) -> Message:
     """
     Replies to user basing on update object.
     Args:
@@ -32,6 +83,7 @@ async def reply(
         reply_markup: inline keyboard attached to the message
         disable_web_page_preview: show preview or not, OVERRIDING default true
     """
+    assert update.message
     return await update.message.reply_text(
         text,
         reply_markup=reply_markup,
@@ -44,8 +96,8 @@ async def send_message(
     context: CallbackContext,
     chat_id: int,
     text: str,
-    parse_mode: str = 'MarkdownV2',
-    reply_markup: InlineKeyboardMarkup = None,
+    parse_mode: str = ParseMode.MARKDOWN_V2,
+    reply_markup: Union[ReplyKeyboardMarkup, ReplyKeyboardRemove, None] = None,
     disable_web_page_preview: bool = False,
 ) -> Awaitable:
     """
@@ -71,7 +123,7 @@ def alarm_char(text: Union[str, int]) -> str:
     Provides pre-escaping alarm characters in output messages with '/', accordin:
     core.telegram.org/bots/api#html-style.
     Args:
-        *args: single argument, i18n translation link e.g. "utils.cancel_message"
+        *args: single argument, i18n translation link e.g. "loc.choose_lang"
         **kwargs: dict with i18n values for placeholders
     """
     text = str(text)
@@ -99,27 +151,40 @@ def alarm_char(text: Union[str, int]) -> str:
     return text
 
 
-async def i34g(*args: str, **kwargs: str) -> str:
+async def i34g(*args: str, **kwargs: Union[str, int]) -> str:
     """
     Internatiolization and escaping. Determines current locale. Prepares proper
     localized text. Please see alarm_char() definition for clearings. Note, that alarm
     characters in translations should be pre-escaped manually.
     Args:
-        args: single positional argument like "utils.cancel_message", is code of i18n
+        args: single positional argument like "loc.choose_lang", is code of i18n
         kwargs: keyword arguments, including
             placeholders: i18n-placeholders with names according JSON-translation. Those
             ended with "_noalarm" will be passed to Tg without escaping
             user_id: user_id for locale setting reading
-            locale: locale, when appropriated (for url)
+            locale: locale, when appropriated (for url or when deleting account)
     Returns:
         text prepared to send
     """
     if 'locale' not in kwargs.keys():
-        kwargs['locale'] = await db.rsql_locale(user_id=kwargs.pop('user_id'))
+        user_id = int(kwargs.pop('user_id'))
+        locale = await db.rsql_locale(user_id=user_id)
+        if locale is None:
+            locale = CFG.DEFAULT_LOCALE
+            logger.warning('Can not read locale settings. It should not be like this!')
+        else:
+            locale = CFG.DEFAULT_LOCALE if locale is None else locale
+        kwargs['locale'] = locale
 
     kwargs = {
         arg: kwargs[arg] if arg.endswith('_noalarm') else alarm_char(kwargs[arg])
         for arg in kwargs.keys()
     }
+
     text = i18n.t(*args, **kwargs)
-    return text
+
+    if not isinstance(text, str):
+        logger.warning('Error when reading translation')
+        return str(text)
+    else:
+        return text
