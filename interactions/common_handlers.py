@@ -1,12 +1,19 @@
+import html
+import json
 import logging
+import traceback
 
 from telegram import Update
-from telegram.ext import CallbackContext, ConversationHandler
+from telegram.constants import ParseMode
+from telegram.ext import CallbackContext, ContextTypes, ConversationHandler
 
-from services.message_service import i34g, reply
+from config import Cfg
+from services.message_service import i34g, reply, send_message, up
 
-logger = logging.getLogger('A.com')
+logger = logging.getLogger(name='A.com')
 logger.setLevel(logging.DEBUG)
+
+CFG = Cfg()
 
 
 async def cancel_handle(update: Update, context: CallbackContext) -> int:
@@ -18,15 +25,44 @@ async def cancel_handle(update: Update, context: CallbackContext) -> int:
     Returns:
         int = 0
     """
-    user_id = update.message.from_user.id
-    logger.info(f'User {user_id} canceled the conversation')
-    await reply(update, await i34g('utils.cancel_message', user_id=user_id))
+    user_id = up(update)
+    logger.info(f'BotUser {user_id} canceled the conversation')
+    await reply(update, await i34g('common_handlers.cancel_message', user_id=user_id))
     return ConversationHandler.END
 
 
-def error_handle(update: Update, context: CallbackContext) -> None:
+async def unknown_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
-    Determine what to do when update causes error.
+    Handle unknown commands.
     """
+    user_id = up(update)
+    await reply(update, await i34g("common_handlers.unknown_command", user_id=user_id))
+
+
+async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """
+    Log the error and send a telegram message to notify the developer. Source:
+    docs.python-telegram-bot.org/en/v20.6/examples.errorhandlerbot.html
+    """
+    assert context.error
     logger.warning(f'Update {update} caused error {context.error}')
-    return None
+    tb_list = traceback.format_exception(
+        None, context.error, context.error.__traceback__
+    )
+    tb_string = "".join(tb_list)
+
+    update_str = update.to_dict() if isinstance(update, Update) else str(update)
+    message = (
+        "An exception was raised while handling an update\n"
+        f"<pre>update = {html.escape(json.dumps(update_str, indent=2, ensure_ascii=False))}"
+        "</pre>\n\n"
+        f"<pre>context.chat_data = {html.escape(str(context.chat_data))}</pre>\n\n"
+        f"<pre>context.user_data = {html.escape(str(context.user_data))}</pre>\n\n"
+        f"<pre>{html.escape(tb_string)}</pre>"
+    )
+    await send_message(
+        context,
+        chat_id=CFG.DEVELOPER_CHAT_ID,
+        text=message[:4095],
+        parse_mode=ParseMode.HTML,
+    )
