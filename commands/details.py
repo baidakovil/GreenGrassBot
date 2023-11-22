@@ -4,7 +4,7 @@ from telegram import Update
 from telegram.ext import CallbackContext
 
 from db.db import Db
-from services.message_service import reply
+from services.message_service import reply, up_full
 from ui.news_builders import prepare_details_text
 
 db = Db()
@@ -20,11 +20,9 @@ async def details(update: Update, context: CallbackContext) -> None:
     Args:
         update, context: standart PTB callback signature
     """
-    user_id = str(update.message.from_user.id)
-    command = update.message.text
+    user_id, _, command, _ = up_full(update)
     shorthand = int(command[1:])
     text = await prepare_details_text(user_id, shorthand)
     await reply(update, text, disable_web_page_preview=True)
-
     logger.info(f'Details was sent to {user_id}')
     return None
