@@ -1,6 +1,13 @@
 #  Python interpreter bytecode
 __pycache__
 
+#  MyPy files
+.mypy_cache
+.mypy.ini
+
+#  Pyright typechecker files
+pyrightconfig.json 
+
 #  Last.fm API Key and Telegram bot token
 .env
 
@@ -14,22 +21,14 @@ data
 #  Current run log
 logger.log
 
-#  File for working experiments
-ggbWork.ipynb
-ggget.py
+#  Files for working experiments
+**/*.ipynb
+.ggget.py
 db/backup
-
-#  Bot persistence file for continuation after restart
-connectBot
 
 #  File-notebook with plans and actions
 WORKFLOW.md
 
-#  Workbench backup files
-*.bak
-*.db-journal
-
 #  Test db for debugging
-ggb_sqlite_test.db
 db/ggb_sqlite.db
 db/backup
