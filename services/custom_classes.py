@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List
 
 from config import Cfg
@@ -46,9 +46,9 @@ class Event:
 
 
 @dataclass
-class User:
+class BotUser:
     """
-    Class for keeping user info.
+    Class for keeping user info. Code in accs needed to provide default value at init().
     Args:
         user_id, username, first_name, last_name, language_code: Tg user fields.
         accs: list of user last.fm accounts
@@ -61,8 +61,8 @@ class User:
     first_name: str
     last_name: str
     language_code: str
-    accs: List[str] = None
-    reg_datetime: str = None
+    accs: List[str] = field(default_factory=list)
+    reg_datetime: str = ''
 
 
 @dataclass
