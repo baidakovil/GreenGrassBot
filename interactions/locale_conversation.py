@@ -1,6 +1,7 @@
-import i18n
 import logging
+from typing import Dict
 
+import i18n
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.ext import (
     CallbackContext,
@@ -12,7 +13,7 @@ from telegram.ext import (
 
 from db.db import Db
 from interactions.common_handlers import cancel_handle
-from services.message_service import i34g, reply
+from services.message_service import i34g, reply, up, up_full
 
 logger = logging.getLogger('A.dis')
 logger.setLevel(logging.DEBUG)
@@ -22,7 +23,7 @@ db = Db()
 SET_LOCALE = 0
 
 
-async def get_locale_codes(update: Update) -> int:
+async def get_locale_codes(update: Update) -> Dict[str, str]:
     """
     Helper for conversation of language change. Note, that 'xx' in 'loc.xx' should be
     equal to language code for program logic.
@@ -31,7 +32,7 @@ async def get_locale_codes(update: Update) -> int:
     Returns:
         dictionary {locale name on user current language:locale code}
     """
-    user_id = update.message.from_user.id
+    user_id = up(update)
     loc_codes = {
         await i34g('loc.en', user_id=user_id): 'en',
         await i34g('loc.ru', user_id=user_id): 'ru',
@@ -44,7 +45,7 @@ async def locale(update: Update, context: CallbackContext) -> int:
     Entry point. Offers to user possible locales to choose.
     """
     await db.save_user(update)
-    user_id = update.message.from_user.id
+    user_id = up(update)
     loc_codes = await get_locale_codes(update)
     loc_names = list(loc_codes.keys())
     loc_names.append('/cancel')
@@ -65,27 +66,18 @@ async def set_locale(update: Update, context: CallbackContext) -> int:
     """
     Second step. Waits for answer which locale to choose and set it.
     """
-    user_id = update.message.from_user.id
+    user_id, chat_id, new_loc_name, _ = up_full(update)
     prev_loc_code = await db.rsql_locale(user_id)
     loc_codes = await get_locale_codes(update)
-    new_loc_name = update.message.text
+
     if new_loc_name == '/cancel':
         #  Code of the condition only for removing keyboard
-        del_msg = await update.message.reply_text(
-            'ok', reply_markup=ReplyKeyboardRemove()
-        )
-        await context.bot.deleteMessage(
-            message_id=del_msg.message_id, chat_id=update.message.chat_id
-        )
+        del_msg = await reply(update, 'ok', reply_markup=ReplyKeyboardRemove())
+        await context.bot.deleteMessage(message_id=del_msg.message_id, chat_id=chat_id)
         return ConversationHandler.END
 
     elif new_loc_name not in loc_codes.keys():
-        text = await i34g(
-            "loc.loc_not_found",
-            loc=new_loc_name,
-            user_id=user_id,
-            reply_markup=ReplyKeyboardRemove(),
-        )
+        text = await i34g("loc.loc_not_found", loc=new_loc_name)
         await reply(update, text, reply_markup=ReplyKeyboardRemove())
         return ConversationHandler.END
 
@@ -125,10 +117,9 @@ def locale_conversation() -> ConversationHandler:
     """
     Return conversation handler to change locale settings.
     """
-    states = {SET_LOCALE: [MessageHandler(filters.TEXT, set_locale)]}
     disconn_lfm_handler = ConversationHandler(
         entry_points=[CommandHandler('locale', locale)],
-        states=states,
+        states={SET_LOCALE: [MessageHandler(filters.TEXT, set_locale)]},
         fallbacks=[CommandHandler('cancel', cancel_handle)],
     )
     return disconn_lfm_handler
