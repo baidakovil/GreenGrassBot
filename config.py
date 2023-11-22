@@ -31,7 +31,7 @@ class Cfg:
         self.DEFAULT_NOTICE_TIME = '12:30:00'
 
         # Default UTC time to send news
-        self.DEFAULT_NONEWEVENTS = 0
+        self.DEFAULT_NONEWEVENTS: int = 0
 
         # Default UTC time to send news
         self.DEFAULT_LOCALE = 'en'
@@ -72,6 +72,12 @@ class Cfg:
 
         # Quantity of files, keeping by rotating logger
         self.QTY_BACKUPS_ROTATING_LOGGER = 5
+
+        # Developer contacts to inform about errors or new users
+        self.DEVELOPER_CHAT_ID = 144297913
+
+        # Whether bot should inform about new users
+        self.NEW_USER_ALARMING = False
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
         # # # # # # # # #   DATA  #  BASE # # # # # # # # # # #
