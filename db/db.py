@@ -5,32 +5,32 @@ from contextlib import contextmanager
 from dataclasses import asdict
 from datetime import datetime
 from sqlite3 import IntegrityError, OperationalError
-from typing import Any, Dict, List, Tuple, Union
+from typing import Any, Iterator, List, Optional, Tuple, Union
 
 from telegram import Update
 
 from config import Cfg
 from interactions.utils import timestamp_to_text
-from services.custom_classes import ArtScrobble, Event, User, UserSettings
+from services.custom_classes import ArtScrobble, BotUser, Event, UserSettings
+from services.logger import logger
 
-logger = logging.getLogger('A.db')
+logger = logging.getLogger(name='A.db')
 logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 
 
 @contextmanager
-def get_connection(db_path: str, params: Any = None, case: str = None) -> None:
+def get_connection(db_path: str, params: Any = None) -> Iterator[sqlite3.Connection]:
     """
     Context manager for proper executing sqlite queries.
     Args:
         db_path: path to database
         params: optional, parameters to execute query with, for error
         output (at debugging)
-        case: optional, parameter to split error cases, not used yet.
     """
+    conn = sqlite3.connect(db_path)
     try:
-        conn = sqlite3.connect(db_path)
         conn.execute("PRAGMA foreign_keys = 1")
         yield conn
         conn.commit()
@@ -42,7 +42,42 @@ def get_connection(db_path: str, params: Any = None, case: str = None) -> None:
         logger.warning(f'CATCHED SomeError: {E}')
     finally:
         conn.close()
-        return None
+
+
+def affected_hard_check(affected: Union[Any, List[Any], int, None]) -> int:
+    """
+    Provide hard check of "affected" var. Good for linter and for DB control.
+    Args:
+        affected: value returned by _executed_query
+    """
+    if isinstance(affected, int) and affected >= 0:
+        return affected
+    else:
+        raise Exception("Affected rows quantity returns strange! DB fails")
+
+
+def tuple_hard_check(record: Union[Any, List[Any], int, None]) -> tuple:
+    """
+    Provide hard check of db output. Good for linter and for DB control.
+    Args:
+        affected: value returned by _executed_query
+    """
+    if isinstance(record, tuple):
+        return record
+    else:
+        raise Exception("execute_query returns not tuple! DB fails")
+
+
+def list_hard_check(record: Union[Any, List[Any], int, None]) -> list:
+    """
+    Provide hard check of db output. Good for linter and for DB control.
+    Args:
+        affected: value returned by _executed_query
+    """
+    if isinstance(record, list):
+        return record
+    else:
+        raise Exception("execute_query returns not list! DB fails")
 
 
 class Db:
@@ -95,25 +130,23 @@ class Db:
     def _execute_query(
         self,
         query: str,
-        case: str = None,
-        params: Dict = None,
+        params: Any = None,
         select: bool = False,
         selectone: bool = True,
         getaffected: bool = False,
-    ) -> Union[None, str, int]:
+    ) -> Union[Any, List[Any], int, None]:
         """
         Execute queries to db. Note, getaffected arg should not be combined with
         selects.
         Args:
             query: single query to execute
-            case: optional, parameter for context manager to split error cases
             params: parameters to execute query with
             select: True if query should return a value OR values
             selectone: True if query should return only one row
             getaffected: True if query should return quantity of affected rows
         """
         answer = None
-        with get_connection(self.db_path, params, case) as con:
+        with get_connection(self.db_path, params) as con:
             cursor = con.cursor()
             cursor.execute(query, params)
             if select and selectone:
@@ -136,18 +169,24 @@ class Db:
         Args:
             update: object representing incoming update (message)
         """
-        user = User(
+        assert update.message
+        assert update.message.from_user
+        username = update.message.from_user.username
+        lastname = update.message.from_user.last_name
+        language_code = update.message.from_user.language_code
+
+        user = BotUser(
             user_id=update.message.from_user.id,
-            username=update.message.from_user.username,
+            username=username if username else '',
             first_name=update.message.from_user.first_name,
-            last_name=update.message.from_user.last_name,
-            language_code=update.message.from_user.language_code,
+            last_name=lastname if lastname else '',
+            language_code=language_code if language_code else 'en',
         )
+
         await self.wsql_users(user)
         await self.wsql_settings(user_id=update.message.from_user.id)
-        return None
 
-    async def wsql_users(self, user: User) -> None:
+    async def wsql_users(self, user: BotUser) -> None:
         """
         Write all fields to table 'users' if it was not saved for this user_id
         Agrs:
@@ -161,7 +200,7 @@ class Db:
         params['reg_datetime'] = timestamp_to_text(datetime.now())
         self._execute_query(query=query, params=params)
         logger.info(
-            f"User with username: {user.username} and user_id: {user.user_id} added"
+            f"BotUser with username: {user.username} and user_id: {user.user_id} added"
         )
         return None
 
@@ -188,7 +227,7 @@ class Db:
             :lfm);
         """
         affected = self._execute_query(query=query, params=params, getaffected=True)
-        return affected
+        return affected_hard_check(affected)
 
     async def wsql_settings(self, **kw) -> int:
         """
@@ -204,7 +243,7 @@ class Db:
         def_sett = asdict(UserSettings(user_id=user_id))
 
         cur_sett = await self.rsql_settings(user_id=user_id)
-        cur_sett = asdict(cur_sett) if cur_sett else def_sett
+        cur_sett = cur_sett.__dict__ if cur_sett is not None else def_sett
 
         use_vals = {
             key: kw[key] if key in kw.keys() else cur_sett[key]
@@ -226,7 +265,7 @@ class Db:
         else:
             logger.warning(f"Settings was not changed to")
 
-        return affected
+        return affected_hard_check(affected)
 
     async def wsql_scrobbles(self, ars: ArtScrobble) -> None:
         """
@@ -388,19 +427,6 @@ class Db:
     ########### READS ###############
     #################################
 
-    async def rsql_numtables(self) -> int:
-        """
-        Returns quantity of tables in DB for devops control/debugging.
-        """
-        query = """
-        SELECT COUNT(*) FROM sqlite_master WHERE type="table" AND tbl_name != "sqlite_sequence"
-        """
-        tbl_num = self._execute_query(
-            query,
-            select=True,
-        )
-        return tbl_num[0]
-
     async def rsql_users(self, user_id: int) -> int:
         """
         Returns 0 or 1 as quantity of user_id in users table.
@@ -413,79 +439,71 @@ class Db:
             params=(user_id,),
             select=True,
         )
-        record = record[0]
+        record = tuple_hard_check(record)[0]
         return record
 
     def rsql_jobs(self) -> List[Tuple]:
         """
         NOT_ASYNC!
-        Returns chat_id assigned to daily job for given user_id.
-        Args:
-            user_id: Tg user_id field
+        Returns full job list bot have.
         Returns:
-            string with chat_id or False if chat_id was not found.
+            List of tuples in format (user_id, chat_id) or empty list
         """
         query = """
         SELECT user_id, chat_id FROM jobs
         """
         records = self._execute_query(query, params=(), select=True, selectone=False)
-        if not records:
+        records = list_hard_check(records)
+        if records == []:
             logger.debug(f'No jobs in db')
-            return records
         else:
             logger.debug(f'Returned jobs: {len(records)} jobs')
-            return records
+        return records
 
-    async def rsql_locale(self, user_id: int) -> Union[bool, str]:
+    async def rsql_locale(self, user_id: int) -> Union[str, None]:
         """
         Returns user locale setting.
         Args:
             user_id: Tg user_id field
         Returns:
-            string with written setting or False if settings was not found.
+            string with written setting or None if settings was not found.
         """
         query = """
         SELECT locale FROM usersettings
         WHERE user_id = ?
         """
         record = self._execute_query(query, params=(user_id,), select=True)
-        if not record:
+        if record is None:
             logger.debug(f'Return empty locale settings for user_id {user_id}')
-            return False
-        record = record[0]
+            return record
+        record = tuple_hard_check(record)[0]
         return record
 
-    async def rsql_settings(self, user_id: int) -> Union[bool, UserSettings]:
+    async def rsql_settings(self, user_id: int) -> Optional[UserSettings]:
         """
         Returns user settings.
         #TODO rewrite ro row_factory with dict access to fields.
         Args:
             user_id: Tg user_id field
         Returns:
-            UserSetting dataclass object or False if settings was not found.
+            BotUserSetting dataclass object or False if settings was not found.
         """
         query = """
         SELECT * FROM usersettings
         WHERE user_id = ?
         """
-        record = self._execute_query(
-            query, params=(user_id,), select=True, selectone=False
-        )
-
-        if not record:
+        record = self._execute_query(query, params=(user_id,), select=True)
+        if record is None:
             logger.debug(f'Return empty settings for user_id {user_id}')
-            return False
-
-        record = record[0]
-        result = [record[i] for i in range(len(record))]
-
+            return record
+        record = tuple_hard_check(record)
         usersettings = UserSettings(
-            user_id=result[0],
-            min_listens=result[1],
-            notice_day=result[2],
-            notice_time=result[3],
-            nonewevents=result[4],
-            locale=result[5],
+            user_id=record[0],
+            min_listens=record[1],
+            notice_day=record[2],
+            notice_time=record[3],
+            nonewevents=int(record[4]),
+            locale=record[5],
         )
         logger.debug(f'Return settings for user_id {user_id}: {usersettings}')
         return usersettings
@@ -503,8 +521,9 @@ class Db:
         SELECT IFNULL((SELECT MAX(shorthand) FROM lastarts WHERE user_id = ?), 0)
         """
         record = self._execute_query(query, params=(user_id,), select=True)
-        logger.debug(f'Return maxshorthand for user_id {user_id}: {record[0]}')
-        return record[0]
+        record = tuple_hard_check(record)[0]
+        logger.debug(f'Return maxshorthand for user_id {user_id}: {record}')
+        return record
 
     async def rsql_lfmuser(self, user_id: int) -> List[str]:
         """
@@ -521,6 +540,7 @@ class Db:
         record = self._execute_query(
             query, params=(user_id,), select=True, selectone=False
         )
+        record = list_hard_check(record)
         result = [record[i][0] for i in range(len(record))]
         logger.debug(f'Return lastfm users for user_id {user_id}: {result}')
         return result
@@ -563,7 +583,8 @@ class Db:
         END;
         """
         record = self._execute_query(query, params=params, select=True)
-        return record[0]
+        record = tuple_hard_check(record)[0]
+        return record
 
     async def rsql_getallevents(self, user_id: int, shorthand: int) -> List[Tuple]:
         """
@@ -590,10 +611,11 @@ class Db:
         ORDER BY event_date
         """
         ev = self._execute_query(query, params=params, select=True, selectone=False)
-        logger.info(f'User {user_id} requests shorthand {shorthand}')
+        ev = list_hard_check(ev)
+        logger.info(f'BotUser {user_id} requests shorthand {shorthand}')
         return ev
 
-    async def rsql_lastdayscrobble(self, user_id: int, lfm: str) -> str:
+    async def rsql_lastdayscrobble(self, user_id: int, lfm: str) -> Union[str, None]:
         """
         Returns last scrobble_date value for user_id-lfm pair. Used to decide how old
         scrobble to load and avoid excess API using.
@@ -607,9 +629,14 @@ class Db:
         WHERE user_id = ? AND lfm = ?
         """
         record = self._execute_query(query, params=(user_id, lfm), select=True)
-        record = record[0]
-        logger.debug(f'User {user_id} requests last scrobble date')
-        return record
+
+        if record is None:
+            logger.debug(f'No last scrobbles found for {user_id}')
+            return record
+        else:
+            logger.debug(f'BotUser {user_id} requests last scrobble date')
+            record = tuple_hard_check(record)[0]
+            return record
 
     async def rsql_finalquestion(self, user_id: int, art_name: str) -> int:
         """
@@ -657,7 +684,8 @@ class Db:
 	        END
         """
         record = self._execute_query(query, params=params, select=True)
-        return bool(record[0])
+        record = tuple_hard_check(record)[0]
+        return record
 
     #################################
     ############ DELETES ############
@@ -701,7 +729,8 @@ class Db:
         affected_ua = self._execute_query(
             query_del_ua, params=(user_id, lfm), getaffected=True
         )
-        return (affected_scr, affected_ua)
+
+        return (affected_hard_check(affected_scr), affected_hard_check(affected_ua))
 
     async def dsql_user(self, user_id) -> bool:
         """
@@ -712,7 +741,7 @@ class Db:
             True if user deleted normally, False if some useraccs or user_ids was not
             deleted
         """
-        logger.info(f'User {user_id} request account deleting')
+        logger.info(f'BotUser {user_id} request account deleting')
         problem = None
         useraccs = await self.rsql_lfmuser(user_id)
 
@@ -734,5 +763,5 @@ class Db:
             problem = True
             logger.info(f'Problem when deleting user_id for {user_id}')
         else:
-            logger.info(f'User {user_id} deleted all the info')
+            logger.info(f'BotUser {user_id} deleted all the info')
         return True if problem is None else False
