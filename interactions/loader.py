@@ -7,7 +7,7 @@ from commands.getgigs import getgigs
 from commands.nolastfm import nolastfm
 from commands.nonewevents import nonewevents
 from commands.start import start
-from interactions.common_handlers import error_handle
+from interactions.common_handlers import error_handler, unknown_handler
 from interactions.conn_lfm_conversation import conn_lfm_conversation
 from interactions.delete_user_conversation import delete_user_conversation
 from interactions.disconn_lfm_conversation import disconn_lfm_conversation
@@ -27,6 +27,7 @@ def load_interactions(application: Application) -> None:
     load_commands(application)
     load_messages(application)
     load_error(application)
+    application.add_handler(MessageHandler(filters.COMMAND, unknown_handler))
     return None
 
 
@@ -68,5 +69,5 @@ def load_error(application: Application):
     Loads error handler message handlers on start.
     Args: application: application for adding handler to
     """
-    application.add_error_handler(error_handle)
+    application.add_error_handler(error_handler)
     return None
