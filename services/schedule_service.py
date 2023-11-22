@@ -3,11 +3,12 @@ from datetime import time
 from typing import Union
 
 from telegram import Update
-from telegram.ext import Application, CallbackContext, ConversationHandler
+from telegram.ext import Application, CallbackContext, ConversationHandler, JobQueue
 
 from commands.getgigs import getgigs_job
 from config import Cfg
 from db.db import Db
+from services.message_service import up_full
 
 logger = logging.getLogger('A.sch')
 logger.setLevel(logging.DEBUG)
@@ -17,7 +18,7 @@ CFG = Cfg()
 db = Db()
 
 
-def get_job_name(user_id: str, chat_id: str) -> str:
+def get_job_name(user_id: int, chat_id: int) -> str:
     """
     Provide convenient (inside bot) name for job. It included chat_id to make it
     possible to have bot in chats. At least, in future.
@@ -39,14 +40,17 @@ def run_daily_job(
         job_src: object with "current_jobs" method to obtain current jobs
     """
     logger.debug(f'Entered to run_daily_job() for: {user_id}, {chat_id}')
-    job_src.job_queue.run_daily(
-        callback=getgigs_job,
-        time=time.fromisoformat(CFG.DEFAULT_NOTICE_TIME),
-        chat_id=chat_id,
-        user_id=user_id,
-        name=get_job_name(user_id, chat_id),
-        job_kwargs=CFG.CRON_JOB_KWARGS,
-    )
+    if isinstance(job_src.job_queue, JobQueue):
+        job_src.job_queue.run_daily(
+            callback=getgigs_job,
+            time=time.fromisoformat(CFG.DEFAULT_NOTICE_TIME),
+            chat_id=chat_id,
+            user_id=user_id,
+            name=get_job_name(user_id, chat_id),
+            job_kwargs=CFG.CRON_JOB_KWARGS,
+        )
+    else:
+        logger.warning('Can not access JobQueue. Something wrong')
     return None
 
 
@@ -59,8 +63,7 @@ async def add_daily(update: Update, context: CallbackContext) -> int:
         signal for stop of conversation
     """
     logger.debug('Entered to add_daily()')
-    user_id = update.message.from_user.id
-    chat_id = update.message.chat_id
+    user_id, chat_id, _, _ = up_full(update)
 
     remove_jobs(user_id, chat_id, context)
     run_daily_job(user_id, chat_id, context)
@@ -81,13 +84,16 @@ def remove_jobs(
         job_src: object with "current_jobs" method to obtain current jobs
     """
     job_name = get_job_name(user_id, chat_id)
-    current_jobs = job_src.job_queue.get_jobs_by_name(job_name)
-    if current_jobs:
-        count_jobs = 0
-        for job in current_jobs:
-            job.schedule_removal()
-            count_jobs += 1
-        logger.debug(f'Jobs removed: {count_jobs}')
+    if isinstance(job_src.job_queue, JobQueue):
+        current_jobs = job_src.job_queue.get_jobs_by_name(job_name)
+        if current_jobs:
+            count_jobs = 0
+            for job in current_jobs:
+                job.schedule_removal()
+                count_jobs += 1
+            logger.debug(f'Jobs removed: {count_jobs}')
+    else:
+        logger.warning('Can not access JobQueue. Something wrong')
     return None
 
 
