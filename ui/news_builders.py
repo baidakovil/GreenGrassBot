@@ -119,9 +119,9 @@ async def prepare_gigs_text(user_id: int, request: bool) -> str:
                 #  Save shorthands and info about sent artist
                 await db.wsql_sentarts(user_id, art_name)
                 await db.wsql_lastarts(user_id, shorthand_count, art_name)
-                news_header = await i34g(
-                    "news_builders.news_header", acc=acc, user_id=user_id
-                )
+            news_header = await i34g(
+                "news_builders.news_header", acc=acc, user_id=user_id
+            )
             #  For each acc add new events =)
             gigs_text += news_header + " \n".join(gig_list) + "\n"
         else:
@@ -133,12 +133,13 @@ async def prepare_gigs_text(user_id: int, request: bool) -> str:
     return gigs_text
 
 
-async def prepare_details_text(user_id: int, shorthand: str) -> str:
+async def prepare_details_text(user_id: int, shorthand: int) -> str:
     """
     Prepare secondary bot message — detailed info about artist's events.
     Args:
         user_id: Tg user_id field
         shorthand: quick link pressed by user
+    # TODO 4096 symbols no more
     """
     events = await db.rsql_getallevents(user_id, shorthand)
     if events:
@@ -170,6 +171,7 @@ async def prepare_details_text(user_id: int, shorthand: str) -> str:
                     user_id=user_id,
                 )
             )
+        events_artist = events[0][0]
         events_url = await i34g(
             "parse_services.lastfmeventurl",
             artist=artist_at_url(events_artist),
