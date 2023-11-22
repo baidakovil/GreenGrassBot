@@ -23,8 +23,7 @@ def main() -> None:
     """
     Produce program launch. Shu!
     """
-    token = os.getenv("BOT_TOKEN")
-
+    token = os.environ['BOT_TOKEN']
     db = Db(initial=True)
     application = Application.builder().token(token).build()
     load_interactions(application)
