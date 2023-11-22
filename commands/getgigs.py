@@ -1,11 +1,10 @@
 import logging
 
 from telegram import ReplyKeyboardRemove, Update
-from telegram.ext import CallbackContext
+from telegram.ext import CallbackContext, Job
 
 from db.db import Db
-from services.message_service import reply
-from services.message_service import send_message
+from services.message_service import reply, send_message, up
 from ui.news_builders import prepare_gigs_text
 
 db = Db()
@@ -21,7 +20,7 @@ async def getgigs(update: Update, context: CallbackContext) -> None:
         update, context: standart PTB callback signature
     TODO fail when no user
     """
-    user_id = update.message.from_user.id
+    user_id = up(update)
     text = await prepare_gigs_text(user_id, request=True)
     if text:
         await reply(update, text, reply_markup=ReplyKeyboardRemove())
@@ -40,8 +39,18 @@ async def getgigs_job(context: CallbackContext) -> None:
         when user adds lastfm useracc
     """
     logger.info('Start getEventsJob')
-    user_id = context.job.user_id
-    chat_id = context.job.user_id
+    if isinstance(context.job, Job):
+        user_id = context.job.user_id
+        chat_id = context.job.chat_id
+        if user_id is None or chat_id is None:
+            logger.warning(f'CONTEXT DOES NOT CONTAIN user_id or chat_id')
+            return None
+    else:
+        logger.warning(f'CONTEXT DOES NOT CONTAIN JOB')
+        return None
+    assert user_id
+    assert chat_id
+
     text = await prepare_gigs_text(user_id, request=False)
     if text:
         await send_message(context, chat_id, text)
