@@ -3,6 +3,8 @@ import os
 
 import i18n
 from dotenv import load_dotenv
+
+load_dotenv('.env')
 from telegram.ext import Application
 
 from db.db import Db
@@ -10,7 +12,6 @@ from interactions.loader import load_interactions
 from services.logger import logger
 from services.schedule_service import reschedule_jobs
 
-load_dotenv('.env')
 i18n.load_path.append('./assets/lang')
 i18n.set('filename_format', '{locale}.{format}')
 i18n.set('locale', os.getenv("LANGUAGE"))
