@@ -10,6 +10,7 @@ pyrightconfig.json
 
 #  Last.fm API Key and Telegram bot token
 .env
+.env-example
 
 #  VSCode debugging configuration, workspace config
 .vscode
