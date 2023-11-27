@@ -21,10 +21,11 @@ class Cfg:
         # # # # # # USER  # # DEFAULT # # SETTINGS  # # # # # #
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-        # How many time user should listen in last week to be notified
-        self.DEFAULT_MIN_LISTENS = 2
+        # How many time user should listen the artist in last week to be notified 
+        # about it's concert
+        self.DEFAULT_MIN_LISTENS = 1
 
-        # Day to send news about events. -1 is every day (?)
+        # Day to send news about events. Not using at the time 
         self.DEFAULT_NOTICE_DAY = -1
 
         # Default UTC time to send news
@@ -77,7 +78,7 @@ class Cfg:
         self.DEVELOPER_CHAT_ID = 144297913
 
         # Whether bot should inform about new users
-        self.NEW_USER_ALARMING = False
+        self.NEW_USER_ALARMING = True
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
         # # # # # # # # #   DATA  #  BASE # # # # # # # # # # #
