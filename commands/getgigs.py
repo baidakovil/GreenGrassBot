@@ -19,6 +19,9 @@ async def getgigs(update: Update, context: CallbackContext) -> None:
     Args:
         update, context: standart PTB callback signature
     TODO fail when no user
+    TODO avoid concurrent last.fm requests with context.application.create_task():
+    github.com/python-telegram-bot/python-telegram-bot/wiki/Concurrency
+    TODO self-edited "please wait" message
     """
     user_id = up(update)
     text = await prepare_gigs_text(user_id, request=True)
