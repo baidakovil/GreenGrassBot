@@ -81,7 +81,7 @@ async def prepare_gigs_text(user_id: int, request: bool) -> str:
     with error info for user, for each of it lfm accountss
     """
     usersettings = await db.rsql_settings(user_id)
-
+    assert usersettings
     shorthand_count = int(await db.rsql_maxshorthand(user_id))
     max_shorthand = CFG.INTEGER_MAX_SHORTHAND
     fill_numbers = 2 if max_shorthand < 100 else 3
