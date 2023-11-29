@@ -170,10 +170,8 @@ async def i34g(*args: str, **kwargs: Union[str, int]) -> str:
         user_id = int(kwargs.pop('user_id'))
         locale = await db.rsql_locale(user_id=user_id)
         if locale is None:
-            locale = CFG.DEFAULT_LOCALE
             logger.warning('Can not read locale settings. It should not be like this!')
-        else:
-            locale = CFG.DEFAULT_LOCALE if locale is None else locale
+            locale = CFG.DEFAULT_LOCALE
         kwargs['locale'] = locale
 
     kwargs = {
