@@ -60,6 +60,9 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
         f"<pre>context.user_data = {html.escape(str(context.user_data))}</pre>\n\n"
         f"<pre>{html.escape(tb_string)}</pre>"
     )
+
+    logger.warning(f'ERROR HANDLER MESSAGE: {message}')
+
     await send_message(
         context,
         chat_id=CFG.DEVELOPER_CHAT_ID,
