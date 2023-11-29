@@ -21,25 +21,28 @@ class Cfg:
         # # # # # # USER  # # DEFAULT # # SETTINGS  # # # # # #
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-        # How many time user should listen the artist in last week to be notified 
+        # How many time user should listen the artist in last week to be notified
         # about it's concert
-        self.DEFAULT_MIN_LISTENS = 1
+        self.DEFAULT_MIN_LISTENS = 3
 
-        # Day to send news about events. Not using at the time 
+        # Day to send news about events. Not using at the time
         self.DEFAULT_NOTICE_DAY = -1
 
         # Default UTC time to send news
-        self.DEFAULT_NOTICE_TIME = '12:30:00'
+        self.DEFAULT_NOTICE_TIME = '09:45:00'
 
-        # Default UTC time to send news
+        # Default setting to show 'There is no new events' message. 0 mean not to show
         self.DEFAULT_NONEWEVENTS: int = 0
-
-        # Default UTC time to send news
-        self.DEFAULT_LOCALE = 'en'
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
         # # # # # # # # #   BOT   # #   LOGIC   # # # # # # # #
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+        # max time to wait for a response from Telegram’s server
+        self.SEC_READ_TIMEOUT = 30
+
+        # max time to wait for a write operation to complete
+        self.SEC_WRITE_TIMEOUT = 30
 
         # possible quantity of accounts at last.fm to keep
         self.MAX_LFM_ACCOUNT_QTY = 3
@@ -108,3 +111,16 @@ class Cfg:
 
         # how many scrobbles will be on single XML request, max 200
         self.QTY_SCROBBLES_XML = 200
+
+        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+        # # # # # # # # #   TRANSLATIONS  # # # # # # # # # # #
+        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+        # Default locale
+        self.DEFAULT_LOCALE = 'en'
+
+        # Translation path
+        self.PATH_TRANSLATIONS = './assets/lang'
+
+        # Filename format for i18n
+        self.FILENAME_FORMAT_I18N = '{locale}.{format}'
