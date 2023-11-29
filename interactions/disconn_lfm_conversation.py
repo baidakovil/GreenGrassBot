@@ -105,8 +105,8 @@ def disconn_lfm_conversation() -> ConversationHandler:
     Returns conversation handler to add lastfm user.
     """
     disconn_lfm_handler = ConversationHandler(
-        entry_points=[CommandHandler('disconnect', disconnect)],
-        states={DISC_ACC: [MessageHandler(filters.TEXT, disconn_lfm)]},
-        fallbacks=[CommandHandler('cancel', cancel_handle)],
+        entry_points=[CommandHandler('disconnect', disconnect, block=False)],
+        states={DISC_ACC: [MessageHandler(filters.TEXT, disconn_lfm, block=False)]},
+        fallbacks=[CommandHandler('cancel', cancel_handle, block=False)],
     )
     return disconn_lfm_handler

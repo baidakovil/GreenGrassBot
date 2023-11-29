@@ -116,11 +116,11 @@ def conn_lfm_conversation() -> ConversationHandler:
     """
 
     conn_lfm_handler = ConversationHandler(
-        entry_points=[CommandHandler('connect', connect)],
+        entry_points=[CommandHandler('connect', connect, block=False)],
         states={
-            USERNAME: [MessageHandler(filters.TEXT, username)],
+            USERNAME: [MessageHandler(filters.TEXT, username, block=False)],
         },
-        fallbacks=[CommandHandler('cancel', cancel_handle)],
+        fallbacks=[CommandHandler('cancel', cancel_handle, block=False)],
     )
 
     return conn_lfm_handler

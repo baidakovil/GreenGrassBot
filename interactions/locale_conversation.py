@@ -118,8 +118,8 @@ def locale_conversation() -> ConversationHandler:
     Return conversation handler to change locale settings.
     """
     disconn_lfm_handler = ConversationHandler(
-        entry_points=[CommandHandler('locale', locale)],
-        states={SET_LOCALE: [MessageHandler(filters.TEXT, set_locale)]},
-        fallbacks=[CommandHandler('cancel', cancel_handle)],
+        entry_points=[CommandHandler('locale', locale, block=False)],
+        states={SET_LOCALE: [MessageHandler(filters.TEXT, set_locale, block=False)]},
+        fallbacks=[CommandHandler('cancel', cancel_handle, block=False)],
     )
     return disconn_lfm_handler
