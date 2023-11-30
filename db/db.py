@@ -299,6 +299,8 @@ class Db:
             INSERT OR IGNORE INTO lineups (event_id, art_name)
             VALUES ((SELECT event_id FROM events WHERE event_date=? AND place=? AND locality=?), ?)
             """
+        count_lup = 0
+        count_ev = 0
         for ev in event_list:
             self._execute_query(query=query_ev, params=asdict(ev))
             for art_name in ev.lineup:
@@ -309,10 +311,12 @@ class Db:
                 logger.debug(
                     f"Added lineup with art_name: {art_name}, event_date:{ev.event_date}, event_place:{ev.place}"
                 )
+                count_lup += 1
             logger.debug(
                 f"Added event event_date:{ev.event_date}, event_place:{ev.place}"
             )
-        logger.info(f'All passed events added')
+            count_ev += 1
+        logger.info(f'Added to db: {count_ev} events, {count_lup} line-ups')
         return None
 
     async def wsql_jobs(self, user_id: int, chat_id: int) -> None:
@@ -347,7 +351,7 @@ class Db:
             WHERE art_name = ?
             """
         self._execute_query(query=query, params=(art_name,))
-        logger.info(f"Added or updated artcheck: {art_name}")
+        logger.debug(f"Added or updated artcheck: {art_name}")
         return None
 
     async def wsql_artcheck_test(self, art_name: str) -> None:
@@ -359,7 +363,7 @@ class Db:
             WHERE art_name = ?
             """
         self._execute_query(query=query, params=(art_name,))
-        logger.info(f"Added or updated artcheck_test: {art_name}")
+        logger.debug(f"Added or updated artcheck_test: {art_name}")
         return None
 
     async def wsql_sentarts(self, user_id: int, art_name: str) -> None:
@@ -402,7 +406,7 @@ class Db:
                         user_id= :user_id);
         """
         self._execute_query(query=query, params=params)
-        logger.info(f"Added sentarts for user_id: {user_id}")
+        logger.debug(f"Added sentarts for user_id: {user_id}")
         return None
 
     async def wsql_lastarts(self, user_id: int, shorthand: int, art_name: str) -> None:
@@ -420,7 +424,7 @@ class Db:
         VALUES (?,?,?,date("now"));
         """
         self._execute_query(query=query, params=(user_id, shorthand, art_name))
-        logger.info(f"Added lastarts for user_id: {user_id}")
+        logger.debug(f"Added lastarts for user_id: {user_id}")
         return None
 
     #################################

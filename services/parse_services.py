@@ -98,17 +98,19 @@ async def load_scrobble_moment(user_id: int, lfm: str) -> int:
     """
 
     timedelay_load = timedelay_moment()
-    logger.debug(f'Max timedelay: {timedelay_load}')
+    logger.debug(f'Max timedelay to load scrobbles: {timedelay_load}')
     last_scrobble = await last_scrobble_moment(user_id, lfm)
     if last_scrobble is None:
-        logger.debug(f'No scrobbles found for {lfm}')
+        logger.debug(f'No previous scrobbles found for user_id {user_id}, lfm {lfm}')
         load_scrobble_moment = timedelay_load
     else:
-        logger.debug(f'Last scrobble: {last_scrobble}')
+        logger.debug(
+            f'Previous scrobble found for user_id {user_id}, lfm {lfm}: {last_scrobble}'
+        )
         load_scrobble_moment = max(timedelay_load, last_scrobble)
     from_unix = int(load_scrobble_moment.timestamp())
     from_unix_hum = unix_to_text(from_unix)
-    logger.debug(f'Will load from: {from_unix_hum}')
+    logger.debug(f'Conclusion: will load scrobbles from time: {from_unix_hum}')
     return int(timedelay_load.timestamp())
 
 
@@ -146,7 +148,9 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
         if current_page == 1:
             total_pages_xml = root[0].get("totalPages")
             total_pages = min(100, int(cast(int, total_pages_xml)))
-            logger.info(f"Going to load {total_pages} XML pages")
+            logger.info(
+                f"Parser will load {total_pages} XMLs for user_id {user_id}, lfm {lfm}"
+            )
         tracks = root[0].findall("track")
         if not tracks:
             return {}
@@ -165,7 +169,7 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
                     artist_dict[artist] = dict()
                 artist_dict[artist][date] = artist_dict[artist].get(date, 0) + 1
         current_page += 1
-    logger.info(f"All XMLs are loaded")
+    logger.info(f"All XMLs are loaded for user_id {user_id}, lfm {lfm}")
     return artist_dict
 
 

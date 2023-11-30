@@ -48,16 +48,19 @@ async def filter_artists(user_id: int, art_names: KeysView) -> List[str]:
         #  For each of artist in origin list, check if it should be sent to user
         if await db.rsql_finalquestion(user_id, art_name):
             filtered.append(art_name)
-    logger.debug(f"Final art_names for user {user_id}: {filtered}")
+    logger.info(f"Final art_names for user {user_id}: {filtered}")
     return sorted(filtered)
 
 
-async def save_scrobbles(user_id: int, acc: str, scrobbles_dict: Dict) -> None:
+async def save_scrobbles(user_id: int, lfm: str, scrobbles_dict: Dict) -> None:
     """
     Saves result of parser_scrobbles() to database.
     Args:
+        user_id: Tg user_id field
+        lfm: lastfm username
         dict with structure {artist_name: {date:count} }
     """
+    count = 0
     if isinstance(scrobbles_dict, dict) and len(scrobbles_dict.keys()):
         for art_name in scrobbles_dict.keys():
             for date, qty in scrobbles_dict[art_name].items():
@@ -66,10 +69,12 @@ async def save_scrobbles(user_id: int, acc: str, scrobbles_dict: Dict) -> None:
                     user_id=user_id,
                     art_name=art_name,
                     scrobble_date=date,
-                    lfm=acc,
+                    lfm=lfm,
                     scrobble_count=qty,
                 )
                 await db.wsql_scrobbles(ars=ars)
+                count += 1
+        logger.info(f'Added {count} scrobbles to db for user_id {user_id}, lfm {lfm}')
     return None
 
 
@@ -80,6 +85,7 @@ async def prepare_gigs_text(user_id: int, request: bool) -> str:
         Markdown-formatted string with artists OR String "No new concerts" OR String
     with error info for user, for each of it lfm accountss
     """
+    logger.info(f'Entered prepare_gigs_text() for {user_id}')
     usersettings = await db.rsql_settings(user_id)
     assert usersettings
     shorthand_count = int(await db.rsql_maxshorthand(user_id))
