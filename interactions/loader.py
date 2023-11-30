@@ -4,7 +4,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters
 
 from commands.details import details
 from commands.getgigs import getgigs
-from commands.nolastfm import nolastfm
+from commands.help import help
 from commands.nonewevents import nonewevents
 from commands.start import start
 from interactions.common_handlers import error_handler, unknown_handler
@@ -49,7 +49,7 @@ def load_commands(application: Application) -> None:
     Args: application: application for adding handlers to.
     """
     application.add_handler(CommandHandler('getgigs', getgigs, block=False))
-    application.add_handler(CommandHandler('nolastfm', nolastfm, block=False))
+    application.add_handler(CommandHandler('help', help, block=False))
     application.add_handler(CommandHandler('nonewevents', nonewevents, block=False))
     application.add_handler(CommandHandler('start', start, block=False))
     return None
