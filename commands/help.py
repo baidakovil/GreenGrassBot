@@ -9,7 +9,7 @@ db = Db()
 
 async def help(update: Update, context: CallbackContext) -> None:
     """
-    Callback function. Sends help message, just like nolastfm() or commands().
+    Callback function. Sends help message.
     Args:
         update, context: standart PTB callback signature
     """
