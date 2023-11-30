@@ -1,3 +1,4 @@
+import asyncio
 import html
 import logging
 import os
@@ -124,7 +125,6 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
     """
     current_page, total_pages = 1, 1
     artist_dict = dict()
-    sleep_time = CFG.SECONDS_SLEEP_XMLLOAD
     from_unix = await load_scrobble_moment(user_id, lfm)
 
     while current_page <= total_pages:
@@ -138,7 +138,7 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
             locale='en',
         )
         xml = page_loader(url=lfm_url)
-        time.sleep(sleep_time)
+        await asyncio.sleep(CFG.SECONDS_SLEEP_XMLLOAD)
         if isinstance(xml, int):
             return xml
 
@@ -213,7 +213,8 @@ async def parser_event(art_name: str) -> Union[int, List[Event]]:
         'parse_services.lastfmeventurl', artist=artist_at_url(art_name), locale='en'
     )
     page = page_loader(url)
-    time.sleep(CFG.SECONDS_SLEEP_HTMLLOAD)
+
+    await asyncio.sleep(CFG.SECONDS_SLEEP_HTMLLOAD)
     if isinstance(page, int):
         return page
 

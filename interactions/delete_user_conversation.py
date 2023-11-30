@@ -112,8 +112,8 @@ def delete_user_conversation() -> ConversationHandler:
     Return conversation handler to delete user.
     """
     delete_user_handler = ConversationHandler(
-        entry_points=[CommandHandler('delete', delete, block=False)],
-        states={DELETE_USER: [MessageHandler(filters.TEXT, delete_user, block=False)]},
-        fallbacks=[CommandHandler('cancel', cancel_handle, block=False)],
+        entry_points=[CommandHandler('delete', delete)],
+        states={DELETE_USER: [MessageHandler(filters.TEXT, delete_user)]},
+        fallbacks=[CommandHandler('cancel', cancel_handle)],
     )
     return delete_user_handler

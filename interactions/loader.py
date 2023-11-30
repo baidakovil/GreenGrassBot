@@ -48,10 +48,10 @@ def load_commands(application: Application) -> None:
     Loads all command handlers on start.
     Args: application: application for adding handlers to.
     """
-    application.add_handler(CommandHandler('getgigs', getgigs, block=False))
-    application.add_handler(CommandHandler('help', help, block=False))
-    application.add_handler(CommandHandler('nonewevents', nonewevents, block=False))
-    application.add_handler(CommandHandler('start', start, block=False))
+    application.add_handler(CommandHandler('getgigs', getgigs))
+    application.add_handler(CommandHandler('help', help))
+    application.add_handler(CommandHandler('nonewevents', nonewevents))
+    application.add_handler(CommandHandler('start', start))
     return None
 
 
@@ -60,9 +60,7 @@ def load_messages(application: Application) -> None:
     Loads all message handlers on start.
     Args: application: application for adding handlers to.
     """
-    application.add_handler(
-        MessageHandler(filters.Regex('/([0-9]{2,3})$'), details, block=False)
-    )
+    application.add_handler(MessageHandler(filters.Regex('/([0-9]{2,3})$'), details))
     return None
 
 
