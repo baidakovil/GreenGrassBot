@@ -24,15 +24,15 @@ async def start(update: Update, context: CallbackContext) -> None:
         )
     lfm_accs = await db.rsql_lfmuser(user_id)
     if not lfm_accs:
-        text = await i34g('start.user', username=username, user_id=user_id)
+        pretext = await i34g('start.user', user_id=user_id)
     else:
         lfm_accs = ['_' + alarm_char(acc) + '_' for acc in lfm_accs]
-        text = await i34g(
+        pretext = await i34g(
             'start.hacker',
-            username=username,
-            qty=len(lfm_accs),
             accs_noalarm=', '.join(lfm_accs),
             user_id=user_id,
         )
+    message = await i34g('start.message', user_id=user_id, qty=CFG.MAX_LFM_ACCOUNT_QTY)
+    text = pretext + message
     await reply(update, text)
     return None
