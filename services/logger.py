@@ -1,6 +1,6 @@
 import logging
-from logging import Logger
 import os
+from logging import Logger
 from logging.handlers import RotatingFileHandler
 
 from config import Cfg
@@ -35,7 +35,7 @@ def startLogger() -> Logger:
         '[%(asctime)s.%(msecs)03d - %(name)5s - %(levelname)8s:%(lineno)3d - %(funcName)18s() - %(filename)8s - %(threadName)10s] %(message)s',
         '%Y-%m-%d %H:%M:%S',
     )
-    ch.setLevel(logging.DEBUG)
+    ch.setLevel(logging.INFO)
     rh.setLevel(logging.DEBUG)
     ch.setFormatter(ch_formatter)
     rh.setFormatter(rh_formatter)
