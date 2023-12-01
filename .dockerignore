@@ -1,0 +1,49 @@
+#  Python interpreter bytecode
+**/*__pycache__
+
+#  .env and .env-example
+.env*
+
+#  MyPy files
+**/*mypy*
+
+#  Mermaid diagram files
+*.mmd
+
+#  File-notebook with plans and actions
+*.md
+
+#  Notebooks and py files for work
+*.ipynb
+.ggget.py
+
+#  Flowdiagram scheme files
+**/*.io
+
+#  Databases created at debugging
+**/*.db
+
+#  .gitignore, *.gitattributes files
+**/*.git*
+
+# Logo files
+assets/logo
+
+#  Folder with examples and some debugging files
+data
+
+#  Workbench files
+db/workbench
+
+#  Logger file if exist
+logger.log
+
+#  Pyright typechecker files
+pyrightconfig.json
+
+#  systemd and deploy scripts
+scripts
+
+#  VSCode debugging configuration, workspace config
+.vscode
+*.code-workspace
