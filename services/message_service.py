@@ -2,7 +2,14 @@ import logging
 from typing import Awaitable, Tuple, Union
 
 import i18n
-from telegram import Message, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update, User
+from telegram import (
+    InlineKeyboardMarkup,
+    Message,
+    ReplyKeyboardMarkup,
+    ReplyKeyboardRemove,
+    Update,
+    User,
+)
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext
 
@@ -26,7 +33,7 @@ def up_full(update: Update) -> Tuple[int, int, str, str]:
     Args:
         update: update object
     Returns:
-        user_id, chat_id, message.text fields.
+        user_id, chat_id, message.text, first_name fields
 
     # TODO should I use effective chat?
     # TODO should I rewrite user_id to chat_id everywhere?
@@ -80,7 +87,7 @@ async def reply(
         update: Tg update object
         text: text message to reply
         parse_mode: mode to parse the string
-        reply_markup: inline keyboard attached to the message
+        reply_markup: what to do with keyboard
         disable_web_page_preview: show preview or not, OVERRIDING default true
     """
     assert update.message
@@ -99,15 +106,15 @@ async def send_message(
     parse_mode: str = ParseMode.MARKDOWN_V2,
     reply_markup: Union[ReplyKeyboardMarkup, ReplyKeyboardRemove, None] = None,
     disable_web_page_preview: bool = False,
-) -> Awaitable:
+) -> Message:
     """
     Sends a message basing on user_id object.
     Args:
         context: default telegram arg
         user_id: id of user to send message to
         text: text message to send user
-        reply_markup: inline keyboard attached to the message
-        parse_mode: mode to parse the string, defaults to HTML
+        reply_markup: what to do with keyboard
+        parse_mode: mode to parse the string
     """
     return await context.bot.send_message(
         chat_id,

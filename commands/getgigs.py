@@ -5,7 +5,7 @@ from telegram.ext import CallbackContext, Job
 
 from db.db import Db
 from services.custom_classes import UserSettings
-from services.message_service import edit_text, i34g, reply, send_message, up_full
+from services.message_service import i34g, reply, send_message, up_full
 from ui.news_builders import prepare_gigs_text
 
 db = Db()
