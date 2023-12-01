@@ -1,22 +1,20 @@
 #  Python interpreter bytecode
-__pycache__
+**/__pycache__
 
 #  MyPy files
-.mypy_cache
-.mypy.ini
+**/*mypy*
 
 #  Pyright typechecker files
-pyrightconfig.json 
+pyrightconfig.json
 
-#  Last.fm API Key and Telegram bot token
-.env
-.env-example
+#  Last.fm API Key and Telegram bot tokens, both .env and .env-example
+.env*
 
 #  VSCode debugging configuration, workspace config
 .vscode
 *.code-workspace
 
-#  Main program folder for other data: log files, user settings files, user current situation, geodata
+#  Folder with examples and some debugging files
 data
 
 #  Current run log
@@ -25,11 +23,10 @@ logger.log
 #  Files for working experiments
 **/*.ipynb
 .ggget.py
-db/backup
 
 #  File-notebook with plans and actions
-WORKFLOW.md
+*.md
+!README.md
 
-#  Test db for debugging
-db/ggb_sqlite.db
-db/backup
+#  Databases created at debugging
+**/*.db
