@@ -181,17 +181,20 @@ class Db:
         username = update.message.from_user.username
         lastname = update.message.from_user.last_name
         language_code = update.message.from_user.language_code
+        user_tg_locale = language_code if language_code else CFG.DEFAULT_LOCALE
 
         user = BotUser(
             user_id=update.message.from_user.id,
             username=username if username else '',
             first_name=update.message.from_user.first_name,
             last_name=lastname if lastname else '',
-            language_code=language_code if language_code else 'en',
+            language_code=user_tg_locale,
         )
 
         await self.wsql_users(user)
-        await self.wsql_settings(user_id=update.message.from_user.id)
+        await self.wsql_settings(
+            user_id=update.message.from_user.id, user_tg_locale=user_tg_locale
+        )
 
     async def wsql_users(self, user: BotUser) -> None:
         """
@@ -243,15 +246,17 @@ class Db:
             custom_classes.py
         Returns:
             affected rows quantity
-        """
         # TODO checking for keywords are possible keywords
+        """
 
+        #  Get dict with defaul settings as 'template'.
         user_id = kw['user_id']
-        def_sett = asdict(UserSettings(user_id=user_id))
-
+        user_tg_locale = kw.get('user_tg_locale', CFG.DEFAULT_LOCALE)
+        def_sett = asdict(UserSettings(user_id=user_id, locale=user_tg_locale))
+        #  Get dict with current settings, if exists
         cur_sett = await self.rsql_settings(user_id=user_id)
         cur_sett = cur_sett.__dict__ if cur_sett is not None else def_sett
-
+        #  Replace current or default with given
         use_vals = {
             key: kw[key] if key in kw.keys() else cur_sett[key]
             for key in cur_sett.keys()
