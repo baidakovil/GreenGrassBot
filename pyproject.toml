@@ -5,3 +5,15 @@ skip-string-normalization = 1
 [tool.isort]
 profile = "black"
 line_length = 88
+
+[tool.pyright]
+reportOptionalMemberAccess = true
+typeCheckingMode = "basic"
+ignore = [
+    "**/*.ipynb",
+    "**/__pycache__",
+    ".ggget.py",
+    ]
+
+[tool.mypy]
+warn_return_any = true
