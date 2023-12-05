@@ -1,4 +1,4 @@
-# Green Grass Bot — A program to notify about concerts of artists you listened to.
+# Green Grass Bot — Ties the music you're listening to with the concert it's playing at.
 # Copyright (C) 2021-2023 Ilia Baidakov <baidakovil@gmail.com>
 
 # This program is free software: you can redistribute it and/or modify it under the
@@ -22,6 +22,7 @@ from commands.getgigs import getgigs
 from commands.help import help
 from commands.nonewevents import nonewevents
 from commands.start import start
+from commands.warranty import warranty
 from interactions.common_handlers import error_handler, unknown_handler
 from interactions.conn_lfm_conversation import conn_lfm_conversation
 from interactions.delete_user_conversation import delete_user_conversation
@@ -68,6 +69,8 @@ def load_commands(application: Application) -> None:
     application.add_handler(CommandHandler('help', help))
     application.add_handler(CommandHandler('nonewevents', nonewevents))
     application.add_handler(CommandHandler('start', start))
+    application.add_handler(CommandHandler('warranty', warranty))
+
     return None
 
 

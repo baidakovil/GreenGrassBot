@@ -1,4 +1,4 @@
-# Green Grass Bot — A program to notify about concerts of artists you listened to.
+# Green Grass Bot — Ties the music you're listening to with the concert it's playing at.
 # Copyright (C) 2021-2023 Ilia Baidakov <baidakovil@gmail.com>
 
 # This program is free software: you can redistribute it and/or modify it under the
