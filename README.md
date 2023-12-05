@@ -1,6 +1,6 @@
-# GreatGigBot
-GreatGigBot Telegram Bot is a notificator abour music events.
-Great Gig regards *The Great Gig In The Sky* song.
+# GreenGrassBot
+Green Grass Telegram Bot is a notificator abour music events.
+Green Grass regards *High Hopes* Pink Floyd's song, meaning music events as a place with the most green grass you can access.
 The bot provides automatic search and of music events (concerts, shows, festivals) according to music artists you have listen last time.  
 The bot use your __last.fm__ music statistics for searhcing those artists you prefer. 
 
