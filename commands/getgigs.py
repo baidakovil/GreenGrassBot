@@ -5,21 +5,27 @@
 #  GPLv3 or any later version at your option. License: <https://www.gnu.org/licenses/>.
 """This file, like other in /commands, contains callback funcs for same name command."""
 
+import asyncio
 import logging
 
 from telegram import ReplyKeyboardRemove, Update
 from telegram.ext import CallbackContext, Job
 
+from config import Cfg
 from db.db import Db
 from services.custom_classes import UserSettings
 from services.logger import logger
 from services.message_service import i34g, reply, send_message, up_full
 from ui.news_builders import prepare_gigs_text
 
+CFG = Cfg()
 db = Db()
 
 logger = logging.getLogger('A.get')
 logger.setLevel(logging.DEBUG)
+
+sem_atrequest = asyncio.Semaphore(CFG.MAX_CONCURRENT_CONN_ATREQUEST)
+sem_atjob = asyncio.Semaphore(CFG.MAX_CONCURRENT_CONN_ATJOB)
 
 
 async def getgigs(update: Update, context: CallbackContext) -> None:
@@ -39,12 +45,13 @@ async def getgigs(update: Update, context: CallbackContext) -> None:
         return None
     else:
         assert isinstance(usersettings, UserSettings)
-    logger.info(f'Start getgigs() for user_id {user_id}')
 
     please_wait_text = await i34g('getgigs.pleasewait', user_id=user_id)
     please_wait_msg = await send_message(context, chat_id, please_wait_text)
 
-    text = await prepare_gigs_text(user_id, request=True)
+    async with sem_atrequest:
+        logger.info(f'Start getgigs() for user_id {user_id}')
+        text = await prepare_gigs_text(user_id, request=True)
 
     await context.bot.deleteMessage(
         message_id=please_wait_msg.message_id, chat_id=chat_id
@@ -72,14 +79,15 @@ async def getgigs_job(context: CallbackContext) -> None:
         if user_id is None or chat_id is None:
             logger.warning(f'CONTEXT DOES NOT CONTAIN user_id or chat_id')
             return None
-        logger.info(f'Start getgigs_job() for user_id {user_id}')
     else:
         logger.warning(f'CONTEXT DOES NOT CONTAIN JOB')
         return None
     assert user_id
     assert chat_id
 
-    text = await prepare_gigs_text(user_id, request=False)
+    async with sem_atjob:
+        logger.info(f'Start getgigs_job() for user_id {user_id}')
+        text = await prepare_gigs_text(user_id, request=False)
     if text:
         await send_message(context, chat_id, text)
         logger.info(f'Job done, gigs sent to user {user_id}')
