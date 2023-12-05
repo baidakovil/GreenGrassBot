@@ -1,4 +1,13 @@
+#  Green Grass Bot — A program to notify about concerts of artists you listened to.
+#  Copyright (C) 2021-2023 Ilia Baidakov <baidakovil@gmail.com>
+#  This program is free software: you can redistribute it and/or modify it under the
+#  terms of the GNU General Public License as published by the Free Software Foundation:
+#  GPLv3 or any later version at your option. License: <https://www.gnu.org/licenses/>.
+"""This file contains Cfg class. It is the only storage for program configuration."""
+
 import logging
+
+from services.logger import logger
 
 logger = logging.getLogger('A.CFG')
 logger.setLevel(logging.DEBUG)

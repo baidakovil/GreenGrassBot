@@ -1,3 +1,10 @@
+#  Green Grass Bot — A program to notify about concerts of artists you listened to.
+#  Copyright (C) 2021-2023 Ilia Baidakov <baidakovil@gmail.com>
+#  This program is free software: you can redistribute it and/or modify it under the
+#  terms of the GNU General Public License as published by the Free Software Foundation:
+#  GPLv3 or any later version at your option. License: <https://www.gnu.org/licenses/>.
+"""This file contains load_interactions(), which is called when bot starting."""
+
 import logging
 
 from telegram.ext import Application, CommandHandler, MessageHandler, filters
@@ -12,6 +19,7 @@ from interactions.conn_lfm_conversation import conn_lfm_conversation
 from interactions.delete_user_conversation import delete_user_conversation
 from interactions.disconn_lfm_conversation import disconn_lfm_conversation
 from interactions.locale_conversation import locale_conversation
+from services.logger import logger
 
 logger = logging.getLogger('A.loa')
 logger.setLevel(logging.DEBUG)

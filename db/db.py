@@ -1,3 +1,10 @@
+#  Green Grass Bot — A program to notify about concerts of artists you listened to.
+#  Copyright (C) 2021-2023 Ilia Baidakov <baidakovil@gmail.com>
+#  This program is free software: you can redistribute it and/or modify it under the
+#  terms of the GNU General Public License as published by the Free Software Foundation:
+#  GPLv3 or any later version at your option. License: <https://www.gnu.org/licenses/>.
+"""This file contains class Db and logic related to sqlite database."""
+
 import logging
 import os
 import sqlite3
@@ -10,9 +17,9 @@ from typing import Any, Iterator, List, Optional, Tuple, Union
 from telegram import Update
 
 from config import Cfg
-from interactions.utils import timestamp_to_text
 from services.custom_classes import ArtScrobble, BotUser, Event, UserSettings
 from services.logger import logger
+from services.timeconv_service import timestamp_to_text
 
 logger = logging.getLogger(name='A.db')
 logger.setLevel(logging.DEBUG)
@@ -626,7 +633,7 @@ class Db:
         Args:
             user_Id: Tg user_id field
             lfm: last.fm user name
-        Returns: string in f_sql_date format (utils.py)
+        Returns: string in f_sql_date format (timeconv_service.py)
         """
         query = """
         SELECT MAX(scrobble_date) FROM scrobbles

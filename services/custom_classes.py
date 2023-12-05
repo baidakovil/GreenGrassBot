@@ -1,3 +1,10 @@
+#  Green Grass Bot — A program to notify about concerts of artists you listened to.
+#  Copyright (C) 2021-2023 Ilia Baidakov <baidakovil@gmail.com>
+#  This program is free software: you can redistribute it and/or modify it under the
+#  terms of the GNU General Public License as published by the Free Software Foundation:
+#  GPLv3 or any later version at your option. License: <https://www.gnu.org/licenses/>.
+"""This file contains @dataclass classes definitions."""
+
 from dataclasses import dataclass, field
 from typing import List
 
@@ -13,7 +20,7 @@ class ArtScrobble:
     Args:
         user_id: Tg user_id field
         art_name: artist name as it is on last.fm page
-        scrobble_date: date of listening, in format of lfmdate_to_text() at utils.py
+        scrobble_date: date of listening, in format of lfmdate_to_text() at timeconv_service.py
         lfm: last.fm account
         scrobble_count: scrobble count within this day
     """
@@ -53,7 +60,7 @@ class BotUser:
         user_id, username, first_name, last_name, language_code: Tg user fields.
         accs: list of user last.fm accounts
         reg_datetime: string with registration datetime (see timestamp_to_text in
-        utils.py)
+        timeconv_service.py)
     """
 
     user_id: int

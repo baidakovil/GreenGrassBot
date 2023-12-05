@@ -1,12 +1,20 @@
+#  Green Grass Bot — A program to notify about concerts of artists you listened to.
+#  Copyright (C) 2021-2023 Ilia Baidakov <baidakovil@gmail.com>
+#  This program is free software: you can redistribute it and/or modify it under the
+#  terms of the GNU General Public License as published by the Free Software Foundation:
+#  GPLv3 or any later version at your option. License: <https://www.gnu.org/licenses/>.
+"""This file contains fns to build messages for user at /getgigs and /xx commands."""
+
 import logging
 from typing import Dict, KeysView, List
 
 from config import Cfg
 from db.db import Db
-from interactions.utils import lfmdate_to_text, text_to_userdate
 from services.custom_classes import ArtScrobble
+from services.logger import logger
 from services.message_service import i34g
 from services.parse_services import artist_at_url, parser_event, parser_scrobbles
+from services.timeconv_service import lfmdate_to_text, text_to_userdate
 from ui.error_builder import error_text
 
 logger = logging.getLogger("A.new")

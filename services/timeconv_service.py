@@ -1,20 +1,28 @@
+#  Green Grass Bot — A program to notify about concerts of artists you listened to.
+#  Copyright (C) 2021-2023 Ilia Baidakov <baidakovil@gmail.com>
+#  This program is free software: you can redistribute it and/or modify it under the
+#  terms of the GNU General Public License as published by the Free Software Foundation:
+#  GPLv3 or any later version at your option. License: <https://www.gnu.org/licenses/>.
+"""This file contains functions to convert different time formats."""
+
 import logging
 from datetime import datetime
 
 from config import Cfg
+from services.logger import logger
 
 logger = logging.getLogger('A.uti')
 logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
 
-# Format for human-readability of event dates in daily news
+#  Format for human-readability of event dates in daily news ('02 Jan 2023')
 f_hum = '%d %b %Y'
-# Format of date in Last.fm API
+#  Format of date in Last.fm API ('02 Jan 2023')
 f_lfm = '%d %b %Y'
-# Format to store dates in SQL
+#  Format to store dates in SQL ('2023-01-02')
 f_sql_date = '%Y-%m-%d'
-# Format to store timestamps in SQL
+#  Format to store timestamps in SQL
 f_sql_timestamp = '%Y-%m-%d %H:%M:%S'
 
 
@@ -32,7 +40,7 @@ def timestamp_to_text(timestamp: datetime) -> str:
 
 def text_to_userdate(text: str) -> str:
     """
-    Convertor from SQL-storing format '2023-01-02' to '02 Jan 2023' for humans. Used
+    Convertor from SQL-storing format to  for humans. Used
     when preparing 'details', i.e. event news.
     Args:
         text: string with specific date format
@@ -44,7 +52,7 @@ def text_to_userdate(text: str) -> str:
 
 def lfmdate_to_text(lfmdate: str) -> str:
     """
-    Convertor for saving dates from last.fm '15 Nov 2023' to SQL '2023-11-15'. Used when
+    Convertor for saving dates from last.fm to SQL. Used when
     saving scrobbles.
     Args:
         lfmdate: string with specific date format
