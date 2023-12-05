@@ -22,7 +22,6 @@ logger = logging.getLogger('A.sch')
 logger.setLevel(logging.DEBUG)
 
 CFG = Cfg()
-
 db = Db()
 
 
@@ -48,8 +47,9 @@ def run_daily_job(
         job_src: object with "current_jobs" method to obtain current jobs
     """
     logger.debug(f'Entered to run_daily_job() for: {user_id}, {chat_id}')
-    if isinstance(job_src.job_queue, JobQueue):
-        job_src.job_queue.run_daily(
+    queue = job_src.job_queue
+    if isinstance(queue, JobQueue):
+        queue.run_daily(
             callback=getgigs_job,
             time=time.fromisoformat(CFG.DEFAULT_NOTICE_TIME),
             chat_id=chat_id,
@@ -113,8 +113,11 @@ def reschedule_jobs(application: Application, db) -> None:
     """
     logger.debug('Entered to reschedule_jobs()')
     jobs = db.rsql_jobs()
+    count = 0
     for job in jobs:
         user_id, chat_id = job
         remove_jobs(user_id, chat_id, application)
         run_daily_job(user_id, chat_id, application)
-        return None
+        count += 1
+    logger.info(f'Rescheduled {count} jobs')
+    return None
