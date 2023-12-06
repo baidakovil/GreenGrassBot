@@ -99,4 +99,4 @@ class UserSettings:
     notice_day: int = CFG.DEFAULT_NOTICE_DAY
     notice_time: str = CFG.DEFAULT_NOTICE_TIME
     nonewevents: int = CFG.DEFAULT_NONEWEVENTS
-    locale: str = CFG.DEFAULT_LOCALE
+    locale: str = CFG.LOCALE_DEFAULT

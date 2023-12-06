@@ -26,6 +26,7 @@ from telegram.ext import (
     filters,
 )
 
+from config import Cfg
 from db.db import Db
 from interactions.common_handlers import cancel_handle
 from services.logger import logger
@@ -34,6 +35,7 @@ from services.message_service import i34g, reply, up, up_full
 logger = logging.getLogger('A.dis')
 logger.setLevel(logging.DEBUG)
 
+CFG = Cfg()
 db = Db()
 
 SET_LOCALE = 0
@@ -41,17 +43,18 @@ SET_LOCALE = 0
 
 async def get_locale_codes(update: Update) -> Dict[str, str]:
     """
-    Helper for conversation of language change. Note, that 'xx' in 'loc.xx' should be
-    equal to language code for program logic.
+    Helper for conversation of language change. Prepare dict like {'English': 'en',
+    'Russian': 'ru'} on user's current locale.
     Args:
         update, context: standart PTB callback signature
     Returns:
         dictionary {locale name on user current language:locale code}
     """
     user_id = up(update)
+    #
     loc_codes = {
-        await i34g('loc.en', user_id=user_id): 'en',
-        await i34g('loc.ru', user_id=user_id): 'ru',
+        await i34g(f'loc.{locale_iso}', user_id=user_id): locale_iso
+        for locale_iso in CFG.LOCALES_ISO
     }
     return loc_codes
 

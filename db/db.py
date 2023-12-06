@@ -189,7 +189,7 @@ class Db:
         username = update.message.from_user.username
         lastname = update.message.from_user.last_name
         language_code = update.message.from_user.language_code
-        user_tg_locale = language_code if language_code else CFG.DEFAULT_LOCALE
+        user_tg_locale = language_code if language_code else CFG.LOCALE_DEFAULT
 
         user = BotUser(
             user_id=update.message.from_user.id,
@@ -259,7 +259,7 @@ class Db:
 
         #  Get dict with defaul settings as 'template'.
         user_id = kw['user_id']
-        user_tg_locale = kw.get('user_tg_locale', CFG.DEFAULT_LOCALE)
+        user_tg_locale = kw.get('user_tg_locale', CFG.LOCALE_DEFAULT)
         def_sett = asdict(UserSettings(user_id=user_id, locale=user_tg_locale))
         #  Get dict with current settings, if exists
         cur_sett = await self.rsql_settings(user_id=user_id)
