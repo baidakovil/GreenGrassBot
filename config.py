@@ -32,6 +32,17 @@ class Cfg:
         #  Maximum number for quick link to event. Reaching this, resets to zero.
         self.INTEGER_MAX_SHORTHAND = 99
 
+        #  Commands appearing at /start command, i.e. all commands that user should know
+        self.COMMANDS_ALL = {
+            'concerts': ['getgigs'],
+            'manage_accounts': ['connect', 'disconnect', 'delete'],
+            'preferences': ['locale', 'nonewevents'],
+            'helping_commands': ['start', 'help'],
+        }
+
+        #  Commands from COMMANDS_ALL that should NOT be displayed at Menu button.
+        self.COMMANDS_UNDISPLAYED = ['delete', 'locale', 'nonewevents']
+
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
         # # # # # # USER  # # DEFAULT # # SETTINGS  # # # # # #
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -137,11 +148,23 @@ class Cfg:
         # # # # # # # # #   TRANSLATIONS  # # # # # # # # # # #
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+        #  Locale codes of present translations
+        self.LOCALES_ISO = ['en', 'ru']
+
         #  Default locale.
-        self.DEFAULT_LOCALE = 'en'
+        self.LOCALE_DEFAULT = 'en'
+
+        #  Locale to store technical strings (API adresses, URLs).
+        self.LOCALE_TECHNICAL_STORE = 'en'
 
         #  Translation path.
         self.PATH_TRANSLATIONS = './assets/lang'
 
         #  Filename format for i18n.
         self.FILENAME_FORMAT_I18N = '{locale}.{format}'
+
+        #  Set up multilingual bot descriptions at startup
+        self.NEED_DESCRIPTION = True
+
+        #  Set up multinlingual bot descriptions at startup
+        self.NEED_COMMANDS = True
