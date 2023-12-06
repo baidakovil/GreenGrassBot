@@ -13,7 +13,9 @@
 # program.  If not, see <https://www.gnu.org/licenses/>.
 """This file, like other in /commands, contains callback funcs for same name command."""
 
-from telegram import Message, Update, User
+import logging
+
+from telegram import Update
 from telegram.ext import CallbackContext
 
 from config import Cfg
@@ -22,6 +24,9 @@ from services.message_service import alarm_char, i34g, reply, send_message, up_f
 
 db = Db()
 CFG = Cfg()
+
+logger = logging.getLogger('A.sta')
+logger.setLevel(logging.DEBUG)
 
 
 async def start(update: Update, context: CallbackContext) -> None:
@@ -32,6 +37,11 @@ async def start(update: Update, context: CallbackContext) -> None:
         update, context: standart PTB callback signature
     """
     user_id, _, _, username = up_full(update)
+    locale = await db.rsql_locale(user_id=user_id)
+    if locale is None:
+        logger.warning('Can not read locale settings. It should not be like this!')
+        locale = CFG.LOCALE_DEFAULT
+
     await db.save_user(update)
     if CFG.NEW_USER_ALARMING:
         await send_message(
@@ -39,15 +49,38 @@ async def start(update: Update, context: CallbackContext) -> None:
         )
     lfm_accs = await db.rsql_lfmuser(user_id)
     if not lfm_accs:
-        pretext = await i34g('start.user', user_id=user_id)
+        pretext = await i34g('start.user', locale=locale)
     else:
         lfm_accs = ['_' + alarm_char(acc) + '_' for acc in lfm_accs]
         pretext = await i34g(
             'start.hacker',
             accs_noalarm=', '.join(lfm_accs),
-            user_id=user_id,
+            locale=locale,
         )
-    message = await i34g('start.message', user_id=user_id, qty=CFG.MAX_LFM_ACCOUNT_QTY)
-    text = pretext + message
+    message = await i34g('start.message', locale=locale, qty=CFG.MAX_LFM_ACCOUNT_QTY)
+    commands = await build_commands_description(locale)
+    copyright = await i34g('start.copyright', locale=locale)
+    text = pretext + message + commands + copyright
     await reply(update, text)
     return None
+
+
+async def build_commands_description(locale: str) -> str:
+    """
+    Build localized text with command descriptions in groups for show to user at /start.
+    Args:
+        locale: locale to use
+    Returns:
+        string with description
+    """
+    desc = []
+    commands_dict = CFG.COMMANDS_ALL
+    for group, coms in commands_dict.items():
+        desc.append('\n\n')
+        desc.append(await i34g(f'commands_groups.{group}', locale=locale))
+        for com in coms:
+            desc.append('\n')
+            command_desc = await i34g(f'commands.{com}_full', locale=locale)
+            desc.append(f'*/{com}* — {command_desc}')
+    desc = ''.join(desc)
+    return desc
