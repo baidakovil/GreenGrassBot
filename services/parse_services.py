@@ -59,7 +59,7 @@ async def check_valid_lfm(lfm: str, user_id: int) -> Tuple[bool, str]:
         page=1,
         from_unix=0,
         api_key=api_key,
-        locale='en',
+        locale=CFG.LOCALE_TECHNICAL_STORE,
     )
     loaded_page = page_loader(lfm_api_url)
     return (
@@ -153,7 +153,7 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
             page=current_page,
             from_unix=from_unix,
             api_key=api_key,
-            locale='en',
+            locale=CFG.LOCALE_TECHNICAL_STORE,
         )
         xml = page_loader(url=lfm_url)
         await asyncio.sleep(CFG.SECONDS_SLEEP_XMLLOAD)
@@ -230,7 +230,9 @@ async def parser_event(art_name: str) -> Union[int, List[Event]]:
         list of Events objects of integer with error
     """
     url = await i34g(
-        'parse_services.lastfmeventurl', artist=artist_at_url(art_name), locale='en'
+        'parse_services.lastfmeventurl',
+        artist=artist_at_url(art_name),
+        locale=CFG.LOCALE_TECHNICAL_STORE,
     )
     page = page_loader(url)
 
