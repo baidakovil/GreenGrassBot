@@ -27,11 +27,13 @@ from db.db import Db
 from interactions.loader import load_interactions
 from services.logger import logger
 from services.schedule_service import reschedule_jobs
+from ui.commands_setter import set_commands
+from ui.description_setter import set_description
 
 CFG = Cfg()
 i18n.load_path.append(CFG.PATH_TRANSLATIONS)
 i18n.set('filename_format', CFG.FILENAME_FORMAT_I18N)
-i18n.set('locale', CFG.DEFAULT_LOCALE)
+i18n.set('locale', CFG.LOCALE_DEFAULT)
 
 logger = logging.getLogger('A.A')
 logger.setLevel(logging.DEBUG)
@@ -53,6 +55,8 @@ def main() -> None:
     )
     load_interactions(application)
     reschedule_jobs(application, db)
+    set_description(application)
+    set_commands(application)
     logger.info(f'App started')
     application.run_polling()
     return None
