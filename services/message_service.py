@@ -141,7 +141,7 @@ async def send_message(
     )
 
 
-def alarm_char(text: Union[str, int]) -> str:
+def alarm_char(text: Union[str, int], escape='\\') -> str:
     """
     Provides pre-escaping alarm characters in output messages with '/', accordin:
     core.telegram.org/bots/api#html-style.
@@ -170,7 +170,7 @@ def alarm_char(text: Union[str, int]) -> str:
         '.',
         '!',
     )
-    text = "".join([c if c not in alarm_characters else f'\\{c}' for c in text])
+    text = "".join([c if c not in alarm_characters else f'{escape}{c}' for c in text])
     return text
 
 
@@ -194,7 +194,7 @@ async def i34g(*args: str, **kwargs: Union[str, int]) -> str:
         locale = await db.rsql_locale(user_id=user_id)
         if locale is None:
             logger.warning('Can not read locale settings. It should not be like this!')
-            locale = CFG.DEFAULT_LOCALE
+            locale = CFG.LOCALE_DEFAULT
         kwargs['locale'] = locale
 
     kwargs = {
@@ -209,3 +209,24 @@ async def i34g(*args: str, **kwargs: Union[str, int]) -> str:
         return str(text)
     else:
         return text
+
+
+def preescape_file(filename: str) -> str:
+    """
+    Utility to prepare human-readable text for using with i18n and i34g functions. Don't
+    forget to remove \\ before technical symbols, by own hand.
+    Args:
+        filename: path to file with text
+    Returns:
+        Nothing, but add preescaped text below
+    """
+
+    with open(filename, 'r') as file:
+        escaped = alarm_char(file.read(), escape='\\\\')
+    escaped = escaped.replace('\n', '\\n')
+
+    with open(filename, 'a') as file:
+        file.write(f'\n{"-"*15}\n')
+        file.write(escaped)
+
+    return escaped
