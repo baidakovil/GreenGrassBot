@@ -1,12 +1,28 @@
 # GreenGrassBot
-Green Grass Telegram Bot is a notificator abour music events.
-Green Grass regards *High Hopes* Pink Floyd's song, meaning music events as a place with the most green grass you can access.
+
+
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/baidakovil/greengrassbot)
+
+
+
+## Nice and Bads
+
+| **What's nice**           |**Nice metric**                                                                                                |
+|---------------------------|---------------------------------------------------------------------------------------------------------------|
+| I am the only contributor |   ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/baidakovil/GreenGrassBot)|
+
+
+| **What's bad**            |**Bad metric**                                                                                                 |
+|---------------------------|---------------------------------------------------------------------------------------------------------------|
+| I am the only contributor | ![GitHub contributors](https://img.shields.io/github/contributors/baidakovil/GreenGrassBot)                   |
+
+
+Green Grass Telegram Bot is a notificator abour music events.  
+
 The bot provides automatic search and of music events (concerts, shows, festivals) according to music artists you have listen last time.  
 The bot use your __last.fm__ music statistics for searhcing those artists you prefer. 
 
-## **No** algorithms kind of '_You may also like_'!
 - The only source to choose artists is your listened statistic
-- No ads when choose event
 
 ## Options and settings in developing:
 - Work 'on query' and as automatic notificator
