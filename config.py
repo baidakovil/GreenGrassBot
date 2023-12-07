@@ -41,7 +41,7 @@ class Cfg:
         }
 
         #  Commands from COMMANDS_ALL that should NOT be displayed at Menu button.
-        self.COMMANDS_UNDISPLAYED = ['delete', 'locale', 'nonewevents']
+        self.COMMANDS_UNDISPLAYED = ['delete', 'nonewevents']
 
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
         # # # # # # USER  # # DEFAULT # # SETTINGS  # # # # # #
@@ -65,10 +65,10 @@ class Cfg:
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
         #  Max time to wait for a response from Telegram’s server.
-        self.SEC_READ_TIMEOUT = 30
+        self.SEC_READ_TIMEOUT = 2
 
         #  Max time to wait for a write operation to complete.
-        self.SEC_WRITE_TIMEOUT = 30
+        self.SEC_WRITE_TIMEOUT = 2
 
         #  Possible quantity of accounts at last.fm to keep.
         self.MAX_LFM_ACCOUNT_QTY = 3
@@ -149,7 +149,7 @@ class Cfg:
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
         #  Locale codes of present translations
-        self.LOCALES_ISO = ['en', 'ru']
+        self.LOCALES_ISO = ['en', 'ru', 'uk']
 
         #  Default locale.
         self.LOCALE_DEFAULT = 'en'
