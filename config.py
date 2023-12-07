@@ -65,10 +65,10 @@ class Cfg:
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
         #  Max time to wait for a response from Telegram’s server.
-        self.SEC_READ_TIMEOUT = 2
+        self.SEC_READ_TIMEOUT = 30
 
         #  Max time to wait for a write operation to complete.
-        self.SEC_WRITE_TIMEOUT = 2
+        self.SEC_WRITE_TIMEOUT = 30
 
         #  Possible quantity of accounts at last.fm to keep.
         self.MAX_LFM_ACCOUNT_QTY = 3
@@ -130,10 +130,10 @@ class Cfg:
         # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
         #  Delay between lastfm apis requests.
-        self.SECONDS_SLEEP_XMLLOAD = 10
+        self.SECONDS_SLEEP_XMLLOAD = 2
 
         #  Delay between lastfm events loads in scraper.
-        self.SECONDS_SLEEP_HTMLLOAD = 10
+        self.SECONDS_SLEEP_HTMLLOAD = 2
 
         #  How many scrobbles will be on single XML request, max 200.
         self.QTY_SCROBBLES_XML = 200
