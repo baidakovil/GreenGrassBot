@@ -68,7 +68,12 @@ async def delete(update: Update, context: CallbackContext) -> int:
     """
     user_id = up(update)
     if not await db.rsql_users(user_id=user_id):
-        text = await i34g("delete_user_conversation.no_users", user_id=user_id)
+        assert update.message
+        assert update.message.from_user
+        locale = update.message.from_user.language_code
+        if locale is None:
+            locale = CFG.LOCALE_DEFAULT
+        text = await i34g("delete_user_conversation.no_users", locale=locale)
         await reply(update, text, reply_markup=ReplyKeyboardRemove())
         return ConversationHandler.END
 
