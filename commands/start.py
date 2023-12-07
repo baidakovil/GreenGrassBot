@@ -37,12 +37,11 @@ async def start(update: Update, context: CallbackContext) -> None:
         update, context: standart PTB callback signature
     """
     user_id, _, _, username = up_full(update)
+    await db.save_user(update)
     locale = await db.rsql_locale(user_id=user_id)
     if locale is None:
         logger.warning('Can not read locale settings. It should not be like this!')
         locale = CFG.LOCALE_DEFAULT
-
-    await db.save_user(update)
     if CFG.NEW_USER_ALARMING:
         await send_message(
             context, CFG.DEVELOPER_CHAT_ID, text=f'New user: {user_id}, {username}'
