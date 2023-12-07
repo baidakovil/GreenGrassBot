@@ -28,7 +28,7 @@ from interactions.loader import load_interactions
 from services.logger import logger
 from services.schedule_service import reschedule_jobs
 from ui.commands_setter import set_commands
-from ui.description_setter import set_description
+from ui.descriptions_setter import set_descriptions
 
 CFG = Cfg()
 i18n.load_path.append(CFG.PATH_TRANSLATIONS)
@@ -55,7 +55,7 @@ def main() -> None:
     )
     load_interactions(application)
     reschedule_jobs(application, db)
-    set_description(application)
+    set_descriptions(application)
     set_commands(application)
     logger.info(f'App started')
     application.run_polling()
