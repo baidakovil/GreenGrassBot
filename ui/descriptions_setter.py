@@ -15,6 +15,7 @@
 
 import asyncio
 import logging
+import time
 
 from telegram.ext import Application
 
@@ -28,9 +29,11 @@ logger.setLevel(logging.DEBUG)
 CFG = Cfg()
 
 
-def set_description(application: Application) -> None:
+def set_descriptions(application: Application) -> None:
     """
-    Procedure to setup multilanguage bot descriptions that you see at empty chat.
+    Procedure to setup multilanguage bot descriptions: that you see at empty chat (512
+    char max) AND description shown on the bot's profile page, also sent together with
+    the link when users share the bot (120 char max). Better turn off in CFG after once.
     Args:
         application: application with bot to add description to
     """
@@ -38,17 +41,37 @@ def set_description(application: Application) -> None:
         logger.debug('Descriptions setup skipped')
         return None
 
+    #  Add empty string as lang to set descriptions to users without dedicated language.
+    language_codes = CFG.LOCALES_ISO
+    language_codes.append('')
+
     problem = False
-    for locale in CFG.LOCALES_ISO:
-        desc = asyncio.get_event_loop().run_until_complete(
-            i34g(f'description.{locale}', locale=locale)
+    for locale in language_codes:
+        #  Lines below prepare descriptions. get_event_loop() to awoid awaitable func
+        i34g_locale = CFG.LOCALE_DEFAULT if locale == '' else locale
+        desc_prof_share_120 = asyncio.get_event_loop().run_until_complete(
+            i34g(f'description.prof_share_120', locale=i34g_locale)
         )
-        changed = asyncio.get_event_loop().run_until_complete(
-            application.bot.set_my_description(description=desc, language_code=locale)
+        desc_empty_chat_512 = asyncio.get_event_loop().run_until_complete(
+            i34g(f'description.empty_chat_512', locale=i34g_locale)
         )
-        if not changed:
+
+        #  Lines below change descriptions.
+        changed_120 = asyncio.get_event_loop().run_until_complete(
+            application.bot.set_my_short_description(
+                short_description=desc_prof_share_120, language_code=locale
+            )
+        )
+        changed_512 = asyncio.get_event_loop().run_until_complete(
+            application.bot.set_my_description(
+                description=desc_empty_chat_512, language_code=locale
+            )
+        )
+        if (not changed_512) or (not changed_120):
             problem = True
             logger.warning(f'Descriptions tried to be set but some problem happens')
+        time.sleep(1)
+
     if not problem:
         logger.info(f'Desriptions set for languages: {CFG.LOCALES_ISO}')
     return None
