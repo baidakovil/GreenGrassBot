@@ -20,7 +20,7 @@ from contextlib import contextmanager
 from dataclasses import asdict
 from datetime import datetime
 from sqlite3 import IntegrityError, OperationalError
-from typing import Any, Iterator, List, Optional, Tuple, Union
+from typing import Any, Iterator, List, Literal, Optional, Tuple, Union
 
 from telegram import Update
 
@@ -47,14 +47,67 @@ def get_connection(db_path: str, params: Any = None) -> Iterator[sqlite3.Connect
         conn.execute("PRAGMA foreign_keys = 1")
         yield conn
         conn.commit()
-    except IntegrityError as E:
-        logger.info('CATCHED IntegrityError: {E}, params: {params}')
-    except OperationalError as E:
-        logger.info('CATCHED OperationalError: {E}, params: {params}')
-    except Exception as E:
-        logger.warning('CATCHED SomeError: {E}')
+    except IntegrityError as e:
+        logger.info('CATCHED IntegrityError: %s, params: %s', e, params)
+    except OperationalError as e:
+        logger.info('CATCHED OperationalError: %s, params: %s', e, params)
     finally:
         conn.close()
+
+
+def create_db(db) -> None:
+    """
+    Creates db and log number of created tables for control/debug.
+    """
+    os.makedirs(cfg.PATH_DBFILES, exist_ok=True)
+    with get_connection(db.db_path) as con:
+        cursor = con.cursor()
+        with open(db.script_path, 'r', encoding='utf-8') as f:
+            script = f.read()
+        cursor.executescript(script)
+        logger.info('Forward script executed')
+        cursor.execute(
+            """
+            SELECT COUNT(*) FROM sqlite_master 
+            WHERE type="table" AND tbl_name != "sqlite_sequence"
+            """
+        )
+        tbl_num = cursor.fetchone()
+        logger.info('%s tables created', tbl_num[0])
+        return None
+
+
+def execute_query(
+    db,
+    query: str,
+    params: Any = None,
+    mode: Literal['execute', 'selectone', 'selectmany', 'getaffected'] = 'execute',
+) -> Union[Any, List[Any], int, None]:
+    """
+    Execute queries to db. Note, getaffected arg should not be combined with
+    selects.
+    Args:
+        db: database Db()
+        query: single query to execute
+        params: parameters to execute query with
+        mode:
+            execute: if query should not return anything (for consistency)
+            select: if query should return a value OR values
+            selectone: if query should return only one row
+            getaffected: if query should return quantity of affected rows
+    """
+    answer = None
+    with get_connection(db.db_path, params) as con:
+        cursor = con.cursor()
+        cursor.execute(query, params)
+        if mode == 'selectone':
+            answer = cursor.fetchone()
+        elif mode == 'selectmany':
+            answer = cursor.fetchall()
+        elif mode == 'getaffected':
+            answer = cursor.rowcount
+        cursor.close()
+        return answer
 
 
 def affected_hard_check(affected: Union[Any, List[Any], int, None]) -> int:
@@ -65,32 +118,29 @@ def affected_hard_check(affected: Union[Any, List[Any], int, None]) -> int:
     """
     if isinstance(affected, int) and affected >= 0:
         return affected
-    else:
-        raise Exception("Affected rows quantity returns strange! DB fails")
+    raise TypeError("Affected rows quantity returns non-int! DB fails")
 
 
 def tuple_hard_check(record: Union[Any, List[Any], int, None]) -> tuple:
     """
     Provide hard check of db output. Good for linter and for DB control.
     Args:
-        affected: value returned by _executed_query
+        record: value returned by _executed_query
     """
     if isinstance(record, tuple):
         return record
-    else:
-        raise Exception("execute_query returns not tuple! DB fails")
+    raise TypeError("execute_query() returns not tuple! DB fails")
 
 
 def list_hard_check(record: Union[Any, List[Any], int, None]) -> list:
     """
     Provide hard check of db output. Good for linter and for DB control.
     Args:
-        affected: value returned by _executed_query
+        record: value returned by _executed_query
     """
     if isinstance(record, list):
         return record
-    else:
-        raise Exception("execute_query returns not list! DB fails")
+    raise TypeError("execute_query() returns not list! DB fails")
 
 
 class Db:
@@ -112,64 +162,14 @@ class Db:
         self.script_path = os.path.join(cfg.PATH_DBFILES, cfg.FILE_DB_SCRIPT)
         if initial and cfg.DELETE_DB_ATSTART:
             os.remove(self.db_path)
-            logger.info('DB DELETED from: {self.db_path}')
-            self.create_db()
-            return None
-        elif not os.path.isfile(self.db_path):
-            logger.info('DB not found in file: {self.db_path}')
-            self.create_db()
+            logger.info('DB DELETED from: %s', self.db_path)
+            create_db(self)
             return None
 
-    def create_db(self) -> None:
-        """
-        Creates db and log number of created tables for control/debug.
-        """
-        os.makedirs(cfg.PATH_DBFILES, exist_ok=True)
-        with get_connection(self.db_path) as con:
-            cursor = con.cursor()
-            with open(self.script_path, 'r') as f:
-                script = f.read()
-            cursor.executescript(script)
-            logger.info('Forward script executed')
-            cursor.execute(
-                """
-                SELECT COUNT(*) FROM sqlite_master WHERE type="table" AND tbl_name != "sqlite_sequence"
-                """
-            )
-            tbl_num = cursor.fetchone()
-            logger.info('{tbl_num[0]} tables created')
-            return None
-
-    def _execute_query(
-        self,
-        query: str,
-        params: Any = None,
-        select: bool = False,
-        selectone: bool = True,
-        getaffected: bool = False,
-    ) -> Union[Any, List[Any], int, None]:
-        """
-        Execute queries to db. Note, getaffected arg should not be combined with
-        selects.
-        Args:
-            query: single query to execute
-            params: parameters to execute query with
-            select: True if query should return a value OR values
-            selectone: True if query should return only one row
-            getaffected: True if query should return quantity of affected rows
-        """
-        answer = None
-        with get_connection(self.db_path, params) as con:
-            cursor = con.cursor()
-            cursor.execute(query, params)
-            if select and selectone:
-                answer = cursor.fetchone()
-            elif select:
-                answer = cursor.fetchall()
-            elif getaffected:
-                answer = cursor.rowcount
-            cursor.close()
-            return answer
+        if not os.path.isfile(self.db_path):
+            logger.info('DB not found in file: %s', self.db_path)
+            create_db(self)
+        return None
 
     #################################
     ###### WRITES/WRITE-READS #######
@@ -214,9 +214,11 @@ class Db:
         """
         params = asdict(user)
         params['reg_datetime'] = timestamp_to_text(datetime.now())
-        self._execute_query(query=query, params=params)
+        execute_query(self, query=query, params=params, mode='execute')
         logger.info(
-            f"BotUser with username: {user.username} and user_id: {user.user_id} added"
+            "BotUser with username: %s and user_id: %s added",
+            user.username,
+            user.user_id,
         )
         return None
 
@@ -242,7 +244,7 @@ class Db:
                 WHERE user_id = :user_id) <= :max_qty-1),
             :lfm);
         """
-        affected = self._execute_query(query=query, params=params, getaffected=True)
+        affected = execute_query(self, query=query, params=params, mode='getaffected')
         return affected_hard_check(affected)
 
     async def wsql_settings(self, **kw) -> int:
@@ -264,24 +266,21 @@ class Db:
         cur_sett = cur_sett.__dict__ if cur_sett is not None else def_sett
         #  Replace current or default with given
         use_vals = {
-            key: kw[key] if key in kw.keys() else cur_sett[key]
-            for key in cur_sett.keys()
+            key: kw[key] if key in kw else cur_sett[key] for key in cur_sett.keys()
         }
 
         query = """
-        INSERT OR REPLACE INTO usersettings (user_id, min_listens, notice_day, notice_time, nonewevents, locale)
+        INSERT OR REPLACE 
+        INTO usersettings (user_id, min_listens, notice_day, notice_time, nonewevents, locale)
         VALUES (:user_id, :min_listens, :notice_day, :notice_time, :nonewevents, :locale);
         """
 
-        affected = self._execute_query(query=query, params=use_vals, getaffected=True)
+        affected = execute_query(self, query=query, params=use_vals, mode='getaffected')
 
         if affected:
-            logger.debug(
-                # f"Settings changed to: {use_vals}, from: {cur_sett}; {affected} rows affected"
-                f"Settings changed"
-            )
+            logger.debug('Settings changed')
         else:
-            logger.warning(f"Settings was not changed to")
+            logger.warning("Settings was not changed to")
 
         return affected_hard_check(affected)
 
@@ -293,12 +292,13 @@ class Db:
             ars: GGB scrobble object
         """
         query = """
-        INSERT OR REPLACE INTO scrobbles (user_id, lfm, art_name, scrobble_date, lfm, scrobble_count)
+        INSERT OR REPLACE 
+        INTO scrobbles (user_id, lfm, art_name, scrobble_date, lfm, scrobble_count)
         VALUES (:user_id, :lfm, :art_name, :scrobble_date, :lfm, :scrobble_count);
         """
-        self._execute_query(query=query, params=asdict(ars))
+        execute_query(self, query=query, params=asdict(ars), mode='execute')
         logger.debug(
-            f"Added scrobble for user_id: {ars.user_id}, art_name: {ars.art_name}"
+            "Added scrobble for user_id: %s, art_name: %s", ars.user_id, ars.art_name
         )
         return None
 
@@ -320,21 +320,26 @@ class Db:
         count_lup = 0
         count_ev = 0
         for ev in event_list:
-            self._execute_query(query=query_ev, params=asdict(ev))
+            execute_query(self, query=query_ev, params=asdict(ev))
             for art_name in ev.lineup:
-                self._execute_query(
+                execute_query(
+                    self,
                     query=query_lup,
                     params=(ev.event_date, ev.place, ev.locality, art_name),
+                    mode='execute',
                 )
                 logger.debug(
-                    f"Added lineup with art_name: {art_name}, event_date:{ev.event_date}, event_place:{ev.place}"
+                    "Added lineup with art_name: %s, event_date: %s, event_place: %s",
+                    art_name,
+                    ev.event_date,
+                    ev.place,
                 )
                 count_lup += 1
             logger.debug(
-                f"Added event event_date:{ev.event_date}, event_place:{ev.place}"
+                "Added event event_date: %s, event_place: %s", ev.event_date, ev.place
             )
             count_ev += 1
-        logger.info('Added to db: {count_ev} events, {count_lup} line-ups')
+        logger.info('Added to db: %s events, %s line-ups', count_ev, count_lup)
         return None
 
     async def wsql_jobs(self, user_id: int, chat_id: int) -> None:
@@ -348,13 +353,13 @@ class Db:
             INSERT OR IGNORE INTO jobs (user_id, chat_id) 
             VALUES (?, ?)
             """
-        affected = self._execute_query(
-            query=query, params=(chat_id, user_id), getaffected=True
+        affected = execute_query(
+            self, query=query, params=(chat_id, user_id), mode='getaffected'
         )
         if affected:
-            logger.info(f"Added job in DB: user_id {user_id}, chat_id {chat_id}")
+            logger.info("Added job in DB: user_id %s, chat_id %s", user_id, chat_id)
         else:
-            logger.info(f"Not added job in DB: user_id {user_id}, chat_id {chat_id}")
+            logger.info("Not added job in DB: user_id %s, chat_id %s", user_id, chat_id)
         return None
 
     async def wsql_artcheck(self, art_name: str) -> None:
@@ -368,37 +373,41 @@ class Db:
             UPDATE artnames SET check_datetime = datetime("now") 
             WHERE art_name = ?
             """
-        self._execute_query(query=query, params=(art_name,))
-        logger.debug(f"Added or updated artcheck: {art_name}")
+        execute_query(self, query=query, params=(art_name,), mode='execute')
+        logger.debug("Added or updated artcheck: %s", art_name)
         return None
 
-    async def wsql_artcheck_test(self, art_name: str) -> None:
+    async def wsql_last_sent_arts(
+        self, user_id: int, shorthand: int, art_name: str
+    ) -> None:
         """
-        Same as wsql_artcheck, but writes arbitrary date for debugging purposes
-        """
-        query = """
-            UPDATE artnames SET check_datetime = "2023-11-09 13:00:00"
-            WHERE art_name = ?
-            """
-        self._execute_query(query=query, params=(art_name,))
-        logger.debug(f"Added or updated artcheck_test: {art_name}")
-        return None
-
-    async def wsql_sentarts(self, user_id: int, art_name: str) -> None:
-        """
-        Write all fields to sentarts table. It used to escape multiple send of same
-        events to same user.
+        Write all fields to lastarts table. It used to access detailed event info with
+        'shortcuts' like: /01 Beatles /02 Sebastian Bach. THEN write all fields to sentarts
+        table. It used to escape multiple send of same events to same user.
         Args:
             user_id: Tg user_id field
-            art_name: artist name to save
+            shorthand: integer shorthand number, max to cfg.INTEGER_MAX_SHORTHAND
+            art_name: corresponding artist name
         """
+        query_lastarts = """
+        INSERT INTO lastarts (user_id, shorthand, art_name, shorthand_date)
+        VALUES (?,?,?,date("now"));
+        """
+        execute_query(
+            self,
+            query=query_lastarts,
+            params=(user_id, shorthand, art_name),
+            mode='execute',
+        )
+        logger.debug("Added lastarts for user_id: %s", user_id)
+
         params = {
             'user_id': user_id,
             'art_name': art_name,
             'delay': cfg.DAYS_MIN_DELAY_ARTCHECK,
             'period': cfg.DAYS_PERIOD_MINLISTENS,
         }
-        query = """
+        query_sentarts = """
         INSERT INTO sentarts (user_id, sent_datetime, art_name, event_id)
         SELECT :user_id AS user_id,
                 DATETIME("now") AS sent_datetime,
@@ -423,26 +432,9 @@ class Db:
                         AND
                         user_id= :user_id);
         """
-        self._execute_query(query=query, params=params)
-        logger.debug(f"Added sentarts for user_id: {user_id}")
-        return None
+        execute_query(self, query=query_sentarts, params=params, mode='execute')
+        logger.debug("Added sentarts for user_id: %s", user_id)
 
-    async def wsql_lastarts(self, user_id: int, shorthand: int, art_name: str) -> None:
-        """
-        Write all fields to lastarts table. It used to access detailed event info with
-        'shortcuts' like: /01 Beatles /02 Sebastian Bach.
-        Args:
-            user_id: Tg user_id field
-            shorthand: integer shorthand number, max to
-            cfg.INTEGER_MAX_SHORTHAND
-            art_name: corresponding artist name
-        """
-        query = """
-        INSERT INTO lastarts (user_id, shorthand, art_name, shorthand_date)
-        VALUES (?,?,?,date("now"));
-        """
-        self._execute_query(query=query, params=(user_id, shorthand, art_name))
-        logger.debug(f"Added lastarts for user_id: {user_id}")
         return None
 
     #################################
@@ -456,10 +448,11 @@ class Db:
         query = """
         SELECT COUNT(*) FROM users WHERE user_id=?
         """
-        record = self._execute_query(
+        record = execute_query(
+            self,
             query,
             params=(user_id,),
-            select=True,
+            mode='selectone',
         )
         record = tuple_hard_check(record)[0]
         return record
@@ -474,12 +467,12 @@ class Db:
         query = """
         SELECT user_id, chat_id FROM jobs
         """
-        records = self._execute_query(query, params=(), select=True, selectone=False)
+        records = execute_query(self, query, params=(), mode='selectmany')
         records = list_hard_check(records)
         if records == []:
             logger.debug('No jobs in db')
         else:
-            logger.debug('Returned jobs: {len(records)} jobs')
+            logger.debug('Returned jobs: %s jobs', len(records))
         return records
 
     async def rsql_locale(self, user_id: int) -> Union[str, None]:
@@ -494,9 +487,9 @@ class Db:
         SELECT locale FROM usersettings
         WHERE user_id = ?
         """
-        record = self._execute_query(query, params=(user_id,), select=True)
+        record = execute_query(self, query, params=(user_id,), mode='selectone')
         if record is None:
-            logger.debug('Return empty locale settings for user_id {user_id}')
+            logger.debug('Return empty locale settings for user_id %s', user_id)
             return record
         record = tuple_hard_check(record)[0]
         return record
@@ -514,9 +507,9 @@ class Db:
         SELECT * FROM usersettings
         WHERE user_id = ?
         """
-        record = self._execute_query(query, params=(user_id,), select=True)
+        record = execute_query(self, query, params=(user_id,), mode='selectone')
         if record is None:
-            logger.debug('Return empty settings for user_id {user_id}')
+            logger.debug('Return empty settings for user_id %s', user_id)
             return record
         record = tuple_hard_check(record)
         usersettings = UserSettings(
@@ -527,7 +520,7 @@ class Db:
             nonewevents=int(record[4]),
             locale=record[5],
         )
-        logger.debug('Return settings for user_id {user_id}: {usersettings}')
+        logger.debug('Return settings for user_id %s: OK', user_id)
         return usersettings
 
     async def rsql_maxshorthand(self, user_id: int) -> int:
@@ -542,9 +535,9 @@ class Db:
         query = """
         SELECT IFNULL((SELECT MAX(shorthand) FROM lastarts WHERE user_id = ?), 0)
         """
-        record = self._execute_query(query, params=(user_id,), select=True)
+        record = execute_query(self, query, params=(user_id,), mode='selectone')
         record = tuple_hard_check(record)[0]
-        logger.debug('Return maxshorthand for user_id {user_id}: {record}')
+        logger.debug('Return maxshorthand for user_id %s: %s', user_id, record)
         return record
 
     async def rsql_lfmuser(self, user_id: int) -> List[str]:
@@ -555,16 +548,14 @@ class Db:
         Returns:
             list with account names
         """
-        query = f"""
+        query = """
         SELECT lfm FROM useraccs
         WHERE user_id = ?
         """
-        record = self._execute_query(
-            query, params=(user_id,), select=True, selectone=False
-        )
+        record = execute_query(self, query, params=(user_id,), mode='selectmany')
         record = list_hard_check(record)
         result = [record[i][0] for i in range(len(record))]
-        logger.debug('Return lastfm users for user_id {user_id}: {result}')
+        logger.debug('Return lastfm users for user_id %s: %s', user_id, result)
         return result
 
     async def rsql_artcheck(self, user_id: int, art_name: str) -> int:
@@ -585,7 +576,7 @@ class Db:
             'delay': cfg.DAYS_MIN_DELAY_ARTCHECK,
             'period': cfg.DAYS_PERIOD_MINLISTENS,
         }
-        query = f"""
+        query = """
         SELECT 
             CASE 
                 WHEN
@@ -604,7 +595,7 @@ class Db:
                 ELSE 0
         END;
         """
-        record = self._execute_query(query, params=params, select=True)
+        record = execute_query(self, query, params=params, mode='selectone')
         record = tuple_hard_check(record)[0]
         return record
 
@@ -622,7 +613,7 @@ class Db:
 
         """
         params = {'user_id': user_id, 'shorthand': shorthand}
-        query = f"""
+        query = """
         SELECT
         (SELECT art_name FROM lastarts WHERE shorthand= :shorthand) as artist, 
         event_date, place, locality, country, link FROM events WHERE
@@ -632,9 +623,9 @@ class Db:
         AND event_date >= (SELECT shorthand_date FROM lastarts WHERE shorthand= :shorthand)
         ORDER BY event_date
         """
-        ev = self._execute_query(query, params=params, select=True, selectone=False)
+        ev = execute_query(self, query, params=params, mode='selectmany')
         ev = list_hard_check(ev)
-        logger.info('BotUser {user_id} requests shorthand {shorthand}')
+        logger.info('BotUser %s requests shorthand %s', user_id, shorthand)
         return ev
 
     async def rsql_lastdayscrobble(self, user_id: int, lfm: str) -> Union[str, None]:
@@ -650,15 +641,15 @@ class Db:
         SELECT MAX(scrobble_date) FROM scrobbles
         WHERE user_id = ? AND lfm = ?
         """
-        record = self._execute_query(query, params=(user_id, lfm), select=True)
+        record = execute_query(self, query, params=(user_id, lfm), mode='selectone')
 
         if record is None:
-            logger.debug('No last scrobbles found for {user_id}')
+            logger.debug('No last scrobbles found for %s', user_id)
             return record
-        else:
-            logger.debug('BotUser {user_id} requests last scrobble date')
-            record = tuple_hard_check(record)[0]
-            return record
+
+        logger.debug('BotUser %s requests last scrobble date', user_id)
+        record = tuple_hard_check(record)[0]
+        return record
 
     async def rsql_finalquestion(self, user_id: int, art_name: str) -> int:
         """
@@ -705,85 +696,88 @@ class Db:
 		        ELSE 0
 	        END
         """
-        record = self._execute_query(query, params=params, select=True)
+        record = execute_query(self, query, params=params, mode='selectone')
         record = tuple_hard_check(record)[0]
         return record
 
-    #################################
-    ############ DELETES ############
-    #################################
+        #################################
+        ############ DELETES ############
+        #################################
 
-    async def dsql_useraccs(self, user_id, lfm) -> Tuple[int, int]:
-        """
-        Delete lfm account and relational to lfm account data.
-        Args:
-            user_id: Tg user_id field
-            lfm: last.fm account name to delete
-        Returns:
-            tuple with quantities of affected rows in scrobbles/useraccs tables
-        """
-        query_del_sa = """
-        DELETE FROM sentarts
-        WHERE user_id = ? AND (art_name IN (SELECT art_name FROM scrobbles
-        WHERE user_id = ? AND lfm = ?));
-        """
-        query_del_la = """
-        DELETE FROM lastarts
-        WHERE user_id = ? AND (art_name IN (SELECT art_name FROM scrobbles
-        WHERE user_id = ? AND lfm = ?));
-        """
-        query_del_scr = """
-        DELETE FROM scrobbles
-        WHERE user_id = ? AND lfm = ?
-        """
-        query_del_ua = """
-        DELETE FROM useraccs
-        WHERE user_id = ? AND lfm = ?
-        """
-        self._execute_query(query_del_sa, params=(user_id, user_id, lfm))
 
-        self._execute_query(query_del_la, params=(user_id, user_id, lfm))
+async def dsql_useraccs(db, user_id, lfm) -> Tuple[int, int]:
+    """
+    Delete lfm account and relational to lfm account data.
+    Args:
+        db: database Db()
+        user_id: Tg user_id field
+        lfm: last.fm account name to delete
+    Returns:
+        tuple with quantities of affected rows in scrobbles/useraccs tables
+    """
+    query_del_sa = """
+    DELETE FROM sentarts
+    WHERE user_id = ? AND (art_name IN (SELECT art_name FROM scrobbles
+    WHERE user_id = ? AND lfm = ?));
+    """
+    query_del_la = """
+    DELETE FROM lastarts
+    WHERE user_id = ? AND (art_name IN (SELECT art_name FROM scrobbles
+    WHERE user_id = ? AND lfm = ?));
+    """
+    query_del_scr = """
+    DELETE FROM scrobbles
+    WHERE user_id = ? AND lfm = ?
+    """
+    query_del_ua = """
+    DELETE FROM useraccs
+    WHERE user_id = ? AND lfm = ?
+    """
+    execute_query(db, query_del_sa, params=(user_id, user_id, lfm))
 
-        affected_scr = self._execute_query(
-            query_del_scr, params=(user_id, lfm), getaffected=True
-        )
+    execute_query(db, query_del_la, params=(user_id, user_id, lfm))
 
-        affected_ua = self._execute_query(
-            query_del_ua, params=(user_id, lfm), getaffected=True
-        )
+    affected_scr = execute_query(
+        db, query_del_scr, params=(user_id, lfm), mode='getaffected'
+    )
 
-        return (affected_hard_check(affected_scr), affected_hard_check(affected_ua))
+    affected_ua = execute_query(
+        db, query_del_ua, params=(user_id, lfm), mode='getaffected'
+    )
 
-    async def dsql_user(self, user_id) -> bool:
-        """
-        Delete all the user info.
-        Args:
-            user_id: Tg user_id field
-        Returns:
-            True if user deleted normally, False if some useraccs or user_ids was not
-            deleted
-        """
-        logger.info('BotUser {user_id} request account deleting')
-        problem = None
-        useraccs = await self.rsql_lfmuser(user_id)
+    return (affected_hard_check(affected_scr), affected_hard_check(affected_ua))
 
-        for lfm in useraccs:
-            _, affected_ua = await self.dsql_useraccs(user_id=user_id, lfm=lfm)
-            if not affected_ua:
-                problem = True
-                logger.info('Problem when deleting lfm for {user_id}')
 
-        query_del_user = """
-        DELETE FROM users WHERE user_id = ?
-        """
+async def dsql_user(db, user_id) -> bool:
+    """
+    Delete all the user info.
+    Args:
+        db: database Db()
+        user_id: Tg user_id field
+    Returns:
+        True if user deleted normally, False if some useraccs or user_ids was not
+        deleted
+    """
+    logger.info('BotUser %s request account deleting', user_id)
+    problem = None
+    useraccs = await db.rsql_lfmuser(user_id)
 
-        affected_users = self._execute_query(
-            query_del_user, params=(user_id,), getaffected=True
-        )
-
-        if not affected_users:
+    for lfm in useraccs:
+        _, affected_ua = await dsql_useraccs(db, user_id=user_id, lfm=lfm)
+        if not affected_ua:
             problem = True
-            logger.info('Problem when deleting user_id for {user_id}')
-        else:
-            logger.info('BotUser {user_id} deleted all the info')
-        return True if problem is None else False
+            logger.info('Problem when deleting lfm for %s', user_id)
+
+    query_del_user = """
+    DELETE FROM users WHERE user_id = ?
+    """
+
+    affected_users = execute_query(
+        db, query_del_user, params=(user_id,), mode='getaffected'
+    )
+    if not affected_users:
+        problem = True
+        logger.info('Problem when deleting user_id for %s', user_id)
+    else:
+        logger.info('BotUser %s deleted all the info', user_id)
+    return problem is None

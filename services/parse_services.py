@@ -17,12 +17,11 @@ import asyncio
 import html
 import logging
 import os
-import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional, Tuple, Union, cast
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.request import urlopen
 from xml.etree.ElementTree import Element
 
@@ -103,7 +102,7 @@ async def last_scrobble_moment(user_id: int, lfm: str) -> Optional[datetime]:
     return last_scrobble_day_00_00_00
 
 
-async def load_scrobble_moment(user_id: int, lfm: str) -> int:
+async def load_scr_moment(user_id: int, lfm: str) -> int:
     """
     Calculate appropriate moment "from_unix" to load scrobbles from.
     Args:
@@ -114,19 +113,22 @@ async def load_scrobble_moment(user_id: int, lfm: str) -> int:
     """
 
     timedelay_load = timedelay_moment()
-    logger.debug('Max timedelay to load scrobbles: {timedelay_load}')
+    logger.debug('Max timedelay to load scrobbles: %s', timedelay_load)
     last_scrobble = await last_scrobble_moment(user_id, lfm)
     if last_scrobble is None:
-        logger.debug('No previous scrobbles found for user_id {user_id}, lfm {lfm}')
+        logger.debug('No previous scrobbles found for user_id %s, lfm %s', user_id, lfm)
         load_scrobble_moment = timedelay_load
     else:
         logger.debug(
-            f'Previous scrobble found for user_id {user_id}, lfm {lfm}: {last_scrobble}'
+            'Previous scrobble found for user_id %s, lfm %s: %s',
+            user_id,
+            lfm,
+            last_scrobble,
         )
         load_scrobble_moment = max(timedelay_load, last_scrobble)
     from_unix = int(load_scrobble_moment.timestamp())
     from_unix_hum = unix_to_text(from_unix)
-    logger.debug('Conclusion: will load scrobbles from time: {from_unix_hum}')
+    logger.debug('Conclusion: will load scrobbles from time: %s', from_unix_hum)
     return int(timedelay_load.timestamp())
 
 
@@ -142,8 +144,7 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
         dict, or int with error code.
     """
     current_page, total_pages = 1, 1
-    artist_dict = dict()
-    from_unix = await load_scrobble_moment(user_id, lfm)
+    artist_dict = {}
 
     while current_page <= total_pages:
         lfm_url = await i34g(
@@ -151,7 +152,7 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
             limit=cfg.QTY_SCROBBLES_XML,
             lfm=artist_at_url(name_to_url=lfm),
             page=current_page,
-            from_unix=from_unix,
+            from_unix=await load_scr_moment(user_id, lfm),
             api_key=api_key,
             locale=cfg.LOCALE_TECHNICAL_STORE,
         )
@@ -165,8 +166,12 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
             total_pages_xml = root[0].get("totalPages")
             total_pages = min(100, int(cast(int, total_pages_xml)))
             logger.info(
-                f"Parser will load {total_pages} XMLs for user_id {user_id}, lfm {lfm}"
+                "Parser will load %s XMLs for user_id: %s, lfm: %s",
+                total_pages,
+                user_id,
+                lfm,
             )
+
         tracks = root[0].findall("track")
         if not tracks:
             return {}
@@ -182,10 +187,10 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
                 assert isinstance(date_element.text, str)
                 date = date_element.text.split(",")[0]
                 if not isinstance(artist_dict.get(artist), dict):
-                    artist_dict[artist] = dict()
+                    artist_dict[artist] = {}
                 artist_dict[artist][date] = artist_dict[artist].get(date, 0) + 1
         current_page += 1
-    logger.info(f"All XMLs are loaded for user_id {user_id}, lfm {lfm}")
+    logger.info("All XMLs are loaded for user_id %s, lfm %s", user_id, lfm)
     return artist_dict
 
 
@@ -196,15 +201,18 @@ def page_loader(url: str) -> Union[int, str]:
         url
     Returns:
         page text OR integer error code given by urlopen OR 90
+        #TODO alarm admin about these
     """
     try:
-        page_bytes = urlopen(url)
+        with urlopen(url) as page_bytes:
+            page_text = page_bytes.read().decode()
     except HTTPError as e:
         return e.code if isinstance(e.code, int) else int(90)
-    except Exception as e:
+    except URLError:
         return int(91)
-    page_text = page_bytes.read().decode()
-    logger.debug(f"URL loaded: ...{url[-95:]}")
+    except OSError:
+        return int(92)
+    logger.debug("URL loaded: ...%s", url[-95:])
     return page_text
 
 
@@ -253,16 +261,16 @@ async def parser_event(art_name: str) -> Union[int, List[Event]]:
             while 'class="events-list-item-venue--title"' not in line:
                 line = next(iterator)
             line = next(iterator)
-            eventVenue = html.unescape(line.strip())
+            event_venue = html.unescape(line.strip())
             while 'class="events-list-item-venue--address"' not in line:
                 line = next(iterator)
             line = next(iterator)
-            eventAddress = line.strip()
-            event_city = html.unescape(eventAddress.rsplit(",", maxsplit=1)[0])
-            event_country = html.unescape(eventAddress.rsplit(", ", maxsplit=1)[1])
+            event_address = line.strip()
+            event_city = html.unescape(event_address.rsplit(",", maxsplit=1)[0])
+            event_country = html.unescape(event_address.rsplit(", ", maxsplit=1)[1])
             events.append(
                 Event(
-                    place=eventVenue,
+                    place=event_venue,
                     locality=event_city,
                     country=event_country,
                     event_date=event_date,
@@ -272,5 +280,5 @@ async def parser_event(art_name: str) -> Union[int, List[Event]]:
                 )
             )
     except StopIteration:
-        logger.debug('Parsed event page for {art_name}')
+        logger.debug('Parsed event page for %s', art_name)
     return events

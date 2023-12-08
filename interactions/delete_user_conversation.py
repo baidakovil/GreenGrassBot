@@ -26,7 +26,7 @@ from telegram.ext import (
 )
 
 import config as cfg
-from db.db_service import Db
+from db.db_service import Db, dsql_user
 from interactions.common_handlers import cancel_handle
 from services.logger import logger
 from services.message_service import i34g, reply, up, up_full
@@ -58,7 +58,7 @@ async def delete_answers(update: Update) -> Dict:
     return answers
 
 
-async def delete(update: Update, context: CallbackContext) -> int:
+async def delete(update: Update, _context: CallbackContext) -> int:
     """
     Entry point. Offers to user 'Yes' and 'No' variants to delete it's userdata in bot.
     Args:
@@ -108,7 +108,7 @@ async def delete_user(update: Update, context: CallbackContext) -> int:
         )
         return ConversationHandler.END
 
-    elif answer not in answers.keys():
+    if answer not in answers.keys():
         text = await i34g("delete_user_conversation.answer_not_found", user_id=user_id)
 
     elif answers[answer] == 'not_del':
@@ -121,7 +121,7 @@ async def delete_user(update: Update, context: CallbackContext) -> int:
         ####################################
         # Line below deletes all user data #
         ####################################
-        result = await db.dsql_user(user_id)
+        result = await dsql_user(db, user_id)
         if result:
             text = await i34g("delete_user_conversation.deleted", locale=locale)
         else:
