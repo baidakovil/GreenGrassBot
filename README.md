@@ -1,19 +1,12 @@
 # GreenGrassBot
 
+[![Pylint](https://github.com/baidakovil/GreenGrassBot/actions/workflows/pylint-workflow.yml/badge.svg)](https://github.com/baidakovil/GreenGrassBot/actions/workflows/pylint-workflow.yml) [![Docker](https://github.com/baidakovil/GreenGrassBot/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/baidakovil/GreenGrassBot/actions/workflows/docker-publish.yml)
 
-![Pylint Automated Workflow](https://github.com/baidakovil/greengrassbot/actions/workflows/pylint-workflow_dispatch.yml/badge.svg)
+#### Nice metrics:
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/baidakovil/GreenGrassBot)
 
-
-## Nice and Bads
-
-| **What's nice**           |**Nice metric**                                                                                                |
-|---------------------------|---------------------------------------------------------------------------------------------------------------|
-| I am the only contributor |   ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/baidakovil/GreenGrassBot)|
-
-
-| **What's bad**            |**Bad metric**                                                                                                 |
-|---------------------------|---------------------------------------------------------------------------------------------------------------|
-| I am the only contributor | ![GitHub contributors](https://img.shields.io/github/contributors/baidakovil/GreenGrassBot)                   |
+#### Metrics to make prettier:
+![GitHub contributors](https://img.shields.io/github/contributors/baidakovil/GreenGrassBot)
 
 
 Green Grass Telegram Bot is a notificator abour music events.  
