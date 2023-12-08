@@ -17,9 +17,6 @@ import logging
 import os
 
 import i18n
-from dotenv import load_dotenv
-
-load_dotenv('.env')
 from telegram.ext import Application
 
 import config as cfg
@@ -58,7 +55,6 @@ def main() -> None:
     set_commands(application)
     logger.info('App started')
     application.run_polling()
-    return None
 
 
 if __name__ == '__main__':
