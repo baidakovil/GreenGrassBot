@@ -29,7 +29,7 @@ from telegram.constants import ParseMode
 from telegram.ext import CallbackContext
 
 from config import Cfg
-from db.db import Db
+from db.db_service import Db
 from services.logger import logger
 
 logger = logging.getLogger('A.mes')

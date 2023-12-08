@@ -23,7 +23,7 @@ load_dotenv('.env')
 from telegram.ext import Application
 
 from config import Cfg
-from db.db import Db
+from db.db_service import Db
 from interactions.loader import load_interactions
 from services.logger import logger
 from services.schedule_service import reschedule_jobs

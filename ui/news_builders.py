@@ -17,7 +17,7 @@ import logging
 from typing import Dict, KeysView, List
 
 from config import Cfg
-from db.db import Db
+from db.db_service import Db
 from services.custom_classes import ArtScrobble
 from services.logger import logger
 from services.message_service import i34g

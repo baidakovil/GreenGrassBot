@@ -22,7 +22,7 @@ from telegram.ext import Application, CallbackContext, ConversationHandler, JobQ
 
 from commands.getgigs import getgigs_job
 from config import Cfg
-from db.db import Db
+from db.db_service import Db
 from services.logger import logger
 from services.message_service import up_full
 

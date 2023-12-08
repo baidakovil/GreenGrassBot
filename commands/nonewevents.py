@@ -16,7 +16,7 @@
 from telegram import Update
 from telegram.ext import CallbackContext
 
-from db.db import Db
+from db.db_service import Db
 from services.custom_classes import UserSettings
 from services.message_service import i34g, reply, up
 

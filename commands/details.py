@@ -18,7 +18,7 @@ import logging
 from telegram import Update
 from telegram.ext import CallbackContext
 
-from db.db import Db
+from db.db_service import Db
 from services.logger import logger
 from services.message_service import reply, up_full
 from ui.news_builders import prepare_details_text

@@ -24,7 +24,7 @@ from telegram.ext import (
     filters,
 )
 
-from db.db import Db
+from db.db_service import Db
 from interactions.common_handlers import cancel_handle
 from services.logger import logger
 from services.message_service import i34g, reply, up, up_full

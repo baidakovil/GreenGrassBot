@@ -19,7 +19,7 @@ from telegram import Update
 from telegram.ext import CallbackContext
 
 from config import Cfg
-from db.db import Db
+from db.db_service import Db
 from services.message_service import alarm_char, i34g, reply, send_message, up_full
 
 db = Db()

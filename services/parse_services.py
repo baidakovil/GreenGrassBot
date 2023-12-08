@@ -27,7 +27,7 @@ from urllib.request import urlopen
 from xml.etree.ElementTree import Element
 
 from config import Cfg
-from db.db import Db
+from db.db_service import Db
 from services.custom_classes import Event
 from services.logger import logger
 from services.message_service import i34g
