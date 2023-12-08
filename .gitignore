@@ -10,6 +10,9 @@ pyrightconfig.json
 #  Last.fm API Key and Telegram bot tokens, both .env and .env-example
 .env*
 
+#  Working script for systemd deploy
+scripts/ggbot.service
+
 #  VSCode debugging configuration, workspace config
 .vscode
 *.code-workspace
