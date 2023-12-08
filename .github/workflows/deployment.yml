@@ -1,0 +1,20 @@
+name: Deployment
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Docker Hub Publish"]
+    types:
+      - completed
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing deployment script
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.DEPLOYMENT_HOST }}
+        username: ${{ secrets.DEPLOYMENT_USERNAME }}
+        password: ${{ secrets.DEPLOYMENT_PASSWORD }}
+        script: cd $HOME/${{ secrets.DEPLOYMENT_FOLDER }} && git pull && sudo systemctl restart ${{ secrets.DEPLOYMENT_SERVICE }}
