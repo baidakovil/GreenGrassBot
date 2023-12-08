@@ -11,9 +11,13 @@
 
 # You should have received a copy of the GNU General Public License along with this
 # program.  If not, see <https://www.gnu.org/licenses/>.
-"""This file contains Cfg class. Cfg and '.env' is the only configuration storages."""
+"""This file contains config constants. It and '.env' is the only config storages."""
 
 import logging
+
+from dotenv import load_dotenv
+
+load_dotenv('.env')
 
 logger = logging.getLogger('A.cfg')
 logger.setLevel(logging.DEBUG)
