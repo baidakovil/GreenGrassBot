@@ -15,156 +15,150 @@
 
 import logging
 
-logger = logging.getLogger('A.CFG')
+logger = logging.getLogger('A.cfg')
 logger.setLevel(logging.DEBUG)
 
 
-class Cfg:
-    """
-    Class for keeping bot configuration.
-    """
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # #   USER  # # INTER # FACE  # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-    def __init__(self) -> None:
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-        # # # # # # #   USER  # # INTER # FACE  # # # # # # # #
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Maximum number for quick link to event. Reaching this, resets to zero.
+INTEGER_MAX_SHORTHAND = 99
 
-        #  Maximum number for quick link to event. Reaching this, resets to zero.
-        self.INTEGER_MAX_SHORTHAND = 99
+#  Commands appearing at /start command, i.e. all commands that user should know
+COMMANDS_ALL = {
+    'concerts': ['getgigs'],
+    'manage_accounts': ['connect', 'disconnect', 'delete'],
+    'preferences': ['locale', 'nonewevents'],
+    'helping_commands': ['start', 'help'],
+}
 
-        #  Commands appearing at /start command, i.e. all commands that user should know
-        self.COMMANDS_ALL = {
-            'concerts': ['getgigs'],
-            'manage_accounts': ['connect', 'disconnect', 'delete'],
-            'preferences': ['locale', 'nonewevents'],
-            'helping_commands': ['start', 'help'],
-        }
+#  Commands from COMMANDS_ALL that should NOT be displayed at Menu button.
+COMMANDS_UNDISPLAYED = ['delete', 'nonewevents']
 
-        #  Commands from COMMANDS_ALL that should NOT be displayed at Menu button.
-        self.COMMANDS_UNDISPLAYED = ['delete', 'nonewevents']
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # USER  # # DEFAULT # # SETTINGS  # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-        # # # # # # USER  # # DEFAULT # # SETTINGS  # # # # # #
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  How many time user should listen the artist in last week to be notified
+#  about it's concert.
+DEFAULT_MIN_LISTENS = 3
 
-        #  How many time user should listen the artist in last week to be notified
-        #  about it's concert.
-        self.DEFAULT_MIN_LISTENS = 3
+#  Day to send news about events. Not using at the time.
+DEFAULT_NOTICE_DAY = -1
 
-        #  Day to send news about events. Not using at the time.
-        self.DEFAULT_NOTICE_DAY = -1
+#  Default UTC time to send news.
+DEFAULT_NOTICE_TIME = '11:48:00'
 
-        #  Default UTC time to send news.
-        self.DEFAULT_NOTICE_TIME = '11:48:00'
+#  Default setting to show 'There is no new events' message. 0 mean not to show.
+DEFAULT_NONEWEVENTS: int = 0
 
-        #  Default setting to show 'There is no new events' message. 0 mean not to show.
-        self.DEFAULT_NONEWEVENTS: int = 0
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # #   BOT   # #   LOGIC   # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-        # # # # # # # # #   BOT   # #   LOGIC   # # # # # # # #
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Max time to wait for a response from Telegram’s server.
+SEC_READ_TIMEOUT = 30
 
-        #  Max time to wait for a response from Telegram’s server.
-        self.SEC_READ_TIMEOUT = 30
+#  Max time to wait for a write operation to complete.
+SEC_WRITE_TIMEOUT = 30
 
-        #  Max time to wait for a write operation to complete.
-        self.SEC_WRITE_TIMEOUT = 30
+#  Possible quantity of accounts at last.fm to keep.
+MAX_LFM_ACCOUNT_QTY = 3
 
-        #  Possible quantity of accounts at last.fm to keep.
-        self.MAX_LFM_ACCOUNT_QTY = 3
+#  Days quantity to load scrobbles for new user. Whithout SQL OVER(), like now,
+#  only DAYS_INITIAL_TIMEDELAY <= DAYS_PERIOD_MINLISTENS make sense.
+DAYS_INITIAL_TIMEDELAY = 4
 
-        #  Days quantity to load scrobbles for new user. Whithout SQL OVER(), like now,
-        #  only DAYS_INITIAL_TIMEDELAY <= DAYS_PERIOD_MINLISTENS make sense.
-        self.DAYS_INITIAL_TIMEDELAY = 4
+#  Minimum delay to update info about artist's events.
+DAYS_MIN_DELAY_ARTCHECK = 2
 
-        #  Minimum delay to update info about artist's events.
-        self.DAYS_MIN_DELAY_ARTCHECK = 2
+#  How many days consider for min_listens users's config, i.e. it is y in [x
+#  scrobbles in y days] condition, where x is DEFAULT_MIN_LISTENS.
+DAYS_PERIOD_MINLISTENS = 4
 
-        #  How many days consider for min_listens users's config, i.e. it is y in [x
-        #  scrobbles in y days] condition, where x is DEFAULT_MIN_LISTENS.
-        self.DAYS_PERIOD_MINLISTENS = 4
+# Settings for APScheduler when set daily jobs.
+CRON_JOB_KWARGS = {'misfire_grace_time': 3600 * 12, 'coalesce': True}
 
-        # Settings for APScheduler when set daily jobs.
-        self.CRON_JOB_KWARGS = {'misfire_grace_time': 3600 * 12, 'coalesce': True}
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # #   LOGGER  # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-        # # # # # # # # # # #   LOGGER  # # # # # # # # # # # #
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Path to logger files.
+PATH_LOGGER = '.'
 
-        #  Path to logger files.
-        self.PATH_LOGGER = '.'
+#  Filename for rotating logger (logging all runs).
+FILE_ROTATING_LOGGER = 'logger.log'
 
-        #  Filename for rotating logger (logging all runs).
-        self.FILE_ROTATING_LOGGER = 'logger.log'
+#  Max filesize for rotating logger.
+BYTES_MAX_ROTATING_LOGGER = 1024 * 1024 * 20
 
-        #  Max filesize for rotating logger.
-        self.BYTES_MAX_ROTATING_LOGGER = 1024 * 1024 * 20
+#  Quantity of files, keeping by rotating logger.
+QTY_BACKUPS_ROTATING_LOGGER = 5
 
-        #  Quantity of files, keeping by rotating logger.
-        self.QTY_BACKUPS_ROTATING_LOGGER = 5
+#  Developer contacts to inform about errors or new users.
+DEVELOPER_CHAT_ID = 144297913
 
-        #  Developer contacts to inform about errors or new users.
-        self.DEVELOPER_CHAT_ID = 144297913
+#  Whether bot should inform about new users.
+NEW_USER_ALARMING = True
 
-        #  Whether bot should inform about new users.
-        self.NEW_USER_ALARMING = True
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # #   DATA  #  BASE # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-        # # # # # # # # #   DATA  #  BASE # # # # # # # # # # #
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  If True, will create new DB every run.
+DELETE_DB_ATSTART = False
 
-        #  If True, will create new DB every run.
-        self.DELETE_DB_ATSTART = False
+#  Path to database AND creating script.
+PATH_DBFILES = 'db'
 
-        #  Path to database AND creating script.
-        self.PATH_DBFILES = 'db'
+#  Path to db file.
+FILE_DB = 'ggb_sqlite.db'
 
-        #  Path to db file.
-        self.FILE_DB = 'ggb_sqlite.db'
+#  Filename of db-creating script.
+FILE_DB_SCRIPT = 'ggb_sqlite.sql'
 
-        #  Filename of db-creating script.
-        self.FILE_DB_SCRIPT = 'ggb_sqlite.sql'
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # #   PARSER  # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-        # # # # # # # # # # #   PARSER  # # # # # # # # # # # #
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Delay between lastfm apis requests.
+SECONDS_SLEEP_XMLLOAD = 2
 
-        #  Delay between lastfm apis requests.
-        self.SECONDS_SLEEP_XMLLOAD = 2
+#  Delay between lastfm events loads in scraper.
+SECONDS_SLEEP_HTMLLOAD = 2
 
-        #  Delay between lastfm events loads in scraper.
-        self.SECONDS_SLEEP_HTMLLOAD = 2
+#  How many scrobbles will be on single XML request, max 200.
+QTY_SCROBBLES_XML = 200
 
-        #  How many scrobbles will be on single XML request, max 200.
-        self.QTY_SCROBBLES_XML = 200
+#  How many concurrent connections (job executions) allowed for /getgigs commnd.
+MAX_CONCURRENT_CONN_ATREQUEST = 1
 
-        #  How many concurrent connections (job executions) allowed for /getgigs commnd.
-        self.MAX_CONCURRENT_CONN_ATREQUEST = 1
+#  How many concurrent connections (job executions) allowed for /getgigs_job.
+MAX_CONCURRENT_CONN_ATJOB = 1
 
-        #  How many concurrent connections (job executions) allowed for /getgigs_job.
-        self.MAX_CONCURRENT_CONN_ATJOB = 1
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # #   TRANSLATIONS  # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-        # # # # # # # # #   TRANSLATIONS  # # # # # # # # # # #
-        # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Locale codes of present translations
+LOCALES_ISO = ['en', 'ru', 'uk']
 
-        #  Locale codes of present translations
-        self.LOCALES_ISO = ['en', 'ru', 'uk']
+#  Default locale.
+LOCALE_DEFAULT = 'en'
 
-        #  Default locale.
-        self.LOCALE_DEFAULT = 'en'
+#  Locale to store technical strings (API adresses, URLs).
+LOCALE_TECHNICAL_STORE = 'en'
 
-        #  Locale to store technical strings (API adresses, URLs).
-        self.LOCALE_TECHNICAL_STORE = 'en'
+#  Translation path.
+PATH_TRANSLATIONS = './assets/lang'
 
-        #  Translation path.
-        self.PATH_TRANSLATIONS = './assets/lang'
+#  Filename format for i18n.
+FILENAME_FORMAT_I18N = '{locale}.{format}'
 
-        #  Filename format for i18n.
-        self.FILENAME_FORMAT_I18N = '{locale}.{format}'
+#  Set up multilingual bot descriptions at startup
+NEED_DESCRIPTION = False
 
-        #  Set up multilingual bot descriptions at startup
-        self.NEED_DESCRIPTION = True
-
-        #  Set up multinlingual bot descriptions at startup
-        self.NEED_COMMANDS = True
+#  Set up multinlingual bot descriptions at startup
+NEED_COMMANDS = False

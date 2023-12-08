@@ -22,7 +22,7 @@ from services.message_service import i34g, reply, up
 db = Db()
 
 
-async def warranty(update: Update, context: CallbackContext) -> None:
+async def warranty(update: Update, _context: CallbackContext) -> None:
     """
     Callback function. Sends appropriate parts of the General Public License to message
     «This program comes with ABSOLUTELY NO WARRANTY at starting screen.

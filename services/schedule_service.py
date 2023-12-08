@@ -20,8 +20,8 @@ from typing import Union
 from telegram import Update
 from telegram.ext import Application, CallbackContext, ConversationHandler, JobQueue
 
+import config as cfg
 from commands.getgigs import getgigs_job
-from config import Cfg
 from db.db_service import Db
 from services.logger import logger
 from services.message_service import up_full
@@ -29,7 +29,7 @@ from services.message_service import up_full
 logger = logging.getLogger('A.sch')
 logger.setLevel(logging.DEBUG)
 
-CFG = Cfg()
+
 db = Db()
 
 
@@ -54,16 +54,16 @@ def run_daily_job(
         chat_id: Tf field chat_id
         job_src: object with "current_jobs" method to obtain current jobs
     """
-    logger.debug(f'Entered to run_daily_job() for: {user_id}, {chat_id}')
+    logger.debug('Entered to run_daily_job() for: {user_id}, {chat_id}')
     queue = job_src.job_queue
     if isinstance(queue, JobQueue):
         queue.run_daily(
             callback=getgigs_job,
-            time=time.fromisoformat(CFG.DEFAULT_NOTICE_TIME),
+            time=time.fromisoformat(cfg.DEFAULT_NOTICE_TIME),
             chat_id=chat_id,
             user_id=user_id,
             name=get_job_name(user_id, chat_id),
-            job_kwargs=CFG.CRON_JOB_KWARGS,
+            job_kwargs=cfg.CRON_JOB_KWARGS,
         )
     else:
         logger.warning('Can not access JobQueue. Something wrong')
@@ -85,7 +85,7 @@ async def add_daily(update: Update, context: CallbackContext) -> int:
     run_daily_job(user_id, chat_id, context)
     await db.wsql_jobs(user_id, chat_id)
 
-    logger.info(f'Added daily job for: {user_id}')
+    logger.info('Added daily job for: {user_id}')
     return ConversationHandler.END
 
 
@@ -107,7 +107,7 @@ def remove_jobs(
             for job in current_jobs:
                 job.schedule_removal()
                 count_jobs += 1
-            logger.debug(f'Jobs removed: {count_jobs}')
+            logger.debug('Jobs removed: {count_jobs}')
     else:
         logger.warning('Can not access JobQueue. Something wrong')
     return None
@@ -127,5 +127,5 @@ def reschedule_jobs(application: Application, db) -> None:
         remove_jobs(user_id, chat_id, application)
         run_daily_job(user_id, chat_id, application)
         count += 1
-    logger.info(f'Rescheduled {count} jobs')
+    logger.info('Rescheduled {count} jobs')
     return None

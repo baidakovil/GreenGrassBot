@@ -29,7 +29,7 @@ logger = logging.getLogger('A.det')
 logger.setLevel(logging.DEBUG)
 
 
-async def details(update: Update, context: CallbackContext) -> None:
+async def details(update: Update, _context: CallbackContext) -> None:
     """
     Callback function. Sends detailed info about events of the artist, chosen by user
     with command /xx, where xx called shorthand.
@@ -40,5 +40,5 @@ async def details(update: Update, context: CallbackContext) -> None:
     shorthand = int(command[1:])
     text = await prepare_details_text(user_id, shorthand)
     await reply(update, text, disable_web_page_preview=True)
-    logger.info(f'Details was sent to {user_id}')
+    logger.info('Details was sent to %s', user_id)
     return None

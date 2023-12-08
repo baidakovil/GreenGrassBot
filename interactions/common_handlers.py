@@ -22,14 +22,12 @@ from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, ContextTypes, ConversationHandler
 
-from config import Cfg
+import config as cfg
 from services.logger import logger
 from services.message_service import i34g, reply, send_message, up
 
 logger = logging.getLogger(name='A.com')
 logger.setLevel(logging.DEBUG)
-
-CFG = Cfg()
 
 
 async def cancel_handle(update: Update, context: CallbackContext) -> int:
@@ -42,7 +40,7 @@ async def cancel_handle(update: Update, context: CallbackContext) -> int:
         int = 0
     """
     user_id = up(update)
-    logger.info(f'BotUser {user_id} canceled the conversation')
+    logger.info('BotUser {user_id} canceled the conversation')
     await reply(update, await i34g('common_handlers.cancel_message', user_id=user_id))
     return ConversationHandler.END
 
@@ -61,7 +59,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
     docs.python-telegram-bot.org/en/v20.6/examples.errorhandlerbot.html
     """
     assert context.error
-    logger.warning(f'Update {update} caused error {context.error}')
+    logger.warning('Update {update} caused error {context.error}')
     tb_list = traceback.format_exception(
         None, context.error, context.error.__traceback__
     )
@@ -77,11 +75,11 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
         f"<pre>{html.escape(tb_string)}</pre>"
     )
 
-    logger.warning(f'ERROR HANDLER MESSAGE: {message}')
+    logger.warning('ERROR HANDLER MESSAGE: {message}')
 
     await send_message(
         context,
-        chat_id=CFG.DEVELOPER_CHAT_ID,
+        chat_id=cfg.DEVELOPER_CHAT_ID,
         text=message[:4095],
         parse_mode=ParseMode.HTML,
     )

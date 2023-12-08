@@ -25,7 +25,7 @@ from telegram.ext import (
     filters,
 )
 
-from config import Cfg
+import config as cfg
 from db.db_service import Db
 from interactions.common_handlers import cancel_handle
 from services.logger import logger
@@ -35,7 +35,7 @@ from services.schedule_service import remove_jobs
 logger = logging.getLogger('A.del')
 logger.setLevel(logging.DEBUG)
 
-CFG = Cfg()
+
 db = Db()
 
 DELETE_USER = 0
@@ -72,7 +72,7 @@ async def delete(update: Update, context: CallbackContext) -> int:
         assert update.message.from_user
         locale = update.message.from_user.language_code
         if locale is None:
-            locale = CFG.LOCALE_DEFAULT
+            locale = cfg.LOCALE_DEFAULT
         text = await i34g("delete_user_conversation.no_users", locale=locale)
         await reply(update, text, reply_markup=ReplyKeyboardRemove())
         return ConversationHandler.END
@@ -116,7 +116,7 @@ async def delete_user(update: Update, context: CallbackContext) -> int:
 
     elif answers[answer] == 'del':
         locale = await db.rsql_locale(user_id)
-        locale = CFG.LOCALE_DEFAULT if locale is None else locale
+        locale = cfg.LOCALE_DEFAULT if locale is None else locale
         remove_jobs(user_id, chat_id, context)
         ####################################
         # Line below deletes all user data #

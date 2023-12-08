@@ -23,7 +23,7 @@ from services.message_service import i34g, reply, up
 db = Db()
 
 
-async def nonewevents(update: Update, context: CallbackContext) -> None:
+async def nonewevents(update: Update, _context: CallbackContext) -> None:
     """
     Callback function. Toggle 'nonewevents' settings on-off. This settings controls
     whether user should be notified when no events there.
@@ -36,9 +36,8 @@ async def nonewevents(update: Update, context: CallbackContext) -> None:
         text = await i34g('nonewevents.error', user_id=user_id)
         await reply(update, text)
         return None
-    else:
-        assert isinstance(usersettings, UserSettings)
-        new_value = int(not bool(int(usersettings.nonewevents)))
+    assert isinstance(usersettings, UserSettings)
+    new_value = int(not bool(int(usersettings.nonewevents)))
     affected = await db.wsql_settings(user_id=user_id, nonewevents=new_value)
     if affected and new_value:
         text = await i34g('nonewevents.nots_disabled', user_id=user_id)

@@ -22,7 +22,7 @@ from services.message_service import i34g, reply, up
 db = Db()
 
 
-async def help(update: Update, context: CallbackContext) -> None:
+async def help_call(update: Update, _context: CallbackContext) -> None:
     """
     Callback function. Sends help message.
     Args:

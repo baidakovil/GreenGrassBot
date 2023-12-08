@@ -22,7 +22,7 @@ from dotenv import load_dotenv
 load_dotenv('.env')
 from telegram.ext import Application
 
-from config import Cfg
+import config as cfg
 from db.db_service import Db
 from interactions.loader import load_interactions
 from services.logger import logger
@@ -30,10 +30,9 @@ from services.schedule_service import reschedule_jobs
 from ui.commands_setter import set_commands
 from ui.descriptions_setter import set_descriptions
 
-CFG = Cfg()
-i18n.load_path.append(CFG.PATH_TRANSLATIONS)
-i18n.set('filename_format', CFG.FILENAME_FORMAT_I18N)
-i18n.set('locale', CFG.LOCALE_DEFAULT)
+i18n.load_path.append(cfg.PATH_TRANSLATIONS)
+i18n.set('filename_format', cfg.FILENAME_FORMAT_I18N)
+i18n.set('locale', cfg.LOCALE_DEFAULT)
 
 logger = logging.getLogger('A.A')
 logger.setLevel(logging.DEBUG)
@@ -48,8 +47,8 @@ def main() -> None:
     application = (
         Application.builder()
         .token(token)
-        .read_timeout(CFG.SEC_READ_TIMEOUT)
-        .write_timeout(CFG.SEC_WRITE_TIMEOUT)
+        .read_timeout(cfg.SEC_READ_TIMEOUT)
+        .write_timeout(cfg.SEC_WRITE_TIMEOUT)
         .concurrent_updates(True)
         .build()
     )
@@ -57,7 +56,7 @@ def main() -> None:
     reschedule_jobs(application, db)
     set_descriptions(application)
     set_commands(application)
-    logger.info(f'App started')
+    logger.info('App started')
     application.run_polling()
     return None
 

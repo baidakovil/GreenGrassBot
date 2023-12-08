@@ -18,9 +18,7 @@ import os
 from logging import Logger
 from logging.handlers import RotatingFileHandler
 
-from config import Cfg
-
-CFG = Cfg()
+import config as cfg
 
 
 def start_logger() -> Logger:
@@ -34,13 +32,13 @@ def start_logger() -> Logger:
 
     #  Logging to console.
     ch = logging.StreamHandler()
-    os.makedirs(CFG.PATH_LOGGER, exist_ok=True)
+    os.makedirs(cfg.PATH_LOGGER, exist_ok=True)
     #  Logging to file, continuous after bot restart.
     rh = RotatingFileHandler(
-        filename=os.path.join(CFG.PATH_LOGGER, CFG.FILE_ROTATING_LOGGER),
+        filename=os.path.join(cfg.PATH_LOGGER, cfg.FILE_ROTATING_LOGGER),
         mode='a',
-        maxBytes=CFG.BYTES_MAX_ROTATING_LOGGER,
-        backupCount=CFG.QTY_BACKUPS_ROTATING_LOGGER,
+        maxBytes=cfg.BYTES_MAX_ROTATING_LOGGER,
+        backupCount=cfg.QTY_BACKUPS_ROTATING_LOGGER,
     )
     ch_formatter = logging.Formatter(
         '[%(asctime)s.%(msecs)03d - %(name)5s - %(levelname)8s:%(lineno)3d - %(funcName)18s()] %(message)s',
@@ -60,4 +58,4 @@ def start_logger() -> Logger:
 
 
 logger = start_logger()
-logger.info(f'Main logger started, __name__ is {__name__}')
+logger.info('Main logger started, __name__ is {__name__}')

@@ -20,14 +20,12 @@ import time
 from telegram import BotCommand
 from telegram.ext import Application
 
-from config import Cfg
+import config as cfg
 from services.logger import logger
 from services.message_service import i34g
 
 logger = logging.getLogger("A.com")
 logger.setLevel(logging.DEBUG)
-
-CFG = Cfg()
 
 
 def set_commands(application: Application) -> None:
@@ -36,7 +34,7 @@ def set_commands(application: Application) -> None:
     Args:
         application: application with bot to add commands to
     """
-    if not CFG.NEED_COMMANDS:
+    if not cfg.NEED_COMMANDS:
         logger.debug('Commands setup skipped')
         return None
 
@@ -44,14 +42,14 @@ def set_commands(application: Application) -> None:
     bot_commands = []
 
     #  Add empty string as lang to set commands to users without dedicated language.
-    language_codes = CFG.LOCALES_ISO
+    language_codes = cfg.LOCALES_ISO
     language_codes.append('')
 
     for locale in language_codes:
-        i34g_locale = CFG.LOCALE_DEFAULT if locale == '' else locale
-        for com_group in CFG.COMMANDS_ALL.values():
+        i34g_locale = cfg.LOCALE_DEFAULT if locale == '' else locale
+        for com_group in cfg.COMMANDS_ALL.values():
             for command in com_group:
-                if command in CFG.COMMANDS_UNDISPLAYED:
+                if command in cfg.COMMANDS_UNDISPLAYED:
                     continue
                 description = asyncio.get_event_loop().run_until_complete(
                     i34g(f'commands.{command}_shor', locale=i34g_locale)
@@ -65,7 +63,7 @@ def set_commands(application: Application) -> None:
         )
         if not changed:
             problem = True
-            logger.warning(f'Commands tried to be set but some problem happens')
+            logger.warning('Commands tried to be set but some problem happens')
     if not problem:
-        logger.info(f'Commands set for languages: {CFG.LOCALES_ISO}')
+        logger.info('Commands set for languages: {cfg.LOCALES_ISO}')
     return None

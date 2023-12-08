@@ -25,7 +25,7 @@ from telegram.ext import (
     filters,
 )
 
-from config import Cfg
+import config as cfg
 from db.db_service import Db
 from interactions.common_handlers import cancel_handle
 from services.logger import logger
@@ -37,7 +37,7 @@ logger = logging.getLogger('A.con')
 logger.setLevel(logging.DEBUG)
 
 db = Db()
-CFG = Cfg()
+
 
 USERNAME = 0
 
@@ -54,12 +54,12 @@ async def connect(update: Update, context: CallbackContext) -> Optional[int]:
     await db.save_user(update)
     user_id = up(update)
     useraccs = await db.rsql_lfmuser(user_id=user_id)
-    if len(useraccs) >= CFG.MAX_LFM_ACCOUNT_QTY:
+    if len(useraccs) >= cfg.MAX_LFM_ACCOUNT_QTY:
         await reply(
             update,
             await i34g(
                 'conn_lfm_conversation.max_acc_reached',
-                qty=CFG.MAX_LFM_ACCOUNT_QTY,
+                qty=cfg.MAX_LFM_ACCOUNT_QTY,
                 user_id=user_id,
             ),
         )
@@ -108,12 +108,12 @@ async def username(update: Update, context: CallbackContext) -> int:
         if len(await db.rsql_lfmuser(user_id)) == 1:
             text += await i34g(
                 'conn_lfm_conversation.alarm_info',
-                time=CFG.DEFAULT_NOTICE_TIME[:5],
+                time=cfg.DEFAULT_NOTICE_TIME[:5],
                 user_id=user_id,
             )
         await add_daily(update, context)
         await reply(update, text)
-        logger.info(f'BotUser: {user_id} have added lfm account:  {acc}')
+        logger.info('BotUser: {user_id} have added lfm account:  {acc}')
     else:
         await reply(
             update, await i34g('conn_lfm_conversation.some_error', user_id=user_id)

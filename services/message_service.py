@@ -28,14 +28,13 @@ from telegram import (
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext
 
-from config import Cfg
+import config as cfg
 from db.db_service import Db
 from services.logger import logger
 
 logger = logging.getLogger('A.mes')
 logger.setLevel(logging.DEBUG)
 
-CFG = Cfg()
 
 db = Db()
 
@@ -67,11 +66,11 @@ def up_full(update: Update) -> Tuple[int, int, str, str]:
             user_id = update.message.from_user.id
             first_name = update.message.from_user.first_name
         else:
-            logger.warning(f'UPDATE IS NOT FROM USER. Probably bot will fail')
+            logger.warning('UPDATE IS NOT FROM USER. Probably bot will fail')
     else:
-        logger.warning(f'UPDATE IS NOT A MESSAGE. Probably bot will fail')
+        logger.warning('UPDATE IS NOT A MESSAGE. Probably bot will fail')
     if not isinstance(text, str):
-        logger.warning(f'UPDATE DOES NOT CONTAIN TEXT. Probably bot will fail')
+        logger.warning('UPDATE DOES NOT CONTAIN TEXT. Probably bot will fail')
         text = ''
 
     return user_id, chat_id, text, first_name
@@ -86,7 +85,7 @@ def up(update: Update) -> int:
         if isinstance(update.message.from_user, User):
             user_id = update.message.from_user.id
         else:
-            logger.warning(f'UPDATE IS NOT FROM USER. Probably bot will fail')
+            logger.warning('UPDATE IS NOT FROM USER. Probably bot will fail')
     return user_id
 
 
@@ -194,7 +193,7 @@ async def i34g(*args: str, **kwargs: Union[str, int]) -> str:
         locale = await db.rsql_locale(user_id=user_id)
         if locale is None:
             logger.warning('Can not read locale settings. It should not be like this!')
-            locale = CFG.LOCALE_DEFAULT
+            locale = cfg.LOCALE_DEFAULT
         kwargs['locale'] = locale
 
     kwargs = {

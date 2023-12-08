@@ -26,7 +26,7 @@ from urllib.error import HTTPError
 from urllib.request import urlopen
 from xml.etree.ElementTree import Element
 
-from config import Cfg
+import config as cfg
 from db.db_service import Db
 from services.custom_classes import Event
 from services.logger import logger
@@ -37,7 +37,7 @@ from ui.error_builder import error_text
 logger = logging.getLogger("A.par")
 logger.setLevel(logging.DEBUG)
 
-CFG = Cfg()
+
 api_key = os.environ["API_KEY"]
 
 db = Db()
@@ -59,7 +59,7 @@ async def check_valid_lfm(lfm: str, user_id: int) -> Tuple[bool, str]:
         page=1,
         from_unix=0,
         api_key=api_key,
-        locale=CFG.LOCALE_TECHNICAL_STORE,
+        locale=cfg.LOCALE_TECHNICAL_STORE,
     )
     loaded_page = page_loader(lfm_api_url)
     return (
@@ -79,7 +79,7 @@ def timedelay_moment() -> datetime:
     Returns:
         unix timestamp
     """
-    period = CFG.DAYS_INITIAL_TIMEDELAY
+    period = cfg.DAYS_INITIAL_TIMEDELAY
     moment_period_ago = datetime.utcnow() - timedelta(days=period)
     moment_period_ago_00_00_00 = moment_period_ago.replace(
         tzinfo=timezone.utc, hour=0, minute=0, second=0, microsecond=0
@@ -114,10 +114,10 @@ async def load_scrobble_moment(user_id: int, lfm: str) -> int:
     """
 
     timedelay_load = timedelay_moment()
-    logger.debug(f'Max timedelay to load scrobbles: {timedelay_load}')
+    logger.debug('Max timedelay to load scrobbles: {timedelay_load}')
     last_scrobble = await last_scrobble_moment(user_id, lfm)
     if last_scrobble is None:
-        logger.debug(f'No previous scrobbles found for user_id {user_id}, lfm {lfm}')
+        logger.debug('No previous scrobbles found for user_id {user_id}, lfm {lfm}')
         load_scrobble_moment = timedelay_load
     else:
         logger.debug(
@@ -126,13 +126,13 @@ async def load_scrobble_moment(user_id: int, lfm: str) -> int:
         load_scrobble_moment = max(timedelay_load, last_scrobble)
     from_unix = int(load_scrobble_moment.timestamp())
     from_unix_hum = unix_to_text(from_unix)
-    logger.debug(f'Conclusion: will load scrobbles from time: {from_unix_hum}')
+    logger.debug('Conclusion: will load scrobbles from time: {from_unix_hum}')
     return int(timedelay_load.timestamp())
 
 
 async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
     """
-    Obtain scrobbles for last CFG.DAYS_INITIAL_TIMEDELAY days.
+    Obtain scrobbles for last cfg.DAYS_INITIAL_TIMEDELAY days.
     #TODO: add storing of time of last scrobble loading: there is no need to load what
     was loaded.
     Args:
@@ -148,15 +148,15 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
     while current_page <= total_pages:
         lfm_url = await i34g(
             'parse_services.getrecenttracks',
-            limit=CFG.QTY_SCROBBLES_XML,
+            limit=cfg.QTY_SCROBBLES_XML,
             lfm=artist_at_url(name_to_url=lfm),
             page=current_page,
             from_unix=from_unix,
             api_key=api_key,
-            locale=CFG.LOCALE_TECHNICAL_STORE,
+            locale=cfg.LOCALE_TECHNICAL_STORE,
         )
         xml = page_loader(url=lfm_url)
-        await asyncio.sleep(CFG.SECONDS_SLEEP_XMLLOAD)
+        await asyncio.sleep(cfg.SECONDS_SLEEP_XMLLOAD)
         if isinstance(xml, int):
             return xml
 
@@ -232,11 +232,11 @@ async def parser_event(art_name: str) -> Union[int, List[Event]]:
     url = await i34g(
         'parse_services.lastfmeventurl',
         artist=artist_at_url(art_name),
-        locale=CFG.LOCALE_TECHNICAL_STORE,
+        locale=cfg.LOCALE_TECHNICAL_STORE,
     )
     page = page_loader(url)
 
-    await asyncio.sleep(CFG.SECONDS_SLEEP_HTMLLOAD)
+    await asyncio.sleep(cfg.SECONDS_SLEEP_HTMLLOAD)
     if isinstance(page, int):
         return page
 
@@ -272,5 +272,5 @@ async def parser_event(art_name: str) -> Union[int, List[Event]]:
                 )
             )
     except StopIteration:
-        logger.debug(f'Parsed event page for {art_name}')
+        logger.debug('Parsed event page for {art_name}')
     return events

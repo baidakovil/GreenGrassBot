@@ -26,7 +26,7 @@ from telegram.ext import (
     filters,
 )
 
-from config import Cfg
+import config as cfg
 from db.db_service import Db
 from interactions.common_handlers import cancel_handle
 from services.logger import logger
@@ -35,7 +35,7 @@ from services.message_service import i34g, reply, up, up_full
 logger = logging.getLogger('A.dis')
 logger.setLevel(logging.DEBUG)
 
-CFG = Cfg()
+
 db = Db()
 
 SET_LOCALE = 0
@@ -54,7 +54,7 @@ async def get_locale_codes(update: Update) -> Dict[str, str]:
     #
     loc_codes = {
         await i34g(f'loc.{locale_iso}', user_id=user_id): locale_iso
-        for locale_iso in CFG.LOCALES_ISO
+        for locale_iso in cfg.LOCALES_ISO
     }
     return loc_codes
 

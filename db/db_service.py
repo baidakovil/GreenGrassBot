@@ -24,15 +24,13 @@ from typing import Any, Iterator, List, Optional, Tuple, Union
 
 from telegram import Update
 
-from config import Cfg
+import config as cfg
 from services.custom_classes import ArtScrobble, BotUser, Event, UserSettings
 from services.logger import logger
 from services.timeconv_service import timestamp_to_text
 
 logger = logging.getLogger(name='A.db')
 logger.setLevel(logging.DEBUG)
-
-CFG = Cfg()
 
 
 @contextmanager
@@ -50,11 +48,11 @@ def get_connection(db_path: str, params: Any = None) -> Iterator[sqlite3.Connect
         yield conn
         conn.commit()
     except IntegrityError as E:
-        logger.info(f'CATCHED IntegrityError: {E}, params: {params}')
+        logger.info('CATCHED IntegrityError: {E}, params: {params}')
     except OperationalError as E:
-        logger.info(f'CATCHED OperationalError: {E}, params: {params}')
+        logger.info('CATCHED OperationalError: {E}, params: {params}')
     except Exception as E:
-        logger.warning(f'CATCHED SomeError: {E}')
+        logger.warning('CATCHED SomeError: {E}')
     finally:
         conn.close()
 
@@ -110,15 +108,15 @@ class Db:
             value of DELETE_DB_ATSTART parameter database will be rewritten from scratch
             or not.
         """
-        self.db_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB)
-        self.script_path = os.path.join(CFG.PATH_DBFILES, CFG.FILE_DB_SCRIPT)
-        if initial and CFG.DELETE_DB_ATSTART:
+        self.db_path = os.path.join(cfg.PATH_DBFILES, cfg.FILE_DB)
+        self.script_path = os.path.join(cfg.PATH_DBFILES, cfg.FILE_DB_SCRIPT)
+        if initial and cfg.DELETE_DB_ATSTART:
             os.remove(self.db_path)
-            logger.info(f'DB DELETED from: {self.db_path}')
+            logger.info('DB DELETED from: {self.db_path}')
             self.create_db()
             return None
         elif not os.path.isfile(self.db_path):
-            logger.info(f'DB not found in file: {self.db_path}')
+            logger.info('DB not found in file: {self.db_path}')
             self.create_db()
             return None
 
@@ -126,20 +124,20 @@ class Db:
         """
         Creates db and log number of created tables for control/debug.
         """
-        os.makedirs(CFG.PATH_DBFILES, exist_ok=True)
+        os.makedirs(cfg.PATH_DBFILES, exist_ok=True)
         with get_connection(self.db_path) as con:
             cursor = con.cursor()
             with open(self.script_path, 'r') as f:
                 script = f.read()
             cursor.executescript(script)
-            logger.info(f'Forward script executed')
+            logger.info('Forward script executed')
             cursor.execute(
                 """
                 SELECT COUNT(*) FROM sqlite_master WHERE type="table" AND tbl_name != "sqlite_sequence"
                 """
             )
             tbl_num = cursor.fetchone()
-            logger.info(f'{tbl_num[0]} tables created')
+            logger.info('{tbl_num[0]} tables created')
             return None
 
     def _execute_query(
@@ -189,7 +187,7 @@ class Db:
         username = update.message.from_user.username
         lastname = update.message.from_user.last_name
         language_code = update.message.from_user.language_code
-        user_tg_locale = language_code if language_code else CFG.LOCALE_DEFAULT
+        user_tg_locale = language_code if language_code else cfg.LOCALE_DEFAULT
 
         user = BotUser(
             user_id=update.message.from_user.id,
@@ -234,7 +232,7 @@ class Db:
         params = {
             'user_id': user_id,
             'lfm': lfm,
-            'max_qty': CFG.MAX_LFM_ACCOUNT_QTY,
+            'max_qty': cfg.MAX_LFM_ACCOUNT_QTY,
         }
         query = """
         INSERT INTO useraccs (user_id, lfm)
@@ -259,7 +257,7 @@ class Db:
 
         #  Get dict with defaul settings as 'template'.
         user_id = kw['user_id']
-        user_tg_locale = kw.get('user_tg_locale', CFG.LOCALE_DEFAULT)
+        user_tg_locale = kw.get('user_tg_locale', cfg.LOCALE_DEFAULT)
         def_sett = asdict(UserSettings(user_id=user_id, locale=user_tg_locale))
         #  Get dict with current settings, if exists
         cur_sett = await self.rsql_settings(user_id=user_id)
@@ -336,7 +334,7 @@ class Db:
                 f"Added event event_date:{ev.event_date}, event_place:{ev.place}"
             )
             count_ev += 1
-        logger.info(f'Added to db: {count_ev} events, {count_lup} line-ups')
+        logger.info('Added to db: {count_ev} events, {count_lup} line-ups')
         return None
 
     async def wsql_jobs(self, user_id: int, chat_id: int) -> None:
@@ -362,7 +360,7 @@ class Db:
     async def wsql_artcheck(self, art_name: str) -> None:
         """
         Writes or updates info about art_name checking time, for escaping multiple
-        checking. Time delay controlled by CFG.DAYS_MIN_DELAY_ARTCHECK.
+        checking. Time delay controlled by cfg.DAYS_MIN_DELAY_ARTCHECK.
         Args:
             art_name: artist name that was checked
         """
@@ -397,8 +395,8 @@ class Db:
         params = {
             'user_id': user_id,
             'art_name': art_name,
-            'delay': CFG.DAYS_MIN_DELAY_ARTCHECK,
-            'period': CFG.DAYS_PERIOD_MINLISTENS,
+            'delay': cfg.DAYS_MIN_DELAY_ARTCHECK,
+            'period': cfg.DAYS_PERIOD_MINLISTENS,
         }
         query = """
         INSERT INTO sentarts (user_id, sent_datetime, art_name, event_id)
@@ -436,7 +434,7 @@ class Db:
         Args:
             user_id: Tg user_id field
             shorthand: integer shorthand number, max to
-            CFG.INTEGER_MAX_SHORTHAND
+            cfg.INTEGER_MAX_SHORTHAND
             art_name: corresponding artist name
         """
         query = """
@@ -479,9 +477,9 @@ class Db:
         records = self._execute_query(query, params=(), select=True, selectone=False)
         records = list_hard_check(records)
         if records == []:
-            logger.debug(f'No jobs in db')
+            logger.debug('No jobs in db')
         else:
-            logger.debug(f'Returned jobs: {len(records)} jobs')
+            logger.debug('Returned jobs: {len(records)} jobs')
         return records
 
     async def rsql_locale(self, user_id: int) -> Union[str, None]:
@@ -498,7 +496,7 @@ class Db:
         """
         record = self._execute_query(query, params=(user_id,), select=True)
         if record is None:
-            logger.debug(f'Return empty locale settings for user_id {user_id}')
+            logger.debug('Return empty locale settings for user_id {user_id}')
             return record
         record = tuple_hard_check(record)[0]
         return record
@@ -518,7 +516,7 @@ class Db:
         """
         record = self._execute_query(query, params=(user_id,), select=True)
         if record is None:
-            logger.debug(f'Return empty settings for user_id {user_id}')
+            logger.debug('Return empty settings for user_id {user_id}')
             return record
         record = tuple_hard_check(record)
         usersettings = UserSettings(
@@ -529,7 +527,7 @@ class Db:
             nonewevents=int(record[4]),
             locale=record[5],
         )
-        logger.debug(f'Return settings for user_id {user_id}: {usersettings}')
+        logger.debug('Return settings for user_id {user_id}: {usersettings}')
         return usersettings
 
     async def rsql_maxshorthand(self, user_id: int) -> int:
@@ -546,7 +544,7 @@ class Db:
         """
         record = self._execute_query(query, params=(user_id,), select=True)
         record = tuple_hard_check(record)[0]
-        logger.debug(f'Return maxshorthand for user_id {user_id}: {record}')
+        logger.debug('Return maxshorthand for user_id {user_id}: {record}')
         return record
 
     async def rsql_lfmuser(self, user_id: int) -> List[str]:
@@ -566,7 +564,7 @@ class Db:
         )
         record = list_hard_check(record)
         result = [record[i][0] for i in range(len(record))]
-        logger.debug(f'Return lastfm users for user_id {user_id}: {result}')
+        logger.debug('Return lastfm users for user_id {user_id}: {result}')
         return result
 
     async def rsql_artcheck(self, user_id: int, art_name: str) -> int:
@@ -584,8 +582,8 @@ class Db:
         params = {
             'user_id': user_id,
             'art_name': art_name,
-            'delay': CFG.DAYS_MIN_DELAY_ARTCHECK,
-            'period': CFG.DAYS_PERIOD_MINLISTENS,
+            'delay': cfg.DAYS_MIN_DELAY_ARTCHECK,
+            'period': cfg.DAYS_PERIOD_MINLISTENS,
         }
         query = f"""
         SELECT 
@@ -636,7 +634,7 @@ class Db:
         """
         ev = self._execute_query(query, params=params, select=True, selectone=False)
         ev = list_hard_check(ev)
-        logger.info(f'BotUser {user_id} requests shorthand {shorthand}')
+        logger.info('BotUser {user_id} requests shorthand {shorthand}')
         return ev
 
     async def rsql_lastdayscrobble(self, user_id: int, lfm: str) -> Union[str, None]:
@@ -655,10 +653,10 @@ class Db:
         record = self._execute_query(query, params=(user_id, lfm), select=True)
 
         if record is None:
-            logger.debug(f'No last scrobbles found for {user_id}')
+            logger.debug('No last scrobbles found for {user_id}')
             return record
         else:
-            logger.debug(f'BotUser {user_id} requests last scrobble date')
+            logger.debug('BotUser {user_id} requests last scrobble date')
             record = tuple_hard_check(record)[0]
             return record
 
@@ -677,8 +675,8 @@ class Db:
         params = {
             'user_id': user_id,
             'art_name': art_name,
-            'delay': CFG.DAYS_MIN_DELAY_ARTCHECK,
-            'period': CFG.DAYS_PERIOD_MINLISTENS,
+            'delay': cfg.DAYS_MIN_DELAY_ARTCHECK,
+            'period': cfg.DAYS_PERIOD_MINLISTENS,
         }
         query = """
         SELECT 
@@ -765,7 +763,7 @@ class Db:
             True if user deleted normally, False if some useraccs or user_ids was not
             deleted
         """
-        logger.info(f'BotUser {user_id} request account deleting')
+        logger.info('BotUser {user_id} request account deleting')
         problem = None
         useraccs = await self.rsql_lfmuser(user_id)
 
@@ -773,7 +771,7 @@ class Db:
             _, affected_ua = await self.dsql_useraccs(user_id=user_id, lfm=lfm)
             if not affected_ua:
                 problem = True
-                logger.info(f'Problem when deleting lfm for {user_id}')
+                logger.info('Problem when deleting lfm for {user_id}')
 
         query_del_user = """
         DELETE FROM users WHERE user_id = ?
@@ -785,7 +783,7 @@ class Db:
 
         if not affected_users:
             problem = True
-            logger.info(f'Problem when deleting user_id for {user_id}')
+            logger.info('Problem when deleting user_id for {user_id}')
         else:
-            logger.info(f'BotUser {user_id} deleted all the info')
+            logger.info('BotUser {user_id} deleted all the info')
         return True if problem is None else False

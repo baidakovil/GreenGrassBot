@@ -19,7 +19,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters
 
 from commands.details import details
 from commands.getgigs import getgigs
-from commands.help import help
+from commands.help import help_call
 from commands.nonewevents import nonewevents
 from commands.start import start
 from commands.warranty import warranty
@@ -66,7 +66,7 @@ def load_commands(application: Application) -> None:
     Args: application: application for adding handlers to.
     """
     application.add_handler(CommandHandler('getgigs', getgigs))
-    application.add_handler(CommandHandler('help', help))
+    application.add_handler(CommandHandler('help', help_call))
     application.add_handler(CommandHandler('nonewevents', nonewevents))
     application.add_handler(CommandHandler('start', start))
     application.add_handler(CommandHandler('warranty', warranty))

@@ -16,13 +16,12 @@
 import logging
 from datetime import datetime
 
-from config import Cfg
+import config as cfg
 from services.logger import logger
 
 logger = logging.getLogger('A.uti')
 logger.setLevel(logging.DEBUG)
 
-CFG = Cfg()
 
 #  Format for human-readability of event dates in daily news ('02 Jan 2023')
 f_hum = '%d %b %Y'

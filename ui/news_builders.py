@@ -16,7 +16,7 @@
 import logging
 from typing import Dict, KeysView, List
 
-from config import Cfg
+import config as cfg
 from db.db_service import Db
 from services.custom_classes import ArtScrobble
 from services.logger import logger
@@ -28,7 +28,6 @@ from ui.error_builder import error_text
 logger = logging.getLogger("A.new")
 logger.setLevel(logging.DEBUG)
 
-CFG = Cfg()
 
 db = Db()
 
@@ -48,7 +47,7 @@ async def filter_artists(user_id: int, art_names: KeysView) -> List[str]:
         #  First, check if we need to load events for the artists
         if await db.rsql_artcheck(user_id, art_name):
             #  Second, load new events
-            logger.debug(f'Will check: {art_name}')
+            logger.debug('Will check: {art_name}')
             events = await parser_event(art_name)
             #  At error, go to next artist
             if isinstance(events, int):
@@ -90,7 +89,7 @@ async def save_scrobbles(user_id: int, lfm: str, scrobbles_dict: Dict) -> None:
                 )
                 await db.wsql_scrobbles(ars=ars)
                 count += 1
-        logger.info(f'Added {count} scrobbles to db for user_id {user_id}, lfm {lfm}')
+        logger.info('Added {count} scrobbles to db for user_id {user_id}, lfm {lfm}')
     return None
 
 
@@ -101,11 +100,11 @@ async def prepare_gigs_text(user_id: int, request: bool) -> str:
         Markdown-formatted string with artists OR String "No new concerts" OR String
     with error info for user, for each of it lfm accountss
     """
-    logger.info(f'Entered prepare_gigs_text() for {user_id}')
+    logger.info('Entered prepare_gigs_text() for {user_id}')
     usersettings = await db.rsql_settings(user_id)
     assert usersettings
     shorthand_count = int(await db.rsql_maxshorthand(user_id))
-    max_shorthand = CFG.INTEGER_MAX_SHORTHAND
+    max_shorthand = cfg.INTEGER_MAX_SHORTHAND
     fill_numbers = 2 if max_shorthand < 100 else 3
     lfm_accs = await db.rsql_lfmuser(user_id)
     gigs_text = ''

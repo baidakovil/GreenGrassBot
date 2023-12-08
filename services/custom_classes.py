@@ -16,9 +16,7 @@
 from dataclasses import dataclass, field
 from typing import List
 
-from config import Cfg
-
-CFG = Cfg()
+import config as cfg
 
 
 @dataclass
@@ -86,7 +84,7 @@ class UserSettings:
     Class for keeping user settings.
     Args:
         user_id: Tg user_id field
-        min_listens: minimum scrobbles quantity in last CFG.DAYS_PERIOD_MINLISTENS days
+        min_listens: minimum scrobbles quantity in last cfg.DAYS_PERIOD_MINLISTENS days
         to count on this artist
         notice_day: day to notice in 0-6 format, start with monday, -1 for everyday
         notice_time: UTC 24h time in format '12:00:00'
@@ -95,8 +93,8 @@ class UserSettings:
     """
 
     user_id: int
-    min_listens: int = CFG.DEFAULT_MIN_LISTENS
-    notice_day: int = CFG.DEFAULT_NOTICE_DAY
-    notice_time: str = CFG.DEFAULT_NOTICE_TIME
-    nonewevents: int = CFG.DEFAULT_NONEWEVENTS
-    locale: str = CFG.LOCALE_DEFAULT
+    min_listens: int = cfg.DEFAULT_MIN_LISTENS
+    notice_day: int = cfg.DEFAULT_NOTICE_DAY
+    notice_time: str = cfg.DEFAULT_NOTICE_TIME
+    nonewevents: int = cfg.DEFAULT_NONEWEVENTS
+    locale: str = cfg.LOCALE_DEFAULT
