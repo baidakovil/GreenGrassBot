@@ -1,7 +1,9 @@
 # GreenGrassBot
 
 
-![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/baidakovil/greengrassbot)
+![Pylint Automated Workflow](https://github.com/baidakovil/greengrassbot/actions/workflows/pylint-workflow_dispatch.yml/badge.svg)
+
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/baidakovil/diploma)
 
 
 
