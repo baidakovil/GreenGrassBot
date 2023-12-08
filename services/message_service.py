@@ -14,17 +14,10 @@
 """This file contains functions related to text messages: reading, sending, i18n."""
 
 import logging
-from typing import Awaitable, Tuple, Union
+from typing import Tuple, Union
 
 import i18n
-from telegram import (
-    InlineKeyboardMarkup,
-    Message,
-    ReplyKeyboardMarkup,
-    ReplyKeyboardRemove,
-    Update,
-    User,
-)
+from telegram import Message, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update, User
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext
 
@@ -120,7 +113,6 @@ async def send_message(
     text: str,
     parse_mode: str = ParseMode.MARKDOWN_V2,
     reply_markup: Union[ReplyKeyboardMarkup, ReplyKeyboardRemove, None] = None,
-    disable_web_page_preview: bool = False,
 ) -> Message:
     """
     Sends a message basing on user_id object.
@@ -136,7 +128,7 @@ async def send_message(
         text,
         reply_markup=reply_markup,
         parse_mode=parse_mode,
-        disable_web_page_preview=disable_web_page_preview,
+        disable_web_page_preview=False,
     )
 
 
@@ -188,7 +180,7 @@ async def i34g(*args: str, **kwargs: Union[str, int]) -> str:
     Returns:
         text prepared to send
     """
-    if 'locale' not in kwargs.keys():
+    if 'locale' not in kwargs:
         user_id = int(kwargs.pop('user_id'))
         locale = await db.rsql_locale(user_id=user_id)
         if locale is None:
@@ -197,8 +189,8 @@ async def i34g(*args: str, **kwargs: Union[str, int]) -> str:
         kwargs['locale'] = locale
 
     kwargs = {
-        arg: kwargs[arg] if arg.endswith('_noalarm') else alarm_char(kwargs[arg])
-        for arg in kwargs.keys()
+        key: value if key.endswith('_noalarm') else alarm_char(value)
+        for key, value in kwargs.items()
     }
 
     text = i18n.t(*args, **kwargs)
@@ -206,8 +198,8 @@ async def i34g(*args: str, **kwargs: Union[str, int]) -> str:
     if not isinstance(text, str):
         logger.warning('Error when reading translation')
         return str(text)
-    else:
-        return text
+
+    return text
 
 
 def preescape_file(filename: str) -> str:
@@ -220,11 +212,11 @@ def preescape_file(filename: str) -> str:
         Nothing, but add preescaped text below
     """
 
-    with open(filename, 'r') as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         escaped = alarm_char(file.read(), escape='\\\\')
     escaped = escaped.replace('\n', '\\n')
 
-    with open(filename, 'a') as file:
+    with open(filename, 'a', encoding='utf-8') as file:
         file.write(f'\n{"-"*15}\n')
         file.write(escaped)
 

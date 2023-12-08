@@ -65,5 +65,5 @@ def set_commands(application: Application) -> None:
             problem = True
             logger.warning('Commands tried to be set but some problem happens')
     if not problem:
-        logger.info('Commands set for languages: {cfg.LOCALES_ISO}')
+        logger.info('Commands set for languages: %s', cfg.LOCALES_ISO)
     return None

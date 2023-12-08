@@ -26,9 +26,9 @@ def start_logger() -> Logger:
     Loggers definition. Logger in logger.py is the highest (A), other are descendants:
     A.uti, A.db, etc.
     """
-    logger = logging.getLogger('A')
-    logger.setLevel(logging.DEBUG)
-    logger.propagate = False
+    gen_logger = logging.getLogger('A')
+    gen_logger.setLevel(logging.DEBUG)
+    gen_logger.propagate = False
 
     #  Logging to console.
     ch = logging.StreamHandler()
@@ -41,21 +41,23 @@ def start_logger() -> Logger:
         backupCount=cfg.QTY_BACKUPS_ROTATING_LOGGER,
     )
     ch_formatter = logging.Formatter(
-        '[%(asctime)s.%(msecs)03d - %(name)5s - %(levelname)8s:%(lineno)3d - %(funcName)18s()] %(message)s',
+        '[%(asctime)s.%(msecs)03d - %(name)5s - %(levelname)8s:%(lineno)3d - \
+        %(funcName)18s()] %(message)s',
         '%H:%M:%S',
     )
     rh_formatter = logging.Formatter(
-        '[%(asctime)s.%(msecs)03d - %(name)5s - %(levelname)8s:%(lineno)3d - %(funcName)18s() - %(filename)8s - %(threadName)10s] %(message)s',
+        '[%(asctime)s.%(msecs)03d - %(name)5s - %(levelname)8s:%(lineno)3d - \
+        %(funcName)18s() - %(filename)8s - %(threadName)10s] %(message)s',
         '%Y-%m-%d %H:%M:%S',
     )
-    ch.setLevel(logging.INFO)
+    ch.setLevel(logging.DEBUG)
     rh.setLevel(logging.DEBUG)
     ch.setFormatter(ch_formatter)
     rh.setFormatter(rh_formatter)
-    logger.addHandler(ch)
-    logger.addHandler(rh)
-    return logger
+    gen_logger.addHandler(ch)
+    gen_logger.addHandler(rh)
+    return gen_logger
 
 
 logger = start_logger()
-logger.info('Main logger started, __name__ is {__name__}')
+logger.info('Main logger started, __name__ is %s', __name__)

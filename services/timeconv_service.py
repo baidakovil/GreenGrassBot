@@ -16,7 +16,6 @@
 import logging
 from datetime import datetime
 
-import config as cfg
 from services.logger import logger
 
 logger = logging.getLogger('A.uti')
@@ -24,13 +23,13 @@ logger.setLevel(logging.DEBUG)
 
 
 #  Format for human-readability of event dates in daily news ('02 Jan 2023')
-f_hum = '%d %b %Y'
+FORMAT_HUMAN = '%d %b %Y'
 #  Format of date in Last.fm API ('02 Jan 2023')
-f_lfm = '%d %b %Y'
+FORMAT_LFM = '%d %b %Y'
 #  Format to store dates in SQL ('2023-01-02')
-f_sql_date = '%Y-%m-%d'
+FORMAT_SQL_DATE = '%Y-%m-%d'
 #  Format to store timestamps in SQL
-f_sql_timestamp = '%Y-%m-%d %H:%M:%S'
+FORMAT_SQL_TIMESTAMP = '%Y-%m-%d %H:%M:%S'
 
 
 def timestamp_to_text(timestamp: datetime) -> str:
@@ -42,7 +41,7 @@ def timestamp_to_text(timestamp: datetime) -> str:
     Returns:
         string with specific timestamp format
     """
-    return timestamp.strftime(f_sql_timestamp)
+    return timestamp.strftime(FORMAT_SQL_TIMESTAMP)
 
 
 def text_to_userdate(text: str) -> str:
@@ -54,7 +53,7 @@ def text_to_userdate(text: str) -> str:
     Returns:
         string with specific date format
     """
-    return datetime.strptime(text, f_sql_date).strftime(f_hum)
+    return datetime.strptime(text, FORMAT_SQL_DATE).strftime(FORMAT_HUMAN)
 
 
 def lfmdate_to_text(lfmdate: str) -> str:
@@ -66,14 +65,14 @@ def lfmdate_to_text(lfmdate: str) -> str:
     Returns:
         string with specific date format
     """
-    return datetime.strptime(lfmdate, f_lfm).strftime(f_sql_date)
+    return datetime.strptime(lfmdate, FORMAT_LFM).strftime(FORMAT_SQL_DATE)
 
 
 def text_to_date(text: str) -> datetime:
     """
     Convertor for saved date in SQL to timestamp
     """
-    return datetime.strptime(text, f_sql_date)
+    return datetime.strptime(text, FORMAT_SQL_DATE)
 
 
 def unix_to_text(unix: int) -> str:
@@ -84,4 +83,4 @@ def unix_to_text(unix: int) -> str:
     Returns:
         string with timestamp in readable format
     """
-    return datetime.utcfromtimestamp(unix).strftime(f_sql_timestamp)
+    return datetime.utcfromtimestamp(unix).strftime(FORMAT_SQL_TIMESTAMP)

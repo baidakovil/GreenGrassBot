@@ -29,7 +29,6 @@ async def warranty(update: Update, _context: CallbackContext) -> None:
     Args:
         update, context: standart PTB callback signature
     """
-    await db.save_user(update)
     user_id = up(update)
     await reply(
         update,

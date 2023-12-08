@@ -59,7 +59,7 @@ async def get_locale_codes(update: Update) -> Dict[str, str]:
     return loc_codes
 
 
-async def locale(update: Update, context: CallbackContext) -> int:
+async def locale(update: Update, _context: CallbackContext) -> int:
     """
     Entry point. Offers to user possible locales to choose.
     """
@@ -95,38 +95,29 @@ async def set_locale(update: Update, context: CallbackContext) -> int:
         await context.bot.deleteMessage(message_id=del_msg.message_id, chat_id=chat_id)
         return ConversationHandler.END
 
-    elif new_loc_name not in loc_codes.keys():
+    if new_loc_name not in loc_codes.keys():
         text = await i34g("loc.loc_not_found", loc=new_loc_name)
         await reply(update, text, reply_markup=ReplyKeyboardRemove())
         return ConversationHandler.END
 
-    elif prev_loc_code == loc_codes[new_loc_name]:
+    if prev_loc_code == loc_codes[new_loc_name]:
         text = await i34g("loc.choose_same_locale", loc=new_loc_name, user_id=user_id)
         await reply(update, text, reply_markup=ReplyKeyboardRemove())
         return ConversationHandler.END
 
+    new_loc_code = loc_codes[new_loc_name]
+    affected = await db.wsql_settings(user_id=user_id, locale=new_loc_code)
+    if affected:
+        loc_codes = await get_locale_codes(update)
+        i18n.set('locale', new_loc_code)
+        new_loc_name = await i34g(f'loc.{new_loc_code}', locale=new_loc_code)
+        text = await i34g("loc.loc_changed", loc=new_loc_name, user_id=user_id)
+        logger.debug(
+            "User %s changed loc to %s, code %s", user_id, new_loc_name, new_loc_code
+        )
     else:
-        new_loc_code = loc_codes[new_loc_name]
-        affected = await db.wsql_settings(user_id=user_id, locale=new_loc_code)
-        if affected:
-            loc_codes = await get_locale_codes(update)
-            i18n.set('locale', new_loc_code)
-            new_loc_name = await i34g(f'loc.{new_loc_code}', locale=new_loc_code)
-            text = await i34g(
-                "loc.loc_changed",
-                loc=new_loc_name,
-                user_id=user_id,
-            )
-            logger.debug(
-                f"User {user_id} changed loc to {new_loc_name}, code {new_loc_code}"
-            )
-        else:
-            text = await i34g(
-                "loc.error",
-                acc=new_loc_name,
-                user_id=user_id,
-            )
-            logger.warning(f"Error when {user_id} change locale to {new_loc_name}")
+        text = await i34g("loc.error", acc=new_loc_name, user_id=user_id)
+        logger.warning("Error when %s change locale to %s", user_id, new_loc_name)
 
     await reply(update, text, reply_markup=ReplyKeyboardRemove())
     return ConversationHandler.END

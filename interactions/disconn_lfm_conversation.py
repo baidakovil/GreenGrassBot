@@ -24,7 +24,7 @@ from telegram.ext import (
     filters,
 )
 
-from db.db_service import Db
+from db.db_service import Db, dsql_useraccs
 from interactions.common_handlers import cancel_handle
 from services.logger import logger
 from services.message_service import i34g, reply, up, up_full
@@ -38,7 +38,7 @@ db = Db()
 DISC_ACC = 0
 
 
-async def disconnect(update: Update, context: CallbackContext) -> int:
+async def disconnect(update: Update, _context: CallbackContext) -> int:
     """
     Entry point. Offers to user saved accounts from database to delete, or replies about
     there is no accounts.
@@ -62,11 +62,9 @@ async def disconnect(update: Update, context: CallbackContext) -> int:
             ),
         )
         return DISC_ACC
-    else:
-        await reply(
-            update, await i34g("disconn_lfm_conversation.no_accs", user_id=user_id)
-        )
-        return ConversationHandler.END
+
+    await reply(update, await i34g("disconn_lfm_conversation.no_accs", user_id=user_id))
+    return ConversationHandler.END
 
 
 async def disconn_lfm(update: Update, context: CallbackContext) -> int:
@@ -86,12 +84,13 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
         del_msg = await reply(update, 'ok', reply_markup=ReplyKeyboardRemove())
         await context.bot.deleteMessage(message_id=del_msg.message_id, chat_id=chat_id)
         return ConversationHandler.END
-    elif acc not in useraccs:
+
+    if acc not in useraccs:
         text = await i34g(
             "disconn_lfm_conversation.acc_not_found", acc=acc, user_id=user_id
         )
     else:
-        affected_scr, affected_ua = await db.dsql_useraccs(user_id, acc)
+        affected_scr, affected_ua = await dsql_useraccs(db, user_id, acc)
         useraccs = await db.rsql_lfmuser(user_id)
         if not useraccs:
             remove_jobs(user_id, chat_id, context)
@@ -99,19 +98,19 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
             text = await i34g(
                 "disconn_lfm_conversation.acc_scr_deleted", acc=acc, user_id=user_id
             )
-            logger.info(f"BotUser {user_id} deleted account {acc},scrobbles deleted")
+            logger.info("User %s deleted account %s,scrobbles deleted", user_id, acc)
         elif affected_ua:
             text = await i34g(
                 "disconn_lfm_conversation.acc_deleted", acc=acc, user_id=user_id
             )
             logger.info(
-                f"BotUser {user_id} deleted account {acc}, no scrobbles deleted"
+                "User %s deleted account %s, no scrobbles deleted", user_id, acc
             )
         else:
             text = await i34g(
                 "disconn_lfm_conversation.error_when_del", acc=acc, user_id=user_id
             )
-            logger.warning(f"Error when {user_id} deleted account {acc}")
+            logger.warning("Error when %s deleted account %s", user_id, acc)
     await reply(update, text, reply_markup=ReplyKeyboardRemove())
     return ConversationHandler.END
 

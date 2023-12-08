@@ -48,10 +48,10 @@ def set_descriptions(application: Application) -> None:
         #  Lines below prepare descriptions. get_event_loop() to awoid awaitable func
         i34g_locale = cfg.LOCALE_DEFAULT if locale == '' else locale
         desc_prof_share_120 = asyncio.get_event_loop().run_until_complete(
-            i34g(f'description.prof_share_120', locale=i34g_locale)
+            i34g('description.prof_share_120', locale=i34g_locale)
         )
         desc_empty_chat_512 = asyncio.get_event_loop().run_until_complete(
-            i34g(f'description.empty_chat_512', locale=i34g_locale)
+            i34g('description.empty_chat_512', locale=i34g_locale)
         )
 
         #  Lines below change descriptions.
@@ -71,5 +71,5 @@ def set_descriptions(application: Application) -> None:
         time.sleep(1)
 
     if not problem:
-        logger.info('Desriptions set for languages: {cfg.LOCALES_ISO}')
+        logger.info('Desriptions set for languages: %s', cfg.LOCALES_ISO)
     return None

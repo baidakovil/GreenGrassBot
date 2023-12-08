@@ -30,7 +30,7 @@ logger = logging.getLogger('A.sch')
 logger.setLevel(logging.DEBUG)
 
 
-db = Db()
+dbase = Db()
 
 
 def get_job_name(user_id: int, chat_id: int) -> str:
@@ -39,7 +39,7 @@ def get_job_name(user_id: int, chat_id: int) -> str:
     possible to have bot in chats. At least, in future.
     Args:
         user_id: Tg field user_id
-        chat_id: Tf field chat_id
+        chat_id: Tg field chat_id
     """
     return str(user_id) + '_' + str(chat_id)
 
@@ -51,10 +51,10 @@ def run_daily_job(
     Add job getgigs_job to scheduler.
     Args:
         user_id: Tg field user_id
-        chat_id: Tf field chat_id
+        chat_id: Tg field chat_id
         job_src: object with "current_jobs" method to obtain current jobs
     """
-    logger.debug('Entered to run_daily_job() for: {user_id}, {chat_id}')
+    logger.debug('Entered to run_daily_job() for: %s, %s', user_id, chat_id)
     queue = job_src.job_queue
     if isinstance(queue, JobQueue):
         queue.run_daily(
@@ -67,7 +67,6 @@ def run_daily_job(
         )
     else:
         logger.warning('Can not access JobQueue. Something wrong')
-    return None
 
 
 async def add_daily(update: Update, context: CallbackContext) -> int:
@@ -83,9 +82,9 @@ async def add_daily(update: Update, context: CallbackContext) -> int:
 
     remove_jobs(user_id, chat_id, context)
     run_daily_job(user_id, chat_id, context)
-    await db.wsql_jobs(user_id, chat_id)
+    await dbase.wsql_jobs(user_id, chat_id)
 
-    logger.info('Added daily job for: {user_id}')
+    logger.info('Added daily job for: %s', user_id)
     return ConversationHandler.END
 
 
@@ -96,7 +95,7 @@ def remove_jobs(
     Procedure to remove jobs. Runs when disconnect lastfm accounts or assign new jobs.
     Args:
         user_id: Tg field user_id
-        chat_id: Tf field chat_id
+        chat_id: Tg field chat_id
         job_src: object with "current_jobs" method to obtain current jobs
     """
     job_name = get_job_name(user_id, chat_id)
@@ -107,25 +106,23 @@ def remove_jobs(
             for job in current_jobs:
                 job.schedule_removal()
                 count_jobs += 1
-            logger.debug('Jobs removed: {count_jobs}')
+            logger.debug('Jobs removed: %s', count_jobs)
     else:
         logger.warning('Can not access JobQueue. Something wrong')
-    return None
 
 
-def reschedule_jobs(application: Application, db) -> None:
+def reschedule_jobs(application: Application, database) -> None:
     """
     Procedure to recover jobs when bot starts. Used as persistence tool.
     Args:
         application: object with "job_queue" method to obtain current jobs
     """
     logger.debug('Entered to reschedule_jobs()')
-    jobs = db.rsql_jobs()
+    jobs = database.rsql_jobs()
     count = 0
     for job in jobs:
         user_id, chat_id = job
         remove_jobs(user_id, chat_id, application)
         run_daily_job(user_id, chat_id, application)
         count += 1
-    logger.info('Rescheduled {count} jobs')
-    return None
+    logger.info('Rescheduled %s jobs', count)

@@ -42,7 +42,7 @@ db = Db()
 USERNAME = 0
 
 
-async def connect(update: Update, context: CallbackContext) -> Optional[int]:
+async def connect(update: Update, _context: CallbackContext) -> Optional[int]:
     """
     Entry point. Asks the lastfm username. Stop conversation if max acc qty reached by
     user.
@@ -64,11 +64,8 @@ async def connect(update: Update, context: CallbackContext) -> Optional[int]:
             ),
         )
         return ConversationHandler.END
-    else:
-        await reply(
-            update, await i34g('conn_lfm_conversation.enter_lfm', user_id=user_id)
-        )
-        return USERNAME
+    await reply(update, await i34g('conn_lfm_conversation.enter_lfm', user_id=user_id))
+    return USERNAME
 
 
 async def username(update: Update, context: CallbackContext) -> int:
@@ -98,7 +95,9 @@ async def username(update: Update, context: CallbackContext) -> int:
     if not acc_valid:
         await reply(update, diagnosis)
         logger.info(
-            f'BotUser with user_id: {user_id} trying to added lfm account:  {acc} but acc is not valid'
+            'User %s tried to added lfm account: %s, but acc is not valid',
+            user_id,
+            acc,
         )
         return ConversationHandler.END
 
@@ -113,13 +112,13 @@ async def username(update: Update, context: CallbackContext) -> int:
             )
         await add_daily(update, context)
         await reply(update, text)
-        logger.info('BotUser: {user_id} have added lfm account:  {acc}')
+        logger.info('BotUser: %s have added lfm account:  %s', user_id, acc)
     else:
         await reply(
             update, await i34g('conn_lfm_conversation.some_error', user_id=user_id)
         )
         logger.info(
-            f'BotUser: {user_id} tried to add lfm acc: {acc} but ended with error'
+            'BotUser: %s tried to add lfm acc: %s but ended with error', user_id, acc
         )
     return ConversationHandler.END
 

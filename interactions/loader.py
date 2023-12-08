@@ -45,7 +45,6 @@ def load_interactions(application: Application) -> None:
     load_messages(application)
     load_error(application)
     application.add_handler(MessageHandler(filters.COMMAND, unknown_handler))
-    return None
 
 
 def load_conversations(application: Application) -> None:
@@ -57,7 +56,6 @@ def load_conversations(application: Application) -> None:
     application.add_handler(delete_user_conversation())
     application.add_handler(disconn_lfm_conversation())
     application.add_handler(locale_conversation())
-    return None
 
 
 def load_commands(application: Application) -> None:
@@ -71,8 +69,6 @@ def load_commands(application: Application) -> None:
     application.add_handler(CommandHandler('start', start))
     application.add_handler(CommandHandler('warranty', warranty))
 
-    return None
-
 
 def load_messages(application: Application) -> None:
     """
@@ -80,7 +76,6 @@ def load_messages(application: Application) -> None:
     Args: application: application for adding handlers to.
     """
     application.add_handler(MessageHandler(filters.Regex('/([0-9]{2,3})$'), details))
-    return None
 
 
 def load_error(application: Application):
@@ -89,4 +84,3 @@ def load_error(application: Application):
     Args: application: application for adding handler to
     """
     application.add_error_handler(error_handler)
-    return None

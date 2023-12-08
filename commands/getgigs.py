@@ -97,6 +97,6 @@ async def getgigs_job(context: CallbackContext) -> None:
         await send_message(context, chat_id, text)
         logger.info('Job done, gigs sent to user %s', user_id)
         return None
-    else:
-        logger.info('Got empty gigs text. Nothing to send to %s', user_id)
-        return None
+
+    logger.info('Got empty gigs text. Nothing to send to %s', user_id)
+    return None

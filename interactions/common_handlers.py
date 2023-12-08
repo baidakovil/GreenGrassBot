@@ -30,7 +30,7 @@ logger = logging.getLogger(name='A.com')
 logger.setLevel(logging.DEBUG)
 
 
-async def cancel_handle(update: Update, context: CallbackContext) -> int:
+async def cancel_handle(update: Update, _context: CallbackContext) -> int:
     """
     Determine what to do when catched /cancel command: log, send message, return 0.
     Choose of return value is doubting =|.
@@ -40,12 +40,12 @@ async def cancel_handle(update: Update, context: CallbackContext) -> int:
         int = 0
     """
     user_id = up(update)
-    logger.info('BotUser {user_id} canceled the conversation')
+    logger.info('BotUser %s canceled the conversation', user_id)
     await reply(update, await i34g('common_handlers.cancel_message', user_id=user_id))
     return ConversationHandler.END
 
 
-async def unknown_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def unknown_handler(update: Update, _context: ContextTypes.DEFAULT_TYPE):
     """
     Handle unknown commands.
     """
@@ -59,7 +59,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
     docs.python-telegram-bot.org/en/v20.6/examples.errorhandlerbot.html
     """
     assert context.error
-    logger.warning('Update {update} caused error {context.error}')
+    logger.warning('Update %s caused error %s', update, context.error)
     tb_list = traceback.format_exception(
         None, context.error, context.error.__traceback__
     )
@@ -75,7 +75,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
         f"<pre>{html.escape(tb_string)}</pre>"
     )
 
-    logger.warning('ERROR HANDLER MESSAGE: {message}')
+    logger.warning('ERROR HANDLER MESSAGE: %s', message)
 
     await send_message(
         context,
