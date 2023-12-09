@@ -3,7 +3,7 @@ name: Deployment
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Docker Hub Publish"]
+    workflows: ["Docker Hub"]
     types:
       - completed
 jobs:
