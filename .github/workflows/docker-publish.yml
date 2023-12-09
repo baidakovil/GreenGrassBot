@@ -8,7 +8,7 @@ name: Docker Hub Publish
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: [ "stable" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
