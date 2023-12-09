@@ -1,17 +1,38 @@
-# GreenGrassBot
+# Green Grass Bot
 
 [![Pylint](https://github.com/baidakovil/GreenGrassBot/actions/workflows/pylint-workflow.yml/badge.svg)](https://github.com/baidakovil/GreenGrassBot/actions/workflows/pylint-workflow.yml) [![Docker](https://github.com/baidakovil/GreenGrassBot/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/baidakovil/GreenGrassBot/actions/workflows/docker-publish.yml) [![Deployment](https://github.com/baidakovil/GreenGrassBot/actions/workflows/deployment.yml/badge.svg)](https://github.com/baidakovil/GreenGrassBot/actions/workflows/deployment.yml)
 
-#### Nice metrics:
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/baidakovil/GreenGrassBot)
 
-#### Metrics to make prettier:
-![GitHub contributors](https://img.shields.io/github/contributors/baidakovil/GreenGrassBot)
+<img src="https://github.com/baidakovil/GreenGrassBot/blob/main/assets/logo/GitHubLogo.jpg" width="40%" height="40%">
+
+----------------- 
+## What is it?
+
+Green Grass Bot notifies about music concerts. It searches for musical  
+events according to the artists you've been listening to lately. 🎶
+
+The project gives you the freedom to know about musical events, regardless  
+of the advertising budgets of the artists. 🆓
+
+Project gives artists the freedom to spread the news about their concerts,  
+no matter what kind of advertisements their listeners watch.    🎸
+
+What matters is what kind of music you listen to. Join in [Telegram](https://t.me/try_greatgigbot).
+
+----------------- 
+
+## Table of contents
+- [General info](#general-info)
+- [Features](#features)
+- [Feedback](#feedback)
+- [Technologies](#technologies)
+- [Built with](#built-with)
+- [Documentation](#documentation)
+- [TODO](#todo)
+- [Release Notes](#release-notes)
+- [Support](#support)  
 
 
-Green Grass Telegram Bot is a notificator abour music events.  
-
-The bot provides automatic search and of music events (concerts, shows, festivals) according to music artists you have listen last time.  
 The bot use your __last.fm__ music statistics for searhcing those artists you prefer. 
 
 - The only source to choose artists is your listened statistic
