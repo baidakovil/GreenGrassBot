@@ -31,6 +31,7 @@ What matters is what kind of music you listen to. Join
 - [Deployment](#deployment)
 - [Contributing](#contributing)
 - [Program logic](#program-logic)
+- [Program name](#program-name)
 
 
 ## General info
@@ -55,10 +56,12 @@ What GreenGrass Bot does in version 0.2-beta:
 
   <img src=".github/readme-files/connect-and-getgigs-process.gif" alt="How to connect Last.fm and get list of concerts"/>
 
+
+
 ## Technologies
 
 <p align="left">
-  <img img width="210" src="https://www.python.org/static/community_logos/python-logo.png" alt="Python logo"/> <img img width="160" src="https://www.sqlite.org/images/sqlite370_banner.gif" alt="SQLite Logo"/>
+  <img img width="240" src="https://www.python.org/static/community_logos/python-logo.png" alt="Python logo"/> <img img width="160" src="https://www.sqlite.org/images/sqlite370_banner.gif" alt="SQLite Logo"/>
 </p>
 
 ## Feedback
@@ -74,7 +77,7 @@ to be done is for you to replace the `API_KEY` and `BOT_TOKEN` in `.env-example`
 rename in to `.env`. [Telegram] and [Last.fm API] accounts are required. Commands below  
 works for Linux; may be for Mac too.
 
-1) Clone the project: `cd` to the directory where you wish to store the project. ``:
+1) Clone the project:
     ```
     $ cd /project_folder/
     $ git clone https://github.com/baidakovil/Green-Grass-Bot .
@@ -86,7 +89,7 @@ works for Linux; may be for Mac too.
 3) Same, insert **API Key** provided by Last.fm to `.env`
 
 4) (Optional, recommended) Create dedicated virtual environment to use the bot and  
-    activate it. I use [`virtualenv`], some `venv`. Path and name are to your discretion. 
+    activate it. I use *virtualenv*, some *venv*. Path and name are to your discretion. 
     ```
     $ cd /virtual_environments_folder/
     $ virtualenv env_name
@@ -109,7 +112,6 @@ works for Linux; may be for Mac too.
 [BotFather]: https://t.me/BotFather
 [Last.fm API]: https://www.last.fm/api/account/create
 [Telegram]: https://telegram.org/
-[virtualenv]: https://virtualenv.pypa.io/en/latest/installation.html
 
 ### Built with
 
@@ -182,3 +184,9 @@ most — professional **review** and **vectors of evolution**.
 ## Next steps
 *soon*
 
+## Program name
+
+**Green Grass** refers to *High Hopes* popular *Pink Floyd*'s song. To be honest I do not like it much. 
+
+**Title photo credit**: *American rock guitarist Jimi Hendrix performing with The Jimi Hendrix  
+Experience at the Monterey Pop Festival, California, USA, June 18, 1967. Bruce Fleming/AP Images*
