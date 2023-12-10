@@ -60,9 +60,8 @@ What GreenGrass Bot does in version 0.2-beta:
 
 ## Technologies
 
-  <img img width="240" src="https://www.python.org/static/community_logos/python-logo.png" alt="Python logo"/> 
-
-  <img img width="160" src="https://www.sqlite.org/images/sqlite370_banner.gif" alt="SQLite Logo"/>
+  <img img width="200" src="https://www.python.org/static/community_logos/python-logo.png" alt="Python logo"/> 
+  <img img width="170" src="https://www.sqlite.org/images/sqlite370_banner.gif" alt="SQLite Logo"/>
 
 ## Feedback
 
@@ -120,8 +119,7 @@ works for Linux; may be for Mac too.
 **[Telegram]** - A cloud-based mobile and desktop messaging app founded in 2013.
 
 #### Software
-**[Python]** - Programming language that lets you work quickly and integrate systems  
-  more effectively **|** GPL compatible  
+**[Python]** - Language to work quickly and integrate systems more effectively **|** GPL compatible  
 **[APScheduler]** - Advanced Python scheduler coming with python-telegram-bot **|** MIT  
 **[python-dotenv]** - Read key-value pairs from a .env file and set them as envir-t variables **|** BSD  
 **[python-i18n]** - Translation library for Python **|** MIT  
