@@ -71,7 +71,7 @@ feedback on [my Telegram] — even two words will be helpful. Also you can [file
 issue].  
 Feature requests are welcome too.
 
-### Setup 
+## Setup 
 You can setup you own concert notificator in five minutes. The bare minimum that needs  
 to be done is for you to replace the `API_KEY` and `BOT_TOKEN` in `.env-example` and  
 rename in to `.env`. [Telegram] and [Last.fm API] accounts are required. Commands below  
@@ -113,7 +113,7 @@ works for Linux; may be for Mac too.
 [Last.fm API]: https://www.last.fm/api/account/create
 [Telegram]: https://telegram.org/
 
-### Built with
+## Built with
 
 #### Online-services (proprietary)
 **[Last.fm]** - The world's largest online music service founded in 2002. Server proprietary  
