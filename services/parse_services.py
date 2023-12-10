@@ -104,7 +104,9 @@ async def last_scrobble_moment(user_id: int, lfm: str) -> Optional[datetime]:
 
 async def load_scr_moment(user_id: int, lfm: str) -> int:
     """
-    Calculate appropriate moment "from_unix" to load scrobbles from.
+    Calculate appropriate moment "from_unix" to load scrobbles from. If there no scrob-
+    bles newer than cfg.DAYS_INITIAL_TIMEDELAY days ago, it load new scrobbles. Include
+    all the day when last scrobbles saved since 00:00 AM.
     Args:
         user_id: Tg user_id field
         lfm: Last.fm profile
@@ -127,16 +129,15 @@ async def load_scr_moment(user_id: int, lfm: str) -> int:
         )
         load_scrobble_moment = max(timedelay_load, last_scrobble)
     from_unix = int(load_scrobble_moment.timestamp())
-    from_unix_hum = unix_to_text(from_unix)
-    logger.debug('Conclusion: will load scrobbles from time: %s', from_unix_hum)
-    return int(timedelay_load.timestamp())
+    logger.debug(
+        'Conclusion: will load scrobbles from time: %s', unix_to_text(from_unix)
+    )
+    return from_unix
 
 
 async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
     """
-    Obtain scrobbles for last cfg.DAYS_INITIAL_TIMEDELAY days.
-    #TODO: add storing of time of last scrobble loading: there is no need to load what
-    was loaded.
+    Obtain scrobbles for last time, from load_scr_moment() moment.
     Args:
         lfm: lastfm username
     Returns:
