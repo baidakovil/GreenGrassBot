@@ -60,9 +60,9 @@ What GreenGrass Bot does in version 0.2-beta:
 
 ## Technologies
 
-<p align="left">
-  <img img width="240" src="https://www.python.org/static/community_logos/python-logo.png" alt="Python logo"/> <img img width="160" src="https://www.sqlite.org/images/sqlite370_banner.gif" alt="SQLite Logo"/>
-</p>
+  <img img width="240" src="https://www.python.org/static/community_logos/python-logo.png" alt="Python logo"/> 
+
+  <img img width="160" src="https://www.sqlite.org/images/sqlite370_banner.gif" alt="SQLite Logo"/>
 
 ## Feedback
 
