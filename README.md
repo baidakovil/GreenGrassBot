@@ -3,7 +3,7 @@
 [![Pylint](https://github.com/baidakovil/GreenGrassBot/actions/workflows/pylint-workflow.yml/badge.svg)](https://github.com/baidakovil/GreenGrassBot/actions/workflows/pylint-workflow.yml) [![Docker](https://github.com/baidakovil/GreenGrassBot/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/baidakovil/GreenGrassBot/actions/workflows/docker-publish.yml) [![Deployment](https://github.com/baidakovil/GreenGrassBot/actions/workflows/deployment.yml/badge.svg)](https://github.com/baidakovil/GreenGrassBot/actions/workflows/deployment.yml)
 
 
-<img src=".github/readme-files/GitHubLogo.jpg" width="40%" height="40%">
+<img src=".github/readme-files/github-logo.jpg" width="40%" height="40%">
 
 ----------------- 
 ## What is it?
@@ -72,19 +72,19 @@ Feature requests are welcome too.
 
 ## Built with
 
-#### Online-services (proprietary)
-**[Last.fm]** - The world's largest online music service founded in 2002. Server proprietary  
-**[Telegram]** - A cloud-based mobile and desktop messaging app founded in 2013.
+#### Online-services
+**[Last.fm]** - The world's largest online music service founded in 2002 **|** *proprietary*  
+**[Telegram]** - A cloud-based messaging app founded in 2013 **|** *proprietary*
 
 #### Software
-**[Python]** - Language to work quickly and integrate systems more effectively **|** GPL compatible  
-**[APScheduler]** - Advanced Python scheduler coming with python-telegram-bot **|** MIT  
-**[python-dotenv]** - Read key-value pairs from a .env file and set them as envir-t variables **|** BSD  
-**[python-i18n]** - Translation library for Python **|** MIT  
-**[python-telegram-bot]** - Python interface for the Telegram Bot API for Python >= 3.8 **|** GPL  
+**[Python]** - Language to work quickly and integrate systems more effectively **|** *GPL compatible*  
+**[APScheduler]** - Advanced Python scheduler coming with python-telegram-bot **|** *MIT*  
+**[python-dotenv]** - Read key-value pairs from a .env file and set them as envir-t variables **|** *BSD*  
+**[python-i18n]** - Translation library for Python **|** *MIT*  
+**[python-telegram-bot]** - Python interface for the Telegram Bot API for Python >= 3.8 **|** *GPL*  
 
-***Note**: As a designer and programmer, I have nothing to do with Last.fm. As a user of the  
-service for 15 years, I have a positive opinion about Last.fm.*  
+***Note**: As a designer and programmer, I have nothing to do with any of these services  
+or softwares. As a user of the Last.fm for 15 years, I have a positive opinion about Last.fm.*  
 
 [Last.fm]: https://www.last.fm
 [Telegram]: https://telegram.org
@@ -187,8 +187,9 @@ Manual approach is good when you are unfamiliar with Docker, or your VPS not sat
     As shortest as possible manual, possibly missing some steps needed in your system,  
     include these steps:
         1. Insert paths to `greengrassbot.service-example` file  
-        2. Copy the file to `/lib/systemd/system/`  
-        3. Run `systemctl start ggbot`  
+        2. Delete `-example` from the filename  
+        3. Copy the file to `/lib/systemd/system/`  
+        4. Run in CLI: `sudo systemctl start greengrassbot`  
     
     - **screen** - utility for Linux systems. I never used it, but there is a signs it  
     popular. For sample tutorial, I think, you can follow the [tjtanjin's guide].
@@ -215,7 +216,7 @@ If you wish to make code contributions to the project, you are welcome. What it 
 most — professional **review** and **vectors of evolution**. 
 
 ## Program logic
-*soon*
+Please look for [Developer Guide]
 
 ## Next steps
 *soon*
@@ -226,3 +227,5 @@ most — professional **review** and **vectors of evolution**.
 
 **Title photo credit**: *American rock guitarist Jimi Hendrix performing with The Jimi Hendrix  
 Experience at the Monterey Pop Festival, California, USA, June 18, 1967. Bruce Fleming/AP Images*
+
+[Developer Guide]: /.github/readme-files/DEVELOPER_GUIDE.md

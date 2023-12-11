@@ -33,6 +33,7 @@ logger.log
 #  File-notebook with plans and actions
 *.md
 !README.md
+!DEVELOPER_GUIDE.md
 
 #  Databases created at debugging
 **/*.db
