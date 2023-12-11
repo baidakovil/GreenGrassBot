@@ -83,6 +83,7 @@ async def username(update: Update, context: CallbackContext) -> int:
     """
     logger.debug('Entered to username()')
     user_id, _, acc, _ = up_full(update)
+    acc = acc.lower()
     useraccs = await db.rsql_lfmuser(user_id)
     if acc in useraccs:
         await reply(
@@ -131,11 +132,16 @@ def conn_lfm_conversation() -> ConversationHandler:
     """
 
     conn_lfm_handler = ConversationHandler(
-        entry_points=[CommandHandler('connect', connect)],
+        entry_points=[CommandHandler('connect', connect, block=False)],
         states={
-            USERNAME: [MessageHandler(filters.TEXT, username)],
+            USERNAME: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, username, block=False)
+            ],
         },
-        fallbacks=[CommandHandler('cancel', cancel_handle)],
+        fallbacks=[
+            CommandHandler('cancel', cancel_handle, block=False),
+            MessageHandler(filters.COMMAND, cancel_handle, block=False),
+        ],
     )
 
     return conn_lfm_handler

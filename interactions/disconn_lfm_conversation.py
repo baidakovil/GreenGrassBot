@@ -52,11 +52,12 @@ async def disconnect(update: Update, _context: CallbackContext) -> int:
     if lfm_accs:
         text = await i34g("disconn_lfm_conversation.choose_acc", user_id=user_id)
         lfm_accs.append('/cancel')
+        lfm_accs = [[lfm_accs[i]] for i in range(len(lfm_accs))]
         await reply(
             update,
             text,
             reply_markup=ReplyKeyboardMarkup(
-                [lfm_accs],
+                lfm_accs,
                 one_time_keyboard=True,
                 resize_keyboard=True,
             ),
@@ -79,12 +80,6 @@ async def disconn_lfm(update: Update, context: CallbackContext) -> int:
     user_id, chat_id, acc, _ = up_full(update)
     acc = acc.lower()
     useraccs = await db.rsql_lfmuser(user_id)
-    if acc == '/cancel':
-        #  Code of the condition only for removing keyboard
-        del_msg = await reply(update, 'ok', reply_markup=ReplyKeyboardRemove())
-        await context.bot.deleteMessage(message_id=del_msg.message_id, chat_id=chat_id)
-        return ConversationHandler.END
-
     if acc not in useraccs:
         text = await i34g(
             "disconn_lfm_conversation.acc_not_found", acc=acc, user_id=user_id
@@ -120,8 +115,17 @@ def disconn_lfm_conversation() -> ConversationHandler:
     Returns conversation handler to add lastfm user.
     """
     disconn_lfm_handler = ConversationHandler(
-        entry_points=[CommandHandler('disconnect', disconnect)],
-        states={DISC_ACC: [MessageHandler(filters.TEXT, disconn_lfm)]},
-        fallbacks=[CommandHandler('cancel', cancel_handle)],
+        entry_points=[CommandHandler('disconnect', disconnect, block=False)],
+        states={
+            DISC_ACC: [
+                MessageHandler(
+                    filters.TEXT & ~filters.COMMAND, disconn_lfm, block=False
+                )
+            ]
+        },
+        fallbacks=[
+            CommandHandler('cancel', cancel_handle, block=False),
+            MessageHandler(filters.COMMAND, cancel_handle, block=False),
+        ],
     )
     return disconn_lfm_handler

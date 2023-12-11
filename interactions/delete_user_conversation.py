@@ -99,21 +99,10 @@ async def delete_user(update: Update, context: CallbackContext) -> int:
     user_id, chat_id, answer, _ = up_full(update)
     answers = await delete_answers(update)
     text = ''
-    if answer == '/cancel':
-        #  Code of the condition only for removing keyboard
-        del_msg = await reply(update, 'ok', reply_markup=ReplyKeyboardRemove())
-        assert update.message
-        await context.bot.deleteMessage(
-            message_id=del_msg.message_id, chat_id=update.message.chat_id
-        )
-        return ConversationHandler.END
-
     if answer not in answers.keys():
         text = await i34g("delete_user_conversation.answer_not_found", user_id=user_id)
-
     elif answers[answer] == 'not_del':
         text = await i34g("delete_user_conversation.canceled", user_id=user_id)
-
     elif answers[answer] == 'del':
         locale = await db.rsql_locale(user_id)
         locale = cfg.LOCALE_DEFAULT if locale is None else locale
@@ -135,8 +124,17 @@ def delete_user_conversation() -> ConversationHandler:
     Return conversation handler to delete user.
     """
     delete_user_handler = ConversationHandler(
-        entry_points=[CommandHandler('delete', delete)],
-        states={DELETE_USER: [MessageHandler(filters.TEXT, delete_user)]},
-        fallbacks=[CommandHandler('cancel', cancel_handle)],
+        entry_points=[CommandHandler('delete', delete, block=False)],
+        states={
+            DELETE_USER: [
+                MessageHandler(
+                    filters.TEXT & ~filters.COMMAND, delete_user, block=False
+                )
+            ]
+        },
+        fallbacks=[
+            CommandHandler('cancel', cancel_handle, block=False),
+            MessageHandler(filters.COMMAND, cancel_handle, block=False),
+        ],
     )
     return delete_user_handler
