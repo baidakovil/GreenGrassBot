@@ -68,12 +68,13 @@ async def locale(update: Update, _context: CallbackContext) -> int:
     loc_codes = await get_locale_codes(update)
     loc_names = list(loc_codes.keys())
     loc_names.append('/cancel')
+    loc_names = [[loc_names[i]] for i in range(len(loc_names))]
     text = await i34g("loc.choose_lang", user_id=user_id)
     await reply(
         update,
         text,
         reply_markup=ReplyKeyboardMarkup(
-            [loc_names],
+            loc_names,
             one_time_keyboard=True,
             resize_keyboard=True,
         ),

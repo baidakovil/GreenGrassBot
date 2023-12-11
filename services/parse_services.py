@@ -51,16 +51,20 @@ async def check_valid_lfm(lfm: str, user_id: int) -> Tuple[bool, str]:
         tuple with bool and string: (valid or not, error text)
     # TODO UnicodeEncodeError when non-unicode characters in nickname
     """
-    lfm_api_url = await i34g(
-        'parse_services.getrecenttracks',
-        limit=10,
-        lfm=artist_at_url(name_to_url=lfm),
-        page=1,
-        from_unix=0,
-        api_key=api_key,
-        locale=cfg.LOCALE_TECHNICAL_STORE,
-    )
-    loaded_page = page_loader(lfm_api_url)
+    lfm_quoted = artist_at_url(name_to_url=lfm)
+    if lfm == lfm_quoted:
+        lfm_api_url = await i34g(
+            'parse_services.getrecenttracks',
+            limit=10,
+            lfm_noalarm=lfm_quoted,
+            page=1,
+            from_unix=0,
+            api_key=api_key,
+            locale=cfg.LOCALE_TECHNICAL_STORE,
+        )
+        loaded_page = page_loader(lfm_api_url)
+    else:
+        loaded_page = int(93)
     return (
         (False, await error_text(loaded_page, lfm, user_id=user_id))
         if isinstance(loaded_page, int)
@@ -151,7 +155,7 @@ async def parser_scrobbles(user_id: int, lfm: str) -> Union[int, Dict]:
         lfm_url = await i34g(
             'parse_services.getrecenttracks',
             limit=cfg.QTY_SCROBBLES_XML,
-            lfm=artist_at_url(name_to_url=lfm),
+            lfm_noalarm=artist_at_url(name_to_url=lfm),
             page=current_page,
             from_unix=await load_scr_moment(user_id, lfm),
             api_key=api_key,
