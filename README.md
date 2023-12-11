@@ -35,14 +35,16 @@ What matters is what kind of music you listen to. Join
 
 ## General info
 
-As of the end of 2023, the project is actively developing with single contributor.  
+As of the end of 2023, the project is in **Python** and is actively developing with single contributor.
 
 The ultimate project goal is **to create an independent information "hub"** that  
 collects information about concerts from as many sources as possible, and also collects  
 user listening sessions (scrobbles) directly from music services.  
 
 At the moment, both concerts and scrobbles are **obtained with Last.fm proprietary  
-service**. More of that, concerts obtained using html parsing, what is disadvantage now.
+service**. More of that, concerts obtained using html parsing, what is disadvantage now.\
+
+SQLite3 single-file database: [schema], [class Db].
 
 What Green Grass Bot does in version 0.2-beta:
 
@@ -55,6 +57,9 @@ What Green Grass Bot does in version 0.2-beta:
 - Deletes all user data with a single `/delete` command
 
   <img width="300" src=".github/readme-files/connect-and-getgigs-process.gif" alt="How to connect Last.fm and get list of concerts"/>
+
+  [schema]: .github/readme-files/db.png
+  [class Db]: db/db_service.py
 
 ## Technologies
 
