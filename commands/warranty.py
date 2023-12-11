@@ -16,10 +16,7 @@
 from telegram import Update
 from telegram.ext import CallbackContext
 
-from db.db_service import Db
 from services.message_service import i34g, reply, up
-
-db = Db()
 
 
 async def warranty(update: Update, _context: CallbackContext) -> None:
