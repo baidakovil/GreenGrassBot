@@ -2,11 +2,11 @@
 
 ## Table of Contents
 * [Introduction](#introduction)
-* [Design](#design)
-* [Implementation](#implementation)
-* [Code Documentation](#code-documentation)
+* [Project structure](#project-structure)
+* [Assets & Languages](#Assets-&-Languages)
+* [Database](#code-documentation)
+* [Services & UI](#services-&-ui)
 * [Testing](#testing)
-* [Final Notes](#final-notes)
 
 <div  style="page-break-after: always;"></div>
 
@@ -40,6 +40,9 @@ At a high level overview, the entire project can be broken down into **4 compone
 
 Each of components corresponds to one or two folders in project structure. Below a short\
 description of folders and files.
+
+----------------------
+Note: This tree not use syntax described above
 
 .\
 ├── assets |                *RESOURSES*\
@@ -96,3 +99,19 @@ description of folders and files.
 ├── README.md |                *GITHUB README\
 ├── requirements.txt |                *CREATES WITH pipreqs*\
 └── WORKFLOW.md |                *THIS FILE*
+
+------------------
+
+## Assets & Languages
+*soon*
+
+## Database
+*soon*
+
+## Commands & Interactions
+*soon*
+
+## Services & UI
+*soon*
+
+## Testing
