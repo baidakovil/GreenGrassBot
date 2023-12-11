@@ -15,7 +15,7 @@
 
 import logging
 
-from telegram import Update
+from telegram import ReplyKeyboardRemove, Update
 from telegram.ext import CallbackContext
 
 import config as cfg
@@ -60,7 +60,7 @@ async def start(update: Update, context: CallbackContext) -> None:
     commands = await build_commands_description(locale)
     copyright_text = await i34g('start.copyright', locale=locale)
     text = pretext + message + commands + copyright_text
-    await reply(update, text)
+    await reply(update, text, reply_markup=ReplyKeyboardRemove())
     return None
 
 

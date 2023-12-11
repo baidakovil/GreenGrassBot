@@ -13,7 +13,7 @@
 # program.  If not, see <https://www.gnu.org/licenses/>.
 """This file, like other in /commands, contains callback funcs for same name command."""
 
-from telegram import Update
+from telegram import ReplyKeyboardRemove, Update
 from telegram.ext import CallbackContext
 
 from db.db_service import Db
@@ -33,6 +33,7 @@ async def help_call(update: Update, _context: CallbackContext) -> None:
     await reply(
         update,
         await i34g('help.message', user_id=user_id),
+        reply_markup=ReplyKeyboardRemove(),
         disable_web_page_preview=True,
     )
     return None

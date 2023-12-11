@@ -18,7 +18,7 @@ import json
 import logging
 import traceback
 
-from telegram import Update
+from telegram import ReplyKeyboardRemove, Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, ContextTypes, ConversationHandler
 
@@ -41,7 +41,11 @@ async def cancel_handle(update: Update, _context: CallbackContext) -> int:
     """
     user_id = up(update)
     logger.info('BotUser %s canceled the conversation', user_id)
-    await reply(update, await i34g('common_handlers.cancel_message', user_id=user_id))
+    await reply(
+        update,
+        await i34g('common_handlers.cancel_message', user_id=user_id),
+        reply_markup=ReplyKeyboardRemove(),
+    )
     return ConversationHandler.END
 
 
