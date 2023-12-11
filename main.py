@@ -17,6 +17,7 @@ import logging
 import os
 
 import i18n
+from telegram import Update
 from telegram.ext import Application
 
 import config as cfg
@@ -46,7 +47,6 @@ def main() -> None:
         .token(token)
         .read_timeout(cfg.SEC_READ_TIMEOUT)
         .write_timeout(cfg.SEC_WRITE_TIMEOUT)
-        .concurrent_updates(True)
         .build()
     )
     load_interactions(application)
@@ -54,7 +54,7 @@ def main() -> None:
     set_descriptions(application)
     set_commands(application)
     logger.info('App started')
-    application.run_polling()
+    application.run_polling(allowed_updates=[Update.MESSAGE])
 
 
 if __name__ == '__main__':
