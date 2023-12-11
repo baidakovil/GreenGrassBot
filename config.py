@@ -53,7 +53,7 @@ DEFAULT_MIN_LISTENS = 3
 DEFAULT_NOTICE_DAY = -1
 
 #  Default UTC time to send news.
-DEFAULT_NOTICE_TIME = '11:48:00'
+DEFAULT_NOTICE_TIME = '13:00:00'
 
 #  Default setting to show 'There is no new events' message. 0 mean not to show.
 DEFAULT_NONEWEVENTS: int = 0
