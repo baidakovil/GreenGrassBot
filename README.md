@@ -18,7 +18,7 @@ Project gives artists the freedom to spread the news about their concerts, no ma
 what kind of advertisements their listeners watch.    🎸
 
 What matters is what kind of music you listen to. Join
-[Telegram](https://t.me/try_greatgigbot).
+[Telegram](https://t.me/GreenGrassConcertBot).
 
 ----------------- 
 
@@ -57,6 +57,8 @@ What Green Grass Bot does in version 0.2-beta:
 - Deletes all user data with a single `/delete` command
 
   <img width="300" src=".github/readme-files/connect-and-getgigs-process.gif" alt="How to connect Last.fm and get list of concerts"/>
+  
+ TODO: horizontal gif with mouse clicks
 
   [schema]: .github/readme-files/db.png
   [class Db]: db/db_service.py
@@ -195,6 +197,9 @@ Manual approach is good when you are unfamiliar with Docker, or your VPS not sat
         2. Delete `-example` from the filename  
         3. Copy the file to `/lib/systemd/system/`  
         4. Run in CLI: `sudo systemctl start greengrassbot`  
+
+        
+        To read logs in real time, use `sudo journalctl -u ggbot.service --follow`
     
     - **screen** - utility for Linux systems. I never used it, but there is a signs it  
     popular. For sample tutorial, I think, you can follow the [tjtanjin's guide].
