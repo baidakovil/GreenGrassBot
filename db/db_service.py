@@ -263,10 +263,10 @@ class Db:
         def_sett = asdict(UserSettings(user_id=user_id, locale=user_tg_locale))
         #  Get dict with current settings, if exists
         cur_sett = await self.rsql_settings(user_id=user_id)
-        cur_sett = cur_sett.__dict__ if cur_sett is not None else def_sett
+        wrt_sett = cur_sett.__dict__ if cur_sett is not None else def_sett
         #  Replace current or default with given
         use_vals = {
-            key: kw[key] if key in kw else cur_sett[key] for key in cur_sett.keys()
+            key: kw[key] if key in kw else wrt_sett[key] for key in wrt_sett.keys()
         }
 
         query = """
@@ -615,12 +615,12 @@ class Db:
         params = {'user_id': user_id, 'shorthand': shorthand}
         query = """
         SELECT
-        (SELECT art_name FROM lastarts WHERE shorthand= :shorthand) as artist, 
+        (SELECT art_name FROM lastarts WHERE shorthand= :shorthand AND user_id= :user_id) as artist, 
         event_date, place, locality, country, link FROM events WHERE
         event_id IN 
             (SELECT event_id FROM lineups 
-            WHERE art_name= (SELECT art_name FROM lastarts WHERE shorthand= :shorthand))
-        AND event_date >= (SELECT shorthand_date FROM lastarts WHERE shorthand= :shorthand)
+            WHERE art_name= (SELECT art_name FROM lastarts WHERE shorthand= :shorthand AND user_id= :user_id))
+        AND event_date >= (SELECT shorthand_date FROM lastarts WHERE shorthand= :shorthand AND user_id= :user_id)
         ORDER BY event_date
         """
         ev = execute_query(self, query, params=params, mode='selectmany')
